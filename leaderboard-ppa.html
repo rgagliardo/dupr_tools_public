@@ -8,6 +8,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="PPA Pros">
     <meta name="theme-color" content="#0d0e15">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>PPA Pros</title>
     <style>
         :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
@@ -28,8 +31,6 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-transform: uppercase; font-style: italic;
         }
-
-        .timestamp { font-size: 11px; color: #78788c; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
 
         .search-box {
             width: 100%; padding: 12px 16px; border-radius: 12px;
@@ -139,13 +140,65 @@
             color: #ffffff; text-transform: uppercase; transition: background 0.2s; letter-spacing: 1px;
         }
         .profile-link:active { background: rgba(255, 255, 255, 0.1); }
+
+        .timestamp {
+            font-size: 11px; color: #78788c; margin-bottom: 12px; font-weight: 500;
+            letter-spacing: 0.5px; text-transform: uppercase;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .refresh-btn {
+            background: none; border: none; padding: 0; cursor: pointer;
+            color: #78788c; font-size: 13px; line-height: 1;
+            -webkit-tap-highlight-color: transparent;
+            transition: color 0.2s, transform 0.3s;
+        }
+        .refresh-btn:active { color: #00e5ff; }
+        .refresh-btn.spinning { animation: spin 0.6s linear; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .ptr-indicator {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            height: 48px; background: rgba(13, 14, 21, 0.95);
+            color: #00e5ff; font-size: 12px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            transform: translateY(-100%); transition: transform 0.2s ease;
+        }
+        .ptr-indicator.visible { transform: translateY(0); }
+
+        .social-links { gap: 8px; margin-top: 4px; margin-bottom: 2px; }
+        .social-link {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 24px; height: 24px; border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,0,160,0.25);
+            transition: background 0.2s; text-decoration: none;
+        }
+        .social-link:active { background: rgba(255, 0, 160, 0.15); }
+
+        .search-wrap { position: relative; margin-bottom: 12px; }
+        .search-wrap .search-box { margin-bottom: 0; padding-right: 40px; }
+        .search-clear {
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+            background: none; border: none; color: #a0a0b0; font-size: 16px;
+            cursor: pointer; padding: 4px; display: none; line-height: 1;
+            -webkit-tap-highlight-color: transparent; z-index: 2;
+        }
+        .search-clear.visible { display: block; }
+        .search-clear:active { color: #00e5ff; }
     </style>
     </head>
     <body>
+        <div class="ptr-indicator" id="ptrIndicator">↻ &nbsp;Release to Refresh</div>
         <div class="header-container">
             <h1>PPA Pros</h1>
-            <div class="timestamp">Last Updated: March 31, 2026 at 4:32 AM</div>
-            <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <div class="timestamp">
+                <span>Last Updated: March 31, 2026 at 7:35 PM</span>
+                <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
+            </div>
+            <div class="search-wrap">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
+                <button class="search-clear" id="searchClear">✕</button>
+            </div>
             <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp-ppa-pro" class="jump-tab">🏆 PPA Pro</a></div>
         </div>
         <div class="main-content">
@@ -158,7 +211,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Andrei Daescu</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 7.022 <span class="arrow trend-down">▼</span></div>
@@ -233,7 +287,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Anna Bright</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.561 <span class="arrow trend-up">▲</span></div>
@@ -308,7 +363,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Anna Leigh Waters</div><span class="streak-badge streak-w">🔥 10W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.924 <span class="arrow trend-up">▲</span></div>
@@ -383,7 +439,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">CJ Klinger</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.710 <span class="arrow trend-up">▲</span></div>
@@ -458,7 +515,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Catherine Parenteau</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.131 <span class="arrow trend-up">▲</span></div>
@@ -533,7 +591,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Christian Alshon</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.862 <span class="arrow trend-down">▼</span></div>
@@ -608,7 +667,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Christopher Haworth</div><span class="streak-badge streak-w">🔥 4W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.230 <span class="arrow trend-up">▲</span></div>
@@ -683,7 +743,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Federico Staksrud</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.741 <span class="arrow trend-down">▼</span></div>
@@ -758,7 +819,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Gabriel Tardio</div><span class="streak-badge streak-w">🔥 3W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.882 <span class="arrow trend-down">▼</span></div>
@@ -833,7 +895,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Hayden Patriquin</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.968 <span class="arrow trend-down">▼</span></div>
@@ -908,7 +971,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">JW Johnson</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.987 <span class="arrow trend-up">▲</span></div>
@@ -983,7 +1047,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jorja Johnson</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.208 <span class="arrow trend-down">▼</span></div>
@@ -1058,7 +1123,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Kaitlyn Christian</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.729 <span class="arrow trend-down">▼</span></div>
@@ -1133,7 +1199,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Kate Fahey</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.007 <span class="arrow trend-up">▲</span></div>
@@ -1208,7 +1275,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Kelly Goodnow</div><span class="streak-badge streak-w">🔥 8W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.026 <span class="arrow trend-up">▲</span></div>
@@ -1283,7 +1351,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lacy Schneemann</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.961 <span class="arrow trend-up">▲</span></div>
@@ -1358,7 +1427,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Meghan Dizon</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.991 <span class="arrow trend-down">▼</span></div>
@@ -1433,7 +1503,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Noe Khlif</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.595 <span class="arrow trend-down">▼</span></div>
@@ -1508,7 +1579,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Parris Todd</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.219 <span class="arrow trend-up">▲</span></div>
@@ -1583,7 +1655,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rachel Rohrabacher</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.211 <span class="arrow trend-up">▲</span></div>
@@ -1658,7 +1731,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Blaine Hovenier</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.319 <span class="arrow trend-down">▼</span></div>
@@ -1733,7 +1807,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Brooke Buckner</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.781 <span class="arrow trend-down">▼</span></div>
@@ -1808,7 +1883,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Callie Smith</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.876 <span class="arrow trend-down">▼</span></div>
@@ -1883,7 +1959,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Chao YI Wang</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.742 <span class="arrow trend-down">▼</span></div>
@@ -1958,7 +2035,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Dekel Bar</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.566 <span class="arrow trend-up">▲</span></div>
@@ -2033,7 +2111,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Dylan Frazier</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.572 <span class="arrow trend-down">▼</span></div>
@@ -2108,7 +2187,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jaume Martinez Vich</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.461 <span class="arrow trend-down">▼</span></div>
@@ -2183,7 +2263,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jay Devilliers</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.692 <span class="arrow trend-down">▼</span></div>
@@ -2258,7 +2339,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jessie Irvine</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.841 <span class="arrow trend-down">▼</span></div>
@@ -2333,7 +2415,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Maggie Brascia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.717 <span class="arrow trend-down">▼</span></div>
@@ -2408,7 +2491,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mary Brascia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.567 <span class="arrow trend-down">▼</span></div>
@@ -2483,7 +2567,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Milan Rane</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.789 <span class="arrow trend-down">▼</span></div>
@@ -2558,7 +2643,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Riley Newman</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.734 <span class="arrow trend-up">▲</span></div>
@@ -2633,7 +2719,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tina Pisnik</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.235 <span class="arrow trend-down">▼</span></div>
@@ -2708,7 +2795,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tyra Black</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.288 <span class="arrow trend-down">▼</span></div>
@@ -2783,7 +2871,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Wyatt Stone</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.306 <span class="arrow trend-up">▲</span></div>
@@ -2858,7 +2947,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Zane Ford</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.952 <span class="arrow trend-flat">−</span></div>
@@ -2933,7 +3023,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Alexander Crum</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.744 <span class="arrow trend-down">▼</span></div>
@@ -3008,7 +3099,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Allyce Jones</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.879 <span class="arrow trend-down">▼</span></div>
@@ -3083,7 +3175,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Cailyn Campbell</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.551 <span class="arrow trend-up">▲</span></div>
@@ -3158,7 +3251,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Cason Campbell</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.729 <span class="arrow trend-flat">−</span></div>
@@ -3233,7 +3327,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Connor Garnett</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.579 <span class="arrow trend-down">▼</span></div>
@@ -3308,7 +3403,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Eric Oncins</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.667 <span class="arrow trend-down">▼</span></div>
@@ -3383,7 +3479,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Genie Erokhina</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.725 <span class="arrow trend-down">▼</span></div>
@@ -3458,7 +3555,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jack Sock</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.524 <span class="arrow trend-down">▼</span></div>
@@ -3533,7 +3631,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jalina Ingram</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.446 <span class="arrow trend-down">▼</span></div>
@@ -3608,7 +3707,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Judit Castillo</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.716 <span class="arrow trend-up">▲</span></div>
@@ -3683,7 +3783,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Liz Truluck</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.648 <span class="arrow trend-up">▲</span></div>
@@ -3758,7 +3859,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Pablo Tellez</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.396 <span class="arrow trend-down">▼</span></div>
@@ -3833,7 +3935,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rafa Hewett</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.289 <span class="arrow trend-up">▲</span></div>
@@ -3908,7 +4011,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Spartak Rahachou</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.379 <span class="arrow trend-flat">−</span></div>
@@ -3983,7 +4087,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tama Shimabukuro</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.950 <span class="arrow trend-up">▲</span></div>
@@ -4058,7 +4163,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Will Howells</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.723 <span class="arrow trend-down">▼</span></div>
@@ -4133,7 +4239,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Yuta Funemizu</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.258 <span class="arrow trend-up">▲</span></div>
@@ -4208,7 +4315,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">AJ Koller</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.298 <span class="arrow trend-up">▲</span></div>
@@ -4283,7 +4391,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Adam Harvey</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.024 <span class="arrow trend-flat">−</span></div>
@@ -4358,7 +4467,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Alix Truong</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.808 <span class="arrow trend-down">▼</span></div>
@@ -4433,7 +4543,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Anderson Scarpa</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.312 <span class="arrow trend-down">▼</span></div>
@@ -4508,7 +4619,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Audrey Brown</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.763 <span class="arrow trend-up">▲</span></div>
@@ -4583,7 +4695,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ava Ignatowich</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.043 <span class="arrow trend-down">▼</span></div>
@@ -4658,7 +4771,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Brandon French</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.203 <span class="arrow trend-up">▲</span></div>
@@ -4733,7 +4847,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Brooke Caruso</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.479 <span class="arrow trend-down">▼</span></div>
@@ -4808,7 +4923,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Camden Chaffin</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.109 <span class="arrow trend-down">▼</span></div>
@@ -4883,7 +4999,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Camila Zilveti</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.880 <span class="arrow trend-up">▲</span></div>
@@ -4958,7 +5075,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Chloe Igleski</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.541 <span class="arrow trend-up">▲</span></div>
@@ -5033,7 +5151,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">DJ Young</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.140 <span class="arrow trend-down">▼</span></div>
@@ -5108,7 +5227,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ella Yeh</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.353 <span class="arrow trend-up">▲</span></div>
@@ -5183,7 +5303,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ivan Jakovljevic</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.090 <span class="arrow trend-up">▲</span></div>
@@ -5258,7 +5379,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">James Delgado</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.032 <span class="arrow trend-up">▲</span></div>
@@ -5333,7 +5455,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lina Padegimaite</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.577 <span class="arrow trend-up">▲</span></div>
@@ -5408,7 +5531,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lindsey Newman</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.538 <span class="arrow trend-down">▼</span></div>
@@ -5483,7 +5607,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lingwei Kong</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.418 <span class="arrow trend-down">▼</span></div>
@@ -5558,7 +5683,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Luana Stanciu</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.962 <span class="arrow trend-up">▲</span></div>
@@ -5633,7 +5759,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Marcela Hones</div><span class="streak-badge streak-l">🧊 10L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.059 <span class="arrow trend-down">▼</span></div>
@@ -5708,7 +5835,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Michael Loyd</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.337 <span class="arrow trend-up">▲</span></div>
@@ -5783,7 +5911,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mota Alhouni</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.815 <span class="arrow trend-up">▲</span></div>
@@ -5858,7 +5987,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rachel Rettger</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.055 <span class="arrow trend-down">▼</span></div>
@@ -5933,7 +6063,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tom Protzek</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.945 <span class="arrow trend-flat">−</span></div>
@@ -6008,7 +6139,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tyler Loong</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.216 <span class="arrow trend-down">▼</span></div>
@@ -6087,7 +6219,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Aanik Lohani</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.822 <span class="arrow trend-flat">−</span></div>
@@ -6162,7 +6295,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Adam Harvey</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.024 <span class="arrow trend-flat">−</span></div>
@@ -6237,7 +6371,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">AJ Koller</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.298 <span class="arrow trend-up">▲</span></div>
@@ -6312,7 +6447,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Alex Walker</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.041 <span class="arrow trend-flat">−</span></div>
@@ -6387,7 +6523,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Alexander Crum</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.744 <span class="arrow trend-down">▼</span></div>
@@ -6462,7 +6599,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Alix Truong</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.808 <span class="arrow trend-down">▼</span></div>
@@ -6537,7 +6675,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Alli Phillips</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.184 <span class="arrow trend-flat">−</span></div>
@@ -6612,7 +6751,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Allyce Jones</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.879 <span class="arrow trend-down">▼</span></div>
@@ -6687,7 +6827,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Altaf Merchant</div><span class="streak-badge streak-w">🔥 10W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.008 <span class="arrow trend-flat">−</span></div>
@@ -6762,7 +6903,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Anderson Scarpa</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.312 <span class="arrow trend-down">▼</span></div>
@@ -6837,7 +6979,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Andrea Koop</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.531 <span class="arrow trend-flat">−</span></div>
@@ -6912,7 +7055,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Andrei Daescu</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 7.022 <span class="arrow trend-down">▼</span></div>
@@ -6987,7 +7131,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Andrew Caldarella</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.438 <span class="arrow trend-flat">−</span></div>
@@ -7062,7 +7207,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Angie Walker</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 2.378 <span class="arrow trend-flat">−</span></div>
@@ -7137,7 +7283,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Anna Bright</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.561 <span class="arrow trend-up">▲</span></div>
@@ -7212,7 +7359,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Anna Leigh Waters</div><span class="streak-badge streak-w">🔥 10W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.924 <span class="arrow trend-up">▲</span></div>
@@ -7287,7 +7435,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Audrey Brown</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.763 <span class="arrow trend-up">▲</span></div>
@@ -7362,7 +7511,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Austin Bricker</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.787 <span class="arrow trend-flat">−</span></div>
@@ -7437,7 +7587,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ava Ignatowich</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.043 <span class="arrow trend-down">▼</span></div>
@@ -7512,7 +7663,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ben Johns</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.727 <span class="arrow trend-flat">−</span></div>
@@ -7587,7 +7739,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Blaine Hovenier</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.319 <span class="arrow trend-down">▼</span></div>
@@ -7662,7 +7815,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Braden Jacobson</div><span class="streak-badge streak-l">🧊 8L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.281 <span class="arrow trend-flat">−</span></div>
@@ -7737,7 +7891,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Brandon French</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.203 <span class="arrow trend-up">▲</span></div>
@@ -7812,7 +7967,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Brooke Buckner</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.781 <span class="arrow trend-down">▼</span></div>
@@ -7887,7 +8043,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Brooke Caruso</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.479 <span class="arrow trend-down">▼</span></div>
@@ -7962,7 +8119,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Caden Nemoff</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.503 <span class="arrow trend-flat">−</span></div>
@@ -8037,7 +8195,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Cailyn Campbell</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.551 <span class="arrow trend-up">▲</span></div>
@@ -8112,7 +8271,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Callie Smith</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.876 <span class="arrow trend-down">▼</span></div>
@@ -8187,7 +8347,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Camden Chaffin</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.109 <span class="arrow trend-down">▼</span></div>
@@ -8262,7 +8423,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Camila Zilveti</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.880 <span class="arrow trend-up">▲</span></div>
@@ -8337,7 +8499,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Carlos DI Laura</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.832 <span class="arrow trend-flat">−</span></div>
@@ -8412,7 +8575,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Cason Campbell</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.729 <span class="arrow trend-flat">−</span></div>
@@ -8487,7 +8651,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Catherine Parenteau</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.131 <span class="arrow trend-up">▲</span></div>
@@ -8562,7 +8727,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Chao YI Wang</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.742 <span class="arrow trend-down">▼</span></div>
@@ -8637,7 +8803,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Chloe Igleski</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.541 <span class="arrow trend-up">▲</span></div>
@@ -8712,7 +8879,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Christa Gecheva</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.502 <span class="arrow trend-flat">−</span></div>
@@ -8787,7 +8955,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Christian Alshon</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.862 <span class="arrow trend-down">▼</span></div>
@@ -8862,7 +9031,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Christine Trifunovic</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.550 <span class="arrow trend-flat">−</span></div>
@@ -8937,7 +9107,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Christopher Haworth</div><span class="streak-badge streak-w">🔥 4W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.230 <span class="arrow trend-up">▲</span></div>
@@ -9012,7 +9183,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Chuck Taylor</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.350 <span class="arrow trend-flat">−</span></div>
@@ -9087,7 +9259,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">CJ Klinger</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.710 <span class="arrow trend-up">▲</span></div>
@@ -9162,7 +9335,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Connor Garnett</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.579 <span class="arrow trend-down">▼</span></div>
@@ -9237,7 +9411,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Daniel Jensen</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.342 <span class="arrow trend-flat">−</span></div>
@@ -9312,7 +9487,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Dekel Bar</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.566 <span class="arrow trend-up">▲</span></div>
@@ -9387,7 +9563,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">DJ Young</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.140 <span class="arrow trend-down">▼</span></div>
@@ -9462,7 +9639,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Donald Young</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.155 <span class="arrow trend-flat">−</span></div>
@@ -9537,7 +9715,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Dylan Frazier</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.572 <span class="arrow trend-down">▼</span></div>
@@ -9612,7 +9791,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ella Yeh</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.353 <span class="arrow trend-up">▲</span></div>
@@ -9687,7 +9867,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Emma Nelson</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.057 <span class="arrow trend-flat">−</span></div>
@@ -9750,7 +9931,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Eric Oncins</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.667 <span class="arrow trend-down">▼</span></div>
@@ -9825,7 +10007,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Eric Roddy</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.953 <span class="arrow trend-flat">−</span></div>
@@ -9900,7 +10083,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Etta Tuionetoa</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.975 <span class="arrow trend-flat">−</span></div>
@@ -9975,7 +10159,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ewa Radzikowska</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.899 <span class="arrow trend-flat">−</span></div>
@@ -10050,7 +10235,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Federico Staksrud</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.741 <span class="arrow trend-down">▼</span></div>
@@ -10125,7 +10311,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Gabriel Joseph</div><span class="streak-badge streak-w">🔥 10W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.946 <span class="arrow trend-flat">−</span></div>
@@ -10200,7 +10387,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Gabriel Tardio</div><span class="streak-badge streak-w">🔥 3W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.882 <span class="arrow trend-down">▼</span></div>
@@ -10275,7 +10463,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Genie Bouchard</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.107 <span class="arrow trend-flat">−</span></div>
@@ -10350,7 +10539,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Genie Erokhina</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.725 <span class="arrow trend-down">▼</span></div>
@@ -10425,7 +10615,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">George Wall</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.049 <span class="arrow trend-flat">−</span></div>
@@ -10500,7 +10691,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Grayson Goldin</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.005 <span class="arrow trend-flat">−</span></div>
@@ -10575,7 +10767,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Greg Dow</div><span class="streak-badge streak-w">🔥 4W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.038 <span class="arrow trend-flat">−</span></div>
@@ -10650,7 +10843,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Hannah Blatt</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.112 <span class="arrow trend-flat">−</span></div>
@@ -10725,7 +10919,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Hayden Patriquin</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.968 <span class="arrow trend-down">▼</span></div>
@@ -10800,7 +10995,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Hunter Johnson</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.688 <span class="arrow trend-flat">−</span></div>
@@ -10863,7 +11059,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ivan Jakovljevic</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.090 <span class="arrow trend-up">▲</span></div>
@@ -10938,7 +11135,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jack Sock</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.524 <span class="arrow trend-down">▼</span></div>
@@ -11013,7 +11211,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jackie Kawamoto</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.253 <span class="arrow trend-flat">−</span></div>
@@ -11088,7 +11287,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jade Kawamoto</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.241 <span class="arrow trend-flat">−</span></div>
@@ -11163,7 +11363,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jalina Ingram</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.446 <span class="arrow trend-down">▼</span></div>
@@ -11238,7 +11439,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">James Delgado</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.032 <span class="arrow trend-up">▲</span></div>
@@ -11313,7 +11515,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jaume Martinez Vich</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.461 <span class="arrow trend-down">▼</span></div>
@@ -11388,7 +11591,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jay Devilliers</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.692 <span class="arrow trend-down">▼</span></div>
@@ -11463,7 +11667,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jessie Irvine</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.841 <span class="arrow trend-down">▼</span></div>
@@ -11538,7 +11743,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jhonnatan Medina Alvarez</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.859 <span class="arrow trend-flat">−</span></div>
@@ -11613,7 +11819,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">John Cincola</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.017 <span class="arrow trend-flat">−</span></div>
@@ -11688,7 +11895,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jonathan Truong</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.680 <span class="arrow trend-flat">−</span></div>
@@ -11757,7 +11965,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Jorja Johnson</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.208 <span class="arrow trend-down">▼</span></div>
@@ -11832,7 +12041,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Juan Benitez</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.056 <span class="arrow trend-flat">−</span></div>
@@ -11907,7 +12117,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Judit Castillo</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.716 <span class="arrow trend-up">▲</span></div>
@@ -11982,7 +12193,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Julian Arnold</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.329 <span class="arrow trend-flat">−</span></div>
@@ -12057,7 +12269,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">JW Johnson</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.987 <span class="arrow trend-up">▲</span></div>
@@ -12132,7 +12345,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Kaitlyn Christian</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.729 <span class="arrow trend-down">▼</span></div>
@@ -12207,7 +12421,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Kate Fahey</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.007 <span class="arrow trend-up">▲</span></div>
@@ -12282,7 +12497,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Kelly Goodnow</div><span class="streak-badge streak-w">🔥 8W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.026 <span class="arrow trend-up">▲</span></div>
@@ -12357,7 +12573,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lacy Schneemann</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.961 <span class="arrow trend-up">▲</span></div>
@@ -12432,7 +12649,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lauren Stratman</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.593 <span class="arrow trend-flat">−</span></div>
@@ -12507,7 +12725,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Layne Sleeth</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.644 <span class="arrow trend-flat">−</span></div>
@@ -12582,7 +12801,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lina Padegimaite</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.577 <span class="arrow trend-up">▲</span></div>
@@ -12657,7 +12877,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lindsey Newman</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.538 <span class="arrow trend-down">▼</span></div>
@@ -12732,7 +12953,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lingwei Kong</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.418 <span class="arrow trend-down">▼</span></div>
@@ -12807,7 +13029,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Liz Truluck</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.648 <span class="arrow trend-up">▲</span></div>
@@ -12882,7 +13105,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Luana Stanciu</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.962 <span class="arrow trend-up">▲</span></div>
@@ -12957,7 +13181,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Lucy Kovalova</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.722 <span class="arrow trend-flat">−</span></div>
@@ -13032,7 +13257,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Luke Wasson</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.572 <span class="arrow trend-flat">−</span></div>
@@ -13107,7 +13333,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Maggie Brascia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.717 <span class="arrow trend-down">▼</span></div>
@@ -13182,7 +13409,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Marcela Hones</div><span class="streak-badge streak-l">🧊 10L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.059 <span class="arrow trend-down">▼</span></div>
@@ -13257,7 +13485,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mari Humberg</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.099 <span class="arrow trend-flat">−</span></div>
@@ -13332,7 +13561,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Marshall Brown</div><span class="streak-badge streak-l">🧊 9L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.450 <span class="arrow trend-flat">−</span></div>
@@ -13407,7 +13637,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Martin Emmrich</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.347 <span class="arrow trend-flat">−</span></div>
@@ -13482,7 +13713,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Martina Frantova</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.561 <span class="arrow trend-flat">−</span></div>
@@ -13557,7 +13789,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mary Brascia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.567 <span class="arrow trend-down">▼</span></div>
@@ -13632,7 +13865,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Maxwell Freeman</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.344 <span class="arrow trend-flat">−</span></div>
@@ -13707,7 +13941,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Meghan Dizon</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.991 <span class="arrow trend-down">▼</span></div>
@@ -13782,7 +14017,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mehvish Safdar</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.405 <span class="arrow trend-flat">−</span></div>
@@ -13857,7 +14093,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Michael Loyd</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.337 <span class="arrow trend-up">▲</span></div>
@@ -13932,7 +14169,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Milan Rane</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.789 <span class="arrow trend-down">▼</span></div>
@@ -14007,7 +14245,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mohaned Alhouni</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.172 <span class="arrow trend-flat">−</span></div>
@@ -14082,7 +14321,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Monica Paolicelli</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.115 <span class="arrow trend-flat">−</span></div>
@@ -14157,7 +14397,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Mota Alhouni</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.815 <span class="arrow trend-up">▲</span></div>
@@ -14232,7 +14473,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Noe Khlif</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.595 <span class="arrow trend-down">▼</span></div>
@@ -14307,7 +14549,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Olivia Mcmillan</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.303 <span class="arrow trend-flat">−</span></div>
@@ -14382,7 +14625,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Pablo Tellez</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.396 <span class="arrow trend-down">▼</span></div>
@@ -14457,7 +14701,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Parris Todd</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.219 <span class="arrow trend-up">▲</span></div>
@@ -14532,7 +14777,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Paula Rives</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.308 <span class="arrow trend-flat">−</span></div>
@@ -14607,7 +14853,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Pesa Teoni</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.936 <span class="arrow trend-flat">−</span></div>
@@ -14682,7 +14929,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Pieri Imparato</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.537 <span class="arrow trend-flat">−</span></div>
@@ -14757,7 +15005,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Polina Libo</div><span class="streak-badge streak-l">🧊 10L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.033 <span class="arrow trend-flat">−</span></div>
@@ -14832,7 +15081,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rachel Rettger</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.055 <span class="arrow trend-down">▼</span></div>
@@ -14907,7 +15157,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rachel Rohrabacher</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.211 <span class="arrow trend-up">▲</span></div>
@@ -14982,7 +15233,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rachel Summers</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.157 <span class="arrow trend-flat">−</span></div>
@@ -15057,7 +15309,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Rafa Hewett</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.289 <span class="arrow trend-up">▲</span></div>
@@ -15132,7 +15385,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Riley Newman</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.734 <span class="arrow trend-up">▲</span></div>
@@ -15207,7 +15461,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Roscoe Bellamy</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.221 <span class="arrow trend-flat">−</span></div>
@@ -15282,7 +15537,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Ryan Sherry</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.597 <span class="arrow trend-flat">−</span></div>
@@ -15333,7 +15589,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Samantha Parker</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.590 <span class="arrow trend-flat">−</span></div>
@@ -15408,7 +15665,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Sarah Ansboury</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.154 <span class="arrow trend-flat">−</span></div>
@@ -15483,7 +15741,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Spartak Rahachou</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.379 <span class="arrow trend-flat">−</span></div>
@@ -15558,7 +15817,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Stephen Madonia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.677 <span class="arrow trend-flat">−</span></div>
@@ -15633,7 +15893,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Steve Deakin</div><span class="streak-badge streak-w">🔥 10W</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.268 <span class="arrow trend-flat">−</span></div>
@@ -15708,7 +15969,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tam Trinh</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.125 <span class="arrow trend-flat">−</span></div>
@@ -15783,7 +16045,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tama Shimabukuro</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.950 <span class="arrow trend-up">▲</span></div>
@@ -15858,7 +16121,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tatiana Ruhl</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.964 <span class="arrow trend-flat">−</span></div>
@@ -15933,7 +16197,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Thomas Wilson</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 3.508 <span class="arrow trend-flat">−</span></div>
@@ -16008,7 +16273,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tina Pisnik</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.235 <span class="arrow trend-down">▼</span></div>
@@ -16083,7 +16349,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tom Protzek</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.945 <span class="arrow trend-flat">−</span></div>
@@ -16158,7 +16425,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Travis Rettenmaier</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.283 <span class="arrow trend-flat">−</span></div>
@@ -16233,7 +16501,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tyler Loong</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.216 <span class="arrow trend-down">▼</span></div>
@@ -16308,7 +16577,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tyra Black</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.288 <span class="arrow trend-down">▼</span></div>
@@ -16383,7 +16653,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Tyson Mcguffin</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.461 <span class="arrow trend-flat">−</span></div>
@@ -16458,7 +16729,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Victoria Dimuzio</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.525 <span class="arrow trend-flat">−</span></div>
@@ -16533,7 +16805,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Wes Burrows</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.806 <span class="arrow trend-flat">−</span></div>
@@ -16608,7 +16881,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Will Howells</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.723 <span class="arrow trend-down">▼</span></div>
@@ -16683,7 +16957,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Wyatt Stone</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.306 <span class="arrow trend-up">▲</span></div>
@@ -16758,7 +17033,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Yates Johnson</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 4.228 <span class="arrow trend-flat">−</span></div>
@@ -16833,7 +17109,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Yuta Funemizu</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.258 <span class="arrow trend-up">▲</span></div>
@@ -16908,7 +17185,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Zane Ford</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.952 <span class="arrow trend-flat">−</span></div>
@@ -16983,7 +17261,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Zane Navratil</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div><div class="player-notes">Men's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Men's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 6.403 <span class="arrow trend-flat">−</span></div>
@@ -17058,7 +17337,8 @@
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <div class="player-name">Zoeya Khan</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div><div class="player-notes">Women's PPA Touring Pros</div>
+                    </div>
+                    <div class="player-notes">Women's PPA Touring Pros</div>
                 </div>
                 <div class="scores-stack">
                     <div class="score-line"><span class="lbl">D</span> 5.309 <span class="arrow trend-flat">−</span></div>
@@ -17222,40 +17502,53 @@
             }
 
             // 1. Search Box Logic (Instant snappiness kept deliberately for search filtering)
-            document.getElementById('searchInput').addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase();
-                const groups = document.querySelectorAll('.group-details');
+            (function() {
+                const input    = document.getElementById('searchInput');
+                const clearBtn = document.getElementById('searchClear');
 
-                groups.forEach(group => {
-                    let hasVisiblePlayer = false;
-                    const players = group.querySelectorAll('.player-details');
-
-                    players.forEach(player => {
-                        const playerName = player.getAttribute('data-name') || "";
-                        const notesElem = player.querySelector('.player-notes');
-                        const playerNotes = notesElem ? notesElem.textContent.toLowerCase() : "";
-
-                        if (playerName.includes(searchTerm) || playerNotes.includes(searchTerm)) {
-                            player.classList.remove('hidden');
-                            hasVisiblePlayer = true;
+                function runSearch(searchTerm) {
+                    const groups = document.querySelectorAll('.group-details');
+                    groups.forEach(group => {
+                        let hasVisiblePlayer = false;
+                        const players = group.querySelectorAll('.player-details');
+                        players.forEach(player => {
+                            const playerName  = player.getAttribute('data-name') || "";
+                            const notesElem   = player.querySelector('.player-notes');
+                            const playerNotes = notesElem ? notesElem.textContent.toLowerCase() : "";
+                            if (playerName.includes(searchTerm) || playerNotes.includes(searchTerm)) {
+                                player.classList.remove('hidden');
+                                hasVisiblePlayer = true;
+                            } else {
+                                player.classList.add('hidden');
+                            }
+                        });
+                        if (searchTerm.length > 0) {
+                            group.style.display = hasVisiblePlayer ? 'block' : 'none';
+                            if (hasVisiblePlayer) group.setAttribute('open', '');
                         } else {
-                            player.classList.add('hidden');
+                            group.style.display = 'block';
+                            group.removeAttribute('open');
                         }
                     });
+                }
 
-                    if (searchTerm.length > 0) {
-                        if (hasVisiblePlayer) {
-                            group.style.display = 'block';
-                            group.setAttribute('open', '');
-                        } else {
-                            group.style.display = 'none';
-                        }
+                input.addEventListener('input', function() {
+                    const term = this.value.toLowerCase();
+                    if (term.length > 0) {
+                        clearBtn.classList.add('visible');
                     } else {
-                        group.style.display = 'block';
-                        group.removeAttribute('open');
+                        clearBtn.classList.remove('visible');
                     }
+                    runSearch(term);
                 });
-            });
+
+                clearBtn.addEventListener('click', function() {
+                    input.value = '';
+                    clearBtn.classList.remove('visible');
+                    input.focus();
+                    runSearch('');
+                });
+            })();
 
             // 2. Handle manual clicks on category headers (Auto-scroll removed)
             document.querySelectorAll('.group-summary').forEach(summary => {
@@ -17314,113 +17607,108 @@
                 });
             });
 
-            // 5. Generate and inject Apple Touch Icon — W/L streak bars
+            // 5. Generate and inject Apple Touch Icon — LB only, Teko
             (function () {
-                var c = document.createElement('canvas');
-                c.width = 180; c.height = 180;
-                var W = 180, H = 180;
-                var ctx = c.getContext('2d');
+                var PINK = '#ff00a0';
 
-                // ── Background ─────────────────────────────────────────────
-                var bg = ctx.createLinearGradient(0, 0, W, H);
-                bg.addColorStop(0, '#12131f');
-                bg.addColorStop(1, '#0d0e15');
-                ctx.fillStyle = bg;
-                ctx.fillRect(0, 0, W, H);
+                function renderIcon(font) {
+                    var c = document.createElement('canvas');
+                    c.width = 180; c.height = 180;
+                    var W = 180, H = 180;
+                    var ctx = c.getContext('2d');
 
-                // ── Bar data: L/W pattern, last 3 = win streak ─────────────
-                var results = [
-                    { w: false },
-                    { w: true  },
-                    { w: false },
-                    { w: true  },
-                    { w: true  },
-                    { w: true  }
-                ];
+                    // ── Border: pink fill, then black rounded-rect inset ───
+                    // The inner rect uses matched corner radius so the pink
+                    // border is uniform width all the way around the corners.
+                    var border = 5;
+                    var outerR = 44;             // approx iOS squircle radius
+                    var innerR = outerR - border; // matched inset radius
 
-                // ── Sizing (all proportional so it scales cleanly) ─────────
-                var barW    = 16, gap = 6, n = results.length;
-                var totalW  = n * barW + (n - 1) * gap;
-                var startX  = Math.round((W - totalW) / 2);
-                var baseY   = Math.round(H * 0.68);
-                var maxBarH = Math.round(H * 0.40);
-                var minBarH = Math.round(H * 0.20);
-                var labelY  = Math.round(H * 0.855);
-                var radius  = Math.round(barW / 2);
+                    ctx.fillStyle = PINK;
+                    ctx.fillRect(0, 0, W, H);
 
-                // Heights: W bars taller (positive), L bars shorter (negative)
-                var heights = [
-                    minBarH,
-                    Math.round(maxBarH * 0.85),
-                    Math.round(minBarH * 0.95),
-                    Math.round(maxBarH * 0.88),
-                    Math.round(maxBarH * 0.94),
-                    maxBarH
-                ];
-
-                // ── Leaderboard-exact colors ───────────────────────────────
-                var WIN_FILL    = 'rgba(0, 229, 255, 0.18)';
-                var WIN_STROKE  = '#00e5ff';
-                var WIN_GLOW    = 'rgba(0, 229, 255, 0.35)';
-                var LOSS_FILL   = 'rgba(255, 0, 160, 0.18)';
-                var LOSS_STROKE = '#ff00a0';
-
-                results.forEach(function (r, i) {
-                    var x = startX + i * (barW + gap);
-                    var h = heights[i];
-                    var y = baseY - h;
-
-                    // Glow beneath win bars
-                    if (r.w) {
-                        var glow = ctx.createRadialGradient(
-                            x + barW / 2, baseY,          2,
-                            x + barW / 2, baseY - h / 2,  h * 0.8
-                        );
-                        glow.addColorStop(0, WIN_GLOW);
-                        glow.addColorStop(1, 'rgba(0, 229, 255, 0)');
-                        ctx.fillStyle = glow;
-                        ctx.fillRect(x - 6, y - 8, barW + 12, h + 16);
-                    }
-
-                    // Bar body with rounded top
-                    ctx.fillStyle   = r.w ? WIN_FILL   : LOSS_FILL;
-                    ctx.strokeStyle = r.w ? WIN_STROKE : LOSS_STROKE;
-                    ctx.lineWidth   = 1.5;
+                    // Black inset rounded rect
+                    var x = border, y = border, w = W - border * 2, h = H - border * 2;
+                    ctx.fillStyle = '#000000';
                     ctx.beginPath();
-                    ctx.moveTo(x + radius, y);
-                    ctx.lineTo(x + barW - radius, y);
-                    ctx.arcTo(x + barW, y,     x + barW, y + radius, radius);
-                    ctx.lineTo(x + barW, baseY);
-                    ctx.lineTo(x,        baseY);
-                    ctx.lineTo(x,        y + radius);
-                    ctx.arcTo(x, y, x + radius, y, radius);
+                    ctx.moveTo(x + innerR, y);
+                    ctx.lineTo(x + w - innerR, y);
+                    ctx.arcTo(x + w, y,     x + w, y + innerR,     innerR);
+                    ctx.lineTo(x + w, y + h - innerR);
+                    ctx.arcTo(x + w, y + h, x + w - innerR, y + h, innerR);
+                    ctx.lineTo(x + innerR, y + h);
+                    ctx.arcTo(x,     y + h, x,     y + h - innerR, innerR);
+                    ctx.lineTo(x,     y + innerR);
+                    ctx.arcTo(x,     y,     x + innerR, y,         innerR);
                     ctx.closePath();
                     ctx.fill();
-                    ctx.stroke();
 
-                    // W / L label inside bar
-                    ctx.fillStyle    = r.w ? WIN_STROKE : LOSS_STROKE;
+                    // ── LB — full canvas, nothing else ────────────────────
+                    ctx.fillStyle    = PINK;
                     ctx.textAlign    = 'center';
                     ctx.textBaseline = 'middle';
-                    ctx.font         = 'bold 9px -apple-system, sans-serif';
-                    ctx.fillText(r.w ? 'W' : 'L', x + barW / 2, baseY - 8);
+                    ctx.font         = '700 108px ' + font;
+                    ctx.fillText('LB', W / 2, H / 2);
+
+                    // ── Inject as apple-touch-icon ─────────────────────────
+                    var link = document.createElement('link');
+                    link.rel  = 'apple-touch-icon';
+                    link.href = c.toDataURL('image/png');
+                    document.head.appendChild(link);
+                }
+
+                var tekoFace = new FontFace(
+                    'Teko',
+                    'url(https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gdQhfgCNqqVIuTN4.woff2)',
+                    { weight: '700' }
+                );
+                tekoFace.load()
+                    .then(function (loaded) {
+                        document.fonts.add(loaded);
+                        renderIcon('"Teko", sans-serif');
+                    })
+                    .catch(function () {
+                        renderIcon('-apple-system, BlinkMacSystemFont, sans-serif');
+                    });
+            })();
+            // 6. Refresh helpers — cache-busted hard reload
+            function hardRefresh() {
+                var btn = document.getElementById('refreshBtn');
+                if (btn) btn.classList.add('spinning');
+                var url = window.location.pathname + '?t=' + Date.now();
+                window.location.replace(url);
+            }
+
+            document.getElementById('refreshBtn').addEventListener('click', hardRefresh);
+
+            // Pull-to-refresh: swipe down from top of page
+            (function () {
+                var startY      = 0;
+                var pulling     = false;
+                var THRESHOLD   = 80;
+                var indicator   = document.getElementById('ptrIndicator');
+
+                document.addEventListener('touchstart', function (e) {
+                    if (window.scrollY === 0) {
+                        startY  = e.touches[0].clientY;
+                        pulling = true;
+                    }
+                }, { passive: true });
+
+                document.addEventListener('touchmove', function (e) {
+                    if (!pulling) return;
+                    var dist = e.touches[0].clientY - startY;
+                    if (dist > 20) indicator.classList.add('visible');
+                    if (dist < 10) indicator.classList.remove('visible');
+                }, { passive: true });
+
+                document.addEventListener('touchend', function (e) {
+                    if (!pulling) return;
+                    pulling = false;
+                    var dist = e.changedTouches[0].clientY - startY;
+                    indicator.classList.remove('visible');
+                    if (dist >= THRESHOLD) hardRefresh();
                 });
-
-                // ── Label ─────────────────────────────────────────────────
-                ctx.textAlign    = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.font         = 'bold 18px -apple-system, BlinkMacSystemFont, sans-serif';
-                var tg = ctx.createLinearGradient(W * 0.25, labelY, W * 0.75, labelY);
-                tg.addColorStop(0, '#ff00a0');
-                tg.addColorStop(1, '#00e5ff');
-                ctx.fillStyle = tg;
-                ctx.fillText('PPA', W / 2, labelY);
-
-                // ── Inject as apple-touch-icon ─────────────────────────────
-                var link = document.createElement('link');
-                link.rel  = 'apple-touch-icon';
-                link.href = c.toDataURL('image/png');
-                document.head.appendChild(link);
             })();
         </script>
     </body>
