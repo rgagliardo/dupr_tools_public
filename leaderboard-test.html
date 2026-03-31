@@ -1,0 +1,929 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Testing</title>
+    <style>
+        :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
+        body { background-color: #0d0e15; color: #e0e0e0; margin: 0; padding-bottom: 60px; }
+        
+        .header-container {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(13, 14, 21, 0.95);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            padding: 20px 20px 10px 20px;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+            margin-bottom: 15px;
+        }
+        
+        h1 { 
+            font-size: 30px; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 1px;
+            background: -webkit-linear-gradient(45deg, #ff00a0, #00e5ff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-transform: uppercase; font-style: italic;
+        }
+        
+        .timestamp { font-size: 11px; color: #78788c; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+        
+        .search-box {
+            width: 100%; padding: 12px 16px; border-radius: 12px;
+            background: #12131c; border: 1px solid #222233;
+            color: #fff; font-size: 15px; outline: none;
+            box-sizing: border-box; margin-bottom: 12px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .search-box:focus { border-color: #00e5ff; box-shadow: 0 0 8px rgba(0, 229, 255, 0.2); }
+        .search-box::placeholder { color: #4a4a5c; }
+        .hidden { display: none !important; }
+
+        /* FIX: Replaced padding trick with pseudo-elements to force WebKit to respect scrolling bounds */
+        .jump-bar {
+            display: flex; overflow-x: auto; gap: 10px; padding-bottom: 5px;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none;
+            margin-left: -20px; margin-right: -20px;
+        }
+        .jump-bar::-webkit-scrollbar { display: none; }
+        .jump-bar::before, .jump-bar::after {
+            content: '';
+            flex: 0 0 10px;
+        }
+        
+        .jump-tab {
+            background: rgba(255, 255, 255, 0.08); color: #f0f0f5; border: none;
+            padding: 8px 16px; border-radius: 20px; white-space: nowrap;
+            font-size: 12px; font-weight: 800; text-decoration: none;
+            letter-spacing: 1px; text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        .jump-tab:active { background: rgba(255, 255, 255, 0.15); }
+        
+        .main-content { padding: 0 20px; }
+        
+        a { text-decoration: none; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
+        
+        .group-details { margin-bottom: 20px; scroll-margin-top: 210px; }
+        .group-summary { 
+            font-size: 14px; font-weight: 700; color: #f0f0f5; text-transform: uppercase; 
+            letter-spacing: 2px; margin-top: 5px; margin-bottom: 8px; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            border-left: 4px solid #00e5ff;
+            padding-left: 10px; padding-bottom: 8px; padding-top: 4px;
+            cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
+            background: linear-gradient(90deg, rgba(0,229,255,0.05) 0%, transparent 100%);
+        }
+        .group-summary::-webkit-details-marker { display: none; }
+        .group-summary::after {
+            content: ''; display: inline-block; width: 6px; height: 6px;
+            border-right: 2px solid rgba(255,255,255,0.5); border-bottom: 2px solid rgba(255,255,255,0.5);
+            transform: translateY(-2px) rotate(45deg); transition: transform 0.35s ease;
+        }
+        .group-details:not([open]) .group-summary::after { transform: translateY(-2px) rotate(-45deg); }
+        
+        .movers-summary { 
+            border-left: 4px solid #ff00a0; 
+            background: linear-gradient(90deg, rgba(255,0,160,0.05) 0%, transparent 100%); 
+        }
+
+        .player-details { 
+            background: #13141e; border-radius: 6px; margin-bottom: 3px; overflow: hidden; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            contain: layout style;
+        }
+        
+        .player-summary { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 6px 12px; cursor: pointer; list-style: none; min-height: 36px;
+        }
+        .player-summary::-webkit-details-marker { display: none; }
+        
+        .player-name { 
+            font-size: 14px; font-weight: 700; letter-spacing: 1px; 
+            color: #ffffff; text-transform: uppercase; 
+        }
+        
+        .player-notes { font-size: 11px; color: #78788c; font-style: italic; margin-top: 1px; }
+        
+        .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; }
+        .score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; width: 75px; }
+        .score-nr { color: #6e6e7a; font-size: 12px; font-weight: 500; }
+        .lbl { font-size: 9px; font-weight: 800; color: #78788c; margin-right: 6px; }
+        
+        .trend-up { color: #00e5ff; text-shadow: 0 0 8px rgba(0,229,255,0.4); } 
+        .trend-down { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); } 
+        .trend-flat { color: #8e8e93; }
+        .arrow { font-size: 12px; margin-left: 4px; width: 12px; text-align: center; display: inline-block; }
+        
+        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; }
+        .streak-w { background: rgba(0, 255, 255, 0.1); color: #00e5ff; border-color: #00e5ff; text-shadow: 0 0 5px rgba(0,229,255,0.5); } 
+        .streak-l { background: rgba(255, 0, 160, 0.1); color: #ff00a0; border-color: #ff00a0; text-shadow: 0 0 5px rgba(255,0,160,0.5); }
+        
+        .history-dropdown { padding: 12px 14px 18px 14px; background: rgba(0, 0, 0, 0.3); font-size: 12px; color: #a1a1a6; border-top: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
+        .match-row { display: flex; align-items: center; padding: 4px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); }
+        .match-row:last-of-type { border-bottom: none; margin-bottom: 6px; }
+        
+        .match-date { width: 85px; flex-shrink: 0; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px; font-weight: 600;}
+        .match-score { flex-grow: 1; text-align: center; padding: 0 4px; font-size: 13px; font-weight: 600; }
+        .match-impact-col { width: 55px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .match-result.W { color: #00e5ff; }
+        .match-result.L { color: #ff00a0; }
+        
+        .profile-link { 
+            display: block; text-align: center; margin-top: 12px; margin-bottom: 2px; font-weight: 700; 
+            padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 6px; font-size: 12px; 
+            color: #ffffff; text-transform: uppercase; transition: background 0.2s; letter-spacing: 1px;
+        }
+        .profile-link:active { background: rgba(255, 255, 255, 0.1); }
+    </style>
+    </head>
+    <body>
+        <div class="header-container">
+            <h1>Testing</h1>
+            <div class="timestamp">Last Updated: March 29, 2026 at 1:16 PM</div>
+            <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp--players" class="jump-tab">🏆  Players</a><a href="#grp-players" class="jump-tab">🏆 Players</a></div>
+        </div>
+        <div class="main-content">
+            <details class="group-details" id="grp-movers">
+<summary class="group-summary movers-summary">📈 Movers (Last 7 Days)</summary>
+<div class="group-content">
+
+        <details class="player-details" data-name="luis geyne">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">luis geyne</div><span class="streak-badge streak-w">🔥 3W</span>
+                    </div><div class="player-notes">hi</div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 4.797 <span class="arrow trend-down">▼</span></div>
+                    <div class="score-line"><span class="lbl">S</span> 4.571 <span class="arrow trend-flat">−</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-6</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-5</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.002)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 7-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.020)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-9</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.014)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 16-14</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 7-15</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.042)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.041)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 10-12</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+
+        <details class="player-details" data-name="david bieger">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">David Bieger</div><span class="streak-badge streak-l">🧊 2L</span>
+                    </div><div class="player-notes">tiny legs</div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 6.008 <span class="arrow trend-down">▼</span></div>
+                    <div class="score-line"><span class="lbl">S</span> 5.976 <span class="arrow trend-up">▲</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 9-11, 11-6, 8-11</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.016)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 6-11, 11-8, 3-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.004)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 3-11, 11-0, 11-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 7-11, 11-8, 11-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.001)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 4-11, 8-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.009)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 12-10, 11-0</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.088)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 13-11, 9-11, 11-5</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.041)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 8-11, 9-11</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-6</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+
+        <details class="player-details" data-name="youssef bouzidi">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">Youssef Bouzidi</div><span class="streak-badge streak-w">🔥 6W</span>
+                    </div><div class="player-notes">dude is the goat</div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 5.872 <span class="arrow trend-up">▲</span></div>
+                    <div class="score-line"><span class="lbl">S</span> 5.919 <span class="arrow trend-down">▼</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4, 11-7</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 6-11, 11-3, 12-10</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.008)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-7, 11-2</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4, 11-3</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 7-11, 11-5, 11-0</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.006)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-7</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.020)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 3-11, 8-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.153)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-2, 11-0</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.052)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 2-11, 11-5, 11-7</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.118)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 11-13, 11-1, 7-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8490017643/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+</div></details>
+<details class="group-details" id="grp--players">
+<summary class="group-summary">🏆  Players</summary>
+<div class="group-content">
+
+        <details class="player-details" data-name="luis geyne">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">luis geyne</div><span class="streak-badge streak-w">🔥 3W</span>
+                    </div><div class="player-notes">hi</div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 4.797 <span class="arrow trend-down">▼</span></div>
+                    <div class="score-line"><span class="lbl">S</span> 4.571 <span class="arrow trend-flat">−</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-6</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-5</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.002)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 7-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.020)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-9</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.014)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 16-14</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 7-15</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.042)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.041)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 10-12</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+</div></details>
+<details class="group-details" id="grp-players">
+<summary class="group-summary">🏆 Players</summary>
+<div class="group-content">
+
+        <details class="player-details" data-name="adrian bedard">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">Adrian Bedard</div><span class="streak-badge streak-l">🧊 2L</span>
+                    </div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 4.271 <span class="arrow trend-flat">−</span></div>
+                    <div class="score-line"><span class="lbl">S</span> <span class="score-nr">NR</span> <span class="arrow trend-flat">−</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Feb 9, 2024</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 11-15</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.103)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 9, 2024</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 9-15</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.168)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 9, 2024</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-1</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.034)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 9, 2024</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-9</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.192)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 9, 2024</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-6</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.114)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 30, 2021</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 12-15</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 30, 2021</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 4-11, 5-11</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6826345502/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+
+        <details class="player-details" data-name="david bieger">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">David Bieger</div><span class="streak-badge streak-l">🧊 2L</span>
+                    </div><div class="player-notes">tiny legs</div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 6.008 <span class="arrow trend-down">▼</span></div>
+                    <div class="score-line"><span class="lbl">S</span> 5.976 <span class="arrow trend-up">▲</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 9-11, 11-6, 8-11</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.016)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 6-11, 11-8, 3-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.004)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 3-11, 11-0, 11-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 7-11, 11-8, 11-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.001)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 4-11, 8-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.009)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 27, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 12-10, 11-0</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.088)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 13-11, 9-11, 11-5</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.041)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-5</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 8-11, 9-11</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-6</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+
+        <details class="player-details" data-name="youssef bouzidi">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">Youssef Bouzidi</div><span class="streak-badge streak-w">🔥 6W</span>
+                    </div><div class="player-notes">dude is the goat</div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 5.872 <span class="arrow trend-up">▲</span></div>
+                    <div class="score-line"><span class="lbl">S</span> 5.919 <span class="arrow trend-down">▼</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4, 11-7</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 6-11, 11-3, 12-10</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.008)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-7, 11-2</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-4, 11-3</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 7-11, 11-5, 11-0</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.006)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-7</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.020)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 3-11, 8-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.153)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-2, 11-0</span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.052)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 2-11, 11-5, 11-7</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.118)</span></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 11-13, 11-1, 7-11</span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8490017643/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+
+        <details class="player-details" data-name="zach wachholz">
+            <summary class="player-summary">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div class="player-name">Zach Wachholz</div><span class="streak-badge streak-l">🧊 1L</span>
+                    </div>
+                </div>
+                <div class="scores-stack">
+                    <div class="score-line"><span class="lbl">D</span> 5.071 <span class="arrow trend-flat">−</span></div>
+                    <div class="score-line"><span class="lbl">S</span> <span class="score-nr">NR</span> <span class="arrow trend-flat">−</span></div>
+                </div>
+            </summary>
+            <div class="history-dropdown">
+                            <div class="match-row">
+                                <span class="match-date">Oct 8, 2022</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 7-11, 8-11</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 8, 2022</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-6, 11-2</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 8, 2022</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-8, 12-10</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 8, 2022</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-8, 8-11, 12-10</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jun 24, 2022</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 5-11, 2-11</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jun 24, 2022</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 5-15</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jun 4, 2022</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-5</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jun 4, 2022</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 15-13</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jun 4, 2022</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 6-11, 11-8, 4-11</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jun 4, 2022</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 3-15</span>
+                                <span class="match-impact-col"></span>
+                            </div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8042312808/profile">View Full DUPR Profile &rarr;</a></div>
+        </details>
+</div></details>
+        </div>
+
+        <script>
+            // Smooth Accordion Animation Function
+            function smoothToggle(details, forceOpen = null) {
+                const content = details.querySelector('.group-content');
+                if (!content) return;
+                
+                const isOpen = details.hasAttribute('open');
+                const willOpen = forceOpen !== null ? forceOpen : !isOpen;
+
+                if (isOpen === willOpen) return;
+
+                if (willOpen) {
+                    details.setAttribute('open', '');
+                    const height = content.scrollHeight;
+                    content.style.height = '0px';
+                    content.style.opacity = '0';
+                    content.style.overflow = 'hidden';
+                    
+                    content.offsetHeight; // Trigger reflow
+                    
+                    content.style.transition = 'height 0.35s ease-out, opacity 0.35s ease-out';
+                    content.style.height = height + 'px';
+                    content.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                        content.style.height = '';
+                        content.style.opacity = '';
+                        content.style.overflow = '';
+                        content.style.transition = '';
+                    }, 350);
+                } else {
+                    const height = content.scrollHeight;
+                    content.style.height = height + 'px';
+                    content.style.opacity = '1';
+                    content.style.overflow = 'hidden';
+                    
+                    content.offsetHeight; // Trigger reflow
+                    
+                    content.style.transition = 'height 0.35s ease-out, opacity 0.35s ease-out';
+                    content.style.height = '0px';
+                    content.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        details.removeAttribute('open');
+                        content.style.height = '';
+                        content.style.opacity = '';
+                        content.style.overflow = '';
+                        content.style.transition = '';
+                    }, 350);
+                }
+            }
+
+            // Smooth Player Card Animation Function
+            function smoothPlayerToggle(details) {
+                const dropdown = details.querySelector('.history-dropdown');
+                if (!dropdown) return;
+
+                const isOpen = details.hasAttribute('open');
+
+                if (!isOpen) {
+                    // --- Opening ---
+                    details.setAttribute('open', '');
+                    const targetHeight = dropdown.scrollHeight;
+                    dropdown.style.height = '0px';
+                    dropdown.style.opacity = '0';
+                    dropdown.offsetHeight; // Force reflow before transition begins
+                    dropdown.style.transition = 'height 0.22s ease-out, opacity 0.22s ease-out';
+                    dropdown.style.height = targetHeight + 'px';
+                    dropdown.style.opacity = '1';
+                    setTimeout(() => {
+                        dropdown.style.height = '';
+                        dropdown.style.opacity = '';
+                        dropdown.style.transition = '';
+                    }, 220);
+                } else {
+                    // --- Closing ---
+                    dropdown.style.height = dropdown.scrollHeight + 'px';
+                    dropdown.style.opacity = '1';
+                    dropdown.offsetHeight; // Force reflow before transition begins
+                    dropdown.style.transition = 'height 0.22s ease-out, opacity 0.22s ease-out';
+                    dropdown.style.height = '0px';
+                    dropdown.style.opacity = '0';
+                    setTimeout(() => {
+                        details.removeAttribute('open');
+                        dropdown.style.height = '';
+                        dropdown.style.opacity = '';
+                        dropdown.style.transition = '';
+                    }, 220);
+                }
+            }
+
+            // 1. Search Box Logic (Instant snappiness kept deliberately for search filtering)
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const groups = document.querySelectorAll('.group-details');
+                
+                groups.forEach(group => {
+                    let hasVisiblePlayer = false;
+                    const players = group.querySelectorAll('.player-details');
+                    
+                    players.forEach(player => {
+                        const playerName = player.getAttribute('data-name') || "";
+                        const notesElem = player.querySelector('.player-notes');
+                        const playerNotes = notesElem ? notesElem.textContent.toLowerCase() : "";
+                        
+                        if (playerName.includes(searchTerm) || playerNotes.includes(searchTerm)) {
+                            player.classList.remove('hidden');
+                            hasVisiblePlayer = true;
+                        } else {
+                            player.classList.add('hidden');
+                        }
+                    });
+                    
+                    if (searchTerm.length > 0) {
+                        if (hasVisiblePlayer) {
+                            group.style.display = 'block';
+                            group.setAttribute('open', '');
+                        } else {
+                            group.style.display = 'none';
+                        }
+                    } else {
+                        group.style.display = 'block';
+                        group.removeAttribute('open');
+                    }
+                });
+            });
+
+            // 2. Handle manual clicks on category headers (Auto-scroll removed)
+            document.querySelectorAll('.group-summary').forEach(summary => {
+                summary.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const details = this.parentElement;
+                    const willOpen = !details.hasAttribute('open');
+                    
+                    // If opening, smoothly close all others
+                    if (willOpen) {
+                        document.querySelectorAll('.group-details').forEach(other => {
+                            if (other !== details && other.hasAttribute('open')) {
+                                smoothToggle(other, false);
+                            }
+                        });
+                    }
+                    
+                    // Smoothly open or close the targeted section
+                    smoothToggle(details, willOpen);
+                });
+            });
+
+            // 3. Accordion Jump Bar Logic (Auto-scroll kept)
+            document.querySelectorAll('.jump-tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetDetails = document.getElementById(targetId);
+                    
+                    if (targetDetails) {
+                        // Smoothly close all other groups
+                        document.querySelectorAll('.group-details').forEach(details => {
+                            if (details.id !== targetId && details.hasAttribute('open')) {
+                                smoothToggle(details, false);
+                            }
+                        });
+                        
+                        // Smoothly open target
+                        smoothToggle(targetDetails, true);
+                        
+                        // Small delay allows the DOM to recalculate heights before smoothly sliding down
+                        setTimeout(() => {
+                            targetDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 350);
+                        
+                        history.replaceState(null, null, '#' + targetId);
+                    }
+                });
+            });
+            // 4. Player Card Smooth Expand/Collapse
+            document.querySelectorAll('.player-summary').forEach(summary => {
+                summary.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    smoothPlayerToggle(this.parentElement);
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
