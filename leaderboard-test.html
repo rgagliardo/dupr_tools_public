@@ -192,7 +192,7 @@
         <div class="header-container">
             <h1>Testing</h1>
             <div class="timestamp">
-                <span>Last Updated: March 31, 2026 at 2:11 PM</span>
+                <span>Last Updated: March 31, 2026 at 2:27 PM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -1231,7 +1231,7 @@
                 });
             });
 
-            // 5. Generate and inject Apple Touch Icon — Option C: solid pink ring
+            // 5. Generate and inject Apple Touch Icon — rounded rect border, social icon style
             (function () {
                 var c = document.createElement('canvas');
                 c.width = 180; c.height = 180;
@@ -1243,36 +1243,46 @@
                 ctx.fillStyle = '#000000';
                 ctx.fillRect(0, 0, W, H);
 
-                // ── Outer ring — solid pink, no fill ──────────────────────
+                // ── Rounded rectangle border — matches social icon style ───
+                var bx = 12, by = 12, bw = W - 24, bh = H - 24, br = 22;
                 ctx.strokeStyle = PINK;
-                ctx.lineWidth   = 3;
+                ctx.lineWidth   = 2.5;
                 ctx.beginPath();
-                ctx.arc(W / 2, 82, 72, 0, Math.PI * 2);
+                ctx.moveTo(bx + br, by);
+                ctx.lineTo(bx + bw - br, by);
+                ctx.arcTo(bx + bw, by,      bx + bw, by + br,      br);
+                ctx.lineTo(bx + bw, by + bh - br);
+                ctx.arcTo(bx + bw, by + bh,  bx + bw - br, by + bh, br);
+                ctx.lineTo(bx + br, by + bh);
+                ctx.arcTo(bx,       by + bh,  bx, by + bh - br,      br);
+                ctx.lineTo(bx,      by + br);
+                ctx.arcTo(bx,       by,        bx + br, by,           br);
+                ctx.closePath();
                 ctx.stroke();
 
-                // ── "LEADERBOARD" small text inside ring ──────────────────
+                // ── "LEADERBOARD" small text ───────────────────────────────
                 ctx.fillStyle    = PINK;
                 ctx.textAlign    = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.font         = '500 10px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('LEADERBOARD', W / 2, 53);
+                ctx.fillText('LEADERBOARD', W / 2, 54);
 
                 // ── Title name large ───────────────────────────────────────
                 ctx.font = 'bold 30px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('Testing', W / 2, 88);
+                ctx.fillText('Testing', W / 2, 92);
 
                 // ── Thin divider line ──────────────────────────────────────
-                ctx.strokeStyle = 'rgba(255, 0, 160, 0.4)';
+                ctx.strokeStyle = 'rgba(255, 0, 160, 0.35)';
                 ctx.lineWidth   = 0.5;
                 ctx.beginPath();
-                ctx.moveTo(W / 2 - 36, 104);
-                ctx.lineTo(W / 2 + 36, 104);
+                ctx.moveTo(W / 2 - 36, 110);
+                ctx.lineTo(W / 2 + 36, 110);
                 ctx.stroke();
 
                 // ── "PICKLEBALL" subtext ───────────────────────────────────
                 ctx.fillStyle = 'rgba(255, 0, 160, 0.55)';
                 ctx.font      = '400 9px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('PICKLEBALL', W / 2, 117);
+                ctx.fillText('PICKLEBALL', W / 2, 124);
 
                 // ── Inject as apple-touch-icon ─────────────────────────────
                 var link = document.createElement('link');
