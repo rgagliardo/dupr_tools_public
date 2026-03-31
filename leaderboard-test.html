@@ -165,6 +165,27 @@
             transform: translateY(-100%); transition: transform 0.2s ease;
         }
         .ptr-indicator.visible { transform: translateY(0); }
+
+        .social-links { display: flex; gap: 10px; margin-top: 10px; justify-content: center; }
+        .social-link {
+            display: flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px; border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px; transition: background 0.2s;
+            text-decoration: none;
+        }
+        .social-link:active { background: rgba(255, 255, 255, 0.15); }
+
+        .search-wrap { position: relative; margin-bottom: 12px; }
+        .search-wrap .search-box { margin-bottom: 0; padding-right: 40px; }
+        .search-clear {
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+            background: none; border: none; color: #a0a0b0; font-size: 16px;
+            cursor: pointer; padding: 4px; display: none; line-height: 1;
+            -webkit-tap-highlight-color: transparent; z-index: 2;
+        }
+        .search-clear.visible { display: block; }
+        .search-clear:active { color: #00e5ff; }
     </style>
     </head>
     <body>
@@ -172,10 +193,13 @@
         <div class="header-container">
             <h1>Testing</h1>
             <div class="timestamp">
-                <span>Last Updated: March 31, 2026 at 10:23 AM</span>
+                <span>Last Updated: March 31, 2026 at 10:39 AM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
-            <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <div class="search-wrap">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
+                <button class="search-clear" id="searchClear">✕</button>
+            </div>
             <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp-players" class="jump-tab">🏆 Players</a></div>
         </div>
         <div class="main-content">
@@ -330,7 +354,7 @@
                                 <span class="match-score"><strong class="match-result W">W</strong> 16-14</span>
                                 <span class="match-impact-col"><span class="trend-down">(-0.021)</span></span>
                             </div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887/profile">View Full DUPR Profile &rarr;</a></div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887/profile">View Full DUPR Profile &rarr;</a><div class="social-links"><a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noopener">📷</a><a class="social-link" href="uuu" target="_blank" rel="noopener">🎵</a><a class="social-link" href="oooooo" target="_blank" rel="noopener">✖</a><a class="social-link" href="yyyyyy" target="_blank" rel="noopener">▶</a></div></div>
         </details>
 
         <details class="player-details" data-name="david bieger">
@@ -405,7 +429,7 @@
                                 <span class="match-score"><strong class="match-result W">W</strong> 15-6</span>
                                 <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
                             </div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608/profile">View Full DUPR Profile &rarr;</a></div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608/profile">View Full DUPR Profile &rarr;</a><div class="social-links"><a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noopener">📷</a></div></div>
         </details>
 </div></details>
 <details class="group-details" id="grp-players">
@@ -541,7 +565,7 @@
                                 <span class="match-score"><strong class="match-result W">W</strong> 15-6</span>
                                 <span class="match-impact-col"><span class="trend-up">(+0.007)</span></span>
                             </div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608/profile">View Full DUPR Profile &rarr;</a></div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608/profile">View Full DUPR Profile &rarr;</a><div class="social-links"><a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noopener">📷</a></div></div>
         </details>
 
         <details class="player-details" data-name="luis geyne">
@@ -616,7 +640,7 @@
                                 <span class="match-score"><strong class="match-result W">W</strong> 16-14</span>
                                 <span class="match-impact-col"><span class="trend-down">(-0.021)</span></span>
                             </div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887/profile">View Full DUPR Profile &rarr;</a></div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887/profile">View Full DUPR Profile &rarr;</a><div class="social-links"><a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noopener">📷</a><a class="social-link" href="uuu" target="_blank" rel="noopener">🎵</a><a class="social-link" href="oooooo" target="_blank" rel="noopener">✖</a><a class="social-link" href="yyyyyy" target="_blank" rel="noopener">▶</a></div></div>
         </details>
 
         <details class="player-details" data-name="youssef bouzidi">
@@ -788,40 +812,53 @@
             }
 
             // 1. Search Box Logic (Instant snappiness kept deliberately for search filtering)
-            document.getElementById('searchInput').addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase();
-                const groups = document.querySelectorAll('.group-details');
+            (function() {
+                const input    = document.getElementById('searchInput');
+                const clearBtn = document.getElementById('searchClear');
 
-                groups.forEach(group => {
-                    let hasVisiblePlayer = false;
-                    const players = group.querySelectorAll('.player-details');
-
-                    players.forEach(player => {
-                        const playerName = player.getAttribute('data-name') || "";
-                        const notesElem = player.querySelector('.player-notes');
-                        const playerNotes = notesElem ? notesElem.textContent.toLowerCase() : "";
-
-                        if (playerName.includes(searchTerm) || playerNotes.includes(searchTerm)) {
-                            player.classList.remove('hidden');
-                            hasVisiblePlayer = true;
+                function runSearch(searchTerm) {
+                    const groups = document.querySelectorAll('.group-details');
+                    groups.forEach(group => {
+                        let hasVisiblePlayer = false;
+                        const players = group.querySelectorAll('.player-details');
+                        players.forEach(player => {
+                            const playerName  = player.getAttribute('data-name') || "";
+                            const notesElem   = player.querySelector('.player-notes');
+                            const playerNotes = notesElem ? notesElem.textContent.toLowerCase() : "";
+                            if (playerName.includes(searchTerm) || playerNotes.includes(searchTerm)) {
+                                player.classList.remove('hidden');
+                                hasVisiblePlayer = true;
+                            } else {
+                                player.classList.add('hidden');
+                            }
+                        });
+                        if (searchTerm.length > 0) {
+                            group.style.display = hasVisiblePlayer ? 'block' : 'none';
+                            if (hasVisiblePlayer) group.setAttribute('open', '');
                         } else {
-                            player.classList.add('hidden');
+                            group.style.display = 'block';
+                            group.removeAttribute('open');
                         }
                     });
+                }
 
-                    if (searchTerm.length > 0) {
-                        if (hasVisiblePlayer) {
-                            group.style.display = 'block';
-                            group.setAttribute('open', '');
-                        } else {
-                            group.style.display = 'none';
-                        }
+                input.addEventListener('input', function() {
+                    const term = this.value.toLowerCase();
+                    if (term.length > 0) {
+                        clearBtn.classList.add('visible');
                     } else {
-                        group.style.display = 'block';
-                        group.removeAttribute('open');
+                        clearBtn.classList.remove('visible');
                     }
+                    runSearch(term);
                 });
-            });
+
+                clearBtn.addEventListener('click', function() {
+                    input.value = '';
+                    clearBtn.classList.remove('visible');
+                    input.focus();
+                    runSearch('');
+                });
+            })();
 
             // 2. Handle manual clicks on category headers (Auto-scroll removed)
             document.querySelectorAll('.group-summary').forEach(summary => {
