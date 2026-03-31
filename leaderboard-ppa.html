@@ -8,7 +8,7 @@
     <style>
         :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
         body { background-color: #0d0e15; color: #e0e0e0; margin: 0; padding-bottom: 60px; }
-        
+
         .header-container {
             position: sticky; top: 0; z-index: 100;
             background: rgba(13, 14, 21, 0.95);
@@ -17,16 +17,16 @@
             border-bottom: 1px solid rgba(0, 229, 255, 0.15);
             margin-bottom: 15px;
         }
-        
-        h1 { 
+
+        h1 {
             font-size: 30px; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 1px;
             background: -webkit-linear-gradient(45deg, #ff00a0, #00e5ff);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-transform: uppercase; font-style: italic;
         }
-        
+
         .timestamp { font-size: 11px; color: #78788c; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
-        
+
         .search-box {
             width: 100%; padding: 12px 16px; border-radius: 12px;
             background: #12131c; border: 1px solid #222233;
@@ -49,7 +49,7 @@
             content: '';
             flex: 0 0 10px;
         }
-        
+
         .jump-tab {
             background: rgba(255, 255, 255, 0.08); color: #f0f0f5; border: none;
             padding: 8px 16px; border-radius: 20px; white-space: nowrap;
@@ -58,16 +58,16 @@
             transition: background 0.2s;
         }
         .jump-tab:active { background: rgba(255, 255, 255, 0.15); }
-        
+
         .main-content { padding: 0 20px; }
-        
+
         a { text-decoration: none; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
-        
+
         .group-details { margin-bottom: 20px; scroll-margin-top: 210px; }
-        .group-summary { 
-            font-size: 14px; font-weight: 700; color: #f0f0f5; text-transform: uppercase; 
-            letter-spacing: 2px; margin-top: 5px; margin-bottom: 8px; 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        .group-summary {
+            font-size: 14px; font-weight: 700; color: #f0f0f5; text-transform: uppercase;
+            letter-spacing: 2px; margin-top: 5px; margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             border-left: 4px solid #00e5ff;
             padding-left: 10px; padding-bottom: 8px; padding-top: 4px;
             cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
@@ -80,58 +80,58 @@
             transform: translateY(-2px) rotate(45deg); transition: transform 0.35s ease;
         }
         .group-details:not([open]) .group-summary::after { transform: translateY(-2px) rotate(-45deg); }
-        
-        .movers-summary { 
-            border-left: 4px solid #ff00a0; 
-            background: linear-gradient(90deg, rgba(255,0,160,0.05) 0%, transparent 100%); 
+
+        .movers-summary {
+            border-left: 4px solid #ff00a0;
+            background: linear-gradient(90deg, rgba(255,0,160,0.05) 0%, transparent 100%);
         }
 
-        .player-details { 
-            background: #13141e; border-radius: 6px; margin-bottom: 3px; overflow: hidden; 
+        .player-details {
+            background: #13141e; border-radius: 6px; margin-bottom: 3px; overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             contain: layout style;
         }
-        
-        .player-summary { 
-            display: flex; justify-content: space-between; align-items: center; 
+
+        .player-summary {
+            display: flex; justify-content: space-between; align-items: center;
             padding: 6px 12px; cursor: pointer; list-style: none; min-height: 36px;
         }
         .player-summary::-webkit-details-marker { display: none; }
-        
-        .player-name { 
-            font-size: 14px; font-weight: 700; letter-spacing: 1px; 
-            color: #ffffff; text-transform: uppercase; 
+
+        .player-name {
+            font-size: 14px; font-weight: 700; letter-spacing: 1px;
+            color: #ffffff; text-transform: uppercase;
         }
-        
+
         .player-notes { font-size: 11px; color: #78788c; font-style: italic; margin-top: 1px; }
-        
+
         .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; }
         .score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; width: 75px; }
         .score-nr { color: #6e6e7a; font-size: 12px; font-weight: 500; }
         .lbl { font-size: 9px; font-weight: 800; color: #78788c; margin-right: 6px; }
-        
-        .trend-up { color: #00e5ff; text-shadow: 0 0 8px rgba(0,229,255,0.4); } 
-        .trend-down { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); } 
+
+        .trend-up { color: #00e5ff; text-shadow: 0 0 8px rgba(0,229,255,0.4); }
+        .trend-down { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); }
         .trend-flat { color: #8e8e93; }
         .arrow { font-size: 12px; margin-left: 4px; width: 12px; text-align: center; display: inline-block; }
-        
+
         .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; }
-        .streak-w { background: rgba(0, 255, 255, 0.1); color: #00e5ff; border-color: #00e5ff; text-shadow: 0 0 5px rgba(0,229,255,0.5); } 
+        .streak-w { background: rgba(0, 255, 255, 0.1); color: #00e5ff; border-color: #00e5ff; text-shadow: 0 0 5px rgba(0,229,255,0.5); }
         .streak-l { background: rgba(255, 0, 160, 0.1); color: #ff00a0; border-color: #ff00a0; text-shadow: 0 0 5px rgba(255,0,160,0.5); }
-        
+
         .history-dropdown { padding: 12px 14px 18px 14px; background: rgba(0, 0, 0, 0.3); font-size: 12px; color: #a1a1a6; border-top: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
         .match-row { display: flex; align-items: center; padding: 4px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); }
         .match-row:last-of-type { border-bottom: none; margin-bottom: 6px; }
-        
-        .match-date { width: 85px; flex-shrink: 0; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px; font-weight: 600;}
+
+        .match-date { width: 85px; flex-shrink: 0; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px; font-weight: 600; }
         .match-score { flex-grow: 1; text-align: center; padding: 0 4px; font-size: 13px; font-weight: 600; }
         .match-impact-col { width: 55px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
         .match-result.W { color: #00e5ff; }
         .match-result.L { color: #ff00a0; }
-        
-        .profile-link { 
-            display: block; text-align: center; margin-top: 12px; margin-bottom: 2px; font-weight: 700; 
-            padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 6px; font-size: 12px; 
+
+        .profile-link {
+            display: block; text-align: center; margin-top: 12px; margin-bottom: 2px; font-weight: 700;
+            padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 6px; font-size: 12px;
             color: #ffffff; text-transform: uppercase; transition: background 0.2s; letter-spacing: 1px;
         }
         .profile-link:active { background: rgba(255, 255, 255, 0.1); }
@@ -140,7 +140,7 @@
     <body>
         <div class="header-container">
             <h1>PPA Pros</h1>
-            <div class="timestamp">Last Updated: March 30, 2026 at 4:35 AM</div>
+            <div class="timestamp">Last Updated: March 30, 2026 at 9:26 PM</div>
             <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
             <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp-ppa-pro" class="jump-tab">🏆 PPA Pro</a></div>
         </div>
@@ -17731,7 +17731,7 @@
             function smoothToggle(details, forceOpen = null) {
                 const content = details.querySelector('.group-content');
                 if (!content) return;
-                
+
                 const isOpen = details.hasAttribute('open');
                 const willOpen = forceOpen !== null ? forceOpen : !isOpen;
 
@@ -17743,13 +17743,13 @@
                     content.style.height = '0px';
                     content.style.opacity = '0';
                     content.style.overflow = 'hidden';
-                    
+
                     content.offsetHeight; // Trigger reflow
-                    
+
                     content.style.transition = 'height 0.35s ease-out, opacity 0.35s ease-out';
                     content.style.height = height + 'px';
                     content.style.opacity = '1';
-                    
+
                     setTimeout(() => {
                         content.style.height = '';
                         content.style.opacity = '';
@@ -17761,13 +17761,13 @@
                     content.style.height = height + 'px';
                     content.style.opacity = '1';
                     content.style.overflow = 'hidden';
-                    
+
                     content.offsetHeight; // Trigger reflow
-                    
+
                     content.style.transition = 'height 0.35s ease-out, opacity 0.35s ease-out';
                     content.style.height = '0px';
                     content.style.opacity = '0';
-                    
+
                     setTimeout(() => {
                         details.removeAttribute('open');
                         content.style.height = '';
@@ -17821,16 +17821,16 @@
             document.getElementById('searchInput').addEventListener('input', function(e) {
                 const searchTerm = e.target.value.toLowerCase();
                 const groups = document.querySelectorAll('.group-details');
-                
+
                 groups.forEach(group => {
                     let hasVisiblePlayer = false;
                     const players = group.querySelectorAll('.player-details');
-                    
+
                     players.forEach(player => {
                         const playerName = player.getAttribute('data-name') || "";
                         const notesElem = player.querySelector('.player-notes');
                         const playerNotes = notesElem ? notesElem.textContent.toLowerCase() : "";
-                        
+
                         if (playerName.includes(searchTerm) || playerNotes.includes(searchTerm)) {
                             player.classList.remove('hidden');
                             hasVisiblePlayer = true;
@@ -17838,7 +17838,7 @@
                             player.classList.add('hidden');
                         }
                     });
-                    
+
                     if (searchTerm.length > 0) {
                         if (hasVisiblePlayer) {
                             group.style.display = 'block';
@@ -17859,7 +17859,7 @@
                     e.preventDefault();
                     const details = this.parentElement;
                     const willOpen = !details.hasAttribute('open');
-                    
+
                     // If opening, smoothly close all others
                     if (willOpen) {
                         document.querySelectorAll('.group-details').forEach(other => {
@@ -17868,7 +17868,7 @@
                             }
                         });
                     }
-                    
+
                     // Smoothly open or close the targeted section
                     smoothToggle(details, willOpen);
                 });
@@ -17880,7 +17880,7 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     const targetDetails = document.getElementById(targetId);
-                    
+
                     if (targetDetails) {
                         // Smoothly close all other groups
                         document.querySelectorAll('.group-details').forEach(details => {
@@ -17888,19 +17888,20 @@
                                 smoothToggle(details, false);
                             }
                         });
-                        
+
                         // Smoothly open target
                         smoothToggle(targetDetails, true);
-                        
+
                         // Small delay allows the DOM to recalculate heights before smoothly sliding down
                         setTimeout(() => {
                             targetDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }, 350);
-                        
+
                         history.replaceState(null, null, '#' + targetId);
                     }
                 });
             });
+
             // 4. Player Card Smooth Expand/Collapse
             document.querySelectorAll('.player-summary').forEach(summary => {
                 summary.addEventListener('click', function(e) {
