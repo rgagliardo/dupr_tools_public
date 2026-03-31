@@ -8,6 +8,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Testing">
     <meta name="theme-color" content="#0d0e15">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Testing</title>
     <style>
         :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
@@ -144,7 +147,7 @@
     <body>
         <div class="header-container">
             <h1>Testing</h1>
-            <div class="timestamp">Last Updated: March 31, 2026 at 9:21 AM</div>
+            <div class="timestamp">Last Updated: March 31, 2026 at 9:27 AM</div>
             <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
             <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp--players" class="jump-tab">🏆  Players</a><a href="#grp-players" class="jump-tab">🏆 Players</a></div>
         </div>
@@ -1037,6 +1040,14 @@
                 link.href = c.toDataURL('image/png');
                 document.head.appendChild(link);
             })();
+            // 6. Service Worker — network-first so PWA always loads fresh HTML
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/dupr_tools_public/sw.js')
+                    .then(function (reg) {
+                        // Trigger an immediate update check on every PWA launch
+                        reg.update();
+                    });
+            }
         </script>
     </body>
     </html>
