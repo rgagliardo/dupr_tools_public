@@ -192,7 +192,7 @@
         <div class="header-container">
             <h1>Testing</h1>
             <div class="timestamp">
-                <span>Last Updated: March 31, 2026 at 7:10 PM</span>
+                <span>Last Updated: March 31, 2026 at 7:24 PM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -1231,80 +1231,101 @@
                 });
             });
 
-            // 5. Generate and inject Apple Touch Icon — II-C editorial
+            // 5. Generate and inject Apple Touch Icon — Teko, LB dominant
             (function () {
-                var c = document.createElement('canvas');
-                c.width = 180; c.height = 180;
-                var W = 180, H = 180;
-                var ctx = c.getContext('2d');
-                var PINK = '#ff00a0';
+                var PINK     = '#ff00a0';
+                var PINK_MID = 'rgba(255, 0, 160, 0.5)';
+                var PINK_DIM = 'rgba(255, 0, 160, 0.25)';
 
-                // ── Solid black background ─────────────────────────────────
-                ctx.fillStyle = '#000000';
-                ctx.fillRect(0, 0, W, H);
+                function renderIcon(font) {
+                    var c = document.createElement('canvas');
+                    c.width = 180; c.height = 180;
+                    var W = 180, H = 180;
+                    var ctx = c.getContext('2d');
 
-                // ── Rounded rectangle border ───────────────────────────────
-                var m = 10, br = 20, bw = W - m * 2, bh = H - m * 2;
-                ctx.strokeStyle = PINK;
-                ctx.lineWidth   = 1.5;
-                ctx.beginPath();
-                ctx.moveTo(m + br, m);
-                ctx.lineTo(m + bw - br, m);
-                ctx.arcTo(m + bw, m,      m + bw, m + br,      br);
-                ctx.lineTo(m + bw, m + bh - br);
-                ctx.arcTo(m + bw, m + bh,  m + bw - br, m + bh, br);
-                ctx.lineTo(m + br, m + bh);
-                ctx.arcTo(m,       m + bh,  m, m + bh - br,      br);
-                ctx.lineTo(m,      m + br);
-                ctx.arcTo(m,       m,        m + br, m,           br);
-                ctx.closePath();
-                ctx.stroke();
+                    // ── Black background ───────────────────────────────────
+                    ctx.fillStyle = '#000000';
+                    ctx.fillRect(0, 0, W, H);
 
-                // ── Helper: hairline rule ──────────────────────────────────
-                function rule(y, alpha) {
-                    ctx.strokeStyle = 'rgba(255, 0, 160, ' + alpha + ')';
-                    ctx.lineWidth   = 0.5;
+                    // ── Rounded rect border ────────────────────────────────
+                    var m = 10, br = 20, bw = W - m * 2, bh = H - m * 2;
+                    ctx.strokeStyle = PINK;
+                    ctx.lineWidth   = 1.5;
                     ctx.beginPath();
-                    ctx.moveTo(26, y);
-                    ctx.lineTo(W - 26, y);
+                    ctx.moveTo(m + br, m);
+                    ctx.lineTo(m + bw - br, m);
+                    ctx.arcTo(m + bw, m,      m + bw, m + br,      br);
+                    ctx.lineTo(m + bw, m + bh - br);
+                    ctx.arcTo(m + bw, m + bh,  m + bw - br, m + bh, br);
+                    ctx.lineTo(m + br, m + bh);
+                    ctx.arcTo(m,       m + bh,  m, m + bh - br,      br);
+                    ctx.lineTo(m,      m + br);
+                    ctx.arcTo(m,       m,        m + br, m,           br);
+                    ctx.closePath();
                     ctx.stroke();
+
+                    // ── Helper: hairline rule ──────────────────────────────
+                    function rule(y, alpha) {
+                        ctx.strokeStyle = 'rgba(255, 0, 160, ' + alpha + ')';
+                        ctx.lineWidth   = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(22, y);
+                        ctx.lineTo(W - 22, y);
+                        ctx.stroke();
+                    }
+
+                    ctx.textAlign    = 'center';
+                    ctx.textBaseline = 'middle';
+
+                    // ── LB — the hero ──────────────────────────────────────
+                    ctx.fillStyle = PINK;
+                    ctx.font      = '700 96px ' + font;
+                    ctx.fillText('LB', W / 2, 88);
+
+                    rule(138, 0.45);
+
+                    // ── Title name ─────────────────────────────────────────
+                    var titleText = 'Testing';
+                    var maxW      = W - 40;
+                    var titleSize = 20;
+                    ctx.font = '700 ' + titleSize + 'px ' + font;
+                    while (ctx.measureText(titleText).width < maxW && titleSize < 32) {
+                        titleSize++;
+                        ctx.font = '700 ' + titleSize + 'px ' + font;
+                    }
+                    ctx.fillStyle = PINK_MID;
+                    if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+                    ctx.fillText(titleText, W / 2 + 4, 153);
+                    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+                    // ── LEADERBOARD dim label ──────────────────────────────
+                    ctx.fillStyle = PINK_DIM;
+                    ctx.font      = '600 7px ' + font;
+                    if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+                    ctx.fillText('LEADERBOARD', W / 2 + 4, 165);
+                    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+                    // ── Inject as apple-touch-icon ─────────────────────────
+                    var link = document.createElement('link');
+                    link.rel  = 'apple-touch-icon';
+                    link.href = c.toDataURL('image/png');
+                    document.head.appendChild(link);
                 }
 
-                // ── "LEADERBOARD" — letter-spaced above rule ───────────────
-                ctx.fillStyle    = 'rgba(255, 0, 160, 0.45)';
-                ctx.textAlign    = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.font         = '600 8px -apple-system, BlinkMacSystemFont, sans-serif';
-                if ('letterSpacing' in ctx) ctx.letterSpacing = '5.5px';
-                ctx.fillText('LEADERBOARD', W / 2 + 8, 28);
-                if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
-
-                rule(38, 0.35);
-
-                // ── Title — dominant, optically centred in remaining space ──
-                ctx.fillStyle = PINK;
-                ctx.font      = 'bold 64px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('Testing', W / 2, 102);
-
-                rule(140, 0.35);
-
-                // ── "PICKLEBALL" footer ────────────────────────────────────
-                ctx.fillStyle = 'rgba(255, 0, 160, 0.3)';
-                ctx.font      = '400 7.5px -apple-system, BlinkMacSystemFont, sans-serif';
-                if ('letterSpacing' in ctx) ctx.letterSpacing = '5px';
-                ctx.fillText('PICKLEBALL', W / 2 + 7, 153);
-                if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
-
-                // ── Dot motif ─────────────────────────────────────────────
-                ctx.fillStyle = 'rgba(255, 0, 160, 0.2)';
-                ctx.font      = '400 8px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('·  ·  ·', W / 2, 165);
-
-                // ── Inject as apple-touch-icon ─────────────────────────────
-                var link = document.createElement('link');
-                link.rel  = 'apple-touch-icon';
-                link.href = c.toDataURL('image/png');
-                document.head.appendChild(link);
+                // Load Teko 700 then render — fall back to system font if blocked
+                var tekoFace = new FontFace(
+                    'Teko',
+                    'url(https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gdQhfgCNqqVIuTN4.woff2)',
+                    { weight: '700' }
+                );
+                tekoFace.load()
+                    .then(function (loaded) {
+                        document.fonts.add(loaded);
+                        renderIcon('"Teko", sans-serif');
+                    })
+                    .catch(function () {
+                        renderIcon('-apple-system, BlinkMacSystemFont, sans-serif');
+                    });
             })();
             // 6. Refresh helpers — cache-busted hard reload
             function hardRefresh() {
