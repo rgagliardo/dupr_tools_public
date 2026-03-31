@@ -192,7 +192,7 @@
         <div class="header-container">
             <h1>Testing</h1>
             <div class="timestamp">
-                <span>Last Updated: March 31, 2026 at 7:24 PM</span>
+                <span>Last Updated: March 31, 2026 at 7:31 PM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -1231,11 +1231,9 @@
                 });
             });
 
-            // 5. Generate and inject Apple Touch Icon — Teko, LB dominant
+            // 5. Generate and inject Apple Touch Icon — LB only, Teko
             (function () {
-                var PINK     = '#ff00a0';
-                var PINK_MID = 'rgba(255, 0, 160, 0.5)';
-                var PINK_DIM = 'rgba(255, 0, 160, 0.25)';
+                var PINK = '#ff00a0';
 
                 function renderIcon(font) {
                     var c = document.createElement('canvas');
@@ -1243,67 +1241,38 @@
                     var W = 180, H = 180;
                     var ctx = c.getContext('2d');
 
-                    // ── Black background ───────────────────────────────────
-                    ctx.fillStyle = '#000000';
+                    // ── Border: pink fill, then black rounded-rect inset ───
+                    // The inner rect uses matched corner radius so the pink
+                    // border is uniform width all the way around the corners.
+                    var border = 5;
+                    var outerR = 44;             // approx iOS squircle radius
+                    var innerR = outerR - border; // matched inset radius
+
+                    ctx.fillStyle = PINK;
                     ctx.fillRect(0, 0, W, H);
 
-                    // ── Rounded rect border ────────────────────────────────
-                    var m = 10, br = 20, bw = W - m * 2, bh = H - m * 2;
-                    ctx.strokeStyle = PINK;
-                    ctx.lineWidth   = 1.5;
+                    // Black inset rounded rect
+                    var x = border, y = border, w = W - border * 2, h = H - border * 2;
+                    ctx.fillStyle = '#000000';
                     ctx.beginPath();
-                    ctx.moveTo(m + br, m);
-                    ctx.lineTo(m + bw - br, m);
-                    ctx.arcTo(m + bw, m,      m + bw, m + br,      br);
-                    ctx.lineTo(m + bw, m + bh - br);
-                    ctx.arcTo(m + bw, m + bh,  m + bw - br, m + bh, br);
-                    ctx.lineTo(m + br, m + bh);
-                    ctx.arcTo(m,       m + bh,  m, m + bh - br,      br);
-                    ctx.lineTo(m,      m + br);
-                    ctx.arcTo(m,       m,        m + br, m,           br);
+                    ctx.moveTo(x + innerR, y);
+                    ctx.lineTo(x + w - innerR, y);
+                    ctx.arcTo(x + w, y,     x + w, y + innerR,     innerR);
+                    ctx.lineTo(x + w, y + h - innerR);
+                    ctx.arcTo(x + w, y + h, x + w - innerR, y + h, innerR);
+                    ctx.lineTo(x + innerR, y + h);
+                    ctx.arcTo(x,     y + h, x,     y + h - innerR, innerR);
+                    ctx.lineTo(x,     y + innerR);
+                    ctx.arcTo(x,     y,     x + innerR, y,         innerR);
                     ctx.closePath();
-                    ctx.stroke();
+                    ctx.fill();
 
-                    // ── Helper: hairline rule ──────────────────────────────
-                    function rule(y, alpha) {
-                        ctx.strokeStyle = 'rgba(255, 0, 160, ' + alpha + ')';
-                        ctx.lineWidth   = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(22, y);
-                        ctx.lineTo(W - 22, y);
-                        ctx.stroke();
-                    }
-
+                    // ── LB — full canvas, nothing else ────────────────────
+                    ctx.fillStyle    = PINK;
                     ctx.textAlign    = 'center';
                     ctx.textBaseline = 'middle';
-
-                    // ── LB — the hero ──────────────────────────────────────
-                    ctx.fillStyle = PINK;
-                    ctx.font      = '700 96px ' + font;
-                    ctx.fillText('LB', W / 2, 88);
-
-                    rule(138, 0.45);
-
-                    // ── Title name ─────────────────────────────────────────
-                    var titleText = 'Testing';
-                    var maxW      = W - 40;
-                    var titleSize = 20;
-                    ctx.font = '700 ' + titleSize + 'px ' + font;
-                    while (ctx.measureText(titleText).width < maxW && titleSize < 32) {
-                        titleSize++;
-                        ctx.font = '700 ' + titleSize + 'px ' + font;
-                    }
-                    ctx.fillStyle = PINK_MID;
-                    if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-                    ctx.fillText(titleText, W / 2 + 4, 153);
-                    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
-
-                    // ── LEADERBOARD dim label ──────────────────────────────
-                    ctx.fillStyle = PINK_DIM;
-                    ctx.font      = '600 7px ' + font;
-                    if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-                    ctx.fillText('LEADERBOARD', W / 2 + 4, 165);
-                    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+                    ctx.font         = '700 108px ' + font;
+                    ctx.fillText('LB', W / 2, H / 2);
 
                     // ── Inject as apple-touch-icon ─────────────────────────
                     var link = document.createElement('link');
@@ -1312,7 +1281,6 @@
                     document.head.appendChild(link);
                 }
 
-                // Load Teko 700 then render — fall back to system font if blocked
                 var tekoFace = new FontFace(
                     'Teko',
                     'url(https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gdQhfgCNqqVIuTN4.woff2)',
