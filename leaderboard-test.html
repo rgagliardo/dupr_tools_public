@@ -147,7 +147,7 @@
     <body>
         <div class="header-container">
             <h1>Testing</h1>
-            <div class="timestamp">Last Updated: March 31, 2026 at 9:47 AM</div>
+            <div class="timestamp">Last Updated: March 31, 2026 at 10:12 AM</div>
             <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
             <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp-players" class="jump-tab">🏆 Players</a></div>
         </div>
@@ -965,9 +965,17 @@
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('/dupr_tools_public/sw.js')
                     .then(function (reg) {
-                        // Trigger an immediate update check on every PWA launch
                         reg.update();
                     });
+
+                // When SW activates and signals a fresh version is ready, reload once.
+                // Guards against infinite loop with sessionStorage flag.
+                navigator.serviceWorker.addEventListener('message', function (e) {
+                    if (e.data === 'SW_ACTIVATED' && !sessionStorage.getItem('sw_reloaded')) {
+                        sessionStorage.setItem('sw_reloaded', '1');
+                        window.location.reload();
+                    }
+                });
             }
         </script>
     </body>
