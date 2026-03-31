@@ -192,7 +192,7 @@
         <div class="header-container">
             <h1>Testing</h1>
             <div class="timestamp">
-                <span>Last Updated: March 31, 2026 at 2:27 PM</span>
+                <span>Last Updated: March 31, 2026 at 7:10 PM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -1231,7 +1231,7 @@
                 });
             });
 
-            // 5. Generate and inject Apple Touch Icon — rounded rect border, social icon style
+            // 5. Generate and inject Apple Touch Icon — II-C editorial
             (function () {
                 var c = document.createElement('canvas');
                 c.width = 180; c.height = 180;
@@ -1243,46 +1243,62 @@
                 ctx.fillStyle = '#000000';
                 ctx.fillRect(0, 0, W, H);
 
-                // ── Rounded rectangle border — matches social icon style ───
-                var bx = 12, by = 12, bw = W - 24, bh = H - 24, br = 22;
+                // ── Rounded rectangle border ───────────────────────────────
+                var m = 10, br = 20, bw = W - m * 2, bh = H - m * 2;
                 ctx.strokeStyle = PINK;
-                ctx.lineWidth   = 2.5;
+                ctx.lineWidth   = 1.5;
                 ctx.beginPath();
-                ctx.moveTo(bx + br, by);
-                ctx.lineTo(bx + bw - br, by);
-                ctx.arcTo(bx + bw, by,      bx + bw, by + br,      br);
-                ctx.lineTo(bx + bw, by + bh - br);
-                ctx.arcTo(bx + bw, by + bh,  bx + bw - br, by + bh, br);
-                ctx.lineTo(bx + br, by + bh);
-                ctx.arcTo(bx,       by + bh,  bx, by + bh - br,      br);
-                ctx.lineTo(bx,      by + br);
-                ctx.arcTo(bx,       by,        bx + br, by,           br);
+                ctx.moveTo(m + br, m);
+                ctx.lineTo(m + bw - br, m);
+                ctx.arcTo(m + bw, m,      m + bw, m + br,      br);
+                ctx.lineTo(m + bw, m + bh - br);
+                ctx.arcTo(m + bw, m + bh,  m + bw - br, m + bh, br);
+                ctx.lineTo(m + br, m + bh);
+                ctx.arcTo(m,       m + bh,  m, m + bh - br,      br);
+                ctx.lineTo(m,      m + br);
+                ctx.arcTo(m,       m,        m + br, m,           br);
                 ctx.closePath();
                 ctx.stroke();
 
-                // ── "LEADERBOARD" small text ───────────────────────────────
-                ctx.fillStyle    = PINK;
+                // ── Helper: hairline rule ──────────────────────────────────
+                function rule(y, alpha) {
+                    ctx.strokeStyle = 'rgba(255, 0, 160, ' + alpha + ')';
+                    ctx.lineWidth   = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(26, y);
+                    ctx.lineTo(W - 26, y);
+                    ctx.stroke();
+                }
+
+                // ── "LEADERBOARD" — letter-spaced above rule ───────────────
+                ctx.fillStyle    = 'rgba(255, 0, 160, 0.45)';
                 ctx.textAlign    = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.font         = '500 10px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('LEADERBOARD', W / 2, 54);
+                ctx.font         = '600 8px -apple-system, BlinkMacSystemFont, sans-serif';
+                if ('letterSpacing' in ctx) ctx.letterSpacing = '5.5px';
+                ctx.fillText('LEADERBOARD', W / 2 + 8, 28);
+                if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
 
-                // ── Title name large ───────────────────────────────────────
-                ctx.font = 'bold 30px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('Testing', W / 2, 92);
+                rule(38, 0.35);
 
-                // ── Thin divider line ──────────────────────────────────────
-                ctx.strokeStyle = 'rgba(255, 0, 160, 0.35)';
-                ctx.lineWidth   = 0.5;
-                ctx.beginPath();
-                ctx.moveTo(W / 2 - 36, 110);
-                ctx.lineTo(W / 2 + 36, 110);
-                ctx.stroke();
+                // ── Title — dominant, optically centred in remaining space ──
+                ctx.fillStyle = PINK;
+                ctx.font      = 'bold 64px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText('Testing', W / 2, 102);
 
-                // ── "PICKLEBALL" subtext ───────────────────────────────────
-                ctx.fillStyle = 'rgba(255, 0, 160, 0.55)';
-                ctx.font      = '400 9px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText('PICKLEBALL', W / 2, 124);
+                rule(140, 0.35);
+
+                // ── "PICKLEBALL" footer ────────────────────────────────────
+                ctx.fillStyle = 'rgba(255, 0, 160, 0.3)';
+                ctx.font      = '400 7.5px -apple-system, BlinkMacSystemFont, sans-serif';
+                if ('letterSpacing' in ctx) ctx.letterSpacing = '5px';
+                ctx.fillText('PICKLEBALL', W / 2 + 7, 153);
+                if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
+                // ── Dot motif ─────────────────────────────────────────────
+                ctx.fillStyle = 'rgba(255, 0, 160, 0.2)';
+                ctx.font      = '400 8px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText('·  ·  ·', W / 2, 165);
 
                 // ── Inject as apple-touch-icon ─────────────────────────────
                 var link = document.createElement('link');
