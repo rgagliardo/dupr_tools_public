@@ -144,7 +144,7 @@
     <body>
         <div class="header-container">
             <h1>Testing</h1>
-            <div class="timestamp">Last Updated: March 30, 2026 at 9:39 PM</div>
+            <div class="timestamp">Last Updated: March 30, 2026 at 9:59 PM</div>
             <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
             <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers</a><a href="#grp--players" class="jump-tab">🏆  Players</a><a href="#grp-players" class="jump-tab">🏆 Players</a></div>
         </div>
@@ -929,81 +929,111 @@
                 });
             });
 
-            // 5. Generate and inject Apple Touch Icon (PWA home screen icon)
+            // 5. Generate and inject Apple Touch Icon — W/L streak bars
             (function () {
                 var c = document.createElement('canvas');
-                c.width = 180;
-                c.height = 180;
+                c.width = 180; c.height = 180;
+                var W = 180, H = 180;
                 var ctx = c.getContext('2d');
 
-                // Background
-                var bg = ctx.createLinearGradient(0, 0, 180, 180);
+                // ── Background ─────────────────────────────────────────────
+                var bg = ctx.createLinearGradient(0, 0, W, H);
                 bg.addColorStop(0, '#12131f');
                 bg.addColorStop(1, '#0d0e15');
                 ctx.fillStyle = bg;
-                ctx.fillRect(0, 0, 180, 180);
+                ctx.fillRect(0, 0, W, H);
 
-                // Outer glow behind ball
-                var glow = ctx.createRadialGradient(90, 78, 20, 90, 78, 65);
-                glow.addColorStop(0, 'rgba(0, 229, 255, 0.12)');
-                glow.addColorStop(1, 'rgba(0, 229, 255, 0)');
-                ctx.fillStyle = glow;
-                ctx.beginPath();
-                ctx.arc(90, 78, 68, 0, Math.PI * 2);
-                ctx.fill();
-
-                // Ball body
-                var ballGrad = ctx.createRadialGradient(76, 64, 4, 90, 78, 50);
-                ballGrad.addColorStop(0, '#ffffff');
-                ballGrad.addColorStop(0.55, '#efefef');
-                ballGrad.addColorStop(1, '#d8d8d8');
-                ctx.fillStyle = ballGrad;
-                ctx.beginPath();
-                ctx.arc(90, 78, 50, 0, Math.PI * 2);
-                ctx.fill();
-
-                // Pickleball holes
-                ctx.fillStyle = '#0d0e15';
-                var holes = [
-                    [74, 62], [90, 58], [106, 62],
-                    [65, 76], [81, 72], [99, 72], [115, 76],
-                    [70, 90], [86, 87], [104, 87], [110, 90],
-                    [76, 100], [90, 98], [104, 100]
+                // ── Bar data: L/W pattern, last 3 = win streak ─────────────
+                var results = [
+                    { w: false },
+                    { w: true  },
+                    { w: false },
+                    { w: true  },
+                    { w: true  },
+                    { w: true  }
                 ];
-                holes.forEach(function (h) {
-                    var dx = h[0] - 90, dy = h[1] - 78;
-                    if (Math.sqrt(dx * dx + dy * dy) < 46) {
-                        ctx.beginPath();
-                        ctx.arc(h[0], h[1], 4.5, 0, Math.PI * 2);
-                        ctx.fill();
+
+                // ── Sizing (all proportional so it scales cleanly) ─────────
+                var barW    = 16, gap = 6, n = results.length;
+                var totalW  = n * barW + (n - 1) * gap;
+                var startX  = Math.round((W - totalW) / 2);
+                var baseY   = Math.round(H * 0.68);
+                var maxBarH = Math.round(H * 0.40);
+                var minBarH = Math.round(H * 0.20);
+                var labelY  = Math.round(H * 0.855);
+                var radius  = Math.round(barW / 2);
+
+                // Heights: W bars taller (positive), L bars shorter (negative)
+                var heights = [
+                    minBarH,
+                    Math.round(maxBarH * 0.85),
+                    Math.round(minBarH * 0.95),
+                    Math.round(maxBarH * 0.88),
+                    Math.round(maxBarH * 0.94),
+                    maxBarH
+                ];
+
+                // ── Leaderboard-exact colors ───────────────────────────────
+                var WIN_FILL    = 'rgba(0, 229, 255, 0.18)';
+                var WIN_STROKE  = '#00e5ff';
+                var WIN_GLOW    = 'rgba(0, 229, 255, 0.35)';
+                var LOSS_FILL   = 'rgba(255, 0, 160, 0.18)';
+                var LOSS_STROKE = '#ff00a0';
+
+                results.forEach(function (r, i) {
+                    var x = startX + i * (barW + gap);
+                    var h = heights[i];
+                    var y = baseY - h;
+
+                    // Glow beneath win bars
+                    if (r.w) {
+                        var glow = ctx.createRadialGradient(
+                            x + barW / 2, baseY,          2,
+                            x + barW / 2, baseY - h / 2,  h * 0.8
+                        );
+                        glow.addColorStop(0, WIN_GLOW);
+                        glow.addColorStop(1, 'rgba(0, 229, 255, 0)');
+                        ctx.fillStyle = glow;
+                        ctx.fillRect(x - 6, y - 8, barW + 12, h + 16);
                     }
+
+                    // Bar body with rounded top
+                    ctx.fillStyle   = r.w ? WIN_FILL   : LOSS_FILL;
+                    ctx.strokeStyle = r.w ? WIN_STROKE : LOSS_STROKE;
+                    ctx.lineWidth   = 1.5;
+                    ctx.beginPath();
+                    ctx.moveTo(x + radius, y);
+                    ctx.lineTo(x + barW - radius, y);
+                    ctx.arcTo(x + barW, y,     x + barW, y + radius, radius);
+                    ctx.lineTo(x + barW, baseY);
+                    ctx.lineTo(x,        baseY);
+                    ctx.lineTo(x,        y + radius);
+                    ctx.arcTo(x, y, x + radius, y, radius);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // W / L label inside bar
+                    ctx.fillStyle    = r.w ? WIN_STROKE : LOSS_STROKE;
+                    ctx.textAlign    = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.font         = 'bold 9px -apple-system, sans-serif';
+                    ctx.fillText(r.w ? 'W' : 'L', x + barW / 2, baseY - 8);
                 });
 
-                // Neon seam arcs
-                ctx.lineWidth = 2.5;
-                ctx.lineCap = 'round';
-                ctx.strokeStyle = 'rgba(0, 229, 255, 0.8)';
-                ctx.beginPath();
-                ctx.arc(90, 78, 50, Math.PI * 0.75, Math.PI * 1.65);
-                ctx.stroke();
-                ctx.strokeStyle = 'rgba(255, 0, 160, 0.8)';
-                ctx.beginPath();
-                ctx.arc(90, 78, 50, Math.PI * 1.75, Math.PI * 0.65);
-                ctx.stroke();
-
-                // Label text
-                ctx.textAlign = 'center';
+                // ── Label ─────────────────────────────────────────────────
+                ctx.textAlign    = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.font = 'bold 22px -apple-system, BlinkMacSystemFont, sans-serif';
-                var textGrad = ctx.createLinearGradient(50, 148, 130, 148);
-                textGrad.addColorStop(0, '#ff00a0');
-                textGrad.addColorStop(1, '#00e5ff');
-                ctx.fillStyle = textGrad;
-                ctx.fillText('Testing', 90, 150);
+                ctx.font         = 'bold 18px -apple-system, BlinkMacSystemFont, sans-serif';
+                var tg = ctx.createLinearGradient(W * 0.25, labelY, W * 0.75, labelY);
+                tg.addColorStop(0, '#ff00a0');
+                tg.addColorStop(1, '#00e5ff');
+                ctx.fillStyle = tg;
+                ctx.fillText('Testing', W / 2, labelY);
 
-                // Inject as apple-touch-icon
+                // ── Inject as apple-touch-icon ─────────────────────────────
                 var link = document.createElement('link');
-                link.rel = 'apple-touch-icon';
+                link.rel  = 'apple-touch-icon';
                 link.href = c.toDataURL('image/png');
                 document.head.appendChild(link);
             })();
