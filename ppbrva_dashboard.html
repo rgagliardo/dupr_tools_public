@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPBRVA TRACKER</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:    #04051a;
+  --panel: #070b22;
+  --cyan:  #00f5ff;
+  --pink:  #ff2d78;
+  --yel:   #fff200;
+  --grn:   #39ff14;
+  --pur:   #bd00ff;
+  --dim:   #1e2450;
+  --dtxt:  #3a4580;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+
+body {
+  background: var(--bg);
+  background-image:
+    linear-gradient(rgba(0,245,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,255,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--cyan);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  min-height: 100vh;
+  padding-bottom: 44px;
+  position: relative;
+}
+
+/* CRT scanlines */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,0,0,0.13) 2px, rgba(0,0,0,0.13) 4px
+  );
+  pointer-events: none;
+  z-index: 9900;
+}
+
+/* Vignette */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, transparent 55%, rgba(0,0,0,0.65) 100%);
+  pointer-events: none;
+  z-index: 9901;
+}
+
+.screen { max-width: 960px; margin: 0 auto; padding: 24px 18px; }
+
+/* ── HEADER ── */
+.hdr { text-align:center; padding: 22px 0 26px; }
+.hdr-eyebrow { font-family:'Press Start 2P',monospace; font-size:8px; color:var(--pur); letter-spacing:4px; margin-bottom:14px; }
+.hdr-title {
+  font-family:'Press Start 2P',monospace; font-size:30px; letter-spacing:5px; line-height:1.4;
+  background: linear-gradient(175deg, var(--cyan) 0%, var(--pink) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  filter: drop-shadow(0 0 24px rgba(0,245,255,0.5));
+  margin-bottom:10px;
+}
+.hdr-sub { font-family:'Press Start 2P',monospace; font-size:8px; color:var(--pink); letter-spacing:3px; text-shadow:0 0 12px var(--pink); margin-bottom:16px; }
+.hdr-clock { font-family:'Press Start 2P',monospace; font-size:11px; color:var(--yel); text-shadow:0 0 10px var(--yel); letter-spacing:2px; }
+.hdr-line { height:3px; background:linear-gradient(90deg,transparent,var(--cyan),var(--pink),var(--pur),transparent); margin-top:22px; }
+
+/* ── STATS ROW ── */
+.stats-row { display:flex; gap:6px; margin:16px 0 0; flex-wrap:wrap; }
+.stat-chip {
+  font-family:'Press Start 2P',monospace; font-size:8px;
+  padding:6px 12px; border:1px solid var(--dim);
+  display:flex; align-items:center; gap:7px;
+  background: var(--panel);
+}
+.pip { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.pip-g { background:var(--grn); box-shadow:0 0 5px var(--grn); animation: blink 2.5s ease infinite; }
+.pip-r { background:var(--pink); box-shadow:0 0 5px var(--pink); }
+.pip-y { background:var(--yel); box-shadow:0 0 5px var(--yel); animation: blink 1.8s ease infinite; }
+.pip-c { background:var(--cyan); box-shadow:0 0 5px var(--cyan); }
+
+/* ── SECTION LABEL ── */
+.sec {
+  font-family:'Press Start 2P',monospace; font-size:9px;
+  letter-spacing:3px; color:var(--yel); text-shadow:0 0 8px var(--yel);
+  margin:26px 0 14px; display:flex; align-items:center; gap:10px;
+}
+.sec::after { content:''; flex:1; height:1px; background:var(--dim); }
+
+/* ── SESSION CARD ── */
+.card {
+  background:var(--panel); border:1px solid var(--dim);
+  padding:14px 16px; margin-bottom:10px; position:relative;
+  transition: border-color .2s, box-shadow .2s;
+}
+.card:hover { border-color:rgba(0,245,255,0.4); box-shadow:0 0 14px rgba(0,245,255,0.08); }
+.card.full {
+  border-color:var(--pink);
+  box-shadow:0 0 22px rgba(255,45,120,0.22);
+}
+.card.full::before {
+  content:'▶ FULL ◀';
+  font-family:'Press Start 2P',monospace; font-size:7px; color:var(--pink);
+  text-shadow:0 0 8px var(--pink);
+  position:absolute; top:-9px; left:50%; transform:translateX(-50%);
+  background:var(--panel); padding:0 8px;
+  animation: blink .85s step-end infinite;
+}
+.card.live {
+  border-color:var(--yel);
+  box-shadow:0 0 18px rgba(255,242,0,0.18);
+}
+.card.live::before {
+  content:'▶ LIVE ◀';
+  font-family:'Press Start 2P',monospace; font-size:7px; color:var(--yel);
+  text-shadow:0 0 8px var(--yel);
+  position:absolute; top:-9px; left:50%; transform:translateX(-50%);
+  background:var(--panel); padding:0 8px;
+  animation: blink .6s step-end infinite;
+}
+.card.completed { opacity:0.38; }
+.card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:11px; }
+.card-name { font-family:'Press Start 2P',monospace; font-size:10px; line-height:1.7; color:var(--cyan); text-shadow:0 0 8px rgba(0,245,255,0.4); }
+.card.full .card-name { color:var(--yel); text-shadow:0 0 8px rgba(255,242,0,0.5); }
+.card.live .card-name { color:var(--yel); }
+.card-when { font-size:11px; color:var(--dtxt); text-align:right; line-height:1.8; }
+.card-countdown { font-family:'Press Start 2P',monospace; font-size:8px; color:var(--grn); margin-top:3px; }
+
+.bar-row { display:flex; align-items:center; gap:12px; margin-bottom:9px; }
+.bar { flex:1; height:11px; background:#080c20; border:1px solid var(--dim); overflow:hidden; }
+.bar-fill {
+  height:100%; position:relative;
+  background:linear-gradient(90deg,var(--cyan),var(--pur));
+  box-shadow:0 0 8px rgba(0,245,255,0.5);
+  transition: width .6s ease;
+}
+.bar-fill::after { content:''; position:absolute; top:0; right:0; width:3px; height:100%; background:rgba(255,255,255,0.5); }
+.bar.red .bar-fill { background:linear-gradient(90deg,var(--pink),#dd0044); box-shadow:0 0 10px rgba(255,45,120,0.6); animation:pulse-bar 1.6s ease-in-out infinite; }
+.bar-lbl { font-family:'Press Start 2P',monospace; font-size:10px; min-width:62px; text-align:right; }
+.card.full .bar-lbl { color:var(--pink); text-shadow:0 0 6px var(--pink); }
+
+.card-players { font-size:11px; color:var(--dtxt); }
+.card-players .name { color:#7a8fcc; }
+
+/* ── THIEF SECTION ── */
+.thief-wrap {
+  border:2px solid var(--pink); padding:20px; margin-bottom:12px;
+  box-shadow:0 0 40px rgba(255,45,120,0.35), inset 0 0 40px rgba(255,45,120,0.04);
+  position:relative; overflow:hidden;
+  background: var(--panel);
+}
+.thief-wrap::before {
+  content:'';
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,45,120,0.025) 12px,rgba(255,45,120,0.025) 24px);
+  pointer-events:none;
+}
+.thief-title { font-family:'Press Start 2P',monospace; font-size:14px; color:var(--pink); text-shadow:0 0 18px var(--pink); letter-spacing:2px; margin-bottom:6px; animation:blink .65s step-end infinite; }
+.thief-session { font-family:'Press Start 2P',monospace; font-size:8px; color:var(--yel); letter-spacing:1px; margin-bottom:14px; line-height:1.9; }
+.thief-table { width:100%; border-collapse:collapse; position:relative; z-index:1; }
+.thief-table td { padding:4px 8px 4px 0; font-size:12px; }
+.thief-table td:first-child { color:var(--dtxt); width:180px; }
+.thief-table td:last-child { color:#ffaacc; }
+.thief-suspect { font-family:'Press Start 2P',monospace !important; font-size:12px !important; color:var(--pink) !important; text-shadow:0 0 8px var(--pink); }
+
+.thief-empty {
+  border:1px solid var(--dim); padding:30px; text-align:center;
+  background:var(--panel);
+  font-family:'Press Start 2P',monospace; font-size:8px; color:var(--dtxt);
+  letter-spacing:2px; line-height:2.8;
+}
+
+/* ── HALL OF SHAME ── */
+.hof-row {
+  display:flex; align-items:center; gap:16px;
+  padding:10px 14px; margin-bottom:4px;
+  background:var(--panel); border-left:3px solid var(--pink);
+  font-family:'Press Start 2P',monospace; font-size:8px;
+}
+.hof-rank { color:var(--pink); min-width:26px; }
+.hof-name { flex:1; color:#ffaacc; }
+.hof-ses { color:var(--dtxt); font-size:7px; }
+.hof-ts { color:var(--dtxt); font-size:7px; text-align:right; }
+
+/* ── ACTIVITY LOG ── */
+.log-row {
+  display:flex; gap:14px; font-size:12px;
+  padding:5px 10px; margin-bottom:2px;
+  border-left:2px solid transparent; background:transparent;
+  transition:background .2s;
+}
+.log-row:hover { background:rgba(255,255,255,0.02); }
+.log-row.join   { border-left-color:var(--grn);  background:rgba(57,255,20,0.025); }
+.log-row.cancel { border-left-color:var(--pink); background:rgba(255,45,120,0.025); }
+.log-row.full   { border-left-color:var(--yel);  background:rgba(255,242,0,0.025); }
+.log-row.freed  { border-left-color:var(--cyan); background:rgba(0,245,255,0.02); }
+.log-ts  { color:var(--dtxt); min-width:52px; }
+.log-evt { min-width:72px; font-weight:bold; }
+.log-row.join   .log-evt { color:var(--grn); }
+.log-row.cancel .log-evt { color:var(--pink); }
+.log-row.full   .log-evt { color:var(--yel); }
+.log-row.freed  .log-evt { color:var(--cyan); }
+.log-who { color:#8899cc; }
+.log-ses { color:var(--dtxt); font-size:11px; }
+
+/* ── GRID ── */
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+@media(max-width:640px){ .grid2{ grid-template-columns:1fr; } }
+
+/* ── STATUS BAR ── */
+.sbar {
+  position:fixed; bottom:0; left:0; right:0; height:38px;
+  background:linear-gradient(90deg,#040718,#090420,#040718);
+  border-top:2px solid var(--cyan);
+  box-shadow:0 -4px 24px rgba(0,245,255,0.18);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 20px;
+  font-family:'Press Start 2P',monospace; font-size:8px; letter-spacing:1px;
+  z-index:9800;
+}
+.sbar-item { display:flex; align-items:center; gap:8px; color:var(--dtxt); }
+.sbar-item.bright { color:var(--cyan); }
+
+/* ── REFRESH BUTTON ── */
+.refresh-btn {
+  font-family:'Press Start 2P',monospace; font-size:8px;
+  background:none; border:1px solid var(--cyan); color:var(--cyan);
+  padding:5px 12px; cursor:pointer; letter-spacing:2px;
+  box-shadow:0 0 8px rgba(0,245,255,0.2);
+  transition:all .2s;
+}
+.refresh-btn:hover { background:rgba(0,245,255,0.08); box-shadow:0 0 16px rgba(0,245,255,0.4); }
+.refresh-btn:active { transform:scale(0.97); }
+
+/* ── ANIMATIONS ── */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes pulse-bar { 0%,100%{opacity:1} 50%{opacity:0.65} }
+@keyframes slide-in { from{opacity:0;transform:translateX(-8px)} to{opacity:1;transform:translateX(0)} }
+.new-item { animation: slide-in .4s ease; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="hdr-eyebrow">★  INSERT COIN TO PLAY  ★</div>
+    <div class="hdr-title">PPBRVA<br>TRACKER</div>
+    <div class="hdr-sub">SESSION THIEF DETECTION SYSTEM</div>
+    <div class="hdr-clock" id="clk">--</div>
+    <div id="stats-row" class="stats-row"></div>
+    <div class="hdr-line"></div>
+  </div>
+
+  <!-- FULL / LIVE SESSIONS -->
+  <div class="sec" id="sec-watch">⚠ FULL &amp; LIVE — THIEF WATCH</div>
+  <div id="watch-list"></div>
+
+  <!-- THIEF HALL OF SHAME -->
+  <div class="sec">🥷 THIEF DETECTION</div>
+  <div id="thief-section"></div>
+
+  <!-- HALL OF SHAME SCOREBOARD -->
+  <div class="sec" id="sec-hof" style="display:none">HALL OF SHAME</div>
+  <div id="hof-list"></div>
+
+  <!-- ACTIVITY LOG -->
+  <div class="sec">ACTIVITY LOG</div>
+  <div id="activity-list"></div>
+
+  <!-- ALL SESSIONS -->
+  <div class="sec">ALL SESSIONS</div>
+  <div id="all-sessions" class="grid2"></div>
+
+  <div style="height:40px"></div>
+</div>
+
+<!-- STATUS BAR -->
+<div class="sbar">
+  <div class="sbar-item bright" id="sbar-total">-- SESSIONS</div>
+  <div class="sbar-item" id="sbar-full">-- FULL</div>
+  <div class="sbar-item" id="sbar-updated">UPDATED --</div>
+  <div class="sbar-item">
+    <button class="refresh-btn" onclick="forceRefresh()">↺ REFRESH</button>
+  </div>
+</div>
+
+<script>
+// ── Initial data (embedded at generation time) ────────────────────────────
+var DATA = {"generated_at": "2026-04-02T20:50:32", "next_scan_at": "2026-04-02T21:20:32", "stats": {"total": 25, "full_count": 3}, "sessions": [{"uuid": "4828995d-2860-4729-aaea-3df84ffbb816", "url": "https://ppbrva.podplay.app/community/events/4828995d-2860-4729-aaea-3df84ffbb816", "title": "DUPR 4.0 Open Play", "start_iso": "2026-04-03T10:00:00", "end_iso": "2026-04-03T12:00:00", "start_display": "FRI APR 3  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 4, "pct": 33, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Bradley F.", "Pete H.", "Roy A.", "Steve Y."], "last_snap_ts": "2026-04-02T20:38:17", "thieves": []}, {"uuid": "75adcf71-764d-4c27-b2a8-da7c61229241", "url": "https://ppbrva.podplay.app/community/events/75adcf71-764d-4c27-b2a8-da7c61229241", "title": "4.0 Open Play", "start_iso": "2026-04-03T10:00:00", "end_iso": "2026-04-03T12:00:00", "start_display": "FRI APR 3  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 40, "count": 25, "pct": 62, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Adonis T.", "Alice K.", "Alicia Z.", "Arun R.", "Becca D.", "Bill P.", "Bing Y.", "Bradley F.", "Christina S.", "Christopher B.", "Don B.", "Doug B.", "Ed K.", "Elton W.", "Fran S.", "Jason D.", "Joan J.", "John L.", "Konrad S.", "Lisha Y.", "Lori L.", "Louis G.", "Mark K.", "Michael H.", "+1 player"], "last_snap_ts": "2026-04-02T20:38:21", "thieves": []}, {"uuid": "710bc52f-15a9-4913-bbaf-a636dfcfa120", "url": "https://ppbrva.podplay.app/community/events/710bc52f-15a9-4913-bbaf-a636dfcfa120", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-03T16:00:00", "end_iso": "2026-04-03T18:00:00", "start_display": "FRI APR 3  4:00 PM", "end_display": "6:00 PM", "status": "upcoming", "capacity": 35, "count": 23, "pct": 66, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Amity L.", "Angi L.", "Beth B.", "Bill E.", "Bobby L.", "Brian P.", "Chris P.", "Danilo A. D.", "David P.", "Ed K.", "Elton W.", "Everett H.", "Kathy A.", "Kristie B.", "Melba T.", "Michelle H.", "Mona B.", "Raouf G.", "Robert B.", "Sharon K.", "Steve M.", "Steve T.", "+1 player"], "last_snap_ts": "2026-04-02T20:38:25", "thieves": []}, {"uuid": "37f85501-dede-4594-a1ab-e5615ba98486", "url": "https://ppbrva.podplay.app/community/events/37f85501-dede-4594-a1ab-e5615ba98486", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-03T18:00:00", "end_iso": "2026-04-03T20:00:00", "start_display": "FRI APR 3  6:00 PM", "end_display": "8:00 PM", "status": "upcoming", "capacity": 11, "count": 11, "pct": 100, "is_full": true, "was_ever_full": true, "manually_added": false, "registrants": ["Adriana G.", "Anthony D.", "Antonio M.", "Elton W.", "Gabriella C.", "Jimmy L.", "Robert N.", "Savannah S.", "Suraj Singh C.", "Thaian N.", "+1 player"], "last_snap_ts": "2026-04-02T20:38:28", "thieves": []}, {"uuid": "28d27356-b70c-42f2-a307-c62fe33a2a3c", "url": "https://ppbrva.podplay.app/community/events/28d27356-b70c-42f2-a307-c62fe33a2a3c", "title": "4.0 Open Play", "start_iso": "2026-04-03T20:00:00", "end_iso": "2026-04-03T22:00:00", "start_display": "FRI APR 3  8:00 PM", "end_display": "10:00 PM", "status": "upcoming", "capacity": 11, "count": 6, "pct": 55, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Debby D.", "Jake S.", "Joe S.", "Karuna R.", "Stacie R.", "+2 players"], "last_snap_ts": "2026-04-02T20:08:12", "thieves": []}, {"uuid": "019d3fc2-89d5-7000-9031-ffe20bcd4660", "url": "https://ppbrva.podplay.app/community/events/019d3fc2-89d5-7000-9031-ffe20bcd4660", "title": "DUPR 4.5 Open Play", "start_iso": "2026-04-04T08:00:00", "end_iso": "2026-04-04T10:00:00", "start_display": "SAT APR 4  8:00 AM", "end_display": "10:00 AM", "status": "upcoming", "capacity": 12, "count": 0, "pct": 0, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": [], "last_snap_ts": "2026-04-02T18:29:57", "thieves": []}, {"uuid": "019d3fc1-8029-7dde-a7c8-feae5676033b", "url": "https://ppbrva.podplay.app/community/events/019d3fc1-8029-7dde-a7c8-feae5676033b", "title": "DUPR 4.0 Open Play", "start_iso": "2026-04-04T08:00:00", "end_iso": "2026-04-04T10:00:00", "start_display": "SAT APR 4  8:00 AM", "end_display": "10:00 AM", "status": "upcoming", "capacity": 12, "count": 0, "pct": 0, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": [], "last_snap_ts": "2026-04-02T18:30:01", "thieves": []}, {"uuid": "019d3fb4-1934-7000-9019-5e3513944a13", "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1934-7000-9019-5e3513944a13", "title": "4.0 Open Play", "start_iso": "2026-04-04T08:00:00", "end_iso": "2026-04-04T10:00:00", "start_display": "SAT APR 4  8:00 AM", "end_display": "10:00 AM", "status": "upcoming", "capacity": 12, "count": 0, "pct": 0, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": [], "last_snap_ts": "2026-04-02T18:30:06", "thieves": []}, {"uuid": "019d3fc3-af9e-7000-9033-34477e343105", "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105", "title": "DUPR 4.5 Open Play", "start_iso": "2026-04-04T10:00:00", "end_iso": "2026-04-04T12:00:00", "start_display": "SAT APR 4  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 6, "pct": 50, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["C. Todd S.", "Lloyd Z.", "Matt B.", "Suraj Singh C.", "Ty L.", "+1 player"], "last_snap_ts": "2026-04-02T18:30:10", "thieves": []}, {"uuid": "019d3fb4-1c27-7dde-a7ae-d6b7056682e2", "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2", "title": "4.0 Open Play", "start_iso": "2026-04-04T10:00:00", "end_iso": "2026-04-04T12:00:00", "start_display": "SAT APR 4  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 12, "pct": 100, "is_full": true, "was_ever_full": true, "manually_added": false, "registrants": ["Beth B.", "Bobby L.", "Brian P.", "Chris P.", "Ian M.", "Mac P.", "Michelle H.", "Mona B.", "Robert B.", "Steve M.", "Troy R.", "+1 player"], "last_snap_ts": "2026-04-02T18:30:14", "thieves": []}, {"uuid": "019d3fc1-83ca-7dde-a7c9-cddeed3bea69", "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69", "title": "DUPR 4.0 Open Play", "start_iso": "2026-04-04T10:00:00", "end_iso": "2026-04-04T12:00:00", "start_display": "SAT APR 4  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 5, "pct": 42, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Bradley F.", "Dave S.", "Joe M.", "Roy A.", "Scott S."], "last_snap_ts": "2026-04-02T18:30:17", "thieves": []}, {"uuid": "019d3feb-8dd5-7dde-a810-e92bc5f4f547", "url": "https://ppbrva.podplay.app/community/events/019d3feb-8dd5-7dde-a810-e92bc5f4f547", "title": "ADVANCED Performance Play Saturday", "start_iso": "2026-04-04T12:00:00", "end_iso": "2026-04-04T16:00:00", "start_display": "SAT APR 4  12:00 PM", "end_display": "4:00 PM", "status": "upcoming", "capacity": 24, "count": 1, "pct": 4, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["David C."], "last_snap_ts": "2026-04-02T18:29:10", "thieves": []}, {"uuid": "019d3ff0-4b85-7000-9070-b35289593dd9", "url": "https://ppbrva.podplay.app/community/events/019d3ff0-4b85-7000-9070-b35289593dd9", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-04T12:00:00", "end_iso": "2026-04-04T14:00:00", "start_display": "SAT APR 4  12:00 PM", "end_display": "2:00 PM", "status": "upcoming", "capacity": 12, "count": 0, "pct": 0, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": [], "last_snap_ts": "2026-04-02T18:30:21", "thieves": []}, {"uuid": "019d3fc1-88ae-7dde-a7cb-6a7254c19e9f", "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f", "title": "DUPR 4.0 Open Play", "start_iso": "2026-04-05T10:00:00", "end_iso": "2026-04-05T12:00:00", "start_display": "SUN APR 5  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 6, "pct": 50, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Bradley F.", "Dave S.", "David G.", "David M.", "Roy A.", "Scott S."], "last_snap_ts": "2026-04-02T18:30:35", "thieves": []}, {"uuid": "019d3fc3-b20c-7dde-a7d1-2dc65be18310", "url": "https://ppbrva.podplay.app/community/events/019d3fc3-b20c-7dde-a7d1-2dc65be18310", "title": "DUPR 4.5 Open Play", "start_iso": "2026-04-05T10:00:00", "end_iso": "2026-04-05T12:00:00", "start_display": "SUN APR 5  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 11, "count": 5, "pct": 45, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["C. Todd S.", "Dipen P.", "Rodney G.", "Suraj Singh C.", "+2 players"], "last_snap_ts": "2026-04-02T18:30:39", "thieves": []}, {"uuid": "019d3fb4-2295-7000-901a-2abe327885f5", "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5", "title": "4.0 Open Play", "start_iso": "2026-04-05T10:00:00", "end_iso": "2026-04-05T12:00:00", "start_display": "SUN APR 5  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 7, "pct": 58, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Beth B.", "Bobby L.", "David G.", "Joj! W.", "Mona B.", "Robert B.", "+1 player"], "last_snap_ts": "2026-04-02T18:30:43", "thieves": []}, {"uuid": "019d3fe1-6f45-7000-905a-98eb79abb91e", "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e", "title": "ADVANCED Performance Play Sunday", "start_iso": "2026-04-05T12:00:00", "end_iso": "2026-04-05T16:00:00", "start_display": "SUN APR 5  12:00 PM", "end_display": "4:00 PM", "status": "upcoming", "capacity": 24, "count": 7, "pct": 29, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["David H.", "Ed K.", "Gabriella C.", "Jonathan C.", "Robert N.", "Val C.", "+1 player"], "last_snap_ts": "2026-04-02T18:29:18", "thieves": []}, {"uuid": "e43d00f8-149b-470d-8a74-3615e3b720b2", "url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2", "title": "DUPR 4.0 Open Play", "start_iso": "2026-04-06T10:00:00", "end_iso": "2026-04-06T12:00:00", "start_display": "MON APR 6  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 12, "count": 11, "pct": 92, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Bradley F.", "Chris S. B.", "Elton W.", "Gary Z.", "Kevin A.", "Mike B.", "Ming W.", "Pete H.", "Phyllis B.", "Roy A.", "Steve Y."], "last_snap_ts": "2026-04-02T18:30:50", "thieves": []}, {"uuid": "0a216682-1e12-4d2d-90e4-8ba1a618f94e", "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e", "title": "4.0 Open Play", "start_iso": "2026-04-06T10:00:00", "end_iso": "2026-04-06T12:00:00", "start_display": "MON APR 6  10:00 AM", "end_display": "12:00 PM", "status": "upcoming", "capacity": 28, "count": 24, "pct": 86, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Alice K.", "Annie L.", "Arun R.", "Barbara D.", "Becca D.", "Bill P.", "Bing Y.", "Caroline M.", "Chris P.", "dale p.", "David S.", "Dennis W.", "Don B.", "Ed K.", "Elton W.", "Eric L.", "Erin C.", "Gary S.", "Gary W.", "John L.", "Joj! W.", "Konrad S.", "Lisha Y.", "Lori L."], "last_snap_ts": "2026-04-02T18:30:54", "thieves": []}, {"uuid": "e45e9f6c-a205-4f0e-b7c2-08c4322aba1c", "url": "https://ppbrva.podplay.app/community/events/e45e9f6c-a205-4f0e-b7c2-08c4322aba1c", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-06T16:00:00", "end_iso": "2026-04-06T18:00:00", "start_display": "MON APR 6  4:00 PM", "end_display": "6:00 PM", "status": "upcoming", "capacity": 12, "count": 0, "pct": 0, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": [], "last_snap_ts": "2026-04-02T18:31:04", "thieves": []}, {"uuid": "ed3c53bb-7586-441e-bafe-193395a0ff97", "url": "https://ppbrva.podplay.app/community/events/ed3c53bb-7586-441e-bafe-193395a0ff97", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-06T18:00:00", "end_iso": "2026-04-06T20:00:00", "start_display": "MON APR 6  6:00 PM", "end_display": "8:00 PM", "status": "upcoming", "capacity": 12, "count": 12, "pct": 100, "is_full": true, "was_ever_full": true, "manually_added": false, "registrants": ["Arathi K.", "Brooke H.", "David H.", "Dipen P.", "Ed K.", "Jessica B.", "Joe M.", "Leah F.", "Robert N.", "Suraj Singh C.", "Susie S.", "+1 player"], "last_snap_ts": "2026-04-02T18:31:08", "thieves": []}, {"uuid": "bc824bcc-0099-4052-b0da-0e7d12f5d06c", "url": "https://ppbrva.podplay.app/community/events/bc824bcc-0099-4052-b0da-0e7d12f5d06c", "title": "DUPR 4.0 Open Play", "start_iso": "2026-04-06T20:00:00", "end_iso": "2026-04-06T22:00:00", "start_display": "MON APR 6  8:00 PM", "end_display": "10:00 PM", "status": "upcoming", "capacity": 12, "count": 1, "pct": 8, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["+1 player"], "last_snap_ts": "2026-04-02T18:31:11", "thieves": []}, {"uuid": "7dede5be-d9ff-4b85-bb8b-c1cf09fd31f9", "url": "https://ppbrva.podplay.app/community/events/7dede5be-d9ff-4b85-bb8b-c1cf09fd31f9", "title": "4.0 Open Play", "start_iso": "2026-04-06T20:00:00", "end_iso": "2026-04-06T22:00:00", "start_display": "MON APR 6  8:00 PM", "end_display": "10:00 PM", "status": "upcoming", "capacity": 12, "count": 3, "pct": 25, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Jimmy L.", "Stacie R.", "+1 player"], "last_snap_ts": "2026-04-02T18:31:15", "thieves": []}, {"uuid": "aa021aad-ed32-4900-b181-8c354ff82e36", "url": "https://ppbrva.podplay.app/community/events/aa021aad-ed32-4900-b181-8c354ff82e36", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-02T16:00:00", "end_iso": "2026-04-02T18:00:00", "start_display": "THU APR 2  4:00 PM", "end_display": "6:00 PM", "status": "completed", "capacity": 12, "count": 3, "pct": 25, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Ian M.", "Michelle H.", "Robert N."], "last_snap_ts": "2026-04-02T18:29:21", "thieves": []}, {"uuid": "60f2865e-1452-4047-b3c0-6d565023ff61", "url": "https://ppbrva.podplay.app/community/events/60f2865e-1452-4047-b3c0-6d565023ff61", "title": "4.5/4.0 Open Play", "start_iso": "2026-04-02T18:00:00", "end_iso": "2026-04-02T20:00:00", "start_display": "THU APR 2  6:00 PM", "end_display": "8:00 PM", "status": "completed", "capacity": 12, "count": 11, "pct": 92, "is_full": false, "was_ever_full": false, "manually_added": false, "registrants": ["Brooke H.", "C. Todd S.", "Davis J.", "Ed K.", "Joe M.", "Krishna G.", "Monty S.", "Robert N.", "Shawn A.", "Suhail A.", "+1 player"], "last_snap_ts": "2026-04-02T20:08:08", "thieves": []}], "activity": [{"ts": "2026-04-02T20:38:21", "type": "join", "name": "Michael H.", "title": "4.0 Open Play", "start": "FRI APR 3  10:00 AM"}, {"ts": "2026-04-02T20:38:21", "type": "cancel", "name": "Melba T.", "title": "4.0 Open Play", "start": "FRI APR 3  10:00 AM"}, {"ts": "2026-04-02T19:37:55", "type": "join", "name": "Melba T.", "title": "4.0 Open Play", "start": "FRI APR 3  10:00 AM"}, {"ts": "2026-04-02T19:37:55", "type": "cancel", "name": "Marshall C.", "title": "4.0 Open Play", "start": "FRI APR 3  10:00 AM"}, {"ts": "2026-04-02T19:07:43", "type": "join", "name": "Joe M.", "title": "4.5/4.0 Open Play", "start": "THU APR 2  6:00 PM"}], "thieves": []};
+
+// ── Render engine ─────────────────────────────────────────────────────────
+
+function fmtTs(iso) {
+  if (!iso) return '--';
+  const d = new Date(iso);
+  return d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+
+function ageStr(iso) {
+  if (!iso) return '';
+  const secs = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (secs < 90)  return 'just now';
+  if (secs < 3600) return Math.round(secs/60) + 'm ago';
+  return Math.round(secs/3600) + 'h ago';
+}
+
+function countdown(isoStart) {
+  if (!isoStart) return '';
+  const diff = new Date(isoStart).getTime() - Date.now();
+  if (diff <= 0) return '';
+  const h = Math.floor(diff/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  return (h ? h+'h ' : '') + String(m).padStart(2,'0') + 'm ' + String(s).padStart(2,'0') + 's';
+}
+
+function playerList(registrants, max) {
+  if (!registrants || !registrants.length) return '<span style="color:var(--dtxt)">no sign-ups yet</span>';
+  const shown = registrants.slice(0, max).map(n => `<span class="name">${n}</span>`).join(' · ');
+  const extra = registrants.length > max ? `  <span style="color:var(--dtxt)">+${registrants.length-max} more</span>` : '';
+  return shown + extra;
+}
+
+function renderCard(s, compact) {
+  const pct   = s.capacity ? Math.min(100, Math.round(s.count/s.capacity*100)) : 0;
+  const full  = s.is_full ? ' full' : '';
+  const live  = s.status === 'live' ? ' live' : '';
+  const done  = s.status === 'completed' ? ' completed' : '';
+  const bar   = s.is_full ? ' red' : '';
+  const cd    = countdown(s.start_iso);
+  const cdHtml = cd && s.status==='upcoming' ? `<div class="card-countdown" data-start="${s.start_iso}">STARTS IN ${cd}</div>` : '';
+  const snap  = s.last_snap_ts ? `<span style="color:var(--dtxt);font-size:10px">${ageStr(s.last_snap_ts)}</span>` : '';
+  return `
+<div class="card${full}${live}${done}">
+  <div class="card-top">
+    <div>
+      <div class="card-name">${s.title}</div>
+      ${cdHtml}
+    </div>
+    <div class="card-when">${s.start_display}<br>${s.end_display ? '→ '+s.end_display : ''}<br>${snap}</div>
+  </div>
+  <div class="bar-row">
+    <div class="bar${bar}"><div class="bar-fill" style="width:${pct}%"></div></div>
+    <div class="bar-lbl">${s.count} / ${s.capacity ?? '?'}</div>
+  </div>
+  <div class="card-players">${playerList(s.registrants, compact ? 4 : 7)}</div>
+</div>`;
+}
+
+function renderThieves(thieves, sessions) {
+  const section = document.getElementById('thief-section');
+  const hof     = document.getElementById('hof-list');
+  const secHof  = document.getElementById('sec-hof');
+
+  if (!thieves || !thieves.length) {
+    section.innerHTML = `
+<div class="thief-empty">
+  NO THIEVES DETECTED<br>
+  <span style="animation:blink 1s step-end infinite;display:inline-block;color:var(--grn)">● SYSTEM MONITORING</span>
+</div>`;
+    secHof.style.display = 'none';
+    hof.innerHTML = '';
+    return;
+  }
+
+  // Show individual thief cards
+  section.innerHTML = thieves.map(t => `
+<div class="thief-wrap">
+  <div class="thief-title">⚠ SESSION THIEF DETECTED!</div>
+  <div class="thief-session">${t.session_title}  ·  ${t.session_start}</div>
+  <table class="thief-table">
+    <tr><td>SUSPECT</td><td class="thief-suspect">${t.name}</td></tr>
+    <tr><td>HELD SPOT WHILE FULL</td><td>${t.last_seen_full_ts}</td></tr>
+    <tr><td>WENT ABSENT</td><td>${t.first_absent_ts}</td></tr>
+  </table>
+</div>`).join('');
+
+  // Hall of shame scoreboard
+  secHof.style.display = 'flex';
+  hof.innerHTML = thieves.map((t,i) => `
+<div class="hof-row">
+  <div class="hof-rank">#${i+1}</div>
+  <div class="hof-name">${t.name}</div>
+  <div class="hof-ses">${t.session_title}</div>
+  <div class="hof-ts">${fmtTs(t.first_absent_ts)}</div>
+</div>`).join('');
+}
+
+function renderActivity(activity) {
+  const evtLabel = { join:'JOINED', cancel:'CANCELLED', full:'→ FULL', freed:'FREED' };
+  document.getElementById('activity-list').innerHTML = activity.slice(0,20).map(e => `
+<div class="log-row ${e.type}">
+  <span class="log-ts">${fmtTs(e.ts)}</span>
+  <span class="log-evt">${evtLabel[e.type]||e.type}</span>
+  <span class="log-who">${e.name}</span>
+  <span class="log-ses">${e.title} · ${e.start}</span>
+</div>`).join('');
+}
+
+function renderAll(data) {
+  const sessions = data.sessions || [];
+
+  // Watch list (full + live only)
+  const hot = sessions.filter(s => s.is_full || s.status==='live');
+  const watchEl = document.getElementById('watch-list');
+  const secWatch = document.getElementById('sec-watch');
+  if (hot.length) {
+    secWatch.style.display = 'flex';
+    watchEl.innerHTML = hot.map(s => renderCard(s, false)).join('');
+  } else {
+    secWatch.style.display = 'none';
+    watchEl.innerHTML = '';
+  }
+
+  // All sessions grid (exclude completed)
+  const nonDone = sessions.filter(s => s.status !== 'completed');
+  document.getElementById('all-sessions').innerHTML = nonDone.map(s => renderCard(s, true)).join('');
+
+  renderThieves(data.thieves, sessions);
+  renderActivity(data.activity || []);
+
+  // Stats row
+  const s = data.stats;
+  document.getElementById('stats-row').innerHTML = `
+    <div class="stat-chip"><div class="pip pip-g"></div>${s.total} TRACKED</div>
+    <div class="stat-chip"><div class="pip pip-r"></div>${s.full_count} FULL</div>
+    <div class="stat-chip"><div class="pip pip-c"></div>UPDATED ${ageStr(data.generated_at)}</div>
+    <div class="stat-chip"><div class="pip pip-y"></div>NEXT SCAN ${fmtTs(data.next_scan_at)}</div>
+  `;
+
+  // Status bar
+  document.getElementById('sbar-total').textContent   = s.total + ' SESSIONS';
+  document.getElementById('sbar-full').textContent    = s.full_count + ' FULL';
+  document.getElementById('sbar-updated').textContent = 'UPDATED ' + ageStr(data.generated_at);
+}
+
+// ── Clock ──────────────────────────────────────────────────────────────────
+function tick() {
+  const n = new Date();
+  const D = ['SUN','MON','TUE','WED','THU','FRI','SAT'][n.getDay()];
+  const M = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'][n.getMonth()];
+  const d = String(n.getDate()).padStart(2,'0');
+  const h = String(n.getHours()).padStart(2,'0');
+  const m = String(n.getMinutes()).padStart(2,'0');
+  const s = String(n.getSeconds()).padStart(2,'0');
+  document.getElementById('clk').textContent = `${D} ${M} ${d} ${n.getFullYear()}  ${h}:${m}:${s}`;
+}
+
+// ── Countdown updater (runs every second) ─────────────────────────────────
+function updateCountdowns() {
+  document.querySelectorAll('[data-start]').forEach(el => {
+    const cd = countdown(el.dataset.start);
+    if (cd) el.textContent = 'STARTS IN ' + cd;
+  });
+  document.getElementById('sbar-updated').textContent =
+    'UPDATED ' + ageStr(DATA.generated_at);
+  // keep stats row age fresh too
+  const ageChip = document.querySelector('.stat-chip:nth-child(3)');
+  if (ageChip) ageChip.innerHTML = `<div class="pip pip-c"></div>UPDATED ${ageStr(DATA.generated_at)}`;
+}
+
+// ── Background data refresh ────────────────────────────────────────────────
+async function fetchFresh() {
+  try {
+    const res = await fetch('ppbrva_data.json?t=' + Date.now());
+    if (!res.ok) return;
+    const fresh = await res.json();
+    if (fresh.generated_at !== DATA.generated_at) {
+      DATA = fresh;
+      renderAll(DATA);
+    }
+  } catch(e) { /* network error — keep showing current data */ }
+}
+
+function forceRefresh() {
+  fetchFresh().then(() => renderAll(DATA));
+}
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+renderAll(DATA);
+setInterval(tick, 1000);
+setInterval(updateCountdowns, 1000);
+setInterval(fetchFresh, 120_000);   // background refresh every 2 min
+tick();
+</script>
+</body>
+</html>
