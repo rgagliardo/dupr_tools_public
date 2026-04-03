@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-03T13:24:02",
-  "next_scan_at": "2026-04-03T13:54:02",
+  "generated_at": "2026-04-03T13:54:11",
+  "next_scan_at": "2026-04-03T14:24:11",
   "stats": {
     "total": 31,
     "full_count": 2
@@ -15,8 +15,8 @@
       "start_display": "FRI APR 3  4:00 PM",
       "end_display": "6:00 PM",
       "status": "upcoming",
-      "capacity": 34,
-      "count": 24,
+      "capacity": 35,
+      "count": 25,
       "pct": 71,
       "is_full": false,
       "was_ever_full": false,
@@ -30,24 +30,25 @@
         "Brian P.",
         "Brian W.",
         "Chris P.",
+        "Chuck J.",
         "Danilo A. D.",
         "David P.",
         "Ed K.",
         "Elton W.",
         "Eric K.",
         "Everett H.",
-        "Kathy A.",
         "Kristie B.",
         "Laine S.",
         "Melba T.",
         "Mona B.",
         "Raouf G.",
         "Robert B.",
-        "Robert N.",
         "Sharon K.",
-        "Steve M."
+        "Steve M.",
+        "Steve T.",
+        "+1 player"
       ],
-      "last_snap_ts": "2026-04-03T12:52:02",
+      "last_snap_ts": "2026-04-03T13:54:08",
       "thieves": []
     },
     {
@@ -78,7 +79,7 @@
         "Suraj Singh C.",
         "Thaian N."
       ],
-      "last_snap_ts": "2026-04-03T12:52:05",
+      "last_snap_ts": "2026-04-03T13:54:11",
       "thieves": []
     },
     {
@@ -854,6 +855,41 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-03T13:54:08",
+      "type": "join",
+      "name": "+1 player",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T13:54:08",
+      "type": "join",
+      "name": "Chuck J.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T13:54:08",
+      "type": "join",
+      "name": "Steve T.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T13:54:08",
+      "type": "cancel",
+      "name": "Kathy A.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T13:54:08",
+      "type": "cancel",
+      "name": "Robert N.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
       "ts": "2026-04-03T13:23:37",
       "type": "join",
       "name": "+3 players",
@@ -1097,41 +1133,6 @@
       "name": "Eric K.",
       "title": "4.5/4.0 Open Play",
       "start": "FRI APR 3  4:00 PM"
-    },
-    {
-      "ts": "2026-04-02T22:39:28",
-      "type": "cancel",
-      "name": "+1 player",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 3  4:00 PM"
-    },
-    {
-      "ts": "2026-04-02T21:39:03",
-      "type": "join",
-      "name": "Suhail A.",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 3  6:00 PM"
-    },
-    {
-      "ts": "2026-04-02T21:39:03",
-      "type": "cancel",
-      "name": "Robert N.",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 3  6:00 PM"
-    },
-    {
-      "ts": "2026-04-02T20:38:21",
-      "type": "join",
-      "name": "Michael H.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 3  10:00 AM"
-    },
-    {
-      "ts": "2026-04-02T20:38:21",
-      "type": "cancel",
-      "name": "Melba T.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 3  10:00 AM"
     }
   ],
   "thieves": []
