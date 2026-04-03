@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-03T08:17:51",
-  "next_scan_at": "2026-04-03T08:47:51",
+  "generated_at": "2026-04-03T08:48:08",
+  "next_scan_at": "2026-04-03T09:18:08",
   "stats": {
     "total": 25,
     "full_count": 3
@@ -16,16 +16,15 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 2,
-      "pct": 17,
+      "count": 1,
+      "pct": 8,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "Pete H.",
-        "Roy A."
+        "Pete H."
       ],
-      "last_snap_ts": "2026-04-03T08:17:35",
+      "last_snap_ts": "2026-04-03T08:47:58",
       "thieves": []
     },
     {
@@ -37,9 +36,9 @@
       "start_display": "FRI APR 3  10:00 AM",
       "end_display": "12:00 PM",
       "status": "upcoming",
-      "capacity": 40,
+      "capacity": 39,
       "count": 24,
-      "pct": 60,
+      "pct": 62,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -69,7 +68,7 @@
         "Michael H.",
         "Mike L."
       ],
-      "last_snap_ts": "2026-04-03T08:17:38",
+      "last_snap_ts": "2026-04-03T08:48:01",
       "thieves": []
     },
     {
@@ -82,8 +81,8 @@
       "end_display": "6:00 PM",
       "status": "upcoming",
       "capacity": 35,
-      "count": 24,
-      "pct": 69,
+      "count": 23,
+      "pct": 66,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -104,7 +103,6 @@
         "Kathy A.",
         "Kristie B.",
         "Melba T.",
-        "Michelle H.",
         "Mona B.",
         "Raouf G.",
         "Robert B.",
@@ -113,7 +111,7 @@
         "Steve M.",
         "Steve T."
       ],
-      "last_snap_ts": "2026-04-03T07:47:26",
+      "last_snap_ts": "2026-04-03T08:48:04",
       "thieves": []
     },
     {
@@ -144,7 +142,7 @@
         "Suraj Singh C.",
         "Thaian N."
       ],
-      "last_snap_ts": "2026-04-03T07:47:29",
+      "last_snap_ts": "2026-04-03T08:48:08",
       "thieves": []
     },
     {
@@ -685,6 +683,20 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-03T08:48:04",
+      "type": "cancel",
+      "name": "Michelle H.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T08:47:58",
+      "type": "cancel",
+      "name": "Roy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 3  10:00 AM"
+    },
     {
       "ts": "2026-04-03T07:47:26",
       "type": "join",
