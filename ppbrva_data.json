@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-03T01:12:06",
-  "next_scan_at": "2026-04-03T01:42:06",
+  "generated_at": "2026-04-03T01:42:23",
+  "next_scan_at": "2026-04-03T02:12:23",
   "stats": {
     "total": 25,
     "full_count": 3
@@ -16,18 +16,17 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 4,
-      "pct": 33,
+      "count": 3,
+      "pct": 25,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Bradley F.",
         "Pete H.",
-        "Roy A.",
-        "Steve Y."
+        "Roy A."
       ],
-      "last_snap_ts": "2026-04-03T00:41:15",
+      "last_snap_ts": "2026-04-03T01:42:13",
       "thieves": []
     },
     {
@@ -39,9 +38,9 @@
       "start_display": "FRI APR 3  10:00 AM",
       "end_display": "12:00 PM",
       "status": "upcoming",
-      "capacity": 39,
+      "capacity": 38,
       "count": 25,
-      "pct": 64,
+      "pct": 66,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -72,7 +71,7 @@
         "Michael H.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-03T00:41:19",
+      "last_snap_ts": "2026-04-03T01:42:16",
       "thieves": []
     },
     {
@@ -115,7 +114,7 @@
         "Steve M.",
         "Steve T."
       ],
-      "last_snap_ts": "2026-04-03T00:41:22",
+      "last_snap_ts": "2026-04-03T01:42:20",
       "thieves": []
     },
     {
@@ -146,7 +145,7 @@
         "Suraj Singh C.",
         "Thaian N."
       ],
-      "last_snap_ts": "2026-04-03T00:41:25",
+      "last_snap_ts": "2026-04-03T01:42:23",
       "thieves": []
     },
     {
@@ -686,6 +685,13 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-03T01:42:13",
+      "type": "cancel",
+      "name": "Steve Y.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 3  10:00 AM"
+    },
     {
       "ts": "2026-04-02T22:40:14",
       "type": "join",
