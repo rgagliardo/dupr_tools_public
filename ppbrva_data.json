@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-03T07:17:13",
-  "next_scan_at": "2026-04-03T07:47:13",
+  "generated_at": "2026-04-03T07:47:29",
+  "next_scan_at": "2026-04-03T08:17:29",
   "stats": {
     "total": 25,
     "full_count": 3
@@ -16,17 +16,16 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 3,
-      "pct": 25,
+      "count": 2,
+      "pct": 17,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "Bradley F.",
         "Pete H.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-03T06:45:24",
+      "last_snap_ts": "2026-04-03T07:47:19",
       "thieves": []
     },
     {
@@ -38,9 +37,9 @@
       "start_display": "FRI APR 3  10:00 AM",
       "end_display": "12:00 PM",
       "status": "upcoming",
-      "capacity": 38,
-      "count": 25,
-      "pct": 66,
+      "capacity": 39,
+      "count": 24,
+      "pct": 62,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -61,7 +60,6 @@
         "Elton W.",
         "Fran S.",
         "Jason D.",
-        "Joan J.",
         "John L.",
         "Konrad S.",
         "Lisha Y.",
@@ -69,9 +67,9 @@
         "Louis G.",
         "Mark K.",
         "Michael H.",
-        "+1 player"
+        "Mike L."
       ],
-      "last_snap_ts": "2026-04-03T06:45:27",
+      "last_snap_ts": "2026-04-03T07:47:22",
       "thieves": []
     },
     {
@@ -84,8 +82,8 @@
       "end_display": "6:00 PM",
       "status": "upcoming",
       "capacity": 35,
-      "count": 23,
-      "pct": 66,
+      "count": 24,
+      "pct": 69,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -110,11 +108,12 @@
         "Mona B.",
         "Raouf G.",
         "Robert B.",
+        "Robert N.",
         "Sharon K.",
         "Steve M.",
         "Steve T."
       ],
-      "last_snap_ts": "2026-04-03T06:45:31",
+      "last_snap_ts": "2026-04-03T07:47:26",
       "thieves": []
     },
     {
@@ -145,7 +144,7 @@
         "Suraj Singh C.",
         "Thaian N."
       ],
-      "last_snap_ts": "2026-04-03T06:45:34",
+      "last_snap_ts": "2026-04-03T07:47:29",
       "thieves": []
     },
     {
@@ -686,6 +685,41 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-03T07:47:26",
+      "type": "join",
+      "name": "Robert N.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T07:47:22",
+      "type": "join",
+      "name": "Mike L.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 3  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T07:47:22",
+      "type": "cancel",
+      "name": "+1 player",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 3  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T07:47:22",
+      "type": "cancel",
+      "name": "Joan J.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 3  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T07:47:19",
+      "type": "cancel",
+      "name": "Bradley F.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 3  10:00 AM"
+    },
     {
       "ts": "2026-04-03T02:43:51",
       "type": "join",
