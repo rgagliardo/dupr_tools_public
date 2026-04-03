@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-03T12:53:27",
-  "next_scan_at": "2026-04-03T13:23:27",
+  "generated_at": "2026-04-03T13:24:02",
+  "next_scan_at": "2026-04-03T13:54:02",
   "stats": {
     "total": 31,
     "full_count": 2
@@ -90,9 +90,9 @@
       "start_display": "FRI APR 3  8:00 PM",
       "end_display": "10:00 PM",
       "status": "upcoming",
-      "capacity": 11,
+      "capacity": 10,
       "count": 8,
-      "pct": 73,
+      "pct": 80,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -104,9 +104,9 @@
         "Stacie R.",
         "Ting H.",
         "Wayne M.",
-        "+2 players"
+        "+3 players"
       ],
-      "last_snap_ts": "2026-04-03T12:21:26",
+      "last_snap_ts": "2026-04-03T13:23:37",
       "thieves": []
     },
     {
@@ -125,7 +125,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-03T12:21:29",
+      "last_snap_ts": "2026-04-03T13:23:40",
       "thieves": []
     },
     {
@@ -144,7 +144,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-03T12:21:33",
+      "last_snap_ts": "2026-04-03T13:23:44",
       "thieves": []
     },
     {
@@ -163,7 +163,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-03T12:21:36",
+      "last_snap_ts": "2026-04-03T13:23:48",
       "thieves": []
     },
     {
@@ -189,7 +189,7 @@
         "Suraj Singh C.",
         "Ty L."
       ],
-      "last_snap_ts": "2026-04-03T12:21:40",
+      "last_snap_ts": "2026-04-03T13:23:51",
       "thieves": []
     },
     {
@@ -221,7 +221,7 @@
         "Troy R.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-03T12:21:43",
+      "last_snap_ts": "2026-04-03T13:23:55",
       "thieves": []
     },
     {
@@ -249,7 +249,7 @@
         "Scott S.",
         "Suhail A."
       ],
-      "last_snap_ts": "2026-04-03T12:21:47",
+      "last_snap_ts": "2026-04-03T13:23:58",
       "thieves": []
     },
     {
@@ -270,7 +270,7 @@
       "registrants": [
         "David C."
       ],
-      "last_snap_ts": "2026-04-03T12:21:16",
+      "last_snap_ts": "2026-04-03T13:23:33",
       "thieves": []
     },
     {
@@ -289,7 +289,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-03T12:21:50",
+      "last_snap_ts": "2026-04-03T13:24:02",
       "thieves": []
     },
     {
@@ -854,6 +854,20 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-03T13:23:37",
+      "type": "join",
+      "name": "+3 players",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 3  8:00 PM"
+    },
+    {
+      "ts": "2026-04-03T13:23:37",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 3  8:00 PM"
+    },
+    {
       "ts": "2026-04-03T12:52:02",
       "type": "join",
       "name": "Brian W.",
@@ -1116,20 +1130,6 @@
       "ts": "2026-04-02T20:38:21",
       "type": "cancel",
       "name": "Melba T.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 3  10:00 AM"
-    },
-    {
-      "ts": "2026-04-02T19:37:55",
-      "type": "join",
-      "name": "Melba T.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 3  10:00 AM"
-    },
-    {
-      "ts": "2026-04-02T19:37:55",
-      "type": "cancel",
-      "name": "Marshall C.",
       "title": "4.0 Open Play",
       "start": "FRI APR 3  10:00 AM"
     }
