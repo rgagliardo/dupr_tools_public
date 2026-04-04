@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-04T10:35:52",
-  "next_scan_at": "2026-04-04T11:05:52",
+  "generated_at": "2026-04-04T10:39:52",
+  "next_scan_at": "2026-04-04T11:09:52",
   "stats": {
     "total": 31,
     "full_count": 3
@@ -16,21 +16,27 @@
       "end_display": "12:00 PM",
       "status": "live",
       "capacity": 12,
-      "count": 5,
-      "pct": 42,
+      "count": 6,
+      "pct": 50,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "C. Todd S.",
+        "Charles N.",
         "Lloyd Z.",
         "Matt B.",
         "Suhail A.",
         "Ty L."
       ],
-      "last_snap_ts": "2026-04-04T10:14:48",
+      "last_snap_ts": "2026-04-04T10:38:27",
       "thieves": [],
-      "big_dogs": []
+      "big_dogs": [
+        {
+          "name": "Charles N.",
+          "rating": "5.31"
+        }
+      ]
     },
     {
       "uuid": "019d3fb4-1c27-7dde-a7ae-d6b7056682e2",
@@ -42,8 +48,8 @@
       "end_display": "12:00 PM",
       "status": "live",
       "capacity": 18,
-      "count": 16,
-      "pct": 89,
+      "count": 17,
+      "pct": 94,
       "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
@@ -51,6 +57,7 @@
         "Beth B.",
         "Bobby L.",
         "Chad P.",
+        "Charles N.",
         "Chris P.",
         "Danny L.",
         "Keshia B.",
@@ -65,7 +72,7 @@
         "Steve M.",
         "Troy R."
       ],
-      "last_snap_ts": "2026-04-04T10:14:54",
+      "last_snap_ts": "2026-04-04T10:38:34",
       "thieves": [],
       "big_dogs": []
     },
@@ -94,9 +101,14 @@
         "Roy A.",
         "Suhail A."
       ],
-      "last_snap_ts": "2026-04-04T10:15:01",
+      "last_snap_ts": "2026-04-04T10:38:40",
       "thieves": [],
-      "big_dogs": []
+      "big_dogs": [
+        {
+          "name": "Charles N.",
+          "rating": "5.31"
+        }
+      ]
     },
     {
       "uuid": "28d27356-b70c-42f2-a307-c62fe33a2a3c",
@@ -142,7 +154,7 @@
       "registrants": [
         "David C."
       ],
-      "last_snap_ts": "2026-04-04T10:14:22",
+      "last_snap_ts": "2026-04-04T10:38:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -162,7 +174,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-04T10:15:07",
+      "last_snap_ts": "2026-04-04T10:38:47",
       "thieves": [],
       "big_dogs": []
     },
@@ -933,6 +945,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-04T10:38:34",
+      "type": "join",
+      "name": "Charles N.",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+    },
+    {
+      "ts": "2026-04-04T10:38:27",
+      "type": "join",
+      "name": "Charles N.",
+      "title": "DUPR 4.5 Open Play",
+      "start": "SAT APR 4  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
+    },
+    {
       "ts": "2026-04-04T10:15:01",
       "type": "join",
       "name": "Charles N.",
@@ -1235,22 +1263,6 @@
       "title": "4.0 Open Play",
       "start": "SUN APR 5  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5"
-    },
-    {
-      "ts": "2026-04-04T04:01:12",
-      "type": "join",
-      "name": "Danny L.",
-      "title": "4.0 Open Play",
-      "start": "SAT APR 4  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
-    },
-    {
-      "ts": "2026-04-04T04:01:12",
-      "type": "join",
-      "name": "Prasad P.",
-      "title": "4.0 Open Play",
-      "start": "SAT APR 4  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
     }
   ],
   "thieves": [
@@ -1401,6 +1413,11 @@
       "cancels": 0
     },
     {
+      "name": "Charles N.",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
       "name": "Steve M.",
       "joins": 3,
       "cancels": 0
@@ -1421,17 +1438,12 @@
       "cancels": 0
     },
     {
-      "name": "Steven B.",
-      "joins": 2,
-      "cancels": 0
-    },
-    {
-      "name": "Steven S.",
-      "joins": 2,
-      "cancels": 0
-    },
-    {
       "name": "Sheryl R.",
+      "joins": 2,
+      "cancels": 0
+    },
+    {
+      "name": "Rebecca J.",
       "joins": 2,
       "cancels": 0
     },
@@ -1441,7 +1453,12 @@
       "cancels": 0
     },
     {
-      "name": "Rebecca J.",
+      "name": "Steven B.",
+      "joins": 2,
+      "cancels": 0
+    },
+    {
+      "name": "Steven S.",
       "joins": 2,
       "cancels": 0
     },
@@ -1461,12 +1478,12 @@
       "cancels": 0
     },
     {
-      "name": "Laine S.",
+      "name": "Brian W.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Brian W.",
+      "name": "Laine S.",
       "joins": 1,
       "cancels": 0
     },
@@ -1486,12 +1503,12 @@
       "cancels": 0
     },
     {
-      "name": "Ryan B.",
+      "name": "Chad P.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Chad P.",
+      "name": "Ryan B.",
       "joins": 1,
       "cancels": 0
     },
@@ -1521,11 +1538,6 @@
       "cancels": 0
     },
     {
-      "name": "Charles N.",
-      "joins": 1,
-      "cancels": 0
-    },
-    {
       "name": "Todd B.",
       "joins": 1,
       "cancels": 0
@@ -1551,12 +1563,22 @@
       "cancels": 0
     },
     {
+      "name": "Mona B.",
+      "joins": 1,
+      "cancels": 0
+    },
+    {
       "name": "Mike N.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Mark K.",
+      "name": "Rally A.",
+      "joins": 1,
+      "cancels": 0
+    },
+    {
+      "name": "Melanie W.",
       "joins": 1,
       "cancels": 0
     },
@@ -1571,17 +1593,7 @@
       "cancels": 0
     },
     {
-      "name": "Mona B.",
-      "joins": 1,
-      "cancels": 0
-    },
-    {
-      "name": "Rally A.",
-      "joins": 1,
-      "cancels": 0
-    },
-    {
-      "name": "Melanie W.",
+      "name": "Mark K.",
       "joins": 1,
       "cancels": 0
     },
