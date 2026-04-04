@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-03T20:23:35",
-  "next_scan_at": "2026-04-03T20:53:35",
+  "generated_at": "2026-04-03T20:28:23",
+  "next_scan_at": "2026-04-03T20:58:23",
   "stats": {
     "total": 31,
     "full_count": 4
@@ -427,14 +427,27 @@
       "start_display": "MON APR 6  6:00 PM",
       "end_display": "8:00 PM",
       "status": "upcoming",
-      "capacity": 0,
-      "count": 0,
-      "pct": 0,
+      "capacity": 12,
+      "count": 12,
+      "pct": 100,
       "is_full": true,
       "was_ever_full": true,
       "manually_added": false,
-      "registrants": [],
-      "last_snap_ts": "2026-04-03T19:00:10",
+      "registrants": [
+        "Arathi K.",
+        "Brooke H.",
+        "David H.",
+        "Dipen P.",
+        "Ed K.",
+        "Jessica B.",
+        "Joe M.",
+        "Leah F.",
+        "Robert N.",
+        "Suraj Singh C.",
+        "Susie S.",
+        "+1 player"
+      ],
+      "last_snap_ts": "2026-04-03T14:55:35",
       "thieves": []
     },
     {
@@ -870,90 +883,6 @@
       "start": "FRI APR 3  8:00 PM"
     },
     {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "+1 player",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Arathi K.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Brooke H.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "David H.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Dipen P.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Ed K.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Jessica B.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Joe M.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Leah F.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Robert N.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Suraj Singh C.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
-      "ts": "2026-04-03T19:00:10",
-      "type": "cancel",
-      "name": "Susie S.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 6  6:00 PM"
-    },
-    {
       "ts": "2026-04-03T18:29:15",
       "type": "join",
       "name": "Robert G.",
@@ -1141,6 +1070,90 @@
       "name": "Brian W.",
       "title": "4.5/4.0 Open Play",
       "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T12:52:02",
+      "type": "join",
+      "name": "Laine S.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T12:52:02",
+      "type": "cancel",
+      "name": "Steve T.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 3  4:00 PM"
+    },
+    {
+      "ts": "2026-04-03T12:21:47",
+      "type": "join",
+      "name": "Alicia Z.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T12:21:47",
+      "type": "join",
+      "name": "Suhail A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T11:20:54",
+      "type": "join",
+      "name": "Kathy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T11:20:51",
+      "type": "join",
+      "name": "Robert N.",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T10:50:08",
+      "type": "join",
+      "name": "Boodie M.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 6  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T10:50:08",
+      "type": "cancel",
+      "name": "Lori L.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 6  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T10:49:55",
+      "type": "join",
+      "name": "Suhail A.",
+      "title": "DUPR 4.5 Open Play",
+      "start": "SUN APR 5  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T10:19:16",
+      "type": "cancel",
+      "name": "Ian M.",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T10:19:16",
+      "type": "freed",
+      "name": "11/12",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 4  10:00 AM"
+    },
+    {
+      "ts": "2026-04-03T10:19:12",
+      "type": "join",
+      "name": "Suhail A.",
+      "title": "DUPR 4.5 Open Play",
+      "start": "SAT APR 4  10:00 AM"
     }
   ],
   "thieves": [
@@ -1170,12 +1183,7 @@
     {
       "name": "Robert N.",
       "joins": 2,
-      "cancels": 3
-    },
-    {
-      "name": "Joe M.",
-      "joins": 2,
-      "cancels": 1
+      "cancels": 2
     },
     {
       "name": "Wayne M.",
@@ -1263,53 +1271,13 @@
       "cancels": 1
     },
     {
-      "name": "Suraj Singh C.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Dipen P.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Ed K.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Susie S.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Jessica B.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Leah F.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "David H.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Brooke H.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
-      "name": "Arathi K.",
-      "joins": 0,
-      "cancels": 1
-    },
-    {
       "name": "Suhail A.",
       "joins": 4,
+      "cancels": 0
+    },
+    {
+      "name": "Joe M.",
+      "joins": 2,
       "cancels": 0
     },
     {
@@ -1333,12 +1301,12 @@
       "cancels": 0
     },
     {
-      "name": "Laine S.",
+      "name": "Brian W.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Brian W.",
+      "name": "Laine S.",
       "joins": 1,
       "cancels": 0
     },
