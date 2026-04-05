@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T10:59:52",
-  "next_scan_at": "2026-04-05T11:29:52",
+  "generated_at": "2026-04-05T11:22:58",
+  "next_scan_at": "2026-04-05T11:52:58",
   "stats": {
     "total": 35,
-    "full_count": 6
+    "full_count": 7
   },
   "sessions": [
     {
@@ -37,7 +37,7 @@
         "Suraj Singh C.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-05T10:38:02",
+      "last_snap_ts": "2026-04-05T11:21:07",
       "thieves": [],
       "big_dogs": [
         {
@@ -70,7 +70,7 @@
         "Sheryl R.",
         "Tamara L."
       ],
-      "last_snap_ts": "2026-04-05T10:49:17",
+      "last_snap_ts": "2026-04-05T11:21:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -110,27 +110,31 @@
       "end_display": "4:00 PM",
       "status": "upcoming",
       "capacity": 30,
-      "count": 23,
-      "pct": 77,
+      "count": 27,
+      "pct": 90,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Alex C.",
         "Amber G.",
+        "Bikram S.",
         "Bing W.",
         "Chanthachone W.",
+        "Christopher B.",
         "Daniel L.",
         "David G.",
         "Devin C.",
-        "Ed K.",
         "Eileen T.",
         "Gabriella C.",
+        "Geoff M.",
         "Greg D.",
+        "Joe G.",
         "Joj! W.",
         "Jonathan C.",
         "Joshua O.",
         "junbiao h.",
+        "Kristie B.",
         "Lang C.",
         "Mark R.",
         "Steve Y.",
@@ -140,7 +144,7 @@
         "Van K.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-05T10:37:57",
+      "last_snap_ts": "2026-04-05T11:21:02",
       "thieves": [],
       "big_dogs": []
     },
@@ -173,7 +177,7 @@
         "Roy A.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-04-05T10:17:24",
+      "last_snap_ts": "2026-04-05T11:21:16",
       "thieves": [],
       "big_dogs": [
         {
@@ -196,9 +200,9 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 42,
-      "count": 41,
-      "pct": 98,
-      "is_full": false,
+      "count": 42,
+      "pct": 100,
+      "is_full": true,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
@@ -216,6 +220,7 @@
         "dale p.",
         "David M.",
         "David S.",
+        "Denise O.",
         "Dennis W.",
         "Don B.",
         "Ed K.",
@@ -244,7 +249,7 @@
         "Travis S.",
         "Wendy W."
       ],
-      "last_snap_ts": "2026-04-05T10:17:31",
+      "last_snap_ts": "2026-04-05T11:21:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -1158,6 +1163,70 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-05T11:21:21",
+      "type": "join",
+      "name": "Denise O.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 6  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
+    },
+    {
+      "ts": "2026-04-05T11:21:21",
+      "type": "full",
+      "name": "42/42",
+      "title": "4.0 Open Play",
+      "start": "MON APR 6  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
+    },
+    {
+      "ts": "2026-04-05T11:21:02",
+      "type": "join",
+      "name": "Bikram S.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T11:21:02",
+      "type": "join",
+      "name": "Christopher B.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T11:21:02",
+      "type": "join",
+      "name": "Geoff M.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T11:21:02",
+      "type": "join",
+      "name": "Joe G.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T11:21:02",
+      "type": "join",
+      "name": "Kristie B.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T11:21:02",
+      "type": "cancel",
+      "name": "Ed K.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
       "ts": "2026-04-05T10:17:54",
       "type": "join",
       "name": "Prasad P.",
@@ -1412,70 +1481,6 @@
       "title": "ADVANCED Performance Play Sunday",
       "start": "SUN APR 5  12:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T07:40:31",
-      "type": "join",
-      "name": "Greg D.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T06:40:02",
-      "type": "join",
-      "name": "Daniel L.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-04T23:32:12",
-      "type": "join",
-      "name": "Joshua O.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-04T22:30:49",
-      "type": "join",
-      "name": "Susan M.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-04T21:00:10",
-      "type": "join",
-      "name": "+2 players",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/df0223fa-b73e-4971-9083-138ec8e0cdea"
-    },
-    {
-      "ts": "2026-04-04T21:00:10",
-      "type": "join",
-      "name": "Gabriella C.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/df0223fa-b73e-4971-9083-138ec8e0cdea"
-    },
-    {
-      "ts": "2026-04-04T21:00:10",
-      "type": "join",
-      "name": "Steve Y.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/df0223fa-b73e-4971-9083-138ec8e0cdea"
-    },
-    {
-      "ts": "2026-04-04T21:00:10",
-      "type": "cancel",
-      "name": "+1 player",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/df0223fa-b73e-4971-9083-138ec8e0cdea"
     }
   ],
   "thieves": [],
