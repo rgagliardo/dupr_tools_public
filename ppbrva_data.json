@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-04T19:57:55",
-  "next_scan_at": "2026-04-04T20:27:55",
+  "generated_at": "2026-04-04T20:28:23",
+  "next_scan_at": "2026-04-04T20:58:23",
   "stats": {
     "total": 36,
     "full_count": 8
@@ -59,7 +59,7 @@
         "Scott S.",
         "Suhail A."
       ],
-      "last_snap_ts": "2026-04-04T19:27:41",
+      "last_snap_ts": "2026-04-04T20:28:11",
       "thieves": [],
       "big_dogs": []
     },
@@ -84,7 +84,7 @@
         "Suraj Singh C.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-04T19:27:48",
+      "last_snap_ts": "2026-04-04T20:28:17",
       "thieves": [],
       "big_dogs": [
         {
@@ -126,7 +126,7 @@
         "Todd B.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-04T19:27:54",
+      "last_snap_ts": "2026-04-04T20:28:23",
       "thieves": [],
       "big_dogs": []
     },
@@ -139,9 +139,9 @@
       "start_display": "SUN APR 5  12:00 PM",
       "end_display": "4:00 PM",
       "status": "upcoming",
-      "capacity": 23,
+      "capacity": 22,
       "count": 11,
-      "pct": 48,
+      "pct": 50,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -156,9 +156,9 @@
         "Steven T.",
         "Trish M.",
         "Val C.",
-        "+2 players"
+        "+3 players"
       ],
-      "last_snap_ts": "2026-04-04T19:27:35",
+      "last_snap_ts": "2026-04-04T20:28:03",
       "thieves": [],
       "big_dogs": []
     },
@@ -1140,6 +1140,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-04T20:28:03",
+      "type": "join",
+      "name": "+3 players",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-04T20:28:03",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
       "ts": "2026-04-04T19:27:48",
       "type": "cancel",
       "name": "C. Todd S.",
@@ -1442,22 +1458,6 @@
       "title": "DUPR 4.5 Open Play",
       "start": "SUN APR 5  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d3fc3-b20c-7dde-a7d1-2dc65be18310"
-    },
-    {
-      "ts": "2026-04-04T08:40:47",
-      "type": "cancel",
-      "name": "Bradley F.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SAT APR 4  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-    },
-    {
-      "ts": "2026-04-04T08:40:47",
-      "type": "cancel",
-      "name": "Scott S.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SAT APR 4  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
     }
   ],
   "thieves": [],
@@ -1633,17 +1633,12 @@
       "cancels": 0
     },
     {
-      "name": "Travis S.",
-      "joins": 2,
-      "cancels": 0
-    },
-    {
-      "name": "Steven S.",
-      "joins": 2,
-      "cancels": 0
-    },
-    {
       "name": "Steven B.",
+      "joins": 2,
+      "cancels": 0
+    },
+    {
+      "name": "Travis S.",
       "joins": 2,
       "cancels": 0
     },
@@ -1653,17 +1648,22 @@
       "cancels": 0
     },
     {
+      "name": "Steven S.",
+      "joins": 2,
+      "cancels": 0
+    },
+    {
       "name": "Trish M.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Devin C.",
+      "name": "Steven T.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Steven T.",
+      "name": "Devin C.",
       "joins": 1,
       "cancels": 0
     },
@@ -1683,12 +1683,12 @@
       "cancels": 0
     },
     {
-      "name": "Brian W.",
+      "name": "Laine S.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Laine S.",
+      "name": "Brian W.",
       "joins": 1,
       "cancels": 0
     },
@@ -1783,11 +1783,6 @@
       "cancels": 0
     },
     {
-      "name": "Rick G.",
-      "joins": 1,
-      "cancels": 0
-    },
-    {
       "name": "Mark K.",
       "joins": 1,
       "cancels": 0
@@ -1798,7 +1793,7 @@
       "cancels": 0
     },
     {
-      "name": "Mona B.",
+      "name": "Val C.",
       "joins": 1,
       "cancels": 0
     },
@@ -1808,12 +1803,17 @@
       "cancels": 0
     },
     {
-      "name": "Melanie W.",
+      "name": "Rick G.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "Val C.",
+      "name": "Mona B.",
+      "joins": 1,
+      "cancels": 0
+    },
+    {
+      "name": "Melanie W.",
       "joins": 1,
       "cancels": 0
     },
@@ -1848,12 +1848,12 @@
       "cancels": 0
     },
     {
-      "name": "dale p.",
+      "name": "David G.",
       "joins": 1,
       "cancels": 0
     },
     {
-      "name": "David G.",
+      "name": "dale p.",
       "joins": 1,
       "cancels": 0
     },
