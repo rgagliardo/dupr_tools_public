@@ -1,61 +1,11 @@
 {
-  "generated_at": "2026-04-05T15:40:35",
-  "next_scan_at": "2026-04-05T16:10:35",
+  "generated_at": "2026-04-05T16:10:59",
+  "next_scan_at": "2026-04-05T16:40:59",
   "stats": {
     "total": 35,
-    "full_count": 7
+    "full_count": 8
   },
   "sessions": [
-    {
-      "uuid": "019d3fe1-6f45-7000-905a-98eb79abb91e",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e",
-      "title": "ADVANCED Performance Play Sunday",
-      "start_iso": "2026-04-05T12:00:00",
-      "end_iso": "2026-04-05T16:00:00",
-      "start_display": "SUN APR 5  12:00 PM",
-      "end_display": "4:00 PM",
-      "status": "live",
-      "capacity": 30,
-      "count": 29,
-      "pct": 97,
-      "is_full": false,
-      "was_ever_full": false,
-      "manually_added": false,
-      "registrants": [
-        "Alex C.",
-        "Amber G.",
-        "Bikram S.",
-        "Bing W.",
-        "Chanthachone W.",
-        "Christopher B.",
-        "Chuck J.",
-        "Daniel L.",
-        "Devin C.",
-        "Gabriella C.",
-        "Geoff M.",
-        "Greg D.",
-        "Gulhan D.",
-        "Joe G.",
-        "Jonathan C.",
-        "Joshua O.",
-        "junbiao h.",
-        "Kristie B.",
-        "Lang C.",
-        "Mark R.",
-        "Mike F.",
-        "Naren K.",
-        "Roselyn S.",
-        "Steve Y.",
-        "Steven T.",
-        "Susan M.",
-        "Thaian N.",
-        "Van K.",
-        "+3 players"
-      ],
-      "last_snap_ts": "2026-04-05T15:26:25",
-      "thieves": [],
-      "big_dogs": []
-    },
     {
       "uuid": "e43d00f8-149b-470d-8a74-3615e3b720b2",
       "url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2",
@@ -177,7 +127,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-05T13:24:24",
+      "last_snap_ts": "2026-04-05T16:10:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -1165,11 +1115,179 @@
       "last_snap_ts": "2026-04-05T12:23:34",
       "thieves": [],
       "big_dogs": []
+    },
+    {
+      "uuid": "019d3fe1-6f45-7000-905a-98eb79abb91e",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e",
+      "title": "ADVANCED Performance Play Sunday",
+      "start_iso": "2026-04-05T12:00:00",
+      "end_iso": "2026-04-05T16:00:00",
+      "start_display": "SUN APR 5  12:00 PM",
+      "end_display": "4:00 PM",
+      "status": "completed",
+      "capacity": 30,
+      "count": 30,
+      "pct": 100,
+      "is_full": true,
+      "was_ever_full": true,
+      "manually_added": false,
+      "registrants": [
+        "Alex C.",
+        "Amber G.",
+        "Bikram S.",
+        "Bing W.",
+        "Chanthachone W.",
+        "Charles N.",
+        "Christopher B.",
+        "Chuck J.",
+        "Daniel L.",
+        "Devin C.",
+        "Gabriella C.",
+        "Geoff M.",
+        "Greg D.",
+        "Gulhan D.",
+        "Joe G.",
+        "Jonathan C.",
+        "Joshua O.",
+        "junbiao h.",
+        "Kristie B.",
+        "Lang C.",
+        "Mark R.",
+        "Mike F.",
+        "Naren K.",
+        "Roselyn S.",
+        "Steve Y.",
+        "Steven T.",
+        "Susan M.",
+        "Thaian N.",
+        "Van K.",
+        "+3 players"
+      ],
+      "last_snap_ts": "2026-04-05T16:10:43",
+      "thieves": [],
+      "big_dogs": [
+        {
+          "name": "Charles N.",
+          "rating": "known"
+        }
+      ]
     }
   ],
   "activity": [
     {
-      "ts": "2026-04-05T14:26:00",
+      "ts": "2026-04-05T16:10:43",
+      "type": "join",
+      "name": "Charles N.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T16:10:43",
+      "type": "full",
+      "name": "30/30",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "+3 players",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Alex C.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Amber G.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Bikram S.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Bing W.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Chanthachone W.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Christopher B.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Chuck J.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Daniel L.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Devin C.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Geoff M.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Greg D.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
       "type": "join",
       "name": "Gulhan D.",
       "title": "ADVANCED Performance Play Sunday",
@@ -1177,9 +1295,153 @@
       "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
     },
     {
-      "ts": "2026-04-05T13:55:53",
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Joe G.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Joshua O.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Kristie B.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Lang C.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Mark R.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
       "type": "join",
       "name": "Mike F.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Naren K.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Roselyn S.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Steve Y.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Steven T.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Susan M.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Thaian N.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "Van K.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "join",
+      "name": "junbiao h.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "cancel",
+      "name": "+1 player",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "cancel",
+      "name": "David H.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "cancel",
+      "name": "Ed K.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "cancel",
+      "name": "Robert N.",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 5  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
+    },
+    {
+      "ts": "2026-04-05T15:26:25",
+      "type": "cancel",
+      "name": "Val C.",
       "title": "ADVANCED Performance Play Sunday",
       "start": "SUN APR 5  12:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
@@ -1231,262 +1493,6 @@
       "title": "4.0 Open Play",
       "start": "MON APR 6  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-05T13:23:57",
-      "type": "cancel",
-      "name": "Trish M.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T12:53:50",
-      "type": "join",
-      "name": "Naren K.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T12:23:34",
-      "type": "cancel",
-      "name": "Beth B.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5"
-    },
-    {
-      "ts": "2026-04-05T12:23:34",
-      "type": "cancel",
-      "name": "David G.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5"
-    },
-    {
-      "ts": "2026-04-05T12:23:34",
-      "type": "cancel",
-      "name": "Mona B.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5"
-    },
-    {
-      "ts": "2026-04-05T12:23:34",
-      "type": "cancel",
-      "name": "Robert B.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "+1 player",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "CHARLIE S.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "Charles Z.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "Mac P.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "Prasad P.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "RAMESH K.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "Rodney G.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "Suhail A.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "join",
-      "name": "Suraj Singh C.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:29",
-      "type": "cancel",
-      "name": "Bradley F.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 5  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
-    },
-    {
-      "ts": "2026-04-05T12:23:24",
-      "type": "join",
-      "name": "Chuck J.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T12:23:24",
-      "type": "join",
-      "name": "Roselyn S.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T12:23:24",
-      "type": "join",
-      "name": "Thaian N.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:53:06",
-      "type": "cancel",
-      "name": "David G.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:53:06",
-      "type": "cancel",
-      "name": "Eileen T.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:53:06",
-      "type": "cancel",
-      "name": "Joj! W.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:21:21",
-      "type": "join",
-      "name": "Denise O.",
-      "title": "4.0 Open Play",
-      "start": "MON APR 6  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-05T11:21:21",
-      "type": "full",
-      "name": "42/42",
-      "title": "4.0 Open Play",
-      "start": "MON APR 6  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-05T11:21:02",
-      "type": "join",
-      "name": "Bikram S.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:21:02",
-      "type": "join",
-      "name": "Christopher B.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:21:02",
-      "type": "join",
-      "name": "Geoff M.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:21:02",
-      "type": "join",
-      "name": "Joe G.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:21:02",
-      "type": "join",
-      "name": "Kristie B.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T11:21:02",
-      "type": "cancel",
-      "name": "Ed K.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
-    },
-    {
-      "ts": "2026-04-05T10:17:31",
-      "type": "join",
-      "name": "Wendy W.",
-      "title": "4.0 Open Play",
-      "start": "MON APR 6  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-05T09:42:04",
-      "type": "join",
-      "name": "Bing W.",
-      "title": "ADVANCED Performance Play Sunday",
-      "start": "SUN APR 5  12:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e"
     }
   ],
   "thieves": [],
@@ -1502,16 +1508,6 @@
       "cancels": 3
     },
     {
-      "name": "Joj! W.",
-      "joins": 2,
-      "cancels": 2
-    },
-    {
-      "name": "David G.",
-      "joins": 2,
-      "cancels": 2
-    },
-    {
       "name": "Val C.",
       "joins": 1,
       "cancels": 2
@@ -1524,11 +1520,6 @@
     {
       "name": "Steve M.",
       "joins": 3,
-      "cancels": 1
-    },
-    {
-      "name": "Eileen T.",
-      "joins": 2,
       "cancels": 1
     },
     {
@@ -1547,12 +1538,12 @@
       "cancels": 0
     },
     {
-      "name": "Daniel L.",
-      "joins": 3,
+      "name": "Charles N.",
+      "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Daniel L.",
       "joins": 3,
       "cancels": 0
     },
@@ -1659,6 +1650,12 @@
           "start": "SAT APR 4  10:00 AM",
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69",
           "status": "completed"
+        },
+        {
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN APR 5  12:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e",
+          "status": "completed"
         }
       ]
     },
@@ -1677,15 +1674,15 @@
       "name": "Chris Berrier",
       "sessions": [
         {
-          "title": "ADVANCED Performance Play Sunday",
-          "start": "SUN APR 5  12:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e",
-          "status": "live"
-        },
-        {
           "title": "4.0 Open Play",
           "start": "FRI APR 3  10:00 AM",
           "url": "https://ppbrva.podplay.app/community/events/75adcf71-764d-4c27-b2a8-da7c61229241",
+          "status": "completed"
+        },
+        {
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN APR 5  12:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fe1-6f45-7000-905a-98eb79abb91e",
           "status": "completed"
         }
       ]
