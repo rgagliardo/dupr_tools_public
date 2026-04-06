@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --purple: #9b59ff;
+  --yel: #ffe156;
+  --grn: #00ff88;
+  --panel: rgba(20, 20, 35, 0.95);
+  --dtxt: #8888aa;
+}
+body {
+  background: #0a0a14;
+  color: #ccc;
+  font-family: -apple-system, sans-serif;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+h2 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--yel);
+  margin: 40px 0 16px 0;
+  letter-spacing: 2px;
+}
+.sub {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  color: var(--dtxt);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.reset-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  background: var(--panel);
+  color: var(--grn);
+  border: 1px solid var(--grn);
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: block;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.thief-wrap {
+  border: 2px solid var(--pink);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 40px rgba(255,45,120,0.35), inset 0 0 40px rgba(255,45,120,0.04);
+  position: relative;
+  overflow: hidden;
+  background: var(--panel);
+}
+.thief-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(255,45,120,0.025) 12px, rgba(255,45,120,0.025) 24px);
+  pointer-events: none;
+}
+.thief-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: var(--pink);
+  text-shadow: 0 0 18px var(--pink);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  animation: blink .65s step-end infinite;
+}
+.thief-session {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--yel);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  line-height: 1.9;
+}
+.thief-table { width: 100%; border-collapse: collapse; position: relative; z-index: 1; }
+.thief-table td { padding: 4px 8px 4px 0; font-size: 12px; }
+.thief-table td:first-child { color: var(--dtxt); width: 180px; }
+.thief-table td:last-child { color: #ffaacc; }
+.thief-suspect {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 12px !important;
+  color: var(--pink) !important;
+  text-shadow: 0 0 8px var(--pink);
+}
+
+.sprite-stage {
+  position: relative;
+  height: 120px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.sprite-stage canvas {
+  image-rendering: pixelated;
+  position: absolute;
+  bottom: 10px;
+  filter: drop-shadow(0 0 8px rgba(155,89,255,0.6)) drop-shadow(0 0 16px rgba(255,45,120,0.3));
+}
+
+.dragged-session {
+  position: absolute;
+  bottom: 16px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--yel);
+  background: rgba(30, 30, 50, 0.9);
+  border: 1px solid var(--pink);
+  padding: 6px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(255,45,120,0.3);
+  transform-origin: right center;
+  line-height: 1.6;
+}
+.dragged-session .ses-name {
+  color: #fff;
+  display: block;
+}
+.dragged-session .ses-time {
+  color: var(--dtxt);
+  font-size: 6px;
+}
+
+@keyframes alarmBurst {
+  0%, 100% { box-shadow: 0 0 40px rgba(255,45,120,0.35); }
+  50%      { box-shadow: 0 0 60px rgba(255,45,120,0.7), 0 0 120px rgba(155,89,255,0.4), inset 0 0 30px rgba(255,45,120,0.1); }
+}
+</style>
+</head>
+<body>
+
+<button class="reset-btn" onclick="replayAll()">▶ REPLAY ALL</button>
+
+<h2>DRAG IN, STOP CENTER</h2>
+<div class="thief-wrap" id="card1">
+  <div class="sprite-stage" id="stage1">
+    <canvas id="walk1" width="20" height="24"></canvas>
+    <div class="dragged-session" id="drag1" style="opacity:0;">
+      <span class="ses-name">4.0 OPEN PLAY</span>
+      <span class="ses-time">MON APR 6 · 10:00 AM</span>
+    </div>
+  </div>
+  <div class="thief-content" id="content1" style="opacity:0;">
+    <div class="thief-title">⚠ SESSION THIEF DETECTED!</div>
+    <div class="thief-session">4.0 Open Play · Mon Apr 6 10:00 AM</div>
+    <table class="thief-table">
+      <tr><td>SUSPECT</td><td class="thief-suspect">Todd S.</td></tr>
+      <tr><td>HELD SPOT WHILE FULL</td><td>Apr 5, 2:30 PM</td></tr>
+      <tr><td>WENT ABSENT</td><td>Apr 5, 6:15 PM</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>DROP AND FLEE</h2>
+<div class="thief-wrap" id="card2">
+  <div class="sprite-stage" id="stage2">
+    <canvas id="walk2" width="20" height="24"></canvas>
+    <div class="dragged-session" id="drag2" style="opacity:0;">
+      <span class="ses-name">4.5/4.0 OPEN PLAY</span>
+      <span class="ses-time">TUE APR 7 · 6:00 PM</span>
+    </div>
+  </div>
+  <div class="thief-content" id="content2" style="opacity:0;">
+    <div class="thief-title">⚠ SESSION THIEF DETECTED!</div>
+    <div class="thief-session">4.5/4.0 Open Play · Tue Apr 7 6:00 PM</div>
+    <table class="thief-table">
+      <tr><td>SUSPECT</td><td class="thief-suspect">Jessica B.</td></tr>
+      <tr><td>HELD SPOT WHILE FULL</td><td>Apr 6, 11:00 AM</td></tr>
+      <tr><td>WENT ABSENT</td><td>Apr 6, 4:45 PM</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>CAUGHT IN SPOTLIGHT</h2>
+<div class="thief-wrap" id="card3">
+  <div class="sprite-stage" id="stage3">
+    <canvas id="walk3" width="20" height="24"></canvas>
+    <div class="dragged-session" id="drag3" style="opacity:0;">
+      <span class="ses-name">DUPR 4.0 OPEN PLAY</span>
+      <span class="ses-time">WED APR 8 · 10:00 AM</span>
+    </div>
+    <div id="spotlight3" style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,225,86,0.12) 0%,transparent 60%);opacity:0;pointer-events:none;"></div>
+  </div>
+  <div class="thief-content" id="content3" style="opacity:0;">
+    <div class="thief-title">⚠ SESSION THIEF DETECTED!</div>
+    <div class="thief-session">DUPR 4.0 Open Play · Wed Apr 8 10:00 AM</div>
+    <table class="thief-table">
+      <tr><td>SUSPECT</td><td class="thief-suspect">Gary Z.</td></tr>
+      <tr><td>HELD SPOT WHILE FULL</td><td>Apr 7, 9:00 AM</td></tr>
+      <tr><td>WENT ABSENT</td><td>Apr 7, 3:20 PM</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+const pal = {
+  '.': null,
+  'B': '#1a1a2e',
+  'b': '#252540',
+  'F': '#e8b88a',
+  'f': '#d4a070',
+  'M': '#0a0a12',
+  'E': '#ffffff',
+  'S': '#ddddee',
+  'D': '#1a1a2e',
+  'P': '#222235',
+  'K': '#111120',
+  'H': '#e8b88a',
+};
+
+// Facing RIGHT — arm trailing LEFT (behind)
+const framesR = [
+  [
+    '....................',
+    '......BBBBb.........',
+    '.....BBBBBBb........',
+    '.....BBBBBBb........',
+    '.....BFFFFFB........',
+    '.....FMEFMEF........',
+    '.....fFFFFFF........',
+    '......FFFF0.........',
+    '.H...SDSDSD.........',
+    '.HH.DSDSDS..........',
+    '..H.SDSDSD..........',
+    '....DSDSDS..........',
+    '.....DSDSD..........',
+    '.....PPPPP..........',
+    '.....PP.PP..........',
+    '....PP...P..........',
+    '....KK...PP.........',
+    '.....KK..KK.........',
+    '.........KK.........',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+  ],
+  [
+    '....................',
+    '....................',
+    '......BBBBb.........',
+    '.....BBBBBBb........',
+    '.....BBBBBBb........',
+    '.....BFFFFFB........',
+    '.....FMEFMEF........',
+    '.....fFFFFFF........',
+    '......FFFF0.........',
+    '..HHSDSDSD..........',
+    '..H.DSDSDS..........',
+    '....SDSDSD..........',
+    '....DSDSDS..........',
+    '.....DSDSD..........',
+    '.....PPPPP..........',
+    '.....PPPP...........',
+    '....KK.KK...........',
+    '....KK.KK...........',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+  ],
+  [
+    '....................',
+    '......BBBBb.........',
+    '.....BBBBBBb........',
+    '.....BBBBBBb........',
+    '.....BFFFFFB........',
+    '.....FMEFMEF........',
+    '.....fFFFFFF........',
+    '......FFFF0.........',
+    '.....SDSDSD.........',
+    '....DSDSDS..........',
+    '....SDSDSD..........',
+    '.H..DSDSDS..........',
+    '.HH..DSDSD..........',
+    '..H..PPPPP..........',
+    '.....PP.PP..........',
+    '....PP...PP.........',
+    '...KK...KK.........',
+    '...KK....KK........',
+    '........KK..........',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+  ],
+  [
+    '....................',
+    '....................',
+    '......BBBBb.........',
+    '.....BBBBBBb........',
+    '.....BBBBBBb........',
+    '.....BFFFFFB........',
+    '.....FMEFMEF........',
+    '.....fFFFFFF........',
+    '......FFFF0.........',
+    '..HHSDSDSD..........',
+    '..H.DSDSDS..........',
+    '....SDSDSD..........',
+    '....DSDSDS..........',
+    '.....DSDSD..........',
+    '.....PPPPP..........',
+    '....PP.PP...........',
+    '....KK.KK...........',
+    '.....KKKK...........',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+    '....................',
+  ],
+];
+
+function drawFrame(ctx, spriteData, scale, offX, offY) {
+  for (let y = 0; y < spriteData.length; y++) {
+    for (let x = 0; x < spriteData[y].length; x++) {
+      const ch = spriteData[y][x];
+      if (pal[ch]) {
+        ctx.fillStyle = pal[ch];
+        ctx.fillRect(offX + x * scale, offY + y * scale, scale, scale);
+      }
+    }
+  }
+}
+
+function setupCanvas(canvasId, scale) {
+  const canvas = document.getElementById(canvasId);
+  canvas.width = 20 * scale;
+  canvas.height = 24 * scale;
+  canvas.style.width = (20 * scale) + 'px';
+  canvas.style.height = (24 * scale) + 'px';
+  return canvas;
+}
+
+// Session tag trails BEHIND the burglar (to the left when moving right)
+function getDragX(burglarX, dragEl) {
+  return burglarX - dragEl.offsetWidth - 10;
+}
+
+// ══════════════════════════════════════════
+// ANIM 1: Drag in from left, stop center
+// ══════════════════════════════════════════
+function anim1() {
+  const scale = 4;
+  const canvas = setupCanvas('walk1', scale);
+  const drag = document.getElementById('drag1');
+  const content = document.getElementById('content1');
+  const card = document.getElementById('card1');
+  const stage = document.getElementById('stage1');
+  const stageW = stage.offsetWidth;
+  const spriteW = 20 * scale;
+  const targetX = stageW * 0.55;
+
+  let x = -spriteW - 10;
+  let frame = 0, tick = 0;
+  canvas.style.left = x + 'px';
+  drag.style.opacity = '1';
+  drag.style.transform = 'rotate(0deg)';
+  drag.style.transition = 'none';
+  drag.style.bottom = '16px';
+  drag.style.left = getDragX(x, drag) + 'px';
+
+  const interval = setInterval(() => {
+    tick++;
+    if (tick % 5 === 0) frame = (frame + 1) % 4;
+    x += 3;
+    canvas.style.left = x + 'px';
+
+    const sway = Math.sin(tick * 0.15) * 2;
+    drag.style.left = getDragX(x, drag) + 'px';
+    drag.style.transform = `rotate(${sway}deg)`;
+
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawFrame(ctx, framesR[frame], scale, 0, 0);
+
+    if (x >= targetX) {
+      canvas.style.left = targetX + 'px';
+      clearInterval(interval);
+
+      // Drop: tag settles
+      drag.style.transition = 'transform 0.3s, bottom 0.3s';
+      drag.style.transform = 'rotate(3deg)';
+      drag.style.bottom = '10px';
+      drag.style.left = getDragX(targetX, drag) + 'px';
+
+      // Idle bob
+      let idle = 0;
+      setInterval(() => {
+        idle++;
+        if (idle % 12 === 0) {
+          const f = (idle / 12) % 2 === 0 ? 1 : 3;
+          const ctx2 = canvas.getContext('2d');
+          ctx2.clearRect(0, 0, canvas.width, canvas.height);
+          drawFrame(ctx2, framesR[f], scale, 0, 0);
+        }
+      }, 50);
+
+      setTimeout(() => {
+        content.style.transition = 'opacity 0.5s';
+        content.style.opacity = '1';
+        card.style.animation = 'alarmBurst 0.15s ease-in-out 6';
+      }, 300);
+    }
+  }, 30);
+}
+
+// ══════════════════════════════════════════
+// ANIM 2: Run across, drop center, flee right
+// ══════════════════════════════════════════
+function anim2() {
+  const scale = 4;
+  const canvas = setupCanvas('walk2', scale);
+  const drag = document.getElementById('drag2');
+  const content = document.getElementById('content2');
+  const card = document.getElementById('card2');
+  const stage = document.getElementById('stage2');
+  const stageW = stage.offsetWidth;
+  const spriteW = 20 * scale;
+  const centerX = (stageW - spriteW) / 2;
+
+  let x = -spriteW - 10;
+  let frame = 0, tick = 0;
+  let phase = 'enter';
+  let dropX = 0;
+
+  canvas.style.left = x + 'px';
+  canvas.style.display = 'block';
+  drag.style.opacity = '1';
+  drag.style.transition = 'none';
+  drag.style.transform = 'rotate(0deg)';
+  drag.style.bottom = '16px';
+  drag.style.left = getDragX(x, drag) + 'px';
+
+  const interval = setInterval(() => {
+    tick++;
+    if (tick % 4 === 0) frame = (frame + 1) % 4;
+
+    if (phase === 'enter') {
+      x += 4;
+      const sway = Math.sin(tick * 0.2) * 3;
+      drag.style.left = getDragX(x, drag) + 'px';
+      drag.style.transform = `rotate(${sway}deg)`;
+
+      if (x >= centerX + 40) {
+        phase = 'drop';
+        dropX = getDragX(x, drag);
+        drag.style.transition = 'transform 0.4s ease-out, bottom 0.4s ease-out';
+        drag.style.transform = 'rotate(5deg)';
+        drag.style.bottom = '8px';
+      }
+    } else if (phase === 'drop') {
+      x += 5;
+      drag.style.left = dropX + 'px';
+
+      if (x > stageW + 20) {
+        phase = 'done';
+        canvas.style.display = 'none';
+        clearInterval(interval);
+
+        content.style.transition = 'opacity 0.5s';
+        content.style.opacity = '1';
+        card.style.animation = 'alarmBurst 0.15s ease-in-out 6';
+      }
+    }
+
+    canvas.style.left = x + 'px';
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawFrame(ctx, framesR[frame], scale, 0, 0);
+  }, 30);
+}
+
+// ══════════════════════════════════════════
+// ANIM 3: Sneak, spotlight catches, freeze
+// ══════════════════════════════════════════
+function anim3() {
+  const scale = 4;
+  const canvas = setupCanvas('walk3', scale);
+  const drag = document.getElementById('drag3');
+  const content = document.getElementById('content3');
+  const card = document.getElementById('card3');
+  const spotlight = document.getElementById('spotlight3');
+  const stage = document.getElementById('stage3');
+  const stageW = stage.offsetWidth;
+  const spriteW = 20 * scale;
+  const catchX = stageW * 0.55;
+
+  let x = -spriteW - 10;
+  let frame = 0, tick = 0;
+  let caught = false;
+
+  canvas.style.left = x + 'px';
+  canvas.style.display = 'block';
+  drag.style.opacity = '1';
+  drag.style.transition = 'none';
+  drag.style.transform = 'rotate(0deg)';
+  drag.style.bottom = '16px';
+  drag.style.left = getDragX(x, drag) + 'px';
+  spotlight.style.opacity = '0';
+  stage.style.background = 'transparent';
+
+  const interval = setInterval(() => {
+    tick++;
+    if (!caught && tick % 6 === 0) frame = (frame + 1) % 4;
+
+    if (!caught) {
+      x += 2;
+      const sway = Math.sin(tick * 0.12) * 2;
+      canvas.style.left = x + 'px';
+      drag.style.left = getDragX(x, drag) + 'px';
+      drag.style.transform = `rotate(${sway}deg)`;
+
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawFrame(ctx, framesR[frame], scale, 0, 0);
+
+      if (x >= catchX) {
+        caught = true;
+        spotlight.style.transition = 'opacity 0.15s';
+        spotlight.style.opacity = '1';
+
+        // Freeze
+        const ctx2 = canvas.getContext('2d');
+        ctx2.clearRect(0, 0, canvas.width, canvas.height);
+        drawFrame(ctx2, framesR[0], scale, 0, 0);
+
+        drag.style.transform = 'rotate(0deg)';
+
+        stage.style.transition = 'background 0.1s';
+        stage.style.background = 'rgba(255,225,86,0.08)';
+
+        setTimeout(() => {
+          stage.style.background = 'transparent';
+          content.style.transition = 'opacity 0.5s';
+          content.style.opacity = '1';
+          card.style.animation = 'alarmBurst 0.15s ease-in-out 6';
+        }, 500);
+
+        clearInterval(interval);
+      }
+    }
+  }, 30);
+}
+
+anim1();
+setTimeout(anim2, 300);
+setTimeout(anim3, 600);
+
+function replayAll() {
+  ['content1','content2','content3'].forEach(id => {
+    const el = document.getElementById(id);
+    el.style.transition = 'none';
+    el.style.opacity = '0';
+  });
+  ['card1','card2','card3'].forEach(id => {
+    el = document.getElementById(id);
+    el.style.animation = 'none';
+  });
+  ['drag1','drag2','drag3'].forEach(id => {
+    const el = document.getElementById(id);
+    el.style.transition = 'none';
+    el.style.opacity = '0';
+    el.style.transform = 'rotate(0deg)';
+    el.style.bottom = '16px';
+  });
+  document.getElementById('walk2').style.display = 'block';
+  document.getElementById('spotlight3').style.opacity = '0';
+  document.getElementById('stage3').style.background = 'transparent';
+
+  setTimeout(() => {
+    anim1();
+    setTimeout(anim2, 300);
+    setTimeout(anim3, 600);
+  }, 150);
+}
+</script>
+</body>
+</html>
