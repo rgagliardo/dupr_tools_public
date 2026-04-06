@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-06T12:48:44",
-  "next_scan_at": "2026-04-06T13:18:44",
+  "generated_at": "2026-04-06T13:19:00",
+  "next_scan_at": "2026-04-06T13:49:00",
   "stats": {
     "total": 59,
     "full_count": 7
@@ -36,8 +36,8 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 16,
-      "count": 14,
-      "pct": 88,
+      "count": 13,
+      "pct": 81,
       "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
@@ -50,14 +50,13 @@
         "Eileen T.",
         "Jessica B.",
         "Jessica B.",
-        "Joe M.",
         "Lori J.",
         "Scott S.",
         "Suhail A.",
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-06T12:09:15",
+      "last_snap_ts": "2026-04-06T13:18:50",
       "thieves": [],
       "big_dogs": [
         {
@@ -167,7 +166,7 @@
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-06T12:09:19",
+      "last_snap_ts": "2026-04-06T13:18:56",
       "thieves": [],
       "big_dogs": []
     },
@@ -193,7 +192,7 @@
         "Rick G.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-06T12:09:24",
+      "last_snap_ts": "2026-04-06T13:19:00",
       "thieves": [],
       "big_dogs": []
     },
@@ -1704,14 +1703,7 @@
         "Roy A."
       ],
       "last_snap_ts": "2026-04-06T12:09:05",
-      "thieves": [
-        {
-          "name": "Monty S.",
-          "last_seen_full_ts": "2026-04-03T14:55:23",
-          "first_absent_ts": "2026-04-06T10:37:14",
-          "detection_gap_min": 4062
-        }
-      ],
+      "thieves": [],
       "big_dogs": [
         {
           "name": "Chris S. B.",
@@ -1783,6 +1775,14 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-06T13:18:50",
+      "type": "cancel",
+      "name": "Joe M.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 6  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/ed3c53bb-7586-441e-bafe-193395a0ff97"
+    },
     {
       "ts": "2026-04-06T12:09:24",
       "type": "cancel",
@@ -2094,27 +2094,9 @@
       "title": "4.0 Open Play",
       "start": "TUE APR 7  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/4e553063-d24f-47a4-a54e-5fb8ef5af9e6"
-    },
-    {
-      "ts": "2026-04-05T21:48:26",
-      "type": "cancel",
-      "name": "Jim M.",
-      "title": "4.0 Open Play",
-      "start": "TUE APR 7  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/ce6b0a57-563b-4fdb-85fe-9e854c6a4496"
     }
   ],
-  "thieves": [
-    {
-      "name": "Monty S.",
-      "last_seen_full_ts": "2026-04-03T14:55:23",
-      "first_absent_ts": "2026-04-06T10:37:14",
-      "detection_gap_min": 4062,
-      "session_title": "DUPR 4.0 Open Play",
-      "session_start": "MON APR 6  10:00 AM",
-      "session_url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2"
-    }
-  ],
+  "thieves": [],
   "flyers": [
     {
       "name": "Robert N.",
@@ -2154,6 +2136,11 @@
     {
       "name": "Steve M.",
       "joins": 3,
+      "cancels": 1
+    },
+    {
+      "name": "Joe M.",
+      "joins": 2,
       "cancels": 1
     },
     {
