@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-06T16:57:38",
-  "next_scan_at": "2026-04-06T17:27:38",
+  "generated_at": "2026-04-06T17:28:17",
+  "next_scan_at": "2026-04-06T17:58:17",
   "stats": {
     "total": 59,
     "full_count": 7
@@ -22,7 +22,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-06T16:57:23",
+      "last_snap_ts": "2026-04-06T17:27:58",
       "thieves": [],
       "big_dogs": []
     },
@@ -46,17 +46,17 @@
         "Bobby L.",
         "Brooke H.",
         "Davis J.",
-        "Ed K.",
         "Eileen T.",
         "Jessica B.",
         "Jessica B.",
+        "Keshia B.",
         "Laine S.",
         "Suhail A.",
         "Suraj Singh C.",
         "Todd B.",
         "+5 players"
       ],
-      "last_snap_ts": "2026-04-06T16:57:27",
+      "last_snap_ts": "2026-04-06T17:28:03",
       "thieves": [],
       "big_dogs": [
         {
@@ -127,8 +127,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 33,
-      "pct": 92,
+      "count": 32,
+      "pct": 89,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -146,7 +146,6 @@
         "Cyndi S.",
         "David S.",
         "Dennis W.",
-        "Ed K.",
         "Elton W.",
         "Eric L.",
         "Fran S.",
@@ -167,7 +166,7 @@
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-06T16:23:19",
+      "last_snap_ts": "2026-04-06T17:28:08",
       "thieves": [],
       "big_dogs": []
     },
@@ -193,7 +192,7 @@
         "Rick G.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-06T16:23:24",
+      "last_snap_ts": "2026-04-06T17:28:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -215,7 +214,7 @@
       "registrants": [
         "Scott S."
       ],
-      "last_snap_ts": "2026-04-06T16:23:29",
+      "last_snap_ts": "2026-04-06T17:28:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -1794,6 +1793,30 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-06T17:28:08",
+      "type": "cancel",
+      "name": "Ed K.",
+      "title": "4.0 Open Play",
+      "start": "TUE APR 7  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/ce6b0a57-563b-4fdb-85fe-9e854c6a4496"
+    },
+    {
+      "ts": "2026-04-06T17:28:03",
+      "type": "join",
+      "name": "Keshia B.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 6  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/ed3c53bb-7586-441e-bafe-193395a0ff97"
+    },
+    {
+      "ts": "2026-04-06T17:28:03",
+      "type": "cancel",
+      "name": "Ed K.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 6  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/ed3c53bb-7586-441e-bafe-193395a0ff97"
+    },
+    {
       "ts": "2026-04-06T16:26:46",
       "type": "join",
       "name": "Beth B.",
@@ -2088,34 +2111,15 @@
       "title": "4.0 Open Play",
       "start": "MON APR 6  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-06T12:09:09",
-      "type": "cancel",
-      "name": "Melba T.",
-      "title": "4.0 Open Play",
-      "start": "MON APR 6  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-06T12:09:09",
-      "type": "cancel",
-      "name": "Rick G.",
-      "title": "4.0 Open Play",
-      "start": "MON APR 6  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
-    },
-    {
-      "ts": "2026-04-06T12:09:09",
-      "type": "cancel",
-      "name": "Wendy W.",
-      "title": "4.0 Open Play",
-      "start": "MON APR 6  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
     }
   ],
   "thieves": [],
   "flyers": [
+    {
+      "name": "Ed K.",
+      "joins": 0,
+      "cancels": 4
+    },
     {
       "name": "Robert N.",
       "joins": 1,
@@ -2192,12 +2196,12 @@
       "cancels": 1
     },
     {
-      "name": "David M.",
+      "name": "Rick G.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Rick G.",
+      "name": "David M.",
       "joins": 2,
       "cancels": 1
     },
