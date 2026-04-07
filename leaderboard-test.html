@@ -98,10 +98,13 @@
         }
 
         .player-summary {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 6px 12px; cursor: pointer; list-style: none; min-height: 36px;
+            display: flex; align-items: center;
+            padding: 6px 8px; cursor: pointer; list-style: none; min-height: 36px; gap: 8px;
         }
         .player-summary::-webkit-details-marker { display: none; }
+
+        .streak-col { flex-shrink: 0; width: 52px; display: flex; justify-content: center; }
+        .name-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
         .player-name {
             font-size: 14px; font-weight: 700; letter-spacing: 1px;
@@ -122,7 +125,7 @@
         .arrow { font-size: 13px; font-weight: 700; text-align: center; display: inline-block; }
         .net-impact { font-size: 13px; font-weight: 700; }
 
-        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; flex-shrink: 0; }
+        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; }
         .streak-w { background: rgba(0, 255, 255, 0.1); color: #00e5ff; border-color: #00e5ff; text-shadow: 0 0 5px rgba(0,229,255,0.5); }
         .streak-l { background: rgba(255, 0, 160, 0.1); color: #ff00a0; border-color: #ff00a0; text-shadow: 0 0 5px rgba(255,0,160,0.5); }
 
@@ -225,7 +228,7 @@
         <div class="header-container">
             <h1>Testing</h1>
             <div class="timestamp">
-                <span>Last Updated: April 7, 2026 at 12:14 PM</span>
+                <span>Last Updated: April 7, 2026 at 2:31 PM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -242,10 +245,9 @@
 
         <details class="player-details" data-name="nate johnson nate johnson" data-doubles="4.406" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Nate Johnson</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Nate Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -323,65 +325,92 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.017)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> C. Harmer & K. Harmer</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> J. Ames & R. Truong</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-10 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.003)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> E. Arellano & A. Arellano</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.008)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> D. Dao & C. Davis</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> J. Rawls & G. Morgan</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-10 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.016)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> M. Smalley & E. Farinholt</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Week 4 - Thu Dec 4</div>
+                            <div class="match-row">
+                                <span class="match-date">Dec 4, 2025</span>
+                                <span class="match-score">11-1, 7-11, 6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.003)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> G. Ryan & J. Madriaga</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Session 1, Week 2 - Thu Nov 13</div>
+                            <div class="match-row">
+                                <span class="match-date">Nov 14, 2025</span>
+                                <span class="match-score">12-10, 11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.029)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> J. Porter & N. Kasana</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Week 2 - Thu Nov 13</div>
+                            <div class="match-row">
+                                <span class="match-date">Nov 13, 2025</span>
+                                <span class="match-score">11-13, 11-6, 11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> D. Dao & J. Barnett</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Week 1 - Thu Nov 6</div>
+                            <div class="match-row">
+                                <span class="match-date">Nov 6, 2025</span>
+                                <span class="match-score">2-11, 11-6, 11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> L. Reis & S. Hepper</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Nov 6, 2025</span>
+                                <span class="match-score">8-11, 13-11, 6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> R. Truong & S. Oberoi</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5750755386" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.263" data-singles="4.304">
+        <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.271" data-singles="4.304">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pete Cloutier</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pete Cloutier</div>
                     
                 </div>
                 <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.033)</span> <span class="arrow trend-down">▼</span> 4.263 <span class="lbl">D</span></div>
+                    <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 4.271 <span class="lbl">D</span></div>
                     <div class="score-line">4.304 <span class="lbl">S</span></div>
                 </div>
             </summary>
             <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> D. Dao & S. Sexton</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> D. Dao & S. Sexton</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-3 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.017)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.034)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> B. Parker & D. Dao</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.019)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Dao & B. Parker</div>
-                        
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
@@ -392,14 +421,14 @@
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.025)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> D. Dao & S. Sexton</div>
                         
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
                         
@@ -409,72 +438,134 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.024)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.043)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> B. Parker & D. Dao</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Dao & B. Parker</div>
+                        <div class="event-header">Triple Team Pickleball: Advancing 4.0+ Co-Gender</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.026)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> l. chen & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">5-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.046)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> l. chen & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-13 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.018)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> B. Hopkins & D. Tasin</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> B. Hopkins & D. Tasin</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Tasin & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">5-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.073)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Tasin & S. Yim</div>
+                        <div class="event-header">Triple Team League: Co-Gender 4.0+</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-5, 11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> L. Fremouw & S. Skinner</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-6, 11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.042)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> D. Dimaculangan & T. Levy</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-3, 11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> S. Skinner & T. Levy</div>
+                        <div class="event-header">2025 Pickleboo Halloween Tournament - Mens Singles Skill: (4.5 And Under) Age: (5 To 49)</div>
+                            <div class="match-row">
+                                <span class="match-date">Oct 31, 2025</span>
+                                <span class="match-score">14-16 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.046)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> P. Patel</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 31, 2025</span>
+                                <span class="match-score">4-11, 3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.038)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> J. Ames</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 31, 2025</span>
+                                <span class="match-score">11-8, 11-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.054)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> D. Prior</div>
+                        <div class="event-header">PPA Tour: Fasenra Virginia Beach Cup presented by Joola - Mens Doubles Skill: (4.5) Age: (10 To 34)</div>
+                            <div class="match-row">
+                                <span class="match-date">Oct 11, 2025</span>
+                                <span class="match-score">7-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Tobin</span> <span class="match-vs">vs</span> M. McCabe & A. S. Keefer</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 11, 2025</span>
+                                <span class="match-score">4-11, 3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.059)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Tobin</span> <span class="match-vs">vs</span> C. Heyer & M. Simpson</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7785877502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.856" data-singles="0">
+        <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.915" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Selena Dajani</div><span class="streak-badge streak-l">🧊 10L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 6L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Selena Dajani</div>
                     
                 </div>
                 <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.074)</span> <span class="arrow trend-down">▼</span> 3.856 <span class="lbl">D</span></div>
+                    <div class="score-line"><span class="net-impact trend-down">(-0.084)</span> <span class="arrow trend-down">▼</span> 3.915 <span class="lbl">D</span></div>
                     
                 </div>
             </summary>
             <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> W. Brown & D. Parsons</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.012)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> D. Parsons & W. Brown</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">9-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.011)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.025)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> W. Brown & D. Parsons</div>
-                        
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
@@ -484,8 +575,15 @@
                         
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> W. Brown & D. Parsons</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">9-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.011)</span> <span class="lbl">D</span></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
                         
@@ -495,6 +593,118 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.019)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.033)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.037)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
+                        <div class="event-header">MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH PRIZE EVENT: Mixed Doubles Skill: (4.000 To 4.499) Age: (Any)</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-12 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> J. Fox & J. Maese</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">4-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.044)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> K. Elliott & D. Guy</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-12 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.018)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> D. Dimaculangan & J. Suarez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">8-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.049)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> R. Berkoff & S. Lutz</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> C. Santiago & l. velez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> T. Pierce & T. Ochinang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.042)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> L. Sencio & T. Truesdale</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">16-14 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.047)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> H. gill & B. Rhoads</div>
+                        <div class="event-header">Triple Team League: Co-Gender 4.0+</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.026)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Dao</span> <span class="match-vs">vs</span> H. Bocchi & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Dao</span> <span class="match-vs">vs</span> H. Bocchi & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">5-11, 3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.130)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Dao</span> <span class="match-vs">vs</span> B. Hopkins & D. Tasin</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">7-11, 6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.067)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> H. Bocchi & B. Hopkins</div>
+                        <div class="event-header">The Atlantic Union Bank Open - Women's Doubles Skill: (4.5) Age: (19+, 30+, 40+)</div>
+                            <div class="match-row">
+                                <span class="match-date">Dec 6, 2025</span>
+                                <span class="match-score">11-0, 11-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.031)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> L. Fremouw & B. Hopkins</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Dec 6, 2025</span>
+                                <span class="match-score">4-11, 11-4, 10-12 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.011)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> C. Fitch & A. SovikJohnston</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5927360586" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 </div></details>
@@ -505,10 +715,9 @@
 
         <details class="player-details" data-name="adrian bedard adrian bedard" data-doubles="4.271" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Adrian Bedard</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Adrian Bedard</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -570,10 +779,9 @@
 
         <details class="player-details" data-name="aibika kalsarieva aibika kalsarieva" data-doubles="5.853" data-singles="5.485">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Aibika Kalsarieva</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Aibika Kalsarieva</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -651,15 +859,84 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.003)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> M. Smith & E. Bifsas</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> M. Smith & E. Bifsas</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> H. Shin & C. Coyner</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.003)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> A. P. Gordon & R. Fitzgerald</div>
+                        <div class="event-header">Brick Wall Mid-Atlantic #3</div>
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">11-5, 9-11, 11-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> A. Quintanilla & S. Liang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">15-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> A. P. Gordon & R. Fitzgerald</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">15-1 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> H. R. Nussbaum & N. Bernhardt</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> A. Bialek & E. Bifsas</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">11-1 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.006)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> A. P. Gordon & R. Fitzgerald</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Hua</span> <span class="match-vs">vs</span> S. Schwartz & J. Chattrabhuti</div>
+                        <div class="event-header">No Love Just Dinks Classic presented by LFG Tourneys - $$ Mixed Open Doubles Skill: (4.5 And Above) Age: (Any)</div>
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score">8-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> K. Wheatley & J. Broker</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5108307691" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="andrew makovsky andrew makovsky" data-doubles="4.953" data-singles="4.167">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andrew Makovsky</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andrew Makovsky</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -737,15 +1014,84 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.008)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">H. Bergeron</span> <span class="match-vs">vs</span> R. Naydenov & K. Wheatley</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">H. Bergeron</span> <span class="match-vs">vs</span> J. Seigel & A. P. Gordon</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">10-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">H. Bergeron</span> <span class="match-vs">vs</span> J. Lui & C. Coyner</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">13-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Thomas</span> <span class="match-vs">vs</span> Z. Bowe & T. Arsenault</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">15-13 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Thomas</span> <span class="match-vs">vs</span> P. Gordon & S. Hugo</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.003)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Thomas</span> <span class="match-vs">vs</span> g. sarnowski & C. Nash</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Thomas</span> <span class="match-vs">vs</span> G. Eaby & R. Datta</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 28, 2026</span>
+                                <span class="match-score">10-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Thomas</span> <span class="match-vs">vs</span> B. C. Remondo & D. V. Bargen</div>
+                        <div class="event-header">USLPL 35+ Chantilly, VA</div>
+                            <div class="match-row">
+                                <span class="match-date">Feb 22, 2026</span>
+                                <span class="match-score">8-11, 11-2, 11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.008)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Carney</span> <span class="match-vs">vs</span> S. Pokopec & J. Pickleball</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 22, 2026</span>
+                                <span class="match-score">8-11, 11-6, 7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. B. B. Luizelli</span> <span class="match-vs">vs</span> M. Knutson & I. A. Gonzalez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 22, 2026</span>
+                                <span class="match-score">8-11, 11-4, 8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.016)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Carney</span> <span class="match-vs">vs</span> J. M. Alvarez & I. A. Gonzalez</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5801285478" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="christina shifflett christina shifflett" data-doubles="4.962" data-singles="3.725">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christina Shifflett</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christina Shifflett</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -823,15 +1169,84 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.003)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Richardson</span> <span class="match-vs">vs</span> J. Teague & P. Deputy</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 4, 2026</span>
+                                <span class="match-score">11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Richardson</span> <span class="match-vs">vs</span> a. Burkholder & S. Bommareddy</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 4, 2026</span>
+                                <span class="match-score">7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Richardson</span> <span class="match-vs">vs</span> A. Corado & S. Liang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 4, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Richardson</span> <span class="match-vs">vs</span> A. Bialek & A. S. Province</div>
+                        <div class="event-header">Chase the New Year: Women's Open Semi-Finals</div>
+                            <div class="match-row">
+                                <span class="match-date">Jan 3, 2026</span>
+                                <span class="match-score">7-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Klink</span> <span class="match-vs">vs</span> S. Liang & A. Bialek</div>
+                        <div class="event-header">Chase the New Year: Women's Open Round Robin</div>
+                            <div class="match-row">
+                                <span class="match-date">Jan 3, 2026</span>
+                                <span class="match-score">11-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.001)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Klink</span> <span class="match-vs">vs</span> M. D. Pham & M. Klein</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 3, 2026</span>
+                                <span class="match-score">7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.019)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Klink</span> <span class="match-vs">vs</span> A. Wagner & E. Tomey</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 3, 2026</span>
+                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.069)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Klink</span> <span class="match-vs">vs</span> A. Bialek & S. Liang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 3, 2026</span>
+                                <span class="match-score">11-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.023)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Klink</span> <span class="match-vs">vs</span> E. Hoang & H. Yoon</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 3, 2026</span>
+                                <span class="match-score">11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Klink</span> <span class="match-vs">vs</span> J. Teague & A. Yoder</div>
+                        <div class="event-header">RTM Tournament Series @ DTL Round 5 (Annandale) - Mixed Doubles OPEN Division: Sunday September 14 @ 5:30PM</div>
+                            <div class="match-row">
+                                <span class="match-date">Sep 14, 2025</span>
+                                <span class="match-score">8-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Pyun</span> <span class="match-vs">vs</span> C. Barker & A. Mahajan</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4464892977" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="david bieger david bieger" data-doubles="6.008" data-singles="5.976">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">David Bieger</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">David Bieger</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -909,15 +1324,84 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.007)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">S. Liang</span> <span class="match-vs">vs</span> P. Gordon & R. Fitzgerald</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Liang</span> <span class="match-vs">vs</span> J. Hared & A. P. Gordon</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Liang</span> <span class="match-vs">vs</span> J. Mays & M. Smith</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Liang</span> <span class="match-vs">vs</span> E. Hall & L. Williams</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Liang</span> <span class="match-vs">vs</span> P. Gordon & R. Fitzgerald</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-4, 11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> A. Guy & J. Broker</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-3, 11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> R. Kotnana & J. Hared</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> B. Faletto & O. Serra</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> B. Rice & E. Dysert</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">15-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> J. Chavez-Lizama & W. Butcher</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-0 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> W. Butcher & J. Chavez-Lizama</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="lauralei singsank lauralei singsank" data-doubles="5.070" data-singles="4.558">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lauralei Singsank</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lauralei Singsank</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -995,15 +1479,84 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">E. Bifsas</span> <span class="match-vs">vs</span> M. Smith & T. Olivarez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Bifsas</span> <span class="match-vs">vs</span> M. Wills & B. Walker</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score">15-1 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.015)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Bifsas</span> <span class="match-vs">vs</span> K. Humes & H. Humes</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score">15-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Bifsas</span> <span class="match-vs">vs</span> M. Wills & B. Walker</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score">15-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.014)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Bifsas</span> <span class="match-vs">vs</span> M. Smith & T. Olivarez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 28, 2026</span>
+                                <span class="match-score">15-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Bifsas</span> <span class="match-vs">vs</span> S. Brinn & J. Watson</div>
+                        <div class="event-header">Brick Wall Mid-Atlantic #4</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">5-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Giannelli</span> <span class="match-vs">vs</span> D. Bieger & S. Liang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-5, 1-11, 8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.014)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Giannelli</span> <span class="match-vs">vs</span> O. Serra & S. Hua</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">15-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Giannelli</span> <span class="match-vs">vs</span> A. Guy & A. Rodriguez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">15-12 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.001)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Giannelli</span> <span class="match-vs">vs</span> S. Kim & E. Wang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Giannelli</span> <span class="match-vs">vs</span> M. Evans & C. Coyner</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4412809367" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="luis geyne luis geyne" data-doubles="4.861" data-singles="4.571">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">luis geyne</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">luis geyne</div>
                     <div class="player-notes">Luis has all of the socials</div>
                 </div>
                 <div class="scores-stack">
@@ -1081,15 +1634,84 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> C. Barshinger & j. azoury</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">7-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.042)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> J. Teague & Y. Goyal</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.041)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> H. AJ & D. Richardson</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> C. Fitch & T. Jackson</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.024)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> P. Yeh & T. HELBLING</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> C. Barshinger & j. azoury</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 15, 2026</span>
+                                <span class="match-score">11-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.023)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Villeda</span> <span class="match-vs">vs</span> M. Wills & M. Archer</div>
+                        <div class="event-header">Paddle in the Burg - CASH PRIZE M Doubles - OPEN, Any Age, MAX combined DUPR of 9.5 at registration or deadline</div>
+                            <div class="match-row">
+                                <span class="match-date">Jan 24, 2026</span>
+                                <span class="match-score">15-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.019)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">C. Reburn</span> <span class="match-vs">vs</span> A. Bassan & K. Tam</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 24, 2026</span>
+                                <span class="match-score">15-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.040)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">C. Reburn</span> <span class="match-vs">vs</span> T. Earasi & C. Funk</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 24, 2026</span>
+                                <span class="match-score">15-11 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">C. Reburn</span> <span class="match-vs">vs</span> N. Ashur & P. Stevens</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 24, 2026</span>
+                                <span class="match-score">11-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">C. Reburn</span> <span class="match-vs">vs</span> P. Young & C. Young</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="nate johnson nate johnson" data-doubles="4.406" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Nate Johnson</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Nate Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1167,65 +1789,92 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.017)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> C. Harmer & K. Harmer</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> J. Ames & R. Truong</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-10 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.003)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> E. Arellano & A. Arellano</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.008)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> D. Dao & C. Davis</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> J. Rawls & G. Morgan</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score">15-10 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.016)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Johnson</span> <span class="match-vs">vs</span> M. Smalley & E. Farinholt</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Week 4 - Thu Dec 4</div>
+                            <div class="match-row">
+                                <span class="match-date">Dec 4, 2025</span>
+                                <span class="match-score">11-1, 7-11, 6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.003)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> G. Ryan & J. Madriaga</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Session 1, Week 2 - Thu Nov 13</div>
+                            <div class="match-row">
+                                <span class="match-date">Nov 14, 2025</span>
+                                <span class="match-score">12-10, 11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.029)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> J. Porter & N. Kasana</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Week 2 - Thu Nov 13</div>
+                            <div class="match-row">
+                                <span class="match-date">Nov 13, 2025</span>
+                                <span class="match-score">11-13, 11-6, 11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> D. Dao & J. Barnett</div>
+                        <div class="event-header">PPBRVA 4.0/4.5 Men's Partner Thu PM - Week 1 - Thu Nov 6</div>
+                            <div class="match-row">
+                                <span class="match-date">Nov 6, 2025</span>
+                                <span class="match-score">2-11, 11-6, 11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> L. Reis & S. Hepper</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Nov 6, 2025</span>
+                                <span class="match-score">8-11, 13-11, 6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> R. Truong & S. Oberoi</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5750755386" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.263" data-singles="4.304">
+        <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.271" data-singles="4.304">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pete Cloutier</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pete Cloutier</div>
                     
                 </div>
                 <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.033)</span> <span class="arrow trend-down">▼</span> 4.263 <span class="lbl">D</span></div>
+                    <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 4.271 <span class="lbl">D</span></div>
                     <div class="score-line">4.304 <span class="lbl">S</span></div>
                 </div>
             </summary>
             <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> D. Dao & S. Sexton</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> D. Dao & S. Sexton</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-3 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.017)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.034)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> B. Parker & D. Dao</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.019)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Dao & B. Parker</div>
-                        
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
@@ -1236,14 +1885,14 @@
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.025)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> D. Dao & S. Sexton</div>
                         
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
                         
@@ -1253,15 +1902,126 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.024)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> B. Parker & S. Dajani</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.043)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> B. Parker & D. Dao</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">10-12 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Dao & B. Parker</div>
+                        <div class="event-header">Triple Team Pickleball: Advancing 4.0+ Co-Gender</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.026)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> l. chen & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">5-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.046)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> l. chen & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-13 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.018)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> B. Hopkins & D. Tasin</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> B. Hopkins & D. Tasin</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Tasin & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 24, 2026</span>
+                                <span class="match-score">5-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.073)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> D. Tasin & S. Yim</div>
+                        <div class="event-header">Triple Team League: Co-Gender 4.0+</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-5, 11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> L. Fremouw & S. Skinner</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-6, 11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.042)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Solari</span> <span class="match-vs">vs</span> D. Dimaculangan & T. Levy</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-3, 11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Parsons</span> <span class="match-vs">vs</span> S. Skinner & T. Levy</div>
+                        <div class="event-header">2025 Pickleboo Halloween Tournament - Mens Singles Skill: (4.5 And Under) Age: (5 To 49)</div>
+                            <div class="match-row">
+                                <span class="match-date">Oct 31, 2025</span>
+                                <span class="match-score">14-16 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.046)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> P. Patel</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 31, 2025</span>
+                                <span class="match-score">4-11, 3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.038)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> J. Ames</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 31, 2025</span>
+                                <span class="match-score">11-8, 11-9 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.054)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> D. Prior</div>
+                        <div class="event-header">PPA Tour: Fasenra Virginia Beach Cup presented by Joola - Mens Doubles Skill: (4.5) Age: (10 To 34)</div>
+                            <div class="match-row">
+                                <span class="match-date">Oct 11, 2025</span>
+                                <span class="match-score">7-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Tobin</span> <span class="match-vs">vs</span> M. McCabe & A. S. Keefer</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Oct 11, 2025</span>
+                                <span class="match-score">4-11, 3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.059)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">E. Tobin</span> <span class="match-vs">vs</span> C. Heyer & M. Simpson</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7785877502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="sarah hua sarah hua" data-doubles="5.750" data-singles="4.966">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Sarah Hua</div><span class="streak-badge streak-w">🔥 10W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Sarah Hua</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1339,72 +2099,92 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.005)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">A. Kalsarieva</span> <span class="match-vs">vs</span> M. Smith & E. Bifsas</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Kalsarieva</span> <span class="match-vs">vs</span> M. Smith & E. Bifsas</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Kalsarieva</span> <span class="match-vs">vs</span> H. Shin & C. Coyner</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 14, 2026</span>
+                                <span class="match-score">11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">A. Kalsarieva</span> <span class="match-vs">vs</span> A. P. Gordon & R. Fitzgerald</div>
+                        <div class="event-header">Brick Wall Mid-Atlantic #3</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">11-3, 11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.025)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> J. Giannelli & A. Quintanilla</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">11-8, 11-1 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.015)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> P. Gordon & S. Liang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">15-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> J. Deng & S. Maher</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">15-1 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.011)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> A. Makovsky & H. Bergeron</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.008)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> K. Herod & E. Bifsas</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">11-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.016)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> J. Hared & R. Fitzgerald</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 1, 2026</span>
+                                <span class="match-score">11-0 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.028)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> H. Gray & A. Bialek</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8141579862" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.856" data-singles="0">
+        <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.915" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Selena Dajani</div><span class="streak-badge streak-l">🧊 10L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 6L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Selena Dajani</div>
                     
                 </div>
                 <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.074)</span> <span class="arrow trend-down">▼</span> 3.856 <span class="lbl">D</span></div>
+                    <div class="score-line"><span class="net-impact trend-down">(-0.084)</span> <span class="arrow trend-down">▼</span> 3.915 <span class="lbl">D</span></div>
                     
                 </div>
             </summary>
             <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> W. Brown & D. Parsons</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.012)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> D. Parsons & W. Brown</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">9-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.011)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.025)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Apr 2, 2026</span>
-                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> W. Brown & D. Parsons</div>
-                        
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
@@ -1414,8 +2194,15 @@
                         
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> W. Brown & D. Parsons</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">9-11 <strong class="match-result L">L</strong></span>
-                                <span class="match-impact-col"><span class="trend-up">(+0.011)</span> <span class="lbl">D</span></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
                         
@@ -1425,15 +2212,126 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.019)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">B. Parker</span> <span class="match-vs">vs</span> P. Cloutier & J. Hadler</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.033)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Apr 2, 2026</span>
+                                <span class="match-score">1-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.037)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> W. Brown & J. Hadler</div>
+                        <div class="event-header">MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH PRIZE EVENT: Mixed Doubles Skill: (4.000 To 4.499) Age: (Any)</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-12 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> J. Fox & J. Maese</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">4-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.044)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> K. Elliott & D. Guy</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-12 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.018)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> D. Dimaculangan & J. Suarez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">8-15 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.049)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> R. Berkoff & S. Lutz</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> C. Santiago & l. velez</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> T. Pierce & T. Ochinang</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">15-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.042)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> L. Sencio & T. Truesdale</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 29, 2026</span>
+                                <span class="match-score">16-14 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.047)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Khati</span> <span class="match-vs">vs</span> H. gill & B. Rhoads</div>
+                        <div class="event-header">Triple Team League: Co-Gender 4.0+</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.026)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Dao</span> <span class="match-vs">vs</span> H. Bocchi & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Dao</span> <span class="match-vs">vs</span> H. Bocchi & S. Yim</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">5-11, 3-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.130)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Dao</span> <span class="match-vs">vs</span> B. Hopkins & D. Tasin</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 10, 2026</span>
+                                <span class="match-score">7-11, 6-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.067)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Sexton</span> <span class="match-vs">vs</span> H. Bocchi & B. Hopkins</div>
+                        <div class="event-header">The Atlantic Union Bank Open - Women's Doubles Skill: (4.5) Age: (19+, 30+, 40+)</div>
+                            <div class="match-row">
+                                <span class="match-date">Dec 6, 2025</span>
+                                <span class="match-score">11-0, 11-6 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.031)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> L. Fremouw & B. Hopkins</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Dec 6, 2025</span>
+                                <span class="match-score">4-11, 11-4, 10-12 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.011)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> C. Fitch & A. SovikJohnston</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5927360586" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="suraj singh chandel the third suraj singh chandel" data-doubles="5.151" data-singles="3.658">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Suraj Singh Chandel The Third</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Suraj Singh Chandel The Third</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1511,15 +2409,84 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.050)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Patel</span> <span class="match-vs">vs</span> T. Nguyen & M. Cao</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 13, 2025</span>
+                                <span class="match-score">9-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Patel</span> <span class="match-vs">vs</span> T. Nguyen & M. Cao</div>
+                        <div class="event-header">4.5+ Co-Gender Advancing Team League</div>
+                            <div class="match-row">
+                                <span class="match-date">Jan 23, 2025</span>
+                                <span class="match-score">11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.013)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">M. Fuqua</span> <span class="match-vs">vs</span> E. Flores & D. Garcia-Roblero</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 23, 2025</span>
+                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">M. Fuqua</span> <span class="match-vs">vs</span> E. Flores & D. Garcia-Roblero</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 23, 2025</span>
+                                <span class="match-score">11-7, 11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">M. Fuqua</span> <span class="match-vs">vs</span> R. Mizrahi & J. Seaman</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 23, 2025</span>
+                                <span class="match-score">8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.028)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Patel</span> <span class="match-vs">vs</span> J. Seaman & D. Garcia-Roblero</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 23, 2025</span>
+                                <span class="match-score">11-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Patel</span> <span class="match-vs">vs</span> J. Seaman & D. Garcia-Roblero</div>
+                        <div class="event-header">Performance Pickleball RVA</div>
+                            <div class="match-row">
+                                <span class="match-date">Jan 16, 2025</span>
+                                <span class="match-score">11-2, 11-4 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Rhoney</span> <span class="match-vs">vs</span> P. Cloutier & L. Jennings</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 16, 2025</span>
+                                <span class="match-score">11-5, 11-8 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">R. Rhoney</span> <span class="match-vs">vs</span> C. Corts & R. Dajani</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Jan 16, 2025</span>
+                                <span class="match-score">11-3, 11-1 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.018)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Patel</span> <span class="match-vs">vs</span> C. Corts & P. Cloutier</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Dec 8, 2024</span>
+                                <span class="match-score">5-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.008)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">D. Patel</span> <span class="match-vs">vs</span> J. Patel & S. Arora</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5801721459" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
         <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.877" data-singles="5.919">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Youssef Bouzidi</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Youssef Bouzidi</div>
                     <div class="player-notes">Has no socials</div>
                 </div>
                 <div class="scores-stack">
@@ -1597,6 +2564,76 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.006)</span> <span class="lbl">S</span></span>
                             </div>
                             <div class="match-opp-line"><span class="match-vs">vs</span> M. Shepherd</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score">15-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> B. Baker</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score">3-11, 8-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.153)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> B. e. Arrant</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score">11-2, 11-0 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.052)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> C. Flynn</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 26, 2026</span>
+                                <span class="match-score">2-11, 11-5, 11-7 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.118)</span> <span class="lbl">S</span></span>
+                            </div>
+                            <div class="match-opp-line"><span class="match-vs">vs</span> B. Baker</div>
+                        <div class="event-header">Music City Open - A Champions Series Pickleball Event - Men's Pro Doubles 50+</div>
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score">11-13, 11-1, 7-11 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Oncins</span> <span class="match-vs">vs</span> L. Yung & J. Hostetler</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Oncins</span> <span class="match-vs">vs</span> M. Maatta & J. Giesea</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score">7-11, 11-6, 10-12 <strong class="match-result L">L</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.011)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Oncins</span> <span class="match-vs">vs</span> D. Wyatt & D. George</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score">11-8, 11-2 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-down">(-0.010)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Oncins</span> <span class="match-vs">vs</span> R. Keirns & J. Bronson</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Feb 15, 2026</span>
+                                <span class="match-score">11-1, 11-3 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">J. Oncins</span> <span class="match-vs">vs</span> J. Farrin & C. Dudley</div>
+                        <div class="event-header">Music City Open - A Champions Series Pickleball Event - Mixed Pro Doubles 50+</div>
+                            <div class="match-row">
+                                <span class="match-date">Feb 14, 2026</span>
+                                <span class="match-score">12-10, 9-11, 11-5 <strong class="match-result W">W</strong></span>
+                                <span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">S. Courter</span> <span class="match-vs">vs</span> A. Olson & J. Oncins</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8490017643" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 </div></details>
