@@ -98,10 +98,13 @@
         }
 
         .player-summary {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 6px 12px; cursor: pointer; list-style: none; min-height: 36px;
+            display: flex; align-items: center;
+            padding: 6px 8px; cursor: pointer; list-style: none; min-height: 36px; gap: 8px;
         }
         .player-summary::-webkit-details-marker { display: none; }
+
+        .streak-col { flex-shrink: 0; width: 52px; display: flex; justify-content: center; }
+        .name-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
         .player-name {
             font-size: 14px; font-weight: 700; letter-spacing: 1px;
@@ -122,7 +125,7 @@
         .arrow { font-size: 13px; font-weight: 700; text-align: center; display: inline-block; }
         .net-impact { font-size: 13px; font-weight: 700; }
 
-        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; flex-shrink: 0; }
+        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; }
         .streak-w { background: rgba(0, 255, 255, 0.1); color: #00e5ff; border-color: #00e5ff; text-shadow: 0 0 5px rgba(0,229,255,0.5); }
         .streak-l { background: rgba(255, 0, 160, 0.1); color: #ff00a0; border-color: #ff00a0; text-shadow: 0 0 5px rgba(255,0,160,0.5); }
 
@@ -225,7 +228,7 @@
         <div class="header-container">
             <h1>DUPR Watch - PPA Pros</h1>
             <div class="timestamp">
-                <span>Last Updated: April 7, 2026 at 2:22 PM</span>
+                <span>Last Updated: April 7, 2026 at 2:36 PM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -242,10 +245,9 @@
 
         <details class="player-details" data-name="alli phillips alli phillips" data-doubles="5.623" data-singles="5.041">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Alli Phillips</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Alli Phillips</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -398,10 +400,9 @@
 
         <details class="player-details" data-name="andre mercado andre mercado" data-doubles="5.662" data-singles="5.009">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andre Mercado</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andre Mercado</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -554,10 +555,9 @@
 
         <details class="player-details" data-name="andrew caldarella andrew caldarella" data-doubles="5.470" data-singles="5.549">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andrew Caldarella</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andrew Caldarella</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -710,10 +710,9 @@
 
         <details class="player-details" data-name="angie walker angie walker" data-doubles="5.518" data-singles="5.089">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Angie Walker</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Angie Walker</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -866,10 +865,9 @@
 
         <details class="player-details" data-name="anna bright anna bright" data-doubles="6.528" data-singles="5.883">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Anna Bright</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Anna Bright</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1022,10 +1020,9 @@
 
         <details class="player-details" data-name="anna leigh waters anna leigh waters" data-doubles="6.903" data-singles="6.491">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Anna Leigh Waters</div><span class="streak-badge streak-w">🔥 20W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Anna Leigh Waters</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1178,10 +1175,9 @@
 
         <details class="player-details" data-name="audrey brown audrey brown" data-doubles="4.781" data-singles="4.410">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Audrey Brown</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Audrey Brown</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1334,10 +1330,9 @@
 
         <details class="player-details" data-name="augustus ge augustus ge" data-doubles="6.370" data-singles="6.062">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Augustus GE</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Augustus GE</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1490,10 +1485,9 @@
 
         <details class="player-details" data-name="ben johns ben johns" data-doubles="7.098" data-singles="6.668">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ben Johns</div><span class="streak-badge streak-w">🔥 20W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ben Johns</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1646,10 +1640,9 @@
 
         <details class="player-details" data-name="braden jacobson braden jacobson" data-doubles="5.380" data-singles="5.415">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Braden Jacobson</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Braden Jacobson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1802,10 +1795,9 @@
 
         <details class="player-details" data-name="brandon french brandon french" data-doubles="6.166" data-singles="6.011">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Brandon French</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Brandon French</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -1958,10 +1950,9 @@
 
         <details class="player-details" data-name="brooke buckner brooke buckner" data-doubles="5.807" data-singles="5.877">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Brooke Buckner</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Brooke Buckner</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -2114,10 +2105,9 @@
 
         <details class="player-details" data-name="callie smith callie smith" data-doubles="5.878" data-singles="5.494">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Callie Smith</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Callie Smith</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -2270,10 +2260,9 @@
 
         <details class="player-details" data-name="catherine parenteau catherine parenteau" data-doubles="6.151" data-singles="5.836">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Catherine Parenteau</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Catherine Parenteau</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -2426,10 +2415,9 @@
 
         <details class="player-details" data-name="chao yi wang chao yi wang" data-doubles="5.770" data-singles="5.649">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Chao YI Wang</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Chao YI Wang</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -2582,10 +2570,9 @@
 
         <details class="player-details" data-name="christian alshon christian alshon" data-doubles="6.861" data-singles="6.645">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christian Alshon</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christian Alshon</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -2738,10 +2725,9 @@
 
         <details class="player-details" data-name="christine trifunovic christine trifunovic" data-doubles="4.621" data-singles="5.400">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christine Trifunovic</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christine Trifunovic</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -2894,10 +2880,9 @@
 
         <details class="player-details" data-name="dj young dj young" data-doubles="6.138" data-singles="5.745">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">DJ Young</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 6W</span></div>
+                <div class="name-col">
+                    <div class="player-name">DJ Young</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3050,10 +3035,9 @@
 
         <details class="player-details" data-name="dylan frazier dylan frazier" data-doubles="6.529" data-singles="6.344">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Dylan Frazier</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Dylan Frazier</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3206,10 +3190,9 @@
 
         <details class="player-details" data-name="ella yeh ella yeh" data-doubles="5.394" data-singles="4.690">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ella Yeh</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ella Yeh</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3362,10 +3345,9 @@
 
         <details class="player-details" data-name="eric oncins eric oncins" data-doubles="6.642" data-singles="6.301">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Eric Oncins</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Eric Oncins</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3518,10 +3500,9 @@
 
         <details class="player-details" data-name="federico staksrud federico staksrud" data-doubles="6.710" data-singles="6.706">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Federico Staksrud</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Federico Staksrud</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3674,10 +3655,9 @@
 
         <details class="player-details" data-name="gabriel joseph gabriel joseph" data-doubles="5.758" data-singles="6.284">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Gabriel Joseph</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Gabriel Joseph</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3830,10 +3810,9 @@
 
         <details class="player-details" data-name="gabriel tardio gabriel tardio" data-doubles="6.895" data-singles="6.255">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Gabriel Tardio</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Gabriel Tardio</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -3986,10 +3965,9 @@
 
         <details class="player-details" data-name="genie erokhina genie erokhina" data-doubles="5.739" data-singles="5.403">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Genie Erokhina</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Genie Erokhina</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -4142,10 +4120,9 @@
 
         <details class="player-details" data-name="hayden patriquin hayden patriquin" data-doubles="6.925" data-singles="6.606">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Hayden Patriquin</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Hayden Patriquin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -4298,10 +4275,9 @@
 
         <details class="player-details" data-name="jalina ingram jalina ingram" data-doubles="5.415" data-singles="5.334">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jalina Ingram</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jalina Ingram</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -4454,10 +4430,9 @@
 
         <details class="player-details" data-name="jessie irvine jessie irvine" data-doubles="5.816" data-singles="5.135">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jessie Irvine</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jessie Irvine</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -4610,10 +4585,9 @@
 
         <details class="player-details" data-name="jonathan truong jonathan truong" data-doubles="6.300" data-singles="5.630">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jonathan Truong</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jonathan Truong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -4766,10 +4740,9 @@
 
         <details class="player-details" data-name="kaitlyn christian kaitlyn christian" data-doubles="5.747" data-singles="5.898">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Kaitlyn Christian</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Kaitlyn Christian</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -4922,10 +4895,9 @@
 
         <details class="player-details" data-name="kate fahey kate fahey" data-doubles="5.985" data-singles="6.076">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Kate Fahey</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Kate Fahey</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -5078,10 +5050,9 @@
 
         <details class="player-details" data-name="kelly goodnow kelly goodnow" data-doubles="5.013" data-singles="4.924">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Kelly Goodnow</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Kelly Goodnow</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -5234,10 +5205,9 @@
 
         <details class="player-details" data-name="lindsey newman lindsey newman" data-doubles="5.537" data-singles="4.891">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lindsey Newman</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lindsey Newman</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -5390,10 +5360,9 @@
 
         <details class="player-details" data-name="lingwei kong lingwei kong" data-doubles="5.408" data-singles="5.400">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lingwei Kong</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lingwei Kong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -5546,10 +5515,9 @@
 
         <details class="player-details" data-name="mehvish safdar mehvish safdar" data-doubles="5.412" data-singles="5.042">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mehvish Safdar</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mehvish Safdar</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -5702,10 +5670,9 @@
 
         <details class="player-details" data-name="mohaned alhouni mohaned alhouni" data-doubles="6.159" data-singles="6.331">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mohaned Alhouni</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mohaned Alhouni</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -5858,10 +5825,9 @@
 
         <details class="player-details" data-name="pesa teoni pesa teoni" data-doubles="5.908" data-singles="5.357">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pesa Teoni</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pesa Teoni</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6014,10 +5980,9 @@
 
         <details class="player-details" data-name="spartak rahachou spartak rahachou" data-doubles="5.124" data-singles="5.956">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Spartak Rahachou</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Spartak Rahachou</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6170,10 +6135,9 @@
 
         <details class="player-details" data-name="tama shimabukuro tama shimabukuro" data-doubles="5.972" data-singles="6.137">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tama Shimabukuro</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tama Shimabukuro</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6326,10 +6290,9 @@
 
         <details class="player-details" data-name="tina pisnik tina pisnik" data-doubles="6.223" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tina Pisnik</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tina Pisnik</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6482,10 +6445,9 @@
 
         <details class="player-details" data-name="tom protzek tom protzek" data-doubles="5.991" data-singles="6.034">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tom Protzek</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tom Protzek</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6638,10 +6600,9 @@
 
         <details class="player-details" data-name="tyler loong tyler loong" data-doubles="6.210" data-singles="5.467">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tyler Loong</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tyler Loong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6794,10 +6755,9 @@
 
         <details class="player-details" data-name="tyra black tyra black" data-doubles="6.315" data-singles="5.713">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tyra Black</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tyra Black</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -6950,10 +6910,9 @@
 
         <details class="player-details" data-name="wes burrows wes burrows" data-doubles="5.711" data-singles="5.636">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Wes Burrows</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Wes Burrows</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -7106,10 +7065,9 @@
 
         <details class="player-details" data-name="carlos di laura carlos di laura" data-doubles="5.826" data-singles="5.678">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Carlos DI Laura</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 6W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Carlos DI Laura</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -7262,10 +7220,9 @@
 
         <details class="player-details" data-name="marcela hones marcela hones" data-doubles="5.084" data-singles="4.961">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Marcela Hones</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Marcela Hones</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -7418,10 +7375,9 @@
 
         <details class="player-details" data-name="collin johns collin johns" data-doubles="6.250" data-singles="6.967">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Collin Johns</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Collin Johns</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -7574,10 +7530,9 @@
 
         <details class="player-details" data-name="george wall george wall" data-doubles="6.108" data-singles="4.926">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">George Wall</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">George Wall</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -7730,10 +7685,9 @@
 
         <details class="player-details" data-name="jay devilliers jay devilliers" data-doubles="6.651" data-singles="6.259">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jay Devilliers</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jay Devilliers</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -7886,10 +7840,9 @@
 
         <details class="player-details" data-name="lea jansen lea jansen" data-doubles="5.832" data-singles="5.929">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lea Jansen</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lea Jansen</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8042,10 +7995,9 @@
 
         <details class="player-details" data-name="len yang len yang" data-doubles="6.136" data-singles="4.117">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Len Yang</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Len Yang</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8198,10 +8150,9 @@
 
         <details class="player-details" data-name="pablo tellez pablo tellez" data-doubles="6.367" data-singles="5.903">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pablo Tellez</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pablo Tellez</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8354,10 +8305,9 @@
 
         <details class="player-details" data-name="will howells will howells" data-doubles="6.654" data-singles="6.457">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Will Howells</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Will Howells</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8510,10 +8460,9 @@
 
         <details class="player-details" data-name="alix truong alix truong" data-doubles="5.784" data-singles="5.137">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Alix Truong</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Alix Truong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8666,10 +8615,9 @@
 
         <details class="player-details" data-name="blaine hovenier blaine hovenier" data-doubles="6.284" data-singles="5.741">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Blaine Hovenier</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Blaine Hovenier</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8822,10 +8770,9 @@
 
         <details class="player-details" data-name="christa gecheva christa gecheva" data-doubles="5.525" data-singles="5.018">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christa Gecheva</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christa Gecheva</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -8978,10 +8925,9 @@
 
         <details class="player-details" data-name="judit castillo judit castillo" data-doubles="5.708" data-singles="5.627">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Judit Castillo</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Judit Castillo</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -9134,10 +9080,9 @@
 
         <details class="player-details" data-name="lacy schneemann lacy schneemann" data-doubles="5.961" data-singles="5.205">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lacy Schneemann</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lacy Schneemann</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -9290,10 +9235,9 @@
 
         <details class="player-details" data-name="liz truluck liz truluck" data-doubles="5.632" data-singles="5.477">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Liz Truluck</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Liz Truluck</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -9446,10 +9390,9 @@
 
         <details class="player-details" data-name="riley newman riley newman" data-doubles="6.702" data-singles="6.575">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Riley Newman</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Riley Newman</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -9602,10 +9545,9 @@
 
         <details class="player-details" data-name="tyson mcguffin tyson mcguffin" data-doubles="6.421" data-singles="6.121">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tyson Mcguffin</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tyson Mcguffin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -9758,10 +9700,9 @@
 
         <details class="player-details" data-name="yuta funemizu yuta funemizu" data-doubles="6.253" data-singles="5.527">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Yuta Funemizu</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Yuta Funemizu</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -9914,10 +9855,9 @@
 
         <details class="player-details" data-name="zane navratil zane navratil" data-doubles="6.387" data-singles="6.037">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Zane Navratil</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Zane Navratil</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -10075,10 +10015,9 @@
 
         <details class="player-details" data-name="aanik lohani aanik lohani" data-doubles="5.822" data-singles="6.650">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Aanik Lohani</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Aanik Lohani</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -10231,10 +10170,9 @@
 
         <details class="player-details" data-name="adam harvey adam harvey" data-doubles="6.024" data-singles="6.315">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Adam Harvey</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Adam Harvey</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -10387,10 +10325,9 @@
 
         <details class="player-details" data-name="aj koller aj koller" data-doubles="6.298" data-singles="5.493">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">AJ Koller</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">AJ Koller</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -10543,10 +10480,9 @@
 
         <details class="player-details" data-name="alexander crum alexander crum" data-doubles="5.744" data-singles="6.281">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Alexander Crum</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Alexander Crum</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -10699,10 +10635,9 @@
 
         <details class="player-details" data-name="altaf merchant altaf merchant" data-doubles="6.008" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Altaf Merchant</div><span class="streak-badge streak-w">🔥 14W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 14W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Altaf Merchant</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -10855,10 +10790,9 @@
 
         <details class="player-details" data-name="anderson scarpa anderson scarpa" data-doubles="6.312" data-singles="5.877">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Anderson Scarpa</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Anderson Scarpa</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11011,10 +10945,9 @@
 
         <details class="player-details" data-name="andre mercado andre mercado" data-doubles="5.662" data-singles="5.009">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andre Mercado</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andre Mercado</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11167,10 +11100,9 @@
 
         <details class="player-details" data-name="andrei daescu andrei daescu" data-doubles="7.022" data-singles="6.617">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andrei Daescu</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andrei Daescu</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11323,10 +11255,9 @@
 
         <details class="player-details" data-name="andrew caldarella andrew caldarella" data-doubles="5.470" data-singles="5.549">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andrew Caldarella</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andrew Caldarella</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11479,10 +11410,9 @@
 
         <details class="player-details" data-name="augustus ge augustus ge" data-doubles="6.370" data-singles="6.062">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Augustus GE</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Augustus GE</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11635,10 +11565,9 @@
 
         <details class="player-details" data-name="austin bricker austin bricker" data-doubles="5.787" data-singles="4.890">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Austin Bricker</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Austin Bricker</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11791,10 +11720,9 @@
 
         <details class="player-details" data-name="ben johns ben johns" data-doubles="7.098" data-singles="6.668">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ben Johns</div><span class="streak-badge streak-w">🔥 20W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ben Johns</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -11947,10 +11875,9 @@
 
         <details class="player-details" data-name="blaine hovenier blaine hovenier" data-doubles="6.284" data-singles="5.741">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Blaine Hovenier</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Blaine Hovenier</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -12103,10 +12030,9 @@
 
         <details class="player-details" data-name="braden jacobson braden jacobson" data-doubles="5.380" data-singles="5.415">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Braden Jacobson</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Braden Jacobson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -12259,10 +12185,9 @@
 
         <details class="player-details" data-name="brandon french brandon french" data-doubles="6.166" data-singles="6.011">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Brandon French</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Brandon French</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -12415,10 +12340,9 @@
 
         <details class="player-details" data-name="caden nemoff caden nemoff" data-doubles="5.503" data-singles="5.354">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Caden Nemoff</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Caden Nemoff</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -12571,10 +12495,9 @@
 
         <details class="player-details" data-name="camden chaffin camden chaffin" data-doubles="6.109" data-singles="6.051">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Camden Chaffin</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Camden Chaffin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -12727,10 +12650,9 @@
 
         <details class="player-details" data-name="carlos di laura carlos di laura" data-doubles="5.826" data-singles="5.678">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Carlos DI Laura</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 6W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Carlos DI Laura</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -12883,10 +12805,9 @@
 
         <details class="player-details" data-name="cason campbell cason campbell" data-doubles="5.729" data-singles="6.158">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Cason Campbell</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Cason Campbell</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13039,10 +12960,9 @@
 
         <details class="player-details" data-name="chris couch chris couch" data-doubles="5.944" data-singles="5.749">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Chris Couch</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Chris Couch</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13195,10 +13115,9 @@
 
         <details class="player-details" data-name="christian alshon christian alshon" data-doubles="6.861" data-singles="6.645">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christian Alshon</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christian Alshon</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13351,10 +13270,9 @@
 
         <details class="player-details" data-name="christopher haworth christopher haworth" data-doubles="6.230" data-singles="6.826">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christopher Haworth</div><span class="streak-badge streak-w">🔥 4W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 4W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christopher Haworth</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13507,10 +13425,9 @@
 
         <details class="player-details" data-name="chuck taylor chuck taylor" data-doubles="5.726" data-singles="5.785">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Chuck Taylor</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Chuck Taylor</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13663,10 +13580,9 @@
 
         <details class="player-details" data-name="cj klinger cj klinger" data-doubles="6.710" data-singles="6.585">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">CJ Klinger</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">CJ Klinger</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13819,10 +13735,9 @@
 
         <details class="player-details" data-name="collin johns collin johns" data-doubles="6.250" data-singles="6.967">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Collin Johns</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Collin Johns</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -13975,10 +13890,9 @@
 
         <details class="player-details" data-name="connor garnett connor garnett" data-doubles="6.579" data-singles="6.348">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Connor Garnett</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Connor Garnett</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -14131,10 +14045,9 @@
 
         <details class="player-details" data-name="craig johnson craig johnson" data-doubles="6.015" data-singles="5.988">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Craig Johnson</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Craig Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -14287,10 +14200,9 @@
 
         <details class="player-details" data-name="daniel jensen daniel jensen" data-doubles="5.832" data-singles="5.450">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Daniel Jensen</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Daniel Jensen</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -14443,10 +14355,9 @@
 
         <details class="player-details" data-name="dekel bar dekel bar" data-doubles="6.566" data-singles="7.014">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Dekel Bar</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Dekel Bar</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -14599,10 +14510,9 @@
 
         <details class="player-details" data-name="dj young dj young" data-doubles="6.138" data-singles="5.745">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">DJ Young</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 6W</span></div>
+                <div class="name-col">
+                    <div class="player-name">DJ Young</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -14755,10 +14665,9 @@
 
         <details class="player-details" data-name="donald young donald young" data-doubles="6.111" data-singles="6.251">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Donald Young</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Donald Young</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -14911,10 +14820,9 @@
 
         <details class="player-details" data-name="dylan frazier dylan frazier" data-doubles="6.529" data-singles="6.344">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Dylan Frazier</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Dylan Frazier</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -15067,10 +14975,9 @@
 
         <details class="player-details" data-name="edward perez edward perez" data-doubles="5.703" data-singles="5.536">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Edward Perez</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Edward Perez</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -15223,10 +15130,9 @@
 
         <details class="player-details" data-name="eric oncins eric oncins" data-doubles="6.642" data-singles="6.301">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Eric Oncins</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Eric Oncins</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -15379,10 +15285,9 @@
 
         <details class="player-details" data-name="eric roddy eric roddy" data-doubles="5.953" data-singles="6.128">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Eric Roddy</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Eric Roddy</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -15535,10 +15440,9 @@
 
         <details class="player-details" data-name="federico staksrud federico staksrud" data-doubles="6.710" data-singles="6.706">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Federico Staksrud</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Federico Staksrud</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -15691,10 +15595,9 @@
 
         <details class="player-details" data-name="gabriel joseph gabriel joseph" data-doubles="5.758" data-singles="6.284">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Gabriel Joseph</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Gabriel Joseph</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -15847,10 +15750,9 @@
 
         <details class="player-details" data-name="gabriel tardio gabriel tardio" data-doubles="6.895" data-singles="6.255">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Gabriel Tardio</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Gabriel Tardio</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16003,10 +15905,9 @@
 
         <details class="player-details" data-name="george wall george wall" data-doubles="6.108" data-singles="4.926">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">George Wall</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">George Wall</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16159,10 +16060,9 @@
 
         <details class="player-details" data-name="grayson goldin grayson goldin" data-doubles="6.005" data-singles="6.231">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Grayson Goldin</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Grayson Goldin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16315,10 +16215,9 @@
 
         <details class="player-details" data-name="greg dow greg dow" data-doubles="6.103" data-singles="5.206">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Greg Dow</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Greg Dow</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16471,10 +16370,9 @@
 
         <details class="player-details" data-name="hayden patriquin hayden patriquin" data-doubles="6.925" data-singles="6.606">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Hayden Patriquin</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Hayden Patriquin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16627,10 +16525,9 @@
 
         <details class="player-details" data-name="hunter johnson hunter johnson" data-doubles="6.429" data-singles="6.804">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Hunter Johnson</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Hunter Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16783,10 +16680,9 @@
 
         <details class="player-details" data-name="ivan jakovljevic ivan jakovljevic" data-doubles="6.090" data-singles="5.934">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ivan Jakovljevic</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ivan Jakovljevic</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -16939,10 +16835,9 @@
 
         <details class="player-details" data-name="jack sock jack sock" data-doubles="6.524" data-singles="6.536">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jack Sock</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jack Sock</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -17095,10 +16990,9 @@
 
         <details class="player-details" data-name="james delgado james delgado" data-doubles="6.032" data-singles="5.827">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">James Delgado</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">James Delgado</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -17251,10 +17145,9 @@
 
         <details class="player-details" data-name="jaume martinez vich jaume martinez vich" data-doubles="6.461" data-singles="6.475">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jaume Martinez Vich</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jaume Martinez Vich</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -17407,10 +17300,9 @@
 
         <details class="player-details" data-name="jay devilliers jay devilliers" data-doubles="6.651" data-singles="6.259">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jay Devilliers</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jay Devilliers</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -17563,10 +17455,9 @@
 
         <details class="player-details" data-name="jhonnatan medina alvarez jhonnatan medina alvarez" data-doubles="5.859" data-singles="6.297">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jhonnatan Medina Alvarez</div><span class="streak-badge streak-w">🔥 6W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 6W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jhonnatan Medina Alvarez</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -17719,10 +17610,9 @@
 
         <details class="player-details" data-name="john cincola john cincola" data-doubles="6.017" data-singles="5.652">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">John Cincola</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">John Cincola</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -17875,10 +17765,9 @@
 
         <details class="player-details" data-name="jonathan truong jonathan truong" data-doubles="6.300" data-singles="5.630">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jonathan Truong</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jonathan Truong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18031,10 +17920,9 @@
 
         <details class="player-details" data-name="juan benitez juan benitez" data-doubles="6.056" data-singles="5.857">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Juan Benitez</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Juan Benitez</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18187,10 +18075,9 @@
 
         <details class="player-details" data-name="julian arnold julian arnold" data-doubles="6.329" data-singles="6.076">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Julian Arnold</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Julian Arnold</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18343,10 +18230,9 @@
 
         <details class="player-details" data-name="jw johnson jw johnson" data-doubles="6.987" data-singles="6.245">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">JW Johnson</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">JW Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18499,10 +18385,9 @@
 
         <details class="player-details" data-name="len yang len yang" data-doubles="6.136" data-singles="4.117">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Len Yang</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Len Yang</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18655,10 +18540,9 @@
 
         <details class="player-details" data-name="luke wasson luke wasson" data-doubles="5.572" data-singles="5.229">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Luke Wasson</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Luke Wasson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18811,10 +18695,9 @@
 
         <details class="player-details" data-name="marshall brown marshall brown" data-doubles="6.298" data-singles="6.075">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Marshall Brown</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Marshall Brown</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -18967,10 +18850,9 @@
 
         <details class="player-details" data-name="martin emmrich martin emmrich" data-doubles="6.347" data-singles="5.712">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Martin Emmrich</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Martin Emmrich</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -19123,10 +19005,9 @@
 
         <details class="player-details" data-name="matt wright matt wright" data-doubles="6.417" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Matt Wright</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Matt Wright</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -19279,10 +19160,9 @@
 
         <details class="player-details" data-name="maxwell freeman maxwell freeman" data-doubles="6.344" data-singles="6.151">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Maxwell Freeman</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Maxwell Freeman</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -19435,10 +19315,9 @@
 
         <details class="player-details" data-name="michael loyd michael loyd" data-doubles="6.337" data-singles="5.987">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Michael Loyd</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Michael Loyd</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -19591,10 +19470,9 @@
 
         <details class="player-details" data-name="mohaned alhouni mohaned alhouni" data-doubles="6.159" data-singles="6.331">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mohaned Alhouni</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mohaned Alhouni</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -19747,10 +19625,9 @@
 
         <details class="player-details" data-name="mota alhouni mota alhouni" data-doubles="5.815" data-singles="6.362">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mota Alhouni</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mota Alhouni</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -19903,10 +19780,9 @@
 
         <details class="player-details" data-name="noe khlif noe khlif" data-doubles="6.595" data-singles="6.462">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Noe Khlif</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Noe Khlif</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20059,10 +19935,9 @@
 
         <details class="player-details" data-name="pablo tellez pablo tellez" data-doubles="6.367" data-singles="5.903">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pablo Tellez</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pablo Tellez</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20215,10 +20090,9 @@
 
         <details class="player-details" data-name="patrick smith patrick smith" data-doubles="5.860" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Patrick Smith</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Patrick Smith</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20371,10 +20245,9 @@
 
         <details class="player-details" data-name="pesa teoni pesa teoni" data-doubles="5.908" data-singles="5.357">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pesa Teoni</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pesa Teoni</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20527,10 +20400,9 @@
 
         <details class="player-details" data-name="rafa hewett rafa hewett" data-doubles="6.289" data-singles="6.202">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Rafa Hewett</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Rafa Hewett</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20683,10 +20555,9 @@
 
         <details class="player-details" data-name="riley newman riley newman" data-doubles="6.702" data-singles="6.575">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Riley Newman</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Riley Newman</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20839,10 +20710,9 @@
 
         <details class="player-details" data-name="roscoe bellamy roscoe bellamy" data-doubles="6.196" data-singles="6.570">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Roscoe Bellamy</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Roscoe Bellamy</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -20995,10 +20865,9 @@
 
         <details class="player-details" data-name="ryan sherry ryan sherry" data-doubles="5.490" data-singles="5.391">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ryan Sherry</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ryan Sherry</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -21151,10 +21020,9 @@
 
         <details class="player-details" data-name="spartak rahachou spartak rahachou" data-doubles="5.124" data-singles="5.956">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Spartak Rahachou</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Spartak Rahachou</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -21307,10 +21175,9 @@
 
         <details class="player-details" data-name="stephen madonia stephen madonia" data-doubles="5.677" data-singles="5.797">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Stephen Madonia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Stephen Madonia</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -21463,10 +21330,9 @@
 
         <details class="player-details" data-name="steve deakin steve deakin" data-doubles="6.268" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Steve Deakin</div><span class="streak-badge streak-w">🔥 20W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Steve Deakin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -21619,10 +21485,9 @@
 
         <details class="player-details" data-name="tam trinh tam trinh" data-doubles="6.172" data-singles="5.587">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tam Trinh</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tam Trinh</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -21775,10 +21640,9 @@
 
         <details class="player-details" data-name="tama shimabukuro tama shimabukuro" data-doubles="5.972" data-singles="6.137">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tama Shimabukuro</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tama Shimabukuro</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -21931,10 +21795,9 @@
 
         <details class="player-details" data-name="thomas wilson thomas wilson" data-doubles="6.904" data-singles="6.504">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Thomas Wilson</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Thomas Wilson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -22087,10 +21950,9 @@
 
         <details class="player-details" data-name="tom protzek tom protzek" data-doubles="5.991" data-singles="6.034">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tom Protzek</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tom Protzek</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -22243,10 +22105,9 @@
 
         <details class="player-details" data-name="travis rettenmaier travis rettenmaier" data-doubles="6.283" data-singles="6.127">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Travis Rettenmaier</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Travis Rettenmaier</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -22399,10 +22260,9 @@
 
         <details class="player-details" data-name="tyler loong tyler loong" data-doubles="6.210" data-singles="5.467">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tyler Loong</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tyler Loong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -22555,10 +22415,9 @@
 
         <details class="player-details" data-name="tyson mcguffin tyson mcguffin" data-doubles="6.421" data-singles="6.121">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tyson Mcguffin</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tyson Mcguffin</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -22711,10 +22570,9 @@
 
         <details class="player-details" data-name="wes burrows wes burrows" data-doubles="5.711" data-singles="5.636">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Wes Burrows</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Wes Burrows</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -22867,10 +22725,9 @@
 
         <details class="player-details" data-name="will howells will howells" data-doubles="6.654" data-singles="6.457">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Will Howells</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Will Howells</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23023,10 +22880,9 @@
 
         <details class="player-details" data-name="wyatt stone wyatt stone" data-doubles="6.293" data-singles="5.568">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Wyatt Stone</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Wyatt Stone</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23179,10 +23035,9 @@
 
         <details class="player-details" data-name="yates johnson yates johnson" data-doubles="5.992" data-singles="6.423">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Yates Johnson</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Yates Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23335,10 +23190,9 @@
 
         <details class="player-details" data-name="yuta funemizu yuta funemizu" data-doubles="6.253" data-singles="5.527">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Yuta Funemizu</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Yuta Funemizu</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23491,10 +23345,9 @@
 
         <details class="player-details" data-name="zane ford zane ford" data-doubles="5.952" data-singles="6.570">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Zane Ford</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Zane Ford</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23647,10 +23500,9 @@
 
         <details class="player-details" data-name="zane navratil zane navratil" data-doubles="6.387" data-singles="6.037">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Zane Navratil</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Zane Navratil</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23808,10 +23660,9 @@
 
         <details class="player-details" data-name="alex walker alex walker" data-doubles="5.493" data-singles="4.993">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Alex Walker</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Alex Walker</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -23964,10 +23815,9 @@
 
         <details class="player-details" data-name="alix truong alix truong" data-doubles="5.784" data-singles="5.137">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Alix Truong</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Alix Truong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -24120,10 +23970,9 @@
 
         <details class="player-details" data-name="alli phillips alli phillips" data-doubles="5.623" data-singles="5.041">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Alli Phillips</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Alli Phillips</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -24276,10 +24125,9 @@
 
         <details class="player-details" data-name="allyce jones allyce jones" data-doubles="5.879" data-singles="5.151">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Allyce Jones</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Allyce Jones</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -24432,10 +24280,9 @@
 
         <details class="player-details" data-name="andrea koop andrea koop" data-doubles="5.531" data-singles="5.902">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Andrea Koop</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Andrea Koop</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -24588,10 +24435,9 @@
 
         <details class="player-details" data-name="angie walker angie walker" data-doubles="5.518" data-singles="5.089">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Angie Walker</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Angie Walker</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -24744,10 +24590,9 @@
 
         <details class="player-details" data-name="anna bright anna bright" data-doubles="6.528" data-singles="5.883">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Anna Bright</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Anna Bright</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -24900,10 +24745,9 @@
 
         <details class="player-details" data-name="anna leigh waters anna leigh waters" data-doubles="6.903" data-singles="6.491">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Anna Leigh Waters</div><span class="streak-badge streak-w">🔥 20W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Anna Leigh Waters</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25056,10 +24900,9 @@
 
         <details class="player-details" data-name="audrey brown audrey brown" data-doubles="4.781" data-singles="4.410">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Audrey Brown</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Audrey Brown</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25212,10 +25055,9 @@
 
         <details class="player-details" data-name="ava ignatowich ava ignatowich" data-doubles="5.043" data-singles="4.883">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ava Ignatowich</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ava Ignatowich</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25368,10 +25210,9 @@
 
         <details class="player-details" data-name="brooke buckner brooke buckner" data-doubles="5.807" data-singles="5.877">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Brooke Buckner</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Brooke Buckner</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25524,10 +25365,9 @@
 
         <details class="player-details" data-name="brooke caruso brooke caruso" data-doubles="5.479" data-singles="4.422">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Brooke Caruso</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 7L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Brooke Caruso</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25680,10 +25520,9 @@
 
         <details class="player-details" data-name="cailyn campbell cailyn campbell" data-doubles="5.551" data-singles="5.432">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Cailyn Campbell</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Cailyn Campbell</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25836,10 +25675,9 @@
 
         <details class="player-details" data-name="callie smith callie smith" data-doubles="5.878" data-singles="5.494">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Callie Smith</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Callie Smith</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -25992,10 +25830,9 @@
 
         <details class="player-details" data-name="camila zilveti camila zilveti" data-doubles="4.880" data-singles="4.376">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Camila Zilveti</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Camila Zilveti</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -26148,10 +25985,9 @@
 
         <details class="player-details" data-name="catherine parenteau catherine parenteau" data-doubles="6.151" data-singles="5.836">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Catherine Parenteau</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Catherine Parenteau</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -26304,10 +26140,9 @@
 
         <details class="player-details" data-name="chao yi wang chao yi wang" data-doubles="5.770" data-singles="5.649">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Chao YI Wang</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Chao YI Wang</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -26460,10 +26295,9 @@
 
         <details class="player-details" data-name="chloe igleski chloe igleski" data-doubles="5.541" data-singles="4.960">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Chloe Igleski</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Chloe Igleski</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -26616,10 +26450,9 @@
 
         <details class="player-details" data-name="christa gecheva christa gecheva" data-doubles="5.525" data-singles="5.018">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christa Gecheva</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christa Gecheva</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -26772,10 +26605,9 @@
 
         <details class="player-details" data-name="christine trifunovic christine trifunovic" data-doubles="4.621" data-singles="5.400">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Christine Trifunovic</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Christine Trifunovic</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -26928,10 +26760,9 @@
 
         <details class="player-details" data-name="ella yeh ella yeh" data-doubles="5.394" data-singles="4.690">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ella Yeh</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ella Yeh</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -27084,10 +26915,9 @@
 
         <details class="player-details" data-name="emma nelson emma nelson" data-doubles="5.413" data-singles="5.047">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Emma Nelson</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Emma Nelson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -27240,10 +27070,9 @@
 
         <details class="player-details" data-name="etta tuionetoa etta tuionetoa" data-doubles="5.975" data-singles="5.525">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Etta Tuionetoa</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Etta Tuionetoa</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -27396,10 +27225,9 @@
 
         <details class="player-details" data-name="ewa radzikowska ewa radzikowska" data-doubles="5.899" data-singles="5.905">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Ewa Radzikowska</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Ewa Radzikowska</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -27552,10 +27380,9 @@
 
         <details class="player-details" data-name="genie bouchard genie bouchard" data-doubles="5.107" data-singles="5.844">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Genie Bouchard</div><span class="streak-badge streak-w">🔥 2W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Genie Bouchard</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -27708,10 +27535,9 @@
 
         <details class="player-details" data-name="genie erokhina genie erokhina" data-doubles="5.739" data-singles="5.403">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Genie Erokhina</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Genie Erokhina</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -27864,10 +27690,9 @@
 
         <details class="player-details" data-name="hannah blatt hannah blatt" data-doubles="5.112" data-singles="5.394">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Hannah Blatt</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Hannah Blatt</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28020,10 +27845,9 @@
 
         <details class="player-details" data-name="jackie kawamoto jackie kawamoto" data-doubles="6.253" data-singles="3.500">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jackie Kawamoto</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jackie Kawamoto</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28176,10 +28000,9 @@
 
         <details class="player-details" data-name="jade kawamoto jade kawamoto" data-doubles="6.241" data-singles="5.819">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jade Kawamoto</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jade Kawamoto</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28332,10 +28155,9 @@
 
         <details class="player-details" data-name="jalina ingram jalina ingram" data-doubles="5.415" data-singles="5.334">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jalina Ingram</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jalina Ingram</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28488,10 +28310,9 @@
 
         <details class="player-details" data-name="jessica jones jessica jones" data-doubles="4.522" data-singles="4.194">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jessica Jones</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jessica Jones</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28644,10 +28465,9 @@
 
         <details class="player-details" data-name="jessie irvine jessie irvine" data-doubles="5.816" data-singles="5.135">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jessie Irvine</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jessie Irvine</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28800,10 +28620,9 @@
 
         <details class="player-details" data-name="jorja johnson jorja johnson" data-doubles="6.208" data-singles="5.766">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Jorja Johnson</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Jorja Johnson</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -28956,10 +28775,9 @@
 
         <details class="player-details" data-name="judit castillo judit castillo" data-doubles="5.708" data-singles="5.627">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Judit Castillo</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Judit Castillo</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -29112,10 +28930,9 @@
 
         <details class="player-details" data-name="kaitlyn christian kaitlyn christian" data-doubles="5.747" data-singles="5.898">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Kaitlyn Christian</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Kaitlyn Christian</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -29268,10 +29085,9 @@
 
         <details class="player-details" data-name="kate fahey kate fahey" data-doubles="5.985" data-singles="6.076">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Kate Fahey</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Kate Fahey</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -29424,10 +29240,9 @@
 
         <details class="player-details" data-name="kelly goodnow kelly goodnow" data-doubles="5.013" data-singles="4.924">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Kelly Goodnow</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Kelly Goodnow</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -29580,10 +29395,9 @@
 
         <details class="player-details" data-name="lacy schneemann lacy schneemann" data-doubles="5.961" data-singles="5.205">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lacy Schneemann</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lacy Schneemann</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -29736,10 +29550,9 @@
 
         <details class="player-details" data-name="lauren stratman lauren stratman" data-doubles="5.593" data-singles="5.229">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lauren Stratman</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lauren Stratman</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -29892,10 +29705,9 @@
 
         <details class="player-details" data-name="layne sleeth layne sleeth" data-doubles="5.644" data-singles="5.888">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Layne Sleeth</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Layne Sleeth</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30048,10 +29860,9 @@
 
         <details class="player-details" data-name="lea jansen lea jansen" data-doubles="5.832" data-singles="5.929">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lea Jansen</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lea Jansen</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30204,10 +30015,9 @@
 
         <details class="player-details" data-name="lina padegimaite lina padegimaite" data-doubles="5.577" data-singles="5.454">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lina Padegimaite</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 5L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lina Padegimaite</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30360,10 +30170,9 @@
 
         <details class="player-details" data-name="lindsey newman lindsey newman" data-doubles="5.537" data-singles="4.891">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lindsey Newman</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lindsey Newman</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30516,10 +30325,9 @@
 
         <details class="player-details" data-name="lingwei kong lingwei kong" data-doubles="5.408" data-singles="5.400">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lingwei Kong</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lingwei Kong</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30672,10 +30480,9 @@
 
         <details class="player-details" data-name="liz truluck liz truluck" data-doubles="5.632" data-singles="5.477">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Liz Truluck</div><span class="streak-badge streak-l">🧊 4L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 4L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Liz Truluck</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30828,10 +30635,9 @@
 
         <details class="player-details" data-name="luana stanciu luana stanciu" data-doubles="4.962" data-singles="4.530">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Luana Stanciu</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Luana Stanciu</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -30984,10 +30790,9 @@
 
         <details class="player-details" data-name="lucy kovalova lucy kovalova" data-doubles="5.722" data-singles="5.491">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Lucy Kovalova</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Lucy Kovalova</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -31140,10 +30945,9 @@
 
         <details class="player-details" data-name="maggie brascia maggie brascia" data-doubles="5.717" data-singles="5.635">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Maggie Brascia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Maggie Brascia</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -31296,10 +31100,9 @@
 
         <details class="player-details" data-name="marcela hones marcela hones" data-doubles="5.084" data-singles="4.961">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Marcela Hones</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Marcela Hones</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -31452,10 +31255,9 @@
 
         <details class="player-details" data-name="mari humberg mari humberg" data-doubles="6.099" data-singles="5.273">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mari Humberg</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mari Humberg</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -31608,10 +31410,9 @@
 
         <details class="player-details" data-name="martina frantova martina frantova" data-doubles="5.561" data-singles="4.951">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Martina Frantova</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Martina Frantova</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -31764,10 +31565,9 @@
 
         <details class="player-details" data-name="mary brascia mary brascia" data-doubles="5.567" data-singles="5.684">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mary Brascia</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mary Brascia</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -31920,10 +31720,9 @@
 
         <details class="player-details" data-name="meghan dizon meghan dizon" data-doubles="5.991" data-singles="5.383">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Meghan Dizon</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Meghan Dizon</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -32076,10 +31875,9 @@
 
         <details class="player-details" data-name="mehvish safdar mehvish safdar" data-doubles="5.412" data-singles="5.042">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Mehvish Safdar</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Mehvish Safdar</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -32232,10 +32030,9 @@
 
         <details class="player-details" data-name="milan rane milan rane" data-doubles="5.789" data-singles="5.416">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Milan Rane</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Milan Rane</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -32388,10 +32185,9 @@
 
         <details class="player-details" data-name="monica paolicelli monica paolicelli" data-doubles="5.115" data-singles="5.197">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Monica Paolicelli</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 7L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Monica Paolicelli</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -32544,10 +32340,9 @@
 
         <details class="player-details" data-name="olivia mcmillan olivia mcmillan" data-doubles="5.303" data-singles="4.678">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Olivia Mcmillan</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Olivia Mcmillan</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -32700,10 +32495,9 @@
 
         <details class="player-details" data-name="parris todd parris todd" data-doubles="6.219" data-singles="6.105">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Parris Todd</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Parris Todd</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -32856,10 +32650,9 @@
 
         <details class="player-details" data-name="paula rives paula rives" data-doubles="5.308" data-singles="4.882">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Paula Rives</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Paula Rives</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33012,10 +32805,9 @@
 
         <details class="player-details" data-name="pieri imparato pieri imparato" data-doubles="5.537" data-singles="5.014">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Pieri Imparato</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Pieri Imparato</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33168,10 +32960,9 @@
 
         <details class="player-details" data-name="polina libo polina libo" data-doubles="5.033" data-singles="5.007">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Polina Libo</div><span class="streak-badge streak-l">🧊 10L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 10L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Polina Libo</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33324,10 +33115,9 @@
 
         <details class="player-details" data-name="rachel rettger rachel rettger" data-doubles="5.055" data-singles="4.288">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Rachel Rettger</div><span class="streak-badge streak-l">🧊 5L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 5L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Rachel Rettger</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33480,10 +33270,9 @@
 
         <details class="player-details" data-name="rachel rohrabacher rachel rohrabacher" data-doubles="6.211" data-singles="5.632">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Rachel Rohrabacher</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Rachel Rohrabacher</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33636,10 +33425,9 @@
 
         <details class="player-details" data-name="rachel summers rachel summers" data-doubles="5.157" data-singles="4.658">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Rachel Summers</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Rachel Summers</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33792,10 +33580,9 @@
 
         <details class="player-details" data-name="samantha parker samantha parker" data-doubles="5.590" data-singles="5.708">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Samantha Parker</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Samantha Parker</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -33948,10 +33735,9 @@
 
         <details class="player-details" data-name="sarah ansboury sarah ansboury" data-doubles="5.154" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Sarah Ansboury</div><span class="streak-badge streak-l">🧊 3L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 3L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Sarah Ansboury</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -34104,10 +33890,9 @@
 
         <details class="player-details" data-name="tammy emmrich tammy emmrich" data-doubles="5.399" data-singles="5.374">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tammy Emmrich</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tammy Emmrich</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -34260,10 +34045,9 @@
 
         <details class="player-details" data-name="tatiana ruhl tatiana ruhl" data-doubles="4.964" data-singles="4.605">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tatiana Ruhl</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tatiana Ruhl</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -34416,10 +34200,9 @@
 
         <details class="player-details" data-name="tina pisnik tina pisnik" data-doubles="6.223" data-singles="0">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tina Pisnik</div><span class="streak-badge streak-w">🔥 1W</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tina Pisnik</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -34572,10 +34355,9 @@
 
         <details class="player-details" data-name="tyra black tyra black" data-doubles="6.315" data-singles="5.713">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Tyra Black</div><span class="streak-badge streak-l">🧊 1L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Tyra Black</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -34728,10 +34510,9 @@
 
         <details class="player-details" data-name="victoria dimuzio victoria dimuzio" data-doubles="5.525" data-singles="5.561">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Victoria Dimuzio</div><span class="streak-badge streak-l">🧊 2L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Victoria Dimuzio</div>
                     
                 </div>
                 <div class="scores-stack">
@@ -34884,10 +34665,9 @@
 
         <details class="player-details" data-name="zoeya khan zoeya khan" data-doubles="5.309" data-singles="4.849">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-                        <div class="player-name">Zoeya Khan</div><span class="streak-badge streak-l">🧊 7L</span>
-                    </div>
+                <div class="streak-col"><span class="streak-badge streak-l">🧊 7L</span></div>
+                <div class="name-col">
+                    <div class="player-name">Zoeya Khan</div>
                     
                 </div>
                 <div class="scores-stack">
