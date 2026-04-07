@@ -18,7 +18,7 @@ body { background: #0d0d1a; color: #ccc; font-family: -apple-system, BlinkMacSys
 }
 .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; flex-shrink: 0; margin-left: 8px; }
 .score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; white-space: nowrap; }
-.lbl { font-size: 9px; font-weight: 800; color: #78788c; margin-right: 6px; }
+.lbl { font-size: 13px; font-weight: 700; color: #78788c; margin-left: 6px; }
 .trend-up { color: #00e5ff; text-shadow: 0 0 8px rgba(0,229,255,0.4); }
 .trend-down { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); }
 .arrow { font-size: 13px; font-weight: 700; margin: 0 4px; width: 14px; text-align: center; display: inline-block; }
@@ -60,8 +60,8 @@ h3 { color: #ff00a0; font-size: 12px; margin-top: 30px; letter-spacing: 2px; }
       </div>
     </div>
     <div class="scores-stack">
-      <div class="score-line"><span class="arrow trend-down">▼</span> <span class="net-impact trend-down">(-0.033)</span> <span class="lbl">D</span> 4.263</div>
-      <div class="score-line"><span class="lbl">S</span> 4.304</div>
+      <div class="score-line"><span class="net-impact trend-down">(-0.033)</span> <span class="arrow trend-down">▼</span> 4.263 <span class="lbl">D</span></div>
+      <div class="score-line">4.304 <span class="lbl">S</span></div>
     </div>
   </summary>
   <div class="history-dropdown">
@@ -108,8 +108,8 @@ h3 { color: #ff00a0; font-size: 12px; margin-top: 30px; letter-spacing: 2px; }
       </div>
     </div>
     <div class="scores-stack">
-      <div class="score-line"><span class="lbl">D</span> 6.008</div>
-      <div class="score-line"><span class="lbl">S</span> 5.976</div>
+      <div class="score-line">6.008 <span class="lbl">D</span></div>
+      <div class="score-line">5.976 <span class="lbl">S</span></div>
     </div>
   </summary>
   <div class="history-dropdown">
@@ -140,8 +140,8 @@ h3 { color: #ff00a0; font-size: 12px; margin-top: 30px; letter-spacing: 2px; }
       </div>
     </div>
     <div class="scores-stack">
-      <div class="score-line"><span class="arrow trend-up">▲</span> <span class="net-impact trend-up">(+0.045)</span> <span class="lbl">D</span> 5.151</div>
-      <div class="score-line"><span class="arrow trend-down">▼</span> <span class="net-impact trend-down">(-0.012)</span> <span class="lbl">S</span> 3.658</div>
+      <div class="score-line"><span class="net-impact trend-up">(+0.045)</span> <span class="arrow trend-up">▲</span> 5.151 <span class="lbl">D</span></div>
+      <div class="score-line"><span class="net-impact trend-down">(-0.012)</span> <span class="arrow trend-down">▼</span> 3.658 <span class="lbl">S</span></div>
     </div>
   </summary>
 </details>
