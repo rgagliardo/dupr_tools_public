@@ -1,18 +1,17 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Testing">
-    <meta name="theme-color" content="#0d0e15">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Testing</title>
-    <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Testing">
+<meta name="theme-color" content="#0d0e15">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Testing</title>
+<style>
         :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
         body { background-color: #0d0e15; color: #e0e0e0; margin: 0; padding-bottom: 60px; }
 
@@ -222,41 +221,48 @@
             border-color: rgba(0, 229, 255, 0.3);
         }
 
-    </style>
-    </head>
-    <body>
-        <div class="ptr-indicator" id="ptrIndicator">↻ &nbsp;Release to Refresh</div>
-        <div class="header-container">
-            <h1>Testing</h1>
-            <div class="timestamp">
-                <span>Last Updated: April 7, 2026 at 3:13 PM</span>
-                <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
-            </div>
-            <div class="search-wrap">
-                <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
-                <button class="search-clear" id="searchClear">✕</button>
-            </div>
-            <div class="jump-bar"><a href="#grp-movers" class="jump-tab">📈 Movers (3)</a><a href="#grp-players" class="jump-tab">🏆 Players (13)</a></div>
+</style>
+</head>
+<body>
+    <div class="ptr-indicator" id="ptrIndicator">↻ &nbsp;Release to Refresh</div>
+    <div class="header-container">
+        <h1>Testing</h1>
+        <div class="timestamp">
+            <span>Last Updated: April 7, 2026 at 3:17 PM</span>
+            <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
-        <div class="main-content">
-            <details class="group-details" id="grp-movers">
-<summary class="group-summary movers-summary">📈 Movers (Last 7 Days)</summary>
-<div class="group-content">
-<div class="sort-bar"><span class="sort-label">Sort:</span><button class="sort-btn active" data-sort="name">Name</button><button class="sort-btn" data-sort="doubles">Doubles</button><button class="sort-btn" data-sort="singles">Singles</button></div>
-
-        <details class="player-details" data-name="nate johnson nate johnson" data-doubles="4.406" data-singles="0">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Nate Johnson</div>
-                    
+        <div class="search-wrap">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search players or notes..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <button class="search-clear" id="searchClear">✕</button>
+        </div>
+        <div class="jump-bar">
+            <a href="#grp-movers" class="jump-tab">📈 Movers (3)</a>
+            <a href="#grp-players" class="jump-tab">🏆 Players (13)</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <details class="group-details" id="grp-movers">
+            <summary class="group-summary movers-summary">📈 Movers (Last 7 Days)</summary>
+            <div class="group-content">
+                <div class="sort-bar">
+                    <span class="sort-label">Sort:</span>
+                    <button class="sort-btn active" data-sort="name">Name</button>
+                    <button class="sort-btn" data-sort="doubles">Doubles</button>
+                    <button class="sort-btn" data-sort="singles">Singles</button>
                 </div>
-                <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-up">(+0.007)</span> <span class="arrow trend-up">▲</span> 4.406 <span class="lbl">D</span></div>
-                    
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Bangers & Dinks</div>
+                <details class="player-details" data-name="nate johnson nate johnson" data-doubles="4.406" data-singles="0">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+        <div class="name-col">
+            <div class="player-name">Nate Johnson</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-up">(+0.007)</span> <span class="arrow trend-up">▲</span> 4.406 <span class="lbl">D</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Bangers & Dinks</div>
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
@@ -396,22 +402,24 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> R. Truong & S. Oberoi</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5750755386" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.271" data-singles="4.304">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Pete Cloutier</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 4.271 <span class="lbl">D</span></div>
-                    <div class="score-line">4.304 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5750755386" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.271" data-singles="4.304">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+        <div class="name-col">
+            <div class="player-name">Pete Cloutier</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 4.271 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">4.304 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
@@ -551,22 +559,22 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.059)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">E. Tobin</span> <span class="match-vs">vs</span> C. Heyer & M. Simpson</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7785877502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.915" data-singles="0">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 6L</span></div>
-                <div class="name-col">
-                    <div class="player-name">Selena Dajani</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.084)</span> <span class="arrow trend-down">▼</span> 3.915 <span class="lbl">D</span></div>
-                    
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7785877502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.915" data-singles="0">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 6L</span></div>
+        <div class="name-col">
+            <div class="player-name">Selena Dajani</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-down">(-0.084)</span> <span class="arrow trend-down">▼</span> 3.915 <span class="lbl">D</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
@@ -706,27 +714,33 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.011)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> C. Fitch & A. SovikJohnston</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5927360586" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5927360586" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+            </div>
         </details>
-</div></details>
-<details class="group-details" id="grp-players">
-<summary class="group-summary">🏆 Players</summary>
-<div class="group-content">
-<div class="sort-bar"><span class="sort-label">Sort:</span><button class="sort-btn active" data-sort="name">Name</button><button class="sort-btn" data-sort="doubles">Doubles</button><button class="sort-btn" data-sort="singles">Singles</button></div>
-
-        <details class="player-details" data-name="adrian bedard adrian bedard" data-doubles="4.271" data-singles="0">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
-                <div class="name-col">
-                    <div class="player-name">Adrian Bedard</div>
-                    
+        <details class="group-details" id="grp-players">
+            <summary class="group-summary">🏆 Players</summary>
+            <div class="group-content">
+                <div class="sort-bar">
+                    <span class="sort-label">Sort:</span>
+                    <button class="sort-btn active" data-sort="name">Name</button>
+                    <button class="sort-btn" data-sort="doubles">Doubles</button>
+                    <button class="sort-btn" data-sort="singles">Singles</button>
                 </div>
-                <div class="scores-stack">
-                    <div class="score-line">4.271 <span class="lbl">D</span></div>
-                    
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">CARITAS Paddle Battle - Hosted by Performance Pickleball RVA Men's Doubles Skill: (4.0) Age: (Under 50)</div>
+                <details class="player-details" data-name="adrian bedard adrian bedard" data-doubles="4.271" data-singles="0">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+        <div class="name-col">
+            <div class="player-name">Adrian Bedard</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">4.271 <span class="lbl">D</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">CARITAS Paddle Battle - Hosted by Performance Pickleball RVA Men's Doubles Skill: (4.0) Age: (Under 50)</div>
                             <div class="match-row">
                                 <span class="match-date">Feb 9, 2024</span>
                                 <span class="match-score">11-15 <strong class="match-result L">L</strong></span>
@@ -775,22 +789,24 @@
                                 <span class="match-impact-col"><span class="trend-flat">(-0.000)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">j. ellis</span> <span class="match-vs">vs</span> D. Strickland & K. Rawls</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6826345502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="aibika kalsarieva aibika kalsarieva" data-doubles="5.853" data-singles="5.485">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
-                <div class="name-col">
-                    <div class="player-name">Aibika Kalsarieva</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">5.853 <span class="lbl">D</span></div>
-                    <div class="score-line">5.485 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Brick Wall Mid-Atlantic #4</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6826345502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="aibika kalsarieva aibika kalsarieva" data-doubles="5.853" data-singles="5.485">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+        <div class="name-col">
+            <div class="player-name">Aibika Kalsarieva</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">5.853 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">5.485 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Brick Wall Mid-Atlantic #4</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 15, 2026</span>
                                 <span class="match-score">11-5, 5-11, 1-11 <strong class="match-result L">L</strong></span>
@@ -930,22 +946,24 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> K. Wheatley & J. Broker</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5108307691" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="andrew makovsky andrew makovsky" data-doubles="4.953" data-singles="4.167">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
-                <div class="name-col">
-                    <div class="player-name">Andrew Makovsky</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">4.953 <span class="lbl">D</span></div>
-                    <div class="score-line">4.167 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">USLPL 35+ Hatboro</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5108307691" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="andrew makovsky andrew makovsky" data-doubles="4.953" data-singles="4.167">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+        <div class="name-col">
+            <div class="player-name">Andrew Makovsky</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">4.953 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">4.167 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">USLPL 35+ Hatboro</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 22, 2026</span>
                                 <span class="match-score">5-11, 9-11 <strong class="match-result L">L</strong></span>
@@ -1085,22 +1103,24 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.016)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">A. Carney</span> <span class="match-vs">vs</span> J. M. Alvarez & I. A. Gonzalez</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5801285478" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="christina shifflett christina shifflett" data-doubles="4.962" data-singles="3.725">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
-                <div class="name-col">
-                    <div class="player-name">Christina Shifflett</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">4.962 <span class="lbl">D</span></div>
-                    <div class="score-line">3.725 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown">
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5801285478" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="christina shifflett christina shifflett" data-doubles="4.962" data-singles="3.725">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+        <div class="name-col">
+            <div class="player-name">Christina Shifflett</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">4.962 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">3.725 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        
                             <div class="match-row">
                                 <span class="match-date">Mar 23, 2026</span>
                                 <span class="match-score">11-4, 4-11, 2-11 <strong class="match-result L">L</strong></span>
@@ -1240,22 +1260,25 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Pyun</span> <span class="match-vs">vs</span> C. Barker & A. Mahajan</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4464892977" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="david bieger david bieger" data-doubles="6.008" data-singles="5.976">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
-                <div class="name-col">
-                    <div class="player-name">David Bieger</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">6.008 <span class="lbl">D</span></div>
-                    <div class="score-line">5.976 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="social-links" style="display:flex;"><a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a></div><div class="event-header">APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4464892977" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="david bieger david bieger" data-doubles="6.008" data-singles="5.976">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 2L</span></div>
+        <div class="name-col">
+            <div class="player-name">David Bieger</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">6.008 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">5.976 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="social-links" style="display:flex;"><a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a></div>
+        <div class="event-header">APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 28, 2026</span>
                                 <span class="match-score">9-11, 11-6, 8-11 <strong class="match-result L">L</strong></span>
@@ -1395,22 +1418,24 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">R. Torresin</span> <span class="match-vs">vs</span> W. Butcher & J. Chavez-Lizama</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="lauralei singsank lauralei singsank" data-doubles="5.070" data-singles="4.558">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Lauralei Singsank</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">5.070 <span class="lbl">D</span></div>
-                    <div class="score-line">4.558 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH PRIZE EVENT: Mixed Doubles Skill: (MAX COMBINED TEAM DUPR 9.5) Age: (ANY)</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4785300608" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="lauralei singsank lauralei singsank" data-doubles="5.070" data-singles="4.558">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+        <div class="name-col">
+            <div class="player-name">Lauralei Singsank</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">5.070 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">4.558 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH PRIZE EVENT: Mixed Doubles Skill: (MAX COMBINED TEAM DUPR 9.5) Age: (ANY)</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 29, 2026</span>
                                 <span class="match-score">15-5 <strong class="match-result W">W</strong></span>
@@ -1550,22 +1575,26 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Giannelli</span> <span class="match-vs">vs</span> M. Evans & C. Coyner</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4412809367" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="luis geyne luis geyne" data-doubles="4.861" data-singles="4.571">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
-                <div class="name-col">
-                    <div class="player-name">luis geyne</div>
-                    <div class="player-notes">Luis has all of the socials</div>
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">4.861 <span class="lbl">D</span></div>
-                    <div class="score-line">4.571 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="social-links" style="display:flex;"><a class="social-link" href="https://www.instagram.com/luisgeyne_/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a><a class="social-link" href="https://tiktok.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.22 8.22 0 0 0 4.81 1.54V7.15a4.85 4.85 0 0 1-1.04-.46z"/></svg></a><a class="social-link" href="https://www.x.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.736l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div><div class="event-header">MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH PRIZE EVENT: Mixed Doubles Skill: (MAX COMBINED TEAM DUPR 9.5) Age: (ANY)</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4412809367" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="luis geyne luis geyne" data-doubles="4.861" data-singles="4.571">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 1L</span></div>
+        <div class="name-col">
+            <div class="player-name">luis geyne</div>
+            <div class="player-notes">Luis has all of the socials</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">4.861 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">4.571 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="social-links" style="display:flex;"><a class="social-link" href="https://www.instagram.com/luisgeyne_/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a><a class="social-link" href="https://tiktok.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.22 8.22 0 0 0 4.81 1.54V7.15a4.85 4.85 0 0 1-1.04-.46z"/></svg></a><a class="social-link" href="https://www.x.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.736l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+        <div class="event-header">MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH PRIZE EVENT: Mixed Doubles Skill: (MAX COMBINED TEAM DUPR 9.5) Age: (ANY)</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 29, 2026</span>
                                 <span class="match-score">4-11, 11-9, 9-11 <strong class="match-result L">L</strong></span>
@@ -1705,22 +1734,22 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">C. Reburn</span> <span class="match-vs">vs</span> P. Young & C. Young</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="nate johnson nate johnson" data-doubles="4.406" data-singles="0">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Nate Johnson</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-up">(+0.007)</span> <span class="arrow trend-up">▲</span> 4.406 <span class="lbl">D</span></div>
-                    
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Bangers & Dinks</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5006937887" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="nate johnson nate johnson" data-doubles="4.406" data-singles="0">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+        <div class="name-col">
+            <div class="player-name">Nate Johnson</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-up">(+0.007)</span> <span class="arrow trend-up">▲</span> 4.406 <span class="lbl">D</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Bangers & Dinks</div>
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-5 <strong class="match-result W">W</strong></span>
@@ -1860,22 +1889,24 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Li</span> <span class="match-vs">vs</span> R. Truong & S. Oberoi</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5750755386" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.271" data-singles="4.304">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Pete Cloutier</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 4.271 <span class="lbl">D</span></div>
-                    <div class="score-line">4.304 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5750755386" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="pete cloutier pete cloutier" data-doubles="4.271" data-singles="4.304">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+        <div class="name-col">
+            <div class="player-name">Pete Cloutier</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 4.271 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">4.304 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">11-9 <strong class="match-result W">W</strong></span>
@@ -2015,22 +2046,25 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.059)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">E. Tobin</span> <span class="match-vs">vs</span> C. Heyer & M. Simpson</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7785877502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="sarah hua sarah hua" data-doubles="5.750" data-singles="4.966">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Sarah Hua</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">5.750 <span class="lbl">D</span></div>
-                    <div class="score-line">4.966 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="social-links" style="display:flex;"><a class="social-link" href="https://www.instagram.com/sarahhuaa/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a></div><div class="event-header">Brick Wall Mid-Atlantic #4</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7785877502" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="sarah hua sarah hua" data-doubles="5.750" data-singles="4.966">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 20W</span></div>
+        <div class="name-col">
+            <div class="player-name">Sarah Hua</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">5.750 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">4.966 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="social-links" style="display:flex;"><a class="social-link" href="https://www.instagram.com/sarahhuaa/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a></div>
+        <div class="event-header">Brick Wall Mid-Atlantic #4</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 15, 2026</span>
                                 <span class="match-score">5-11, 11-5, 11-1 <strong class="match-result W">W</strong></span>
@@ -2170,22 +2204,22 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.028)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Bieger</span> <span class="match-vs">vs</span> H. Gray & A. Bialek</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8141579862" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.915" data-singles="0">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-l">🧊 6L</span></div>
-                <div class="name-col">
-                    <div class="player-name">Selena Dajani</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line"><span class="net-impact trend-down">(-0.084)</span> <span class="arrow trend-down">▼</span> 3.915 <span class="lbl">D</span></div>
-                    
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8141579862" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="selena dajani selena dajani" data-doubles="3.915" data-singles="0">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-l">🧊 6L</span></div>
+        <div class="name-col">
+            <div class="player-name">Selena Dajani</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-down">(-0.084)</span> <span class="arrow trend-down">▼</span> 3.915 <span class="lbl">D</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
                             <div class="match-row">
                                 <span class="match-date">Apr 2, 2026</span>
                                 <span class="match-score">3-11 <strong class="match-result L">L</strong></span>
@@ -2325,22 +2359,24 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.011)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">J. Hadler</span> <span class="match-vs">vs</span> C. Fitch & A. SovikJohnston</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5927360586" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="suraj singh chandel the third suraj singh chandel" data-doubles="5.151" data-singles="3.658">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Suraj Singh Chandel The Third</div>
-                    
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">5.151 <span class="lbl">D</span></div>
-                    <div class="score-line">3.658 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">Triple Team Pickleball: Advancing 4.5+ Co-Gender</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5927360586" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="suraj singh chandel the third suraj singh chandel" data-doubles="5.151" data-singles="3.658">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 1W</span></div>
+        <div class="name-col">
+            <div class="player-name">Suraj Singh Chandel The Third</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">5.151 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">3.658 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">Triple Team Pickleball: Advancing 4.5+ Co-Gender</div>
                             <div class="match-row">
                                 <span class="match-date">Feb 27, 2025</span>
                                 <span class="match-score">11-4, 12-10 <strong class="match-result W">W</strong></span>
@@ -2480,22 +2516,25 @@
                                 <span class="match-impact-col"><span class="trend-down">(-0.008)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">D. Patel</span> <span class="match-vs">vs</span> J. Patel & S. Arora</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5801721459" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
-        </details>
-
-        <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.877" data-singles="5.919">
-            <summary class="player-summary">
-                <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
-                <div class="name-col">
-                    <div class="player-name">Youssef Bouzidi</div>
-                    <div class="player-notes">Has no socials</div>
-                </div>
-                <div class="scores-stack">
-                    <div class="score-line">5.877 <span class="lbl">D</span></div>
-                    <div class="score-line">5.919 <span class="lbl">S</span></div>
-                </div>
-            </summary>
-            <div class="history-dropdown"><div class="event-header">APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles</div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5801721459" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+                <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.877" data-singles="5.919">
+    <summary class="player-summary">
+        <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+        <div class="name-col">
+            <div class="player-name">Youssef Bouzidi</div>
+            <div class="player-notes">Has no socials</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line">5.877 <span class="lbl">D</span>
+            </div>
+            <div class="score-line">5.919 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="event-header">APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 29, 2026</span>
                                 <span class="match-score">11-6, 11-7 <strong class="match-result W">W</strong></span>
@@ -2635,12 +2674,14 @@
                                 <span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">S. Courter</span> <span class="match-vs">vs</span> A. Olson & J. Oncins</div>
-                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8490017643" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
+                        <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8490017643" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>
+    </div>
+</details>
+            </div>
         </details>
-</div></details>
-        </div>
+    </div>
 
-        <script>
+    <script>
             // Smooth Accordion Animation Function
             function smoothToggle(details, forceOpen = null) {
                 const content = details.querySelector('.group-content');
@@ -3017,7 +3058,6 @@
                 });
             });
 
-        </script>
-    </body>
-    </html>
-    
+    </script>
+</body>
+</html>
