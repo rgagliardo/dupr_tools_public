@@ -106,12 +106,13 @@
         .player-name {
             font-size: 14px; font-weight: 700; letter-spacing: 1px;
             color: #ffffff; text-transform: uppercase;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         }
 
         .player-notes { font-size: 11px; color: #78788c; font-style: italic; margin-top: 1px; }
 
-        .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; }
-        .score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; width: 75px; }
+        .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; flex-shrink: 0; margin-left: 8px; }
+        .score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; white-space: nowrap; }
         .score-nr { color: #6e6e7a; font-size: 12px; font-weight: 500; }
         .lbl { font-size: 9px; font-weight: 800; color: #78788c; margin-right: 6px; }
 
@@ -121,7 +122,7 @@
         .arrow { font-size: 12px; margin-left: 4px; width: 12px; text-align: center; display: inline-block; }
         .net-impact { font-size: 10px; font-weight: 600; margin-left: 2px; }
 
-        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; }
+        .streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; flex-shrink: 0; }
         .streak-w { background: rgba(0, 255, 255, 0.1); color: #00e5ff; border-color: #00e5ff; text-shadow: 0 0 5px rgba(0,229,255,0.5); }
         .streak-l { background: rgba(255, 0, 160, 0.1); color: #ff00a0; border-color: #ff00a0; text-shadow: 0 0 5px rgba(255,0,160,0.5); }
 
@@ -223,7 +224,7 @@
         <div class="header-container">
             <h1>DUPR Watch - APP Pros</h1>
             <div class="timestamp">
-                <span>Last Updated: April 6, 2026 at 4:33 AM</span>
+                <span>Last Updated: April 7, 2026 at 4:33 AM</span>
                 <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
             </div>
             <div class="search-wrap">
@@ -238,10 +239,10 @@
 <div class="group-content">
 <div class="sort-bar"><span class="sort-label">Sort:</span><button class="sort-btn active" data-sort="name">Name</button><button class="sort-btn" data-sort="doubles">Doubles</button><button class="sort-btn" data-sort="singles">Singles</button></div>
 
-        <details class="player-details" data-name="aidan schenk" data-doubles="6.212" data-singles="5.068">
+        <details class="player-details" data-name="aidan schenk aidan schenk" data-doubles="6.212" data-singles="5.068">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Aidan Schenk</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -324,10 +325,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6706473813" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="alexa schull" data-doubles="5.480" data-singles="5.244">
+        <details class="player-details" data-name="alexa schull alexa schull" data-doubles="5.480" data-singles="5.244">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Alexa Schull</div><span class="streak-badge streak-w">🔥 6W</span>
                     </div>
                     
@@ -410,10 +411,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5633216226" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="daria walczak" data-doubles="5.808" data-singles="5.546">
+        <details class="player-details" data-name="daria walczak daria walczak" data-doubles="5.808" data-singles="5.546">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Daria Walczak</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -496,10 +497,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6011854093" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="domenika turkovic" data-doubles="5.769" data-singles="5.661">
+        <details class="player-details" data-name="domenika turkovic domenika turkovic" data-doubles="5.769" data-singles="5.661">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Domenika Turkovic</div><span class="streak-badge streak-w">🔥 10W</span>
                     </div>
                     
@@ -582,10 +583,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5713060510" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="kyle koszuta" data-doubles="6.140" data-singles="5.600">
+        <details class="player-details" data-name="kyle koszuta kyle koszuta" data-doubles="6.140" data-singles="5.600">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Kyle Koszuta</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -668,10 +669,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7753947315" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="madalina grigoriu" data-doubles="5.321" data-singles="5.266">
+        <details class="player-details" data-name="madalina grigoriu madalina grigoriu" data-doubles="5.321" data-singles="5.266">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Madalina Grigoriu</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -754,10 +755,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5214851082" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="max manthou" data-doubles="6.312" data-singles="5.832">
+        <details class="player-details" data-name="max manthou max manthou" data-doubles="6.312" data-singles="5.832">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Max Manthou</div><span class="streak-badge streak-w">🔥 7W</span>
                     </div>
                     
@@ -840,10 +841,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6578450740" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="will howells" data-doubles="6.654" data-singles="6.457">
+        <details class="player-details" data-name="will howells will howells" data-doubles="6.654" data-singles="6.457">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Will Howells</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -926,10 +927,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5044106012" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="clayton powell" data-doubles="5.822" data-singles="5.297">
+        <details class="player-details" data-name="clayton powell clayton powell" data-doubles="5.822" data-singles="5.297">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Clayton Powell</div><span class="streak-badge streak-l">🧊 4L</span>
                     </div>
                     
@@ -1017,10 +1018,10 @@
 <div class="group-content">
 <div class="sort-bar"><span class="sort-label">Sort:</span><button class="sort-btn active" data-sort="name">Name</button><button class="sort-btn" data-sort="doubles">Doubles</button><button class="sort-btn" data-sort="singles">Singles</button></div>
 
-        <details class="player-details" data-name="aidan schenk" data-doubles="6.212" data-singles="5.068">
+        <details class="player-details" data-name="aidan schenk aidan schenk" data-doubles="6.212" data-singles="5.068">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Aidan Schenk</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -1103,10 +1104,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6706473813" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="ammar wazir" data-doubles="6.170" data-singles="6.334">
+        <details class="player-details" data-name="ammar wazir ammar wazir" data-doubles="6.170" data-singles="6.334">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Ammar Wazir</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -1189,10 +1190,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4461994099" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="andre mick" data-doubles="6.055" data-singles="5.525">
+        <details class="player-details" data-name="andre mick andre mick" data-doubles="6.055" data-singles="5.525">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Andre Mick</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -1275,10 +1276,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5111676167" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="andre millet" data-doubles="5.692" data-singles="5.766">
+        <details class="player-details" data-name="andre millet andre millet" data-doubles="5.692" data-singles="5.766">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Andre Millet</div><span class="streak-badge streak-l">🧊 4L</span>
                     </div>
                     
@@ -1361,10 +1362,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8446132290" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="brandon lane" data-doubles="6.211" data-singles="5.981">
+        <details class="player-details" data-name="brandon lane brandon lane" data-doubles="6.211" data-singles="5.981">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Brandon Lane</div><span class="streak-badge streak-l">🧊 3L</span>
                     </div>
                     
@@ -1447,10 +1448,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6793424152" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="casey diamond" data-doubles="6.214" data-singles="5.550">
+        <details class="player-details" data-name="casey diamond casey diamond" data-doubles="6.214" data-singles="5.550">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Casey Diamond</div><span class="streak-badge streak-w">🔥 10W</span>
                     </div>
                     
@@ -1533,10 +1534,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8287143482" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="clayton powell" data-doubles="5.822" data-singles="5.297">
+        <details class="player-details" data-name="clayton powell clayton powell" data-doubles="5.822" data-singles="5.297">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Clayton Powell</div><span class="streak-badge streak-l">🧊 4L</span>
                     </div>
                     
@@ -1619,10 +1620,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6342074196" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="dustin boyer" data-doubles="5.562" data-singles="6.070">
+        <details class="player-details" data-name="dustin boyer dustin boyer" data-doubles="5.562" data-singles="6.070">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Dustin Boyer</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -1705,10 +1706,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5131911129" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="eduardo irizarry" data-doubles="5.716" data-singles="6.169">
+        <details class="player-details" data-name="eduardo irizarry eduardo irizarry" data-doubles="5.716" data-singles="6.169">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Eduardo Irizarry</div><span class="streak-badge streak-l">🧊 4L</span>
                     </div>
                     
@@ -1791,10 +1792,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5264739050" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="erik lange" data-doubles="6.628" data-singles="6.123">
+        <details class="player-details" data-name="erik lange erik lange" data-doubles="6.628" data-singles="6.123">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Erik Lange</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -1877,10 +1878,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7995631189" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="jack foster" data-doubles="5.542" data-singles="5.773">
+        <details class="player-details" data-name="jack foster jack foster" data-doubles="5.542" data-singles="5.773">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Jack Foster</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -1963,10 +1964,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7601966649" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="jack munro" data-doubles="6.246" data-singles="5.517">
+        <details class="player-details" data-name="jack munro jack munro" data-doubles="6.246" data-singles="5.517">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Jack Munro</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -2049,10 +2050,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7461558767" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="kyle koszuta" data-doubles="6.140" data-singles="5.600">
+        <details class="player-details" data-name="kyle koszuta kyle koszuta" data-doubles="6.140" data-singles="5.600">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Kyle Koszuta</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -2135,10 +2136,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7753947315" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="mariano yeh" data-doubles="5.590" data-singles="5.805">
+        <details class="player-details" data-name="mariano yeh mariano yeh" data-doubles="5.590" data-singles="5.805">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Mariano Yeh</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -2221,10 +2222,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5695183810" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="mario barrientos" data-doubles="5.905" data-singles="6.214">
+        <details class="player-details" data-name="mario barrientos mario barrientos" data-doubles="5.905" data-singles="6.214">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Mario Barrientos</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -2307,10 +2308,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7103178500" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="mark dancuart" data-doubles="6.065" data-singles="5.015">
+        <details class="player-details" data-name="mark dancuart mark dancuart" data-doubles="6.065" data-singles="5.015">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Mark Dancuart</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -2393,10 +2394,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5125847945" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="max green" data-doubles="5.701" data-singles="6.194">
+        <details class="player-details" data-name="max green max green" data-doubles="5.701" data-singles="6.194">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Max Green</div><span class="streak-badge streak-w">🔥 4W</span>
                     </div>
                     
@@ -2479,10 +2480,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5524434911" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="max manthou" data-doubles="6.312" data-singles="5.832">
+        <details class="player-details" data-name="max manthou max manthou" data-doubles="6.312" data-singles="5.832">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Max Manthou</div><span class="streak-badge streak-w">🔥 7W</span>
                     </div>
                     
@@ -2565,10 +2566,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6578450740" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="naveen beasley" data-doubles="5.969" data-singles="5.693">
+        <details class="player-details" data-name="naveen beasley naveen beasley" data-doubles="5.969" data-singles="5.693">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Naveen Beasley</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -2651,10 +2652,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6277111027" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="patrick kawka" data-doubles="6.242" data-singles="5.975">
+        <details class="player-details" data-name="patrick kawka patrick kawka" data-doubles="6.242" data-singles="5.975">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Patrick Kawka</div><span class="streak-badge streak-w">🔥 1W</span>
                     </div>
                     
@@ -2737,10 +2738,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7562158780" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="randy blanco" data-doubles="6.119" data-singles="4.999">
+        <details class="player-details" data-name="randy blanco randy blanco" data-doubles="6.119" data-singles="4.999">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Randy Blanco</div><span class="streak-badge streak-w">🔥 1W</span>
                     </div>
                     
@@ -2823,10 +2824,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4547001408" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="richard livornese jr" data-doubles="6.274" data-singles="5.876">
+        <details class="player-details" data-name="richard livornese jr richard livornese jr" data-doubles="6.274" data-singles="5.876">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Richard Livornese Jr</div><span class="streak-badge streak-l">🧊 3L</span>
                     </div>
                     
@@ -2909,10 +2910,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5026084518" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="robert slutsky" data-doubles="6.228" data-singles="6.006">
+        <details class="player-details" data-name="robert slutsky robert slutsky" data-doubles="6.228" data-singles="6.006">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Robert Slutsky</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -2995,10 +2996,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6075232420" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="ronan camron" data-doubles="6.163" data-singles="6.383">
+        <details class="player-details" data-name="ronan camron ronan camron" data-doubles="6.163" data-singles="6.383">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Ronan Camron</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -3081,10 +3082,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6868088734" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="ryler deheart" data-doubles="5.828" data-singles="5.752">
+        <details class="player-details" data-name="ryler deheart ryler deheart" data-doubles="5.828" data-singles="5.752">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Ryler DeHeart</div><span class="streak-badge streak-l">🧊 3L</span>
                     </div>
                     
@@ -3167,10 +3168,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6323935817" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="tanner tomassi" data-doubles="5.683" data-singles="5.597">
+        <details class="player-details" data-name="tanner tomassi tanner tomassi" data-doubles="5.683" data-singles="5.597">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Tanner Tomassi</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -3253,10 +3254,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6779805765" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="will howells" data-doubles="6.654" data-singles="6.457">
+        <details class="player-details" data-name="will howells will howells" data-doubles="6.654" data-singles="6.457">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Will Howells</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -3339,10 +3340,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5044106012" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="william sobek" data-doubles="5.846" data-singles="5.944">
+        <details class="player-details" data-name="william sobek william sobek" data-doubles="5.846" data-singles="5.944">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">William Sobek</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -3425,10 +3426,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5274279467" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="zack taylor" data-doubles="5.815" data-singles="5.693">
+        <details class="player-details" data-name="zack taylor zack taylor" data-doubles="5.815" data-singles="5.693">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Zack Taylor</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -3516,10 +3517,10 @@
 <div class="group-content">
 <div class="sort-bar"><span class="sort-label">Sort:</span><button class="sort-btn active" data-sort="name">Name</button><button class="sort-btn" data-sort="doubles">Doubles</button><button class="sort-btn" data-sort="singles">Singles</button></div>
 
-        <details class="player-details" data-name="alexa schull" data-doubles="5.480" data-singles="5.244">
+        <details class="player-details" data-name="alexa schull alexa schull" data-doubles="5.480" data-singles="5.244">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Alexa Schull</div><span class="streak-badge streak-w">🔥 6W</span>
                     </div>
                     
@@ -3602,10 +3603,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5633216226" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="allison harris" data-doubles="5.942" data-singles="5.710">
+        <details class="player-details" data-name="allison harris allison harris" data-doubles="5.942" data-singles="5.710">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Allison Harris</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -3688,10 +3689,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8430898214" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="amanda hendry" data-doubles="5.578" data-singles="5.348">
+        <details class="player-details" data-name="amanda hendry amanda hendry" data-doubles="5.578" data-singles="5.348">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Amanda Hendry</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -3774,10 +3775,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6640994481" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="amber policare" data-doubles="5.287" data-singles="5.358">
+        <details class="player-details" data-name="amber policare amber policare" data-doubles="5.287" data-singles="5.358">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Amber Policare</div><span class="streak-badge streak-l">🧊 3L</span>
                     </div>
                     
@@ -3860,10 +3861,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5100644532" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="bobbi oshiro" data-doubles="5.890" data-singles="5.669">
+        <details class="player-details" data-name="bobbi oshiro bobbi oshiro" data-doubles="5.890" data-singles="5.669">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Bobbi Oshiro</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -3946,10 +3947,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5894437462" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="christine maddox" data-doubles="5.856" data-singles="5.611">
+        <details class="player-details" data-name="christine maddox christine maddox" data-doubles="5.856" data-singles="5.611">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Christine Maddox</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -4032,10 +4033,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7128448511" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="daria walczak" data-doubles="5.808" data-singles="5.546">
+        <details class="player-details" data-name="daria walczak daria walczak" data-doubles="5.808" data-singles="5.546">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Daria Walczak</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -4118,10 +4119,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6011854093" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="domenika turkovic" data-doubles="5.769" data-singles="5.661">
+        <details class="player-details" data-name="domenika turkovic domenika turkovic" data-doubles="5.769" data-singles="5.661">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Domenika Turkovic</div><span class="streak-badge streak-w">🔥 10W</span>
                     </div>
                     
@@ -4204,10 +4205,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5713060510" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="emilia schmidt" data-doubles="5.863" data-singles="5.545">
+        <details class="player-details" data-name="emilia schmidt emilia schmidt" data-doubles="5.863" data-singles="5.545">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Emilia Schmidt</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -4290,10 +4291,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8043786083" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="emily cederquist" data-doubles="5.555" data-singles="5.518">
+        <details class="player-details" data-name="emily cederquist emily cederquist" data-doubles="5.555" data-singles="5.518">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Emily Cederquist</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -4376,10 +4377,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6924783306" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="jessica warren" data-doubles="5.360" data-singles="5.536">
+        <details class="player-details" data-name="jessica warren jessica warren" data-doubles="5.360" data-singles="5.536">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Jessica Warren</div><span class="streak-badge streak-l">🧊 5L</span>
                     </div>
                     
@@ -4462,10 +4463,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7148589480" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="jillian braverman" data-doubles="5.912" data-singles="5.588">
+        <details class="player-details" data-name="jillian braverman jillian braverman" data-doubles="5.912" data-singles="5.588">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Jillian Braverman</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -4548,10 +4549,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5075324484" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="katerina stewart" data-doubles="5.976" data-singles="6.047">
+        <details class="player-details" data-name="katerina stewart katerina stewart" data-doubles="5.976" data-singles="6.047">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Katerina Stewart</div><span class="streak-badge streak-w">🔥 2W</span>
                     </div>
                     
@@ -4634,10 +4635,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8202265490" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="kelsey grambeau" data-doubles="5.473" data-singles="5.149">
+        <details class="player-details" data-name="kelsey grambeau kelsey grambeau" data-doubles="5.473" data-singles="5.149">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Kelsey Grambeau</div><span class="streak-badge streak-l">🧊 3L</span>
                     </div>
                     
@@ -4720,10 +4721,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6855376664" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="kelsey matthews" data-doubles="5.982" data-singles="5.409">
+        <details class="player-details" data-name="kelsey matthews kelsey matthews" data-doubles="5.982" data-singles="5.409">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Kelsey Matthews</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -4806,10 +4807,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8253127939" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="madalina grigoriu" data-doubles="5.321" data-singles="5.266">
+        <details class="player-details" data-name="madalina grigoriu madalina grigoriu" data-doubles="5.321" data-singles="5.266">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Madalina Grigoriu</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -4892,10 +4893,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5214851082" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="maria klokotzky" data-doubles="5.851" data-singles="5.259">
+        <details class="player-details" data-name="maria klokotzky maria klokotzky" data-doubles="5.851" data-singles="5.259">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Maria Klokotzky</div><span class="streak-badge streak-w">🔥 1W</span>
                     </div>
                     
@@ -4978,10 +4979,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6173093337" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="megan fudge" data-doubles="6.080" data-singles="5.812">
+        <details class="player-details" data-name="megan fudge megan fudge" data-doubles="6.080" data-singles="5.812">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Megan Fudge</div><span class="streak-badge streak-w">🔥 3W</span>
                     </div>
                     
@@ -5064,10 +5065,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5483956872" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="nicole eugenio" data-doubles="5.731" data-singles="5.103">
+        <details class="player-details" data-name="nicole eugenio nicole eugenio" data-doubles="5.731" data-singles="5.103">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Nicole Eugenio</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -5150,10 +5151,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6675814701" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="rianna valdes" data-doubles="5.488" data-singles="5.710">
+        <details class="player-details" data-name="rianna valdes rianna valdes" data-doubles="5.488" data-singles="5.710">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Rianna Valdes</div><span class="streak-badge streak-w">🔥 1W</span>
                     </div>
                     
@@ -5236,10 +5237,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/7855696753" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="riley bohnert" data-doubles="5.651" data-singles="4.954">
+        <details class="player-details" data-name="riley bohnert riley bohnert" data-doubles="5.651" data-singles="4.954">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Riley Bohnert</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -5322,10 +5323,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5802310304" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="seone mendez" data-doubles="5.720" data-singles="5.810">
+        <details class="player-details" data-name="seone mendez seone mendez" data-doubles="5.720" data-singles="5.810">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Seone Mendez</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
@@ -5408,16 +5409,16 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4709821907" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="shannon pretorius" data-doubles="5.118" data-singles="5.218">
+        <details class="player-details" data-name="shannon pretorius shannon pretorius" data-doubles="5.166" data-singles="5.218">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Shannon Pretorius</div><span class="streak-badge streak-l">🧊 2L</span>
                     </div>
                     
                 </div>
                 <div class="scores-stack">
-                    <div class="score-line"><span class="lbl">D</span> 5.118 <span class="arrow trend-flat">−</span> <span class="net-impact trend-flat">(-0.000)</span></div>
+                    <div class="score-line"><span class="lbl">D</span> 5.166 <span class="arrow trend-flat">−</span> <span class="net-impact trend-flat">(-0.000)</span></div>
                     <div class="score-line"><span class="lbl">S</span> 5.218 <span class="arrow trend-flat">−</span> <span class="net-impact trend-flat">(-0.000)</span></div>
                 </div>
             </summary>
@@ -5449,6 +5450,34 @@
                                 <span class="match-impact-col"><span class="lbl">D</span><span class="trend-down">(-0.018)</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">E. Irizarry</span> <span class="match-vs">vs</span> R. Hanks & B. Hou</div>
+                        <div class="event-header">The Michigan Pickleball League: Season 2 - Event 1</div>
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-7</span>
+                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.019)</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">C. Walker</span> <span class="match-vs">vs</span> P. Cachapero & T. Mukherjee</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-9</span>
+                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.008)</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">K. Allan</span> <span class="match-vs">vs</span> J. Simeri & T. Mukherjee</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score"><strong class="match-result W">W</strong> 11-3</span>
+                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.021)</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">K. Allan</span> <span class="match-vs">vs</span> L. Debol & U. Pandurevic</div>
+                        
+                            <div class="match-row">
+                                <span class="match-date">Mar 21, 2026</span>
+                                <span class="match-score"><strong class="match-result L">L</strong> 6-11</span>
+                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-flat">(-0.000)</span></span>
+                            </div>
+                            <div class="match-opp-line">w/ <span class="match-partner">C. Walker</span> <span class="match-vs">vs</span> E. Hollinsky & L. Debol</div>
                         <div class="event-header">PPA Tour: Veolia Texas Open - Womens Doubles Pro Main Draw</div>
                             <div class="match-row">
                                 <span class="match-date">Mar 11, 2026</span>
@@ -5463,41 +5492,13 @@
                                 <span class="match-impact-col"><span class="lbl">D</span><span class="trend-down">(-0.014)</span></span>
                             </div>
                             <div class="match-opp-line">w/ <span class="match-partner">A. Reichert</span> <span class="match-vs">vs</span> R. Summers & R. Rettger</div>
-                        <div class="event-header">PPA Tour: Veolia Texas Open - Mixed Doubles Pro Main Draw</div>
-                            <div class="match-row">
-                                <span class="match-date">Mar 10, 2026</span>
-                                <span class="match-score"><strong class="match-result L">L</strong> 8-11, 8-11</span>
-                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.037)</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">W. Heerboth</span> <span class="match-vs">vs</span> L. Jansen & D. Frazier</div>
-                        
-                            <div class="match-row">
-                                <span class="match-date">Mar 10, 2026</span>
-                                <span class="match-score"><strong class="match-result W">W</strong> 11-7, 8-11, 11-8</span>
-                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.031)</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">W. Heerboth</span> <span class="match-vs">vs</span> L. Pham & B. Caruso</div>
-                        <div class="event-header">PPA Tour: Veolia Texas Open - Womens Singles Pro Main Draw</div>
-                            <div class="match-row">
-                                <span class="match-date">Mar 10, 2026</span>
-                                <span class="match-score"><strong class="match-result L">L</strong> 12-10, 4-11, 5-11</span>
-                                <span class="match-impact-col"><span class="lbl">S</span><span class="trend-down">(-0.030)</span></span>
-                            </div>
-                            <div class="match-opp-line"><span class="match-vs">vs</span> Z. Weil</div>
-                        <div class="event-header">PPA Tour: Veolia Texas Open - Womens Doubles Pro Qualifier</div>
-                            <div class="match-row">
-                                <span class="match-date">Mar 9, 2026</span>
-                                <span class="match-score"><strong class="match-result W">W</strong> 11-7, 11-7</span>
-                                <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.016)</span></span>
-                            </div>
-                            <div class="match-opp-line">w/ <span class="match-partner">A. Reichert</span> <span class="match-vs">vs</span> N. Hur & L. Y. Choo</div>
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4665464527" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="shelby bates" data-doubles="5.671" data-singles="5.178">
+        <details class="player-details" data-name="shelby bates shelby bates" data-doubles="5.671" data-singles="5.178">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Shelby Bates</div><span class="streak-badge streak-w">🔥 1W</span>
                     </div>
                     
@@ -5580,10 +5581,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/4552450280" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="simone jardim" data-doubles="5.859" data-singles="5.339">
+        <details class="player-details" data-name="simone jardim simone jardim" data-doubles="5.859" data-singles="5.339">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Simone Jardim</div><span class="streak-badge streak-l">🧊 3L</span>
                     </div>
                     
@@ -5666,10 +5667,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/8244479827" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="sofia sewing" data-doubles="6.206" data-singles="5.855">
+        <details class="player-details" data-name="sofia sewing sofia sewing" data-doubles="6.206" data-singles="5.855">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Sofia Sewing</div><span class="streak-badge streak-w">🔥 1W</span>
                     </div>
                     
@@ -5752,10 +5753,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/6909984993" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="susannah barr" data-doubles="5.769" data-singles="4.954">
+        <details class="player-details" data-name="susannah barr susannah barr" data-doubles="5.769" data-singles="4.954">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Susannah Barr</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
@@ -5838,10 +5839,10 @@
                         <a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/5676225750" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a></div>
         </details>
 
-        <details class="player-details" data-name="yana newell" data-doubles="5.813" data-singles="5.739">
+        <details class="player-details" data-name="yana newell yana newell" data-doubles="5.813" data-singles="5.739">
             <summary class="player-summary">
-                <div style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
                         <div class="player-name">Yana Newell</div><span class="streak-badge streak-l">🧊 1L</span>
                     </div>
                     
