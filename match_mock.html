@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { background: #0d0d1a; color: #ccc; font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 16px; max-width: 500px; margin: 0 auto; }
+
+.player-details { border-bottom: 1px solid rgba(255,255,255,0.05); }
+.player-summary {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 12px; cursor: pointer; list-style: none; min-height: 36px;
+}
+.player-summary::-webkit-details-marker { display: none; }
+.player-name {
+  font-size: 14px; font-weight: 700; letter-spacing: 1px;
+  color: #ffffff; text-transform: uppercase;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; flex-shrink: 0; margin-left: 8px; }
+.score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; white-space: nowrap; }
+.lbl { font-size: 9px; font-weight: 800; color: #78788c; margin-right: 6px; }
+.trend-up { color: #00e5ff; text-shadow: 0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); }
+.arrow { font-size: 13px; font-weight: 700; margin: 0 4px; width: 14px; text-align: center; display: inline-block; }
+.net-impact { font-size: 10px; font-weight: 600; margin-left: 2px; }
+.streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800; letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; flex-shrink: 0; }
+.streak-w { background: rgba(0,255,255,0.1); color: #00e5ff; border-color: #00e5ff; }
+.streak-l { background: rgba(255,0,160,0.1); color: #ff00a0; border-color: #ff00a0; }
+
+.history-dropdown { padding: 12px 14px 18px 14px; background: rgba(0,0,0,0.3); font-size: 12px; color: #a1a1a6; border-top: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
+.event-header {
+  font-size: 11px; font-weight: 700; color: #78788c; text-transform: uppercase;
+  letter-spacing: 1px; padding: 8px 0 4px; margin-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.event-header:first-child { border-top: none; margin-top: 0; }
+.match-row { display: flex; align-items: center; padding: 4px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+.match-row:last-of-type { border-bottom: none; margin-bottom: 6px; }
+.match-opp-line { font-size: 13px; color: #8a8aaa; padding: 0 0 6px 85px; margin-top: -1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.match-partner { color: #7a8fcc; }
+.match-vs { color: #6a6a8a; }
+.match-date { width: 85px; flex-shrink: 0; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; font-size: 12px; font-weight: 600; }
+.match-score { flex-grow: 1; text-align: center; padding: 0 4px; font-size: 13px; font-weight: 600; }
+.match-impact-col { width: 55px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.match-result.W { color: #00e5ff; }
+.match-result.L { color: #ff00a0; }
+
+h3 { color: #ff00a0; font-size: 12px; margin-top: 30px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<h3>PLAYER WITH MOVEMENT</h3>
+<details class="player-details" open>
+  <summary class="player-summary">
+    <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+      <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+        <div class="player-name">Pete Cloutier</div><span class="streak-badge streak-l">🧊 2L</span>
+      </div>
+    </div>
+    <div class="scores-stack">
+      <div class="score-line"><span class="arrow trend-down">▼</span> <span class="net-impact trend-down">(-0.033)</span> <span class="lbl">D</span> 4.263</div>
+      <div class="score-line"><span class="lbl">S</span> 4.304</div>
+    </div>
+  </summary>
+  <div class="history-dropdown">
+    <div class="event-header">Richmond Pickleball Association Championship Tournament Series — Spring 2026 Qualifier Round</div>
+
+    <div class="match-row">
+      <span class="match-date">Apr 5</span>
+      <span class="match-score"><strong class="match-result L">L</strong> 5-11 7-11</span>
+      <span class="match-impact-col"><span class="lbl">D</span><span class="trend-down">(-0.017)</span></span>
+    </div>
+    <div class="match-opp-line">w/ <span class="match-partner">L. Velez</span> <span class="match-vs">vs</span> B. Reed & D. Atkinson</div>
+
+    <div class="match-row">
+      <span class="match-date">Apr 4</span>
+      <span class="match-score"><strong class="match-result L">L</strong> 9-11 3-11</span>
+      <span class="match-impact-col"><span class="lbl">D</span><span class="trend-down">(-0.016)</span></span>
+    </div>
+    <div class="match-opp-line">w/ <span class="match-partner">Bartholomew Richardson-Whitfield</span> <span class="match-vs">vs</span> Alexandrina Konstantinopolous & Christopher Worthington-Smythe III</div>
+
+    <div class="event-header">PPBRVA Wednesday Night 4.0+ Advanced Competitive Open Play League — Week 14 of 20</div>
+
+    <div class="match-row">
+      <span class="match-date">Apr 2</span>
+      <span class="match-score"><strong class="match-result W">W</strong> 11-7 11-9</span>
+      <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.014)</span></span>
+    </div>
+    <div class="match-opp-line">w/ <span class="match-partner">M. Chakraborty-Ramanujam</span> <span class="match-vs">vs</span> J. Fitzgerald-O'Brien & S. Venkatasubramaniam</div>
+
+    <div class="match-row">
+      <span class="match-date">Mar 30</span>
+      <span class="match-score"><strong class="match-result W">W</strong> 11-4 11-8</span>
+      <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.028)</span></span>
+    </div>
+    <div class="match-opp-line"><span class="match-vs">vs</span> Maximilian Johansson-Eriksson</div>
+  </div>
+</details>
+
+<h3>PLAYER NO MOVEMENT</h3>
+<details class="player-details" open>
+  <summary class="player-summary">
+    <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+      <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+        <div class="player-name">David Bieger</div><span class="streak-badge streak-l">🧊 2L</span>
+      </div>
+    </div>
+    <div class="scores-stack">
+      <div class="score-line"><span class="lbl">D</span> 6.008</div>
+      <div class="score-line"><span class="lbl">S</span> 5.976</div>
+    </div>
+  </summary>
+  <div class="history-dropdown">
+    <div class="event-header">Greater Richmond Metropolitan Area Pickleball Winter Invitational Championship 2026</div>
+
+    <div class="match-row">
+      <span class="match-date">Mar 28</span>
+      <span class="match-score"><strong class="match-result L">L</strong> 8-11 6-11</span>
+      <span class="match-impact-col"><span class="lbl">D</span><span class="trend-down">(-0.007)</span></span>
+    </div>
+    <div class="match-opp-line">w/ <span class="match-partner">Josephine Beaumont-Castellano</span> <span class="match-vs">vs</span> Montgomery Blackwell-Davidson & Evangeline Christopherson-Andrews</div>
+
+    <div class="match-row">
+      <span class="match-date">Mar 25</span>
+      <span class="match-score"><strong class="match-result W">W</strong> 11-3 11-5</span>
+      <span class="match-impact-col"><span class="lbl">D</span><span class="trend-up">(+0.013)</span></span>
+    </div>
+    <div class="match-opp-line">w/ <span class="match-partner">A. Worthington</span> <span class="match-vs">vs</span> K. Ramachandran-Subramanian & P. Fitzgerald-Hemingway</div>
+  </div>
+</details>
+
+<h3>LONG NAME + MOVEMENT</h3>
+<details class="player-details" open>
+  <summary class="player-summary">
+    <div style="display: flex; flex-direction: column; flex: 1; min-width: 0;">
+      <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+        <div class="player-name">Suraj Singh Chandel The Third</div><span class="streak-badge streak-w">🔥 1W</span>
+      </div>
+    </div>
+    <div class="scores-stack">
+      <div class="score-line"><span class="arrow trend-up">▲</span> <span class="net-impact trend-up">(+0.045)</span> <span class="lbl">D</span> 5.151</div>
+      <div class="score-line"><span class="arrow trend-down">▼</span> <span class="net-impact trend-down">(-0.012)</span> <span class="lbl">S</span> 3.658</div>
+    </div>
+  </summary>
+</details>
+
+</body>
+</html>
