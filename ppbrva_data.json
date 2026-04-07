@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-07T12:18:27",
-  "next_scan_at": "2026-04-07T12:48:27",
+  "generated_at": "2026-04-07T12:49:04",
+  "next_scan_at": "2026-04-07T13:19:04",
   "stats": {
     "total": 59,
     "full_count": 4
@@ -24,7 +24,7 @@
       "registrants": [
         "Scott S."
       ],
-      "last_snap_ts": "2026-04-07T11:46:29",
+      "last_snap_ts": "2026-04-07T12:48:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -49,7 +49,6 @@
         "C. Todd S.",
         "dale p.",
         "Danny L.",
-        "David G.",
         "Davis J.",
         "Ed K.",
         "Errin M.",
@@ -59,6 +58,7 @@
         "JaDuan J.",
         "Joe M.",
         "Joe S.",
+        "Krishna G.",
         "Luis R.",
         "Malli G.",
         "Shawn A.",
@@ -66,7 +66,7 @@
         "Thaian N.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-07T11:46:33",
+      "last_snap_ts": "2026-04-07T12:48:40",
       "thieves": [],
       "big_dogs": [
         {
@@ -96,7 +96,7 @@
         "Mahalakshmi C.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-07T11:46:38",
+      "last_snap_ts": "2026-04-07T12:48:44",
       "thieves": [],
       "big_dogs": []
     },
@@ -120,7 +120,7 @@
         "Hooman R.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-04-07T11:46:42",
+      "last_snap_ts": "2026-04-07T12:48:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -1826,6 +1826,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-07T12:48:40",
+      "type": "join",
+      "name": "Krishna G.",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 7  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/1d677a3f-52b8-4799-bd47-b1d544aa342e"
+    },
+    {
+      "ts": "2026-04-07T12:48:40",
+      "type": "cancel",
+      "name": "David G.",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 7  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/1d677a3f-52b8-4799-bd47-b1d544aa342e"
+    },
+    {
       "ts": "2026-04-07T12:18:11",
       "type": "join",
       "name": "Cyndi S.",
@@ -2128,22 +2144,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "TUE APR 7  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/1d677a3f-52b8-4799-bd47-b1d544aa342e"
-    },
-    {
-      "ts": "2026-04-07T10:14:25",
-      "type": "cancel",
-      "name": "Arun R.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-07T10:14:25",
-      "type": "cancel",
-      "name": "Lisha Y.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
     }
   ],
   "thieves": [],
@@ -2200,6 +2200,11 @@
     },
     {
       "name": "Brian P.",
+      "joins": 1,
+      "cancels": 2
+    },
+    {
+      "name": "David G.",
       "joins": 1,
       "cancels": 2
     },
