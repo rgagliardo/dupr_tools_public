@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-08T16:08:50",
-  "next_scan_at": "2026-04-08T16:38:50",
+  "generated_at": "2026-04-08T16:39:27",
+  "next_scan_at": "2026-04-08T17:09:27",
   "stats": {
     "total": 59,
     "full_count": 5
@@ -22,7 +22,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-08T16:08:29",
+      "last_snap_ts": "2026-04-08T16:39:09",
       "thieves": [],
       "big_dogs": []
     },
@@ -35,26 +35,23 @@
       "start_display": "WED APR 8  6:00 PM",
       "end_display": "8:00 PM",
       "status": "upcoming",
-      "capacity": 21,
-      "count": 11,
-      "pct": 52,
+      "capacity": 15,
+      "count": 8,
+      "pct": 53,
       "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
         "Arathi K.",
         "Brooke H.",
-        "Chanthachone W.",
-        "Ed K.",
         "G B.",
         "Jim O.",
         "Kevin T.",
         "Malli G.",
         "Monty S.",
-        "Scott S.",
         "+4 players"
       ],
-      "last_snap_ts": "2026-04-08T16:08:33",
+      "last_snap_ts": "2026-04-08T16:39:13",
       "thieves": [],
       "big_dogs": [
         {
@@ -92,7 +89,7 @@
         "Steve Y.",
         "+4 players"
       ],
-      "last_snap_ts": "2026-04-08T15:38:01",
+      "last_snap_ts": "2026-04-08T16:39:18",
       "thieves": [],
       "big_dogs": []
     },
@@ -143,7 +140,7 @@
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-08T15:38:05",
+      "last_snap_ts": "2026-04-08T16:39:23",
       "thieves": [],
       "big_dogs": []
     },
@@ -176,7 +173,7 @@
         "Steve Y.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-08T15:38:10",
+      "last_snap_ts": "2026-04-08T16:39:27",
       "thieves": [],
       "big_dogs": []
     },
@@ -1871,6 +1868,30 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-08T16:39:13",
+      "type": "cancel",
+      "name": "Chanthachone W.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
+    },
+    {
+      "ts": "2026-04-08T16:39:13",
+      "type": "cancel",
+      "name": "Ed K.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
+    },
+    {
+      "ts": "2026-04-08T16:39:13",
+      "type": "cancel",
+      "name": "Scott S.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
+    },
+    {
       "ts": "2026-04-08T16:08:33",
       "type": "cancel",
       "name": "Eileen T.",
@@ -2165,30 +2186,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "SAT APR 11  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
-    },
-    {
-      "ts": "2026-04-08T09:25:09",
-      "type": "join",
-      "name": "Roy A.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
-    },
-    {
-      "ts": "2026-04-08T09:24:33",
-      "type": "join",
-      "name": "+2 players",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 10  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
-    },
-    {
-      "ts": "2026-04-08T09:24:33",
-      "type": "cancel",
-      "name": "+1 player",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 10  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
     }
   ],
   "thieves": [
@@ -2303,7 +2300,7 @@
     {
       "name": "Ed K.",
       "joins": 0,
-      "cancels": 6
+      "cancels": 7
     },
     {
       "name": "Robert N.",
@@ -2328,6 +2325,11 @@
     {
       "name": "Jeffrey S.",
       "joins": 4,
+      "cancels": 3
+    },
+    {
+      "name": "Scott S.",
+      "joins": 3,
       "cancels": 3
     },
     {
@@ -2363,11 +2365,6 @@
     {
       "name": "Lisha Y.",
       "joins": 4,
-      "cancels": 2
-    },
-    {
-      "name": "Scott S.",
-      "joins": 3,
       "cancels": 2
     },
     {
@@ -2409,6 +2406,11 @@
       "name": "Barbara D.",
       "joins": 1,
       "cancels": 2
+    },
+    {
+      "name": "Chanthachone W.",
+      "joins": 4,
+      "cancels": 1
     },
     {
       "name": "Sheryl R.",
@@ -2501,22 +2503,17 @@
       "cancels": 1
     },
     {
-      "name": "Chanthachone W.",
-      "joins": 4,
-      "cancels": 0
-    },
-    {
       "name": "Charles N.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Daniel L.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Daniel L.",
+      "name": "Thaian N.",
       "joins": 3,
       "cancels": 0
     },
