@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-08T09:43:17",
-  "next_scan_at": "2026-04-08T10:13:17",
+  "generated_at": "2026-04-08T09:57:08",
+  "next_scan_at": "2026-04-08T10:27:08",
   "stats": {
     "total": 59,
-    "full_count": 4
+    "full_count": 3
   },
   "sessions": [
     {
@@ -16,8 +16,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 5,
-      "pct": 42,
+      "count": 4,
+      "pct": 33,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -25,10 +25,9 @@
         "Chris W.",
         "Duncan W.",
         "Jay M.",
-        "Pete H.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-08T09:22:46",
+      "last_snap_ts": "2026-04-08T09:57:03",
       "thieves": [],
       "big_dogs": []
     },
@@ -42,9 +41,9 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 41,
-      "count": 41,
-      "pct": 100,
-      "is_full": true,
+      "count": 40,
+      "pct": 98,
+      "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
@@ -59,7 +58,6 @@
         "Brian P.",
         "Caroline M.",
         "Chris P.",
-        "Chris W.",
         "Cindy W.",
         "Cyndi S.",
         "David S.",
@@ -77,11 +75,11 @@
         "Lori L.",
         "Louis D.",
         "Mark K.",
-        "Melba T.",
         "Mike B.",
         "Mike L.",
         "Mike N.",
         "Mona B.",
+        "Pete H.",
         "Rachel W.",
         "Rebecca J.",
         "Rick G.",
@@ -90,7 +88,7 @@
         "tom c.",
         "Travis S."
       ],
-      "last_snap_ts": "2026-04-08T09:22:50",
+      "last_snap_ts": "2026-04-08T09:57:08",
       "thieves": [],
       "big_dogs": []
     },
@@ -1863,6 +1861,46 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-08T09:57:08",
+      "type": "join",
+      "name": "Pete H.",
+      "title": "4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+    },
+    {
+      "ts": "2026-04-08T09:57:08",
+      "type": "cancel",
+      "name": "Chris W.",
+      "title": "4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+    },
+    {
+      "ts": "2026-04-08T09:57:08",
+      "type": "cancel",
+      "name": "Melba T.",
+      "title": "4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+    },
+    {
+      "ts": "2026-04-08T09:57:08",
+      "type": "freed",
+      "name": "40/41",
+      "title": "4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+    },
+    {
+      "ts": "2026-04-08T09:57:03",
+      "type": "cancel",
+      "name": "Pete H.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/35a4bfeb-69fd-45f0-9466-22d3decf5a2f"
+    },
+    {
       "ts": "2026-04-08T09:26:26",
       "type": "join",
       "name": "Dave S.",
@@ -2141,46 +2179,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "WED APR 8  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/35a4bfeb-69fd-45f0-9466-22d3decf5a2f"
-    },
-    {
-      "ts": "2026-04-07T22:12:38",
-      "type": "join",
-      "name": "Sheryl R.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-07T22:12:38",
-      "type": "cancel",
-      "name": "Ed K.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-07T22:12:29",
-      "type": "join",
-      "name": "+1 player",
-      "title": "DUPR 4.0 Open Play",
-      "start": "TUE APR 7  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/b7c2c45e-d42d-4b6d-b689-e5df8e6c8879"
-    },
-    {
-      "ts": "2026-04-07T22:12:29",
-      "type": "join",
-      "name": "C. Todd S.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "TUE APR 7  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/b7c2c45e-d42d-4b6d-b689-e5df8e6c8879"
-    },
-    {
-      "ts": "2026-04-07T22:12:29",
-      "type": "join",
-      "name": "Hooman R.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "TUE APR 7  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/b7c2c45e-d42d-4b6d-b689-e5df8e6c8879"
     }
   ],
   "thieves": [
@@ -2235,17 +2233,16 @@
       "detected_at": "2026-04-08T09:23:30"
     },
     {
-      "name": "Chris W.",
+      "name": "Rick G.",
       "session_title": "4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9",
       "session_start": "WED APR 8  10:00 AM",
       "last_seen_full_ts": "2026-04-08T10:00:00",
       "first_absent_ts": "",
-      "reason": "double-booked",
-      "detected_at": "2026-04-08T09:26:54"
+      "reason": "double-booked"
     },
     {
-      "name": "Rick G.",
+      "name": "Chris W.",
       "session_title": "4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9",
       "session_start": "WED APR 8  10:00 AM",
@@ -2378,6 +2375,11 @@
       "cancels": 2
     },
     {
+      "name": "Melba T.",
+      "joins": 1,
+      "cancels": 2
+    },
+    {
       "name": "Barbara D.",
       "joins": 1,
       "cancels": 2
@@ -2458,6 +2460,11 @@
       "cancels": 1
     },
     {
+      "name": "Chris W.",
+      "joins": 2,
+      "cancels": 1
+    },
+    {
       "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
@@ -2532,6 +2539,21 @@
     "Hamoon H.": "Moon"
   },
   "double_bookers": [
+    {
+      "name": "Chris W.",
+      "count": 2,
+      "time": "WED APR 8  10:00 AM",
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/35a4bfeb-69fd-45f0-9466-22d3decf5a2f"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+        }
+      ]
+    },
     {
       "name": "David G.",
       "count": 2,
@@ -2691,22 +2713,6 @@
         }
       ],
       "detected_at": "2026-04-08T09:23:30"
-    },
-    {
-      "name": "Chris W.",
-      "time": "WED APR 8  10:00 AM",
-      "count": 2,
-      "sessions": [
-        {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/35a4bfeb-69fd-45f0-9466-22d3decf5a2f"
-        },
-        {
-          "title": "4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-        }
-      ],
-      "detected_at": "2026-04-08T09:26:54"
     }
   ],
   "flyer_window_days": 90,
