@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-08T07:08:21",
-  "next_scan_at": "2026-04-08T07:38:21",
+  "generated_at": "2026-04-08T09:15:06",
+  "next_scan_at": "2026-04-08T09:45:06",
   "stats": {
     "total": 59,
     "full_count": 4
@@ -2174,7 +2174,35 @@
       "url": "https://ppbrva.podplay.app/community/events/1d677a3f-52b8-4799-bd47-b1d544aa342e"
     }
   ],
-  "thieves": [],
+  "thieves": [
+    {
+      "name": "Charles N.",
+      "session_title": "4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2",
+      "session_start": "SAT APR 4  10:00 AM",
+      "last_seen_full_ts": "2026-04-04T10:00:00",
+      "first_absent_ts": "",
+      "reason": "double-booked"
+    },
+    {
+      "name": "Elton W.",
+      "session_title": "DUPR 4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2",
+      "session_start": "MON APR 6  10:00 AM",
+      "last_seen_full_ts": "2026-04-06T10:00:00",
+      "first_absent_ts": "",
+      "reason": "double-booked"
+    },
+    {
+      "name": "Elton W.",
+      "session_title": "4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e",
+      "session_start": "MON APR 6  10:00 AM",
+      "last_seen_full_ts": "2026-04-06T10:00:00",
+      "first_absent_ts": "",
+      "reason": "double-booked"
+    }
+  ],
   "flyers": [
     {
       "name": "Ed K.",
@@ -2407,6 +2435,25 @@
   },
   "double_bookers": [
     {
+      "name": "Charles N.",
+      "count": 3,
+      "time": "SAT APR 4  10:00 AM",
+      "sessions": [
+        {
+          "title": "DUPR 4.5 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
+        }
+      ]
+    },
+    {
       "name": "Elton W.",
       "count": 2,
       "time": "THU APR 9  10:00 AM",
@@ -2418,6 +2465,36 @@
         {
           "title": "DUPR 4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/9a126b28-de06-4b41-8bed-46f4d4918527"
+        }
+      ]
+    },
+    {
+      "name": "Elton W.",
+      "count": 2,
+      "time": "MON APR 6  10:00 AM",
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/0a216682-1e12-4d2d-90e4-8ba1a618f94e"
+        }
+      ]
+    },
+    {
+      "name": "Suhail A.",
+      "count": 2,
+      "time": "SAT APR 4  10:00 AM",
+      "sessions": [
+        {
+          "title": "DUPR 4.5 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
         }
       ]
     }
@@ -2608,6 +2685,10 @@
     },
     {
       "name": "Adrian Bedard",
+      "sessions": []
+    },
+    {
+      "name": "Anthony B.",
       "sessions": []
     },
     {
