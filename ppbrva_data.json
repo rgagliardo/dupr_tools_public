@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-08T09:57:08",
-  "next_scan_at": "2026-04-08T10:27:08",
+  "generated_at": "2026-04-08T10:27:41",
+  "next_scan_at": "2026-04-08T10:57:41",
   "stats": {
     "total": 59,
-    "full_count": 3
+    "full_count": 4
   },
   "sessions": [
     {
@@ -14,7 +14,7 @@
       "end_iso": "2026-04-08T12:00:00",
       "start_display": "WED APR 8  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 12,
       "count": 4,
       "pct": 33,
@@ -27,7 +27,7 @@
         "Jay M.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-08T09:57:03",
+      "last_snap_ts": "2026-04-08T10:27:15",
       "thieves": [],
       "big_dogs": []
     },
@@ -39,11 +39,11 @@
       "end_iso": "2026-04-08T12:00:00",
       "start_display": "WED APR 8  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 41,
-      "count": 40,
-      "pct": 98,
-      "is_full": false,
+      "count": 41,
+      "pct": 100,
+      "is_full": true,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
@@ -78,6 +78,7 @@
         "Mike B.",
         "Mike L.",
         "Mike N.",
+        "Mitra P.",
         "Mona B.",
         "Pete H.",
         "Rachel W.",
@@ -88,7 +89,7 @@
         "tom c.",
         "Travis S."
       ],
-      "last_snap_ts": "2026-04-08T09:57:08",
+      "last_snap_ts": "2026-04-08T10:27:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -110,7 +111,7 @@
       "registrants": [
         "Jeffrey S."
       ],
-      "last_snap_ts": "2026-04-08T09:22:55",
+      "last_snap_ts": "2026-04-08T10:27:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -139,14 +140,14 @@
         "Elton W.",
         "G B.",
         "Kevin T.",
-        "Leah F.",
         "Malli G.",
+        "Monty S.",
         "Scott S.",
         "Suhail A.",
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-08T09:22:59",
+      "last_snap_ts": "2026-04-08T10:27:28",
       "thieves": [],
       "big_dogs": [
         {
@@ -183,7 +184,7 @@
         "Steve Y.",
         "+4 players"
       ],
-      "last_snap_ts": "2026-04-08T09:23:08",
+      "last_snap_ts": "2026-04-08T10:27:32",
       "thieves": [],
       "big_dogs": []
     },
@@ -197,8 +198,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 34,
-      "count": 29,
-      "pct": 85,
+      "count": 30,
+      "pct": 88,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -223,6 +224,7 @@
         "Gary S.",
         "Gary W.",
         "Konrad S.",
+        "Lisha Y.",
         "Lori L.",
         "Melba T.",
         "Rebecca J.",
@@ -233,7 +235,7 @@
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-08T09:23:12",
+      "last_snap_ts": "2026-04-08T10:27:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -265,7 +267,7 @@
         "Steve Y.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-08T09:23:17",
+      "last_snap_ts": "2026-04-08T10:27:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -1861,6 +1863,46 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-08T10:27:37",
+      "type": "join",
+      "name": "Lisha Y.",
+      "title": "4.0 Open Play",
+      "start": "THU APR 9  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/d3e044cb-ef1f-4309-9d3a-6c6b0ee33aaa"
+    },
+    {
+      "ts": "2026-04-08T10:27:28",
+      "type": "join",
+      "name": "Monty S.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
+    },
+    {
+      "ts": "2026-04-08T10:27:28",
+      "type": "cancel",
+      "name": "Leah F.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
+    },
+    {
+      "ts": "2026-04-08T10:27:20",
+      "type": "join",
+      "name": "Mitra P.",
+      "title": "4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+    },
+    {
+      "ts": "2026-04-08T10:27:20",
+      "type": "full",
+      "name": "41/41",
+      "title": "4.0 Open Play",
+      "start": "WED APR 8  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
+    },
+    {
       "ts": "2026-04-08T09:57:08",
       "type": "join",
       "name": "Pete H.",
@@ -2139,46 +2181,6 @@
       "title": "4.0 Open Play",
       "start": "WED APR 8  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-08T03:17:57",
-      "type": "cancel",
-      "name": "Barbara D.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-08T03:17:57",
-      "type": "cancel",
-      "name": "Sheryl R.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-08T03:17:57",
-      "type": "freed",
-      "name": "40/41",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
-    },
-    {
-      "ts": "2026-04-08T03:17:53",
-      "type": "cancel",
-      "name": "Rick G.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/35a4bfeb-69fd-45f0-9466-22d3decf5a2f"
-    },
-    {
-      "ts": "2026-04-08T03:17:53",
-      "type": "cancel",
-      "name": "Steve Y.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/35a4bfeb-69fd-45f0-9466-22d3decf5a2f"
     }
   ],
   "thieves": [
@@ -2233,7 +2235,7 @@
       "detected_at": "2026-04-08T09:23:30"
     },
     {
-      "name": "Rick G.",
+      "name": "Chris W.",
       "session_title": "4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9",
       "session_start": "WED APR 8  10:00 AM",
@@ -2242,7 +2244,7 @@
       "reason": "double-booked"
     },
     {
-      "name": "Chris W.",
+      "name": "Rick G.",
       "session_title": "4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9",
       "session_start": "WED APR 8  10:00 AM",
@@ -2330,17 +2332,17 @@
       "cancels": 2
     },
     {
+      "name": "Lisha Y.",
+      "joins": 4,
+      "cancels": 2
+    },
+    {
       "name": "Jeffrey S.",
       "joins": 4,
       "cancels": 2
     },
     {
       "name": "Scott S.",
-      "joins": 3,
-      "cancels": 2
-    },
-    {
-      "name": "Lisha Y.",
       "joins": 3,
       "cancels": 2
     },
@@ -2430,12 +2432,17 @@
       "cancels": 1
     },
     {
+      "name": "Mona B.",
+      "joins": 2,
+      "cancels": 1
+    },
+    {
       "name": "Beth B.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Mona B.",
+      "name": "Monty S.",
       "joins": 2,
       "cancels": 1
     },
@@ -2445,12 +2452,12 @@
       "cancels": 1
     },
     {
-      "name": "Steven B.",
+      "name": "Steven S.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Steven S.",
+      "name": "Steven B.",
       "joins": 2,
       "cancels": 1
     },
@@ -2475,12 +2482,12 @@
       "cancels": 0
     },
     {
-      "name": "Daniel L.",
+      "name": "Thaian N.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Daniel L.",
       "joins": 3,
       "cancels": 0
     },
