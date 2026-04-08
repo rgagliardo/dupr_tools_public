@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-08T10:57:53",
-  "next_scan_at": "2026-04-08T11:27:53",
+  "generated_at": "2026-04-08T11:28:29",
+  "next_scan_at": "2026-04-08T11:58:29",
   "stats": {
     "total": 59,
     "full_count": 4
@@ -27,7 +27,7 @@
         "Jay M.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-08T10:57:49",
+      "last_snap_ts": "2026-04-08T11:28:01",
       "thieves": [],
       "big_dogs": []
     },
@@ -89,7 +89,7 @@
         "tom c.",
         "Travis S."
       ],
-      "last_snap_ts": "2026-04-08T10:57:53",
+      "last_snap_ts": "2026-04-08T11:28:05",
       "thieves": [],
       "big_dogs": []
     },
@@ -111,7 +111,7 @@
       "registrants": [
         "Jeffrey S."
       ],
-      "last_snap_ts": "2026-04-08T10:27:24",
+      "last_snap_ts": "2026-04-08T11:28:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -125,8 +125,8 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 22,
-      "count": 15,
-      "pct": 68,
+      "count": 14,
+      "pct": 64,
       "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
@@ -143,11 +143,10 @@
         "Malli G.",
         "Monty S.",
         "Scott S.",
-        "Suhail A.",
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-08T10:27:28",
+      "last_snap_ts": "2026-04-08T11:28:14",
       "thieves": [],
       "big_dogs": [
         {
@@ -184,7 +183,7 @@
         "Steve Y.",
         "+4 players"
       ],
-      "last_snap_ts": "2026-04-08T10:27:32",
+      "last_snap_ts": "2026-04-08T11:28:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -235,7 +234,7 @@
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-08T10:27:37",
+      "last_snap_ts": "2026-04-08T11:28:25",
       "thieves": [],
       "big_dogs": []
     },
@@ -267,7 +266,7 @@
         "Steve Y.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-08T10:27:41",
+      "last_snap_ts": "2026-04-08T11:28:29",
       "thieves": [],
       "big_dogs": []
     },
@@ -1863,6 +1862,14 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-08T11:28:14",
+      "type": "cancel",
+      "name": "Suhail A.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
+    },
+    {
       "ts": "2026-04-08T10:27:37",
       "type": "join",
       "name": "Lisha Y.",
@@ -2173,14 +2180,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "WED APR 8  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
-    },
-    {
-      "ts": "2026-04-08T03:17:57",
-      "type": "join",
-      "name": "Lisha Y.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 8  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9"
     }
   ],
   "thieves": [
@@ -2235,7 +2234,7 @@
       "detected_at": "2026-04-08T09:23:30"
     },
     {
-      "name": "Chris W.",
+      "name": "Rick G.",
       "session_title": "4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9",
       "session_start": "WED APR 8  10:00 AM",
@@ -2244,7 +2243,7 @@
       "reason": "double-booked"
     },
     {
-      "name": "Rick G.",
+      "name": "Chris W.",
       "session_title": "4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/47be660d-afa8-4e13-8ad8-d097ad10aea9",
       "session_start": "WED APR 8  10:00 AM",
@@ -2322,6 +2321,11 @@
       "cancels": 3
     },
     {
+      "name": "Suhail A.",
+      "joins": 6,
+      "cancels": 2
+    },
+    {
       "name": "Suraj Singh C.",
       "joins": 6,
       "cancels": 2
@@ -2385,11 +2389,6 @@
       "name": "Barbara D.",
       "joins": 1,
       "cancels": 2
-    },
-    {
-      "name": "Suhail A.",
-      "joins": 6,
-      "cancels": 1
     },
     {
       "name": "Alicia Z.",
