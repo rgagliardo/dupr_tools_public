@@ -1,31 +1,11 @@
 {
-  "generated_at": "2026-04-08T17:44:05",
-  "next_scan_at": "2026-04-08T18:14:05",
+  "generated_at": "2026-04-08T18:14:48",
+  "next_scan_at": "2026-04-08T18:44:48",
   "stats": {
     "total": 59,
     "full_count": 6
   },
   "sessions": [
-    {
-      "uuid": "3446c74b-d47d-49fe-8522-a643f3d4f338",
-      "url": "https://ppbrva.podplay.app/community/events/3446c74b-d47d-49fe-8522-a643f3d4f338",
-      "title": "4.5/4.0 Open Play",
-      "start_iso": "2026-04-08T16:00:00",
-      "end_iso": "2026-04-08T18:00:00",
-      "start_display": "WED APR 8  4:00 PM",
-      "end_display": "6:00 PM",
-      "status": "live",
-      "capacity": 12,
-      "count": 0,
-      "pct": 0,
-      "is_full": false,
-      "was_ever_full": false,
-      "manually_added": false,
-      "registrants": [],
-      "last_snap_ts": "2026-04-08T17:40:26",
-      "thieves": [],
-      "big_dogs": []
-    },
     {
       "uuid": "fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9",
       "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9",
@@ -34,7 +14,7 @@
       "end_iso": "2026-04-08T20:00:00",
       "start_display": "WED APR 8  6:00 PM",
       "end_display": "8:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 16,
       "count": 8,
       "pct": 50,
@@ -51,7 +31,7 @@
         "Monty S.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-08T17:40:30",
+      "last_snap_ts": "2026-04-08T18:14:28",
       "thieves": [],
       "big_dogs": [
         {
@@ -90,7 +70,7 @@
         "Steve Y.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-08T17:40:34",
+      "last_snap_ts": "2026-04-08T18:14:32",
       "thieves": [],
       "big_dogs": []
     },
@@ -195,7 +175,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-08T17:10:07",
+      "last_snap_ts": "2026-04-08T18:14:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -1874,6 +1854,26 @@
       "last_snap_ts": "2026-04-08T12:29:00",
       "thieves": [],
       "big_dogs": []
+    },
+    {
+      "uuid": "3446c74b-d47d-49fe-8522-a643f3d4f338",
+      "url": "https://ppbrva.podplay.app/community/events/3446c74b-d47d-49fe-8522-a643f3d4f338",
+      "title": "4.5/4.0 Open Play",
+      "start_iso": "2026-04-08T16:00:00",
+      "end_iso": "2026-04-08T18:00:00",
+      "start_display": "WED APR 8  4:00 PM",
+      "end_display": "6:00 PM",
+      "status": "completed",
+      "capacity": 12,
+      "count": 0,
+      "pct": 0,
+      "is_full": false,
+      "was_ever_full": false,
+      "manually_added": false,
+      "registrants": [],
+      "last_snap_ts": "2026-04-08T18:14:23",
+      "thieves": [],
+      "big_dogs": []
     }
   ],
   "activity": [
@@ -2004,14 +2004,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "WED APR 8  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
-    },
-    {
-      "ts": "2026-04-08T16:08:29",
-      "type": "cancel",
-      "name": "Jeffrey S.",
-      "title": "4.5/4.0 Open Play",
-      "start": "WED APR 8  4:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/3446c74b-d47d-49fe-8522-a643f3d4f338"
     },
     {
       "ts": "2026-04-08T15:38:01",
@@ -2196,6 +2188,14 @@
       "title": "4.0 Open Play",
       "start": "THU APR 9  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/d3e044cb-ef1f-4309-9d3a-6c6b0ee33aaa"
+    },
+    {
+      "ts": "2026-04-08T10:27:28",
+      "type": "join",
+      "name": "Monty S.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/fcdeb1c7-b0d8-453c-bd1b-89d5f0fce0f9"
     }
   ],
   "thieves": [
@@ -2333,11 +2333,6 @@
       "cancels": 3
     },
     {
-      "name": "Jeffrey S.",
-      "joins": 4,
-      "cancels": 3
-    },
-    {
       "name": "Scott S.",
       "joins": 3,
       "cancels": 3
@@ -2379,6 +2374,11 @@
     },
     {
       "name": "Elton W.",
+      "joins": 3,
+      "cancels": 2
+    },
+    {
+      "name": "Jeffrey S.",
       "joins": 3,
       "cancels": 2
     },
@@ -2533,12 +2533,12 @@
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
+      "name": "CHARLIE S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "CHARLIE S.",
+      "name": "Rodney G.",
       "joins": 3,
       "cancels": 0
     },
