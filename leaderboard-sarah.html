@@ -19,7 +19,7 @@
             position: sticky; top: 0; z-index: 100;
             background: rgba(13, 14, 21, 0.95);
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            padding: 20px 20px 10px 20px;
+            padding: 20px 12px 10px 12px;
             border-bottom: 1px solid rgba(0, 229, 255, 0.15);
             margin-bottom: 15px;
         }
@@ -46,7 +46,7 @@
         .jump-bar {
             display: flex; overflow-x: auto; gap: 10px; padding-bottom: 5px;
             -webkit-overflow-scrolling: touch; scrollbar-width: none;
-            margin-left: -20px; margin-right: -20px;
+            margin-left: -12px; margin-right: -12px;
         }
         .jump-bar::-webkit-scrollbar { display: none; }
         .jump-bar::before, .jump-bar::after {
@@ -63,7 +63,7 @@
         }
         .jump-tab:active { background: rgba(255, 255, 255, 0.15); }
 
-        .main-content { padding: 0 20px; }
+        .main-content { padding: 0 12px; }
 
         a { text-decoration: none; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
 
@@ -211,9 +211,9 @@
         .sort-btn {
             background: rgba(255, 255, 255, 0.05); color: #a0a0b0;
             border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
-            padding: 4px 12px; font-size: 11px; font-weight: 600;
+            padding: 4px 10px; font-size: 11px; font-weight: 600;
             cursor: pointer; -webkit-tap-highlight-color: transparent;
-            transition: all 0.15s;
+            transition: all 0.15s; white-space: nowrap;
         }
         .sort-btn:active { transform: scale(0.96); }
         .sort-btn.active {
@@ -228,7 +228,7 @@
     <div class="header-container">
         <h1>Sarah Test</h1>
         <div class="timestamp">
-            <span>Last Updated: April 9, 2026 at 9:57 AM</span>
+            <span>Last Updated: April 9, 2026 at 11:27 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
