@@ -228,7 +228,7 @@
     <div class="header-container">
         <h1>DUPR Watch - Pickleball Peeps</h1>
         <div class="timestamp">
-            <span>Last Updated: April 9, 2026 at 9:51 AM</span>
+            <span>Last Updated: April 9, 2026 at 9:59 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -4183,15 +4183,17 @@
                     var players = Array.from(content.querySelectorAll('.player-details'));
 
                     players.sort(function(a, b) {
-                        var result;
                         if (sortKey === 'name') {
-                            result = (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
-                        } else {
-                            var aVal = parseFloat(a.getAttribute('data-' + sortKey)) || 0;
-                            var bVal = parseFloat(b.getAttribute('data-' + sortKey)) || 0;
-                            result = bVal - aVal;
+                            var result = (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+                            return desc ? result : -result;
                         }
-                        return desc ? result : -result;
+                        var aVal = parseFloat(a.getAttribute('data-' + sortKey)) || 0;
+                        var bVal = parseFloat(b.getAttribute('data-' + sortKey)) || 0;
+                        // NR (0) always sinks to bottom regardless of direction
+                        if (aVal === 0 && bVal !== 0) return 1;
+                        if (bVal === 0 && aVal !== 0) return -1;
+                        if (aVal === 0 && bVal === 0) return 0;
+                        return desc ? bVal - aVal : aVal - bVal;
                     });
 
                     players.forEach(function(el) { content.appendChild(el); });
