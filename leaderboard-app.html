@@ -19,7 +19,7 @@
             position: sticky; top: 0; z-index: 100;
             background: rgba(13, 14, 21, 0.95);
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            padding: 20px 20px 10px 20px;
+            padding: 20px 12px 10px 12px;
             border-bottom: 1px solid rgba(0, 229, 255, 0.15);
             margin-bottom: 15px;
         }
@@ -46,7 +46,7 @@
         .jump-bar {
             display: flex; overflow-x: auto; gap: 10px; padding-bottom: 5px;
             -webkit-overflow-scrolling: touch; scrollbar-width: none;
-            margin-left: -20px; margin-right: -20px;
+            margin-left: -12px; margin-right: -12px;
         }
         .jump-bar::-webkit-scrollbar { display: none; }
         .jump-bar::before, .jump-bar::after {
@@ -63,7 +63,7 @@
         }
         .jump-tab:active { background: rgba(255, 255, 255, 0.15); }
 
-        .main-content { padding: 0 20px; }
+        .main-content { padding: 0 12px; }
 
         a { text-decoration: none; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
 
@@ -211,9 +211,9 @@
         .sort-btn {
             background: rgba(255, 255, 255, 0.05); color: #a0a0b0;
             border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
-            padding: 4px 12px; font-size: 11px; font-weight: 600;
+            padding: 4px 10px; font-size: 11px; font-weight: 600;
             cursor: pointer; -webkit-tap-highlight-color: transparent;
-            transition: all 0.15s;
+            transition: all 0.15s; white-space: nowrap;
         }
         .sort-btn:active { transform: scale(0.96); }
         .sort-btn.active {
@@ -228,7 +228,7 @@
     <div class="header-container">
         <h1>DUPR Watch - APP Pros</h1>
         <div class="timestamp">
-            <span>Last Updated: April 9, 2026 at 10:52 AM</span>
+            <span>Last Updated: April 10, 2026 at 4:33 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -236,7 +236,7 @@
             <button class="search-clear" id="searchClear">✕</button>
         </div>
         <div class="jump-bar">
-            <a href="#grp-movers" class="jump-tab">📈 Movers (7)</a>
+            <a href="#grp-movers" class="jump-tab">📈 Movers (6)</a>
             <a href="#grp-men-s-app-pros" class="jump-tab">🏆 Men's APP Pros (29)</a>
             <a href="#grp-women-s-app-pros" class="jump-tab">🏆 Women's APP Pros (28)</a>
         </div>
@@ -282,7 +282,7 @@
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.034)</span> <span class="arrow trend-up">▲</span> 5.480 <span class="lbl">D</span>
             </div>
-            <div class="score-line"><span class="net-impact trend-up">(+0.220)</span> <span class="arrow trend-up">▲</span> 5.244 <span class="lbl">S</span>
+            <div class="score-line"> 5.244 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
@@ -320,7 +320,7 @@
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.168)</span> <span class="arrow trend-up">▲</span> 5.769 <span class="lbl">D</span>
             </div>
-            <div class="score-line"><span class="net-impact trend-down">(-0.018)</span> <span class="arrow trend-down">▼</span> 5.661 <span class="lbl">S</span>
+            <div class="score-line"> 5.661 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
@@ -359,25 +359,6 @@
             <div class="score-line"><span class="net-impact trend-down">(-0.100)</span> <span class="arrow trend-down">▼</span> 5.318 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 5.266 <span class="lbl">S</span>
-            </div>
-        </div>
-    </summary>
-    <div class="history-dropdown">
-        <div class="match-list"></div>
-    </div>
-</details>
-                <details class="player-details" data-name="max manthou max manthou" data-doubles="6.312" data-singles="5.832" data-streak="7" data-matches='[{"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": 0.007, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e C. Haught \u0026 J. Barringer", "opponents": "C. Haught \u0026 J. Barringer", "partner": "R. Baker", "result": "W", "score": "11-4, 11-4"}, {"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Y. L. I. Xiong \u0026 K. Kawamoto", "opponents": "Y. L. I. Xiong \u0026 K. Kawamoto", "partner": "R. Baker", "result": "W", "score": "15-1"}, {"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": -0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e J. Mangkornkeo \u0026 K. Nget", "opponents": "J. Mangkornkeo \u0026 K. Nget", "partner": "R. Baker", "result": "W", "score": "15-3"}, {"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": -0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e D. Dewey \u0026 J. Dewey", "opponents": "D. Dewey \u0026 J. Dewey", "partner": "R. Baker", "result": "W", "score": "15-8"}, {"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": 0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e L. Pelton \u0026 M. Maldazys", "opponents": "L. Pelton \u0026 M. Maldazys", "partner": "R. Baker", "result": "W", "score": "15-5"}, {"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": -0.007, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e D. Li \u0026 M. Zuzarte", "opponents": "D. Li \u0026 M. Zuzarte", "partner": "R. Baker", "result": "W", "score": "15-5"}, {"date": "Apr 3, 2026", "event": "$$$$ Round Robin and big cash event $$$$ - $$$Mixed Doubles Skill: OPEN Age: (Any)$$$", "format": "D", "impact_val": -0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eR. Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e R. Zhong \u0026 S. Young", "opponents": "R. Zhong \u0026 S. Young", "partner": "R. Baker", "result": "W", "score": "15-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.03, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eC. Maddox\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e V. Glozman \u0026 C. Diamond", "opponents": "V. Glozman \u0026 C. Diamond", "partner": "C. Maddox", "result": "L", "score": "7-11, 2-11"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.003, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eT. Yu\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e M. Barrientos \u0026 A. Wazir", "opponents": "M. Barrientos \u0026 A. Wazir", "partner": "T. Yu", "result": "W", "score": "11-3, 6-11, 11-9"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.021, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eC. Maddox\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e S. Sewing \u0026 J. Munro", "opponents": "S. Sewing \u0026 J. Munro", "partner": "C. Maddox", "result": "W", "score": "11-5, 11-9"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.014, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eT. Yu\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e A. Schenk \u0026 C. Diamond", "opponents": "A. Schenk \u0026 C. Diamond", "partner": "T. Yu", "result": "L", "score": "9-11, 7-11"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.016, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eC. Maddox\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e J. Braverman \u0026 A. Schenk", "opponents": "J. Braverman \u0026 A. Schenk", "partner": "C. Maddox", "result": "W", "score": "11-7, 11-7"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.01, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eT. Yu\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e N. Zwiren \u0026 J. Yu", "opponents": "N. Zwiren \u0026 J. Yu", "partner": "T. Yu", "result": "W", "score": "11-7, 11-4"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eC. Maddox\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e D. Boyer \u0026 D. Turkovic", "opponents": "D. Boyer \u0026 D. Turkovic", "partner": "C. Maddox", "result": "W", "score": "11-7, 11-6"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.023, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eT. Yu\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e K. Shekar \u0026 R. Inn", "opponents": "K. Shekar \u0026 R. Inn", "partner": "T. Yu", "result": "W", "score": "11-6, 11-1"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.003, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eC. Maddox\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e E. Pailet \u0026 T. Elpusan", "opponents": "E. Pailet \u0026 T. Elpusan", "partner": "C. Maddox", "result": "W", "score": "11-5, 5-11, 11-3"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.007, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eT. Yu\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e E. Mak \u0026 C. Sampson", "opponents": "E. Mak \u0026 C. Sampson", "partner": "T. Yu", "result": "W", "score": "11-4, 11-6"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": 0.038, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e J. Yu \u0026 N. Zwiren", "opponents": "J. Yu \u0026 N. Zwiren", "partner": "L. Luc", "result": "W", "score": "11-7, 11-4"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": -0.011, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e R. Chikkalingaiah \u0026 P. Huber", "opponents": "R. Chikkalingaiah \u0026 P. Huber", "partner": "L. Luc", "result": "W", "score": "11-8, 11-8"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": 0.003, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e H. Tran \u0026 A. Mehta", "opponents": "H. Tran \u0026 A. Mehta", "partner": "L. Luc", "result": "W", "score": "15-2"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": 0.007, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e T. McLeod \u0026 J. Dixon", "opponents": "T. McLeod \u0026 J. Dixon", "partner": "L. Luc", "result": "W", "score": "15-3"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": 0.003, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e J. Yu \u0026 N. Zwiren", "opponents": "J. Yu \u0026 N. Zwiren", "partner": "L. Luc", "result": "L", "score": "13-15"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": 0.026, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e B. Baker \u0026 P. Tea", "opponents": "B. Baker \u0026 P. Tea", "partner": "L. Luc", "result": "W", "score": "15-4"}, {"date": "Mar 15, 2026", "event": "Washington Open Hosted By Cloud 11 $$$ - Mens Doubles Skill: (Open/Pro) Age: (8 And Above)", "format": "D", "impact_val": -0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eL. Luc\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e B. Dueck \u0026 J. Hagen", "opponents": "B. Dueck \u0026 J. Hagen", "partner": "L. Luc", "result": "W", "score": "15-6"}, {"date": "Feb 14, 2026", "event": "Leapmotor APP Kuala Lumpur Open 2026 (APP Malaysia) - PRO - Men\u0027s Doubles", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eT. Yu\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e R. Camron \u0026 Z. Marceau", "opponents": "R. Camron \u0026 Z. Marceau", "partner": "T. Yu", "result": "W", "score": "11-6, 9-11, 11-5"}]' data-internal-id="6578450740">
-    <summary class="player-summary">
-        <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 7W</span>
-        </div>
-        <div class="name-col">
-            <div class="player-name">Max Manthou</div>
-        </div>
-        <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.005)</span> <span class="arrow trend-down">▼</span> 6.312 <span class="lbl">D</span>
-            </div>
-            <div class="score-line"> 5.832 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
@@ -729,7 +710,7 @@
             <div class="player-name">Max Manthou</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.005)</span> <span class="arrow trend-down">▼</span> 6.312 <span class="lbl">D</span>
+            <div class="score-line"> 6.312 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 5.832 <span class="lbl">S</span>
             </div>
@@ -971,7 +952,7 @@
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.034)</span> <span class="arrow trend-up">▲</span> 5.480 <span class="lbl">D</span>
             </div>
-            <div class="score-line"><span class="net-impact trend-up">(+0.220)</span> <span class="arrow trend-up">▲</span> 5.244 <span class="lbl">S</span>
+            <div class="score-line"> 5.244 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
@@ -1104,7 +1085,7 @@
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.168)</span> <span class="arrow trend-up">▲</span> 5.769 <span class="lbl">D</span>
             </div>
-            <div class="score-line"><span class="net-impact trend-down">(-0.018)</span> <span class="arrow trend-down">▼</span> 5.661 <span class="lbl">S</span>
+            <div class="score-line"> 5.661 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
