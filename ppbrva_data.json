@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-09T20:37:56",
-  "next_scan_at": "2026-04-09T21:07:56",
+  "generated_at": "2026-04-09T21:08:08",
+  "next_scan_at": "2026-04-09T21:38:08",
   "stats": {
     "total": 64,
     "full_count": 5
@@ -160,7 +160,7 @@
         "Thaian N.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-09T20:07:08",
+      "last_snap_ts": "2026-04-09T21:08:03",
       "thieves": [],
       "big_dogs": [
         {
@@ -182,9 +182,9 @@
       "start_display": "FRI APR 10  8:00 PM",
       "end_display": "10:00 PM",
       "status": "upcoming",
-      "capacity": 11,
-      "count": 7,
-      "pct": 64,
+      "capacity": 10,
+      "count": 6,
+      "pct": 60,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -194,10 +194,9 @@
         "Joe S.",
         "Karuna R.",
         "Stacie R.",
-        "Ting H.",
-        "+2 players"
+        "+3 players"
       ],
-      "last_snap_ts": "2026-04-09T20:07:12",
+      "last_snap_ts": "2026-04-09T21:08:08",
       "thieves": [],
       "big_dogs": []
     },
@@ -2087,6 +2086,30 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-09T21:08:08",
+      "type": "join",
+      "name": "+3 players",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 10  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
+    },
+    {
+      "ts": "2026-04-09T21:08:08",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 10  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
+    },
+    {
+      "ts": "2026-04-09T21:08:08",
+      "type": "cancel",
+      "name": "Ting H.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 10  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
+    },
+    {
       "ts": "2026-04-09T20:37:46",
       "type": "join",
       "name": "Malli G.",
@@ -2381,30 +2404,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "SAT APR 11  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
-    },
-    {
-      "ts": "2026-04-09T10:15:27",
-      "type": "join",
-      "name": "Angi L.",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 10  4:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/2a228f76-9205-4c29-9ed6-e1ce1e69cdbf"
-    },
-    {
-      "ts": "2026-04-09T10:14:35",
-      "type": "cancel",
-      "name": "Steve Y.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "THU APR 9  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/9a126b28-de06-4b41-8bed-46f4d4918527"
-    },
-    {
-      "ts": "2026-04-09T10:14:35",
-      "type": "freed",
-      "name": "11/12",
-      "title": "DUPR 4.0 Open Play",
-      "start": "THU APR 9  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/9a126b28-de06-4b41-8bed-46f4d4918527"
     }
   ],
   "thieves": [
@@ -2716,17 +2715,17 @@
       "cancels": 1
     },
     {
+      "name": "Mona B.",
+      "joins": 2,
+      "cancels": 1
+    },
+    {
       "name": "Robert B.",
       "joins": 2,
       "cancels": 1
     },
     {
       "name": "Beth B.",
-      "joins": 2,
-      "cancels": 1
-    },
-    {
-      "name": "Mona B.",
       "joins": 2,
       "cancels": 1
     },
