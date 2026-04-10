@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-10T09:32:24",
-  "next_scan_at": "2026-04-10T10:02:24",
+  "generated_at": "2026-04-10T10:02:57",
+  "next_scan_at": "2026-04-10T10:32:57",
   "stats": {
     "total": 64,
     "full_count": 7
@@ -14,7 +14,7 @@
       "end_iso": "2026-04-10T12:00:00",
       "start_display": "FRI APR 10  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 12,
       "count": 5,
       "pct": 42,
@@ -28,7 +28,7 @@
         "Ty L.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-10T09:31:36",
+      "last_snap_ts": "2026-04-10T10:02:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -40,10 +40,10 @@
       "end_iso": "2026-04-10T12:00:00",
       "start_display": "FRI APR 10  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 42,
-      "count": 25,
-      "pct": 60,
+      "count": 24,
+      "pct": 57,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -59,7 +59,6 @@
         "Don B.",
         "Doug B.",
         "Doug S.",
-        "Ed K.",
         "Eric L.",
         "Gary S.",
         "Gary W.",
@@ -74,7 +73,7 @@
         "Steven S.",
         "Tom G."
       ],
-      "last_snap_ts": "2026-04-10T09:31:41",
+      "last_snap_ts": "2026-04-10T10:02:38",
       "thieves": [],
       "big_dogs": []
     },
@@ -112,7 +111,7 @@
         "Steve M.",
         "Steve T."
       ],
-      "last_snap_ts": "2026-04-10T09:00:58",
+      "last_snap_ts": "2026-04-10T10:02:42",
       "thieves": [],
       "big_dogs": []
     },
@@ -255,7 +254,7 @@
         "Roy A.",
         "Scott S."
       ],
-      "last_snap_ts": "2026-04-10T06:57:21",
+      "last_snap_ts": "2026-04-10T10:02:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -280,7 +279,7 @@
         "Suraj Singh C.",
         "Ty L."
       ],
-      "last_snap_ts": "2026-04-10T06:57:26",
+      "last_snap_ts": "2026-04-10T10:02:52",
       "thieves": [],
       "big_dogs": [
         {
@@ -317,7 +316,7 @@
         "Robert G.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-10T06:57:30",
+      "last_snap_ts": "2026-04-10T10:02:57",
       "thieves": [],
       "big_dogs": []
     },
@@ -2079,6 +2078,14 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-10T10:02:38",
+      "type": "cancel",
+      "name": "Ed K.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 10  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/2a8044cd-e177-4791-b07e-b100b96c2362"
+    },
+    {
       "ts": "2026-04-10T09:31:41",
       "type": "join",
       "name": "Doug S.",
@@ -2389,14 +2396,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "FRI APR 10  4:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/2a228f76-9205-4c29-9ed6-e1ce1e69cdbf"
-    },
-    {
-      "ts": "2026-04-09T17:32:40",
-      "type": "cancel",
-      "name": "Melba T.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 10  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/2a8044cd-e177-4791-b07e-b100b96c2362"
     }
   ],
   "thieves": [],
@@ -2404,7 +2403,7 @@
     {
       "name": "Ed K.",
       "joins": 0,
-      "cancels": 7
+      "cancels": 8
     },
     {
       "name": "Bradley F.",
@@ -2597,17 +2596,17 @@
       "cancels": 1
     },
     {
-      "name": "Beth B.",
-      "joins": 2,
-      "cancels": 1
-    },
-    {
       "name": "Mona B.",
       "joins": 2,
       "cancels": 1
     },
     {
       "name": "Robert B.",
+      "joins": 2,
+      "cancels": 1
+    },
+    {
+      "name": "Beth B.",
       "joins": 2,
       "cancels": 1
     },
@@ -2662,12 +2661,12 @@
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
+      "name": "CHARLIE S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "CHARLIE S.",
+      "name": "Rodney G.",
       "joins": 3,
       "cancels": 0
     },
