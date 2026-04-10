@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-10T09:16:43",
-  "next_scan_at": "2026-04-10T09:46:43",
+  "generated_at": "2026-04-10T09:24:00",
+  "next_scan_at": "2026-04-10T09:54:00",
   "stats": {
     "total": 64,
     "full_count": 7
@@ -2604,12 +2604,12 @@
       "cancels": 1
     },
     {
-      "name": "Robert B.",
+      "name": "Beth B.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Beth B.",
+      "name": "Robert B.",
       "joins": 2,
       "cancels": 1
     },
@@ -2664,12 +2664,12 @@
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
+      "name": "CHARLIE S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "CHARLIE S.",
+      "name": "Rodney G.",
       "joins": 3,
       "cancels": 0
     },
@@ -2718,6 +2718,7 @@
       "count": 3,
       "time": "SAT APR 4  10:00 AM",
       "start_iso": "2026-04-04T10:00:00",
+      "resolved": false,
       "sessions": [
         {
           "title": "DUPR 4.5 Open Play",
@@ -2734,10 +2735,28 @@
       ]
     },
     {
+      "name": "David G.",
+      "count": 2,
+      "time": "SUN APR 5  10:00 AM",
+      "start_iso": "2026-04-05T10:00:00",
+      "resolved": true,
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-2295-7000-901a-2abe327885f5"
+        }
+      ]
+    },
+    {
       "name": "Elton W.",
       "count": 2,
       "time": "MON APR 6  10:00 AM",
       "start_iso": "2026-04-06T10:00:00",
+      "resolved": false,
       "sessions": [
         {
           "title": "DUPR 4.0 Open Play",
@@ -2754,6 +2773,7 @@
       "count": 2,
       "time": "SAT APR 4  10:00 AM",
       "start_iso": "2026-04-04T10:00:00",
+      "resolved": false,
       "sessions": [
         {
           "title": "DUPR 4.5 Open Play",
