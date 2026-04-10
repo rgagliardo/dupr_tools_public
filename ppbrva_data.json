@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-10T13:17:28",
-  "next_scan_at": "2026-04-10T13:47:28",
+  "generated_at": "2026-04-10T13:48:14",
+  "next_scan_at": "2026-04-10T14:18:14",
   "stats": {
     "total": 65,
-    "full_count": 6
+    "full_count": 7
   },
   "sessions": [
     {
@@ -54,14 +54,15 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 18,
-      "count": 17,
-      "pct": 94,
-      "is_full": false,
+      "count": 18,
+      "pct": 100,
+      "is_full": true,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
         "Adriana G.",
         "Alec jhan A.",
+        "Alicia Z.",
         "Anthony S.",
         "Arathi K.",
         "Ashlyn P.",
@@ -78,7 +79,7 @@
         "Thaian N.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-10T12:45:26",
+      "last_snap_ts": "2026-04-10T13:47:36",
       "thieves": [],
       "big_dogs": [
         {
@@ -100,9 +101,9 @@
       "start_display": "FRI APR 10  8:00 PM",
       "end_display": "10:00 PM",
       "status": "upcoming",
-      "capacity": 10,
+      "capacity": 11,
       "count": 6,
-      "pct": 60,
+      "pct": 55,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -112,9 +113,9 @@
         "Joe S.",
         "Karuna R.",
         "Stacie R.",
-        "+3 players"
+        "+2 players"
       ],
-      "last_snap_ts": "2026-04-10T12:45:30",
+      "last_snap_ts": "2026-04-10T13:47:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -134,7 +135,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-10T12:45:47",
+      "last_snap_ts": "2026-04-10T13:47:57",
       "thieves": [],
       "big_dogs": []
     },
@@ -154,7 +155,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-10T12:46:03",
+      "last_snap_ts": "2026-04-10T13:48:14",
       "thieves": [],
       "big_dogs": []
     },
@@ -2110,6 +2111,38 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-10T13:47:41",
+      "type": "join",
+      "name": "+2 players",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 10  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
+    },
+    {
+      "ts": "2026-04-10T13:47:41",
+      "type": "cancel",
+      "name": "+3 players",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 10  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/717676b1-9729-49b5-b671-c74b899a4511"
+    },
+    {
+      "ts": "2026-04-10T13:47:36",
+      "type": "join",
+      "name": "Alicia Z.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 10  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
+    },
+    {
+      "ts": "2026-04-10T13:47:36",
+      "type": "full",
+      "name": "18/18",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 10  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
+    },
+    {
       "ts": "2026-04-10T13:17:28",
       "type": "join",
       "name": "Jake S.",
@@ -2396,38 +2429,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "FRI APR 10  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/0952cd93-c1f8-4cd5-a035-d2e26ac9d2a8"
-    },
-    {
-      "ts": "2026-04-10T12:14:37",
-      "type": "cancel",
-      "name": "Pete H.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "FRI APR 10  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0952cd93-c1f8-4cd5-a035-d2e26ac9d2a8"
-    },
-    {
-      "ts": "2026-04-10T12:14:37",
-      "type": "cancel",
-      "name": "Roy A.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "FRI APR 10  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/0952cd93-c1f8-4cd5-a035-d2e26ac9d2a8"
-    },
-    {
-      "ts": "2026-04-10T11:12:12",
-      "type": "join",
-      "name": "David G.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
-    },
-    {
-      "ts": "2026-04-10T09:01:02",
-      "type": "join",
-      "name": "Andrew W.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "MON APR 13  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/d1fda584-900a-4696-b58f-7d337d6238f9"
     }
   ],
   "thieves": [],
@@ -2588,6 +2589,11 @@
       "cancels": 1
     },
     {
+      "name": "Alicia Z.",
+      "joins": 4,
+      "cancels": 1
+    },
+    {
       "name": "Sheryl R.",
       "joins": 4,
       "cancels": 1
@@ -2599,11 +2605,6 @@
     },
     {
       "name": "Jake S.",
-      "joins": 3,
-      "cancels": 1
-    },
-    {
-      "name": "Alicia Z.",
       "joins": 3,
       "cancels": 1
     },
@@ -2633,12 +2634,12 @@
       "cancels": 1
     },
     {
-      "name": "Mona B.",
+      "name": "Robert B.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Robert B.",
+      "name": "Mona B.",
       "joins": 2,
       "cancels": 1
     },
@@ -2698,12 +2699,12 @@
       "cancels": 0
     },
     {
-      "name": "CHARLIE S.",
+      "name": "Rodney G.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
+      "name": "CHARLIE S.",
       "joins": 3,
       "cancels": 0
     },
@@ -2759,12 +2760,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
-        },
-        {
           "title": "DUPR 4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
         }
       ]
     },
