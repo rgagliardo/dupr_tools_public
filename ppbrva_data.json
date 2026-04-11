@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-11T10:30:43",
-  "next_scan_at": "2026-04-11T11:00:43",
+  "generated_at": "2026-04-11T10:31:37",
+  "next_scan_at": "2026-04-11T11:01:37",
   "stats": {
     "total": 70,
     "full_count": 2
@@ -15,14 +15,16 @@
       "start_display": "SAT APR 11  10:00 AM",
       "end_display": "12:00 PM",
       "status": "live",
-      "capacity": null,
-      "count": 0,
-      "pct": 0,
+      "capacity": 12,
+      "count": 1,
+      "pct": 8,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [],
-      "last_snap_ts": "2026-04-11T10:08:22",
+      "registrants": [
+        "Arathi K."
+      ],
+      "last_snap_ts": "2026-04-11T10:30:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -71,20 +73,21 @@
       "end_display": "12:00 PM",
       "status": "live",
       "capacity": 12,
-      "count": 6,
-      "pct": 50,
+      "count": 7,
+      "pct": 58,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Adonis T.",
+        "Arathi K.",
         "Bobby L.",
         "CHARLIE S.",
         "Marcus M.",
         "Robert G.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-11T09:48:57",
+      "last_snap_ts": "2026-04-11T10:31:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -117,14 +120,14 @@
       "start_display": "SAT APR 11  12:00 PM",
       "end_display": "2:00 PM",
       "status": "upcoming",
-      "capacity": null,
+      "capacity": 12,
       "count": 0,
       "pct": 0,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T10:13:40",
+      "last_snap_ts": "2026-04-11T10:31:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -2255,6 +2258,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-11T10:31:07",
+      "type": "join",
+      "name": "Arathi K.",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+    },
+    {
+      "ts": "2026-04-11T10:30:59",
+      "type": "join",
+      "name": "Arathi K.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT APR 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
+    },
+    {
       "ts": "2026-04-11T10:08:22",
       "type": "cancel",
       "name": "Arathi K.",
@@ -2557,22 +2576,6 @@
       "title": "4.0 Open Play",
       "start": "SAT APR 11  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
-    },
-    {
-      "ts": "2026-04-10T20:05:40",
-      "type": "join",
-      "name": "+2 players",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 10  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
-    },
-    {
-      "ts": "2026-04-10T20:05:40",
-      "type": "join",
-      "name": "Dominic D.",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 10  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
     }
   ],
   "thieves": [],
@@ -2673,6 +2676,11 @@
       "cancels": 3
     },
     {
+      "name": "Arathi K.",
+      "joins": 6,
+      "cancels": 2
+    },
+    {
       "name": "Melanie W.",
       "joins": 5,
       "cancels": 2
@@ -2689,11 +2697,6 @@
     },
     {
       "name": "Cindy W.",
-      "joins": 4,
-      "cancels": 2
-    },
-    {
-      "name": "Arathi K.",
       "joins": 4,
       "cancels": 2
     },
@@ -2920,6 +2923,23 @@
         {
           "title": "DUPR 4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
+        }
+      ]
+    },
+    {
+      "name": "Arathi K.",
+      "count": 2,
+      "time": "SAT APR 11  10:00 AM",
+      "start_iso": "2026-04-11T10:00:00",
+      "resolved": false,
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
         }
       ]
     },
@@ -3596,7 +3616,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c",
       "status": "live",
       "ghost_count": 1,
-      "total_count": 6,
+      "total_count": 7,
       "capacity": 12
     },
     {
