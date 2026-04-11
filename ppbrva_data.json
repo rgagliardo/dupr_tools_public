@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-11T10:04:39",
-  "next_scan_at": "2026-04-11T10:34:39",
+  "generated_at": "2026-04-11T10:22:30",
+  "next_scan_at": "2026-04-11T10:52:30",
   "stats": {
     "total": 70,
     "full_count": 2
@@ -15,16 +15,14 @@
       "start_display": "SAT APR 11  10:00 AM",
       "end_display": "12:00 PM",
       "status": "live",
-      "capacity": 12,
-      "count": 1,
-      "pct": 8,
+      "capacity": null,
+      "count": 0,
+      "pct": 0,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [
-        "Arathi K."
-      ],
-      "last_snap_ts": "2026-04-11T09:48:48",
+      "registrants": [],
+      "last_snap_ts": "2026-04-11T10:08:22",
       "thieves": [],
       "big_dogs": []
     },
@@ -99,14 +97,14 @@
       "start_display": "SAT APR 11  12:00 PM",
       "end_display": "4:00 PM",
       "status": "upcoming",
-      "capacity": 16,
+      "capacity": null,
       "count": 0,
       "pct": 0,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T09:48:11",
+      "last_snap_ts": "2026-04-11T10:06:36",
       "thieves": [],
       "big_dogs": []
     },
@@ -119,14 +117,14 @@
       "start_display": "SAT APR 11  12:00 PM",
       "end_display": "2:00 PM",
       "status": "upcoming",
-      "capacity": 12,
+      "capacity": null,
       "count": 0,
       "pct": 0,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T09:49:14",
+      "last_snap_ts": "2026-04-11T10:13:40",
       "thieves": [],
       "big_dogs": []
     },
@@ -2257,6 +2255,14 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-11T10:08:22",
+      "type": "cancel",
+      "name": "Arathi K.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT APR 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
+    },
+    {
       "ts": "2026-04-11T10:02:53",
       "type": "cancel",
       "name": "+2 players",
@@ -2567,14 +2573,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "FRI APR 10  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
-    },
-    {
-      "ts": "2026-04-10T20:05:40",
-      "type": "cancel",
-      "name": "+1 player",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 10  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
     }
   ],
   "thieves": [],
@@ -2695,6 +2693,11 @@
       "cancels": 2
     },
     {
+      "name": "Arathi K.",
+      "joins": 4,
+      "cancels": 2
+    },
+    {
       "name": "Bobby L.",
       "joins": 3,
       "cancels": 2
@@ -2746,11 +2749,6 @@
     },
     {
       "name": "Sheryl R.",
-      "joins": 4,
-      "cancels": 1
-    },
-    {
-      "name": "Arathi K.",
       "joins": 4,
       "cancels": 1
     },
@@ -2916,12 +2914,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
-        },
-        {
           "title": "DUPR 4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
         }
       ]
     },
