@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-11T10:52:22",
-  "next_scan_at": "2026-04-11T11:22:22",
+  "generated_at": "2026-04-11T11:04:56",
+  "next_scan_at": "2026-04-11T11:34:56",
   "stats": {
-    "total": 70,
+    "total": 69,
     "full_count": 2
   },
   "sessions": [
@@ -15,53 +15,16 @@
       "start_display": "SAT APR 11  10:00 AM",
       "end_display": "12:00 PM",
       "status": "live",
-      "capacity": 12,
-      "count": 1,
-      "pct": 8,
+      "capacity": null,
+      "count": 0,
+      "pct": 0,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [
-        "Arathi K."
-      ],
-      "last_snap_ts": "2026-04-11T10:30:59",
+      "registrants": [],
+      "last_snap_ts": "2026-04-11T10:54:19",
       "thieves": [],
       "big_dogs": []
-    },
-    {
-      "uuid": "019d62de-b96f-7aad-a451-74e8ae8538dd",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd",
-      "title": "DUPR 4.5 Open Play",
-      "start_iso": "2026-04-11T10:00:00",
-      "end_iso": "2026-04-11T12:00:00",
-      "start_display": "SAT APR 11  10:00 AM",
-      "end_display": "12:00 PM",
-      "status": "live",
-      "capacity": 12,
-      "count": 5,
-      "pct": 42,
-      "is_full": false,
-      "was_ever_full": false,
-      "manually_added": false,
-      "registrants": [
-        "C. Todd S.",
-        "Krishna G.",
-        "Rodney G.",
-        "Suraj Singh C.",
-        "+1 player"
-      ],
-      "last_snap_ts": "2026-04-11T09:16:40",
-      "thieves": [],
-      "big_dogs": [
-        {
-          "name": "Rodney G.",
-          "rating": "4.70"
-        },
-        {
-          "name": "Suraj Singh C.",
-          "rating": "5.15"
-        }
-      ]
     },
     {
       "uuid": "019d62ed-370e-777b-bcbb-39982e00ed8c",
@@ -120,14 +83,14 @@
       "start_display": "SAT APR 11  12:00 PM",
       "end_display": "2:00 PM",
       "status": "upcoming",
-      "capacity": 12,
+      "capacity": null,
       "count": 0,
       "pct": 0,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T10:31:24",
+      "last_snap_ts": "2026-04-11T10:59:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -2254,9 +2217,43 @@
       "last_snap_ts": "2026-04-11T09:48:43",
       "thieves": [],
       "big_dogs": []
+    },
+    {
+      "uuid": "019d62de-b96f-7aad-a451-74e8ae8538dd",
+      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd",
+      "title": "DUPR 4.5 Open Play",
+      "start_iso": "2026-04-11T10:00:00",
+      "end_iso": "2026-04-11T12:00:00",
+      "start_display": "SAT APR 11  10:00 AM",
+      "end_display": "12:00 PM",
+      "status": "cancelled",
+      "capacity": 12,
+      "count": 5,
+      "pct": 42,
+      "is_full": false,
+      "was_ever_full": false,
+      "manually_added": false,
+      "registrants": [
+        "C. Todd S.",
+        "Krishna G.",
+        "Rodney G.",
+        "Suraj Singh C.",
+        "+1 player"
+      ],
+      "last_snap_ts": "2026-04-11T09:16:40",
+      "thieves": [],
+      "big_dogs": []
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-11T10:54:19",
+      "type": "cancel",
+      "name": "Arathi K.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT APR 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
+    },
     {
       "ts": "2026-04-11T10:31:07",
       "type": "join",
@@ -2352,22 +2349,6 @@
       "title": "4.0 Open Play",
       "start": "SAT APR 11  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
-    },
-    {
-      "ts": "2026-04-11T08:45:19",
-      "type": "join",
-      "name": "Krishna G.",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd"
-    },
-    {
-      "ts": "2026-04-11T08:45:19",
-      "type": "cancel",
-      "name": "Suhail A.",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd"
     },
     {
       "ts": "2026-04-11T08:45:14",
@@ -2466,22 +2447,6 @@
       "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
     },
     {
-      "ts": "2026-04-11T04:05:39",
-      "type": "join",
-      "name": "+1 player",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd"
-    },
-    {
-      "ts": "2026-04-11T04:05:39",
-      "type": "cancel",
-      "name": "Ty L.",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd"
-    },
-    {
       "ts": "2026-04-10T22:09:40",
       "type": "join",
       "name": "+2 players",
@@ -2576,6 +2541,30 @@
       "title": "4.0 Open Play",
       "start": "SAT APR 11  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+    },
+    {
+      "ts": "2026-04-10T20:05:40",
+      "type": "join",
+      "name": "+2 players",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 10  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
+    },
+    {
+      "ts": "2026-04-10T20:05:40",
+      "type": "join",
+      "name": "Dominic D.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 10  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
+    },
+    {
+      "ts": "2026-04-10T20:05:40",
+      "type": "cancel",
+      "name": "+1 player",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 10  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/e423b1a4-c441-4537-9267-725b405e6b30"
     }
   ],
   "thieves": [],
@@ -2601,11 +2590,6 @@
       "cancels": 5
     },
     {
-      "name": "Suhail A.",
-      "joins": 8,
-      "cancels": 4
-    },
-    {
       "name": "Jeffrey S.",
       "joins": 4,
       "cancels": 4
@@ -2621,17 +2605,27 @@
       "cancels": 4
     },
     {
+      "name": "Suhail A.",
+      "joins": 7,
+      "cancels": 3
+    },
+    {
+      "name": "Arathi K.",
+      "joins": 6,
+      "cancels": 3
+    },
+    {
       "name": "Scott S.",
       "joins": 5,
       "cancels": 3
     },
     {
-      "name": "Suraj Singh C.",
-      "joins": 4,
+      "name": "Elton W.",
+      "joins": 3,
       "cancels": 3
     },
     {
-      "name": "Elton W.",
+      "name": "Suraj Singh C.",
       "joins": 3,
       "cancels": 3
     },
@@ -2674,11 +2668,6 @@
       "name": "Leah F.",
       "joins": 0,
       "cancels": 3
-    },
-    {
-      "name": "Arathi K.",
-      "joins": 6,
-      "cancels": 2
     },
     {
       "name": "Melanie W.",
@@ -2816,11 +2805,6 @@
       "cancels": 1
     },
     {
-      "name": "Ty L.",
-      "joins": 2,
-      "cancels": 1
-    },
-    {
       "name": "Dave S.",
       "joins": 2,
       "cancels": 1
@@ -2866,11 +2850,6 @@
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
       "name": "Adonis T.",
       "joins": 3,
       "cancels": 0
@@ -2882,11 +2861,6 @@
     },
     {
       "name": "Karuna R.",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
-      "name": "C. Todd S.",
       "joins": 3,
       "cancels": 0
     }
@@ -2917,29 +2891,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
-        },
-        {
           "title": "DUPR 4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-        }
-      ]
-    },
-    {
-      "name": "Arathi K.",
-      "count": 2,
-      "time": "SAT APR 11  10:00 AM",
-      "start_iso": "2026-04-11T10:00:00",
-      "resolved": false,
-      "sessions": [
-        {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
         },
         {
           "title": "4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
         }
       ]
     },
@@ -3014,23 +2971,6 @@
     {
       "name": "Suhail A.",
       "count": 2,
-      "time": "SAT APR 11  10:00 AM",
-      "start_iso": "2026-04-11T10:00:00",
-      "resolved": true,
-      "sessions": [
-        {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd"
-        }
-      ]
-    },
-    {
-      "name": "Suhail A.",
-      "count": 2,
       "time": "SAT APR 4  10:00 AM",
       "start_iso": "2026-04-04T10:00:00",
       "resolved": false,
@@ -3044,6 +2984,38 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
         }
       ]
+    },
+    {
+      "name": "Suhail A.",
+      "time": "SAT APR 11  10:00 AM",
+      "count": 2,
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd"
+        }
+      ],
+      "detected_at": "2026-04-10T12:15:18"
+    },
+    {
+      "name": "Arathi K.",
+      "time": "SAT APR 11  10:00 AM",
+      "count": 2,
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d62dd-380f-7aad-a44b-aa56321efe5d"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+        }
+      ],
+      "detected_at": "2026-04-11T10:31:37"
     }
   ],
   "flyer_window_days": 90,
@@ -3051,12 +3023,6 @@
     {
       "name": "Todd Springer",
       "sessions": [
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT APR 11  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd",
-          "status": "live"
-        },
         {
           "title": "DUPR 4.5 Open Play",
           "start": "SUN APR 12  10:00 AM",
@@ -3183,29 +3149,6 @@
       ]
     },
     {
-      "name": "Rodney G.",
-      "sessions": [
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT APR 11  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd",
-          "status": "live"
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN APR 12  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019d62de-bc14-777b-bc95-35524dc55dfa",
-          "status": "upcoming"
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "SUN APR 5  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f",
-          "status": "completed"
-        }
-      ]
-    },
-    {
       "name": "Chris Burke",
       "sessions": [
         {
@@ -3235,6 +3178,23 @@
           "title": "DUPR 4.0 Open Play",
           "start": "MON APR 6  10:00 AM",
           "url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "name": "Rodney G.",
+      "sessions": [
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN APR 12  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019d62de-bc14-777b-bc95-35524dc55dfa",
+          "status": "upcoming"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "SUN APR 5  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-88ae-7dde-a7cb-6a7254c19e9f",
           "status": "completed"
         }
       ]
@@ -3318,18 +3278,6 @@
     }
   ],
   "party_sessions": [
-    {
-      "title": "DUPR 4.5 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "start_iso": "2026-04-11T10:00:00",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd",
-      "status": "live",
-      "friends": [
-        "Rodney G.",
-        "Todd Springer"
-      ],
-      "count": 2
-    },
     {
       "title": "DUPR 4.5 Open Play",
       "start": "SUN APR 12  10:00 AM",
@@ -3597,16 +3545,6 @@
       "status": "completed",
       "ghost_count": 1,
       "total_count": 11,
-      "capacity": 12
-    },
-    {
-      "title": "DUPR 4.5 Open Play",
-      "start": "SAT APR 11  10:00 AM",
-      "start_iso": "2026-04-11T10:00:00",
-      "url": "https://ppbrva.podplay.app/community/events/019d62de-b96f-7aad-a451-74e8ae8538dd",
-      "status": "live",
-      "ghost_count": 1,
-      "total_count": 5,
       "capacity": 12
     },
     {
