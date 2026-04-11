@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-11T08:45:57",
-  "next_scan_at": "2026-04-11T09:15:57",
+  "generated_at": "2026-04-11T09:17:53",
+  "next_scan_at": "2026-04-11T09:47:53",
   "stats": {
     "total": 70,
     "full_count": 2
@@ -22,7 +22,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T08:44:54",
+      "last_snap_ts": "2026-04-11T09:16:15",
       "thieves": [],
       "big_dogs": []
     },
@@ -42,7 +42,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T08:45:10",
+      "last_snap_ts": "2026-04-11T09:16:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -65,7 +65,7 @@
         "Arathi K.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-11T08:45:14",
+      "last_snap_ts": "2026-04-11T09:16:36",
       "thieves": [],
       "big_dogs": []
     },
@@ -91,7 +91,7 @@
         "Suraj Singh C.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-11T08:45:19",
+      "last_snap_ts": "2026-04-11T09:16:40",
       "thieves": [],
       "big_dogs": [
         {
@@ -114,21 +114,19 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 7,
-      "pct": 58,
+      "count": 5,
+      "pct": 42,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Adonis T.",
         "Bobby L.",
-        "Cindy W.",
         "Marcus M.",
-        "Melanie W.",
         "Robert G.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-11T08:45:24",
+      "last_snap_ts": "2026-04-11T09:16:44",
       "thieves": [],
       "big_dogs": []
     },
@@ -188,7 +186,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T08:12:27",
+      "last_snap_ts": "2026-04-11T09:17:00",
       "thieves": [],
       "big_dogs": []
     },
@@ -208,7 +206,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T08:12:43",
+      "last_snap_ts": "2026-04-11T09:17:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -228,7 +226,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-11T08:12:59",
+      "last_snap_ts": "2026-04-11T09:17:34",
       "thieves": [],
       "big_dogs": []
     },
@@ -2261,6 +2259,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-11T09:16:44",
+      "type": "cancel",
+      "name": "Cindy W.",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+    },
+    {
+      "ts": "2026-04-11T09:16:44",
+      "type": "cancel",
+      "name": "Melanie W.",
+      "title": "4.0 Open Play",
+      "start": "SAT APR 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+    },
+    {
       "ts": "2026-04-11T08:45:24",
       "type": "join",
       "name": "Cindy W.",
@@ -2563,22 +2577,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "FRI APR 10  4:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/2a228f76-9205-4c29-9ed6-e1ce1e69cdbf"
-    },
-    {
-      "ts": "2026-04-10T18:00:34",
-      "type": "join",
-      "name": "Angi L.",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 10  4:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/2a228f76-9205-4c29-9ed6-e1ce1e69cdbf"
-    },
-    {
-      "ts": "2026-04-10T18:00:34",
-      "type": "join",
-      "name": "Bill E.",
-      "title": "4.5/4.0 Open Play",
-      "start": "FRI APR 10  4:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/2a228f76-9205-4c29-9ed6-e1ce1e69cdbf"
     }
   ],
   "thieves": [],
@@ -2674,12 +2672,22 @@
       "cancels": 3
     },
     {
+      "name": "Melanie W.",
+      "joins": 5,
+      "cancels": 2
+    },
+    {
       "name": "Brian P.",
       "joins": 4,
       "cancels": 2
     },
     {
       "name": "Lisha Y.",
+      "joins": 4,
+      "cancels": 2
+    },
+    {
+      "name": "Cindy W.",
       "joins": 4,
       "cancels": 2
     },
@@ -2739,17 +2747,7 @@
       "cancels": 2
     },
     {
-      "name": "Melanie W.",
-      "joins": 5,
-      "cancels": 1
-    },
-    {
       "name": "Sheryl R.",
-      "joins": 4,
-      "cancels": 1
-    },
-    {
-      "name": "Cindy W.",
       "joins": 4,
       "cancels": 1
     },
@@ -2864,12 +2862,12 @@
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
+      "name": "CHARLIE S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "CHARLIE S.",
+      "name": "Rodney G.",
       "joins": 3,
       "cancels": 0
     },
@@ -3612,7 +3610,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c",
       "status": "upcoming",
       "ghost_count": 1,
-      "total_count": 7,
+      "total_count": 5,
       "capacity": 12
     },
     {
