@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Testing">
@@ -15,8 +15,11 @@
 <link rel="icon" type="image/png" sizes="16x16" href="https://rgagliardo.github.io/dupr_tools_public/crown_rating_16.png">
 <link rel="apple-touch-icon" href="https://rgagliardo.github.io/dupr_tools_public/crown_rating_180.png">
 <style>
-        :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
+        :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        @media (prefers-reduced-motion: no-preference) { :root { scroll-behavior: smooth; } }
         body { background-color: #0d0e15; color: #e0e0e0; margin: 0; padding-bottom: 60px; }
+        :focus-visible { outline: 2px solid #00e5ff; outline-offset: 2px; }
+        :focus:not(:focus-visible) { outline: none; }
 
         .header-container {
             position: sticky; top: 0; z-index: 100;
@@ -66,6 +69,7 @@
         }
         .jump-tab:active { background: rgba(255, 255, 255, 0.15); }
 
+        .header-container, .main-content { max-width: 680px; margin-left: auto; margin-right: auto; }
         .main-content { padding: 0 12px; }
 
         a { text-decoration: none; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
@@ -164,10 +168,11 @@
             display: flex; align-items: center; gap: 8px;
         }
         .refresh-btn {
-            background: none; border: none; padding: 0; cursor: pointer;
+            background: none; border: none; padding: 8px; margin: -8px; cursor: pointer;
             color: #78788c; font-size: 13px; line-height: 1;
             -webkit-tap-highlight-color: transparent;
             transition: color 0.2s, transform 0.3s;
+            touch-action: manipulation;
         }
         .refresh-btn:active { color: #00e5ff; }
         .refresh-btn.spinning { animation: spin 0.6s linear; }
@@ -186,10 +191,12 @@
         .social-links { gap: 8px; margin-bottom: 10px; }
         .social-link {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 24px; height: 24px; border-radius: 6px;
+            width: 44px; height: 44px; border-radius: 10px;
             background: rgba(167, 139, 250, 0.06); border: 1px solid rgba(167,139,250,0.25);
             transition: background 0.2s; text-decoration: none;
+            touch-action: manipulation;
         }
+        .social-link svg { width: 20px; height: 20px; }
         .social-link:active { background: rgba(167, 139, 250, 0.2); }
 
         .search-wrap { position: relative; margin-bottom: 12px; }
@@ -214,9 +221,10 @@
         .sort-btn {
             background: rgba(255, 255, 255, 0.05); color: #a0a0b0;
             border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
-            padding: 4px 10px; font-size: 11px; font-weight: 600;
+            padding: 8px 14px; font-size: 11px; font-weight: 600;
             cursor: pointer; -webkit-tap-highlight-color: transparent;
-            transition: all 0.15s; white-space: nowrap;
+            transition: all 0.15s; white-space: nowrap; min-height: 36px;
+            touch-action: manipulation;
         }
         .sort-btn:active { transform: scale(0.96); }
         .sort-btn.active {
@@ -231,7 +239,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 11, 2026 at 7:11 PM</span>
+            <span>Last Updated: April 12, 2026 at 10:42 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -395,7 +403,7 @@
     </summary>
     <div class="history-dropdown">
         <div class="social-links" style="display:flex;">
-            <a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
+            <a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
         </div>
         <div class="match-list"></div>
     </div>
@@ -437,10 +445,10 @@
     </summary>
     <div class="history-dropdown">
         <div class="social-links" style="display:flex;">
-            <a class="social-link" href="https://www.instagram.com/luisgeyne_/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
-            <a class="social-link" href="https://tiktok.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.22 8.22 0 0 0 4.81 1.54V7.15a4.85 4.85 0 0 1-1.04-.46z"/></svg></a>
-            <a class="social-link" href="https://www.x.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.736l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a class="social-link" href="https://www.instagram.com/luisgeyne_/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
+            <a class="social-link" href="https://tiktok.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.22 8.22 0 0 0 4.81 1.54V7.15a4.85 4.85 0 0 1-1.04-.46z"/></svg></a>
+            <a class="social-link" href="https://www.x.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.736l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="#a78bfa"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
         <div class="match-list"></div>
     </div>
@@ -498,7 +506,7 @@
     </summary>
     <div class="history-dropdown">
         <div class="social-links" style="display:flex;">
-            <a class="social-link" href="https://www.instagram.com/sarahhuaa/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
+            <a class="social-link" href="https://www.instagram.com/sarahhuaa/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
         </div>
         <div class="match-list"></div>
     </div>
@@ -615,6 +623,13 @@
                 }
             }
 
+            // HTML-escape user-controlled strings to prevent XSS
+            function esc(s) {
+                var d = document.createElement('div');
+                d.textContent = s || '';
+                return d.innerHTML;
+            }
+
             // Lazy-render match history from JSON data attribute
             function renderMatches(details) {
                 const matchList = details.querySelector('.match-list');
@@ -625,7 +640,7 @@
                 try { matches = JSON.parse(details.dataset.matches || '[]'); } catch(e) { matches = []; }
                 internalId = details.dataset.internalId || '';
 
-                var profileLink = '<a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/' + internalId + '" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation();event.preventDefault();window.open(this.href)">View Full DUPR Profile &rarr;</a>';
+                var profileLink = '<a class="profile-link" href="https://dashboard.dupr.com/dashboard/player/' + internalId + '" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()">View Full DUPR Profile &rarr;</a>';
 
                 if (!matches.length) {
                     matchList.innerHTML = '<div style="text-align:center;padding:10px 0">No recent matches found.</div>' + profileLink;
@@ -637,7 +652,7 @@
                 for (var i = 0; i < matches.length; i++) {
                     var m = matches[i];
                     if (m.event && m.event !== lastEvent) {
-                        html += '<div class="event-header">' + m.event + '</div>';
+                        html += '<div class="event-header">' + esc(m.event) + '</div>';
                         lastEvent = m.event;
                     }
                     var cls = m.impact_val > 0 ? 'trend-up' : m.impact_val < 0 ? 'trend-down' : 'trend-flat';
@@ -645,8 +660,8 @@
                     var impactText = m.impact_val !== 0 ? '(' + sign + m.impact_val.toFixed(3) + ')' : '(-0.000)';
 
                     html += '<div class="match-row">'
-                        + '<span class="match-date">' + m.date + '</span>'
-                        + '<span class="match-score">' + m.score + ' <strong class="match-result ' + m.result + '">' + m.result + '</strong></span>'
+                        + '<span class="match-date">' + esc(m.date) + '</span>'
+                        + '<span class="match-score">' + esc(m.score) + ' <strong class="match-result ' + esc(m.result) + '">' + esc(m.result) + '</strong></span>'
                         + '<span class="match-impact-col"><span class="' + cls + '">' + impactText + '</span> <span class="lbl">' + m.format + '</span></span>'
                         + '</div>';
                     html += '<div class="match-opp-line">' + (m.opp_text || '') + '</div>';
@@ -841,7 +856,7 @@
             })();
 
             // 7. Autofocus search box on page load
-            document.getElementById('searchInput').focus();
+            // Autofocus removed — don't steal focus on page load
 
             // 8. Sort players within groups (tap to toggle direction)
             document.querySelectorAll('.sort-btn').forEach(function(btn) {
