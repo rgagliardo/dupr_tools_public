@@ -148,19 +148,24 @@
         }
         .event-header:first-child { border-top: none; margin-top: 0; }
 
-        /* Match group: row + opponent line visually paired */
-        .match-group { padding: 4px 0 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
-        .match-group:last-child { border-bottom: none; }
-        .match-row { display: flex; align-items: center; padding: 0; }
-        .match-opp-line { font-size: 12px; color: #6a6a8a; padding: 2px 0 0 0; line-height: 1.4; }
+        /* Match group: colored left border = instant W/L scan */
+        .match-group {
+            padding: 6px 0 6px 10px; margin: 3px 0;
+            border-left: 3px solid #333;
+            border-radius: 2px;
+        }
+        .match-group.win { border-left-color: #00e5ff; }
+        .match-group.loss { border-left-color: #ff00a0; }
+        .match-row { display: flex; align-items: baseline; gap: 6px; }
+        .match-opp-line { font-size: 11px; color: #5a5a7a; padding: 2px 0 0 0; line-height: 1.3; }
         .match-partner { color: #7a8fcc; font-weight: 600; }
-        .match-vs { color: #444466; font-size: 10px; }
-        .match-date { flex-shrink: 0; white-space: nowrap; font-size: 11px; font-weight: 600; color: #8888aa; min-width: 52px; }
-        .match-score { flex-grow: 1; padding: 0 6px; font-size: 13px; font-weight: 600; }
-        .match-result { font-size: 14px; font-weight: 800; margin-left: 4px; }
+        .match-vs { color: #3a3a55; font-size: 9px; text-transform: uppercase; }
+        .match-date { flex-shrink: 0; white-space: nowrap; font-size: 11px; font-weight: 500; color: #666680; }
+        .match-score { font-size: 14px; font-weight: 700; color: #e0e0e0; }
+        .match-result { font-size: 14px; font-weight: 800; margin-left: 2px; }
         .match-result.W { color: #00e5ff; }
         .match-result.L { color: #ff00a0; }
-        .match-impact-col { text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 12px; }
+        .match-impact-col { margin-left: auto; flex-shrink: 0; font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 11px; color: #8888aa; }
         .match-empty { text-align: center; padding: 10px 0; color: #5a5a7a; font-style: italic; }
 
         .profile-link {
@@ -247,7 +252,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 12, 2026 at 10:52 AM</span>
+            <span>Last Updated: April 12, 2026 at 11:19 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -674,7 +679,8 @@
                     var sign = m.impact_val > 0 ? '+' : '';
                     var impactText = m.impact_val !== 0 ? '(' + sign + m.impact_val.toFixed(3) + ')' : '(-0.000)';
 
-                    html += '<div class="match-group">'
+                    var wl = m.result === 'W' ? 'win' : 'loss';
+                    html += '<div class="match-group ' + wl + '">'
                         + '<div class="match-row">'
                         + '<span class="match-date">' + esc(shortDate(m.date)) + '</span>'
                         + '<span class="match-score">' + esc(m.score) + ' <strong class="match-result ' + esc(m.result) + '">' + esc(m.result) + '</strong></span>'
