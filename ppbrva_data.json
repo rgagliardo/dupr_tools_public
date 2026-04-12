@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-12T17:56:19",
-  "next_scan_at": "2026-04-12T18:26:19",
+  "generated_at": "2026-04-12T18:26:35",
+  "next_scan_at": "2026-04-12T18:56:35",
   "stats": {
     "total": 73,
-    "full_count": 4
+    "full_count": 5
   },
   "sessions": [
     {
@@ -31,7 +31,7 @@
         "Scott M.",
         "Tom G."
       ],
-      "last_snap_ts": "2026-04-12T17:25:42",
+      "last_snap_ts": "2026-04-12T18:26:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -139,7 +139,7 @@
       "registrants": [
         "Ed K."
       ],
-      "last_snap_ts": "2026-04-12T17:25:38",
+      "last_snap_ts": "2026-04-12T18:26:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -153,12 +153,13 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 18,
-      "count": 16,
-      "pct": 89,
-      "is_full": false,
+      "count": 18,
+      "pct": 100,
+      "is_full": true,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
+        "Arathi K.",
         "Bobby L.",
         "Chanthachone W.",
         "Jeffrey S.",
@@ -169,9 +170,10 @@
         "Scott S.",
         "Suhail A.",
         "Suraj Singh C.",
+        "Ting H.",
         "+6 players"
       ],
-      "last_snap_ts": "2026-04-12T16:25:02",
+      "last_snap_ts": "2026-04-12T18:26:30",
       "thieves": [],
       "big_dogs": [
         {
@@ -2365,6 +2367,30 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-12T18:26:30",
+      "type": "join",
+      "name": "Arathi K.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 13  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
+    },
+    {
+      "ts": "2026-04-12T18:26:30",
+      "type": "join",
+      "name": "Ting H.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 13  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
+    },
+    {
+      "ts": "2026-04-12T18:26:30",
+      "type": "full",
+      "name": "18/18",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 13  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
+    },
+    {
       "ts": "2026-04-12T17:56:14",
       "type": "cancel",
       "name": "Jim O.",
@@ -2659,30 +2685,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "SUN APR 12  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62dd-3c77-7aad-a44c-79ee194c934e"
-    },
-    {
-      "ts": "2026-04-12T12:19:02",
-      "type": "join",
-      "name": "Dave S.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62dd-3c77-7aad-a44c-79ee194c934e"
-    },
-    {
-      "ts": "2026-04-12T12:19:02",
-      "type": "join",
-      "name": "Eric L.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62dd-3c77-7aad-a44c-79ee194c934e"
-    },
-    {
-      "ts": "2026-04-12T12:19:02",
-      "type": "join",
-      "name": "Kevin A.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62dd-3c77-7aad-a44c-79ee194c934e"
     }
   ],
   "thieves": [],
@@ -2849,7 +2851,7 @@
     },
     {
       "name": "Arathi K.",
-      "joins": 5,
+      "joins": 6,
       "cancels": 1
     },
     {
@@ -2948,7 +2950,7 @@
       "cancels": 0
     },
     {
-      "name": "Kristie B.",
+      "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
     },
@@ -2958,7 +2960,7 @@
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
+      "name": "Kristie B.",
       "joins": 4,
       "cancels": 0
     },
@@ -3540,7 +3542,7 @@
       "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4",
       "status": "upcoming",
       "ghost_count": 6,
-      "total_count": 16,
+      "total_count": 18,
       "capacity": 18
     },
     {
