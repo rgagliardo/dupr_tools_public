@@ -1,33 +1,11 @@
 {
-  "generated_at": "2026-04-13T17:52:08",
-  "next_scan_at": "2026-04-13T18:22:08",
+  "generated_at": "2026-04-13T18:19:24",
+  "next_scan_at": "2026-04-13T18:49:24",
   "stats": {
     "total": 77,
     "full_count": 5
   },
   "sessions": [
-    {
-      "uuid": "2e522586-d6b3-42aa-8248-4074efddf19b",
-      "url": "https://ppbrva.podplay.app/community/events/2e522586-d6b3-42aa-8248-4074efddf19b",
-      "title": "4.5/4.0 Open Play",
-      "start_iso": "2026-04-13T16:00:00",
-      "end_iso": "2026-04-13T18:00:00",
-      "start_display": "MON APR 13  4:00 PM",
-      "end_display": "6:00 PM",
-      "status": "live",
-      "capacity": 12,
-      "count": 1,
-      "pct": 8,
-      "is_full": false,
-      "was_ever_full": false,
-      "manually_added": false,
-      "registrants": [
-        "Charles Z."
-      ],
-      "last_snap_ts": "2026-04-13T17:51:53",
-      "thieves": [],
-      "big_dogs": []
-    },
     {
       "uuid": "76d55b00-3806-4cb1-803f-109f110a97e4",
       "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4",
@@ -36,7 +14,7 @@
       "end_iso": "2026-04-13T20:00:00",
       "start_display": "MON APR 13  6:00 PM",
       "end_display": "8:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 18,
       "count": 18,
       "pct": 100,
@@ -65,6 +43,28 @@
           "rating": "known"
         }
       ]
+    },
+    {
+      "uuid": "2e522586-d6b3-42aa-8248-4074efddf19b",
+      "url": "https://ppbrva.podplay.app/community/events/2e522586-d6b3-42aa-8248-4074efddf19b",
+      "title": "4.5/4.0 Open Play",
+      "start_iso": "2026-04-13T16:00:00",
+      "end_iso": "2026-04-13T18:00:00",
+      "start_display": "MON APR 13  4:00 PM",
+      "end_display": "6:00 PM",
+      "status": "upcoming",
+      "capacity": 12,
+      "count": 1,
+      "pct": 8,
+      "is_full": false,
+      "was_ever_full": false,
+      "manually_added": false,
+      "registrants": [
+        "Charles Z."
+      ],
+      "last_snap_ts": "2026-04-13T17:51:53",
+      "thieves": [],
+      "big_dogs": []
     },
     {
       "uuid": "4c166cc1-de28-4a18-9fb2-72c6389ff739",
@@ -3104,12 +3104,12 @@
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
@@ -3724,7 +3724,7 @@
       "start": "MON APR 13  6:00 PM",
       "start_iso": "2026-04-13T18:00:00",
       "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4",
-      "status": "upcoming",
+      "status": "live",
       "ghost_count": 7,
       "total_count": 18,
       "capacity": 18
