@@ -32,8 +32,8 @@
 
         h1 {
             font-size: 30px; font-weight: 800; margin: 0 0 4px 0; letter-spacing: 1px;
-            background: -webkit-linear-gradient(45deg, #ff00a0, #00e5ff);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            color: #00e5ff;
+            text-shadow: 0 0 18px rgba(0, 229, 255, 0.4);
             text-transform: uppercase; font-style: italic;
         }
 
@@ -252,7 +252,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 12, 2026 at 9:40 PM</span>
+            <span>Last Updated: April 12, 2026 at 9:45 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -662,16 +662,15 @@
                     return;
                 }
 
-                // Shorten recent dates: "Apr 11, 2026" → "Apr 11"
-                // Keep full date if older than 90 days
-                var _90daysAgo = new Date(Date.now() - 90*24*60*60*1000);
+                // Show year only if it's not the current year
+                var _thisYear = new Date().getFullYear();
                 function shortDate(d) {
                     if (!d) return '';
-                    try {
-                        var dt = new Date(d);
-                        if (dt < _90daysAgo) return d; // keep full date
-                    } catch(e) {}
-                    return d.replace(/,\s*\d{4}$/, '');
+                    var m = d.match(/,\s*(\d{4})$/);
+                    if (m && parseInt(m[1]) === _thisYear) {
+                        return d.replace(/,\s*\d{4}$/, '');
+                    }
+                    return d; // different year — keep full date
                 }
 
                 var html = '';
