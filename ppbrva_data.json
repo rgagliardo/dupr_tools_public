@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-13T07:39:53",
-  "next_scan_at": "2026-04-13T08:09:53",
+  "generated_at": "2026-04-13T08:10:09",
+  "next_scan_at": "2026-04-13T08:40:09",
   "stats": {
     "total": 73,
     "full_count": 6
@@ -14,7 +14,7 @@
       "end_iso": "2026-04-13T10:00:00",
       "start_display": "MON APR 13  8:00 AM",
       "end_display": "10:00 AM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 18,
       "count": 8,
       "pct": 44,
@@ -31,7 +31,7 @@
         "Scott M.",
         "Tom G."
       ],
-      "last_snap_ts": "2026-04-13T07:39:53",
+      "last_snap_ts": "2026-04-13T08:10:09",
       "thieves": [],
       "big_dogs": []
     },
@@ -45,18 +45,19 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 4,
-      "pct": 33,
+      "count": 5,
+      "pct": 42,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
+        "Chris W.",
         "Mike B.",
         "Pete H.",
         "Roy A.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-04-13T07:09:04",
+      "last_snap_ts": "2026-04-13T08:10:00",
       "thieves": [],
       "big_dogs": []
     },
@@ -82,7 +83,6 @@
         "Arun R.",
         "Barbara D.",
         "Becca D.",
-        "Betsy S.",
         "Bill P.",
         "Bing Y.",
         "Bradley F.",
@@ -90,6 +90,7 @@
         "Caroline M.",
         "Chris P.",
         "Chris S. B.",
+        "Chris W.",
         "Cindy W.",
         "Cyndi S.",
         "David S.",
@@ -117,7 +118,7 @@
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-13T07:09:08",
+      "last_snap_ts": "2026-04-13T08:10:05",
       "thieves": [],
       "big_dogs": []
     },
@@ -2374,6 +2375,30 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-13T08:10:05",
+      "type": "join",
+      "name": "Chris W.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 13  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/a6602870-17ce-46b2-9ee9-573ab8588bd8"
+    },
+    {
+      "ts": "2026-04-13T08:10:05",
+      "type": "cancel",
+      "name": "Betsy S.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 13  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/a6602870-17ce-46b2-9ee9-573ab8588bd8"
+    },
+    {
+      "ts": "2026-04-13T08:10:00",
+      "type": "join",
+      "name": "Chris W.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON APR 13  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/d1fda584-900a-4696-b58f-7d337d6238f9"
+    },
+    {
       "ts": "2026-04-12T22:00:20",
       "type": "join",
       "name": "Karuna R.",
@@ -2668,30 +2693,6 @@
       "title": "4.0 Open Play",
       "start": "SUN APR 12  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
-    },
-    {
-      "ts": "2026-04-12T12:19:12",
-      "type": "join",
-      "name": "David G.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
-    },
-    {
-      "ts": "2026-04-12T12:19:12",
-      "type": "join",
-      "name": "David K.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
-    },
-    {
-      "ts": "2026-04-12T12:19:12",
-      "type": "join",
-      "name": "Jimmy M.",
-      "title": "4.0 Open Play",
-      "start": "SUN APR 12  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
     }
   ],
   "thieves": [],
@@ -2877,6 +2878,11 @@
       "cancels": 1
     },
     {
+      "name": "Chris W.",
+      "joins": 4,
+      "cancels": 1
+    },
+    {
       "name": "Joe M.",
       "joins": 3,
       "cancels": 1
@@ -2932,11 +2938,6 @@
       "cancels": 1
     },
     {
-      "name": "Chris W.",
-      "joins": 2,
-      "cancels": 1
-    },
-    {
       "name": "Jim O.",
       "joins": 2,
       "cancels": 1
@@ -2947,12 +2948,12 @@
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
@@ -2962,17 +2963,17 @@
       "cancels": 0
     },
     {
+      "name": "Chanthachone W.",
+      "joins": 4,
+      "cancels": 0
+    },
+    {
       "name": "Kristie B.",
       "joins": 4,
       "cancels": 0
     },
     {
       "name": "Daniel L.",
-      "joins": 4,
-      "cancels": 0
-    },
-    {
-      "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
     },
@@ -3110,6 +3111,23 @@
         {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
+        }
+      ]
+    },
+    {
+      "name": "Chris W.",
+      "count": 2,
+      "time": "MON APR 13  10:00 AM",
+      "start_iso": "2026-04-13T10:00:00",
+      "resolved": false,
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/d1fda584-900a-4696-b58f-7d337d6238f9"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/a6602870-17ce-46b2-9ee9-573ab8588bd8"
         }
       ]
     },
