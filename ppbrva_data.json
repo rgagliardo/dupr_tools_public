@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-13T10:12:34",
-  "next_scan_at": "2026-04-13T10:42:34",
+  "generated_at": "2026-04-13T10:43:12",
+  "next_scan_at": "2026-04-13T11:13:12",
   "stats": {
     "total": 73,
     "full_count": 6
@@ -27,7 +27,7 @@
         "Roy A.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-04-13T10:12:04",
+      "last_snap_ts": "2026-04-13T10:42:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -84,7 +84,7 @@
         "Steven S.",
         "Travis S."
       ],
-      "last_snap_ts": "2026-04-13T10:12:08",
+      "last_snap_ts": "2026-04-13T10:42:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -107,7 +107,7 @@
         "Charles Z.",
         "Ed K."
       ],
-      "last_snap_ts": "2026-04-13T09:41:33",
+      "last_snap_ts": "2026-04-13T10:42:52",
       "thieves": [],
       "big_dogs": []
     },
@@ -132,8 +132,8 @@
         "Chanthachone W.",
         "Jeffrey S.",
         "Jin D.",
+        "Keshia B.",
         "Laine S.",
-        "Leah F.",
         "Malli G.",
         "Scott S.",
         "Suhail A.",
@@ -141,7 +141,7 @@
         "Ting H.",
         "+6 players"
       ],
-      "last_snap_ts": "2026-04-13T09:41:37",
+      "last_snap_ts": "2026-04-13T10:42:59",
       "thieves": [],
       "big_dogs": [
         {
@@ -168,7 +168,7 @@
       "registrants": [
         "+2 players"
       ],
-      "last_snap_ts": "2026-04-13T09:41:44",
+      "last_snap_ts": "2026-04-13T10:43:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -193,7 +193,7 @@
         "Stacie R.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-13T09:41:51",
+      "last_snap_ts": "2026-04-13T10:43:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -2371,6 +2371,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-13T10:42:59",
+      "type": "join",
+      "name": "Keshia B.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 13  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
+    },
+    {
+      "ts": "2026-04-13T10:42:59",
+      "type": "cancel",
+      "name": "Leah F.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON APR 13  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
+    },
+    {
       "ts": "2026-04-13T10:12:18",
       "type": "join",
       "name": "Bradley F.",
@@ -2673,22 +2689,6 @@
       "title": "4.5/4.0 Open Play",
       "start": "MON APR 13  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
-    },
-    {
-      "ts": "2026-04-12T16:25:02",
-      "type": "join",
-      "name": "Leah F.",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 13  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
-    },
-    {
-      "ts": "2026-04-12T16:25:02",
-      "type": "cancel",
-      "name": "+3 players",
-      "title": "4.5/4.0 Open Play",
-      "start": "MON APR 13  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
     }
   ],
   "thieves": [],
@@ -2714,6 +2714,11 @@
       "cancels": 5
     },
     {
+      "name": "Leah F.",
+      "joins": 1,
+      "cancels": 5
+    },
+    {
       "name": "Steve Y.",
       "joins": 3,
       "cancels": 4
@@ -2725,11 +2730,6 @@
     },
     {
       "name": "Melba T.",
-      "joins": 1,
-      "cancels": 4
-    },
-    {
-      "name": "Leah F.",
       "joins": 1,
       "cancels": 4
     },
@@ -2990,6 +2990,11 @@
     },
     {
       "name": "Laine S.",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
+      "name": "Keshia B.",
       "joins": 3,
       "cancels": 0
     },
