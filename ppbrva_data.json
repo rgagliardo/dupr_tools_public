@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-13T20:15:37",
-  "next_scan_at": "2026-04-13T20:45:37",
+  "generated_at": "2026-04-13T20:17:17",
+  "next_scan_at": "2026-04-13T20:47:17",
   "stats": {
     "total": 77,
     "full_count": 4
@@ -2508,13 +2508,7 @@
       "last_snap_ts": "2026-04-13T20:11:55",
       "thieves": [
         {
-          "name": "+1 Player left (ghost)",
-          "last_seen_full_ts": "2026-04-13T17:21:10",
-          "first_absent_ts": "2026-04-13T18:22:21",
-          "detection_gap_min": 61
-        },
-        {
-          "name": "+1 Player left (ghost)",
+          "name": "Unsolved Case (ghost player)",
           "last_seen_full_ts": "2026-04-13T17:51:59",
           "first_absent_ts": "2026-04-13T18:22:21",
           "detection_gap_min": 30
@@ -2852,22 +2846,23 @@
   ],
   "thieves": [
     {
-      "name": "+1 Player left (ghost)",
-      "last_seen_full_ts": "2026-04-13T17:21:10",
-      "first_absent_ts": "2026-04-13T18:22:21",
-      "detection_gap_min": 61,
-      "session_title": "4.5/4.0 Open Play",
-      "session_start": "MON APR 13  6:00 PM",
-      "session_url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
-    },
-    {
-      "name": "+1 Player left (ghost)",
+      "name": "Unsolved Case (ghost player)",
       "last_seen_full_ts": "2026-04-13T17:51:59",
       "first_absent_ts": "2026-04-13T18:22:21",
       "detection_gap_min": 30,
       "session_title": "4.5/4.0 Open Play",
       "session_start": "MON APR 13  6:00 PM",
       "session_url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4"
+    },
+    {
+      "name": "+1 Player left (ghost)",
+      "session_title": "4.5/4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/76d55b00-3806-4cb1-803f-109f110a97e4",
+      "session_start": "2026-04-13T18:00:00",
+      "last_seen_full_ts": "2026-04-13T17:21:10",
+      "first_absent_ts": "2026-04-13T18:22:21",
+      "reason": "cancellation",
+      "detected_at": "2026-04-13T20:15:37"
     }
   ],
   "flyers": [
@@ -3137,12 +3132,12 @@
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
