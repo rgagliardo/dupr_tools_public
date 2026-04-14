@@ -1,33 +1,11 @@
 {
-  "generated_at": "2026-04-14T17:38:17",
-  "next_scan_at": "2026-04-14T18:08:17",
+  "generated_at": "2026-04-14T18:08:48",
+  "next_scan_at": "2026-04-14T18:38:48",
   "stats": {
     "total": 75,
     "full_count": 4
   },
   "sessions": [
-    {
-      "uuid": "019d4f62-f502-7aad-932d-ac6af04d61a4",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f62-f502-7aad-932d-ac6af04d61a4",
-      "title": "4.5/4.0 Open Play",
-      "start_iso": "2026-04-14T16:00:00",
-      "end_iso": "2026-04-14T18:00:00",
-      "start_display": "TUE APR 14  4:00 PM",
-      "end_display": "6:00 PM",
-      "status": "live",
-      "capacity": 12,
-      "count": 1,
-      "pct": 8,
-      "is_full": false,
-      "was_ever_full": false,
-      "manually_added": false,
-      "registrants": [
-        "Malli G."
-      ],
-      "last_snap_ts": "2026-04-14T17:38:17",
-      "thieves": [],
-      "big_dogs": []
-    },
     {
       "uuid": "019d4f74-debd-7aad-9358-2118ad7530f9",
       "url": "https://ppbrva.podplay.app/community/events/019d4f74-debd-7aad-9358-2118ad7530f9",
@@ -47,7 +25,7 @@
         "Karuna R.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-14T17:07:27",
+      "last_snap_ts": "2026-04-14T18:08:30",
       "thieves": [],
       "big_dogs": []
     },
@@ -75,7 +53,7 @@
         "Roy A.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-04-14T17:07:32",
+      "last_snap_ts": "2026-04-14T18:08:35",
       "thieves": [],
       "big_dogs": [
         {
@@ -143,7 +121,7 @@
         "Steven S.",
         "Travis S."
       ],
-      "last_snap_ts": "2026-04-14T17:07:39",
+      "last_snap_ts": "2026-04-14T18:08:40",
       "thieves": [],
       "big_dogs": []
     },
@@ -179,7 +157,7 @@
         "Suhail A.",
         "+4 players"
       ],
-      "last_snap_ts": "2026-04-14T17:07:44",
+      "last_snap_ts": "2026-04-14T18:08:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -2622,6 +2600,28 @@
       "big_dogs": []
     },
     {
+      "uuid": "019d4f62-f502-7aad-932d-ac6af04d61a4",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f62-f502-7aad-932d-ac6af04d61a4",
+      "title": "4.5/4.0 Open Play",
+      "start_iso": "2026-04-14T16:00:00",
+      "end_iso": "2026-04-14T18:00:00",
+      "start_display": "TUE APR 14  4:00 PM",
+      "end_display": "6:00 PM",
+      "status": "completed",
+      "capacity": 12,
+      "count": 1,
+      "pct": 8,
+      "is_full": false,
+      "was_ever_full": false,
+      "manually_added": false,
+      "registrants": [
+        "Malli G."
+      ],
+      "last_snap_ts": "2026-04-14T18:08:24",
+      "thieves": [],
+      "big_dogs": []
+    },
+    {
       "uuid": "019d4f84-d0ef-7aad-9370-70b475cef17f",
       "url": "https://ppbrva.podplay.app/community/events/019d4f84-d0ef-7aad-9370-70b475cef17f",
       "title": "DUPR 4.0 Open Play",
@@ -2652,6 +2652,14 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-14T18:08:24",
+      "type": "cancel",
+      "name": "+1 player",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 14  4:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f62-f502-7aad-932d-ac6af04d61a4"
+    },
     {
       "ts": "2026-04-14T17:08:04",
       "type": "join",
@@ -2931,14 +2939,6 @@
       "title": "4.0 Open Play",
       "start": "TUE APR 14  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d4f74-debd-7aad-9358-2118ad7530f9"
-    },
-    {
-      "ts": "2026-04-14T08:54:28",
-      "type": "cancel",
-      "name": "+1 player",
-      "title": "4.5/4.0 Open Play",
-      "start": "TUE APR 14  4:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f62-f502-7aad-932d-ac6af04d61a4"
     },
     {
       "ts": "2026-04-14T08:54:24",
@@ -3446,17 +3446,12 @@
       "cancels": 1
     },
     {
-      "name": "Chris W.",
-      "joins": 2,
-      "cancels": 1
-    },
-    {
       "name": "Duncan W.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Jim O.",
+      "name": "Chris W.",
       "joins": 2,
       "cancels": 1
     },
