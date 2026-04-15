@@ -108,23 +108,24 @@
         }
 
         .player-summary {
-            display: flex; align-items: center;
+            display: flex; align-items: flex-start;
             padding: 6px 8px; cursor: pointer; list-style: none; min-height: 36px; gap: 8px;
         }
         .player-summary::-webkit-details-marker { display: none; }
 
-        .streak-col { flex-shrink: 0; width: 52px; display: flex; justify-content: center; }
+        .streak-col { flex-shrink: 0; width: 52px; display: flex; justify-content: center; padding-top: 2px; }
         .name-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
         .player-name {
             font-size: 14px; font-weight: 700; letter-spacing: 1px;
             color: #ffffff; text-transform: uppercase;
-            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            overflow: hidden;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
         }
 
         .player-notes { font-size: 11px; color: #78788c; font-style: italic; margin-top: 1px; }
 
-        .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; justify-content: center; flex-shrink: 0; margin-left: 8px; }
+        .scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end; flex-shrink: 0; margin-left: 8px; padding-top: 2px; }
         .score-line { font-size: 13px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: flex-end; white-space: nowrap; gap: 3px; }
         .score-nr { color: #6e6e7a; font-size: 12px; font-weight: 500; }
         .lbl { font-size: 13px; font-weight: 700; color: #555570; }
@@ -252,7 +253,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 15, 2026 at 8:43 AM</span>
+            <span>Last Updated: April 15, 2026 at 8:55 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
