@@ -246,6 +246,157 @@
             border-color: rgba(0, 229, 255, 0.3);
         }
 
+        /* ── Streak Hall ─────────────────────────────────────────────── */
+        .sh-hero {
+            background: linear-gradient(90deg, rgba(0,229,255,0.12), rgba(255,0,160,0.12));
+            border: 1px solid rgba(0,229,255,0.25);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: transform 0.1s ease, border-color 0.1s ease;
+        }
+        .sh-hero:hover { transform: translateY(-1px); border-color: rgba(0,229,255,0.5); }
+        .sh-hero:focus-visible { outline: 2px solid #00e5ff; outline-offset: 2px; }
+        .sh-hero-title {
+            font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+            color: #ffd43b; margin-bottom: 10px;
+            display: flex; justify-content: space-between; align-items: baseline;
+        }
+        .sh-hero-cta {
+            color: #00e5ff; font-size: 11px; letter-spacing: 1px; font-weight: 800;
+            border-bottom: 1px solid currentColor; padding-bottom: 1px;
+        }
+        .sh-hero-cta::after { content: " ›"; font-size: 13px; }
+        .sh-hero-row { display: flex; gap: 10px; }
+        .sh-hero-cell { flex: 1; background: #13141e; border-radius: 8px; padding: 10px 12px; min-width: 0; }
+        .sh-hero-cell.sh-w { border-left: 3px solid #00e5ff; }
+        .sh-hero-cell.sh-l { border-left: 3px solid #ff00a0; }
+        .sh-hero-cell.sh-empty { opacity: 0.55; }
+        .sh-hero-label {
+            font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
+            color: #78788c; text-transform: uppercase; margin-bottom: 2px;
+        }
+        .sh-hero-stat { display: flex; align-items: baseline; gap: 4px; margin-bottom: 2px; }
+        .sh-hero-count { font-size: 22px; font-weight: 900; font-variant-numeric: tabular-nums; }
+        .sh-hero-type { font-size: 13px; font-weight: 700; }
+        .sh-hero-cell.sh-w .sh-hero-count,
+        .sh-hero-cell.sh-w .sh-hero-type { color: #00e5ff; text-shadow: 0 0 10px rgba(0,229,255,0.4); }
+        .sh-hero-cell.sh-l .sh-hero-count,
+        .sh-hero-cell.sh-l .sh-hero-type { color: #ff00a0; text-shadow: 0 0 10px rgba(255,0,160,0.4); }
+        .sh-hero-name { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+        .sh-hero-last {
+            font-size: 10px; color: #78788c; margin-top: 4px;
+            overflow: hidden; text-overflow: ellipsis;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+        }
+        .sh-hero-empty { font-size: 11px; color: #555570; font-style: italic; margin-top: 3px; }
+
+        /* Overlay */
+        .sh-overlay {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+            display: none; overflow-y: auto;
+        }
+        .sh-overlay.open { display: block; }
+        body.sh-lock { overflow: hidden; }
+        .sh-close {
+            position: fixed; top: 12px; right: 16px; z-index: 1001;
+            width: 40px; height: 40px; border-radius: 20px;
+            background: #13141e; border: 1px solid rgba(255,255,255,0.06);
+            color: #ffffff; font-size: 20px; line-height: 1;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .sh-close:focus-visible { outline: 2px solid #00e5ff; outline-offset: 2px; }
+        .sh-overlay-inner { max-width: 760px; margin: 0 auto; padding: 56px 16px 40px; }
+        .sh-overlay-title {
+            font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+            color: #00e5ff; text-shadow: 0 0 10px rgba(0,229,255,0.5);
+            font-style: italic; margin-bottom: 4px;
+        }
+        .sh-overlay-sub {
+            font-size: 10px; color: #78788c; letter-spacing: 1px;
+            text-transform: uppercase; margin-bottom: 20px;
+        }
+        .sh-section-label {
+            font-size: 11px; font-weight: 800; letter-spacing: 2px;
+            color: #78788c; text-transform: uppercase;
+            margin: 20px 0 10px 2px;
+        }
+
+        .sh-champions { display: flex; flex-direction: column; gap: 10px; }
+        .sh-champion {
+            background: #13141e; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px; padding: 14px 16px;
+        }
+        .sh-champion.sh-w { border-left: 3px solid #00e5ff; }
+        .sh-champion.sh-l { border-left: 3px solid #ff00a0; }
+        .sh-champion-head {
+            display: flex; align-items: baseline; justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .sh-champion-badge {
+            font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .sh-champion.sh-w .sh-champion-badge { color: #00e5ff; }
+        .sh-champion.sh-l .sh-champion-badge { color: #ff00a0; }
+        .sh-champion-count {
+            font-size: 30px; font-weight: 900; font-variant-numeric: tabular-nums;
+        }
+        .sh-champion.sh-w .sh-champion-count { color: #00e5ff; text-shadow: 0 0 12px rgba(0,229,255,0.4); }
+        .sh-champion.sh-l .sh-champion-count { color: #ff00a0; text-shadow: 0 0 12px rgba(255,0,160,0.4); }
+        .sh-champion-count sup { font-size: 13px; font-weight: 700; margin-left: 2px; }
+        .sh-champion-name {
+            font-size: 17px; font-weight: 800; letter-spacing: 1px;
+            text-transform: uppercase; margin-bottom: 4px;
+        }
+        .sh-nick { color: #78788c; font-size: 12px; font-weight: 500; text-transform: none; letter-spacing: 0; margin-left: 6px; }
+        .sh-champion-since { font-size: 11px; color: #78788c; margin-bottom: 10px; }
+
+        /* Match line (shared by champion cards and HoF broken_by) */
+        .sh-match { background: #1a1b28; border-radius: 6px; padding: 8px 10px; font-size: 11px; }
+        .sh-match-head { display: flex; justify-content: space-between; margin-bottom: 3px; }
+        .sh-match-date { color: #78788c; }
+        .sh-match-result.w { color: #00e5ff; font-weight: 700; }
+        .sh-match-result.l { color: #ff00a0; font-weight: 700; }
+        .sh-match-score { font-weight: 700; font-variant-numeric: tabular-nums; margin-bottom: 2px; }
+        .sh-match-players { color: #78788c; }
+        .sh-partner { color: #ffffff; }
+        .sh-vs { color: #555570; padding: 0 3px; }
+        .sh-match-event { color: #555570; font-size: 10px; margin-top: 3px; font-style: italic; }
+
+        /* Hall of Fame */
+        .sh-hof {
+            background: #13141e; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
+        }
+        .sh-hof.sh-w { border-left: 2px solid rgba(0,229,255,0.5); }
+        .sh-hof.sh-l { border-left: 2px solid rgba(255,0,160,0.5); }
+        .sh-hof-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+        .sh-hof-name { font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+        .sh-hof-streak { font-size: 14px; font-weight: 800; font-variant-numeric: tabular-nums; }
+        .sh-hof.sh-w .sh-hof-streak { color: #00e5ff; }
+        .sh-hof.sh-l .sh-hof-streak { color: #ff00a0; }
+        .sh-hof-range { font-size: 11px; color: #78788c; margin-bottom: 8px; }
+        .sh-hof-range .sh-arrow { color: #555570; padding: 0 4px; }
+
+        .sh-event {
+            display: flex; gap: 8px; font-size: 11px;
+            padding: 6px 8px; background: #1a1b28; border-radius: 6px;
+            margin-top: 6px;
+        }
+        .sh-event-icon { line-height: 1; padding-top: 1px; }
+        .sh-event-body { flex: 1; }
+        .sh-event-title { color: #ffd43b; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; margin-bottom: 3px; }
+        .sh-event-broken { background: transparent; padding: 2px 0 0 28px; margin-top: 2px; }
+        .sh-event-broken .sh-event-title { color: #ff6b6b; font-size: 9px; }
+        .sh-event-broken .sh-match { padding: 6px 8px; font-size: 10px; }
+
+        .sh-empty-msg { color: #555570; font-style: italic; padding: 8px 2px; font-size: 12px; }
+
 </style>
 </head>
 <body>
@@ -253,7 +404,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 15, 2026 at 8:59 AM</span>
+            <span>Last Updated: April 15, 2026 at 1:13 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -261,12 +412,89 @@
             <button class="search-clear" id="searchClear">✕</button>
         </div>
         <div class="jump-bar">
-            <a href="#grp-movers" class="jump-tab">📈 Movers (8)</a>
+            <a href="#grp-movers" class="jump-tab">📈 Movers (9)</a>
             <a href="#grp-players" class="jump-tab">🏆 Players (14)</a>
             <a href="#grp-pros" class="jump-tab">🏆 Pros (2)</a>
         </div>
     </div>
     <div class="main-content">
+        
+<div class="sh-hero" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="streak-overlay" onclick="openStreakOverlay()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openStreakOverlay();}">
+    <div class="sh-hero-title">
+        <span>🔥 CURRENT STREAK CHAMPIONS 🧊</span>
+        <span class="sh-hero-cta">View Hall</span>
+    </div>
+    <div class="sh-hero-row">
+        <div class="sh-hero-cell sh-w">
+    <div class="sh-hero-label">🔥 Hot</div>
+    <div class="sh-hero-stat">
+        <span class="sh-hero-count">61</span><span class="sh-hero-type">W</span>
+    </div>
+    <div class="sh-hero-name">ALW</div>
+    <div class="sh-hero-last">
+        <span class="sh-vs">vs</span> Trang Huynh & Rianna Valdes · Apr 15, 2026
+    </div>
+</div>
+        <div class="sh-hero-cell sh-l">
+    <div class="sh-hero-label">🧊 Cold</div>
+    <div class="sh-hero-stat">
+        <span class="sh-hero-count">27</span><span class="sh-hero-type">L</span>
+    </div>
+    <div class="sh-hero-name">Leah Fremouw</div>
+    <div class="sh-hero-last">
+        <span class="sh-vs">vs</span> Brett Parker & Wendy Polka · Apr 14, 2026
+    </div>
+</div>
+    </div>
+</div>
+
+
+<div class="sh-overlay" id="streak-overlay" role="dialog" aria-modal="true" aria-label="Streak Hall">
+    <button class="sh-close" aria-label="Close Streak Hall" onclick="closeStreakOverlay()">×</button>
+    <div class="sh-overlay-inner">
+        <h2 class="sh-overlay-title">Streak Hall</h2>
+        <div class="sh-overlay-sub">Current champions + Hall of Fame</div>
+
+        <div class="sh-section-label">Current Champions</div>
+        <div class="sh-champions">
+            <div class="sh-champion sh-w">
+    <div class="sh-champion-head">
+        <span class="sh-champion-badge">🔥 Current W-Streak</span>
+        <span class="sh-champion-count">61<sup>W</sup></span>
+    </div>
+    <div class="sh-champion-name">ALW <span class="sh-nick">aka ALW</span></div>
+    <div class="sh-champion-since">Leading since 2026-04-15</div><div class="sh-match">
+    <div class="sh-match-head">
+        <span class="sh-match-date">Apr 15, 2026</span>
+        <span class="sh-match-result w">W</span>
+    </div>
+    <div class="sh-match-score">11-6, 11-1</div>
+    <div class="sh-match-players">w/ <span class="sh-partner">Leigh Waters</span> <span class="sh-vs">vs</span> Trang Huynh & Rianna Valdes
+    </div><div class="sh-match-event">2026 Franklin US Open Pickleball Championships - Women's Pro Doubles- Main Draw</div>
+</div>
+</div>
+            <div class="sh-champion sh-l">
+    <div class="sh-champion-head">
+        <span class="sh-champion-badge">🧊 Current L-Streak</span>
+        <span class="sh-champion-count">27<sup>L</sup></span>
+    </div>
+    <div class="sh-champion-name">Leah Fremouw</div>
+    <div class="sh-champion-since">Leading since 2026-04-15</div><div class="sh-match">
+    <div class="sh-match-head">
+        <span class="sh-match-date">Apr 14, 2026</span>
+        <span class="sh-match-result l">L</span>
+    </div>
+    <div class="sh-match-score">5-11</div>
+    <div class="sh-match-players">w/ <span class="sh-partner">Kevin McGeorge</span> <span class="sh-vs">vs</span> Brett Parker & Wendy Polka
+    </div><div class="sh-match-event">Spring I - 2026 - Triple Team Co-Gender 4.0</div>
+</div>
+</div>
+        </div>
+
+        <div class="sh-section-label">Hall of Fame</div>
+        <div class="sh-empty-msg">No past record holders yet — the current champions are the first.</div>
+    </div>
+</div>
         <details class="group-details" id="grp-movers">
             <summary class="group-summary movers-summary" aria-expanded="false">📈 Movers (Last 7 Days)</summary>
             <div class="group-content">
@@ -277,16 +505,36 @@
                     <button class="sort-btn" data-sort="singles">Singles</button>
                     <button class="sort-btn" data-sort="streak">Streak</button>
                 </div>
-                <details class="player-details" data-name="david bieger david bieger" data-doubles="5.996" data-singles="5.855" data-streak="1" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Harrison Gold \u0026 Harrison Heysek", "opponents": "Harrison Gold \u0026 Harrison Heysek", "partner": "Mark Dancuart", "result": "W", "score": "11-5, 13-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.056, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ryler DeHeart", "opponents": "Ryler DeHeart", "partner": null, "result": "L", "score": "6-11, 5-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.065, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Domenico Geminiani", "opponents": "Domenico Geminiani", "partner": null, "result": "W", "score": "7-11, 11-9, 11-3"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.016, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Max Green", "opponents": "Max Green", "partner": null, "result": "L", "score": "9-11, 11-6, 8-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Randy Blanco \u0026 Bobbi Oshiro", "opponents": "Randy Blanco \u0026 Bobbi Oshiro", "partner": "Riley Bohnert", "result": "L", "score": "6-11, 11-8, 3-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.012, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Maximilian Wild", "opponents": "Maximilian Wild", "partner": null, "result": "W", "score": "3-11, 11-0, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Callan Dawson \u0026 Leah Tauber", "opponents": "Callan Dawson \u0026 Leah Tauber", "partner": "Riley Bohnert", "result": "W", "score": "7-11, 11-8, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eKento Tamaki\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Elliott Schupp \u0026 Andre Mick", "opponents": "Elliott Schupp \u0026 Andre Mick", "partner": "Kento Tamaki", "result": "L", "score": "4-11, 8-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.088, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dusty Boyer", "opponents": "Dusty Boyer", "partner": null, "result": "W", "score": "12-10, 11-0"}, {"date": "Mar 26, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": -0.041, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Robert Baylon", "opponents": "Robert Baylon", "partner": null, "result": "W", "score": "13-11, 9-11, 11-5"}]' data-internal-id="4785300608">
+                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.898" data-singles="6.491" data-streak="61" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.003, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Trang Huynh \u0026 Rianna Valdes", "opponents": "Trang Huynh \u0026 Rianna Valdes", "partner": "Leigh Waters", "result": "W", "score": "11-6, 11-1"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Liang \u0026 Lauren Cole", "opponents": "Spencer Liang \u0026 Lauren Cole", "partner": "Leigh Waters", "result": "W", "score": "11-8, 11-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Veronica Alteri \u0026 Jenna Vlach", "opponents": "Veronica Alteri \u0026 Jenna Vlach", "partner": "Leigh Waters", "result": "W", "score": "11-0, 11-0"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}]' data-internal-id="6880176520">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 1W</span>
+            <span class="streak-badge streak-w">🔥 61W</span>
+        </div>
+        <div class="name-col">
+            <div class="player-name">ALW</div>
+            <div class="player-notes">Streak test — should blow past 100</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-down">(-0.005)</span> <span class="arrow trend-down">▼</span> 6.898 <span class="lbl">D</span>
+            </div>
+            <div class="score-line"> 6.491 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
+        <div class="match-list"></div>
+    </div>
+</details>
+                <details class="player-details" data-name="david bieger david bieger" data-doubles="6.010" data-singles="5.855" data-streak="3" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Drake Palm \u0026 Ronan Camron", "opponents": "Drake Palm \u0026 Ronan Camron", "partner": "Mark Dancuart", "result": "W", "score": "11-5, 11-8"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tristan Dussault \u0026 Bharat Karunakaran", "opponents": "Tristan Dussault \u0026 Bharat Karunakaran", "partner": "Mark Dancuart", "result": "W", "score": "11-3, 11-9"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Harrison Gold \u0026 Harrison Heysek", "opponents": "Harrison Gold \u0026 Harrison Heysek", "partner": "Mark Dancuart", "result": "W", "score": "11-5, 13-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.056, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ryler DeHeart", "opponents": "Ryler DeHeart", "partner": null, "result": "L", "score": "6-11, 5-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.065, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Domenico Geminiani", "opponents": "Domenico Geminiani", "partner": null, "result": "W", "score": "7-11, 11-9, 11-3"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.016, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Max Green", "opponents": "Max Green", "partner": null, "result": "L", "score": "9-11, 11-6, 8-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Randy Blanco \u0026 Bobbi Oshiro", "opponents": "Randy Blanco \u0026 Bobbi Oshiro", "partner": "Riley Bohnert", "result": "L", "score": "6-11, 11-8, 3-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.012, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Maximilian Wild", "opponents": "Maximilian Wild", "partner": null, "result": "W", "score": "3-11, 11-0, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Callan Dawson \u0026 Leah Tauber", "opponents": "Callan Dawson \u0026 Leah Tauber", "partner": "Riley Bohnert", "result": "W", "score": "7-11, 11-8, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eKento Tamaki\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Elliott Schupp \u0026 Andre Mick", "opponents": "Elliott Schupp \u0026 Andre Mick", "partner": "Kento Tamaki", "result": "L", "score": "4-11, 8-11"}]' data-internal-id="4785300608">
+    <summary class="player-summary" aria-expanded="false">
+        <div class="streak-col">
+            <span class="streak-badge streak-w">🔥 3W</span>
         </div>
         <div class="name-col">
             <div class="player-name">David Bieger</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.012)</span> <span class="arrow trend-down">▼</span> 5.996 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-up">(+0.001)</span> <span class="arrow trend-up">▲</span> 6.010 <span class="lbl">D</span>
             </div>
             <div class="score-line"><span class="net-impact trend-down">(-0.121)</span> <span class="arrow trend-down">▼</span> 5.855 <span class="lbl">S</span>
             </div>
@@ -296,6 +544,26 @@
         <div class="social-links" style="display:flex;">
             <a class="social-link" href="https://www.instagram.com/pickledavidfitness/" target="_blank" rel="noreferrer noopener" onclick="event.stopPropagation()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#a78bfa" stroke="none"/></svg></a>
         </div>
+        <div class="match-list"></div>
+    </div>
+</details>
+                <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.908" data-singles="5.919" data-streak="3" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMARCO OSORIO\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Todd Robertson \u0026 Peter Prodanov", "opponents": "Todd Robertson \u0026 Peter Prodanov", "partner": "MARCO OSORIO", "result": "W", "score": "11-9, 11-0"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMARCO OSORIO\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marcellus Zuzarte \u0026 Tom DeCaprio", "opponents": "Marcellus Zuzarte \u0026 Tom DeCaprio", "partner": "MARCO OSORIO", "result": "W", "score": "11-0, 11-1"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Patrick Cote \u0026 Trang Huynh", "opponents": "Patrick Cote \u0026 Trang Huynh", "partner": "Megan Fudge", "result": "W", "score": "11-5, 11-7"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": -0.01, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Livornese Jr \u0026 Evelyn Welsher", "opponents": "Richard Livornese Jr \u0026 Evelyn Welsher", "partner": "Megan Fudge", "result": "L", "score": "10-12, 11-8, 3-11"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.013, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Heather G Waters \u0026 Max Green", "opponents": "Heather G Waters \u0026 Max Green", "partner": "Megan Fudge", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.006, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Celler \u0026 Kelsey Laurente", "opponents": "Richard Celler \u0026 Kelsey Laurente", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ben Newell \u0026 Kelly Stroble", "opponents": "Ben Newell \u0026 Kelly Stroble", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Michael Challen \u0026 Morgan Shepherd", "opponents": "Michael Challen \u0026 Morgan Shepherd", "partner": "Brian Baker", "result": "W", "score": "11-6, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mircea Morariu \u0026 Jose Derisi", "opponents": "Mircea Morariu \u0026 Jose Derisi", "partner": "Brian Baker", "result": "W", "score": "18-16"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marcello Paiva Jardim \u0026 Jaime Oncins", "opponents": "Marcello Paiva Jardim \u0026 Jaime Oncins", "partner": "Brian Baker", "result": "L", "score": "11-3, 8-11, 1-11"}]' data-internal-id="8490017643">
+    <summary class="player-summary" aria-expanded="false">
+        <div class="streak-col">
+            <span class="streak-badge streak-w">🔥 3W</span>
+        </div>
+        <div class="name-col">
+            <div class="player-name">Youssef Bouzidi</div>
+            <div class="player-notes">Has no socials</div>
+        </div>
+        <div class="scores-stack">
+            <div class="score-line"><span class="net-impact trend-up">(+0.031)</span> <span class="arrow trend-up">▲</span> 5.908 <span class="lbl">D</span>
+            </div>
+            <div class="score-line"> 5.919 <span class="lbl">S</span>
+            </div>
+        </div>
+    </summary>
+    <div class="history-dropdown">
         <div class="match-list"></div>
     </div>
 </details>
@@ -389,26 +657,6 @@
             <div class="score-line"><span class="net-impact trend-down">(-0.031)</span> <span class="arrow trend-down">▼</span> 4.213 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 4.304 <span class="lbl">S</span>
-            </div>
-        </div>
-    </summary>
-    <div class="history-dropdown">
-        <div class="match-list"></div>
-    </div>
-</details>
-                <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.903" data-singles="5.919" data-streak="1" data-matches='[{"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Patrick Cote \u0026 Trang Huynh", "opponents": "Patrick Cote \u0026 Trang Huynh", "partner": "Megan Fudge", "result": "W", "score": "11-5, 11-7"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": -0.01, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Livornese Jr \u0026 Evelyn Welsher", "opponents": "Richard Livornese Jr \u0026 Evelyn Welsher", "partner": "Megan Fudge", "result": "L", "score": "10-12, 11-8, 3-11"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.013, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Heather G Waters \u0026 Max Green", "opponents": "Heather G Waters \u0026 Max Green", "partner": "Megan Fudge", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.006, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Celler \u0026 Kelsey Laurente", "opponents": "Richard Celler \u0026 Kelsey Laurente", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ben Newell \u0026 Kelly Stroble", "opponents": "Ben Newell \u0026 Kelly Stroble", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Michael Challen \u0026 Morgan Shepherd", "opponents": "Michael Challen \u0026 Morgan Shepherd", "partner": "Brian Baker", "result": "W", "score": "11-6, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mircea Morariu \u0026 Jose Derisi", "opponents": "Mircea Morariu \u0026 Jose Derisi", "partner": "Brian Baker", "result": "W", "score": "18-16"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marcello Paiva Jardim \u0026 Jaime Oncins", "opponents": "Marcello Paiva Jardim \u0026 Jaime Oncins", "partner": "Brian Baker", "result": "L", "score": "11-3, 8-11, 1-11"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dayne Gingrich \u0026 Rick Witsken", "opponents": "Dayne Gingrich \u0026 Rick Witsken", "partner": "Brian Baker", "result": "W", "score": "3-11, 11-5, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e DELETED Account \u0026 Chris Farnsworth", "opponents": "DELETED Account \u0026 Chris Farnsworth", "partner": "Brian Baker", "result": "W", "score": "11-1, 11-8"}]' data-internal-id="8490017643">
-    <summary class="player-summary" aria-expanded="false">
-        <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 1W</span>
-        </div>
-        <div class="name-col">
-            <div class="player-name">Youssef Bouzidi</div>
-            <div class="player-notes">Has no socials</div>
-        </div>
-        <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-up">(+0.026)</span> <span class="arrow trend-up">▲</span> 5.903 <span class="lbl">D</span>
-            </div>
-            <div class="score-line"> 5.919 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
@@ -521,16 +769,16 @@
         <div class="match-list"></div>
     </div>
 </details>
-                <details class="player-details" data-name="david bieger david bieger" data-doubles="5.996" data-singles="5.855" data-streak="1" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Harrison Gold \u0026 Harrison Heysek", "opponents": "Harrison Gold \u0026 Harrison Heysek", "partner": "Mark Dancuart", "result": "W", "score": "11-5, 13-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.056, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ryler DeHeart", "opponents": "Ryler DeHeart", "partner": null, "result": "L", "score": "6-11, 5-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.065, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Domenico Geminiani", "opponents": "Domenico Geminiani", "partner": null, "result": "W", "score": "7-11, 11-9, 11-3"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.016, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Max Green", "opponents": "Max Green", "partner": null, "result": "L", "score": "9-11, 11-6, 8-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Randy Blanco \u0026 Bobbi Oshiro", "opponents": "Randy Blanco \u0026 Bobbi Oshiro", "partner": "Riley Bohnert", "result": "L", "score": "6-11, 11-8, 3-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.012, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Maximilian Wild", "opponents": "Maximilian Wild", "partner": null, "result": "W", "score": "3-11, 11-0, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Callan Dawson \u0026 Leah Tauber", "opponents": "Callan Dawson \u0026 Leah Tauber", "partner": "Riley Bohnert", "result": "W", "score": "7-11, 11-8, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eKento Tamaki\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Elliott Schupp \u0026 Andre Mick", "opponents": "Elliott Schupp \u0026 Andre Mick", "partner": "Kento Tamaki", "result": "L", "score": "4-11, 8-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.088, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dusty Boyer", "opponents": "Dusty Boyer", "partner": null, "result": "W", "score": "12-10, 11-0"}, {"date": "Mar 26, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": -0.041, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Robert Baylon", "opponents": "Robert Baylon", "partner": null, "result": "W", "score": "13-11, 9-11, 11-5"}]' data-internal-id="4785300608">
+                <details class="player-details" data-name="david bieger david bieger" data-doubles="6.010" data-singles="5.855" data-streak="3" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Drake Palm \u0026 Ronan Camron", "opponents": "Drake Palm \u0026 Ronan Camron", "partner": "Mark Dancuart", "result": "W", "score": "11-5, 11-8"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tristan Dussault \u0026 Bharat Karunakaran", "opponents": "Tristan Dussault \u0026 Bharat Karunakaran", "partner": "Mark Dancuart", "result": "W", "score": "11-3, 11-9"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMark Dancuart\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Harrison Gold \u0026 Harrison Heysek", "opponents": "Harrison Gold \u0026 Harrison Heysek", "partner": "Mark Dancuart", "result": "W", "score": "11-5, 13-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.056, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ryler DeHeart", "opponents": "Ryler DeHeart", "partner": null, "result": "L", "score": "6-11, 5-11"}, {"date": "Apr 14, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Pro Singles- Main Draw", "format": "S", "impact_val": -0.065, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Domenico Geminiani", "opponents": "Domenico Geminiani", "partner": null, "result": "W", "score": "7-11, 11-9, 11-3"}, {"date": "Mar 28, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.016, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Max Green", "opponents": "Max Green", "partner": null, "result": "L", "score": "9-11, 11-6, 8-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Randy Blanco \u0026 Bobbi Oshiro", "opponents": "Randy Blanco \u0026 Bobbi Oshiro", "partner": "Riley Bohnert", "result": "L", "score": "6-11, 11-8, 3-11"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Singles (PENDING ACCEPTANCE)", "format": "S", "impact_val": 0.012, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Maximilian Wild", "opponents": "Maximilian Wild", "partner": null, "result": "W", "score": "3-11, 11-0, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mixed Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eRiley Bohnert\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Callan Dawson \u0026 Leah Tauber", "opponents": "Callan Dawson \u0026 Leah Tauber", "partner": "Riley Bohnert", "result": "W", "score": "7-11, 11-8, 11-5"}, {"date": "Mar 27, 2026", "event": "APP Tour: 2026 AARP Open - Mens Pro Doubles (PENDING ACCEPTANCE)", "format": "D", "impact_val": -0.009, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eKento Tamaki\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Elliott Schupp \u0026 Andre Mick", "opponents": "Elliott Schupp \u0026 Andre Mick", "partner": "Kento Tamaki", "result": "L", "score": "4-11, 8-11"}]' data-internal-id="4785300608">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 1W</span>
+            <span class="streak-badge streak-w">🔥 3W</span>
         </div>
         <div class="name-col">
             <div class="player-name">David Bieger</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.012)</span> <span class="arrow trend-down">▼</span> 5.996 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-up">(+0.001)</span> <span class="arrow trend-up">▲</span> 6.010 <span class="lbl">D</span>
             </div>
             <div class="score-line"><span class="net-impact trend-down">(-0.121)</span> <span class="arrow trend-down">▼</span> 5.855 <span class="lbl">S</span>
             </div>
@@ -703,17 +951,17 @@
         <div class="match-list"></div>
     </div>
 </details>
-                <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.903" data-singles="5.919" data-streak="1" data-matches='[{"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Patrick Cote \u0026 Trang Huynh", "opponents": "Patrick Cote \u0026 Trang Huynh", "partner": "Megan Fudge", "result": "W", "score": "11-5, 11-7"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": -0.01, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Livornese Jr \u0026 Evelyn Welsher", "opponents": "Richard Livornese Jr \u0026 Evelyn Welsher", "partner": "Megan Fudge", "result": "L", "score": "10-12, 11-8, 3-11"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.013, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Heather G Waters \u0026 Max Green", "opponents": "Heather G Waters \u0026 Max Green", "partner": "Megan Fudge", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.006, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Celler \u0026 Kelsey Laurente", "opponents": "Richard Celler \u0026 Kelsey Laurente", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ben Newell \u0026 Kelly Stroble", "opponents": "Ben Newell \u0026 Kelly Stroble", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Michael Challen \u0026 Morgan Shepherd", "opponents": "Michael Challen \u0026 Morgan Shepherd", "partner": "Brian Baker", "result": "W", "score": "11-6, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mircea Morariu \u0026 Jose Derisi", "opponents": "Mircea Morariu \u0026 Jose Derisi", "partner": "Brian Baker", "result": "W", "score": "18-16"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marcello Paiva Jardim \u0026 Jaime Oncins", "opponents": "Marcello Paiva Jardim \u0026 Jaime Oncins", "partner": "Brian Baker", "result": "L", "score": "11-3, 8-11, 1-11"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dayne Gingrich \u0026 Rick Witsken", "opponents": "Dayne Gingrich \u0026 Rick Witsken", "partner": "Brian Baker", "result": "W", "score": "3-11, 11-5, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e DELETED Account \u0026 Chris Farnsworth", "opponents": "DELETED Account \u0026 Chris Farnsworth", "partner": "Brian Baker", "result": "W", "score": "11-1, 11-8"}]' data-internal-id="8490017643">
+                <details class="player-details" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.908" data-singles="5.919" data-streak="3" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMARCO OSORIO\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Todd Robertson \u0026 Peter Prodanov", "opponents": "Todd Robertson \u0026 Peter Prodanov", "partner": "MARCO OSORIO", "result": "W", "score": "11-9, 11-0"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMARCO OSORIO\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marcellus Zuzarte \u0026 Tom DeCaprio", "opponents": "Marcellus Zuzarte \u0026 Tom DeCaprio", "partner": "MARCO OSORIO", "result": "W", "score": "11-0, 11-1"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Patrick Cote \u0026 Trang Huynh", "opponents": "Patrick Cote \u0026 Trang Huynh", "partner": "Megan Fudge", "result": "W", "score": "11-5, 11-7"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": -0.01, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Livornese Jr \u0026 Evelyn Welsher", "opponents": "Richard Livornese Jr \u0026 Evelyn Welsher", "partner": "Megan Fudge", "result": "L", "score": "10-12, 11-8, 3-11"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.013, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Heather G Waters \u0026 Max Green", "opponents": "Heather G Waters \u0026 Max Green", "partner": "Megan Fudge", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.006, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Richard Celler \u0026 Kelsey Laurente", "opponents": "Richard Celler \u0026 Kelsey Laurente", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eMegan Fudge\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Ben Newell \u0026 Kelly Stroble", "opponents": "Ben Newell \u0026 Kelly Stroble", "partner": "Megan Fudge", "result": "W", "score": "11-1, 11-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Michael Challen \u0026 Morgan Shepherd", "opponents": "Michael Challen \u0026 Morgan Shepherd", "partner": "Brian Baker", "result": "W", "score": "11-6, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mircea Morariu \u0026 Jose Derisi", "opponents": "Mircea Morariu \u0026 Jose Derisi", "partner": "Brian Baker", "result": "W", "score": "18-16"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBrian Baker\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marcello Paiva Jardim \u0026 Jaime Oncins", "opponents": "Marcello Paiva Jardim \u0026 Jaime Oncins", "partner": "Brian Baker", "result": "L", "score": "11-3, 8-11, 1-11"}]' data-internal-id="8490017643">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 1W</span>
+            <span class="streak-badge streak-w">🔥 3W</span>
         </div>
         <div class="name-col">
             <div class="player-name">Youssef Bouzidi</div>
             <div class="player-notes">Has no socials</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-up">(+0.026)</span> <span class="arrow trend-up">▲</span> 5.903 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-up">(+0.031)</span> <span class="arrow trend-up">▲</span> 5.908 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 5.919 <span class="lbl">S</span>
             </div>
@@ -735,17 +983,17 @@
                     <button class="sort-btn" data-sort="singles">Singles</button>
                     <button class="sort-btn" data-sort="streak">Streak</button>
                 </div>
-                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.903" data-singles="6.491" data-streak="58" data-matches='[{"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.0, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kao Pei Chuan \u0026 Aiko Yoshitomi", "opponents": "Kao Pei Chuan \u0026 Aiko Yoshitomi", "partner": "Anna Bright", "result": "W", "score": "11-1, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": 0.002, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kate Fahey", "opponents": "Kate Fahey", "partner": null, "result": "W", "score": "8-11, 11-3, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Kate Fahey", "opponents": "Parris Todd \u0026 Kate Fahey", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3, 11-0"}]' data-internal-id="6880176520">
+                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.898" data-singles="6.491" data-streak="61" data-matches='[{"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.003, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Trang Huynh \u0026 Rianna Valdes", "opponents": "Trang Huynh \u0026 Rianna Valdes", "partner": "Leigh Waters", "result": "W", "score": "11-6, 11-1"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Liang \u0026 Lauren Cole", "opponents": "Spencer Liang \u0026 Lauren Cole", "partner": "Leigh Waters", "result": "W", "score": "11-8, 11-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Veronica Alteri \u0026 Jenna Vlach", "opponents": "Veronica Alteri \u0026 Jenna Vlach", "partner": "Leigh Waters", "result": "W", "score": "11-0, 11-0"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}]' data-internal-id="6880176520">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 58W</span>
+            <span class="streak-badge streak-w">🔥 61W</span>
         </div>
         <div class="name-col">
             <div class="player-name">ALW</div>
             <div class="player-notes">Streak test — should blow past 100</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"> 6.903 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-down">(-0.005)</span> <span class="arrow trend-down">▼</span> 6.898 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 6.491 <span class="lbl">S</span>
             </div>
@@ -1136,6 +1384,36 @@
                     players.forEach(function(el) { content.appendChild(el); });
                 });
             });
+
+            // ── Streak Hall overlay ─────────────────────────────────────
+            (function() {
+                var overlay = document.getElementById('streak-overlay');
+                if (!overlay) return;  // no hall on this page
+                var hero = document.querySelector('.sh-hero');
+                var close = document.querySelector('.sh-close');
+                var lastFocus = null;
+
+                window.openStreakOverlay = function() {
+                    lastFocus = document.activeElement;
+                    overlay.classList.add('open');
+                    document.body.classList.add('sh-lock');
+                    setTimeout(function() { if (close) close.focus(); }, 0);
+                };
+                window.closeStreakOverlay = function() {
+                    overlay.classList.remove('open');
+                    document.body.classList.remove('sh-lock');
+                    if (lastFocus && lastFocus.focus) lastFocus.focus();
+                };
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && overlay.classList.contains('open')) {
+                        window.closeStreakOverlay();
+                    }
+                });
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) window.closeStreakOverlay();
+                });
+            })();
 
     </script>
 </body>
