@@ -160,7 +160,7 @@
         .match-row { display: flex; align-items: baseline; gap: 6px; }
         .match-opp-line { font-size: 13px; color: #6a6a8a; padding: 2px 0 0 0; line-height: 1.4; }
         .match-partner { color: #7a8fcc; font-weight: 600; }
-        .match-vs { color: #3a3a55; font-size: 9px; text-transform: uppercase; }
+        .match-vs { color: #8e8eaa; font-size: 9px; text-transform: uppercase; font-weight: 700; }
         .match-date { flex-shrink: 0; white-space: nowrap; font-size: 12px; font-weight: 500; color: #666680; }
         .match-score { font-size: 14px; font-weight: 700; color: #e0e0e0; }
         .match-result { font-size: 14px; font-weight: 800; margin-left: 2px; }
@@ -401,6 +401,23 @@
 
         .sh-empty-msg { color: #555570; font-style: italic; padding: 8px 2px; font-size: 12px; }
 
+        /* ── Career Stats (player card) ─────────────────────────────── */
+        .career-stats { padding: 10px 12px 6px; }
+        .career-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; color: #78788c; text-transform: uppercase; margin-bottom: 6px; }
+        .cs-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+        .cs-fmt { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #555570; width: 14px; flex-shrink: 0; text-align: center; }
+        .cs-bar { flex: 1; background: #1a1b28; border-radius: 6px; padding: 6px 10px; display: flex; align-items: center; gap: 8px; min-width: 0; }
+        .cs-record { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .cs-w { color: #00e5ff; } .cs-l { color: #ff00a0; } .cs-sep { color: #555570; padding: 0 1px; }
+        .cs-pct { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+        .cs-pct-high { background: rgba(0,229,255,0.12); color: #00e5ff; }
+        .cs-pct-mid  { background: rgba(255,255,255,0.10); color: #a0a0b8; }
+        .cs-pct-low  { background: rgba(255,0,160,0.08); color: #ff00a0; }
+        .cs-best { font-size: 10px; color: #78788c; white-space: nowrap; margin-left: auto; }
+        .cs-peak-w { color: #00e5ff; font-weight: 700; }
+        .cs-peak-l { color: #ff00a0; font-weight: 700; }
+        .cs-dot { color: #555570; }
+
 </style>
 </head>
 <body>
@@ -408,7 +425,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 15, 2026 at 10:32 PM</span>
+            <span>Last Updated: April 16, 2026 at 8:16 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
