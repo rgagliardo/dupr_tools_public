@@ -258,19 +258,9 @@
         }
         .sh-hero:hover { transform: translateY(-1px); border-color: rgba(0,229,255,0.5); }
         .sh-hero:focus-visible { outline: 2px solid #00e5ff; outline-offset: 2px; }
-        /* Secondary hero (Singles) — flatter, smaller numbers, less glow */
-        .sh-hero-singles {
-            background: #13141e;
-            border: 1px solid rgba(255,255,255,0.06);
-            padding: 10px 12px;
-            margin-top: -4px; margin-bottom: 14px;
-        }
-        .sh-hero-singles .sh-hero-title { color: #78788c; font-size: 9px; }
-        .sh-hero-singles .sh-hero-count { font-size: 18px; }
-        .sh-hero-singles .sh-hero-name { font-size: 11px; }
         .sh-hero-title {
             font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
-            color: #ffd43b; margin-bottom: 10px;
+            color: #ffd43b; margin-bottom: 8px;
             display: flex; justify-content: space-between; align-items: baseline;
         }
         .sh-hero-cta {
@@ -278,29 +268,31 @@
             border-bottom: 1px solid currentColor; padding-bottom: 1px;
         }
         .sh-hero-cta::after { content: " ›"; font-size: 13px; }
-        .sh-hero-row { display: flex; gap: 10px; }
-        .sh-hero-cell { flex: 1; background: #13141e; border-radius: 8px; padding: 10px 12px; min-width: 0; }
-        .sh-hero-cell.sh-w { border-left: 3px solid #00e5ff; }
-        .sh-hero-cell.sh-l { border-left: 3px solid #ff00a0; }
-        .sh-hero-cell.sh-empty { opacity: 0.55; }
-        .sh-hero-label {
-            font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
-            color: #78788c; text-transform: uppercase; margin-bottom: 2px;
+        /* Compact hero: gender rows with mini cells */
+        .sh-hero-gender { margin-bottom: 6px; }
+        .sh-hero-gender:last-child { margin-bottom: 0; }
+        .sh-hero-glabel {
+            font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+            color: #78788c; text-transform: uppercase; margin-bottom: 4px; display: block;
         }
-        .sh-hero-stat { display: flex; align-items: baseline; gap: 4px; margin-bottom: 2px; }
-        .sh-hero-count { font-size: 22px; font-weight: 900; font-variant-numeric: tabular-nums; }
-        .sh-hero-type { font-size: 13px; font-weight: 700; }
-        .sh-hero-cell.sh-w .sh-hero-count,
-        .sh-hero-cell.sh-w .sh-hero-type { color: #00e5ff; text-shadow: 0 0 10px rgba(0,229,255,0.4); }
-        .sh-hero-cell.sh-l .sh-hero-count,
-        .sh-hero-cell.sh-l .sh-hero-type { color: #ff00a0; text-shadow: 0 0 10px rgba(255,0,160,0.4); }
-        .sh-hero-name { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
-        .sh-hero-last {
-            font-size: 10px; color: #78788c; margin-top: 4px;
+        .sh-hero-row { display: flex; gap: 8px; }
+        .sh-mini-cell { flex: 1; background: #13141e; border-radius: 6px; padding: 6px 10px; min-width: 0; display: flex; align-items: center; gap: 6px; }
+        .sh-mini-cell.sh-w { border-left: 3px solid #00e5ff; }
+        .sh-mini-cell.sh-l { border-left: 3px solid #ff00a0; }
+        .sh-mini-cell.sh-empty { justify-content: center; opacity: 0.35; }
+        .sh-mini-stat { display: flex; align-items: baseline; gap: 2px; flex-shrink: 0; }
+        .sh-mini-count { font-size: 18px; font-weight: 900; font-variant-numeric: tabular-nums; }
+        .sh-mini-type { font-size: 11px; font-weight: 700; }
+        .sh-mini-cell.sh-w .sh-mini-count,
+        .sh-mini-cell.sh-w .sh-mini-type { color: #00e5ff; text-shadow: 0 0 8px rgba(0,229,255,0.4); }
+        .sh-mini-cell.sh-l .sh-mini-count,
+        .sh-mini-cell.sh-l .sh-mini-type { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); }
+        .sh-mini-name {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+            text-transform: uppercase; white-space: nowrap;
             overflow: hidden; text-overflow: ellipsis;
-            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
         }
-        .sh-hero-empty { font-size: 11px; color: #555570; font-style: italic; margin-top: 3px; }
+        .sh-mini-dash { color: #555570; font-size: 14px; }
 
         /* Overlay */
         .sh-overlay {
@@ -414,7 +406,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 15, 2026 at 9:48 PM</span>
+            <span>Last Updated: April 15, 2026 at 9:57 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -429,56 +421,44 @@
     </div>
     <div class="main-content">
         
-<div class="sh-hero " role="button" tabindex="0" aria-haspopup="dialog" aria-controls="streak-overlay" onclick="openStreakOverlay()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openStreakOverlay();}">
+<div class="sh-hero" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="streak-overlay" onclick="openStreakOverlay()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openStreakOverlay();}">
     <div class="sh-hero-title">
-        <span>DOUBLES STREAK CHAMPIONS</span>
+        <span>STREAK CHAMPIONS</span>
         <span class="sh-hero-cta">More</span>
     </div>
-    <div class="sh-hero-row">
-        <div class="sh-hero-cell sh-w">
-    <div class="sh-hero-label">🔥 Hot</div>
-    <div class="sh-hero-stat">
-        <span class="sh-hero-count">45</span><span class="sh-hero-type">W</span>
+    <div class="sh-hero-gender">
+        <span class="sh-hero-glabel">Men's Doubles</span>
+        <div class="sh-hero-row">
+            <div class="sh-mini-cell sh-w">
+    <div class="sh-mini-stat">
+        <span class="sh-mini-count">43</span><span class="sh-mini-type">W</span>
     </div>
-    <div class="sh-hero-name">Anna Leigh Waters</div>
-    <div class="sh-hero-last">w/ <span class="sh-partner">Leigh Waters</span> <span class="sh-vs">vs</span> Trang Huynh & Rianna Valdes · Apr 15, 2026
-    </div>
+    <div class="sh-mini-name">Ben Johns</div>
 </div>
-        <div class="sh-hero-cell sh-l">
-    <div class="sh-hero-label">🧊 Cold</div>
-    <div class="sh-hero-stat">
-        <span class="sh-hero-count">27</span><span class="sh-hero-type">L</span>
+            <div class="sh-mini-cell sh-l">
+    <div class="sh-mini-stat">
+        <span class="sh-mini-count">2</span><span class="sh-mini-type">L</span>
     </div>
-    <div class="sh-hero-name">Leah Fremouw</div>
-    <div class="sh-hero-last">w/ <span class="sh-partner">Kevin McGeorge</span> <span class="sh-vs">vs</span> Brett Parker & Wendy Polka · Apr 14, 2026
-    </div>
+    <div class="sh-mini-name">Adrian Bedard</div>
 </div>
+        </div>
     </div>
+    <div class="sh-hero-gender">
+        <span class="sh-hero-glabel">Women's Doubles</span>
+        <div class="sh-hero-row">
+            <div class="sh-mini-cell sh-w">
+    <div class="sh-mini-stat">
+        <span class="sh-mini-count">45</span><span class="sh-mini-type">W</span>
+    </div>
+    <div class="sh-mini-name">ALW</div>
 </div>
-<div class="sh-hero sh-hero-singles" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="streak-overlay" onclick="openStreakOverlay()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openStreakOverlay();}">
-    <div class="sh-hero-title">
-        <span>SINGLES STREAK CHAMPIONS</span>
-        <span class="sh-hero-cta">More</span>
+            <div class="sh-mini-cell sh-l">
+    <div class="sh-mini-stat">
+        <span class="sh-mini-count">27</span><span class="sh-mini-type">L</span>
     </div>
-    <div class="sh-hero-row">
-        <div class="sh-hero-cell sh-w">
-    <div class="sh-hero-label">🔥 Hot</div>
-    <div class="sh-hero-stat">
-        <span class="sh-hero-count">119</span><span class="sh-hero-type">W</span>
-    </div>
-    <div class="sh-hero-name">Anna Leigh Waters</div>
-    <div class="sh-hero-last"><span class="sh-vs">vs</span> Kate Fahey · Mar 29, 2026
-    </div>
+    <div class="sh-mini-name">Leah Fremouw</div>
 </div>
-        <div class="sh-hero-cell sh-l">
-    <div class="sh-hero-label">🧊 Cold</div>
-    <div class="sh-hero-stat">
-        <span class="sh-hero-count">2</span><span class="sh-hero-type">L</span>
-    </div>
-    <div class="sh-hero-name">Christina Shifflett</div>
-    <div class="sh-hero-last"><span class="sh-vs">vs</span> Elizabeth Pérez Ford · Apr 11, 2026
-    </div>
-</div>
+        </div>
     </div>
 </div>
 
@@ -488,7 +468,68 @@
     <div class="sh-overlay-inner">
         <h2 class="sh-overlay-title">Streak Hall</h2>
         <div class="sh-overlay-sub">Current champions + Hall of Fame</div>
-        <div class="sh-section-label">Doubles — Current Champions</div>
+        <div class="sh-section-label">Men's Doubles — Current Champions</div>
+        <div class="sh-champions">
+            <div class="sh-champion sh-w">
+    <div class="sh-champion-head">
+        <span class="sh-champion-badge">🔥 Current W-Streak</span>
+        <span class="sh-champion-count">43<sup>W</sup></span>
+    </div>
+    <div class="sh-champion-name">Ben Johns</div>
+    <div class="sh-champion-since">Leading since 2026-04-15</div><div class="sh-match">
+    <div class="sh-match-head">
+        <span class="sh-match-date">Apr 15, 2026</span>
+        <span class="sh-match-result w">W</span>
+    </div>
+    <div class="sh-match-score">11-4, 11-4</div>
+    <div class="sh-match-players">w/ <span class="sh-partner">Gabriel Tardio</span> <span class="sh-vs">vs</span> Jace Morris & Andre Mercado
+    </div><div class="sh-match-event">PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw</div>
+</div>
+</div>
+            <div class="sh-champion sh-l">
+    <div class="sh-champion-head">
+        <span class="sh-champion-badge">🧊 Current L-Streak</span>
+        <span class="sh-champion-count">2<sup>L</sup></span>
+    </div>
+    <div class="sh-champion-name">Adrian Bedard</div>
+    <div class="sh-champion-since">Leading since 2026-04-15</div><div class="sh-match">
+    <div class="sh-match-head">
+        <span class="sh-match-date">Feb 9, 2024</span>
+        <span class="sh-match-result l">L</span>
+    </div>
+    <div class="sh-match-score">11-15</div>
+    <div class="sh-match-players">w/ <span class="sh-partner">Robert Gagliardo</span> <span class="sh-vs">vs</span> Bruce Sibley & Brandon Gilbert
+    </div><div class="sh-match-event">CARITAS Paddle Battle - Hosted by Performance Pickleball RVA Men's Doubles Skill: (4.0) Age: (Under 50)</div>
+</div>
+</div>
+        </div>
+        <div class="sh-section-label">Men's Doubles — Hall of Fame</div>
+        
+<div class="sh-empty-msg">No past record holders yet.</div>
+        <div class="sh-section-label">Men's Singles — Current Champions</div>
+        <div class="sh-champions">
+            
+            <div class="sh-champion sh-l">
+    <div class="sh-champion-head">
+        <span class="sh-champion-badge">🧊 Current L-Streak</span>
+        <span class="sh-champion-count">1<sup>L</sup></span>
+    </div>
+    <div class="sh-champion-name">David Bieger</div>
+    <div class="sh-champion-since">Leading since 2026-04-15</div><div class="sh-match">
+    <div class="sh-match-head">
+        <span class="sh-match-date">Apr 14, 2026</span>
+        <span class="sh-match-result l">L</span>
+    </div>
+    <div class="sh-match-score">6-11, 5-11</div>
+    <div class="sh-match-players"> <span class="sh-vs">vs</span> Ryler DeHeart
+    </div><div class="sh-match-event">2026 Franklin US Open Pickleball Championships - Men's Pro Singles- Main Draw</div>
+</div>
+</div>
+        </div>
+        <div class="sh-section-label">Men's Singles — Hall of Fame</div>
+        
+<div class="sh-empty-msg">No past record holders yet.</div>
+        <div class="sh-section-label">Women's Doubles — Current Champions</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
@@ -523,9 +564,10 @@
 </div>
 </div>
         </div>
-        <div class="sh-section-label">Doubles Hall of Fame</div>
+        <div class="sh-section-label">Women's Doubles — Hall of Fame</div>
+        
 <div class="sh-empty-msg">No past record holders yet.</div>
-        <div class="sh-section-label">Singles — Current Champions</div>
+        <div class="sh-section-label">Women's Singles — Current Champions</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
@@ -560,7 +602,8 @@
 </div>
 </div>
         </div>
-        <div class="sh-section-label">Singles Hall of Fame</div>
+        <div class="sh-section-label">Women's Singles — Hall of Fame</div>
+        
 <div class="sh-empty-msg">No past record holders yet.</div>
     </div>
 </div>
