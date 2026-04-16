@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-16T04:21:28",
-  "next_scan_at": "2026-04-16T04:51:28",
+  "generated_at": "2026-04-16T04:51:49",
+  "next_scan_at": "2026-04-16T05:21:49",
   "stats": {
     "total": 75,
-    "full_count": 3
+    "full_count": 4
   },
   "sessions": [
     {
@@ -16,12 +16,13 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 11,
-      "pct": 92,
-      "is_full": false,
-      "was_ever_full": false,
+      "count": 12,
+      "pct": 100,
+      "is_full": true,
+      "was_ever_full": true,
       "manually_added": false,
       "registrants": [
+        "Bradley F.",
         "C. Todd S.",
         "David M.",
         "Dwayne T.",
@@ -34,7 +35,7 @@
         "Scott S.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-04-16T00:51:03",
+      "last_snap_ts": "2026-04-16T04:51:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -87,7 +88,7 @@
         "Steve M.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T00:51:07",
+      "last_snap_ts": "2026-04-16T04:51:40",
       "thieves": [],
       "big_dogs": []
     },
@@ -122,7 +123,7 @@
         "Steve M.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T00:51:11",
+      "last_snap_ts": "2026-04-16T04:51:45",
       "thieves": [],
       "big_dogs": []
     },
@@ -151,7 +152,7 @@
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-16T00:51:15",
+      "last_snap_ts": "2026-04-16T04:51:49",
       "thieves": [],
       "big_dogs": [
         {
@@ -2656,6 +2657,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-16T04:51:35",
+      "type": "join",
+      "name": "Bradley F.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
+    },
+    {
+      "ts": "2026-04-16T04:51:35",
+      "type": "full",
+      "name": "12/12",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
+    },
+    {
       "ts": "2026-04-16T00:51:15",
       "type": "join",
       "name": "+3 players",
@@ -2958,22 +2975,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "WED APR 15  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d4f4d-1e26-7aad-92c5-31df112dda29"
-    },
-    {
-      "ts": "2026-04-15T11:43:42",
-      "type": "join",
-      "name": "Duncan W.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "WED APR 15  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-1e26-7aad-92c5-31df112dda29"
-    },
-    {
-      "ts": "2026-04-15T10:37:45",
-      "type": "join",
-      "name": "Robert N.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 17  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
     }
   ],
   "thieves": [
@@ -3147,6 +3148,15 @@
       "session_title": "DUPR 4.0 Open Play",
       "session_start": "TUE APR 14  10:00 AM",
       "session_url": "https://ppbrva.podplay.app/community/events/019d4f4d-1bfe-777b-a9a7-d4994500cc04"
+    },
+    {
+      "name": "Bradley F.",
+      "session_title": "DUPR 4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008",
+      "session_start": "FRI APR 17  10:00 AM",
+      "last_seen_full_ts": "2026-04-17T10:00:00",
+      "first_absent_ts": "",
+      "reason": "double-booked"
     }
   ],
   "flyers": [
@@ -3157,7 +3167,7 @@
     },
     {
       "name": "Bradley F.",
-      "joins": 3,
+      "joins": 4,
       "cancels": 7
     },
     {
@@ -3476,12 +3486,12 @@
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
@@ -3496,12 +3506,12 @@
       "cancels": 0
     },
     {
-      "name": "Bikram S.",
+      "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
+      "name": "Bikram S.",
       "joins": 4,
       "cancels": 0
     },
@@ -3615,6 +3625,23 @@
         {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d62ed-370e-777b-bcbb-39982e00ed8c"
+        }
+      ]
+    },
+    {
+      "name": "Bradley F.",
+      "count": 2,
+      "time": "FRI APR 17  10:00 AM",
+      "start_iso": "2026-04-17T10:00:00",
+      "resolved": false,
+      "sessions": [
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
         }
       ]
     },
