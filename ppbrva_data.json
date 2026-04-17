@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-16T21:19:11",
-  "next_scan_at": "2026-04-16T21:49:11",
+  "generated_at": "2026-04-16T21:25:07",
+  "next_scan_at": "2026-04-16T21:55:07",
   "stats": {
     "total": 91,
-    "full_count": 5
+    "full_count": 6
   },
   "sessions": [
     {
@@ -32,7 +32,7 @@
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-16T20:54:39",
+      "last_snap_ts": "2026-04-16T21:24:58",
       "thieves": [
         {
           "name": "Steve Y.",
@@ -66,7 +66,7 @@
       "registrants": [
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T20:54:43",
+      "last_snap_ts": "2026-04-16T21:25:02",
       "thieves": [],
       "big_dogs": []
     },
@@ -90,7 +90,7 @@
         "Jake S.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T20:54:47",
+      "last_snap_ts": "2026-04-16T21:25:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -259,10 +259,10 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 35,
-      "pct": 97,
-      "is_full": false,
-      "was_ever_full": false,
+      "count": 36,
+      "pct": 100,
+      "is_full": true,
+      "was_ever_full": true,
       "manually_added": false,
       "registrants": [
         "Annie L.",
@@ -299,9 +299,10 @@
         "Rick G.",
         "Sheryl R.",
         "Steve M.",
-        "Steven S."
+        "Steven S.",
+        "Travis S."
       ],
-      "last_snap_ts": "2026-04-16T17:24:46",
+      "last_snap_ts": "2026-04-16T21:24:54",
       "thieves": [],
       "big_dogs": []
     },
@@ -3072,6 +3073,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-16T21:24:54",
+      "type": "join",
+      "name": "Travis S.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 20  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d"
+    },
+    {
+      "ts": "2026-04-16T21:24:54",
+      "type": "full",
+      "name": "36/36",
+      "title": "4.0 Open Play",
+      "start": "MON APR 20  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d"
+    },
+    {
       "ts": "2026-04-16T20:54:35",
       "type": "cancel",
       "name": "Steve Y.",
@@ -3371,22 +3388,6 @@
       "ts": "2026-04-15T22:05:38",
       "type": "join",
       "name": "Anthony B.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "join",
-      "name": "Bob A.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "join",
-      "name": "Corinna S.",
       "title": "4.0 Open Play",
       "start": "WED APR 15  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
@@ -3721,7 +3722,7 @@
     },
     {
       "name": "Travis S.",
-      "joins": 7,
+      "joins": 8,
       "cancels": 2
     },
     {
@@ -3945,12 +3946,12 @@
       "cancels": 0
     },
     {
-      "name": "Bikram S.",
+      "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
+      "name": "Bikram S.",
       "joins": 4,
       "cancels": 0
     },
@@ -4052,12 +4053,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-        },
-        {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
         }
       ]
     },
