@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T08:31:39",
-  "next_scan_at": "2026-04-17T09:01:39",
+  "generated_at": "2026-04-17T08:34:23",
+  "next_scan_at": "2026-04-17T09:04:23",
   "stats": {
     "total": 81,
     "full_count": 5
@@ -34,7 +34,7 @@
         "Roy A.",
         "Scott S."
       ],
-      "last_snap_ts": "2026-04-17T08:03:23",
+      "last_snap_ts": "2026-04-17T08:34:18",
       "thieves": [],
       "big_dogs": []
     },
@@ -48,15 +48,14 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 42,
-      "count": 25,
-      "pct": 60,
+      "count": 23,
+      "pct": 55,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Annie L.",
         "Becca D.",
-        "Betsy S.",
         "Bill P.",
         "Bing Y.",
         "Don B.",
@@ -76,11 +75,10 @@
         "Mike L.",
         "Rebecca J.",
         "Rick G.",
-        "Steve M.",
         "Steven S.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-17T08:03:27",
+      "last_snap_ts": "2026-04-17T08:34:22",
       "thieves": [],
       "big_dogs": []
     },
@@ -2801,6 +2799,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-17T08:34:22",
+      "type": "cancel",
+      "name": "Betsy S.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
+    },
+    {
+      "ts": "2026-04-17T08:34:22",
+      "type": "cancel",
+      "name": "Steve M.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
+    },
+    {
       "ts": "2026-04-17T08:03:32",
       "type": "join",
       "name": "Sarah B.",
@@ -3103,22 +3117,6 @@
       "title": "4.0 Open Play",
       "start": "FRI APR 17  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d6420-5b48-7000-8002-e265270d279d"
-    },
-    {
-      "ts": "2026-04-16T00:51:15",
-      "type": "cancel",
-      "name": "+2 players",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 17  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d6420-5b48-7000-8002-e265270d279d"
-    },
-    {
-      "ts": "2026-04-16T00:51:07",
-      "type": "join",
-      "name": "Betsy S.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 17  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
     }
   ],
   "thieves": [
@@ -3411,12 +3409,22 @@
       "cancels": 3
     },
     {
+      "name": "Betsy S.",
+      "joins": 4,
+      "cancels": 3
+    },
+    {
       "name": "Ming W.",
       "joins": 3,
       "cancels": 3
     },
     {
       "name": "Suraj Singh C.",
+      "joins": 2,
+      "cancels": 3
+    },
+    {
+      "name": "Steve M.",
       "joins": 2,
       "cancels": 3
     },
@@ -3466,18 +3474,8 @@
       "cancels": 2
     },
     {
-      "name": "Betsy S.",
-      "joins": 4,
-      "cancels": 2
-    },
-    {
       "name": "Eileen T.",
       "joins": 3,
-      "cancels": 2
-    },
-    {
-      "name": "Steve M.",
-      "joins": 2,
       "cancels": 2
     },
     {
@@ -3661,12 +3659,12 @@
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
@@ -3778,12 +3776,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-        },
-        {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
         }
       ]
     },
@@ -4635,7 +4633,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e",
       "status": "upcoming",
       "ghost_count": 1,
-      "total_count": 25,
+      "total_count": 23,
       "capacity": 42
     },
     {
