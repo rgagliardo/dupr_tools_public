@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T18:02:06",
-  "next_scan_at": "2026-04-17T18:32:06",
+  "generated_at": "2026-04-17T18:32:49",
+  "next_scan_at": "2026-04-17T19:02:49",
   "stats": {
     "total": 88,
     "full_count": 6
@@ -28,7 +28,7 @@
         "Stacie R.",
         "+4 players"
       ],
-      "last_snap_ts": "2026-04-17T18:02:02",
+      "last_snap_ts": "2026-04-17T18:32:15",
       "thieves": [],
       "big_dogs": [
         {
@@ -104,17 +104,19 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 3,
-      "pct": 25,
+      "count": 5,
+      "pct": 42,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
+        "David G.",
+        "Ming W.",
         "Pete H.",
         "Roy A.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-04-17T14:29:30",
+      "last_snap_ts": "2026-04-17T18:32:19",
       "thieves": [],
       "big_dogs": []
     },
@@ -134,7 +136,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-17T14:29:46",
+      "last_snap_ts": "2026-04-17T18:32:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -166,7 +168,7 @@
         "Suraj Singh C.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-04-17T14:29:51",
+      "last_snap_ts": "2026-04-17T18:32:39",
       "thieves": [],
       "big_dogs": [
         {
@@ -193,7 +195,7 @@
       "registrants": [
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-17T14:29:55",
+      "last_snap_ts": "2026-04-17T18:32:44",
       "thieves": [],
       "big_dogs": []
     },
@@ -218,7 +220,7 @@
         "Karuna R.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-17T14:30:00",
+      "last_snap_ts": "2026-04-17T18:32:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -3002,6 +3004,22 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-17T18:32:19",
+      "type": "join",
+      "name": "David G.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON APR 20  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-2250-777b-a9a9-1784a2e6ab9b"
+    },
+    {
+      "ts": "2026-04-17T18:32:19",
+      "type": "join",
+      "name": "Ming W.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON APR 20  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-2250-777b-a9a9-1784a2e6ab9b"
+    },
+    {
       "ts": "2026-04-17T18:02:02",
       "type": "cancel",
       "name": "Jake S.",
@@ -3304,22 +3322,6 @@
       "title": "DUPR 4.0 Open Play",
       "start": "FRI APR 17  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
-    },
-    {
-      "ts": "2026-04-17T10:06:03",
-      "type": "join",
-      "name": "Karuna R.",
-      "title": "4.0 Open Play",
-      "start": "MON APR 20  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/67da6c6b-3c07-442f-9387-64bdeba493d8"
-    },
-    {
-      "ts": "2026-04-17T10:05:27",
-      "type": "cancel",
-      "name": "Gabriella C.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 17  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d6420-5b48-7000-8002-e265270d279d"
     }
   ],
   "thieves": [
@@ -3513,6 +3515,15 @@
       "first_absent_ts": "2026-04-16T20:05:17",
       "reason": "cancellation",
       "detected_at": "2026-04-16T20:05:30"
+    },
+    {
+      "name": "David G.",
+      "session_title": "4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d",
+      "session_start": "MON APR 20  10:00 AM",
+      "last_seen_full_ts": "2026-04-20T10:00:00",
+      "first_absent_ts": "",
+      "reason": "double-booked"
     }
   ],
   "flyers": [
@@ -3562,17 +3573,17 @@
       "cancels": 5
     },
     {
+      "name": "David G.",
+      "joins": 3,
+      "cancels": 4
+    },
+    {
       "name": "Jeffrey S.",
       "joins": 3,
       "cancels": 4
     },
     {
       "name": "Suraj Singh C.",
-      "joins": 2,
-      "cancels": 4
-    },
-    {
-      "name": "David G.",
       "joins": 2,
       "cancels": 4
     },
@@ -3597,17 +3608,17 @@
       "cancels": 3
     },
     {
+      "name": "Ming W.",
+      "joins": 5,
+      "cancels": 3
+    },
+    {
       "name": "Lisha Y.",
       "joins": 5,
       "cancels": 3
     },
     {
       "name": "Brian P.",
-      "joins": 4,
-      "cancels": 3
-    },
-    {
-      "name": "Ming W.",
       "joins": 4,
       "cancels": 3
     },
@@ -4014,6 +4025,23 @@
         {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d62db-a7af-777b-bc8b-5e476e74ef5c"
+        }
+      ]
+    },
+    {
+      "name": "David G.",
+      "count": 2,
+      "time": "MON APR 20  10:00 AM",
+      "start_iso": "2026-04-20T10:00:00",
+      "resolved": false,
+      "sessions": [
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d4f4d-2250-777b-a9a9-1784a2e6ab9b"
         }
       ]
     },
