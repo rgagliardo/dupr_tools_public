@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T07:33:16",
-  "next_scan_at": "2026-04-17T08:03:16",
+  "generated_at": "2026-04-17T08:03:36",
+  "next_scan_at": "2026-04-17T08:33:36",
   "stats": {
     "total": 81,
     "full_count": 5
@@ -34,7 +34,7 @@
         "Roy A.",
         "Scott S."
       ],
-      "last_snap_ts": "2026-04-17T07:02:58",
+      "last_snap_ts": "2026-04-17T08:03:23",
       "thieves": [],
       "big_dogs": []
     },
@@ -48,8 +48,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 42,
-      "count": 27,
-      "pct": 64,
+      "count": 25,
+      "pct": 60,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -63,7 +63,6 @@
         "Doug B.",
         "Doug S.",
         "Ed K.",
-        "Eileen T.",
         "Eric L.",
         "Gary S.",
         "Gary W.",
@@ -72,7 +71,6 @@
         "Konrad S.",
         "Lisha Y.",
         "Lori L.",
-        "Marcus M.",
         "Melanie W.",
         "Michael H.",
         "Mike L.",
@@ -82,7 +80,7 @@
         "Steven S.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-17T07:03:03",
+      "last_snap_ts": "2026-04-17T08:03:27",
       "thieves": [],
       "big_dogs": []
     },
@@ -96,8 +94,8 @@
       "end_display": "6:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 17,
-      "pct": 47,
+      "count": 18,
+      "pct": 50,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -115,12 +113,13 @@
         "Melba T.",
         "Mona B.",
         "Robert B.",
+        "Sarah B.",
         "Shawn A.",
         "Steve M.",
         "Steve T.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-17T07:03:09",
+      "last_snap_ts": "2026-04-17T08:03:32",
       "thieves": [],
       "big_dogs": []
     },
@@ -149,7 +148,7 @@
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-17T07:03:13",
+      "last_snap_ts": "2026-04-17T08:03:36",
       "thieves": [],
       "big_dogs": [
         {
@@ -2802,6 +2801,30 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-17T08:03:32",
+      "type": "join",
+      "name": "Sarah B.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 17  4:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d53d7-c26d-7aad-9740-b79ac33cff99"
+    },
+    {
+      "ts": "2026-04-17T08:03:27",
+      "type": "cancel",
+      "name": "Eileen T.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
+    },
+    {
+      "ts": "2026-04-17T08:03:27",
+      "type": "cancel",
+      "name": "Marcus M.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
+    },
+    {
       "ts": "2026-04-17T07:03:03",
       "type": "cancel",
       "name": "Bradley F.",
@@ -3096,30 +3119,6 @@
       "title": "4.0 Open Play",
       "start": "FRI APR 17  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
-    },
-    {
-      "ts": "2026-04-16T00:51:07",
-      "type": "cancel",
-      "name": "Caroline M.",
-      "title": "4.0 Open Play",
-      "start": "FRI APR 17  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e"
-    },
-    {
-      "ts": "2026-04-16T00:51:03",
-      "type": "join",
-      "name": "David M.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "FRI APR 17  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
-    },
-    {
-      "ts": "2026-04-16T00:51:03",
-      "type": "cancel",
-      "name": "Arathi K.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "FRI APR 17  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
     }
   ],
   "thieves": [
@@ -3472,6 +3471,11 @@
       "cancels": 2
     },
     {
+      "name": "Eileen T.",
+      "joins": 3,
+      "cancels": 2
+    },
+    {
       "name": "Steve M.",
       "joins": 2,
       "cancels": 2
@@ -3582,17 +3586,17 @@
       "cancels": 1
     },
     {
-      "name": "Eileen T.",
-      "joins": 3,
-      "cancels": 1
-    },
-    {
       "name": "G B.",
       "joins": 3,
       "cancels": 1
     },
     {
       "name": "Rachel W.",
+      "joins": 3,
+      "cancels": 1
+    },
+    {
+      "name": "Marcus M.",
       "joins": 3,
       "cancels": 1
     },
@@ -3743,11 +3747,6 @@
     },
     {
       "name": "Stacie R.",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
-      "name": "Marcus M.",
       "joins": 3,
       "cancels": 0
     }
@@ -4628,7 +4627,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d4f4f-cfea-7aad-92e0-5e1035b0094e",
       "status": "upcoming",
       "ghost_count": 1,
-      "total_count": 27,
+      "total_count": 25,
       "capacity": 42
     },
     {
@@ -4638,7 +4637,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d53d7-c26d-7aad-9740-b79ac33cff99",
       "status": "upcoming",
       "ghost_count": 1,
-      "total_count": 17,
+      "total_count": 18,
       "capacity": 36
     },
     {
