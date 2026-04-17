@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-16T20:05:30",
-  "next_scan_at": "2026-04-16T20:35:30",
+  "generated_at": "2026-04-16T20:54:47",
+  "next_scan_at": "2026-04-16T21:24:47",
   "stats": {
     "total": 91,
-    "full_count": 7
+    "full_count": 5
   },
   "sessions": [
     {
@@ -32,7 +32,7 @@
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-16T20:05:17",
+      "last_snap_ts": "2026-04-16T20:54:39",
       "thieves": [
         {
           "name": "Steve Y.",
@@ -66,7 +66,7 @@
       "registrants": [
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T20:05:25",
+      "last_snap_ts": "2026-04-16T20:54:43",
       "thieves": [],
       "big_dogs": []
     },
@@ -90,7 +90,7 @@
         "Jake S.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T20:05:30",
+      "last_snap_ts": "2026-04-16T20:54:47",
       "thieves": [],
       "big_dogs": []
     },
@@ -104,9 +104,9 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 12,
-      "pct": 100,
-      "is_full": true,
+      "count": 11,
+      "pct": 92,
+      "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
@@ -120,10 +120,9 @@
         "Ming W.",
         "Pete H.",
         "Roy A.",
-        "Scott S.",
-        "Steve Y."
+        "Scott S."
       ],
-      "last_snap_ts": "2026-04-16T19:34:18",
+      "last_snap_ts": "2026-04-16T20:54:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -174,7 +173,7 @@
         "Steven S.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-04-16T19:34:22",
+      "last_snap_ts": "2026-04-16T20:54:25",
       "thieves": [],
       "big_dogs": []
     },
@@ -188,12 +187,13 @@
       "end_display": "6:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 15,
-      "pct": 42,
+      "count": 16,
+      "pct": 44,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
+        "Amity L.",
         "Angi L.",
         "Beth B.",
         "Brian P.",
@@ -210,7 +210,7 @@
         "Steve M.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-16T19:34:26",
+      "last_snap_ts": "2026-04-16T20:54:30",
       "thieves": [],
       "big_dogs": []
     },
@@ -224,9 +224,9 @@
       "end_display": "10:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 12,
-      "pct": 100,
-      "is_full": true,
+      "count": 11,
+      "pct": 92,
+      "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
@@ -237,11 +237,10 @@
         "Joj! W.",
         "Karuna R.",
         "Stacie R.",
-        "Steve Y.",
         "Suraj Singh C.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-04-16T19:34:30",
+      "last_snap_ts": "2026-04-16T20:54:35",
       "thieves": [],
       "big_dogs": [
         {
@@ -3073,6 +3072,46 @@
   ],
   "activity": [
     {
+      "ts": "2026-04-16T20:54:35",
+      "type": "cancel",
+      "name": "Steve Y.",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 17  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d6420-5b48-7000-8002-e265270d279d"
+    },
+    {
+      "ts": "2026-04-16T20:54:35",
+      "type": "freed",
+      "name": "11/12",
+      "title": "4.0 Open Play",
+      "start": "FRI APR 17  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d6420-5b48-7000-8002-e265270d279d"
+    },
+    {
+      "ts": "2026-04-16T20:54:30",
+      "type": "join",
+      "name": "Amity L.",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI APR 17  4:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d53d7-c26d-7aad-9740-b79ac33cff99"
+    },
+    {
+      "ts": "2026-04-16T20:54:21",
+      "type": "cancel",
+      "name": "Steve Y.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
+    },
+    {
+      "ts": "2026-04-16T20:54:21",
+      "type": "freed",
+      "name": "11/12",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI APR 17  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008"
+    },
+    {
       "ts": "2026-04-16T20:05:21",
       "type": "join",
       "name": "Shawn A.",
@@ -3351,46 +3390,6 @@
       "title": "4.0 Open Play",
       "start": "WED APR 15  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "join",
-      "name": "Gautam S.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "join",
-      "name": "Jun O.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "join",
-      "name": "Luke U.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "join",
-      "name": "Michaela C.",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
-    },
-    {
-      "ts": "2026-04-15T22:05:38",
-      "type": "cancel",
-      "name": "+4 players",
-      "title": "4.0 Open Play",
-      "start": "WED APR 15  8:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-8028-7aad-93e1-ec0f720e5d2f"
     }
   ],
   "thieves": [
@@ -3582,15 +3581,6 @@
       "session_title": "4.5/4.0 open play",
       "session_start": "THU APR 16  6:00 PM",
       "session_url": "https://ppbrva.podplay.app/community/events/4f7bb2d8-257b-4a20-8360-a715727bde58"
-    },
-    {
-      "name": "Bradley F.",
-      "session_title": "DUPR 4.0 Open Play",
-      "session_url": "https://ppbrva.podplay.app/community/events/019d4f4d-20f8-7aad-92c6-169ec1e31008",
-      "session_start": "FRI APR 17  10:00 AM",
-      "last_seen_full_ts": "2026-04-17T10:00:00",
-      "first_absent_ts": "",
-      "reason": "double-booked"
     }
   ],
   "flyers": [
@@ -3598,6 +3588,11 @@
       "name": "Ed K.",
       "joins": 2,
       "cancels": 13
+    },
+    {
+      "name": "Steve Y.",
+      "joins": 4,
+      "cancels": 7
     },
     {
       "name": "Bradley F.",
@@ -3613,11 +3608,6 @@
       "name": "Melba T.",
       "joins": 1,
       "cancels": 6
-    },
-    {
-      "name": "Steve Y.",
-      "joins": 4,
-      "cancels": 5
     },
     {
       "name": "Robert N.",
@@ -3935,12 +3925,12 @@
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
@@ -3955,12 +3945,12 @@
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
+      "name": "Bikram S.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Bikram S.",
+      "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
     },
@@ -4772,7 +4762,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d6420-5b48-7000-8002-e265270d279d",
       "status": "upcoming",
       "ghost_count": 3,
-      "total_count": 12,
+      "total_count": 11,
       "capacity": 12
     },
     {
@@ -4972,7 +4962,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019d53d7-c26d-7aad-9740-b79ac33cff99",
       "status": "upcoming",
       "ghost_count": 1,
-      "total_count": 15,
+      "total_count": 16,
       "capacity": 36
     },
     {
