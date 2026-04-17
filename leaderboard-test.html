@@ -401,6 +401,13 @@
 
         .sh-empty-msg { color: #555570; font-style: italic; padding: 8px 2px; font-size: 12px; }
 
+        /* ── Player meta (DUPR ID + notes, inside expanded card) ───── */
+        .player-meta {
+            padding: 8px 12px 4px; font-size: 10px; color: #78788c;
+            display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+        }
+        .player-meta .player-notes { font-style: italic; }
+
         /* ── Career Stats (player card) ─────────────────────────────── */
         .career-stats { padding: 10px 12px 6px; }
         .career-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; color: #9898b0; text-transform: uppercase; margin-bottom: 8px; }
@@ -465,7 +472,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 17, 2026 at 8:48 AM</span>
+            <span>Last Updated: April 17, 2026 at 8:56 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -698,8 +705,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">ALW</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWDQ3</div>
-            <div class="player-notes">Streak test — should blow past 100</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.008)</span> <span class="arrow trend-down">▼</span> 6.895 <span class="lbl">D</span>
@@ -709,6 +714,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWDQ3</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -750,8 +758,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Ben Johns</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;V8DYL8</div>
-            <div class="player-notes">Streak test — should blow past 100</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.006)</span> <span class="arrow trend-down">▼</span> 7.093 <span class="lbl">D</span>
@@ -761,6 +767,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;V8DYL8</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -803,7 +812,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">David Bieger</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3ZLKQP</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.003)</span> <span class="arrow trend-up">▲</span> 6.012 <span class="lbl">D</span>
@@ -813,6 +821,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3ZLKQP</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -853,8 +864,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Youssef Bouzidi</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;9PDMMK</div>
-            <div class="player-notes">Has no socials</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.018)</span> <span class="arrow trend-up">▲</span> 5.906 <span class="lbl">D</span>
@@ -864,6 +873,10 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;9PDMMK</span>
+            <span class="player-notes">Has no socials</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -904,7 +917,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Andrew Makovsky</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3VLZ4J</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.025)</span> <span class="arrow trend-up">▲</span> 4.980 <span class="lbl">D</span>
@@ -914,6 +926,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3VLZ4J</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -954,7 +969,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Christina Shifflett</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;35RPR8</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.155)</span> <span class="arrow trend-up">▲</span> 5.118 <span class="lbl">D</span>
@@ -964,6 +978,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;35RPR8</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1004,8 +1021,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Leah Fremouw</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8EP07W</div>
-            <div class="player-notes">Streak test — long L streak</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.035)</span> <span class="arrow trend-down">▼</span> 3.670 <span class="lbl">D</span>
@@ -1015,6 +1030,10 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8EP07W</span>
+            <span class="player-notes">Streak test — long L streak</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1055,7 +1074,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Pete Cloutier</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWYOE</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.031)</span> <span class="arrow trend-down">▼</span> 4.213 <span class="lbl">D</span>
@@ -1065,6 +1083,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWYOE</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1105,7 +1126,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Aibika Kalsarieva</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;KOD95Q</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.030)</span> <span class="arrow trend-up">▲</span> 5.882 <span class="lbl">D</span>
@@ -1115,6 +1135,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;KOD95Q</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1167,7 +1190,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Aibika Kalsarieva</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;KOD95Q</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.030)</span> <span class="arrow trend-up">▲</span> 5.882 <span class="lbl">D</span>
@@ -1177,6 +1199,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;KOD95Q</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1217,7 +1242,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Andrew Makovsky</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3VLZ4J</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.025)</span> <span class="arrow trend-up">▲</span> 4.980 <span class="lbl">D</span>
@@ -1227,6 +1251,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3VLZ4J</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1267,7 +1294,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Christina Shifflett</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;35RPR8</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.155)</span> <span class="arrow trend-up">▲</span> 5.118 <span class="lbl">D</span>
@@ -1277,6 +1303,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;35RPR8</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1317,7 +1346,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">David Bieger</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3ZLKQP</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.003)</span> <span class="arrow trend-up">▲</span> 6.012 <span class="lbl">D</span>
@@ -1327,6 +1355,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3ZLKQP</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1367,7 +1398,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Lauralei Singsank</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;84Q6J2</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"> 5.070 <span class="lbl">D</span>
@@ -1377,6 +1407,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;84Q6J2</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1417,8 +1450,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Leah Fremouw</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8EP07W</div>
-            <div class="player-notes">Streak test — long L streak</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.035)</span> <span class="arrow trend-down">▼</span> 3.670 <span class="lbl">D</span>
@@ -1428,6 +1459,10 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8EP07W</span>
+            <span class="player-notes">Streak test — long L streak</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1468,8 +1503,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">luis geyne</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;30XXEX</div>
-            <div class="player-notes">Luis has all of the socials</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"> 4.861 <span class="lbl">D</span>
@@ -1479,6 +1512,10 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;30XXEX</span>
+            <span class="player-notes">Luis has all of the socials</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1519,7 +1556,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Nate Johnson</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;WXDL2M</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"> 4.406 <span class="lbl">D</span>
@@ -1527,6 +1563,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;WXDL2M</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1555,7 +1594,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Pete Cloutier</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWYOE</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.031)</span> <span class="arrow trend-down">▼</span> 4.213 <span class="lbl">D</span>
@@ -1565,6 +1603,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWYOE</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1605,7 +1646,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Sarah Hua</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3OOO2W</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"> 5.750 <span class="lbl">D</span>
@@ -1615,6 +1655,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3OOO2W</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1655,7 +1698,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Selena Dajani</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;17E6EM</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"> 3.915 <span class="lbl">D</span>
@@ -1663,6 +1705,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;17E6EM</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1691,8 +1736,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Suraj Singh Chandel The Third</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;896GX7</div>
-            <div class="player-notes">Bleed test: Suraj is a RVA-based 5.1 DUPR with a legendary third-shot drop and an even more legendary habit of arriving on court with three paddles, two water bottles, and a backup pair of indoor shoes. He switched from singles to doubles last year because standing still made his knees question their career choices. Known for calling his partner 'pardner' (intentional), for an unusual grip-change during serves, and for a pre-match routine that involves eight minutes of silent visualization and one very loud high-five. Rumor has it he once won a rec-league final 11-9 after being down 1-7 by switching to lobs that defied local gravity. Also: allegedly invented a spin serve he calls 'the helicoptero,' which no one has yet confirmed exists on video. Cardio: above average. Snack game: elite. Banter: unfiltered. Do not lend him your backup grip.</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"> 5.151 <span class="lbl">D</span>
@@ -1702,6 +1745,10 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;896GX7</span>
+            <span class="player-notes">Bleed test: Suraj is a RVA-based 5.1 DUPR with a legendary third-shot drop and an even more legendary habit of arriving on court with three paddles, two water bottles, and a backup pair of indoor shoes. He switched from singles to doubles last year because standing still made his knees question their career choices. Known for calling his partner 'pardner' (intentional), for an unusual grip-change during serves, and for a pre-match routine that involves eight minutes of silent visualization and one very loud high-five. Rumor has it he once won a rec-league final 11-9 after being down 1-7 by switching to lobs that defied local gravity. Also: allegedly invented a spin serve he calls 'the helicoptero,' which no one has yet confirmed exists on video. Cardio: above average. Snack game: elite. Banter: unfiltered. Do not lend him your backup grip.</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1742,8 +1789,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Youssef Bouzidi</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;9PDMMK</div>
-            <div class="player-notes">Has no socials</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-up">(+0.018)</span> <span class="arrow trend-up">▲</span> 5.906 <span class="lbl">D</span>
@@ -1753,6 +1798,10 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;9PDMMK</span>
+            <span class="player-notes">Has no socials</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1805,8 +1854,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">ALW</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWDQ3</div>
-            <div class="player-notes">Streak test — should blow past 100</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.008)</span> <span class="arrow trend-down">▼</span> 6.895 <span class="lbl">D</span>
@@ -1816,6 +1863,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWDQ3</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
@@ -1857,8 +1907,6 @@
         </div>
         <div class="name-col">
             <div class="player-name">Ben Johns</div>
-            <div class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;V8DYL8</div>
-            <div class="player-notes">Streak test — should blow past 100</div>
         </div>
         <div class="scores-stack">
             <div class="score-line"><span class="net-impact trend-down">(-0.006)</span> <span class="arrow trend-down">▼</span> 7.093 <span class="lbl">D</span>
@@ -1868,6 +1916,9 @@
         </div>
     </summary>
     <div class="history-dropdown">
+        <div class="player-meta">
+            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;V8DYL8</span>
+        </div>
         <div class="career-stats">
             <div class="career-label">Career Stats</div>
             <div class="cs-row">
