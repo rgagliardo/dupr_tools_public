@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-18T19:00:49",
-  "next_scan_at": "2026-04-18T19:30:49",
+  "generated_at": "2026-04-18T19:32:21",
+  "next_scan_at": "2026-04-18T20:02:21",
   "stats": {
     "total": 96,
     "full_count": 7
@@ -22,7 +22,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-18T18:23:53",
+      "last_snap_ts": "2026-04-18T19:32:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -71,15 +71,15 @@
         "Melanie W.",
         "Mike L.",
         "Mike N.",
+        "Mona B.",
         "Phyllis B.",
         "Rebecca J.",
-        "Rick G.",
         "Sheryl R.",
         "Steve M.",
         "Steven S.",
         "Travis S."
       ],
-      "last_snap_ts": "2026-04-18T15:16:52",
+      "last_snap_ts": "2026-04-18T19:31:06",
       "thieves": [],
       "big_dogs": []
     },
@@ -223,8 +223,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 34,
-      "pct": 94,
+      "count": 35,
+      "pct": 97,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -261,10 +261,11 @@
         "Steve M.",
         "Steven B.",
         "Steven S.",
+        "Tom G.",
         "Travis S.",
         "Tricia P."
       ],
-      "last_snap_ts": "2026-04-18T15:16:58",
+      "last_snap_ts": "2026-04-18T19:31:11",
       "thieves": [],
       "big_dogs": []
     },
@@ -289,7 +290,7 @@
         "Pete H.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-18T15:17:03",
+      "last_snap_ts": "2026-04-18T19:31:16",
       "thieves": [],
       "big_dogs": []
     },
@@ -309,7 +310,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-18T15:17:20",
+      "last_snap_ts": "2026-04-18T19:31:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -340,7 +341,7 @@
         "Suhail A.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-18T15:17:26",
+      "last_snap_ts": "2026-04-18T19:31:39",
       "thieves": [],
       "big_dogs": []
     },
@@ -365,7 +366,7 @@
         "Joe M.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-18T15:17:33",
+      "last_snap_ts": "2026-04-18T19:31:44",
       "thieves": [],
       "big_dogs": []
     },
@@ -388,7 +389,7 @@
         "David G.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-18T15:17:38",
+      "last_snap_ts": "2026-04-18T19:31:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -412,7 +413,7 @@
         "Karuna R.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-04-18T15:17:44",
+      "last_snap_ts": "2026-04-18T19:31:53",
       "thieves": [],
       "big_dogs": []
     },
@@ -3189,6 +3190,30 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-18T19:31:11",
+      "type": "join",
+      "name": "Tom G.",
+      "title": "4.0 Open Play",
+      "start": "TUE APR 21  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d365-777b-a9b3-f11ee23a2967"
+    },
+    {
+      "ts": "2026-04-18T19:31:06",
+      "type": "join",
+      "name": "Mona B.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 20  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d"
+    },
+    {
+      "ts": "2026-04-18T19:31:06",
+      "type": "cancel",
+      "name": "Rick G.",
+      "title": "4.0 Open Play",
+      "start": "MON APR 20  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d"
+    },
     {
       "ts": "2026-04-18T15:17:26",
       "type": "join",
@@ -9246,6 +9271,11 @@
       "cancels": 6
     },
     {
+      "name": "Rick G.",
+      "joins": 4,
+      "cancels": 6
+    },
+    {
       "name": "Melba T.",
       "joins": 1,
       "cancels": 6
@@ -9262,11 +9292,6 @@
     },
     {
       "name": "David G.",
-      "joins": 4,
-      "cancels": 5
-    },
-    {
-      "name": "Rick G.",
       "joins": 4,
       "cancels": 5
     },
@@ -9332,7 +9357,7 @@
     },
     {
       "name": "Mona B.",
-      "joins": 1,
+      "joins": 2,
       "cancels": 3
     },
     {
@@ -9612,6 +9637,11 @@
     },
     {
       "name": "Rally A.",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
+      "name": "Tom G.",
       "joins": 3,
       "cancels": 0
     },
