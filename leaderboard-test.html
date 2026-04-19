@@ -264,8 +264,11 @@
             display: flex; justify-content: space-between; align-items: baseline;
         }
         .sh-hero-cta {
-            color: #00e5ff; font-size: 11px; letter-spacing: 1px; font-weight: 800;
-            border-bottom: 1px solid currentColor; padding-bottom: 1px;
+            color: #00e5ff; font-size: 12px; letter-spacing: 1px; font-weight: 800;
+            background: rgba(0,229,255,0.12);
+            border: 1px solid rgba(0,229,255,0.35);
+            border-radius: 4px;
+            padding: 2px 8px;
         }
         .sh-hero-cta::after { content: " ›"; font-size: 13px; }
         /* Compact hero: gender rows with mini cells */
@@ -389,6 +392,9 @@
             font-size: 15px; font-weight: 800; letter-spacing: 1px;
             text-transform: uppercase; min-height: 20px;
         }
+        .sh-alltime-meta {
+            font-size: 10px; color: #78788c; font-style: italic; margin-top: 4px;
+        }
 
         /* Match line (shared by champion cards and HoF broken_by) */
         .sh-match { background: #1a1b28; border-radius: 6px; padding: 8px 10px; font-size: 11px; }
@@ -503,7 +509,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 19, 2026 at 12:33 PM</span>
+            <span>Last Updated: April 19, 2026 at 12:36 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -564,7 +570,7 @@
     <button class="sh-close" aria-label="Close Streak Hall" onclick="closeStreakOverlay()">×</button>
     <div class="sh-overlay-inner">
         <h2 class="sh-overlay-title">Streak Hall</h2>
-        <div class="sh-overlay-sub">Current Run · All-Time Records · Hall of Fame</div>
+        <div class="sh-overlay-sub">Current Run · All-Time · Hall of Fame</div>
         <div class="sh-section-label">Men's Doubles — Current Run</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
@@ -607,12 +613,14 @@
         <span class="sh-alltime-count">46<sup>W</sup></span>
     </div>
     <div class="sh-alltime-name">Ben Johns</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div><div class="sh-alltime sh-l">
     <div class="sh-alltime-head">
         <span class="sh-alltime-badge"><span aria-hidden="true">🧊</span> All-Time Longest</span>
         <span class="sh-alltime-count">7<sup>L</sup></span>
     </div>
     <div class="sh-alltime-name">Pete Cloutier</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div>
         </div>
         <div class="sh-section-label">Men's Singles — Current Run</div>
@@ -657,12 +665,14 @@
         <span class="sh-alltime-count">78<sup>W</sup></span>
     </div>
     <div class="sh-alltime-name">Ben Johns</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div><div class="sh-alltime sh-l">
     <div class="sh-alltime-head">
         <span class="sh-alltime-badge"><span aria-hidden="true">🧊</span> All-Time Longest</span>
         <span class="sh-alltime-count">6<sup>L</sup></span>
     </div>
     <div class="sh-alltime-name">Andrew Makovsky</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div>
         </div>
         <div class="sh-section-label">Women's Doubles — Current Run</div>
@@ -707,12 +717,14 @@
         <span class="sh-alltime-count">85<sup>W</sup></span>
     </div>
     <div class="sh-alltime-name">Anna Leigh Waters</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div><div class="sh-alltime sh-l">
     <div class="sh-alltime-head">
         <span class="sh-alltime-badge"><span aria-hidden="true">🧊</span> All-Time Longest</span>
         <span class="sh-alltime-count">27<sup>L</sup></span>
     </div>
     <div class="sh-alltime-name">Leah Fremouw</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div>
         </div>
         <div class="sh-section-label">Women's Singles — Current Run</div>
@@ -757,12 +769,14 @@
         <span class="sh-alltime-count">119<sup>W</sup></span>
     </div>
     <div class="sh-alltime-name">Anna Leigh Waters</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div><div class="sh-alltime sh-l">
     <div class="sh-alltime-head">
         <span class="sh-alltime-badge"><span aria-hidden="true">🧊</span> All-Time Longest</span>
         <span class="sh-alltime-count">12<sup>L</sup></span>
     </div>
     <div class="sh-alltime-name">Leah Fremouw</div>
+    <div class="sh-alltime-meta">Peak record — not currently held</div>
 </div>
         </div>
     </div>
