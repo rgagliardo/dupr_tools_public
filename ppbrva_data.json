@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-18T22:05:27",
-  "next_scan_at": "2026-04-18T22:35:27",
+  "generated_at": "2026-04-18T22:36:30",
+  "next_scan_at": "2026-04-18T23:06:30",
   "stats": {
     "total": 96,
     "full_count": 7
@@ -16,13 +16,15 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 16,
-      "count": 0,
-      "pct": 0,
+      "count": 1,
+      "pct": 6,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [],
-      "last_snap_ts": "2026-04-18T21:34:51",
+      "registrants": [
+        "+1 player"
+      ],
+      "last_snap_ts": "2026-04-18T22:35:47",
       "thieves": [],
       "big_dogs": []
     },
@@ -436,7 +438,7 @@
         "Ming W.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-04-18T18:24:33",
+      "last_snap_ts": "2026-04-18T22:35:51",
       "thieves": [],
       "big_dogs": []
     },
@@ -493,7 +495,7 @@
         "Steven B.",
         "Steven S."
       ],
-      "last_snap_ts": "2026-04-18T18:24:38",
+      "last_snap_ts": "2026-04-18T22:35:56",
       "thieves": [],
       "big_dogs": []
     },
@@ -513,7 +515,7 @@
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [],
-      "last_snap_ts": "2026-04-18T18:24:54",
+      "last_snap_ts": "2026-04-18T22:36:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -527,8 +529,8 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 8,
-      "pct": 67,
+      "count": 10,
+      "pct": 83,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
@@ -538,10 +540,11 @@
         "Brooke H.",
         "Ed K.",
         "Eric K.",
+        "Kevin T.",
         "Suhail A.",
-        "+2 players"
+        "+3 players"
       ],
-      "last_snap_ts": "2026-04-18T18:24:58",
+      "last_snap_ts": "2026-04-18T22:36:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -555,17 +558,17 @@
       "end_display": "10:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 4,
-      "pct": 33,
+      "count": 5,
+      "pct": 42,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Jake S.",
         "Karuna R.",
-        "+2 players"
+        "+3 players"
       ],
-      "last_snap_ts": "2026-04-18T18:25:03",
+      "last_snap_ts": "2026-04-18T22:36:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -3190,6 +3193,54 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-18T22:36:21",
+      "type": "join",
+      "name": "+3 players",
+      "title": "4.0 Open Play",
+      "start": "WED APR 22  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-826a-7aad-93e2-cf3ca01ce81c"
+    },
+    {
+      "ts": "2026-04-18T22:36:21",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "4.0 Open Play",
+      "start": "WED APR 22  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-826a-7aad-93e2-cf3ca01ce81c"
+    },
+    {
+      "ts": "2026-04-18T22:36:17",
+      "type": "join",
+      "name": "+3 players",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 22  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-2261-7aad-93dc-d57492e628ee"
+    },
+    {
+      "ts": "2026-04-18T22:36:17",
+      "type": "join",
+      "name": "Kevin T.",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 22  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-2261-7aad-93dc-d57492e628ee"
+    },
+    {
+      "ts": "2026-04-18T22:36:17",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 22  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-2261-7aad-93dc-d57492e628ee"
+    },
+    {
+      "ts": "2026-04-18T22:35:47",
+      "type": "join",
+      "name": "+1 player",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN APR 19  4:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019da0c6-3f07-711e-8b97-425fa128a580"
+    },
     {
       "ts": "2026-04-18T19:31:11",
       "type": "join",
@@ -9586,12 +9637,12 @@
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Thaian N.",
+      "name": "Charles N.",
       "joins": 5,
       "cancels": 0
     },
@@ -9606,12 +9657,12 @@
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
+      "name": "Bikram S.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Bikram S.",
+      "name": "Chanthachone W.",
       "joins": 4,
       "cancels": 0
     },
@@ -10466,6 +10517,26 @@
       "ghost_count": 3,
       "total_count": 11,
       "capacity": 18
+    },
+    {
+      "title": "4.5/4.0 Open Play",
+      "start": "WED APR 22  6:00 PM",
+      "start_iso": "2026-04-22T18:00:00",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-2261-7aad-93dc-d57492e628ee",
+      "status": "upcoming",
+      "ghost_count": 3,
+      "total_count": 10,
+      "capacity": 12
+    },
+    {
+      "title": "4.0 Open Play",
+      "start": "WED APR 22  8:00 PM",
+      "start_iso": "2026-04-22T20:00:00",
+      "url": "https://ppbrva.podplay.app/community/events/019d4fd5-826a-7aad-93e2-cf3ca01ce81c",
+      "status": "upcoming",
+      "ghost_count": 3,
+      "total_count": 5,
+      "capacity": 12
     }
   ],
   "tournaments": [
