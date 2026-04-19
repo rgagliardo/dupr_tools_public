@@ -119,8 +119,7 @@
         .player-name {
             font-size: 14px; font-weight: 700; letter-spacing: 1px;
             color: #ffffff; text-transform: uppercase;
-            overflow: hidden;
-            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+            overflow-wrap: break-word;
         }
 
         .player-nickname { font-size: 11px; color: #78788c; font-weight: 500; margin-top: 1px; }
@@ -290,8 +289,8 @@
         .sh-mini-cell.sh-l .sh-mini-type { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.4); }
         .sh-mini-name {
             font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
-            text-transform: uppercase; white-space: nowrap;
-            overflow: hidden; text-overflow: ellipsis;
+            text-transform: uppercase;
+            overflow-wrap: break-word;
         }
         .sh-mini-dash { color: #555570; font-size: 14px; }
 
@@ -504,7 +503,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 19, 2026 at 11:39 AM</span>
+            <span>Last Updated: April 19, 2026 at 11:43 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
