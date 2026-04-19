@@ -361,6 +361,34 @@
         .sh-nick { color: #78788c; font-size: 12px; font-weight: 500; text-transform: none; letter-spacing: 0; margin-left: 6px; }
         .sh-champion-since { font-size: 11px; color: #78788c; margin-bottom: 10px; }
 
+        /* All-Time record cards */
+        .sh-alltime {
+            background: #13141e; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px; padding: 12px 16px;
+        }
+        .sh-alltime.sh-w { border-left: 3px solid #ffd700; }
+        .sh-alltime.sh-l { border-left: 3px solid #ff00a0; }
+        .sh-alltime-head {
+            display: flex; align-items: baseline; justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        .sh-alltime-badge {
+            font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .sh-alltime.sh-w .sh-alltime-badge { color: #ffd700; }
+        .sh-alltime.sh-l .sh-alltime-badge { color: #ff00a0; }
+        .sh-alltime-count {
+            font-size: 26px; font-weight: 900; font-variant-numeric: tabular-nums;
+        }
+        .sh-alltime.sh-w .sh-alltime-count { color: #ffd700; text-shadow: 0 0 12px rgba(255,215,0,0.3); }
+        .sh-alltime.sh-l .sh-alltime-count { color: #ff00a0; text-shadow: 0 0 12px rgba(255,0,160,0.4); }
+        .sh-alltime-count sup { font-size: 12px; font-weight: 700; margin-left: 2px; }
+        .sh-alltime-name {
+            font-size: 15px; font-weight: 800; letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         /* Match line (shared by champion cards and HoF broken_by) */
         .sh-match { background: #1a1b28; border-radius: 6px; padding: 8px 10px; font-size: 11px; }
         .sh-match-head { display: flex; justify-content: space-between; margin-bottom: 3px; }
@@ -474,7 +502,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: April 19, 2026 at 12:31 AM</span>
+            <span>Last Updated: April 19, 2026 at 11:25 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -516,7 +544,7 @@
         <div class="sh-hero-row">
             <div class="sh-mini-cell sh-w">
     <div class="sh-mini-stat">
-        <span class="sh-mini-count">51</span><span class="sh-mini-type">W</span>
+        <span class="sh-mini-count">52</span><span class="sh-mini-type">W</span>
     </div>
     <div class="sh-mini-name">ALW</div>
 </div>
@@ -535,12 +563,12 @@
     <button class="sh-close" aria-label="Close Streak Hall" onclick="closeStreakOverlay()">×</button>
     <div class="sh-overlay-inner">
         <h2 class="sh-overlay-title">Streak Hall</h2>
-        <div class="sh-overlay-sub">Current champions + Hall of Fame</div>
-        <div class="sh-section-label">Men's Doubles — Current Champions</div>
+        <div class="sh-overlay-sub">Current Run + All-Time Records</div>
+        <div class="sh-section-label">Men's Doubles — Current Run</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current W-Streak</span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current Run</span>
         <span class="sh-champion-count">46<sup>W</sup></span>
     </div>
     <div class="sh-champion-name">Ben Johns</div>
@@ -556,7 +584,7 @@
 </div>
             <div class="sh-champion sh-l">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current L-Streak</span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current Run</span>
         <span class="sh-champion-count">2<sup>L</sup></span>
     </div>
     <div class="sh-champion-name">Andrew Makovsky</div>
@@ -571,14 +599,28 @@
 </div>
 </div>
         </div>
-        <div class="sh-section-label">Men's Doubles — Hall of Fame</div>
-        
-<div class="sh-empty-msg">No past record holders yet.</div>
-        <div class="sh-section-label">Men's Singles — Current Champions</div>
+        <div class="sh-section-label">Men's Doubles — All-Time</div>
+        <div class="sh-champions">
+            <div class="sh-alltime sh-w">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">🏆</span> All-Time W-Streak</span>
+        <span class="sh-alltime-count">46<sup>W</sup></span>
+    </div>
+    <div class="sh-alltime-name">Ben Johns</div>
+</div>
+            <div class="sh-alltime sh-l">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">📉</span> All-Time L-Streak</span>
+        <span class="sh-alltime-count">7<sup>L</sup></span>
+    </div>
+    <div class="sh-alltime-name">Pete Cloutier</div>
+</div>
+        </div>
+        <div class="sh-section-label">Men's Singles — Current Run</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current W-Streak</span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current Run</span>
         <span class="sh-champion-count">7<sup>W</sup></span>
     </div>
     <div class="sh-champion-name">Youssef Bouzidi</div>
@@ -594,45 +636,59 @@
 </div>
             <div class="sh-champion sh-l">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current L-Streak</span>
-        <span class="sh-champion-count">2<sup>L</sup></span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current Run</span>
+        <span class="sh-champion-count">1<sup>L</sup></span>
     </div>
-    <div class="sh-champion-name">Ben Johns</div>
+    <div class="sh-champion-name">David Bieger</div>
     <div class="sh-champion-since">Leading since 2026-04-19</div><div class="sh-match">
     <div class="sh-match-head">
-        <span class="sh-match-date">Apr 17, 2026</span>
+        <span class="sh-match-date">Apr 14, 2026</span>
         <span class="sh-match-result l">L</span>
     </div>
-    <div class="sh-match-score">7-11, 9-11, 11-8, 19-11, 4-11</div>
-    <div class="sh-match-players"> <span class="sh-vs">vs</span> jax Deiss
-    </div>
+    <div class="sh-match-score">6-11, 5-11</div>
+    <div class="sh-match-players"> <span class="sh-vs">vs</span> Ryler DeHeart
+    </div><div class="sh-match-event">2026 Franklin US Open Pickleball Championships - Men's Pro Singles- Main Draw</div>
 </div>
 </div>
         </div>
-        <div class="sh-section-label">Men's Singles — Hall of Fame</div>
-        
-<div class="sh-empty-msg">No past record holders yet.</div>
-        <div class="sh-section-label">Women's Doubles — Current Champions</div>
+        <div class="sh-section-label">Men's Singles — All-Time</div>
+        <div class="sh-champions">
+            <div class="sh-alltime sh-w">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">🏆</span> All-Time W-Streak</span>
+        <span class="sh-alltime-count">78<sup>W</sup></span>
+    </div>
+    <div class="sh-alltime-name">Ben Johns</div>
+</div>
+            <div class="sh-alltime sh-l">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">📉</span> All-Time L-Streak</span>
+        <span class="sh-alltime-count">6<sup>L</sup></span>
+    </div>
+    <div class="sh-alltime-name">Andrew Makovsky</div>
+</div>
+        </div>
+        <div class="sh-section-label">Women's Doubles — Current Run</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current W-Streak</span>
-        <span class="sh-champion-count">51<sup>W</sup></span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current Run</span>
+        <span class="sh-champion-count">52<sup>W</sup></span>
     </div>
     <div class="sh-champion-name">Anna Leigh Waters <span class="sh-nick">aka ALW</span></div>
     <div class="sh-champion-since">Leading since 2026-04-19</div><div class="sh-match">
     <div class="sh-match-head">
-        <span class="sh-match-date">Apr 18, 2026</span>
+        <span class="sh-match-date">Apr 19, 2026</span>
         <span class="sh-match-result w">W</span>
     </div>
-    <div class="sh-match-score">11-5, 11-6</div>
-    <div class="sh-match-players">w/ <span class="sh-partner">Leigh Waters</span> <span class="sh-vs">vs</span> Bobbi Oshiro & Katerina Stewart
-    </div><div class="sh-match-event">2026 Franklin US Open Pickleball Championships - Women's Pro Doubles- Main Draw</div>
+    <div class="sh-match-score">10-12, 11-2, 11-9</div>
+    <div class="sh-match-players">w/ <span class="sh-partner">Jay Devilliers</span> <span class="sh-vs">vs</span> Casey Diamond & Sofia Sewing
+    </div><div class="sh-match-event">2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw</div>
 </div>
 </div>
             <div class="sh-champion sh-l">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current L-Streak</span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current Run</span>
         <span class="sh-champion-count">6<sup>L</sup></span>
     </div>
     <div class="sh-champion-name">Selena Dajani</div>
@@ -647,14 +703,28 @@
 </div>
 </div>
         </div>
-        <div class="sh-section-label">Women's Doubles — Hall of Fame</div>
-        
-<div class="sh-empty-msg">No past record holders yet.</div>
-        <div class="sh-section-label">Women's Singles — Current Champions</div>
+        <div class="sh-section-label">Women's Doubles — All-Time</div>
+        <div class="sh-champions">
+            <div class="sh-alltime sh-w">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">🏆</span> All-Time W-Streak</span>
+        <span class="sh-alltime-count">85<sup>W</sup></span>
+    </div>
+    <div class="sh-alltime-name">Anna Leigh Waters</div>
+</div>
+            <div class="sh-alltime sh-l">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">📉</span> All-Time L-Streak</span>
+        <span class="sh-alltime-count">27<sup>L</sup></span>
+    </div>
+    <div class="sh-alltime-name">Leah Fremouw</div>
+</div>
+        </div>
+        <div class="sh-section-label">Women's Singles — Current Run</div>
         <div class="sh-champions">
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current W-Streak</span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current Run</span>
         <span class="sh-champion-count">119<sup>W</sup></span>
     </div>
     <div class="sh-champion-name">Anna Leigh Waters <span class="sh-nick">aka ALW</span></div>
@@ -670,7 +740,7 @@
 </div>
             <div class="sh-champion sh-l">
     <div class="sh-champion-head">
-        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current L-Streak</span>
+        <span class="sh-champion-badge"><span aria-hidden="true">🧊</span> Current Run</span>
         <span class="sh-champion-count">2<sup>L</sup></span>
     </div>
     <div class="sh-champion-name">Christina Shifflett</div>
@@ -685,9 +755,23 @@
 </div>
 </div>
         </div>
-        <div class="sh-section-label">Women's Singles — Hall of Fame</div>
-        
-<div class="sh-empty-msg">No past record holders yet.</div>
+        <div class="sh-section-label">Women's Singles — All-Time</div>
+        <div class="sh-champions">
+            <div class="sh-alltime sh-w">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">🏆</span> All-Time W-Streak</span>
+        <span class="sh-alltime-count">119<sup>W</sup></span>
+    </div>
+    <div class="sh-alltime-name">Anna Leigh Waters</div>
+</div>
+            <div class="sh-alltime sh-l">
+    <div class="sh-alltime-head">
+        <span class="sh-alltime-badge"><span aria-hidden="true">📉</span> All-Time L-Streak</span>
+        <span class="sh-alltime-count">12<sup>L</sup></span>
+    </div>
+    <div class="sh-alltime-name">Leah Fremouw</div>
+</div>
+        </div>
     </div>
 </div>
         <details class="group-details" id="grp-movers">
@@ -700,17 +784,17 @@
                     <button class="sort-btn" data-sort="singles">Singles</button>
                     <button class="sort-btn" data-sort="streak">Streak</button>
                 </div>
-                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.894" data-singles="6.491" data-streak="51" data-matches='[{"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.0, "match_id": 5966729388, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Bobbi Oshiro \u0026 Katerina Stewart", "opponents": "Bobbi Oshiro \u0026 Katerina Stewart", "partner": "Leigh Waters", "result": "W", "score": "11-5, 11-6"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.001, "match_id": 7056402269, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jack Munro \u0026 Roos Van Reek", "opponents": "Jack Munro \u0026 Roos Van Reek", "partner": "Jay Devilliers", "result": "W", "score": "11-6, 11-2"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.002, "match_id": 4728762552, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Shelby Bates \u0026 Roos Van Reek", "opponents": "Shelby Bates \u0026 Roos Van Reek", "partner": "Leigh Waters", "result": "W", "score": "5-11, 11-1, 11-1"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.0, "match_id": 6390194539, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Glauka Carvajal Lane \u0026 Alex Emery", "opponents": "Glauka Carvajal Lane \u0026 Alex Emery", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.009, "match_id": 8451287510, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Lanier \u0026 Arielle Butler", "opponents": "Spencer Lanier \u0026 Arielle Butler", "partner": "Jay Devilliers", "result": "W", "score": "11-1, 11-0"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 8106482432, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marisa Ruiz \u0026 Jae Centonze", "opponents": "Marisa Ruiz \u0026 Jae Centonze", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-9"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.003, "match_id": 8043435496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Trang Huynh \u0026 Rianna Valdes", "opponents": "Trang Huynh \u0026 Rianna Valdes", "partner": "Leigh Waters", "result": "W", "score": "11-6, 11-1"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 7799742179, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Liang \u0026 Lauren Cole", "opponents": "Spencer Liang \u0026 Lauren Cole", "partner": "Leigh Waters", "result": "W", "score": "11-8, 11-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "match_id": 7055203426, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Veronica Alteri \u0026 Jenna Vlach", "opponents": "Veronica Alteri \u0026 Jenna Vlach", "partner": "Leigh Waters", "result": "W", "score": "11-0, 11-0"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "match_id": 4392930297, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "match_id": 8452666462, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "match_id": 4571627738, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.0, "match_id": 5725038220, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kao Pei Chuan \u0026 Aiko Yoshitomi", "opponents": "Kao Pei Chuan \u0026 Aiko Yoshitomi", "partner": "Anna Bright", "result": "W", "score": "11-1, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": 0.002, "match_id": 8390530658, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kate Fahey", "opponents": "Kate Fahey", "partner": null, "result": "W", "score": "8-11, 11-3, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 5609732094, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Kate Fahey", "opponents": "Parris Todd \u0026 Kate Fahey", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3, 11-0"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 6668433820, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Rachel Rohrabacher \u0026 Catherine Parenteau", "opponents": "Rachel Rohrabacher \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": -0.012, "match_id": 5425853139, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen", "opponents": "Lea Jansen", "partner": null, "result": "W", "score": "13-11, 11-5"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 8538567775, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mary Brascia \u0026 Maggie Brascia", "opponents": "Mary Brascia \u0026 Maggie Brascia", "partner": "Anna Bright", "result": "W", "score": "11-0, 11-0"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7752162478, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Andrei Daescu", "opponents": "Parris Todd \u0026 Andrei Daescu", "partner": "Ben Johns", "result": "W", "score": "11-4, 11-4"}]' data-internal-id="6880176520">
+                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.889" data-singles="6.491" data-streak="52" data-matches='[{"date": "Apr 19, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.005, "match_id": 7664019863, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Casey Diamond \u0026 Sofia Sewing", "opponents": "Casey Diamond \u0026 Sofia Sewing", "partner": "Jay Devilliers", "result": "W", "score": "10-12, 11-2, 11-9"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.0, "match_id": 5966729388, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Bobbi Oshiro \u0026 Katerina Stewart", "opponents": "Bobbi Oshiro \u0026 Katerina Stewart", "partner": "Leigh Waters", "result": "W", "score": "11-5, 11-6"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.001, "match_id": 7056402269, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jack Munro \u0026 Roos Van Reek", "opponents": "Jack Munro \u0026 Roos Van Reek", "partner": "Jay Devilliers", "result": "W", "score": "11-6, 11-2"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.002, "match_id": 4728762552, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Shelby Bates \u0026 Roos Van Reek", "opponents": "Shelby Bates \u0026 Roos Van Reek", "partner": "Leigh Waters", "result": "W", "score": "5-11, 11-1, 11-1"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.0, "match_id": 6390194539, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Glauka Carvajal Lane \u0026 Alex Emery", "opponents": "Glauka Carvajal Lane \u0026 Alex Emery", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.009, "match_id": 8451287510, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Lanier \u0026 Arielle Butler", "opponents": "Spencer Lanier \u0026 Arielle Butler", "partner": "Jay Devilliers", "result": "W", "score": "11-1, 11-0"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 8106482432, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marisa Ruiz \u0026 Jae Centonze", "opponents": "Marisa Ruiz \u0026 Jae Centonze", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-9"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.003, "match_id": 8043435496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Trang Huynh \u0026 Rianna Valdes", "opponents": "Trang Huynh \u0026 Rianna Valdes", "partner": "Leigh Waters", "result": "W", "score": "11-6, 11-1"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 7799742179, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Liang \u0026 Lauren Cole", "opponents": "Spencer Liang \u0026 Lauren Cole", "partner": "Leigh Waters", "result": "W", "score": "11-8, 11-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "match_id": 7055203426, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Veronica Alteri \u0026 Jenna Vlach", "opponents": "Veronica Alteri \u0026 Jenna Vlach", "partner": "Leigh Waters", "result": "W", "score": "11-0, 11-0"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "match_id": 4392930297, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "match_id": 8452666462, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "match_id": 4571627738, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.0, "match_id": 5725038220, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kao Pei Chuan \u0026 Aiko Yoshitomi", "opponents": "Kao Pei Chuan \u0026 Aiko Yoshitomi", "partner": "Anna Bright", "result": "W", "score": "11-1, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": 0.002, "match_id": 8390530658, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kate Fahey", "opponents": "Kate Fahey", "partner": null, "result": "W", "score": "8-11, 11-3, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 5609732094, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Kate Fahey", "opponents": "Parris Todd \u0026 Kate Fahey", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3, 11-0"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 6668433820, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Rachel Rohrabacher \u0026 Catherine Parenteau", "opponents": "Rachel Rohrabacher \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": -0.012, "match_id": 5425853139, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen", "opponents": "Lea Jansen", "partner": null, "result": "W", "score": "13-11, 11-5"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 8538567775, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mary Brascia \u0026 Maggie Brascia", "opponents": "Mary Brascia \u0026 Maggie Brascia", "partner": "Anna Bright", "result": "W", "score": "11-0, 11-0"}]' data-internal-id="6880176520">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 51W</span>
+            <span class="streak-badge streak-w">🔥 52W</span>
         </div>
         <div class="name-col">
             <div class="player-name">Anna Leigh Waters</div>
             <div class="player-nickname">(ALW)</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 6.894 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-down">(-0.014)</span> <span class="arrow trend-down">▼</span> 6.889 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 6.491 <span class="lbl">S</span>
             </div>
@@ -730,7 +814,7 @@
                 <div class="cs-bar" style="--win-pct: 89%;">
                     <div class="cs-record"><span class="cs-w">982</span><span class="cs-sep">-</span><span class="cs-l">116</span></div>
                     <div class="cs-pct cs-pct-high">89%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">85W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -742,7 +826,7 @@
                 <div class="cs-bar" style="--win-pct: 96%;">
                     <div class="cs-record"><span class="cs-w">302</span><span class="cs-sep">-</span><span class="cs-l">12</span></div>
                     <div class="cs-pct cs-pct-high">96%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">119W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
@@ -757,7 +841,7 @@
         <div class="match-list"></div>
     </div>
 </details>
-                <details class="player-details" data-name="ben johns ben johns" data-doubles="7.090" data-singles="6.568" data-streak="46" data-matches='[{"date": "Apr 18, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.002, "match_id": 4594419794, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Andrei Daescu \u0026 Federico Staksrud", "opponents": "Andrei Daescu \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 10-12, 11-6"}, {"date": "Apr 17, 2026", "event": "", "format": "S", "impact_val": 0.0, "match_id": 6211281172, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e jax Deiss", "opponents": "jax Deiss", "partner": null, "result": "L", "score": "7-11, 9-11, 11-8, 19-11, 4-11"}, {"date": "Apr 17, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 7485713136, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Blaine Hovenier \u0026 Jaume Martinez Vich", "opponents": "Blaine Hovenier \u0026 Jaume Martinez Vich", "partner": "Gabriel Tardio", "result": "W", "score": "7-11, 11-4, 11-3"}, {"date": "Apr 16, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8188692084, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Roscoe Bellamy \u0026 Hunter Johnson", "opponents": "Roscoe Bellamy \u0026 Hunter Johnson", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 7863399282, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jace Morris \u0026 Andre Mercado", "opponents": "Jace Morris \u0026 Andre Mercado", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-4"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.088, "match_id": 8401830269, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e JW Johnson", "opponents": "JW Johnson", "partner": null, "result": "L", "score": "8-11, 7-11"}, {"date": "Apr 14, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.013, "match_id": 5607321431, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Colin Wong Wei Ming", "opponents": "Colin Wong Wei Ming", "partner": null, "result": "W", "score": "11-1, 11-4"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.003, "match_id": 4910274214, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Federico Staksrud", "opponents": "Hayden Patriquin \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-0, 7-11, 11-6"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Anna Leigh Waters", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.007, "match_id": 7101502814, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dylan Frazier \u0026 Eric Oncins", "opponents": "Dylan Frazier \u0026 Eric Oncins", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-4"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Anna Leigh Waters", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.008, "match_id": 8418769093, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Joseph Wild \u0026 George Wall", "opponents": "Joseph Wild \u0026 George Wall", "partner": "Gabriel Tardio", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.0, "match_id": 6623166496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Yuta Funemizu", "opponents": "Will Howells \u0026 Yuta Funemizu", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 11-6"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 8467743725, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Christian Alshon", "opponents": "Hayden Patriquin \u0026 Christian Alshon", "partner": "Gabriel Tardio", "result": "W", "score": "13-11, 3-11, 3-11, 11-2, 11-7"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7678940460, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Andrei Daescu", "opponents": "Federico Staksrud \u0026 Andrei Daescu", "partner": "Gabriel Tardio", "result": "W", "score": "4-11, 11-9, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.001, "match_id": 7060756653, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dekel Bar \u0026 Wyatt Stone", "opponents": "Dekel Bar \u0026 Wyatt Stone", "partner": "Gabriel Tardio", "result": "W", "score": "11-8, 11-3"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7752162478, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Andrei Daescu", "opponents": "Parris Todd \u0026 Andrei Daescu", "partner": "Anna Leigh Waters", "result": "W", "score": "11-4, 11-4"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 6560143164, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Len Yang \u0026 Collin Johns", "opponents": "Len Yang \u0026 Collin Johns", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-6"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8259110717, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Meghan Dizon", "opponents": "Will Howells \u0026 Meghan Dizon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-3"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7646441600, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Christopher Crouch \u0026 Matthew Barlow", "opponents": "Christopher Crouch \u0026 Matthew Barlow", "partner": "Gabriel Tardio", "result": "W", "score": "11-3, 11-4"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 8314919531, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Angie Walker \u0026 Michael Loyd", "opponents": "Angie Walker \u0026 Michael Loyd", "partner": "Anna Leigh Waters", "result": "W", "score": "11-7, 11-3"}]' data-internal-id="8092075244">
+                <details class="player-details" data-name="ben johns ben johns" data-doubles="7.090" data-singles="6.568" data-streak="46" data-matches='[{"date": "Apr 18, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.002, "match_id": 4594419794, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Andrei Daescu \u0026 Federico Staksrud", "opponents": "Andrei Daescu \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 10-12, 11-6"}, {"date": "Apr 17, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 7485713136, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Blaine Hovenier \u0026 Jaume Martinez Vich", "opponents": "Blaine Hovenier \u0026 Jaume Martinez Vich", "partner": "Gabriel Tardio", "result": "W", "score": "7-11, 11-4, 11-3"}, {"date": "Apr 16, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8188692084, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Roscoe Bellamy \u0026 Hunter Johnson", "opponents": "Roscoe Bellamy \u0026 Hunter Johnson", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 7863399282, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jace Morris \u0026 Andre Mercado", "opponents": "Jace Morris \u0026 Andre Mercado", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-4"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.088, "match_id": 8401830269, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e JW Johnson", "opponents": "JW Johnson", "partner": null, "result": "L", "score": "8-11, 7-11"}, {"date": "Apr 14, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.013, "match_id": 5607321431, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Colin Wong Wei Ming", "opponents": "Colin Wong Wei Ming", "partner": null, "result": "W", "score": "11-1, 11-4"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.003, "match_id": 4910274214, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Federico Staksrud", "opponents": "Hayden Patriquin \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-0, 7-11, 11-6"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Anna Leigh Waters", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.007, "match_id": 7101502814, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dylan Frazier \u0026 Eric Oncins", "opponents": "Dylan Frazier \u0026 Eric Oncins", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-4"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Anna Leigh Waters", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.008, "match_id": 8418769093, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Joseph Wild \u0026 George Wall", "opponents": "Joseph Wild \u0026 George Wall", "partner": "Gabriel Tardio", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.0, "match_id": 6623166496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Yuta Funemizu", "opponents": "Will Howells \u0026 Yuta Funemizu", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 11-6"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 8467743725, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Christian Alshon", "opponents": "Hayden Patriquin \u0026 Christian Alshon", "partner": "Gabriel Tardio", "result": "W", "score": "13-11, 3-11, 3-11, 11-2, 11-7"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7678940460, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Andrei Daescu", "opponents": "Federico Staksrud \u0026 Andrei Daescu", "partner": "Gabriel Tardio", "result": "W", "score": "4-11, 11-9, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.001, "match_id": 7060756653, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dekel Bar \u0026 Wyatt Stone", "opponents": "Dekel Bar \u0026 Wyatt Stone", "partner": "Gabriel Tardio", "result": "W", "score": "11-8, 11-3"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7752162478, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Andrei Daescu", "opponents": "Parris Todd \u0026 Andrei Daescu", "partner": "Anna Leigh Waters", "result": "W", "score": "11-4, 11-4"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 6560143164, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Len Yang \u0026 Collin Johns", "opponents": "Len Yang \u0026 Collin Johns", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-6"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8259110717, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Meghan Dizon", "opponents": "Will Howells \u0026 Meghan Dizon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-3"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7646441600, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Christopher Crouch \u0026 Matthew Barlow", "opponents": "Christopher Crouch \u0026 Matthew Barlow", "partner": "Gabriel Tardio", "result": "W", "score": "11-3, 11-4"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 8314919531, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Angie Walker \u0026 Michael Loyd", "opponents": "Angie Walker \u0026 Michael Loyd", "partner": "Anna Leigh Waters", "result": "W", "score": "11-7, 11-3"}, {"date": "Mar 24, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6881928447, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Syed Uzair Sufi Bin Syed Ibrahim \u0026 Mihae Kwon", "opponents": "Syed Uzair Sufi Bin Syed Ibrahim \u0026 Mihae Kwon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-0, 11-4"}]' data-internal-id="8092075244">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
             <span class="streak-badge streak-w">🔥 46W</span>
@@ -786,7 +870,7 @@
                 <div class="cs-bar" style="--win-pct: 88%;">
                     <div class="cs-record"><span class="cs-w">1043</span><span class="cs-sep">-</span><span class="cs-l">136</span></div>
                     <div class="cs-pct cs-pct-high">88%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">46W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
@@ -796,9 +880,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 90%;">
-                    <div class="cs-record"><span class="cs-w">312</span><span class="cs-sep">-</span><span class="cs-l">34</span></div>
+                    <div class="cs-record"><span class="cs-w">312</span><span class="cs-sep">-</span><span class="cs-l">33</span></div>
                     <div class="cs-pct cs-pct-high">90%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">78W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -842,9 +926,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 37%;">
-                    <div class="cs-record"><span class="cs-w">163</span><span class="cs-sep">-</span><span class="cs-l">280</span></div>
+                    <div class="cs-record"><span class="cs-w">161</span><span class="cs-sep">-</span><span class="cs-l">278</span></div>
                     <div class="cs-pct cs-pct-low">37%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">7W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">27L</span>
@@ -854,9 +938,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 37%;">
-                    <div class="cs-record"><span class="cs-w">59</span><span class="cs-sep">-</span><span class="cs-l">101</span></div>
+                    <div class="cs-record"><span class="cs-w">59</span><span class="cs-sep">-</span><span class="cs-l">100</span></div>
                     <div class="cs-pct cs-pct-low">37%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">4W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">12L</span>
@@ -900,7 +984,7 @@
                 <div class="cs-bar" style="--win-pct: 76%;">
                     <div class="cs-record"><span class="cs-w">276</span><span class="cs-sep">-</span><span class="cs-l">85</span></div>
                     <div class="cs-pct cs-pct-high">76%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">17W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -912,7 +996,7 @@
                 <div class="cs-bar" style="--win-pct: 87%;">
                     <div class="cs-record"><span class="cs-w">86</span><span class="cs-sep">-</span><span class="cs-l">13</span></div>
                     <div class="cs-pct cs-pct-high">87%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">19W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
@@ -955,7 +1039,7 @@
                 <div class="cs-bar" style="--win-pct: 51%;">
                     <div class="cs-record"><span class="cs-w">188</span><span class="cs-sep">-</span><span class="cs-l">178</span></div>
                     <div class="cs-pct cs-pct-mid">51%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">8W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">6L</span>
@@ -967,7 +1051,7 @@
                 <div class="cs-bar" style="--win-pct: 39%;">
                     <div class="cs-record"><span class="cs-w">31</span><span class="cs-sep">-</span><span class="cs-l">49</span></div>
                     <div class="cs-pct cs-pct-low">39%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">4W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">6L</span>
@@ -1008,9 +1092,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 81%;">
-                    <div class="cs-record"><span class="cs-w">526</span><span class="cs-sep">-</span><span class="cs-l">126</span></div>
+                    <div class="cs-record"><span class="cs-w">525</span><span class="cs-sep">-</span><span class="cs-l">126</span></div>
                     <div class="cs-pct cs-pct-high">81%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">43W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1022,7 +1106,7 @@
                 <div class="cs-bar" style="--win-pct: 77%;">
                     <div class="cs-record"><span class="cs-w">103</span><span class="cs-sep">-</span><span class="cs-l">31</span></div>
                     <div class="cs-pct cs-pct-high">77%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">12W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
@@ -1065,7 +1149,7 @@
                 <div class="cs-bar" style="--win-pct: 61%;">
                     <div class="cs-record"><span class="cs-w">212</span><span class="cs-sep">-</span><span class="cs-l">133</span></div>
                     <div class="cs-pct cs-pct-mid">61%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">15W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">7L</span>
@@ -1077,7 +1161,7 @@
                 <div class="cs-bar" style="--win-pct: 43%;">
                     <div class="cs-record"><span class="cs-w">12</span><span class="cs-sep">-</span><span class="cs-l">16</span></div>
                     <div class="cs-pct cs-pct-low">43%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">4W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1117,10 +1201,10 @@
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
-                <div class="cs-bar" style="--win-pct: 57%;">
-                    <div class="cs-record"><span class="cs-w">117</span><span class="cs-sep">-</span><span class="cs-l">90</span></div>
-                    <div class="cs-pct cs-pct-mid">57%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                <div class="cs-bar" style="--win-pct: 56%;">
+                    <div class="cs-record"><span class="cs-w">115</span><span class="cs-sep">-</span><span class="cs-l">90</span></div>
+                    <div class="cs-pct cs-pct-mid">56%</div>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">8W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">7L</span>
@@ -1132,7 +1216,7 @@
                 <div class="cs-bar" style="--win-pct: 58%;">
                     <div class="cs-record"><span class="cs-w">53</span><span class="cs-sep">-</span><span class="cs-l">38</span></div>
                     <div class="cs-pct cs-pct-mid">58%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">12W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
@@ -1187,7 +1271,7 @@
                 <div class="cs-bar" style="--win-pct: 84%;">
                     <div class="cs-record"><span class="cs-w">256</span><span class="cs-sep">-</span><span class="cs-l">50</span></div>
                     <div class="cs-pct cs-pct-high">84%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">32W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -1199,7 +1283,7 @@
                 <div class="cs-bar" style="--win-pct: 66%;">
                     <div class="cs-record"><span class="cs-w">19</span><span class="cs-sep">-</span><span class="cs-l">10</span></div>
                     <div class="cs-pct cs-pct-mid">66%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">8W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -1242,7 +1326,7 @@
                 <div class="cs-bar" style="--win-pct: 51%;">
                     <div class="cs-record"><span class="cs-w">188</span><span class="cs-sep">-</span><span class="cs-l">178</span></div>
                     <div class="cs-pct cs-pct-mid">51%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">8W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">6L</span>
@@ -1254,7 +1338,7 @@
                 <div class="cs-bar" style="--win-pct: 39%;">
                     <div class="cs-record"><span class="cs-w">31</span><span class="cs-sep">-</span><span class="cs-l">49</span></div>
                     <div class="cs-pct cs-pct-low">39%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">4W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">6L</span>
@@ -1297,7 +1381,7 @@
                 <div class="cs-bar" style="--win-pct: 61%;">
                     <div class="cs-record"><span class="cs-w">212</span><span class="cs-sep">-</span><span class="cs-l">133</span></div>
                     <div class="cs-pct cs-pct-mid">61%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">15W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">7L</span>
@@ -1309,7 +1393,7 @@
                 <div class="cs-bar" style="--win-pct: 43%;">
                     <div class="cs-record"><span class="cs-w">12</span><span class="cs-sep">-</span><span class="cs-l">16</span></div>
                     <div class="cs-pct cs-pct-low">43%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">4W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1350,9 +1434,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 81%;">
-                    <div class="cs-record"><span class="cs-w">526</span><span class="cs-sep">-</span><span class="cs-l">126</span></div>
+                    <div class="cs-record"><span class="cs-w">525</span><span class="cs-sep">-</span><span class="cs-l">126</span></div>
                     <div class="cs-pct cs-pct-high">81%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">43W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1364,7 +1448,7 @@
                 <div class="cs-bar" style="--win-pct: 77%;">
                     <div class="cs-record"><span class="cs-w">103</span><span class="cs-sep">-</span><span class="cs-l">31</span></div>
                     <div class="cs-pct cs-pct-high">77%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">12W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
@@ -1407,7 +1491,7 @@
                 <div class="cs-bar" style="--win-pct: 69%;">
                     <div class="cs-record"><span class="cs-w">428</span><span class="cs-sep">-</span><span class="cs-l">196</span></div>
                     <div class="cs-pct cs-pct-mid">69%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">19W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">6L</span>
@@ -1419,7 +1503,7 @@
                 <div class="cs-bar" style="--win-pct: 64%;">
                     <div class="cs-record"><span class="cs-w">62</span><span class="cs-sep">-</span><span class="cs-l">35</span></div>
                     <div class="cs-pct cs-pct-mid">64%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">7W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1461,9 +1545,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 37%;">
-                    <div class="cs-record"><span class="cs-w">163</span><span class="cs-sep">-</span><span class="cs-l">280</span></div>
+                    <div class="cs-record"><span class="cs-w">161</span><span class="cs-sep">-</span><span class="cs-l">278</span></div>
                     <div class="cs-pct cs-pct-low">37%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">7W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">27L</span>
@@ -1473,9 +1557,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 37%;">
-                    <div class="cs-record"><span class="cs-w">59</span><span class="cs-sep">-</span><span class="cs-l">101</span></div>
+                    <div class="cs-record"><span class="cs-w">59</span><span class="cs-sep">-</span><span class="cs-l">100</span></div>
                     <div class="cs-pct cs-pct-low">37%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">4W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">12L</span>
@@ -1516,10 +1600,10 @@
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
-                <div class="cs-bar" style="--win-pct: 62%;">
-                    <div class="cs-record"><span class="cs-w">109</span><span class="cs-sep">-</span><span class="cs-l">67</span></div>
-                    <div class="cs-pct cs-pct-mid">62%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                <div class="cs-bar" style="--win-pct: 61%;">
+                    <div class="cs-record"><span class="cs-w">107</span><span class="cs-sep">-</span><span class="cs-l">67</span></div>
+                    <div class="cs-pct cs-pct-mid">61%</div>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">9W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">7L</span>
@@ -1531,7 +1615,7 @@
                 <div class="cs-bar" style="--win-pct: 53%;">
                     <div class="cs-record"><span class="cs-w">18</span><span class="cs-sep">-</span><span class="cs-l">16</span></div>
                     <div class="cs-pct cs-pct-mid">53%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">9W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
@@ -1572,7 +1656,7 @@
                 <div class="cs-bar" style="--win-pct: 65%;">
                     <div class="cs-record"><span class="cs-w">173</span><span class="cs-sep">-</span><span class="cs-l">95</span></div>
                     <div class="cs-pct cs-pct-mid">65%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">12W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1612,10 +1696,10 @@
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
-                <div class="cs-bar" style="--win-pct: 57%;">
-                    <div class="cs-record"><span class="cs-w">117</span><span class="cs-sep">-</span><span class="cs-l">90</span></div>
-                    <div class="cs-pct cs-pct-mid">57%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                <div class="cs-bar" style="--win-pct: 56%;">
+                    <div class="cs-record"><span class="cs-w">115</span><span class="cs-sep">-</span><span class="cs-l">90</span></div>
+                    <div class="cs-pct cs-pct-mid">56%</div>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">8W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">7L</span>
@@ -1627,7 +1711,7 @@
                 <div class="cs-bar" style="--win-pct: 58%;">
                     <div class="cs-record"><span class="cs-w">53</span><span class="cs-sep">-</span><span class="cs-l">38</span></div>
                     <div class="cs-pct cs-pct-mid">58%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">12W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
@@ -1670,7 +1754,7 @@
                 <div class="cs-bar" style="--win-pct: 75%;">
                     <div class="cs-record"><span class="cs-w">158</span><span class="cs-sep">-</span><span class="cs-l">54</span></div>
                     <div class="cs-pct cs-pct-high">75%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">32W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">5L</span>
@@ -1682,7 +1766,7 @@
                 <div class="cs-bar" style="--win-pct: 37%;">
                     <div class="cs-record"><span class="cs-w">7</span><span class="cs-sep">-</span><span class="cs-l">12</span></div>
                     <div class="cs-pct cs-pct-low">37%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">3W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
@@ -1720,13 +1804,13 @@
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
-                <div class="cs-bar" style="--win-pct: 47%;">
-                    <div class="cs-record"><span class="cs-w">60</span><span class="cs-sep">-</span><span class="cs-l">67</span></div>
-                    <div class="cs-pct cs-pct-low">47%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                <div class="cs-bar" style="--win-pct: 48%;">
+                    <div class="cs-record"><span class="cs-w">59</span><span class="cs-sep">-</span><span class="cs-l">65</span></div>
+                    <div class="cs-pct cs-pct-low">48%</div>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">5W</span>
                         <span class="cs-dot"> / </span>
-                        <span class="cs-peak-l">8L</span>
+                        <span class="cs-peak-l">7L</span>
                     </div>
                 </div>
             </div>
@@ -1768,7 +1852,7 @@
                 <div class="cs-bar" style="--win-pct: 81%;">
                     <div class="cs-record"><span class="cs-w">70</span><span class="cs-sep">-</span><span class="cs-l">16</span></div>
                     <div class="cs-pct cs-pct-high">81%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">14W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -1780,7 +1864,7 @@
                 <div class="cs-bar" style="--win-pct: 44%;">
                     <div class="cs-record"><span class="cs-w">4</span><span class="cs-sep">-</span><span class="cs-l">5</span></div>
                     <div class="cs-pct cs-pct-low">44%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">2W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -1824,7 +1908,7 @@
                 <div class="cs-bar" style="--win-pct: 76%;">
                     <div class="cs-record"><span class="cs-w">276</span><span class="cs-sep">-</span><span class="cs-l">85</span></div>
                     <div class="cs-pct cs-pct-high">76%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">17W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -1836,7 +1920,7 @@
                 <div class="cs-bar" style="--win-pct: 87%;">
                     <div class="cs-record"><span class="cs-w">86</span><span class="cs-sep">-</span><span class="cs-l">13</span></div>
                     <div class="cs-pct cs-pct-high">87%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">19W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
@@ -1862,17 +1946,17 @@
                     <button class="sort-btn" data-sort="singles">Singles</button>
                     <button class="sort-btn" data-sort="streak">Streak</button>
                 </div>
-                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.894" data-singles="6.491" data-streak="51" data-matches='[{"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.0, "match_id": 5966729388, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Bobbi Oshiro \u0026 Katerina Stewart", "opponents": "Bobbi Oshiro \u0026 Katerina Stewart", "partner": "Leigh Waters", "result": "W", "score": "11-5, 11-6"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.001, "match_id": 7056402269, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jack Munro \u0026 Roos Van Reek", "opponents": "Jack Munro \u0026 Roos Van Reek", "partner": "Jay Devilliers", "result": "W", "score": "11-6, 11-2"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.002, "match_id": 4728762552, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Shelby Bates \u0026 Roos Van Reek", "opponents": "Shelby Bates \u0026 Roos Van Reek", "partner": "Leigh Waters", "result": "W", "score": "5-11, 11-1, 11-1"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.0, "match_id": 6390194539, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Glauka Carvajal Lane \u0026 Alex Emery", "opponents": "Glauka Carvajal Lane \u0026 Alex Emery", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.009, "match_id": 8451287510, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Lanier \u0026 Arielle Butler", "opponents": "Spencer Lanier \u0026 Arielle Butler", "partner": "Jay Devilliers", "result": "W", "score": "11-1, 11-0"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 8106482432, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marisa Ruiz \u0026 Jae Centonze", "opponents": "Marisa Ruiz \u0026 Jae Centonze", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-9"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.003, "match_id": 8043435496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Trang Huynh \u0026 Rianna Valdes", "opponents": "Trang Huynh \u0026 Rianna Valdes", "partner": "Leigh Waters", "result": "W", "score": "11-6, 11-1"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 7799742179, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Liang \u0026 Lauren Cole", "opponents": "Spencer Liang \u0026 Lauren Cole", "partner": "Leigh Waters", "result": "W", "score": "11-8, 11-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "match_id": 7055203426, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Veronica Alteri \u0026 Jenna Vlach", "opponents": "Veronica Alteri \u0026 Jenna Vlach", "partner": "Leigh Waters", "result": "W", "score": "11-0, 11-0"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "match_id": 4392930297, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "match_id": 8452666462, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "match_id": 4571627738, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.0, "match_id": 5725038220, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kao Pei Chuan \u0026 Aiko Yoshitomi", "opponents": "Kao Pei Chuan \u0026 Aiko Yoshitomi", "partner": "Anna Bright", "result": "W", "score": "11-1, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": 0.002, "match_id": 8390530658, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kate Fahey", "opponents": "Kate Fahey", "partner": null, "result": "W", "score": "8-11, 11-3, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 5609732094, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Kate Fahey", "opponents": "Parris Todd \u0026 Kate Fahey", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3, 11-0"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 6668433820, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Rachel Rohrabacher \u0026 Catherine Parenteau", "opponents": "Rachel Rohrabacher \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": -0.012, "match_id": 5425853139, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen", "opponents": "Lea Jansen", "partner": null, "result": "W", "score": "13-11, 11-5"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 8538567775, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mary Brascia \u0026 Maggie Brascia", "opponents": "Mary Brascia \u0026 Maggie Brascia", "partner": "Anna Bright", "result": "W", "score": "11-0, 11-0"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7752162478, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Andrei Daescu", "opponents": "Parris Todd \u0026 Andrei Daescu", "partner": "Ben Johns", "result": "W", "score": "11-4, 11-4"}]' data-internal-id="6880176520">
+                <details class="player-details" data-name="alw anna leigh waters" data-doubles="6.889" data-singles="6.491" data-streak="52" data-matches='[{"date": "Apr 19, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.005, "match_id": 7664019863, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Casey Diamond \u0026 Sofia Sewing", "opponents": "Casey Diamond \u0026 Sofia Sewing", "partner": "Jay Devilliers", "result": "W", "score": "10-12, 11-2, 11-9"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.0, "match_id": 5966729388, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Bobbi Oshiro \u0026 Katerina Stewart", "opponents": "Bobbi Oshiro \u0026 Katerina Stewart", "partner": "Leigh Waters", "result": "W", "score": "11-5, 11-6"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.001, "match_id": 7056402269, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jack Munro \u0026 Roos Van Reek", "opponents": "Jack Munro \u0026 Roos Van Reek", "partner": "Jay Devilliers", "result": "W", "score": "11-6, 11-2"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.002, "match_id": 4728762552, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Shelby Bates \u0026 Roos Van Reek", "opponents": "Shelby Bates \u0026 Roos Van Reek", "partner": "Leigh Waters", "result": "W", "score": "5-11, 11-1, 11-1"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.0, "match_id": 6390194539, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Glauka Carvajal Lane \u0026 Alex Emery", "opponents": "Glauka Carvajal Lane \u0026 Alex Emery", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": 0.009, "match_id": 8451287510, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Lanier \u0026 Arielle Butler", "opponents": "Spencer Lanier \u0026 Arielle Butler", "partner": "Jay Devilliers", "result": "W", "score": "11-1, 11-0"}, {"date": "Apr 16, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 8106482432, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eJay Devilliers\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Marisa Ruiz \u0026 Jae Centonze", "opponents": "Marisa Ruiz \u0026 Jae Centonze", "partner": "Jay Devilliers", "result": "W", "score": "11-3, 11-9"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.003, "match_id": 8043435496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Trang Huynh \u0026 Rianna Valdes", "opponents": "Trang Huynh \u0026 Rianna Valdes", "partner": "Leigh Waters", "result": "W", "score": "11-6, 11-1"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": -0.012, "match_id": 7799742179, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Spencer Liang \u0026 Lauren Cole", "opponents": "Spencer Liang \u0026 Lauren Cole", "partner": "Leigh Waters", "result": "W", "score": "11-8, 11-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Women\u0027s Pro Doubles- Main Draw", "format": "D", "impact_val": 0.004, "match_id": 7055203426, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eLeigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Veronica Alteri \u0026 Jenna Vlach", "opponents": "Veronica Alteri \u0026 Jenna Vlach", "partner": "Leigh Waters", "result": "W", "score": "11-0, 11-0"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.001, "match_id": 4392930297, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Catherine Parenteau", "opponents": "Hurricane Tyra Black \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Ben Johns", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.004, "match_id": 8452666462, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Tina Pisnik \u0026 Jessie Irvine", "opponents": "Tina Pisnik \u0026 Jessie Irvine", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-2"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Ben Johns", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": -0.014, "match_id": 4571627738, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Brooke Buckner \u0026 Chao Yi Wang", "opponents": "Brooke Buckner \u0026 Chao Yi Wang", "partner": "Anna Bright", "result": "W", "score": "11-4, 9-11, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Womens Doubles", "format": "D", "impact_val": 0.0, "match_id": 5725038220, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kao Pei Chuan \u0026 Aiko Yoshitomi", "opponents": "Kao Pei Chuan \u0026 Aiko Yoshitomi", "partner": "Anna Bright", "result": "W", "score": "11-1, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": 0.002, "match_id": 8390530658, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kate Fahey", "opponents": "Kate Fahey", "partner": null, "result": "W", "score": "8-11, 11-3, 11-2"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 5609732094, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Kate Fahey", "opponents": "Parris Todd \u0026 Kate Fahey", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3, 11-0"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Ben Johns", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 6668433820, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Rachel Rohrabacher \u0026 Catherine Parenteau", "opponents": "Rachel Rohrabacher \u0026 Catherine Parenteau", "partner": "Anna Bright", "result": "W", "score": "11-3, 11-3"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eBen Johns\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Ben Johns", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Singles Pro Main Draw", "format": "S", "impact_val": -0.012, "match_id": 5425853139, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen", "opponents": "Lea Jansen", "partner": null, "result": "W", "score": "13-11, 11-5"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Womens Doubles Pro Main Draw", "format": "D", "impact_val": 0.011, "match_id": 8538567775, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Bright\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Mary Brascia \u0026 Maggie Brascia", "opponents": "Mary Brascia \u0026 Maggie Brascia", "partner": "Anna Bright", "result": "W", "score": "11-0, 11-0"}]' data-internal-id="6880176520">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
-            <span class="streak-badge streak-w">🔥 51W</span>
+            <span class="streak-badge streak-w">🔥 52W</span>
         </div>
         <div class="name-col">
             <div class="player-name">Anna Leigh Waters</div>
             <div class="player-nickname">(ALW)</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.009)</span> <span class="arrow trend-down">▼</span> 6.894 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-down">(-0.014)</span> <span class="arrow trend-down">▼</span> 6.889 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 6.491 <span class="lbl">S</span>
             </div>
@@ -1892,7 +1976,7 @@
                 <div class="cs-bar" style="--win-pct: 89%;">
                     <div class="cs-record"><span class="cs-w">982</span><span class="cs-sep">-</span><span class="cs-l">116</span></div>
                     <div class="cs-pct cs-pct-high">89%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">85W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
@@ -1904,7 +1988,7 @@
                 <div class="cs-bar" style="--win-pct: 96%;">
                     <div class="cs-record"><span class="cs-w">302</span><span class="cs-sep">-</span><span class="cs-l">12</span></div>
                     <div class="cs-pct cs-pct-high">96%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">119W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
@@ -1919,7 +2003,7 @@
         <div class="match-list"></div>
     </div>
 </details>
-                <details class="player-details" data-name="ben johns ben johns" data-doubles="7.090" data-singles="6.568" data-streak="46" data-matches='[{"date": "Apr 18, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.002, "match_id": 4594419794, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Andrei Daescu \u0026 Federico Staksrud", "opponents": "Andrei Daescu \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 10-12, 11-6"}, {"date": "Apr 17, 2026", "event": "", "format": "S", "impact_val": 0.0, "match_id": 6211281172, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e jax Deiss", "opponents": "jax Deiss", "partner": null, "result": "L", "score": "7-11, 9-11, 11-8, 19-11, 4-11"}, {"date": "Apr 17, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 7485713136, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Blaine Hovenier \u0026 Jaume Martinez Vich", "opponents": "Blaine Hovenier \u0026 Jaume Martinez Vich", "partner": "Gabriel Tardio", "result": "W", "score": "7-11, 11-4, 11-3"}, {"date": "Apr 16, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8188692084, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Roscoe Bellamy \u0026 Hunter Johnson", "opponents": "Roscoe Bellamy \u0026 Hunter Johnson", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 7863399282, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jace Morris \u0026 Andre Mercado", "opponents": "Jace Morris \u0026 Andre Mercado", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-4"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.088, "match_id": 8401830269, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e JW Johnson", "opponents": "JW Johnson", "partner": null, "result": "L", "score": "8-11, 7-11"}, {"date": "Apr 14, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.013, "match_id": 5607321431, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Colin Wong Wei Ming", "opponents": "Colin Wong Wei Ming", "partner": null, "result": "W", "score": "11-1, 11-4"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.003, "match_id": 4910274214, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Federico Staksrud", "opponents": "Hayden Patriquin \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-0, 7-11, 11-6"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Anna Leigh Waters", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.007, "match_id": 7101502814, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dylan Frazier \u0026 Eric Oncins", "opponents": "Dylan Frazier \u0026 Eric Oncins", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-4"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Anna Leigh Waters", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.008, "match_id": 8418769093, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Joseph Wild \u0026 George Wall", "opponents": "Joseph Wild \u0026 George Wall", "partner": "Gabriel Tardio", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.0, "match_id": 6623166496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Yuta Funemizu", "opponents": "Will Howells \u0026 Yuta Funemizu", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 11-6"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 8467743725, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Christian Alshon", "opponents": "Hayden Patriquin \u0026 Christian Alshon", "partner": "Gabriel Tardio", "result": "W", "score": "13-11, 3-11, 3-11, 11-2, 11-7"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7678940460, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Andrei Daescu", "opponents": "Federico Staksrud \u0026 Andrei Daescu", "partner": "Gabriel Tardio", "result": "W", "score": "4-11, 11-9, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.001, "match_id": 7060756653, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dekel Bar \u0026 Wyatt Stone", "opponents": "Dekel Bar \u0026 Wyatt Stone", "partner": "Gabriel Tardio", "result": "W", "score": "11-8, 11-3"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7752162478, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Andrei Daescu", "opponents": "Parris Todd \u0026 Andrei Daescu", "partner": "Anna Leigh Waters", "result": "W", "score": "11-4, 11-4"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 6560143164, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Len Yang \u0026 Collin Johns", "opponents": "Len Yang \u0026 Collin Johns", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-6"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8259110717, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Meghan Dizon", "opponents": "Will Howells \u0026 Meghan Dizon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-3"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7646441600, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Christopher Crouch \u0026 Matthew Barlow", "opponents": "Christopher Crouch \u0026 Matthew Barlow", "partner": "Gabriel Tardio", "result": "W", "score": "11-3, 11-4"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 8314919531, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Angie Walker \u0026 Michael Loyd", "opponents": "Angie Walker \u0026 Michael Loyd", "partner": "Anna Leigh Waters", "result": "W", "score": "11-7, 11-3"}]' data-internal-id="8092075244">
+                <details class="player-details" data-name="ben johns ben johns" data-doubles="7.090" data-singles="6.568" data-streak="46" data-matches='[{"date": "Apr 18, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.002, "match_id": 4594419794, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Andrei Daescu \u0026 Federico Staksrud", "opponents": "Andrei Daescu \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 10-12, 11-6"}, {"date": "Apr 17, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 7485713136, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Blaine Hovenier \u0026 Jaume Martinez Vich", "opponents": "Blaine Hovenier \u0026 Jaume Martinez Vich", "partner": "Gabriel Tardio", "result": "W", "score": "7-11, 11-4, 11-3"}, {"date": "Apr 16, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8188692084, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Roscoe Bellamy \u0026 Hunter Johnson", "opponents": "Roscoe Bellamy \u0026 Hunter Johnson", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 7863399282, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Jace Morris \u0026 Andre Mercado", "opponents": "Jace Morris \u0026 Andre Mercado", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-4"}, {"date": "Apr 15, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.088, "match_id": 8401830269, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e JW Johnson", "opponents": "JW Johnson", "partner": null, "result": "L", "score": "8-11, 7-11"}, {"date": "Apr 14, 2026", "event": "PPA Tour: 2026 Sacramento Open - Mens Singles Pro Main Draw", "format": "S", "impact_val": -0.013, "match_id": 5607321431, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Colin Wong Wei Ming", "opponents": "Colin Wong Wei Ming", "partner": null, "result": "W", "score": "11-1, 11-4"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": 0.001, "match_id": 7198322419, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Kaitlyn Christian \u0026 Christian Alshon", "opponents": "Kaitlyn Christian \u0026 Christian Alshon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-2"}, {"date": "Apr 5, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.003, "match_id": 4910274214, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Federico Staksrud", "opponents": "Hayden Patriquin \u0026 Federico Staksrud", "partner": "Gabriel Tardio", "result": "W", "score": "11-0, 7-11, 11-6"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.002, "match_id": 7818648585, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hurricane Tyra Black \u0026 Gabriel Tardio", "opponents": "Hurricane Tyra Black \u0026 Gabriel Tardio", "partner": "Anna Leigh Waters", "result": "W", "score": "11-6, 11-9"}, {"date": "Apr 4, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": 0.007, "match_id": 7101502814, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dylan Frazier \u0026 Eric Oncins", "opponents": "Dylan Frazier \u0026 Eric Oncins", "partner": "Gabriel Tardio", "result": "W", "score": "11-2, 11-4"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.005, "match_id": 4831188551, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Catherine Parenteau \u0026 Eric Oncins", "opponents": "Catherine Parenteau \u0026 Eric Oncins", "partner": "Anna Leigh Waters", "result": "W", "score": "11-8, 11-7"}, {"date": "Apr 3, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.008, "match_id": 8418769093, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Joseph Wild \u0026 George Wall", "opponents": "Joseph Wild \u0026 George Wall", "partner": "Gabriel Tardio", "result": "W", "score": "11-7, 11-5"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Mixed Doubles", "format": "D", "impact_val": -0.004, "match_id": 8519827057, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Lea Jansen \u0026 Riley Newman", "opponents": "Lea Jansen \u0026 Riley Newman", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-8"}, {"date": "Apr 2, 2026", "event": "PPA Asia 1000 MB Hanoi Cup 2026 - Pro Men\u0027s Doubles", "format": "D", "impact_val": -0.0, "match_id": 6623166496, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Yuta Funemizu", "opponents": "Will Howells \u0026 Yuta Funemizu", "partner": "Gabriel Tardio", "result": "W", "score": "11-5, 11-6"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 8467743725, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Hayden Patriquin \u0026 Christian Alshon", "opponents": "Hayden Patriquin \u0026 Christian Alshon", "partner": "Gabriel Tardio", "result": "W", "score": "13-11, 3-11, 3-11, 11-2, 11-7"}, {"date": "Mar 29, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.006, "match_id": 8325529052, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Anna Bright \u0026 Hayden Patriquin", "opponents": "Anna Bright \u0026 Hayden Patriquin", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-0, 15-13"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7678940460, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Andrei Daescu", "opponents": "Federico Staksrud \u0026 Andrei Daescu", "partner": "Gabriel Tardio", "result": "W", "score": "4-11, 11-9, 11-6"}, {"date": "Mar 28, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6574031744, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Federico Staksrud \u0026 Kate Fahey", "opponents": "Federico Staksrud \u0026 Kate Fahey", "partner": "Anna Leigh Waters", "result": "W", "score": "11-3, 11-6"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.001, "match_id": 7060756653, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Dekel Bar \u0026 Wyatt Stone", "opponents": "Dekel Bar \u0026 Wyatt Stone", "partner": "Gabriel Tardio", "result": "W", "score": "11-8, 11-3"}, {"date": "Mar 27, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7752162478, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Parris Todd \u0026 Andrei Daescu", "opponents": "Parris Todd \u0026 Andrei Daescu", "partner": "Anna Leigh Waters", "result": "W", "score": "11-4, 11-4"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.004, "match_id": 6560143164, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Len Yang \u0026 Collin Johns", "opponents": "Len Yang \u0026 Collin Johns", "partner": "Gabriel Tardio", "result": "W", "score": "11-4, 11-6"}, {"date": "Mar 26, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.001, "match_id": 8259110717, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Will Howells \u0026 Meghan Dizon", "opponents": "Will Howells \u0026 Meghan Dizon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-5, 11-3"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mens Doubles Pro Main Draw", "format": "D", "impact_val": -0.002, "match_id": 7646441600, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eGabriel Tardio\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Christopher Crouch \u0026 Matthew Barlow", "opponents": "Christopher Crouch \u0026 Matthew Barlow", "partner": "Gabriel Tardio", "result": "W", "score": "11-3, 11-4"}, {"date": "Mar 25, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": -0.007, "match_id": 8314919531, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Angie Walker \u0026 Michael Loyd", "opponents": "Angie Walker \u0026 Michael Loyd", "partner": "Anna Leigh Waters", "result": "W", "score": "11-7, 11-3"}, {"date": "Mar 24, 2026", "event": "PPA Tour: Greater Zion Cup at Black Desert Resort - Mixed Doubles Pro Main Draw", "format": "D", "impact_val": 0.0, "match_id": 6881928447, "opp_text": "w/ \u003cspan class=\"match-partner\"\u003eAnna Leigh Waters\u003c/span\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e Syed Uzair Sufi Bin Syed Ibrahim \u0026 Mihae Kwon", "opponents": "Syed Uzair Sufi Bin Syed Ibrahim \u0026 Mihae Kwon", "partner": "Anna Leigh Waters", "result": "W", "score": "11-0, 11-4"}]' data-internal-id="8092075244">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
             <span class="streak-badge streak-w">🔥 46W</span>
@@ -1948,7 +2032,7 @@
                 <div class="cs-bar" style="--win-pct: 88%;">
                     <div class="cs-record"><span class="cs-w">1043</span><span class="cs-sep">-</span><span class="cs-l">136</span></div>
                     <div class="cs-pct cs-pct-high">88%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">46W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
@@ -1958,9 +2042,9 @@
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 90%;">
-                    <div class="cs-record"><span class="cs-w">312</span><span class="cs-sep">-</span><span class="cs-l">34</span></div>
+                    <div class="cs-record"><span class="cs-w">312</span><span class="cs-sep">-</span><span class="cs-l">33</span></div>
                     <div class="cs-pct cs-pct-high">90%</div>
-                    <div class="cs-best"><span class="cs-best-lbl">Best</span>
+                    <div class="cs-best"><span class="cs-best-lbl">All-Time</span>
                         <span class="cs-peak-w">78W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">3L</span>
