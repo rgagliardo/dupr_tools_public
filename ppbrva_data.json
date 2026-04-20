@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-20T09:28:47",
-  "next_scan_at": "2026-04-20T09:58:47",
+  "generated_at": "2026-04-20T09:29:19",
+  "next_scan_at": "2026-04-20T09:59:19",
   "stats": {
     "total": 101,
-    "full_count": 8
+    "full_count": 7
   },
   "sessions": [
     {
@@ -329,10 +329,10 @@
       "start_display": "TUE APR 21  6:00 PM",
       "end_display": "8:00 PM",
       "status": "upcoming",
-      "capacity": 18,
-      "count": 18,
-      "pct": 100,
-      "is_full": true,
+      "capacity": 24,
+      "count": 19,
+      "pct": 79,
+      "is_full": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
@@ -351,9 +351,9 @@
         "Shawn A.",
         "Steven T.",
         "Suhail A.",
-        "+3 players"
+        "+4 players"
       ],
-      "last_snap_ts": "2026-04-20T05:29:20",
+      "last_snap_ts": "2026-04-20T09:29:19",
       "thieves": [],
       "big_dogs": []
     },
@@ -3430,6 +3430,30 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-04-20T09:29:19",
+      "type": "join",
+      "name": "+4 players",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 21  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d72ae-ac18-799b-9cfe-41315028a4ff"
+    },
+    {
+      "ts": "2026-04-20T09:29:19",
+      "type": "cancel",
+      "name": "+3 players",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 21  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d72ae-ac18-799b-9cfe-41315028a4ff"
+    },
+    {
+      "ts": "2026-04-20T09:29:19",
+      "type": "freed",
+      "name": "19/24",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 21  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d72ae-ac18-799b-9cfe-41315028a4ff"
+    },
     {
       "ts": "2026-04-20T09:12:28",
       "type": "join",
@@ -10703,17 +10727,17 @@
       "cancels": 0
     },
     {
+      "name": "Bikram S.",
+      "joins": 5,
+      "cancels": 0
+    },
+    {
       "name": "Thaian N.",
       "joins": 5,
       "cancels": 0
     },
     {
       "name": "Charles N.",
-      "joins": 5,
-      "cancels": 0
-    },
-    {
-      "name": "Bikram S.",
       "joins": 5,
       "cancels": 0
     },
@@ -10773,12 +10797,12 @@
       "cancels": 0
     },
     {
-      "name": "Charles Z.",
+      "name": "Rodney G.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Rodney G.",
+      "name": "Charles Z.",
       "joins": 3,
       "cancels": 0
     },
@@ -10856,12 +10880,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-        },
-        {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
         }
       ]
     },
@@ -11655,6 +11679,16 @@
       "capacity": 18
     },
     {
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE APR 21  6:00 PM",
+      "start_iso": "2026-04-21T18:00:00",
+      "url": "https://ppbrva.podplay.app/community/events/019d72ae-ac18-799b-9cfe-41315028a4ff",
+      "status": "upcoming",
+      "ghost_count": 4,
+      "total_count": 19,
+      "capacity": 24
+    },
+    {
       "title": "4.0 Open Play",
       "start": "FRI APR 3  8:00 PM",
       "start_iso": "2026-04-03T20:00:00",
@@ -11733,16 +11767,6 @@
       "ghost_count": 3,
       "total_count": 5,
       "capacity": 12
-    },
-    {
-      "title": "4.5/4.0 Open Play",
-      "start": "TUE APR 21  6:00 PM",
-      "start_iso": "2026-04-21T18:00:00",
-      "url": "https://ppbrva.podplay.app/community/events/019d72ae-ac18-799b-9cfe-41315028a4ff",
-      "status": "upcoming",
-      "ghost_count": 3,
-      "total_count": 18,
-      "capacity": 18
     },
     {
       "title": "4.5/4.0 Open Play",
