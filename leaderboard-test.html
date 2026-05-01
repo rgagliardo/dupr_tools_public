@@ -133,13 +133,25 @@
             vertical-align: baseline;
             color: inherit;
             text-decoration: underline dotted;
-            text-decoration-color: rgba(106, 106, 138, 0.45);
+            /* Bumped from 0.45 → 0.65 — at the lower alpha the dotted line
+               sat on top of the match-opp-line text color (#6a6a8a) and
+               vanished. Still subtle, but actually visible now. */
+            text-decoration-color: rgba(140, 140, 175, 0.65);
             text-underline-offset: 2px;
             cursor: pointer;
             transition: color 0.15s, text-decoration-color 0.15s;
         }
         .player-link[target="_blank"] {
             text-decoration-style: dashed;
+        }
+        /* Faint ↗ after external (target=_blank) links — at the small font
+           sizes used in match rows, dotted-vs-dashed is too subtle to
+           communicate "opens new tab"; the glyph carries the weight. */
+        .player-link[target="_blank"]::after {
+            content: ' \2197';
+            font-size: 0.85em;
+            opacity: 0.5;
+            margin-left: 1px;
         }
         .player-link:hover {
             color: var(--accent, #00e5ff);
@@ -207,16 +219,18 @@
         /* Flex container so wraps happen at intentional column-gap
            boundaries instead of arbitrary mid-token break points (the
            per-word wrap bug seen on mobile WebKit when many anchors with
-           verbose attributes share the inline formatting context). */
+           verbose attributes share the inline formatting context).
+           Padding rebalances the gap to feel "inside the match-group"
+           rather than floating between rows. */
         .match-opp-line {
             display: flex; flex-wrap: wrap;
             align-items: baseline;
             column-gap: 4px; row-gap: 0;
             font-size: 13px; color: #6a6a8a;
-            padding: 2px 0 0 0; line-height: 1.4;
+            padding: 3px 0 1px 0; line-height: 1.4;
         }
         .match-partner { color: #7a8fcc; font-weight: 600; }
-        .match-vs { color: #8e8eaa; font-size: 9px; text-transform: uppercase; font-weight: 700; }
+        .match-vs { color: #8e8eaa; font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700; }
         .match-date { flex-shrink: 0; white-space: nowrap; font-size: 12px; font-weight: 500; color: #666680; }
         .match-score { font-size: 14px; font-weight: 700; color: #e0e0e0; }
         .match-result { font-size: 14px; font-weight: 800; margin-left: 2px; }
@@ -530,7 +544,9 @@
             display: flex; align-items: baseline; gap: 6px;
             flex-wrap: wrap;   /* long off-roster partner names won't overflow */
             margin-top: 6px; padding-top: 6px;
-            border-top: 1px dashed rgba(255,255,255,0.05);
+            /* Bumped from 0.05 → 0.10 — at lower alpha the separator was
+               invisible against the rgba(0,0,0,0.3) dropdown background. */
+            border-top: 1px dashed rgba(255,255,255,0.10);
             font-size: 11px; color: #8e8eaa;
         }
         /* Sentence-case (not uppercase) so it reads as a field label,
@@ -544,10 +560,10 @@
            enough that the default rgba(106,106,138,0.45) decoration barely
            contrasts against it. */
         .cs-bp-name.player-link {
-            text-decoration-color: rgba(160, 160, 200, 0.55);
+            text-decoration-color: rgba(160, 160, 200, 0.75);
         }
         .cs-bp-record { font-size: 10px; color: #8080a0; font-variant-numeric: tabular-nums; }
-        .career-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; color: #9898b0; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px; }
+        .career-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; color: #9898b0; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px; }
         .cs-summary {
             font-size: 9px; font-weight: 400; letter-spacing: 0.5px;
             color: #8080a0; text-transform: none;
@@ -616,7 +632,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 12:04 PM</span>
+            <span>Last Updated: May 1, 2026 at 12:14 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
