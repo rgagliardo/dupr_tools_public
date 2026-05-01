@@ -123,27 +123,31 @@
             20%  { box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.85), 0 0 18px 4px rgba(0, 229, 255, 0.45); }
             100% { box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.0), 0 0 0 0 rgba(0, 229, 255, 0.0); }
         }
-        /* Link wrappers around player names (in match-history rows + Streak
-           Hall). Inherits text color/baseline so the partner/opponent line
-           stays on one visual row; hover/focus shows cyan + dotted underline
-           via text-decoration (paint-only, no layout shift). */
+        /* Link wrappers around player names. At-rest affordance: a faint
+           dotted underline (paint-only via text-decoration — no layout
+           shift). Hover/focus brightens to cyan. External links (target=
+           _blank) get a dashed underline so users can distinguish "jumps in
+           page" from "opens DUPR profile" at a glance. */
         .player-link {
             display: inline;
             vertical-align: baseline;
             color: inherit;
-            text-decoration: none;
+            text-decoration: underline dotted;
+            text-decoration-color: rgba(106, 106, 138, 0.45);
+            text-underline-offset: 2px;
             cursor: pointer;
-            transition: color 0.15s;
+            transition: color 0.15s, text-decoration-color 0.15s;
+        }
+        .player-link[target="_blank"] {
+            text-decoration-style: dashed;
         }
         .player-link:hover {
             color: var(--accent, #00e5ff);
-            text-decoration: underline dotted;
-            text-underline-offset: 2px;
+            text-decoration-color: var(--accent, #00e5ff);
         }
         .player-link:focus-visible {
             color: var(--accent, #00e5ff);
-            text-decoration: underline dotted;
-            text-underline-offset: 2px;
+            text-decoration-color: var(--accent, #00e5ff);
             outline: 2px solid #00e5ff;
             outline-offset: 2px;
             border-radius: 2px;
@@ -200,7 +204,17 @@
         .match-group.win { border-left-color: #00e5ff; }
         .match-group.loss { border-left-color: #ff00a0; }
         .match-row { display: flex; align-items: baseline; gap: 6px; }
-        .match-opp-line { font-size: 13px; color: #6a6a8a; padding: 2px 0 0 0; line-height: 1.4; }
+        /* Flex container so wraps happen at intentional column-gap
+           boundaries instead of arbitrary mid-token break points (the
+           per-word wrap bug seen on mobile WebKit when many anchors with
+           verbose attributes share the inline formatting context). */
+        .match-opp-line {
+            display: flex; flex-wrap: wrap;
+            align-items: baseline;
+            column-gap: 4px; row-gap: 0;
+            font-size: 13px; color: #6a6a8a;
+            padding: 2px 0 0 0; line-height: 1.4;
+        }
         .match-partner { color: #7a8fcc; font-weight: 600; }
         .match-vs { color: #8e8eaa; font-size: 9px; text-transform: uppercase; font-weight: 700; }
         .match-date { flex-shrink: 0; white-space: nowrap; font-size: 12px; font-weight: 500; color: #666680; }
@@ -575,7 +589,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 10:07 AM</span>
+            <span>Last Updated: May 1, 2026 at 10:24 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
