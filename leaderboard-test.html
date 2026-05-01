@@ -528,18 +528,33 @@
         .career-stats { padding: 10px 12px 6px; }
         .cs-best-partner {
             display: flex; align-items: baseline; gap: 6px;
+            flex-wrap: wrap;   /* long off-roster partner names won't overflow */
             margin-top: 6px; padding-top: 6px;
             border-top: 1px dashed rgba(255,255,255,0.05);
             font-size: 11px; color: #8e8eaa;
         }
+        /* Sentence-case (not uppercase) so it reads as a field label,
+           distinct from the "CAREER STATS" section header above. */
         .cs-bp-lbl {
-            font-size: 9px; font-weight: 700; letter-spacing: 1px;
-            color: #6e6e86; text-transform: uppercase;
+            font-size: 10px; font-weight: 600; letter-spacing: 0.3px;
+            color: #6e6e86;
         }
         .cs-bp-name { color: #c0c0d8; font-weight: 600; }
-        .cs-bp-record { font-size: 10px; color: #8080a0; margin-left: auto; font-variant-numeric: tabular-nums; }
+        /* Brighter underline since the .cs-bp-name color (#c0c0d8) is light
+           enough that the default rgba(106,106,138,0.45) decoration barely
+           contrasts against it. */
+        .cs-bp-name.player-link {
+            text-decoration-color: rgba(160, 160, 200, 0.55);
+        }
+        .cs-bp-record { font-size: 10px; color: #8080a0; font-variant-numeric: tabular-nums; }
         .career-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; color: #9898b0; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px; }
-        .cs-summary { font-size: 9px; font-weight: 400; letter-spacing: 0.5px; color: #8080a0; text-transform: none; }
+        .cs-summary {
+            font-size: 9px; font-weight: 400; letter-spacing: 0.5px;
+            color: #8080a0; text-transform: none;
+            /* Allow the dot-separated chain (matches · since · last played)
+               to wrap on narrow phones rather than overflow the card. */
+            flex-wrap: wrap; min-width: 0;
+        }
         .cs-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
         .cs-fmt {
             font-size: 10px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;
@@ -601,7 +616,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 11:36 AM</span>
+            <span>Last Updated: May 1, 2026 at 12:04 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -908,7 +923,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4549099018" target="_blank" rel="noreferrer noopener" aria-label="Anna Bright (opens DUPR profile)">Anna Bright</a>
                 <span class="cs-bp-record">108-2 (98%)</span>
             </div>
@@ -969,7 +984,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#1RWDQ3" data-jump="1RWDQ3">Anna Leigh Waters</a>
                 <span class="cs-bp-record">358-8 (98%)</span>
             </div>
@@ -1031,7 +1046,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
                 <span class="cs-bp-record">15-0 (100%)</span>
             </div>
@@ -1091,7 +1106,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4683778334" target="_blank" rel="noreferrer noopener" aria-label="Rachel Rohrabacher (opens DUPR profile)">Rachel Rohrabacher</a>
                 <span class="cs-bp-record">13-5 (72%)</span>
             </div>
@@ -1148,7 +1163,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
                 <span class="cs-bp-record">33-0 (100%)</span>
             </div>
@@ -1220,7 +1235,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
                 <span class="cs-bp-record">33-0 (100%)</span>
             </div>
@@ -1280,7 +1295,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4683778334" target="_blank" rel="noreferrer noopener" aria-label="Rachel Rohrabacher (opens DUPR profile)">Rachel Rohrabacher</a>
                 <span class="cs-bp-record">13-5 (72%)</span>
             </div>
@@ -1337,7 +1352,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6438163198" target="_blank" rel="noreferrer noopener" aria-label="David Richardson (opens DUPR profile)">David Richardson</a>
                 <span class="cs-bp-record">7-3 (70%)</span>
             </div>
@@ -1397,7 +1412,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7836522001" target="_blank" rel="noreferrer noopener" aria-label="Kevin Chu (opens DUPR profile)">Kevin Chu</a>
                 <span class="cs-bp-record">9-2 (82%)</span>
             </div>
@@ -1457,7 +1472,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
                 <span class="cs-bp-record">15-0 (100%)</span>
             </div>
@@ -1517,7 +1532,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6921968956" target="_blank" rel="noreferrer noopener" aria-label="Angela Fink Riccabona (opens DUPR profile)">Angela Fink Riccabona</a>
                 <span class="cs-bp-record">14-1 (93%)</span>
             </div>
@@ -1578,7 +1593,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8372279743" target="_blank" rel="noreferrer noopener" aria-label="Jason Renner (opens DUPR profile)">Jason Renner</a>
                 <span class="cs-bp-record">15-8 (65%)</span>
             </div>
@@ -1639,7 +1654,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6327075693" target="_blank" rel="noreferrer noopener" aria-label="Timothy Cass (opens DUPR profile)">Timothy Cass</a>
                 <span class="cs-bp-record">9-1 (90%)</span>
             </div>
@@ -1697,7 +1712,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5687869789" target="_blank" rel="noreferrer noopener" aria-label="Jacob Johnson (opens DUPR profile)">Jacob Johnson</a>
                 <span class="cs-bp-record">27-5 (84%)</span>
             </div>
@@ -1745,7 +1760,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6799786773" target="_blank" rel="noreferrer noopener" aria-label="Jessica Hadler (opens DUPR profile)">Jessica Hadler</a>
                 <span class="cs-bp-record">11-1 (92%)</span>
             </div>
@@ -1805,7 +1820,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#KOD95Q" data-jump="KOD95Q">Aibika Kalsarieva</a>
                 <span class="cs-bp-record">33-0 (100%)</span>
             </div>
@@ -1863,7 +1878,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7263693276" target="_blank" rel="noreferrer noopener" aria-label="Sarah Moomau (opens DUPR profile)">Sarah Moomau</a>
                 <span class="cs-bp-record">16-8 (67%)</span>
             </div>
@@ -1913,7 +1928,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5216492732" target="_blank" rel="noreferrer noopener" aria-label="Dipen Patel (opens DUPR profile)">Dipen Patel</a>
                 <span class="cs-bp-record">49-9 (84%)</span>
             </div>
@@ -1974,7 +1989,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5402261864" target="_blank" rel="noreferrer noopener" aria-label="Patricia Hammer (opens DUPR profile)">Patricia Hammer</a>
                 <span class="cs-bp-record">13-1 (93%)</span>
             </div>
@@ -2047,7 +2062,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4549099018" target="_blank" rel="noreferrer noopener" aria-label="Anna Bright (opens DUPR profile)">Anna Bright</a>
                 <span class="cs-bp-record">108-2 (98%)</span>
             </div>
@@ -2108,7 +2123,7 @@
                 </span>
             </div>
             <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner</span>
+                <span class="cs-bp-lbl">Best partner:</span>
                 <a class="player-link cs-bp-name" href="#1RWDQ3" data-jump="1RWDQ3">Anna Leigh Waters</a>
                 <span class="cs-bp-record">358-8 (98%)</span>
             </div>
