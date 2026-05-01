@@ -128,6 +128,8 @@
            stays on one visual row; hover/focus shows cyan + dotted underline
            via text-decoration (paint-only, no layout shift). */
         .player-link {
+            display: inline;
+            vertical-align: baseline;
             color: inherit;
             text-decoration: none;
             cursor: pointer;
@@ -573,7 +575,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 10:00 AM</span>
+            <span>Last Updated: May 1, 2026 at 10:02 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
