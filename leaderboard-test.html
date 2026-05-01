@@ -132,6 +132,11 @@
             text-decoration: none;
             cursor: pointer;
             transition: color 0.15s;
+            /* Vertical padding on an inline anchor expands the tap area
+               (the painted hit-region) without taking layout space — inline
+               padding doesn't push siblings vertically. Lifts the touch
+               target from ~18px to ~34px without altering the visual line. */
+            padding: 8px 0;
         }
         .player-link:hover {
             color: var(--accent, #00e5ff);
@@ -573,7 +578,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 9:47 AM</span>
+            <span>Last Updated: May 1, 2026 at 9:50 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
