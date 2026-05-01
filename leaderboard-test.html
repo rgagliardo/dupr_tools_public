@@ -540,36 +540,42 @@
 
         /* ── Career Stats (player card) ─────────────────────────────── */
         .career-stats { padding: 10px 12px 6px; }
-        .cs-best-partner {
-            display: flex; align-items: baseline; gap: 6px;
-            flex-wrap: wrap;   /* long off-roster partner names won't overflow */
-            margin-top: 6px; padding-top: 6px;
-            /* Bumped from 0.05 → 0.10 — at lower alpha the separator was
-               invisible against the rgba(0,0,0,0.3) dropdown background. */
-            border-top: 1px dashed rgba(255,255,255,0.10);
-            font-size: 11px; color: #8e8eaa;
+        /* Info rows under the section header — one consistent shape for
+           DUPR ID / Matches / Best partner / Notes. Left-aligned, same
+           font-size, same label/value contrast. */
+        .cs-info-row {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            font-size: 11px;
+            color: #b0b0c8;
+            line-height: 1.5;
+            margin-bottom: 2px;
         }
-        /* Sentence-case (not uppercase) so it reads as a field label,
-           distinct from the "CAREER STATS" section header above. */
-        .cs-bp-lbl {
-            font-size: 10px; font-weight: 600; letter-spacing: 0.3px;
+        .cs-info-label {
             color: #6e6e86;
+            font-weight: 600;
+            flex-shrink: 0;
         }
+        .cs-info-value {
+            color: #b0b0c8;
+            min-width: 0;
+            font-variant-numeric: tabular-nums;
+        }
+        /* Small gap before the D/S record bars start. */
+        .cs-info-row + .cs-row,
+        .cs-info-row:last-of-type { margin-bottom: 8px; }
+        /* Best-partner name nested in a value cell still gets the player-link
+           styling; bump the underline to read clearly on the brighter color. */
         .cs-bp-name { color: #c0c0d8; font-weight: 600; }
-        /* Brighter underline since the .cs-bp-name color (#c0c0d8) is light
-           enough that the default rgba(106,106,138,0.45) decoration barely
-           contrasts against it. */
         .cs-bp-name.player-link {
             text-decoration-color: rgba(160, 160, 200, 0.75);
         }
-        .cs-bp-record { font-size: 10px; color: #8080a0; font-variant-numeric: tabular-nums; }
-        .career-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; color: #9898b0; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px; }
-        .cs-summary {
-            font-size: 9px; font-weight: 400; letter-spacing: 0.5px;
-            color: #8080a0; text-transform: none;
-            /* Allow the dot-separated chain (matches · since · last played)
-               to wrap on narrow phones rather than overflow the card. */
-            flex-wrap: wrap; min-width: 0;
+        /* "CAREER STATS" title at the top of the expanded card content. */
+        .career-label {
+            font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
+            color: #9898b0; text-transform: uppercase;
+            margin-bottom: 6px;
         }
         .cs-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
         .cs-fmt {
@@ -632,7 +638,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 12:14 PM</span>
+            <span>Last Updated: May 1, 2026 at 12:26 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -744,17 +750,17 @@
             <div class="sh-champion sh-w">
     <div class="sh-champion-head">
         <span class="sh-champion-badge"><span aria-hidden="true">🔥</span> Current Run</span>
-        <span class="sh-champion-count">7<sup>W</sup></span>
+        <span class="sh-champion-count">8<sup>W</sup></span>
     </div>
     <div class="sh-champion-name"><a class="player-link" href="#9PDMMK" data-jump="9PDMMK">Youssef Bouzidi</a></div>
     <div class="sh-champion-since">Leading since 2026-05-01</div><div class="sh-match">
     <div class="sh-match-head">
-        <span class="sh-match-date">Apr 18, 2026</span>
+        <span class="sh-match-date">May 1, 2026</span>
         <span class="sh-match-result w">W</span>
     </div>
-    <div class="sh-match-score">11-7, 11-2</div>
-    <div class="sh-match-players"> <span class="sh-vs">vs</span><a class="player-link" href="https://dashboard.dupr.com/dashboard/player/7579366879" target="_blank" rel="noreferrer noopener" aria-label="Marcello Paiva Jardim (opens DUPR profile)">Marcello Paiva Jardim</a>
-    </div><div class="sh-match-event">2026 Franklin US Open Pickleball Championships - Men's Champions Pro Singles- Main Draw</div>
+    <div class="sh-match-score">11-0, 11-4</div>
+    <div class="sh-match-players"> <span class="sh-vs">vs</span><a class="player-link" href="https://dashboard.dupr.com/dashboard/player/5694027886" target="_blank" rel="noreferrer noopener" aria-label="Todd Dickerson (opens DUPR profile)">Todd Dickerson</a>
+    </div><div class="sh-match-event">APP Sacramento Open Benftg. Shriners Children's - AARP Champions (50+) Mens Pro Singles</div>
 </div>
 </div>
             <div class="sh-champion sh-l">
@@ -930,18 +936,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWDQ3</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">1,419 matches · since Feb '20 · last played today
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">1RWDQ3</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">1,419 · since Feb '20 · last played today
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4549099018" target="_blank" rel="noreferrer noopener" aria-label="Anna Bright (opens DUPR profile)">Anna Bright</a>
-                <span class="cs-bp-record">108-2 (98%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4549099018" target="_blank" rel="noreferrer noopener" aria-label="Anna Bright (opens DUPR profile)">Anna Bright</a>
+                    · 108-2 (98%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -991,18 +1002,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;V8DYL8</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">1,530 matches · since Feb '20 · last played yesterday
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">V8DYL8</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">1,530 · since Feb '20 · last played yesterday
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#1RWDQ3" data-jump="1RWDQ3">Anna Leigh Waters</a>
-                <span class="cs-bp-record">358-8 (98%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#1RWDQ3" data-jump="1RWDQ3">Anna Leigh Waters</a>
+                    · 358-8 (98%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1053,18 +1069,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3ZLKQP</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">792 matches · since Sep '22 · last played yesterday
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">3ZLKQP</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">792 · since Sep '22 · last played yesterday
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
-                <span class="cs-bp-record">15-0 (100%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
+                    · 15-0 (100%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1113,18 +1134,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8J5P4D</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">950 matches · since Feb '20 · last played 2d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">8J5P4D</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">950 · since Feb '20 · last played 2d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4683778334" target="_blank" rel="noreferrer noopener" aria-label="Rachel Rohrabacher (opens DUPR profile)">Rachel Rohrabacher</a>
-                <span class="cs-bp-record">13-5 (72%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4683778334" target="_blank" rel="noreferrer noopener" aria-label="Rachel Rohrabacher (opens DUPR profile)">Rachel Rohrabacher</a>
+                    · 13-5 (72%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1170,18 +1196,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;KOD95Q</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">342 matches · since May '23 · last played 3d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">KOD95Q</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">342 · since May '23 · last played 3d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
-                <span class="cs-bp-record">33-0 (100%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
+                    · 33-0 (100%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1242,18 +1273,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;KOD95Q</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">342 matches · since May '23 · last played 3d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">KOD95Q</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">342 · since May '23 · last played 3d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
-                <span class="cs-bp-record">33-0 (100%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
+                    · 33-0 (100%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1302,18 +1338,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8J5P4D</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">950 matches · since Feb '20 · last played 2d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">8J5P4D</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">950 · since Feb '20 · last played 2d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4683778334" target="_blank" rel="noreferrer noopener" aria-label="Rachel Rohrabacher (opens DUPR profile)">Rachel Rohrabacher</a>
-                <span class="cs-bp-record">13-5 (72%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4683778334" target="_blank" rel="noreferrer noopener" aria-label="Rachel Rohrabacher (opens DUPR profile)">Rachel Rohrabacher</a>
+                    · 13-5 (72%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1359,18 +1400,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3VLZ4J</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">446 matches · since May '21 · last played 14d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">3VLZ4J</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">446 · since May '21 · last played 14d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6438163198" target="_blank" rel="noreferrer noopener" aria-label="David Richardson (opens DUPR profile)">David Richardson</a>
-                <span class="cs-bp-record">7-3 (70%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6438163198" target="_blank" rel="noreferrer noopener" aria-label="David Richardson (opens DUPR profile)">David Richardson</a>
+                    · 7-3 (70%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1419,18 +1465,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;35RPR8</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">373 matches · since Feb '21 · last played 17d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">35RPR8</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">373 · since Feb '21 · last played 17d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7836522001" target="_blank" rel="noreferrer noopener" aria-label="Kevin Chu (opens DUPR profile)">Kevin Chu</a>
-                <span class="cs-bp-record">9-2 (82%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7836522001" target="_blank" rel="noreferrer noopener" aria-label="Kevin Chu (opens DUPR profile)">Kevin Chu</a>
+                    · 9-2 (82%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1479,18 +1530,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3ZLKQP</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">792 matches · since Sep '22 · last played yesterday
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">3ZLKQP</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">792 · since Sep '22 · last played yesterday
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
-                <span class="cs-bp-record">15-0 (100%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#3OOO2W" data-jump="3OOO2W">Sarah Hua</a>
+                    · 15-0 (100%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1539,18 +1595,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;84Q6J2</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">721 matches · since Sep '21 · last played 1mo ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">84Q6J2</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">721 · since Sep '21 · last played 1mo ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6921968956" target="_blank" rel="noreferrer noopener" aria-label="Angela Fink Riccabona (opens DUPR profile)">Angela Fink Riccabona</a>
-                <span class="cs-bp-record">14-1 (93%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6921968956" target="_blank" rel="noreferrer noopener" aria-label="Angela Fink Riccabona (opens DUPR profile)">Angela Fink Riccabona</a>
+                    · 14-1 (93%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1599,19 +1660,27 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;8EP07W</span>
-            <span class="player-notes">Streak test — long L streak</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">609 matches · since Oct '21 · last played 10d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">8EP07W</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">609 · since Oct '21 · last played 10d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8372279743" target="_blank" rel="noreferrer noopener" aria-label="Jason Renner (opens DUPR profile)">Jason Renner</a>
-                <span class="cs-bp-record">15-8 (65%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8372279743" target="_blank" rel="noreferrer noopener" aria-label="Jason Renner (opens DUPR profile)">Jason Renner</a>
+                    · 15-8 (65%)
+                </span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Notes:</span>
+                <span class="cs-info-value player-notes">Streak test — long L streak</span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1660,19 +1729,27 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;30XXEX</span>
-            <span class="player-notes">Luis has all of the socials</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">210 matches · since Apr '22 · last played 1mo ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">30XXEX</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">210 · since Apr '22 · last played 1mo ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6327075693" target="_blank" rel="noreferrer noopener" aria-label="Timothy Cass (opens DUPR profile)">Timothy Cass</a>
-                <span class="cs-bp-record">9-1 (90%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6327075693" target="_blank" rel="noreferrer noopener" aria-label="Timothy Cass (opens DUPR profile)">Timothy Cass</a>
+                    · 9-1 (90%)
+                </span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Notes:</span>
+                <span class="cs-info-value player-notes">Luis has all of the socials</span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1719,18 +1796,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;WXDL2M</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">268 matches · since Oct '24 · last played 29d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">WXDL2M</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">268 · since Oct '24 · last played 29d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5687869789" target="_blank" rel="noreferrer noopener" aria-label="Jacob Johnson (opens DUPR profile)">Jacob Johnson</a>
-                <span class="cs-bp-record">27-5 (84%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5687869789" target="_blank" rel="noreferrer noopener" aria-label="Jacob Johnson (opens DUPR profile)">Jacob Johnson</a>
+                    · 27-5 (84%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1767,18 +1849,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWYOE</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">304 matches · since May '21 · last played 10d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">1RWYOE</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">304 · since May '21 · last played 10d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6799786773" target="_blank" rel="noreferrer noopener" aria-label="Jessica Hadler (opens DUPR profile)">Jessica Hadler</a>
-                <span class="cs-bp-record">11-1 (92%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6799786773" target="_blank" rel="noreferrer noopener" aria-label="Jessica Hadler (opens DUPR profile)">Jessica Hadler</a>
+                    · 11-1 (92%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1827,18 +1914,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;3OOO2W</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">231 matches · since Apr '23 · last played 2mo ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">3OOO2W</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">231 · since Apr '23 · last played 2mo ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#KOD95Q" data-jump="KOD95Q">Aibika Kalsarieva</a>
-                <span class="cs-bp-record">33-0 (100%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#KOD95Q" data-jump="KOD95Q">Aibika Kalsarieva</a>
+                    · 33-0 (100%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1885,18 +1977,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;17E6EM</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">127 matches · since Oct '22 · last played 29d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">17E6EM</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">127 · since Oct '22 · last played 29d ago
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7263693276" target="_blank" rel="noreferrer noopener" aria-label="Sarah Moomau (opens DUPR profile)">Sarah Moomau</a>
-                <span class="cs-bp-record">16-8 (67%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7263693276" target="_blank" rel="noreferrer noopener" aria-label="Sarah Moomau (opens DUPR profile)">Sarah Moomau</a>
+                    · 16-8 (67%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1934,19 +2031,27 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;896GX7</span>
-            <span class="player-notes">Bleed test: Suraj is a RVA-based 5.1 DUPR with a legendary third-shot drop and an even more legendary habit of arriving on court with three paddles, two water bottles, and a backup pair of indoor shoes. He switched from singles to doubles last year because standing still made his knees question their career choices. Known for calling his partner 'pardner' (intentional), for an unusual grip-change during serves, and for a pre-match routine that involves eight minutes of silent visualization and one very loud high-five. Rumor has it he once won a rec-league final 11-9 after being down 1-7 by switching to lobs that defied local gravity. Also: allegedly invented a spin serve he calls 'the helicoptero,' which no one has yet confirmed exists on video. Cardio: above average. Snack game: elite. Banter: unfiltered. Do not lend him your backup grip.</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">95 matches · since Oct '22 · last played Feb 27, 2025
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">896GX7</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">95 · since Oct '22 · last played Feb 27, 2025
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5216492732" target="_blank" rel="noreferrer noopener" aria-label="Dipen Patel (opens DUPR profile)">Dipen Patel</a>
-                <span class="cs-bp-record">49-9 (84%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5216492732" target="_blank" rel="noreferrer noopener" aria-label="Dipen Patel (opens DUPR profile)">Dipen Patel</a>
+                    · 49-9 (84%)
+                </span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Notes:</span>
+                <span class="cs-info-value player-notes">Bleed test: Suraj is a RVA-based 5.1 DUPR with a legendary third-shot drop and an even more legendary habit of arriving on court with three paddles, two water bottles, and a backup pair of indoor shoes. He switched from singles to doubles last year because standing still made his knees question their career choices. Known for calling his partner 'pardner' (intentional), for an unusual grip-change during serves, and for a pre-match routine that involves eight minutes of silent visualization and one very loud high-five. Rumor has it he once won a rec-league final 11-9 after being down 1-7 by switching to lobs that defied local gravity. Also: allegedly invented a spin serve he calls 'the helicoptero,' which no one has yet confirmed exists on video. Cardio: above average. Snack game: elite. Banter: unfiltered. Do not lend him your backup grip.</span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -1979,7 +2084,7 @@
         <div class="match-list"></div>
     </div>
 </details>
-                <details class="player-details" id="9PDMMK" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.863" data-singles="5.973" data-streak="-1" data-matches='[{"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.026, "match_id": 7637998523, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7579366879\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcello Paiva Jardim (opens DUPR profile)\"\u003eMarcello Paiva Jardim\u003c/a\u003e", "opponents": "Marcello Paiva Jardim", "opponents_struct": [{"dupr_id": "4LEL5V", "internal_id": "7579366879", "name": "Marcello Paiva Jardim"}], "partner": null, "partners": [], "result": "W", "score": "11-7, 11-2"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.007, "match_id": 5235918944, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6497842304\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Blake e Arrant (opens DUPR profile)\"\u003eBlake e Arrant\u003c/a\u003e", "opponents": "Blake e Arrant", "opponents_struct": [{"dupr_id": "RZ6KKE", "internal_id": "6497842304", "name": "Blake e Arrant"}], "partner": null, "partners": [], "result": "W", "score": "11-3, 9-11, 11-6"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.034, "match_id": 7468822256, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7530233421\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mike Wolf (opens DUPR profile)\"\u003eMike Wolf\u003c/a\u003e", "opponents": "Mike Wolf", "opponents_struct": [{"dupr_id": "17MM24", "internal_id": "7530233421", "name": "Mike Wolf"}], "partner": null, "partners": [], "result": "W", "score": "11-1, 11-4"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": -0.013, "match_id": 6040218908, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5251774022\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Chris Chiang (opens DUPR profile)\"\u003eChris Chiang\u003c/a\u003e", "opponents": "Chris Chiang", "opponents_struct": [{"dupr_id": "JJJ5DD", "internal_id": "5251774022", "name": "Chris Chiang"}], "partner": null, "partners": [], "result": "W", "score": "11-4, 11-2"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.0, "match_id": 5532036211, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/8471718165\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kevin Davis (opens DUPR profile)\"\u003eKevin Davis\u003c/a\u003e", "opponents": "Kevin Davis", "opponents_struct": [{"dupr_id": "3XV4R2", "internal_id": "8471718165", "name": "Kevin Davis"}], "partner": null, "partners": [], "result": "W", "score": "11-1, 11-1"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.013, "match_id": 7482951258, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5535077141\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mircea Morariu (opens DUPR profile)\"\u003eMircea Morariu\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5416538866\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Audra Spielberger (opens DUPR profile)\"\u003eAudra Spielberger\u003c/a\u003e", "opponents": "Mircea Morariu \u0026 Audra Spielberger", "opponents_struct": [{"dupr_id": "16KQ0Q", "internal_id": "5535077141", "name": "Mircea Morariu"}, {"dupr_id": "3LPQNQ", "internal_id": "5416538866", "name": "Audra Spielberger"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "L", "score": "5-15"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.004, "match_id": 6311113327, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7785775135\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Ellen Novoseletsky (opens DUPR profile)\"\u003eEllen Novoseletsky\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/8576707379\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Tomer Graziani (opens DUPR profile)\"\u003eTomer Graziani\u003c/a\u003e", "opponents": "Ellen Novoseletsky \u0026 Tomer Graziani", "opponents_struct": [{"dupr_id": "8J52D4", "internal_id": "7785775135", "name": "Ellen Novoseletsky"}, {"dupr_id": "59EKLL", "internal_id": "8576707379", "name": "Tomer Graziani"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "W", "score": "15-10"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.008, "match_id": 6331621682, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5549801006\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Erica Marsh (opens DUPR profile)\"\u003eErica Marsh\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4735304915\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Richard Celler (opens DUPR profile)\"\u003eRichard Celler\u003c/a\u003e", "opponents": "Erica Marsh \u0026 Richard Celler", "opponents_struct": [{"dupr_id": "30NMOX", "internal_id": "5549801006", "name": "Erica Marsh"}, {"dupr_id": "3VWGZ5", "internal_id": "4735304915", "name": "Richard Celler"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "W", "score": "15-10"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.014, "match_id": 6644261341, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5284882815\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kitri Boser (opens DUPR profile)\"\u003eKitri Boser\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6936405919\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Chip James (opens DUPR profile)\"\u003eChip James\u003c/a\u003e", "opponents": "Kitri Boser \u0026 Chip James", "opponents_struct": [{"dupr_id": "L5JOLK", "internal_id": "5284882815", "name": "Kitri Boser"}, {"dupr_id": "35YO0L", "internal_id": "6936405919", "name": "Chip James"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "L", "score": "11-1, 10-12, 7-11"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.005, "match_id": 4562899613, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6406808551\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Katherine Gillis (opens DUPR profile)\"\u003eKatherine Gillis\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6338694055\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jim Bronson (opens DUPR profile)\"\u003eJim Bronson\u003c/a\u003e", "opponents": "Katherine Gillis \u0026 Jim Bronson", "opponents_struct": [{"dupr_id": "3LE7X5", "internal_id": "6406808551", "name": "Katherine Gillis"}, {"dupr_id": "8EJ64O", "internal_id": "6338694055", "name": "Jim Bronson"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "W", "score": "11-6, 11-3"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": -0.003, "match_id": 6546261931, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6183587373\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Morgan Shepherd (opens DUPR profile)\"\u003eMorgan Shepherd\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5062775487\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mark Hamilton (opens DUPR profile)\"\u003eMark Hamilton\u003c/a\u003e", "opponents": "Morgan Shepherd \u0026 Mark Hamilton", "opponents_struct": [{"dupr_id": "6Z6P5Q", "internal_id": "6183587373", "name": "Morgan Shepherd"}, {"dupr_id": "8G70X1", "internal_id": "5062775487", "name": "Mark Hamilton"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "8-11, 11-3, 11-5"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.009, "match_id": 4995936326, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5535077141\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mircea Morariu (opens DUPR profile)\"\u003eMircea Morariu\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6127412768\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jose Derisi (opens DUPR profile)\"\u003eJose Derisi\u003c/a\u003e", "opponents": "Mircea Morariu \u0026 Jose Derisi", "opponents_struct": [{"dupr_id": "16KQ0Q", "internal_id": "5535077141", "name": "Mircea Morariu"}, {"dupr_id": "84VOW6", "internal_id": "6127412768", "name": "Jose Derisi"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "15-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": -0.011, "match_id": 8222195467, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5629966025\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jaime Oncins (opens DUPR profile)\"\u003eJaime Oncins\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7579366879\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcello Paiva Jardim (opens DUPR profile)\"\u003eMarcello Paiva Jardim\u003c/a\u003e", "opponents": "Jaime Oncins \u0026 Marcello Paiva Jardim", "opponents_struct": [{"dupr_id": "17J4Q0", "internal_id": "5629966025", "name": "Jaime Oncins"}, {"dupr_id": "4LEL5V", "internal_id": "7579366879", "name": "Marcello Paiva Jardim"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "L", "score": "7-11, 5-11"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.002, "match_id": 4627037911, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6183587373\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Morgan Shepherd (opens DUPR profile)\"\u003eMorgan Shepherd\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5062775487\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mark Hamilton (opens DUPR profile)\"\u003eMark Hamilton\u003c/a\u003e", "opponents": "Morgan Shepherd \u0026 Mark Hamilton", "opponents_struct": [{"dupr_id": "6Z6P5Q", "internal_id": "6183587373", "name": "Morgan Shepherd"}, {"dupr_id": "8G70X1", "internal_id": "5062775487", "name": "Mark Hamilton"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "11-2, 11-7"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.002, "match_id": 6120650509, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6417822611\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Todd Robertson (opens DUPR profile)\"\u003eTodd Robertson\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4560161354\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Peter Prodanov (opens DUPR profile)\"\u003ePeter Prodanov\u003c/a\u003e", "opponents": "Todd Robertson \u0026 Peter Prodanov", "opponents_struct": [{"dupr_id": "8KOJ63", "internal_id": "6417822611", "name": "Todd Robertson"}, {"dupr_id": "1N4DW8", "internal_id": "4560161354", "name": "Peter Prodanov"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "11-9, 11-0"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7573680651, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5706751825\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcellus Zuzarte (opens DUPR profile)\"\u003eMarcellus Zuzarte\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7651854780\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Tom DeCaprio (opens DUPR profile)\"\u003eTom DeCaprio\u003c/a\u003e", "opponents": "Marcellus Zuzarte \u0026 Tom DeCaprio", "opponents_struct": [{"dupr_id": "8EXGJW", "internal_id": "5706751825", "name": "Marcellus Zuzarte"}, {"dupr_id": "84P4ZV", "internal_id": "7651854780", "name": "Tom DeCaprio"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "11-0, 11-1"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.005, "match_id": 4317426758, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7497206520\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Patrick Cote (opens DUPR profile)\"\u003ePatrick Cote\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6346526303\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Trang Huynh (opens DUPR profile)\"\u003eTrang Huynh\u003c/a\u003e", "opponents": "Patrick Cote \u0026 Trang Huynh", "opponents_struct": [{"dupr_id": "30ZQQ4", "internal_id": "7497206520", "name": "Patrick Cote"}, {"dupr_id": "OD6OJW", "internal_id": "6346526303", "name": "Trang Huynh"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-5, 11-7"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": -0.01, "match_id": 5126351867, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5026084518\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Richard Livornese Jr (opens DUPR profile)\"\u003eRichard Livornese Jr\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6801272282\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Evelyn Welsher (opens DUPR profile)\"\u003eEvelyn Welsher\u003c/a\u003e", "opponents": "Richard Livornese Jr \u0026 Evelyn Welsher", "opponents_struct": [{"dupr_id": "8JVQD8", "internal_id": "5026084518", "name": "Richard Livornese Jr"}, {"dupr_id": "3YNPM4", "internal_id": "6801272282", "name": "Evelyn Welsher"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "L", "score": "10-12, 11-8, 3-11"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.013, "match_id": 7648963238, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5730181949\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Heather G Waters (opens DUPR profile)\"\u003eHeather G Waters\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5524434911\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Max Green (opens DUPR profile)\"\u003eMax Green\u003c/a\u003e", "opponents": "Heather G Waters \u0026 Max Green", "opponents_struct": [{"dupr_id": "16602G", "internal_id": "5730181949", "name": "Heather G Waters"}, {"dupr_id": "3VNQOP", "internal_id": "5524434911", "name": "Max Green"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.006, "match_id": 5207201058, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4735304915\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Richard Celler (opens DUPR profile)\"\u003eRichard Celler\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5217238518\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kelsey Laurente (opens DUPR profile)\"\u003eKelsey Laurente\u003c/a\u003e", "opponents": "Richard Celler \u0026 Kelsey Laurente", "opponents_struct": [{"dupr_id": "3VWGZ5", "internal_id": "4735304915", "name": "Richard Celler"}, {"dupr_id": "W6XV0K", "internal_id": "5217238518", "name": "Kelsey Laurente"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-1, 11-3"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.012, "match_id": 5496473854, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6722260479\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Ben Newell (opens DUPR profile)\"\u003eBen Newell\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7356897101\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kelly Stroble (opens DUPR profile)\"\u003eKelly Stroble\u003c/a\u003e", "opponents": "Ben Newell \u0026 Kelly Stroble", "opponents_struct": [{"dupr_id": "30KR23", "internal_id": "6722260479", "name": "Ben Newell"}, {"dupr_id": "3XRO53", "internal_id": "7356897101", "name": "Kelly Stroble"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-1, 11-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.002, "match_id": 6291695861, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6888321349\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Michael Challen (opens DUPR profile)\"\u003eMichael Challen\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6183587373\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Morgan Shepherd (opens DUPR profile)\"\u003eMorgan Shepherd\u003c/a\u003e", "opponents": "Michael Challen \u0026 Morgan Shepherd", "opponents_struct": [{"dupr_id": "3OJR9W", "internal_id": "6888321349", "name": "Michael Challen"}, {"dupr_id": "6Z6P5Q", "internal_id": "6183587373", "name": "Morgan Shepherd"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "W", "score": "11-6, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.001, "match_id": 4684937047, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5535077141\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mircea Morariu (opens DUPR profile)\"\u003eMircea Morariu\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6127412768\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jose Derisi (opens DUPR profile)\"\u003eJose Derisi\u003c/a\u003e", "opponents": "Mircea Morariu \u0026 Jose Derisi", "opponents_struct": [{"dupr_id": "16KQ0Q", "internal_id": "5535077141", "name": "Mircea Morariu"}, {"dupr_id": "84VOW6", "internal_id": "6127412768", "name": "Jose Derisi"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "W", "score": "18-16"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": -0.002, "match_id": 5407564949, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7579366879\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcello Paiva Jardim (opens DUPR profile)\"\u003eMarcello Paiva Jardim\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5629966025\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jaime Oncins (opens DUPR profile)\"\u003eJaime Oncins\u003c/a\u003e", "opponents": "Marcello Paiva Jardim \u0026 Jaime Oncins", "opponents_struct": [{"dupr_id": "4LEL5V", "internal_id": "7579366879", "name": "Marcello Paiva Jardim"}, {"dupr_id": "17J4Q0", "internal_id": "5629966025", "name": "Jaime Oncins"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "L", "score": "11-3, 8-11, 1-11"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.0, "match_id": 6335185483, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6174170924\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Dayne Gingrich (opens DUPR profile)\"\u003eDayne Gingrich\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4463294809\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Rick Witsken (opens DUPR profile)\"\u003eRick Witsken\u003c/a\u003e", "opponents": "Dayne Gingrich \u0026 Rick Witsken", "opponents_struct": [{"dupr_id": "8GWDM3", "internal_id": "6174170924", "name": "Dayne Gingrich"}, {"dupr_id": "3Z00M3", "internal_id": "4463294809", "name": "Rick Witsken"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "W", "score": "3-11, 11-5, 11-7"}]' data-internal-id="8490017643" data-dupr-id="9PDMMK">
+                <details class="player-details" id="9PDMMK" data-name="youssef bouzidi youssef bouzidi" data-doubles="5.863" data-singles="5.973" data-streak="-1" data-matches='[{"date": "May 1, 2026", "event": "APP Sacramento Open Benftg. Shriners Children\u0027s - AARP Champions (50+) Mens Pro Singles", "format": "S", "impact_val": 0.0, "match_id": 8162532438, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5694027886\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Todd Dickerson (opens DUPR profile)\"\u003eTodd Dickerson\u003c/a\u003e", "opponents": "Todd Dickerson", "opponents_struct": [{"dupr_id": "KOKJ7O", "internal_id": "5694027886", "name": "Todd Dickerson"}], "partner": null, "partners": [], "result": "W", "score": "11-0, 11-4"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.026, "match_id": 7637998523, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7579366879\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcello Paiva Jardim (opens DUPR profile)\"\u003eMarcello Paiva Jardim\u003c/a\u003e", "opponents": "Marcello Paiva Jardim", "opponents_struct": [{"dupr_id": "4LEL5V", "internal_id": "7579366879", "name": "Marcello Paiva Jardim"}], "partner": null, "partners": [], "result": "W", "score": "11-7, 11-2"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.007, "match_id": 5235918944, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6497842304\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Blake e Arrant (opens DUPR profile)\"\u003eBlake e Arrant\u003c/a\u003e", "opponents": "Blake e Arrant", "opponents_struct": [{"dupr_id": "RZ6KKE", "internal_id": "6497842304", "name": "Blake e Arrant"}], "partner": null, "partners": [], "result": "W", "score": "11-3, 9-11, 11-6"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.034, "match_id": 7468822256, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7530233421\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mike Wolf (opens DUPR profile)\"\u003eMike Wolf\u003c/a\u003e", "opponents": "Mike Wolf", "opponents_struct": [{"dupr_id": "17MM24", "internal_id": "7530233421", "name": "Mike Wolf"}], "partner": null, "partners": [], "result": "W", "score": "11-1, 11-4"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": -0.013, "match_id": 6040218908, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5251774022\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Chris Chiang (opens DUPR profile)\"\u003eChris Chiang\u003c/a\u003e", "opponents": "Chris Chiang", "opponents_struct": [{"dupr_id": "JJJ5DD", "internal_id": "5251774022", "name": "Chris Chiang"}], "partner": null, "partners": [], "result": "W", "score": "11-4, 11-2"}, {"date": "Apr 18, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Singles- Main Draw", "format": "S", "impact_val": 0.0, "match_id": 5532036211, "opp_text": "\u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/8471718165\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kevin Davis (opens DUPR profile)\"\u003eKevin Davis\u003c/a\u003e", "opponents": "Kevin Davis", "opponents_struct": [{"dupr_id": "3XV4R2", "internal_id": "8471718165", "name": "Kevin Davis"}], "partner": null, "partners": [], "result": "W", "score": "11-1, 11-1"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.013, "match_id": 7482951258, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5535077141\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mircea Morariu (opens DUPR profile)\"\u003eMircea Morariu\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5416538866\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Audra Spielberger (opens DUPR profile)\"\u003eAudra Spielberger\u003c/a\u003e", "opponents": "Mircea Morariu \u0026 Audra Spielberger", "opponents_struct": [{"dupr_id": "16KQ0Q", "internal_id": "5535077141", "name": "Mircea Morariu"}, {"dupr_id": "3LPQNQ", "internal_id": "5416538866", "name": "Audra Spielberger"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "L", "score": "5-15"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.004, "match_id": 6311113327, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7785775135\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Ellen Novoseletsky (opens DUPR profile)\"\u003eEllen Novoseletsky\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/8576707379\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Tomer Graziani (opens DUPR profile)\"\u003eTomer Graziani\u003c/a\u003e", "opponents": "Ellen Novoseletsky \u0026 Tomer Graziani", "opponents_struct": [{"dupr_id": "8J52D4", "internal_id": "7785775135", "name": "Ellen Novoseletsky"}, {"dupr_id": "59EKLL", "internal_id": "8576707379", "name": "Tomer Graziani"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "W", "score": "15-10"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.008, "match_id": 6331621682, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5549801006\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Erica Marsh (opens DUPR profile)\"\u003eErica Marsh\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4735304915\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Richard Celler (opens DUPR profile)\"\u003eRichard Celler\u003c/a\u003e", "opponents": "Erica Marsh \u0026 Richard Celler", "opponents_struct": [{"dupr_id": "30NMOX", "internal_id": "5549801006", "name": "Erica Marsh"}, {"dupr_id": "3VWGZ5", "internal_id": "4735304915", "name": "Richard Celler"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "W", "score": "15-10"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.014, "match_id": 6644261341, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5284882815\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kitri Boser (opens DUPR profile)\"\u003eKitri Boser\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6936405919\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Chip James (opens DUPR profile)\"\u003eChip James\u003c/a\u003e", "opponents": "Kitri Boser \u0026 Chip James", "opponents_struct": [{"dupr_id": "L5JOLK", "internal_id": "5284882815", "name": "Kitri Boser"}, {"dupr_id": "35YO0L", "internal_id": "6936405919", "name": "Chip James"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "L", "score": "11-1, 10-12, 7-11"}, {"date": "Apr 17, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Champions Pro Doubles- Main Draw", "format": "D", "impact_val": -0.005, "match_id": 4562899613, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/8071430211\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Sheri Courter (opens DUPR profile)\"\u003eSheri Courter\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6406808551\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Katherine Gillis (opens DUPR profile)\"\u003eKatherine Gillis\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6338694055\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jim Bronson (opens DUPR profile)\"\u003eJim Bronson\u003c/a\u003e", "opponents": "Katherine Gillis \u0026 Jim Bronson", "opponents_struct": [{"dupr_id": "3LE7X5", "internal_id": "6406808551", "name": "Katherine Gillis"}, {"dupr_id": "8EJ64O", "internal_id": "6338694055", "name": "Jim Bronson"}], "partner": "Sheri Courter", "partners": [{"dupr_id": "17M6NM", "internal_id": "8071430211", "name": "Sheri Courter"}], "result": "W", "score": "11-6, 11-3"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": -0.003, "match_id": 6546261931, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6183587373\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Morgan Shepherd (opens DUPR profile)\"\u003eMorgan Shepherd\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5062775487\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mark Hamilton (opens DUPR profile)\"\u003eMark Hamilton\u003c/a\u003e", "opponents": "Morgan Shepherd \u0026 Mark Hamilton", "opponents_struct": [{"dupr_id": "6Z6P5Q", "internal_id": "6183587373", "name": "Morgan Shepherd"}, {"dupr_id": "8G70X1", "internal_id": "5062775487", "name": "Mark Hamilton"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "8-11, 11-3, 11-5"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.009, "match_id": 4995936326, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5535077141\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mircea Morariu (opens DUPR profile)\"\u003eMircea Morariu\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6127412768\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jose Derisi (opens DUPR profile)\"\u003eJose Derisi\u003c/a\u003e", "opponents": "Mircea Morariu \u0026 Jose Derisi", "opponents_struct": [{"dupr_id": "16KQ0Q", "internal_id": "5535077141", "name": "Mircea Morariu"}, {"dupr_id": "84VOW6", "internal_id": "6127412768", "name": "Jose Derisi"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "15-4"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": -0.011, "match_id": 8222195467, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5629966025\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jaime Oncins (opens DUPR profile)\"\u003eJaime Oncins\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7579366879\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcello Paiva Jardim (opens DUPR profile)\"\u003eMarcello Paiva Jardim\u003c/a\u003e", "opponents": "Jaime Oncins \u0026 Marcello Paiva Jardim", "opponents_struct": [{"dupr_id": "17J4Q0", "internal_id": "5629966025", "name": "Jaime Oncins"}, {"dupr_id": "4LEL5V", "internal_id": "7579366879", "name": "Marcello Paiva Jardim"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "L", "score": "7-11, 5-11"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.002, "match_id": 4627037911, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6183587373\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Morgan Shepherd (opens DUPR profile)\"\u003eMorgan Shepherd\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5062775487\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mark Hamilton (opens DUPR profile)\"\u003eMark Hamilton\u003c/a\u003e", "opponents": "Morgan Shepherd \u0026 Mark Hamilton", "opponents_struct": [{"dupr_id": "6Z6P5Q", "internal_id": "6183587373", "name": "Morgan Shepherd"}, {"dupr_id": "8G70X1", "internal_id": "5062775487", "name": "Mark Hamilton"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "11-2, 11-7"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.002, "match_id": 6120650509, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6417822611\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Todd Robertson (opens DUPR profile)\"\u003eTodd Robertson\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4560161354\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Peter Prodanov (opens DUPR profile)\"\u003ePeter Prodanov\u003c/a\u003e", "opponents": "Todd Robertson \u0026 Peter Prodanov", "opponents_struct": [{"dupr_id": "8KOJ63", "internal_id": "6417822611", "name": "Todd Robertson"}, {"dupr_id": "1N4DW8", "internal_id": "4560161354", "name": "Peter Prodanov"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "11-9, 11-0"}, {"date": "Apr 15, 2026", "event": "2026 Franklin US Open Pickleball Championships - Men\u0027s Champions Pro Doubles - Main Draw", "format": "D", "impact_val": 0.005, "match_id": 7573680651, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/6435224179\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"MARCO OSORIO (opens DUPR profile)\"\u003eMARCO OSORIO\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5706751825\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcellus Zuzarte (opens DUPR profile)\"\u003eMarcellus Zuzarte\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7651854780\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Tom DeCaprio (opens DUPR profile)\"\u003eTom DeCaprio\u003c/a\u003e", "opponents": "Marcellus Zuzarte \u0026 Tom DeCaprio", "opponents_struct": [{"dupr_id": "8EXGJW", "internal_id": "5706751825", "name": "Marcellus Zuzarte"}, {"dupr_id": "84P4ZV", "internal_id": "7651854780", "name": "Tom DeCaprio"}], "partner": "MARCO OSORIO", "partners": [{"dupr_id": "JJX654", "internal_id": "6435224179", "name": "MARCO OSORIO"}], "result": "W", "score": "11-0, 11-1"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.005, "match_id": 4317426758, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7497206520\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Patrick Cote (opens DUPR profile)\"\u003ePatrick Cote\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6346526303\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Trang Huynh (opens DUPR profile)\"\u003eTrang Huynh\u003c/a\u003e", "opponents": "Patrick Cote \u0026 Trang Huynh", "opponents_struct": [{"dupr_id": "30ZQQ4", "internal_id": "7497206520", "name": "Patrick Cote"}, {"dupr_id": "OD6OJW", "internal_id": "6346526303", "name": "Trang Huynh"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-5, 11-7"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": -0.01, "match_id": 5126351867, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5026084518\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Richard Livornese Jr (opens DUPR profile)\"\u003eRichard Livornese Jr\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6801272282\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Evelyn Welsher (opens DUPR profile)\"\u003eEvelyn Welsher\u003c/a\u003e", "opponents": "Richard Livornese Jr \u0026 Evelyn Welsher", "opponents_struct": [{"dupr_id": "8JVQD8", "internal_id": "5026084518", "name": "Richard Livornese Jr"}, {"dupr_id": "3YNPM4", "internal_id": "6801272282", "name": "Evelyn Welsher"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "L", "score": "10-12, 11-8, 3-11"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.013, "match_id": 7648963238, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5730181949\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Heather G Waters (opens DUPR profile)\"\u003eHeather G Waters\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5524434911\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Max Green (opens DUPR profile)\"\u003eMax Green\u003c/a\u003e", "opponents": "Heather G Waters \u0026 Max Green", "opponents_struct": [{"dupr_id": "16602G", "internal_id": "5730181949", "name": "Heather G Waters"}, {"dupr_id": "3VNQOP", "internal_id": "5524434911", "name": "Max Green"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-2, 11-5"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.006, "match_id": 5207201058, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/4735304915\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Richard Celler (opens DUPR profile)\"\u003eRichard Celler\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5217238518\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kelsey Laurente (opens DUPR profile)\"\u003eKelsey Laurente\u003c/a\u003e", "opponents": "Richard Celler \u0026 Kelsey Laurente", "opponents_struct": [{"dupr_id": "3VWGZ5", "internal_id": "4735304915", "name": "Richard Celler"}, {"dupr_id": "W6XV0K", "internal_id": "5217238518", "name": "Kelsey Laurente"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-1, 11-3"}, {"date": "Apr 13, 2026", "event": "2026 Franklin US Open Pickleball Championships - Mixed Split Pro Age Event", "format": "D", "impact_val": 0.012, "match_id": 5496473854, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/5483956872\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Megan Fudge (opens DUPR profile)\"\u003eMegan Fudge\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6722260479\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Ben Newell (opens DUPR profile)\"\u003eBen Newell\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7356897101\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Kelly Stroble (opens DUPR profile)\"\u003eKelly Stroble\u003c/a\u003e", "opponents": "Ben Newell \u0026 Kelly Stroble", "opponents_struct": [{"dupr_id": "30KR23", "internal_id": "6722260479", "name": "Ben Newell"}, {"dupr_id": "3XRO53", "internal_id": "7356897101", "name": "Kelly Stroble"}], "partner": "Megan Fudge", "partners": [{"dupr_id": "12JD71", "internal_id": "5483956872", "name": "Megan Fudge"}], "result": "W", "score": "11-1, 11-3"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.002, "match_id": 6291695861, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6888321349\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Michael Challen (opens DUPR profile)\"\u003eMichael Challen\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6183587373\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Morgan Shepherd (opens DUPR profile)\"\u003eMorgan Shepherd\u003c/a\u003e", "opponents": "Michael Challen \u0026 Morgan Shepherd", "opponents_struct": [{"dupr_id": "3OJR9W", "internal_id": "6888321349", "name": "Michael Challen"}, {"dupr_id": "6Z6P5Q", "internal_id": "6183587373", "name": "Morgan Shepherd"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "W", "score": "11-6, 11-7"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": 0.001, "match_id": 4684937047, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5535077141\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Mircea Morariu (opens DUPR profile)\"\u003eMircea Morariu\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/6127412768\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jose Derisi (opens DUPR profile)\"\u003eJose Derisi\u003c/a\u003e", "opponents": "Mircea Morariu \u0026 Jose Derisi", "opponents_struct": [{"dupr_id": "16KQ0Q", "internal_id": "5535077141", "name": "Mircea Morariu"}, {"dupr_id": "84VOW6", "internal_id": "6127412768", "name": "Jose Derisi"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "W", "score": "18-16"}, {"date": "Mar 29, 2026", "event": "APP Tour: 2026 AARP Open - AARP  Champions (50+) Mens Pro Doubles", "format": "D", "impact_val": -0.002, "match_id": 5407564949, "opp_text": "w/ \u003ca class=\"player-link match-partner\" href=\"https://dashboard.dupr.com/dashboard/player/7500604052\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Brian Baker (opens DUPR profile)\"\u003eBrian Baker\u003c/a\u003e \u003cspan class=\"match-vs\"\u003evs\u003c/span\u003e \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/7579366879\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Marcello Paiva Jardim (opens DUPR profile)\"\u003eMarcello Paiva Jardim\u003c/a\u003e \u0026amp; \u003ca class=\"player-link\" href=\"https://dashboard.dupr.com/dashboard/player/5629966025\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"Jaime Oncins (opens DUPR profile)\"\u003eJaime Oncins\u003c/a\u003e", "opponents": "Marcello Paiva Jardim \u0026 Jaime Oncins", "opponents_struct": [{"dupr_id": "4LEL5V", "internal_id": "7579366879", "name": "Marcello Paiva Jardim"}, {"dupr_id": "17J4Q0", "internal_id": "5629966025", "name": "Jaime Oncins"}], "partner": "Brian Baker", "partners": [{"dupr_id": "355ZWL", "internal_id": "7500604052", "name": "Brian Baker"}], "result": "L", "score": "11-3, 8-11, 1-11"}]' data-internal-id="8490017643" data-dupr-id="9PDMMK">
     <summary class="player-summary" aria-expanded="false">
         <div class="streak-col">
             <span class="streak-badge streak-l">🧊 1L</span>
@@ -1995,24 +2100,32 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;9PDMMK</span>
-            <span class="player-notes">Has no socials</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">460 matches · since Aug '21 · last played 13d ago
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">9PDMMK</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">461 · since Aug '21 · last played today
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5402261864" target="_blank" rel="noreferrer noopener" aria-label="Patricia Hammer (opens DUPR profile)">Patricia Hammer</a>
-                <span class="cs-bp-record">13-1 (93%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5402261864" target="_blank" rel="noreferrer noopener" aria-label="Patricia Hammer (opens DUPR profile)">Patricia Hammer</a>
+                    · 13-1 (93%)
+                </span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Notes:</span>
+                <span class="cs-info-value player-notes">Has no socials</span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 76%;">
-                    <div class="cs-record"><span class="cs-w">276</span><span class="cs-sep">-</span><span class="cs-l">85</span></div>
+                    <div class="cs-record"><span class="cs-w">290</span><span class="cs-sep">-</span><span class="cs-l">90</span></div>
                     <div class="cs-pct cs-pct-high">76%</div>
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
                         <span class="cs-peak-w">17W</span>
@@ -2023,9 +2136,9 @@
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
-                <div class="cs-bar" style="--win-pct: 87%;">
-                    <div class="cs-record"><span class="cs-w">86</span><span class="cs-sep">-</span><span class="cs-l">13</span></div>
-                    <div class="cs-pct cs-pct-high">87%</div>
+                <div class="cs-bar" style="--win-pct: 88%;">
+                    <div class="cs-record"><span class="cs-w">92</span><span class="cs-sep">-</span><span class="cs-l">13</span></div>
+                    <div class="cs-pct cs-pct-high">88%</div>
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
                         <span class="cs-peak-w">19W</span>
                         <span class="cs-dot"> / </span>
@@ -2069,18 +2182,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;1RWDQ3</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">1,419 matches · since Feb '20 · last played today
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">1RWDQ3</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">1,419 · since Feb '20 · last played today
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4549099018" target="_blank" rel="noreferrer noopener" aria-label="Anna Bright (opens DUPR profile)">Anna Bright</a>
-                <span class="cs-bp-record">108-2 (98%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4549099018" target="_blank" rel="noreferrer noopener" aria-label="Anna Bright (opens DUPR profile)">Anna Bright</a>
+                    · 108-2 (98%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
@@ -2130,18 +2248,23 @@
         </div>
     </summary>
     <div class="history-dropdown">
-        <div class="player-meta">
-            <span class="player-dupr-id"><span class="lbl-tag">DUPR</span>&nbsp;V8DYL8</span>
-        </div>
         <div class="career-stats">
-            <div class="career-label">Career Stats
-                <span class="cs-summary">1,530 matches · since Feb '20 · last played yesterday
+            <div class="career-label">Career Stats</div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">DUPR ID:</span>
+                <span class="cs-info-value">V8DYL8</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Matches:</span>
+                <span class="cs-info-value">1,530 · since Feb '20 · last played yesterday
                 </span>
             </div>
-            <div class="cs-best-partner">
-                <span class="cs-bp-lbl">Best partner:</span>
-                <a class="player-link cs-bp-name" href="#1RWDQ3" data-jump="1RWDQ3">Anna Leigh Waters</a>
-                <span class="cs-bp-record">358-8 (98%)</span>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Best partner:</span>
+                <span class="cs-info-value">
+                    <a class="player-link cs-bp-name" href="#1RWDQ3" data-jump="1RWDQ3">Anna Leigh Waters</a>
+                    · 358-8 (98%)
+                </span>
             </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
