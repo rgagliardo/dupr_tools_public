@@ -105,11 +105,13 @@
             background: #13141e; border-radius: 6px; margin-bottom: 3px; overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             contain: layout style;
-            /* Anchor-jump targets — push the scroll position below any future
-               sticky header so card content isn't tucked under it. The
-               leaderboard currently has no sticky header but jump-links can
-               land mid-page where a margin still feels right. */
-            scroll-margin-top: 16px;
+            /* Anchor-jump targets — push the scroll position below the
+               sticky `.header-container` so the card top isn't tucked under
+               it. The JS handler computes the live header height for its
+               own scroll, but native scroll behaviors (focus auto-scroll,
+               etc.) need this CSS fallback set high enough to clear the
+               header on both mobile and desktop. */
+            scroll-margin-top: 140px;
         }
         /* Brief glow on the card the user just jumped to (added via JS for
            ~1s on hashchange / page load). Never a permanent visual change. */
@@ -122,15 +124,19 @@
             100% { box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.0), 0 0 0 0 rgba(0, 229, 255, 0.0); }
         }
         /* Link wrappers around player names (in match-history rows + Streak
-           Hall). Plain by default, dotted underline on hover. */
+           Hall). Looks identical to surrounding text by default — same color,
+           same baseline. Hover/focus: cyan + dotted underline (text-decoration
+           overlays the text without taking layout space, so no row shift). */
         .player-link {
-            color: inherit; text-decoration: none;
-            border-bottom: 1px dotted transparent;
-            transition: border-color 0.15s, color 0.15s;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.15s;
         }
         .player-link:hover, .player-link:focus {
             color: var(--accent, #00e5ff);
-            border-bottom-color: rgba(0, 229, 255, 0.6);
+            text-decoration: underline dotted;
+            text-underline-offset: 2px;
             outline: none;
         }
 
@@ -560,7 +566,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 9:16 AM</span>
+            <span>Last Updated: May 1, 2026 at 9:28 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -871,7 +877,7 @@
                     <div class="cs-record"><span class="cs-w">302</span><span class="cs-sep">-</span><span class="cs-l">12</span></div>
                     <div class="cs-pct cs-pct-high">96%</div>
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
-                        <span class="cs-peak-w">119W</span>
+                        <span class="cs-peak-w">121W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
                     </div>
@@ -915,7 +921,7 @@
                     <div class="cs-record"><span class="cs-w">1043</span><span class="cs-sep">-</span><span class="cs-l">136</span></div>
                     <div class="cs-pct cs-pct-high">88%</div>
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
-                        <span class="cs-peak-w">47W</span>
+                        <span class="cs-peak-w">52W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
                     </div>
@@ -1811,7 +1817,7 @@
                     <div class="cs-record"><span class="cs-w">302</span><span class="cs-sep">-</span><span class="cs-l">12</span></div>
                     <div class="cs-pct cs-pct-high">96%</div>
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
-                        <span class="cs-peak-w">119W</span>
+                        <span class="cs-peak-w">121W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">2L</span>
                     </div>
@@ -1855,7 +1861,7 @@
                     <div class="cs-record"><span class="cs-w">1043</span><span class="cs-sep">-</span><span class="cs-l">136</span></div>
                     <div class="cs-pct cs-pct-high">88%</div>
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
-                        <span class="cs-peak-w">47W</span>
+                        <span class="cs-peak-w">52W</span>
                         <span class="cs-dot"> / </span>
                         <span class="cs-peak-l">4L</span>
                     </div>
@@ -2346,10 +2352,16 @@
                     }
                     var delay = wasOpen ? 0 : 240;  // matches the ~220ms expand
                     setTimeout(function() {
+                        // Account for the sticky `.header-container` so the
+                        // card top isn't tucked behind it. Mirrors the
+                        // existing group-jump-link offset logic.
+                        var headerEl = document.querySelector('.header-container');
+                        var headerH  = headerEl ? headerEl.offsetHeight : 0;
+                        var y = card.getBoundingClientRect().top + window.scrollY - headerH - 8;
                         try {
-                            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            window.scrollTo({ top: y, behavior: 'smooth' });
                         } catch (e) {
-                            card.scrollIntoView();
+                            window.scrollTo(0, y);
                         }
                         expandFullHistory(card);
                         pulse(card);
