@@ -144,10 +144,11 @@
         .player-link[target="_blank"] {
             text-decoration-style: dashed;
         }
-        /* Faint ↗ after external (target=_blank) links — at the small font
-           sizes used in match rows, dotted-vs-dashed is too subtle to
-           communicate "opens new tab"; the glyph carries the weight. */
-        .player-link[target="_blank"]::after {
+        /* Faint ↗ after every clickable name — the universal "this is an
+           action" indicator. Same glyph for in-page jumps and external
+           links; the dotted-vs-dashed underline still differentiates
+           destination type for users who notice. */
+        .player-link::after {
             content: ' \2197';
             font-size: 0.85em;
             opacity: 0.5;
@@ -638,7 +639,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 1, 2026 at 12:41 PM</span>
+            <span>Last Updated: May 1, 2026 at 12:45 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
