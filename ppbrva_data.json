@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-03T17:05:27",
-  "next_scan_at": "2026-05-03T17:35:27",
+  "generated_at": "2026-05-03T17:21:11",
+  "next_scan_at": "2026-05-03T17:51:11",
   "stats": {
     "total": 128,
     "full_count": 13
@@ -28,7 +28,7 @@
         "Moab S.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-05-03T17:05:10",
+      "last_snap_ts": "2026-05-03T17:20:57",
       "thieves": [],
       "big_dogs": []
     },
@@ -42,13 +42,15 @@
       "end_display": "6:00 PM",
       "status": "live",
       "capacity": 12,
-      "count": 0,
-      "pct": 0,
+      "count": 1,
+      "pct": 8,
       "is_full": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [],
-      "last_snap_ts": "2026-05-03T17:05:14",
+      "registrants": [
+        "Joe M."
+      ],
+      "last_snap_ts": "2026-05-03T17:20:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -73,7 +75,7 @@
         "Roy A.",
         "Steve Y."
       ],
-      "last_snap_ts": "2026-05-03T17:04:44",
+      "last_snap_ts": "2026-05-03T17:20:34",
       "thieves": [],
       "big_dogs": []
     },
@@ -126,7 +128,7 @@
         "Steven S.",
         "Tavon W."
       ],
-      "last_snap_ts": "2026-05-03T17:04:47",
+      "last_snap_ts": "2026-05-03T17:20:37",
       "thieves": [],
       "big_dogs": [
         {
@@ -162,7 +164,7 @@
         "Scott S.",
         "+3 players"
       ],
-      "last_snap_ts": "2026-05-03T17:04:49",
+      "last_snap_ts": "2026-05-03T17:20:39",
       "thieves": [],
       "big_dogs": []
     },
@@ -189,7 +191,7 @@
         "Thai D.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-05-03T17:04:52",
+      "last_snap_ts": "2026-05-03T17:20:42",
       "thieves": [],
       "big_dogs": []
     },
@@ -213,7 +215,7 @@
         "Pete H.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-05-03T17:04:55",
+      "last_snap_ts": "2026-05-03T17:20:45",
       "thieves": [],
       "big_dogs": []
     },
@@ -267,7 +269,7 @@
         "Tom G.",
         "Val C."
       ],
-      "last_snap_ts": "2026-05-03T17:04:59",
+      "last_snap_ts": "2026-05-03T17:20:47",
       "thieves": [],
       "big_dogs": [
         {
@@ -302,7 +304,7 @@
         "Todd B.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-05-03T17:05:01",
+      "last_snap_ts": "2026-05-03T17:20:49",
       "thieves": [],
       "big_dogs": [
         {
@@ -334,7 +336,7 @@
         "Ed K.",
         "+1 player"
       ],
-      "last_snap_ts": "2026-05-03T17:05:03",
+      "last_snap_ts": "2026-05-03T17:20:52",
       "thieves": [],
       "big_dogs": []
     },
@@ -360,7 +362,7 @@
         "Scott S.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-05-03T17:05:07",
+      "last_snap_ts": "2026-05-03T17:20:54",
       "thieves": [],
       "big_dogs": []
     },
@@ -385,7 +387,7 @@
         "Pete H.",
         "Roy A."
       ],
-      "last_snap_ts": "2026-05-03T17:05:17",
+      "last_snap_ts": "2026-05-03T17:21:01",
       "thieves": [],
       "big_dogs": []
     },
@@ -442,7 +444,7 @@
         "Steven S.",
         "Val C."
       ],
-      "last_snap_ts": "2026-05-03T17:05:20",
+      "last_snap_ts": "2026-05-03T17:21:04",
       "thieves": [],
       "big_dogs": [
         {
@@ -475,7 +477,7 @@
         "Steven T.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-05-03T17:05:22",
+      "last_snap_ts": "2026-05-03T17:21:06",
       "thieves": [],
       "big_dogs": []
     },
@@ -499,7 +501,7 @@
         "Scott S.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-05-03T17:05:24",
+      "last_snap_ts": "2026-05-03T17:21:08",
       "thieves": [],
       "big_dogs": []
     },
@@ -523,7 +525,7 @@
         "Karuna R.",
         "+2 players"
       ],
-      "last_snap_ts": "2026-05-03T17:05:27",
+      "last_snap_ts": "2026-05-03T17:21:11",
       "thieves": [],
       "big_dogs": []
     },
@@ -4750,6 +4752,14 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-05-03T17:20:59",
+      "type": "join",
+      "name": "Joe M.",
+      "title": "4.5/4.0 Open Play",
+      "start": "SUN MAY 3  4:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019dcb7e-f543-7dd9-bceb-000b04a48168"
+    },
     {
       "ts": "2026-05-03T17:04:49",
       "type": "join",
@@ -17325,7 +17335,7 @@
     },
     {
       "name": "Joe M.",
-      "joins": 7,
+      "joins": 8,
       "cancels": 1
     },
     {
@@ -17439,12 +17449,12 @@
       "cancels": 1
     },
     {
-      "name": "Ashlyn P.",
+      "name": "Adriana G.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Adriana G.",
+      "name": "Ashlyn P.",
       "joins": 2,
       "cancels": 1
     },
@@ -17564,7 +17574,7 @@
       "cancels": 0
     },
     {
-      "name": "Steven T.",
+      "name": "Greg D.",
       "joins": 4,
       "cancels": 0
     },
@@ -17574,7 +17584,7 @@
       "cancels": 0
     },
     {
-      "name": "Greg D.",
+      "name": "Steven T.",
       "joins": 4,
       "cancels": 0
     },
@@ -17634,12 +17644,12 @@
       "cancels": 0
     },
     {
-      "name": "Mark R.",
+      "name": "Roselyn S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Roselyn S.",
+      "name": "Mark R.",
       "joins": 3,
       "cancels": 0
     },
@@ -17659,6 +17669,11 @@
       "cancels": 0
     },
     {
+      "name": "Craig P.",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
       "name": "Dwayne T.",
       "joins": 3,
       "cancels": 0
@@ -17669,17 +17684,12 @@
       "cancels": 0
     },
     {
-      "name": "Craig P.",
+      "name": "Shachi P.",
       "joins": 3,
       "cancels": 0
     },
     {
       "name": "Hamoon H.",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
-      "name": "Shachi P.",
       "joins": 3,
       "cancels": 0
     },
