@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PPBRVA — Makeover Mock</title>
+<!-- Apply theme BEFORE paint to avoid FOUT. Reads localStorage first;
+     falls back to OS preference. Stays in sync with OS changes when
+     the user hasn't picked a manual override. -->
+<script>
+(function () {
+  var saved = localStorage.getItem('ppbrva-theme');
+  var theme = saved
+    || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = theme;
+})();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* ─── DESIGN TOKENS ───────────────────────────────────────────────
@@ -40,69 +51,70 @@
     --glow-pur:   rgba(200,132,255,calc(0.5 * var(--glow)));
   }
 
-  /* ─── LIGHT THEME (system prefers-color-scheme: light) ───────────
-     Inverts surfaces and uses darker, accessible accents — neon
-     hues stay bright on chips/borders, but TEXT versions of accents
+  /* ─── LIGHT THEME ──────────────────────────────────────────────
+     Inline <head> script sets data-theme before paint (no FOUT),
+     reading localStorage first then falling back to OS preference.
+     CSS just keys off the attribute — no @media query needed.
+
+     Inverts surfaces and uses darker, accessible accents. Neon hues
+     stay bright on chips/borders, but TEXT versions of accents
      darken to clear WCAG AA on white. Glow is killed because halo
      blur doesn't work on light backgrounds.
   */
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg:       #f4f3ee;      /* warm off-white paper                    */
-      --panel:    #ffffff;
-      --panel-2:  #ebeae3;
-      --line:     #d8d4c8;
-      --txt:      #1a1a2e;
-      --txt-2:    #44455c;
-      --txt-3:    #6a6c80;
-      /* Accent text colors — darker so they read on white */
-      --cyan:     #008fa8;
-      --pink:     #c5286b;
-      --grn:      #1f9d2e;
-      --yel:      #9c7400;       /* dark gold — bright yellow is unreadable */
-      --pur:      #6f42c1;
-      --red:      #c53030;
-      --gold:     #a8770a;
-      --glow:     0;
-    }
-    /* Light mode — replace neon-rgba glow chip-bgs with light tints */
-    .sec-yel  { --accent-bg: rgba(156,116,0,0.08); }
-    .sec-cyan { --accent-bg: rgba(0,143,168,0.08); }
-    .sec-pink { --accent-bg: rgba(197,40,107,0.08); }
-    .sec-pur  { --accent-bg: rgba(111,66,193,0.08); }
-    .sec-grn  { --accent-bg: rgba(31,157,46,0.08); }
-    .sec-gold { --accent-bg: rgba(168,119,10,0.08); }
-    /* Subtle drop shadow replaces glow on chrome titles */
-    .hdr-title { text-shadow: 0 1px 0 rgba(0,0,0,0.08); }
-    .sec-title { text-shadow: none; }
-    /* Card title was using --accent-glow for shadow — kill it */
-    .card-title, .party-title, .party-cta { text-shadow: none; }
-    /* Party card scanlines + box-shadow flatten in light mode */
-    .party-card {
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    .party-card::before { display: none; }
-    /* Chip bg tints lift slightly on white */
-    .hdr-stat { background: var(--panel); }
-    .card-rating {
-      background: rgba(156,116,0,0.10);
-      border-color: rgba(156,116,0,0.5);
-      text-shadow: none;
-    }
-    .party-pill {
-      background: rgba(31,157,46,0.10);
-      border-color: rgba(31,157,46,0.4);
-    }
-    .row { background: var(--panel-2); }
-    .row .row-tag.t-grn  { background: rgba(31,157,46,0.12); }
-    .row .row-tag.t-pink { background: rgba(197,40,107,0.12); }
-    .row .row-tag.t-cyan { background: rgba(0,143,168,0.12); }
-    .row .row-tag.t-dim  { background: rgba(0,0,0,0.04); }
-    /* Header gradient line — readable on light */
-    .hdr-line {
-      background: linear-gradient(90deg, transparent, var(--cyan), var(--pink), var(--pur), transparent);
-      opacity: 0.7;
-    }
+  :root[data-theme="light"] {
+    --bg:       #f4f3ee;        /* warm off-white paper                */
+    --panel:    #ffffff;
+    --panel-2:  #ebeae3;
+    --line:     #d8d4c8;
+    --txt:      #1a1a2e;
+    --txt-2:    #44455c;
+    --txt-3:    #6a6c80;
+    /* Accent text colors — darker so they read on white */
+    --cyan:     #008fa8;
+    --pink:     #c5286b;
+    --grn:      #1f9d2e;
+    --yel:      #9c7400;        /* dark gold — bright yellow is unreadable */
+    --pur:      #6f42c1;
+    --red:      #c53030;
+    --gold:     #a8770a;
+    --glow:     0;
+  }
+  /* Section accent-bg tints rebuilt for light mode (mirrors the
+     darker accent text colors above). */
+  :root[data-theme="light"] .sec-yel  { --accent-bg: rgba(156,116,0,0.08); }
+  :root[data-theme="light"] .sec-cyan { --accent-bg: rgba(0,143,168,0.08); }
+  :root[data-theme="light"] .sec-pink { --accent-bg: rgba(197,40,107,0.08); }
+  :root[data-theme="light"] .sec-pur  { --accent-bg: rgba(111,66,193,0.08); }
+  :root[data-theme="light"] .sec-grn  { --accent-bg: rgba(31,157,46,0.08); }
+  :root[data-theme="light"] .sec-gold { --accent-bg: rgba(168,119,10,0.08); }
+  /* Subtle drop shadow replaces neon glow on chrome titles */
+  :root[data-theme="light"] .hdr-title { text-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+  :root[data-theme="light"] .sec-title { text-shadow: none; }
+  :root[data-theme="light"] .card-title,
+  :root[data-theme="light"] .party-title,
+  :root[data-theme="light"] .party-cta { text-shadow: none; }
+  /* Party card flattens — scanline pattern + glow are dark-mode tools */
+  :root[data-theme="light"] .party-card { box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  :root[data-theme="light"] .party-card::before { display: none; }
+  /* Chip bg tints lift slightly on white */
+  :root[data-theme="light"] .hdr-stat { background: var(--panel); }
+  :root[data-theme="light"] .card-rating {
+    background: rgba(156,116,0,0.10);
+    border-color: rgba(156,116,0,0.5);
+    text-shadow: none;
+  }
+  :root[data-theme="light"] .party-pill {
+    background: rgba(31,157,46,0.10);
+    border-color: rgba(31,157,46,0.4);
+  }
+  :root[data-theme="light"] .row { background: var(--panel-2); }
+  :root[data-theme="light"] .row .row-tag.t-grn  { background: rgba(31,157,46,0.12); }
+  :root[data-theme="light"] .row .row-tag.t-pink { background: rgba(197,40,107,0.12); }
+  :root[data-theme="light"] .row .row-tag.t-cyan { background: rgba(0,143,168,0.12); }
+  :root[data-theme="light"] .row .row-tag.t-dim  { background: rgba(0,0,0,0.04); }
+  :root[data-theme="light"] .hdr-line {
+    background: linear-gradient(90deg, transparent, var(--cyan), var(--pink), var(--pur), transparent);
+    opacity: 0.7;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -334,6 +346,20 @@
     border-color: var(--pur);
   }
 
+  /* ─── THEME TOGGLE ── */
+  .theme-toggle {
+    position: fixed; top: 14px; right: 14px; z-index: 1000;
+    width: 44px; height: 44px;
+    background: var(--panel); border: 1px solid var(--line);
+    color: var(--txt-2); cursor: pointer;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .theme-toggle:hover { color: var(--yel); border-color: var(--yel); }
+  /* Show different icon per theme */
+  :root[data-theme="dark"]  .theme-toggle .icon-light { display: none; }
+  :root[data-theme="light"] .theme-toggle .icon-dark  { display: none; }
+
   /* ─── DEMO LABEL ── */
   .demo-label {
     font-family: 'Press Start 2P', monospace; font-size: 8px;
@@ -344,6 +370,12 @@
 </style>
 </head>
 <body>
+
+<!-- Theme toggle — shows the theme you'd switch TO -->
+<button class="theme-toggle" onclick="togglePpbrvaTheme()" aria-label="Toggle theme">
+  <span class="icon-dark">☀</span>
+  <span class="icon-light">🌙</span>
+</button>
 
 <!-- ═════════ HEADER ═════════ -->
 <div class="hdr">
@@ -510,5 +542,21 @@
 
 <div class="demo-label">END OF MOCK · 390PX VIEWPORT</div>
 
+<script>
+// Cycle the manual override; persist in localStorage.
+function togglePpbrvaTheme() {
+  var cur = document.documentElement.dataset.theme;
+  var next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('ppbrva-theme', next);
+}
+
+// Stay in sync with OS theme changes when user hasn't picked manually.
+matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+  if (!localStorage.getItem('ppbrva-theme')) {
+    document.documentElement.dataset.theme = e.matches ? 'light' : 'dark';
+  }
+});
+</script>
 </body>
 </html>
