@@ -649,7 +649,10 @@
         .day-group { position: relative; }
         .day-pill-wrap {
             position: sticky;
-            top: calc(var(--header-height, 140px) + 6px);
+            /* Butt the pill directly against the header bottom — any gap
+               here exposes a thin stripe of the card scrolling underneath
+               (visible as text-bleed at the boundary). */
+            top: var(--header-height, 140px);
             z-index: 4;
             padding: 8px 12px 6px 12px;
             margin: 0 -12px;  /* extend full bar across .main-content's 12px padding */
@@ -688,7 +691,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 6, 2026 at 1:10 PM</span>
+            <span>Last Updated: May 6, 2026 at 1:16 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
