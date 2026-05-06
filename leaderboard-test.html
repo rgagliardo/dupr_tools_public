@@ -103,7 +103,13 @@
         .player-details {
             background: #13141e; border-radius: 6px; margin-bottom: 3px; overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            contain: layout style;
+            /* `contain: layout` creates an independent stacking context per
+               card. Combined with each card painting in its own GPU layer on
+               iOS, the sticky page header (z-index 100) was unable to paint
+               over the top edge of cards scrolled into header territory —
+               cards "bled through" the solid header bg. Dropping containment
+               restores normal flow stacking; the perf trade-off is minimal
+               for ~200 cards. */
             /* Anchor-jump targets — push the scroll position below the
                sticky `.header-container` so the card top isn't tucked under
                it. The JS handler computes the live header height for its
@@ -682,7 +688,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 6, 2026 at 12:51 PM</span>
+            <span>Last Updated: May 6, 2026 at 1:10 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
