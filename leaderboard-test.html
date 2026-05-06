@@ -638,7 +638,10 @@
         .day-group { position: relative; }
         .day-pill-wrap {
             position: sticky;
-            top: 132px;             /* tuned to land just below sticky .header-container */
+            /* `--header-height` is set on <html> by the JS on load + resize,
+               keeping the pill anchored exactly under the sticky page header
+               regardless of viewport-driven header layout shifts. */
+            top: calc(var(--header-height, 140px) + 6px);
             z-index: 4;
             padding: 6px 0 4px 0;
             background: linear-gradient(180deg,
@@ -673,7 +676,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 6, 2026 at 9:19 AM</span>
+            <span>Last Updated: May 6, 2026 at 9:23 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -2875,6 +2878,22 @@
     </div>
 
     <script>
+            // Publish the live page-header height as `--header-height` so
+            // sticky elements (e.g. the Movers day-pill) can pin exactly
+            // below it. Re-measured on resize + orientation change.
+            (function publishHeaderHeight() {
+                var headerEl = document.querySelector('.header-container');
+                if (!headerEl) return;
+                function set() {
+                    document.documentElement.style.setProperty(
+                        '--header-height', headerEl.offsetHeight + 'px'
+                    );
+                }
+                set();
+                window.addEventListener('resize', set);
+                window.addEventListener('orientationchange', set);
+            })();
+
             // Smooth Accordion Animation Function
             function smoothToggle(details, forceOpen = null) {
                 const content = details.querySelector('.group-content');
