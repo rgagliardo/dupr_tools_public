@@ -683,7 +683,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 6, 2026 at 10:19 AM</span>
+            <span>Last Updated: May 6, 2026 at 10:23 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -2348,6 +2348,18 @@
                         content.style.opacity = '';
                         content.style.overflow = '';
                         content.style.transition = '';
+                        // The transient `overflow: hidden` during the open
+                        // animation makes `position: sticky` resolve against
+                        // .group-content instead of the viewport. Browsers
+                        // don't always re-evaluate sticky once overflow goes
+                        // back to visible — a tiny scroll round-trip forces
+                        // it. Without this, day-pills appear "delayed" until
+                        // the user scrolls.
+                        requestAnimationFrame(function() {
+                            var y = window.scrollY;
+                            window.scrollTo(0, y + 1);
+                            window.scrollTo(0, y);
+                        });
                     }, 350);
                 } else {
                     const height = content.scrollHeight;
