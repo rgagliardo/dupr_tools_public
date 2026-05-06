@@ -632,17 +632,28 @@
             text-transform: uppercase;
         }
 
-        /* ── Day-pill day separator (inline, neutral palette) ──
-           Each calendar day in a feed gets a small chip that breaks the
-           run of player cards. Inline (not sticky) — the chip is a memory
-           anchor at boundaries, not a persistent label that follows scroll. */
-        .day-group { /* structural wrapper for a single day's cards */ }
+        /* ── Day-pill day separator (sticky, neutral palette) ──
+           Each calendar day in a feed gets a small chip that breaks the run
+           of player cards AND pins under the page header while its day's
+           cards scroll past. `--header-height` is published by the JS on
+           load, resize, and via ResizeObserver, so the pill anchors exactly
+           below the header regardless of layout shifts. */
+        .day-group { position: relative; }
         .day-pill-wrap {
+            position: sticky;
+            top: calc(var(--header-height, 140px) + 6px);
+            z-index: 4;
             padding: 8px 0 4px 0;
+            background: linear-gradient(180deg,
+                rgba(13,14,21,0.96) 0%,
+                rgba(13,14,21,0.92) 70%,
+                rgba(13,14,21,0) 100%);
+            pointer-events: none;
         }
         .day-group:first-child .day-pill-wrap {
             padding-top: 4px;
         }
+        .day-pill { pointer-events: auto; }
         .day-pill {
             display: inline-flex; align-items: center; gap: 6px;
             margin-left: 2px;
@@ -672,7 +683,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 6, 2026 at 10:12 AM</span>
+            <span>Last Updated: May 6, 2026 at 10:19 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -967,6 +978,7 @@
             <div class="group-content">
                 <div class="sort-bar">
                     <span class="sort-label">Sort:</span>
+                    <button class="sort-btn active" data-sort="recent">Most Recent</button>
                     <button class="sort-btn" data-sort="name">Name</button>
                     <button class="sort-btn" data-sort="doubles">Doubles</button>
                     <button class="sort-btn" data-sort="singles">Singles</button>
@@ -2097,6 +2109,7 @@
             <div class="group-content">
                 <div class="sort-bar">
                     <span class="sort-label">Sort:</span>
+                    <button class="sort-btn active" data-sort="recent">Most Recent</button>
                     <button class="sort-btn" data-sort="name">Name</button>
                     <button class="sort-btn" data-sort="doubles">Doubles</button>
                     <button class="sort-btn" data-sort="singles">Singles</button>
@@ -2272,6 +2285,40 @@
     </div>
 
     <script>
+            // Publish .header-container offsetHeight as --header-height so the
+            // sticky day-pills can pin exactly under the page header. Keeps
+            // updated through layout shifts (resize, font load, image load).
+            (function publishHeaderHeight() {
+                var headerEl = document.querySelector('.header-container');
+                if (!headerEl) return;
+                function set() {
+                    document.documentElement.style.setProperty(
+                        '--header-height', headerEl.offsetHeight + 'px'
+                    );
+                }
+                set();
+                window.addEventListener('load', set);
+                window.addEventListener('resize', set);
+                window.addEventListener('orientationchange', set);
+                if (typeof ResizeObserver !== 'undefined') {
+                    new ResizeObserver(set).observe(headerEl);
+                }
+            })();
+
+            // Snapshot the default chronological layout for each group so the
+            // "Most Recent" sort button can restore it after the user picks a
+            // custom sort that scrambled card-into-day-group placement. We
+            // store element references (not innerHTML), so click handlers and
+            // any lazy-loaded match history stay attached.
+            document.querySelectorAll('.group-content').forEach(function(content) {
+                content._defaultLayout = {
+                    children: Array.from(content.children),
+                    days: Array.from(content.querySelectorAll('.day-group')).map(function(dg) {
+                        return { node: dg, children: Array.from(dg.children) };
+                    }),
+                };
+            });
+
             // Smooth Accordion Animation Function
             function smoothToggle(details, forceOpen = null) {
                 const content = details.querySelector('.group-content');
@@ -2634,9 +2681,29 @@
 
                     var content = this.closest('.group-content');
                     var details = this.closest('.group-details');
-                    // Day pills only make sense for the default chronological
-                    // ordering — once the user picks a custom sort, suppress
-                    // them so the cards aren't interrupted by stale dividers.
+
+                    // "Most Recent" is the default chronological feed. Restore
+                    // each card back into its original .day-group from the
+                    // page-load snapshot, then re-show the pills.
+                    if (sortKey === 'recent') {
+                        var snap = content._defaultLayout;
+                        if (snap) {
+                            // Re-parent each day-group's original children
+                            snap.days.forEach(function(d) {
+                                d.children.forEach(function(child) {
+                                    d.node.appendChild(child);
+                                });
+                            });
+                            // Re-parent group-content's top-level children in order
+                            snap.children.forEach(function(child) {
+                                content.appendChild(child);
+                            });
+                        }
+                        if (details) details.classList.remove('pills-hidden');
+                        return;
+                    }
+
+                    // Custom sort — pills no longer match card order, hide them.
                     if (details) details.classList.add('pills-hidden');
                     var players = Array.from(content.querySelectorAll('.player-details'));
 
