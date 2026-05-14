@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-14T18:14:01",
-  "next_scan_at": "2026-05-14T18:44:01",
+  "generated_at": "2026-05-14T18:30:59",
+  "next_scan_at": "2026-05-14T19:00:59",
   "stats": {
     "total": 195,
-    "full_count": 18
+    "full_count": 17
   },
   "sessions": [
     {
@@ -16,9 +16,9 @@
       "end_display": "8:00 PM",
       "status": "live",
       "capacity": 18,
-      "count": 18,
-      "pct": 100,
-      "is_full": true,
+      "count": 17,
+      "pct": 94,
+      "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
       "manually_added": false,
@@ -36,11 +36,1020 @@
         "Spencer G.",
         "Suraj Singh C.",
         "Todd B.",
-        "+5 players"
+        "+4 players"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:20",
-      "thieves": [],
+      "last_snap_ts": "2026-05-14T18:29:08",
+      "thieves": [
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T21:39:40",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4129
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T21:56:16",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4113
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T22:12:52",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4096
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T22:29:49",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4079
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T22:46:27",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4063
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T23:22:27",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4027
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T23:39:00",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 4010
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-11T23:55:37",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3994
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T00:12:04",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3977
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T01:00:45",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3928
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T02:35:28",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3834
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T04:06:20",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3743
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T04:22:49",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3726
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T04:39:20",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3710
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T04:55:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3693
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T05:12:03",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3677
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T05:28:25",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3661
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T05:44:47",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3644
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T06:01:12",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3628
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T06:17:41",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3611
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T06:34:03",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3595
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T06:50:28",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3579
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T07:06:55",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3562
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T07:23:25",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3546
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T07:39:53",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3529
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T07:56:20",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3513
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T08:12:47",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3496
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T08:40:23",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3469
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T08:59:45",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3449
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T09:16:52",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3432
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T09:59:41",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3389
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T10:17:01",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3372
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T10:33:34",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3356
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T10:50:20",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3339
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T11:07:23",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3322
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T12:01:07",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3268
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T12:17:34",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3252
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T12:33:56",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3235
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T12:50:21",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3219
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T13:06:47",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3202
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T13:23:25",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3186
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T13:39:56",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3169
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T13:56:33",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3153
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T14:13:02",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3136
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T14:47:55",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3101
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T15:05:25",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3084
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T16:12:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3016
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T16:29:33",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 3000
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T16:46:12",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2983
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T17:02:37",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2967
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T17:18:49",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2950
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T17:35:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2934
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T17:50:17",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2919
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T18:05:26",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2904
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T18:22:03",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2887
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T18:38:33",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2871
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T18:55:00",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2854
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T19:11:40",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2837
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T19:28:02",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2821
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T19:44:23",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2805
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T19:59:22",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2790
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T20:15:54",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2773
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T20:32:08",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2757
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T20:51:31",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2738
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T21:07:46",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2721
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T21:24:02",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2705
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T21:40:24",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2689
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T22:17:12",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2652
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-12T22:53:31",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2616
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T01:00:15",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2489
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T02:54:27",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2375
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T04:38:51",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2270
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T05:44:07",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2205
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T07:18:37",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2111
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T07:49:39",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2079
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T08:05:57",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2063
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T08:36:08",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2033
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T08:57:37",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 2012
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T09:13:52",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1995
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T09:30:07",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1979
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T09:45:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1964
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T10:00:13",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1949
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T10:01:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1947
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T10:18:05",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1931
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T10:34:51",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1914
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T10:51:15",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1898
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T11:07:33",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1882
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T11:23:56",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1865
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T11:40:19",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1849
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T11:56:45",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1832
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T12:13:19",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1816
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T12:29:55",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1799
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T14:03:53",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1705
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T14:20:25",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1689
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T14:36:47",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1672
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T14:53:06",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1656
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T15:13:34",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1636
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T15:30:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1619
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T15:51:55",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1597
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T16:09:56",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1579
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T16:46:15",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1543
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T17:02:47",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1526
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T17:19:28",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1510
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T17:36:05",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1493
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T17:52:39",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1476
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T18:09:34",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1460
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T18:26:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1442
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T18:43:17",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1426
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T19:00:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1409
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T19:16:37",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1393
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T19:33:03",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1376
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T19:49:32",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1360
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T20:06:03",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1343
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T20:22:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1326
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T20:39:14",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1310
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T20:55:46",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1293
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T21:32:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1256
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-13T22:38:27",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1191
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T00:06:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1103
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T01:44:53",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 1004
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T03:03:56",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 925
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T03:48:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 881
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T04:13:16",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 856
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T04:29:52",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 839
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T04:46:24",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 823
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T05:02:57",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 806
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T05:19:32",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 790
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T05:36:11",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 773
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T05:52:46",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 756
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T06:09:15",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 740
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T06:25:48",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 723
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T06:42:19",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 707
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T06:58:48",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 690
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T07:15:21",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 674
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T07:32:01",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 657
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T07:48:40",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 640
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T08:05:13",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 624
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T08:22:15",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 607
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T08:51:56",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 577
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T09:08:26",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 561
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T09:24:54",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 544
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T09:41:25",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 528
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T09:56:29",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 513
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T10:11:30",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 498
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T10:13:19",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 496
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T10:33:14",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 476
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T10:49:50",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 459
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T11:06:22",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 443
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T11:23:07",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 426
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T11:39:45",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 409
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T12:13:14",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 376
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T12:30:02",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 359
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T12:46:51",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 342
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T13:03:36",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 326
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T13:37:40",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 291
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T13:57:05",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 272
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T14:13:53",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 255
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T14:34:44",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 234
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T14:51:43",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 217
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T15:25:15",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 184
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T15:42:04",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 167
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T16:15:33",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 134
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T16:32:09",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 117
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T16:51:55",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 97
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T17:08:44",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 80
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T17:25:37",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 64
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T17:57:16",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 32
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-05-14T18:12:20",
+          "first_absent_ts": "2026-05-14T18:29:08",
+          "detection_gap_min": 17
+        }
+      ],
       "big_dogs": []
     },
     {
@@ -68,7 +1077,7 @@
         "+4 players"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:23",
+      "last_snap_ts": "2026-05-14T18:29:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -106,7 +1115,7 @@
         "Pete H.": "3.91",
         "Roy A.": "4.01"
       },
-      "last_snap_ts": "2026-05-14T18:12:26",
+      "last_snap_ts": "2026-05-14T18:29:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -169,7 +1178,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:28",
+      "last_snap_ts": "2026-05-14T18:29:14",
       "thieves": [],
       "big_dogs": []
     },
@@ -193,7 +1202,7 @@
         "+2 players"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:30",
+      "last_snap_ts": "2026-05-14T18:29:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -218,7 +1227,7 @@
         "+2 players"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:32",
+      "last_snap_ts": "2026-05-14T18:29:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -248,7 +1257,7 @@
         "Suhail A.": "4.21",
         "Suraj Singh C.": "5.15"
       },
-      "last_snap_ts": "2026-05-14T18:12:43",
+      "last_snap_ts": "2026-05-14T18:29:28",
       "thieves": [],
       "big_dogs": []
     },
@@ -284,7 +1293,7 @@
         "Steve M."
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:44",
+      "last_snap_ts": "2026-05-14T18:29:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -319,7 +1328,7 @@
         "Scott S.": "3.77",
         "Todd B.": "4.03"
       },
-      "last_snap_ts": "2026-05-14T18:12:47",
+      "last_snap_ts": "2026-05-14T18:29:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -341,7 +1350,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:36",
+      "last_snap_ts": "2026-05-14T18:29:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -365,7 +1374,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:49",
+      "last_snap_ts": "2026-05-14T18:29:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -389,7 +1398,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:40",
+      "last_snap_ts": "2026-05-14T18:29:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -411,7 +1420,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:52",
+      "last_snap_ts": "2026-05-14T18:29:40",
       "thieves": [],
       "big_dogs": []
     },
@@ -444,7 +1453,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:04",
+      "last_snap_ts": "2026-05-14T18:29:51",
       "thieves": [],
       "big_dogs": []
     },
@@ -474,7 +1483,7 @@
         "Suhail A.": "4.21",
         "Suraj Singh C.": "5.15"
       },
-      "last_snap_ts": "2026-05-14T18:13:07",
+      "last_snap_ts": "2026-05-14T18:29:54",
       "thieves": [],
       "big_dogs": []
     },
@@ -505,7 +1514,7 @@
         "Roy A.": "4.01",
         "Scott S.": "3.77"
       },
-      "last_snap_ts": "2026-05-14T18:13:09",
+      "last_snap_ts": "2026-05-14T18:29:57",
       "thieves": [],
       "big_dogs": []
     },
@@ -527,7 +1536,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:12:57",
+      "last_snap_ts": "2026-05-14T18:29:45",
       "thieves": [],
       "big_dogs": []
     },
@@ -551,7 +1560,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:10",
+      "last_snap_ts": "2026-05-14T18:29:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -573,7 +1582,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:01",
+      "last_snap_ts": "2026-05-14T18:29:49",
       "thieves": [],
       "big_dogs": []
     },
@@ -595,7 +1604,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:14",
+      "last_snap_ts": "2026-05-14T18:30:04",
       "thieves": [],
       "big_dogs": []
     },
@@ -652,7 +1661,7 @@
         "Wendy W."
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:16",
+      "last_snap_ts": "2026-05-14T18:30:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -682,7 +1691,7 @@
         "Pete H.": "3.91",
         "Roy A.": "4.01"
       },
-      "last_snap_ts": "2026-05-14T18:13:19",
+      "last_snap_ts": "2026-05-14T18:30:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -710,7 +1719,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:21",
+      "last_snap_ts": "2026-05-14T18:30:13",
       "thieves": [],
       "big_dogs": []
     },
@@ -735,7 +1744,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:23",
+      "last_snap_ts": "2026-05-14T18:30:14",
       "thieves": [],
       "big_dogs": []
     },
@@ -757,7 +1766,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:44",
+      "last_snap_ts": "2026-05-14T18:30:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -771,8 +1780,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 29,
-      "pct": 81,
+      "count": 30,
+      "pct": 83,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
@@ -780,6 +1789,7 @@
       "registrants": [
         "Alice K.",
         "Alicia Z.",
+        "Andrew W.",
         "Annie L.",
         "Arun R.",
         "Becca D.",
@@ -809,7 +1819,7 @@
         "Val C."
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:25",
+      "last_snap_ts": "2026-05-14T18:30:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -839,7 +1849,7 @@
         "Pete H.": "3.91",
         "Roy A.": "4.01"
       },
-      "last_snap_ts": "2026-05-14T18:13:27",
+      "last_snap_ts": "2026-05-14T18:30:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -867,7 +1877,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:29",
+      "last_snap_ts": "2026-05-14T18:30:23",
       "thieves": [],
       "big_dogs": []
     },
@@ -891,7 +1901,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:46",
+      "last_snap_ts": "2026-05-14T18:30:43",
       "thieves": [],
       "big_dogs": []
     },
@@ -913,7 +1923,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:50",
+      "last_snap_ts": "2026-05-14T18:30:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -964,7 +1974,7 @@
         "Wendy W."
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:31",
+      "last_snap_ts": "2026-05-14T18:30:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -992,7 +2002,7 @@
         "Janet G.": "4.10",
         "Pete H.": "3.91"
       },
-      "last_snap_ts": "2026-05-14T18:13:34",
+      "last_snap_ts": "2026-05-14T18:30:29",
       "thieves": [],
       "big_dogs": []
     },
@@ -1020,7 +2030,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:35",
+      "last_snap_ts": "2026-05-14T18:30:32",
       "thieves": [],
       "big_dogs": []
     },
@@ -1042,7 +2052,7 @@
       "manually_added": false,
       "registrants": [],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:39",
+      "last_snap_ts": "2026-05-14T18:30:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -1066,7 +2076,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:53",
+      "last_snap_ts": "2026-05-14T18:30:51",
       "thieves": [],
       "big_dogs": []
     },
@@ -1080,14 +2090,15 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 10,
-      "pct": 28,
+      "count": 11,
+      "pct": 31,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Alice K.",
+        "Andrew W.",
         "Annie L.",
         "Arun R.",
         "David S.",
@@ -1099,7 +2110,7 @@
         "Steven S."
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:13:55",
+      "last_snap_ts": "2026-05-14T18:30:53",
       "thieves": [],
       "big_dogs": []
     },
@@ -1125,7 +2136,7 @@
       "ratings": {
         "Pete H.": "3.91"
       },
-      "last_snap_ts": "2026-05-14T18:13:57",
+      "last_snap_ts": "2026-05-14T18:30:56",
       "thieves": [],
       "big_dogs": []
     },
@@ -1149,7 +2160,7 @@
         "Ed K."
       ],
       "ratings": {},
-      "last_snap_ts": "2026-05-14T18:14:00",
+      "last_snap_ts": "2026-05-14T18:30:58",
       "thieves": [],
       "big_dogs": []
     },
@@ -7392,6 +8403,46 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-05-14T18:30:53",
+      "type": "join",
+      "name": "Andrew W.",
+      "title": "4.0 Open Play",
+      "start": "THU MAY 21  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbe-ce1c-7bb3-92e3-f08acff75633"
+    },
+    {
+      "ts": "2026-05-14T18:30:17",
+      "type": "join",
+      "name": "Andrew W.",
+      "title": "4.0 Open Play",
+      "start": "TUE MAY 19  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbe-c9a3-7bb3-92e1-cd42722419c0"
+    },
+    {
+      "ts": "2026-05-14T18:29:08",
+      "type": "join",
+      "name": "+4 players",
+      "title": "4.0 Open Play",
+      "start": "THU MAY 14  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "ts": "2026-05-14T18:29:08",
+      "type": "cancel",
+      "name": "+5 players",
+      "title": "4.0 Open Play",
+      "start": "THU MAY 14  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "ts": "2026-05-14T18:29:08",
+      "type": "freed",
+      "name": "17/18",
+      "title": "4.0 Open Play",
+      "start": "THU MAY 14  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
     {
       "ts": "2026-05-14T18:12:23",
       "type": "join",
@@ -23019,6 +24070,1518 @@
   ],
   "thieves": [
     {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T21:39:40",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4129,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T21:56:16",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4113,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T22:12:52",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4096,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T22:29:49",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4079,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T22:46:27",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4063,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T23:22:27",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4027,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T23:39:00",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 4010,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-11T23:55:37",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3994,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T00:12:04",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3977,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T01:00:45",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3928,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T02:35:28",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3834,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T04:06:20",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3743,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T04:22:49",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3726,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T04:39:20",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3710,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T04:55:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3693,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T05:12:03",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3677,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T05:28:25",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3661,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T05:44:47",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3644,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T06:01:12",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3628,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T06:17:41",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3611,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T06:34:03",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3595,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T06:50:28",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3579,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T07:06:55",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3562,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T07:23:25",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3546,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T07:39:53",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3529,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T07:56:20",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3513,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T08:12:47",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3496,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T08:40:23",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3469,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T08:59:45",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3449,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T09:16:52",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3432,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T09:59:41",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3389,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T10:17:01",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3372,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T10:33:34",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3356,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T10:50:20",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3339,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T11:07:23",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3322,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T12:01:07",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3268,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T12:17:34",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3252,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T12:33:56",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3235,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T12:50:21",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3219,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T13:06:47",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3202,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T13:23:25",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3186,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T13:39:56",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3169,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T13:56:33",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3153,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T14:13:02",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3136,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T14:47:55",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3101,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T15:05:25",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3084,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T16:12:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3016,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T16:29:33",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 3000,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T16:46:12",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2983,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T17:02:37",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2967,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T17:18:49",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2950,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T17:35:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2934,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T17:50:17",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2919,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T18:05:26",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2904,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T18:22:03",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2887,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T18:38:33",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2871,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T18:55:00",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2854,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T19:11:40",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2837,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T19:28:02",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2821,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T19:44:23",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2805,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T19:59:22",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2790,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T20:15:54",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2773,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T20:32:08",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2757,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T20:51:31",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2738,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T21:07:46",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2721,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T21:24:02",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2705,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T21:40:24",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2689,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T22:17:12",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2652,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-12T22:53:31",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2616,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T01:00:15",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2489,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T02:54:27",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2375,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T04:38:51",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2270,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T05:44:07",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2205,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T07:18:37",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2111,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T07:49:39",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2079,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T08:05:57",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2063,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T08:36:08",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2033,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T08:57:37",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 2012,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T09:13:52",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1995,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T09:30:07",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1979,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T09:45:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1964,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T10:00:13",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1949,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T10:01:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1947,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T10:18:05",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1931,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T10:34:51",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1914,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T10:51:15",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1898,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T11:07:33",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1882,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T11:23:56",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1865,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T11:40:19",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1849,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T11:56:45",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1832,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T12:13:19",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1816,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T12:29:55",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1799,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T14:03:53",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1705,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T14:20:25",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1689,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T14:36:47",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1672,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T14:53:06",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1656,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T15:13:34",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1636,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T15:30:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1619,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T15:51:55",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1597,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T16:09:56",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1579,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T16:46:15",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1543,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T17:02:47",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1526,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T17:19:28",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1510,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T17:36:05",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1493,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T17:52:39",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1476,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T18:09:34",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1460,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T18:26:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1442,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T18:43:17",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1426,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T19:00:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1409,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T19:16:37",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1393,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T19:33:03",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1376,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T19:49:32",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1360,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T20:06:03",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1343,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T20:22:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1326,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T20:39:14",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1310,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T20:55:46",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1293,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T21:32:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1256,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-13T22:38:27",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1191,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T00:06:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1103,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T01:44:53",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 1004,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T03:03:56",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 925,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T03:48:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 881,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T04:13:16",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 856,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T04:29:52",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 839,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T04:46:24",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 823,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T05:02:57",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 806,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T05:19:32",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 790,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T05:36:11",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 773,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T05:52:46",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 756,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T06:09:15",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 740,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T06:25:48",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 723,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T06:42:19",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 707,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T06:58:48",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 690,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T07:15:21",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 674,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T07:32:01",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 657,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T07:48:40",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 640,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T08:05:13",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 624,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T08:22:15",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 607,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T08:51:56",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 577,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T09:08:26",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 561,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T09:24:54",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 544,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T09:41:25",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 528,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T09:56:29",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 513,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T10:11:30",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 498,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T10:13:19",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 496,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T10:33:14",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 476,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T10:49:50",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 459,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T11:06:22",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 443,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T11:23:07",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 426,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T11:39:45",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 409,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T12:13:14",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 376,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T12:30:02",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 359,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T12:46:51",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 342,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T13:03:36",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 326,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T13:37:40",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 291,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T13:57:05",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 272,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T14:13:53",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 255,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T14:34:44",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 234,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T14:51:43",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 217,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T15:25:15",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 184,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T15:42:04",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 167,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T16:15:33",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 134,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T16:32:09",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 117,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T16:51:55",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 97,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T17:08:44",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 80,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T17:25:37",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 64,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T17:57:16",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 32,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-05-14T18:12:20",
+      "first_absent_ts": "2026-05-14T18:29:08",
+      "detection_gap_min": 17,
+      "session_title": "4.0 Open Play",
+      "session_start": "THU MAY 14  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462"
+    },
+    {
       "name": "Elton W.",
       "last_seen_full_ts": "2026-04-02T18:29:50",
       "first_absent_ts": "2026-04-03T20:01:38",
@@ -23550,13 +26113,13 @@
       "cancels": 3
     },
     {
-      "name": "Cyndi S.",
-      "joins": 8,
+      "name": "Andrew W.",
+      "joins": 9,
       "cancels": 3
     },
     {
-      "name": "Andrew W.",
-      "joins": 7,
+      "name": "Cyndi S.",
+      "joins": 8,
       "cancels": 3
     },
     {
@@ -23845,12 +26408,12 @@
       "cancels": 1
     },
     {
-      "name": "Adriana G.",
+      "name": "Ashlyn P.",
       "joins": 3,
       "cancels": 1
     },
     {
-      "name": "Ashlyn P.",
+      "name": "Adriana G.",
       "joins": 3,
       "cancels": 1
     },
@@ -24105,12 +26668,12 @@
       "cancels": 0
     },
     {
-      "name": "Alex C.",
+      "name": "Roselyn S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Roselyn S.",
+      "name": "Alex C.",
       "joins": 3,
       "cancels": 0
     },
@@ -24155,12 +26718,12 @@
       "cancels": 0
     },
     {
-      "name": "Hamoon H.",
+      "name": "Shachi P.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Shachi P.",
+      "name": "Hamoon H.",
       "joins": 3,
       "cancels": 0
     },
@@ -24798,12 +27361,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
-        },
-        {
           "title": "DUPR 4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
+        },
+        {
+          "title": "4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
         }
       ]
     },
@@ -25019,9 +27582,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462",
           "status": "live",
           "capacity": 18,
-          "count": 18,
-          "is_full": true,
-          "spots_left": 0
+          "count": 17,
+          "is_full": false,
+          "spots_left": 1
         },
         {
           "title": "DUPR 4.0 Open Play",
@@ -25144,9 +27707,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462",
           "status": "live",
           "capacity": 18,
-          "count": 18,
-          "is_full": true,
-          "spots_left": 0
+          "count": 17,
+          "is_full": false,
+          "spots_left": 1
         },
         {
           "title": "DUPR 4.0 Open Play",
@@ -25245,12 +27808,12 @@
               "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
             },
             {
-              "title": "4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
-            },
-            {
               "title": "DUPR 4.0 Open Play",
               "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
+            },
+            {
+              "title": "4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
             }
           ],
           "resolved": false
@@ -25314,9 +27877,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019dbbbe-c9a3-7bb3-92e1-cd42722419c0",
           "status": "upcoming",
           "capacity": 36,
-          "count": 29,
+          "count": 30,
           "is_full": false,
-          "spots_left": 7
+          "spots_left": 6
         },
         {
           "title": "4.0 Open Play",
@@ -27993,10 +30556,10 @@
         "Charles Neufeldt"
       ],
       "count": 2,
-      "registered": 18,
+      "registered": 17,
       "capacity": 18,
-      "spots_left": 0,
-      "is_full": true,
+      "spots_left": 1,
+      "is_full": false,
       "registrants": [
         "Adrian B.",
         "Bobby L.",
@@ -28011,7 +30574,7 @@
         "Spencer G.",
         "Suraj Singh C.",
         "Todd B.",
-        "+5 players"
+        "+4 players"
       ],
       "ratings": {}
     },
@@ -29516,16 +32079,6 @@
       "capacity": 18
     },
     {
-      "title": "4.0 Open Play",
-      "start": "THU MAY 14  6:00 PM",
-      "start_iso": "2026-05-14T18:00:00",
-      "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462",
-      "status": "live",
-      "ghost_count": 5,
-      "total_count": 18,
-      "capacity": 18
-    },
-    {
       "title": "4.5/4.0 Open Play",
       "start": "THU APR 23  6:00 PM",
       "start_iso": "2026-04-23T18:00:00",
@@ -29554,6 +32107,16 @@
       "ghost_count": 4,
       "total_count": 17,
       "capacity": 24
+    },
+    {
+      "title": "4.0 Open Play",
+      "start": "THU MAY 14  6:00 PM",
+      "start_iso": "2026-05-14T18:00:00",
+      "url": "https://ppbrva.podplay.app/community/events/019df489-1177-7775-ae35-45fa0f70f462",
+      "status": "live",
+      "ghost_count": 4,
+      "total_count": 17,
+      "capacity": 18
     },
     {
       "title": "4.0 Open Play",
