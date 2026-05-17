@@ -665,11 +665,13 @@
         .cs-bp-name.player-link {
             text-decoration-color: rgba(160, 160, 200, 0.75);
         }
-        /* "CAREER STATS" title at the top of the expanded card content. */
+        /* "CAREER STATS" title at the top of the expanded card content.
+           This is a section header for the entire Career Stats block
+           (info rows + W/L bars), not a tag — size it to read that way. */
         .career-label {
-            font-size: 9px; font-weight: 800; letter-spacing: 1.5px;
-            color: var(--txt-mid); text-transform: uppercase;
-            margin-bottom: 6px;
+            font-size: 13px; font-weight: 800; letter-spacing: 1.5px;
+            color: var(--txt); text-transform: uppercase;
+            margin-bottom: 10px;
         }
         .cs-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
         .cs-fmt {
@@ -950,7 +952,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 3:25 PM</span>
+            <span>Last Updated: May 17, 2026 at 6:55 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -2557,7 +2559,7 @@
             </div>
             <div class="cs-info-row">
                 <span class="cs-info-label">Matches:</span>
-                <span class="cs-info-value">1,437 · since Feb '20 · last played 7d ago
+                <span class="cs-info-value">1,438 · since Feb '20 · last played 7d ago
                 </span>
             </div>
             <div class="cs-info-row">
