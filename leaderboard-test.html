@@ -769,6 +769,99 @@
             border-color: rgba(167, 139, 250, 0.4);
         }
 
+        /* Streak-hall hero: the dark-mode cyan→pink gradient (12% neon) is
+           invisible on cream. Replace with a solid panel + line border;
+           the inner mini-cells carry the cyan/pink accent via their
+           left-borders so identity isn't lost. */
+        :root[data-theme="light"] .sh-hero {
+            background: var(--panel);
+            border: 1px solid var(--line);
+        }
+        :root[data-theme="light"] .sh-hero:hover { border-color: var(--cyan); }
+        :root[data-theme="light"] .sh-mini-cell { background: var(--panel-2); }
+        :root[data-theme="light"] .sh-hero-cta {
+            background: rgba(0, 98, 113, 0.1);
+            border-color: rgba(0, 98, 113, 0.4);
+        }
+
+        /* Neon text-shadows paint nothing visible against light surfaces
+           and only the dark teal/crimson text color matters. Dropping
+           them sharpens the type instead of leaving a muddy phantom. */
+        :root[data-theme="light"] h1,
+        :root[data-theme="light"] .sh-mini-count,
+        :root[data-theme="light"] .sh-mini-type,
+        :root[data-theme="light"] .sh-champion-count,
+        :root[data-theme="light"] .sh-alltime-count,
+        :root[data-theme="light"] .sh-overlay-title,
+        :root[data-theme="light"] .trend-up,
+        :root[data-theme="light"] .trend-down,
+        :root[data-theme="light"] .streak-w,
+        :root[data-theme="light"] .streak-l,
+        :root[data-theme="light"] .cs-w,
+        :root[data-theme="light"] .cs-l {
+            text-shadow: none;
+        }
+
+        /* Page header border-bottom was a 15%-alpha dark-mode neon cyan;
+           on cream it's invisible, so the sticky header has no visible
+           floor and bleeds into scrolled content. Use the normal line color. */
+        :root[data-theme="light"] .header-container {
+            border-bottom-color: var(--line);
+        }
+
+        /* Streak badges (W/L pills next to player names): the raw
+           rgba(0,255,255,0.1) and rgba(255,0,160,0.1) backgrounds don't
+           match the dark-teal / dark-pink text. Derive from light accents. */
+        :root[data-theme="light"] .streak-w { background: rgba(0, 98, 113, 0.08); }
+        :root[data-theme="light"] .streak-l { background: rgba(180, 29, 94, 0.08); }
+
+        /* Pull-to-refresh indicator was a hardcoded near-black bar that
+           flashed jarringly on a cream page. Match the page surface. */
+        :root[data-theme="light"] .ptr-indicator {
+            background: rgba(244, 243, 238, 0.96);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Section header gradients (.group-summary tinted toward cyan,
+           .movers-summary toward pink) used dark-mode neon channels at
+           5% — invisible on cream. Re-derive from light accents. */
+        :root[data-theme="light"] .group-summary {
+            background: linear-gradient(90deg, rgba(0, 98, 113, 0.06) 0%, transparent 100%);
+        }
+        :root[data-theme="light"] .movers-summary {
+            background: linear-gradient(90deg, rgba(180, 29, 94, 0.06) 0%, transparent 100%);
+        }
+
+        /* HoF timeline axis line: cyan channel at 50% was invisible
+           against white panels. Use light-cyan + warm grey terminus. */
+        :root[data-theme="light"] .sh-hof-timeline::before {
+            background: linear-gradient(180deg, rgba(0, 98, 113, 0.4), rgba(176, 178, 192, 0.4));
+        }
+        /* HoF card left-borders at 50% alpha of dark-mode neon render as
+           pale ice-blue / pale rose on white. Bump to full saturated. */
+        :root[data-theme="light"] .sh-hof.sh-w { border-left-color: var(--cyan); }
+        :root[data-theme="light"] .sh-hof.sh-l { border-left-color: var(--pink); }
+
+        /* Career-stats W/L bar fills: dark-mode cyan/pink channels were
+           the wrong hue against the new accent. Re-derive. */
+        :root[data-theme="light"] .cs-bar {
+            background: linear-gradient(
+                to right,
+                rgba(0, 98, 113, 0.18) 0,
+                rgba(0, 98, 113, 0.18) var(--win-pct, 50%),
+                rgba(180, 29, 94, 0.11) var(--win-pct, 50%),
+                rgba(180, 29, 94, 0.11) 100%
+            );
+        }
+
+        /* Active tab fills (jump bar + sort bar) at 12% dark-mode neon
+           cyan vanish on cream. Bump alpha + use light-cyan channel. */
+        :root[data-theme="light"] .jump-tab.current,
+        :root[data-theme="light"] .sort-btn.active {
+            background: rgba(0, 98, 113, 0.1);
+            border-color: rgba(0, 98, 113, 0.35);
+        }
+
 </style>
 </head>
 <body>
@@ -776,7 +869,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 11:14 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:20 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -2775,6 +2868,23 @@
                 const clearBtn = document.getElementById('searchClear');
 
                 function runSearch(searchTerm) {
+                    // Reset state first: an open player card while filtering
+                    // (or while the filter is being lifted) creates layout
+                    // weirdness — sticky day-pills resolve against the wrong
+                    // box and the visible card has stale height. Snap-close
+                    // every open card so search starts from a clean baseline.
+                    document.querySelectorAll('.player-details[open]').forEach(p => {
+                        p.removeAttribute('open');
+                        var s = p.querySelector('summary');
+                        if (s) s.setAttribute('aria-expanded', 'false');
+                        var dd = p.querySelector('.history-dropdown');
+                        if (dd) {
+                            dd.style.height = '';
+                            dd.style.opacity = '';
+                            dd.style.transition = '';
+                        }
+                    });
+
                     const groups = document.querySelectorAll('.group-details');
                     groups.forEach(group => {
                         let hasVisiblePlayer = false;
@@ -3092,6 +3202,24 @@
                             sInput.dispatchEvent(new Event('input', { bubbles: true }));
                         }
                     }
+
+                    // Snap-close any OTHER open cards before navigating —
+                    // multiple-open cards plus the open-target's expand
+                    // animation push the layout around and break the
+                    // sticky-pill scroll math. The target itself stays open
+                    // (or gets opened below).
+                    document.querySelectorAll('.player-details[open]').forEach(p => {
+                        if (p === card) return;
+                        p.removeAttribute('open');
+                        var s = p.querySelector('summary');
+                        if (s) s.setAttribute('aria-expanded', 'false');
+                        var dd = p.querySelector('.history-dropdown');
+                        if (dd) {
+                            dd.style.height = '';
+                            dd.style.opacity = '';
+                            dd.style.transition = '';
+                        }
+                    });
 
                     // Close streak overlay if it's open — otherwise the page
                     // beneath is hidden and the jump is invisible.
