@@ -119,7 +119,7 @@
         }
 
         .jump-tab {
-            background: rgba(255, 255, 255, 0.08); color: var(--txt); border: none;
+            background: var(--panel-2); color: var(--txt); border: none;
             padding: 8px 16px; border-radius: 20px; white-space: nowrap;
             font-size: 12px; font-weight: 800; text-decoration: none;
             letter-spacing: 1px; text-transform: uppercase;
@@ -140,7 +140,7 @@
         .group-summary {
             font-size: 14px; font-weight: 700; color: var(--txt); text-transform: uppercase;
             letter-spacing: 2px; margin-top: 5px; margin-bottom: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--line);
             border-left: 4px solid var(--cyan);
             padding-left: 10px; padding-bottom: 8px; padding-top: 4px;
             cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
@@ -149,7 +149,7 @@
         .group-summary::-webkit-details-marker { display: none; }
         .group-summary::after {
             content: ''; display: inline-block; width: 6px; height: 6px;
-            border-right: 2px solid rgba(255,255,255,0.5); border-bottom: 2px solid rgba(255,255,255,0.5);
+            border-right: 2px solid var(--txt-mid); border-bottom: 2px solid var(--txt-mid);
             transform: translateY(-2px) rotate(45deg); transition: transform 0.35s ease;
         }
         .group-details:not([open]) .group-summary::after { transform: translateY(-2px) rotate(-45deg); }
@@ -161,7 +161,7 @@
 
         .player-details {
             background: var(--panel); border-radius: 6px; margin-bottom: 3px; overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--line);
             /* `contain: layout` creates an independent stacking context per
                card. Combined with each card painting in its own GPU layer on
                iOS, the sticky page header (z-index 100) was unable to paint
@@ -306,7 +306,7 @@
 
         .profile-link {
             display: block; text-align: center; margin-top: 12px; margin-bottom: 2px; font-weight: 700;
-            padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 6px; font-size: 12px;
+            padding: 10px; background: var(--panel-2); border-radius: 6px; font-size: 12px;
             color: var(--txt); text-transform: uppercase; transition: background 0.2s; letter-spacing: 1px;
         }
         .profile-link:active { background: rgba(255, 255, 255, 0.1); }
@@ -371,8 +371,8 @@
             content: ''; flex: 0 0 12px;
         }
         .sort-btn {
-            background: rgba(255, 255, 255, 0.05); color: var(--txt-mid);
-            border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
+            background: var(--panel-2); color: var(--txt-mid);
+            border: 1px solid var(--line); border-radius: 12px;
             padding: 8px 14px; font-size: 11px; font-weight: 600;
             cursor: pointer; -webkit-tap-highlight-color: transparent;
             transition: all 0.15s; white-space: nowrap; min-height: 36px;
@@ -452,7 +452,7 @@
         .sh-close {
             position: fixed; top: 12px; right: 16px; z-index: 1001;
             width: 44px; height: 44px; border-radius: 22px;
-            background: var(--panel); border: 1px solid rgba(255,255,255,0.06);
+            background: var(--panel); border: 1px solid var(--line);
             color: var(--txt); font-size: 20px; line-height: 1;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer;
@@ -480,7 +480,7 @@
 
         .sh-champions { display: flex; flex-direction: column; gap: 10px; }
         .sh-champion {
-            background: var(--panel); border: 1px solid rgba(255,255,255,0.06);
+            background: var(--panel); border: 1px solid var(--line);
             border-radius: 10px; padding: 14px 16px;
         }
         .sh-champion.sh-w { border-left: 3px solid var(--cyan); }
@@ -510,7 +510,7 @@
 
         /* All-Time record cards */
         .sh-alltime {
-            background: var(--panel); border: 1px solid rgba(255,255,255,0.06);
+            background: var(--panel); border: 1px solid var(--line);
             border-radius: 10px; padding: 12px 16px;
         }
         .sh-alltime.sh-w { border-left: 3px solid var(--gold); }
@@ -565,7 +565,7 @@
         .sh-hof-timeline-single::before { display: none; }
         .sh-hof {
             position: relative;
-            background: var(--panel); border: 1px solid rgba(255,255,255,0.06);
+            background: var(--panel); border: 1px solid var(--line);
             border-radius: 8px; padding: 12px 14px; margin-bottom: 10px;
         }
         .sh-hof.sh-w { border-left: 2px solid rgba(0,229,255,0.5); }
@@ -671,7 +671,7 @@
         .cs-pct {
             font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums;
             padding: 2px 6px; border-radius: 4px; white-space: nowrap; min-width: 28px; text-align: center;
-            background: rgba(0,0,0,0.45);
+            background: var(--panel-2);
         }
         .cs-pct-high { color: var(--cyan); }
         .cs-pct-mid  { color: var(--txt-2); }
@@ -680,7 +680,7 @@
         .cs-best-lbl {
             font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
             color: var(--txt-mid); font-weight: 800; padding: 1px 4px;
-            background: rgba(0,0,0,0.35); border-radius: 3px; margin-right: 3px;
+            background: var(--panel-2); border-radius: 3px; margin-right: 3px;
         }
         .cs-peak-w { color: var(--cyan); font-weight: 800; }
         .cs-peak-l { color: var(--pink); font-weight: 800; }
@@ -695,7 +695,7 @@
         .player-dupr-id .lbl-tag {
             font-size: 8px; font-weight: 800; letter-spacing: 1.5px;
             color: var(--txt-mid); padding: 1px 4px;
-            background: rgba(255,255,255,0.04); border-radius: 3px;
+            background: var(--panel-2); border-radius: 3px;
             text-transform: uppercase;
         }
 
@@ -716,7 +716,7 @@
             padding: 8px 12px 6px 12px;
             margin: 0 -12px;  /* extend full bar across .main-content's 12px padding */
             background: var(--bg);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--line);
         }
         .day-group:first-child .day-pill-wrap {
             padding-top: 4px;
@@ -735,8 +735,8 @@
             font-size: 11px; letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--txt);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: var(--panel-2);
+            border: 1px solid var(--line);
             border-radius: 12px;
         }
         .day-pill .relative {
@@ -756,7 +756,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 8:50 AM</span>
+            <span>Last Updated: May 17, 2026 at 8:58 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
