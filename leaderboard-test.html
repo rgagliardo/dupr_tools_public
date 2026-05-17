@@ -846,6 +846,14 @@
            pale ice-blue / pale rose on white. Bump to full saturated. */
         :root[data-theme="light"] .sh-hof.sh-w { border-left-color: var(--cyan); }
         :root[data-theme="light"] .sh-hof.sh-l { border-left-color: var(--pink); }
+        /* HoF timeline dots: dark-mode pattern is "cream center + ring on
+           dark backdrop". In light mode the cream center matches the
+           backdrop and the dot reads as an empty bullet. Fill with the
+           streak accent (or white for neutral) so the dot reads as a
+           proper timeline marker. */
+        :root[data-theme="light"] .sh-hof-dot { background: var(--panel); }
+        :root[data-theme="light"] .sh-hof.sh-w .sh-hof-dot { background: var(--cyan); }
+        :root[data-theme="light"] .sh-hof.sh-l .sh-hof-dot { background: var(--pink); }
 
         /* Career-stats W/L bar fills: dark-mode cyan/pink channels were
            the wrong hue against the new accent. Re-derive. */
@@ -874,7 +882,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 11:51 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:56 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
