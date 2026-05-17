@@ -473,7 +473,11 @@
             color: var(--txt-mid); text-transform: uppercase;
             margin: 20px 0 10px 2px;
             position: sticky; top: 0; z-index: 1;
-            background: var(--bg); padding: 8px 2px;
+            /* 16px horizontal padding matches the inset of the inner card
+               column so the sticky label's background sits over content,
+               not edge-to-edge — avoids the "white page-break bar across
+               narrower cards" look in light mode. */
+            background: var(--bg); padding: 8px 16px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.4);
         }
 
@@ -754,13 +758,13 @@
            backdrop reads as a mode switch (dark) when the cards inside are
            white-on-cream. 45% black gives focus without the jarring flip. */
         :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.45); }
-        /* Sticky section labels inside the overlay: default `var(--bg)`
-           cream blends into the page through the 45%-black scrim. Lift
-           to `var(--panel)` (white) so the labels pin distinctly against
-           both the scrim and the white content cards. */
+        /* Sticky section labels inside the overlay: cream (`var(--bg)`)
+           reads as a DIVIDER between white cards rather than another
+           card surface. The earlier `var(--panel)` override produced
+           full-width white bars that visually fused with the cards.
+           A softer shadow keeps the pin signal without a hard edge. */
         :root[data-theme="light"] .sh-section-label {
-            background: var(--panel);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
         }
         /* Social link squares: 6% purple over dark reads as a faint chip,
            but over cream the same alpha is ~97% transparent — the button
@@ -870,7 +874,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 11:29 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:51 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
