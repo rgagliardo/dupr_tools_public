@@ -473,9 +473,8 @@
             color: var(--txt-mid); text-transform: uppercase;
             margin: 20px 0 10px 2px;
             position: sticky; top: 0; z-index: 1;
-            background: var(--bg); padding-top: 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-            background: rgba(11, 12, 20, 0.95); padding: 8px 2px;
+            background: var(--bg); padding: 8px 2px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
         }
 
         .sh-champions { display: flex; flex-direction: column; gap: 10px; }
@@ -749,6 +748,20 @@
            pills (kept in markup so reverting back to default sort restores them). */
         .group-details.pills-hidden .day-pill-wrap { display: none; }
 
+        /* ── Light theme overrides for elements that can't be expressed
+           purely via the token table ──────────────────────────────────── */
+        /* Soften the streak-hall modal scrim in light mode — a 90% black
+           backdrop reads as a mode switch (dark) when the cards inside are
+           white-on-cream. 45% black gives focus without the jarring flip. */
+        :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.45); }
+        /* Sticky section labels inside the overlay sit on var(--bg). The
+           shadow needs a hint of ambient dark to read; in light mode that
+           hardcoded shadow is invisible. Slightly stronger shadow + softer
+           color reads as a subtle "this label pins under your scroll". */
+        :root[data-theme="light"] .sh-section-label {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
 </style>
 </head>
 <body>
@@ -756,7 +769,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 8:58 AM</span>
+            <span>Last Updated: May 17, 2026 at 9:08 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
