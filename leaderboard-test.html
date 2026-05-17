@@ -554,18 +554,19 @@
         .sh-vs { color: var(--txt-faint); padding: 0 3px; }
         .sh-match-event { color: var(--txt-faint); font-size: 10px; margin-top: 3px; font-style: italic; }
 
-        /* Hall of Fame — vertical timeline */
+        /* Hall of Fame */
         .sh-hof-axis {
             font-size: 10px; color: var(--txt-dim); letter-spacing: 1px;
-            text-transform: uppercase; margin: 4px 0 8px 28px;
+            text-transform: uppercase; margin: 4px 0 8px 2px;
         }
         .sh-hof-axis .sh-arrow { color: var(--txt-faint); padding: 0 4px; }
-        .sh-hof-timeline { position: relative; padding-left: 28px; }
-        .sh-hof-timeline::before {
-            content: ""; position: absolute; left: 11px; top: 12px; bottom: 12px;
-            width: 2px; background: linear-gradient(180deg, rgba(0,229,255,0.5), rgba(85,85,112,0.4));
-        }
-        .sh-hof-timeline-single::before { display: none; }
+        /* HoF entries render as a simple stacked list. The card's colored
+           left-border conveys W/L; the stacking order conveys chronology;
+           the `.sh-hof-axis` text label calls out "MOST RECENT → OLDEST".
+           No additional timeline ornament needed — the dot/axis added no
+           information that wasn't already there. */
+        .sh-hof-timeline { position: relative; }
+        .sh-hof-dot { display: none; }
         .sh-hof {
             position: relative;
             background: var(--panel); border: 1px solid var(--line);
@@ -573,13 +574,6 @@
         }
         .sh-hof.sh-w { border-left: 2px solid rgba(0,229,255,0.5); }
         .sh-hof.sh-l { border-left: 2px solid rgba(255,0,160,0.5); }
-        .sh-hof-dot {
-            position: absolute; left: -22px; top: 14px;
-            width: 12px; height: 12px; border-radius: 50%;
-            background: var(--panel-2); border: 2px solid var(--txt-faint);
-        }
-        .sh-hof.sh-w .sh-hof-dot { border-color: var(--cyan); }
-        .sh-hof.sh-l .sh-hof-dot { border-color: var(--pink); }
         .sh-hof-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
         .sh-hof-name { font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
         .sh-hof-streak { font-size: 14px; font-weight: 800; font-variant-numeric: tabular-nums; }
@@ -837,23 +831,10 @@
             background: linear-gradient(90deg, rgba(180, 29, 94, 0.06) 0%, transparent 100%);
         }
 
-        /* HoF timeline axis line: cyan channel at 50% was invisible
-           against white panels. Use light-cyan + warm grey terminus. */
-        :root[data-theme="light"] .sh-hof-timeline::before {
-            background: linear-gradient(180deg, rgba(0, 98, 113, 0.4), rgba(176, 178, 192, 0.4));
-        }
         /* HoF card left-borders at 50% alpha of dark-mode neon render as
            pale ice-blue / pale rose on white. Bump to full saturated. */
         :root[data-theme="light"] .sh-hof.sh-w { border-left-color: var(--cyan); }
         :root[data-theme="light"] .sh-hof.sh-l { border-left-color: var(--pink); }
-        /* HoF timeline dots: dark-mode pattern is "cream center + ring on
-           dark backdrop". In light mode the cream center matches the
-           backdrop and the dot reads as an empty bullet. Fill with the
-           streak accent (or white for neutral) so the dot reads as a
-           proper timeline marker. */
-        :root[data-theme="light"] .sh-hof-dot { background: var(--panel); }
-        :root[data-theme="light"] .sh-hof.sh-w .sh-hof-dot { background: var(--cyan); }
-        :root[data-theme="light"] .sh-hof.sh-l .sh-hof-dot { background: var(--pink); }
 
         /* Career-stats W/L bar fills: dark-mode cyan/pink channels were
            the wrong hue against the new accent. Re-derive. */
@@ -882,7 +863,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 11:56 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:59 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
