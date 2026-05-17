@@ -776,7 +776,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 11:00 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:14 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -3074,6 +3074,24 @@
                         card = document.querySelector('.player-details#' + CSS.escape(id));
                     } catch (e) { return; }
                     if (!card) return;
+
+                    // If the target is filtered out by an active search,
+                    // clear the search so the card becomes visible.
+                    // Without this, the scroll target's getBoundingClientRect
+                    // returns 0 for a display:none element and the jump
+                    // silently no-ops.
+                    var group = card.closest('.group-details');
+                    var targetHidden = card.classList.contains('hidden')
+                        || (group && group.style.display === 'none');
+                    if (targetHidden) {
+                        var sInput = document.getElementById('searchInput');
+                        var sClear = document.getElementById('searchClear');
+                        if (sInput && sInput.value) {
+                            sInput.value = '';
+                            if (sClear) sClear.classList.remove('visible');
+                            sInput.dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                    }
 
                     // Close streak overlay if it's open — otherwise the page
                     // beneath is hidden and the jump is invisible.
