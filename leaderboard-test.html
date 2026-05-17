@@ -757,11 +757,11 @@
 
         /* ── Light theme overrides for elements that can't be expressed
            purely via the token table ──────────────────────────────────── */
-        /* Streak-hall modal scrim. At 45% the page chrome ("TESTING" h1,
-           nav, search) was visibly bleeding through behind the overlay,
-           weakening the modal-focus signal. 60% hides the page without
-           feeling like a dark-mode switch on a light page. */
-        :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.6); }
+        /* Streak-hall modal scrim. At 60% the "TESTING" h1's dark teal
+           was still bleeding through legibly behind the overlay header.
+           75% black gives the modal proper focus without going full
+           dark-mode-switch. */
+        :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.75); }
         /* Overlay sub line + HoF axis text: `var(--txt-dim)` on the dim
            scrim reads as a barely-visible whisper. Bump one rung. */
         :root[data-theme="light"] .sh-overlay-sub,
@@ -914,7 +914,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 12:40 PM</span>
+            <span>Last Updated: May 17, 2026 at 12:41 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
