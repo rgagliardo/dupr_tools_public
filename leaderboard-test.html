@@ -875,6 +875,22 @@
             border-color: var(--line-soft);
         }
 
+        /* Streak-hall close button: pure white circle on a 75% black scrim
+           reads as a system-dialog interrupt. `var(--panel-2)` keeps it
+           clearly clickable while staying within the cream palette. */
+        :root[data-theme="light"] .sh-close {
+            background: var(--panel-2);
+        }
+
+        /* Match-toggle rest state: `transparent` worked in dark because
+           the card's dark `var(--panel-2)` made the `var(--line)` border
+           pop. On cream the border becomes a ghost. Faint cyan tint at
+           rest gives the button real presence without competing with
+           the filled profile-link below it. */
+        :root[data-theme="light"] .match-toggle {
+            background: rgba(0, 122, 138, 0.06);
+        }
+
         /* Profile-link :active was rgba(255,255,255,0.1) — white-on-white. */
         :root[data-theme="light"] .profile-link:active {
             background: var(--panel-2);
@@ -934,7 +950,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 1:45 PM</span>
+            <span>Last Updated: May 17, 2026 at 3:25 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
@@ -1463,7 +1479,7 @@
                     <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
                         <span class="cs-peak-w">5W</span>
                         <span class="cs-dot"> / </span>
-                        <span class="cs-peak-l">7L</span>
+                        <span class="cs-peak-l">8L</span>
                     </div>
                 </div>
             </div>
