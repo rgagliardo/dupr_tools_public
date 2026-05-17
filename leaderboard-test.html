@@ -754,11 +754,12 @@
            backdrop reads as a mode switch (dark) when the cards inside are
            white-on-cream. 45% black gives focus without the jarring flip. */
         :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.45); }
-        /* Sticky section labels inside the overlay sit on var(--bg). The
-           shadow needs a hint of ambient dark to read; in light mode that
-           hardcoded shadow is invisible. Slightly stronger shadow + softer
-           color reads as a subtle "this label pins under your scroll". */
+        /* Sticky section labels inside the overlay: default `var(--bg)`
+           cream blends into the page through the 45%-black scrim. Lift
+           to `var(--panel)` (white) so the labels pin distinctly against
+           both the scrim and the white content cards. */
         :root[data-theme="light"] .sh-section-label {
+            background: var(--panel);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         /* Social link squares: 6% purple over dark reads as a faint chip,
@@ -869,7 +870,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 11:21 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:29 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
