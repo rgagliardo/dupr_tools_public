@@ -757,10 +757,15 @@
 
         /* ── Light theme overrides for elements that can't be expressed
            purely via the token table ──────────────────────────────────── */
-        /* Soften the streak-hall modal scrim in light mode — a 90% black
-           backdrop reads as a mode switch (dark) when the cards inside are
-           white-on-cream. 45% black gives focus without the jarring flip. */
-        :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.45); }
+        /* Streak-hall modal scrim. At 45% the page chrome ("TESTING" h1,
+           nav, search) was visibly bleeding through behind the overlay,
+           weakening the modal-focus signal. 60% hides the page without
+           feeling like a dark-mode switch on a light page. */
+        :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.6); }
+        /* Overlay sub line + HoF axis text: `var(--txt-dim)` on the dim
+           scrim reads as a barely-visible whisper. Bump one rung. */
+        :root[data-theme="light"] .sh-overlay-sub,
+        :root[data-theme="light"] .sh-hof-axis { color: var(--txt-mid); }
         /* Sticky section labels: cream divider against white cards.
            Bumped shadow from 0.06 → 0.12 so the pin signal actually reads. */
         :root[data-theme="light"] .sh-section-label {
@@ -844,6 +849,11 @@
         :root[data-theme="light"] .search-box:focus {
             box-shadow: 0 0 0 2px rgba(0, 122, 138, 0.35);
         }
+        /* Search box rest border at `var(--line)` is too soft on cream
+           (white box on cream with a near-invisible edge). Use line-soft. */
+        :root[data-theme="light"] .search-box {
+            border-color: var(--line-soft);
+        }
 
         /* Profile-link :active was rgba(255,255,255,0.1) — white-on-white. */
         :root[data-theme="light"] .profile-link:active {
@@ -876,16 +886,16 @@
         :root[data-theme="light"] .sh-hof.sh-w { border-left-color: var(--cyan); }
         :root[data-theme="light"] .sh-hof.sh-l { border-left-color: var(--pink); }
 
-        /* Career-stats W/L bar — bumped alpha so the cyan and pink fills
-           carry the W/L identity instead of looking like a flat grey bar
-           with a faint tint. */
+        /* Career-stats W/L bar — cyan at 0.28 read as a pale wash next to
+           pink at 0.18 (red has more visual weight than teal at equal
+           alpha on cream). Bump cyan to 0.36 for balanced presence. */
         :root[data-theme="light"] .cs-bar {
             background: linear-gradient(
                 to right,
-                rgba(0, 122, 138, 0.28) 0,
-                rgba(0, 122, 138, 0.28) var(--win-pct, 50%),
-                rgba(192, 36, 94, 0.18) var(--win-pct, 50%),
-                rgba(192, 36, 94, 0.18) 100%
+                rgba(0, 122, 138, 0.36) 0,
+                rgba(0, 122, 138, 0.36) var(--win-pct, 50%),
+                rgba(192, 36, 94, 0.20) var(--win-pct, 50%),
+                rgba(192, 36, 94, 0.20) 100%
             );
         }
 
@@ -904,7 +914,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 12:21 PM</span>
+            <span>Last Updated: May 17, 2026 at 12:40 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
