@@ -761,6 +761,13 @@
         :root[data-theme="light"] .sh-section-label {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        /* Social link squares: 6% purple over dark reads as a faint chip,
+           but over cream the same alpha is ~97% transparent — the button
+           loses its affordance. Bump fill + border for visible parity. */
+        :root[data-theme="light"] .social-link {
+            background: rgba(167, 139, 250, 0.12);
+            border-color: rgba(167, 139, 250, 0.4);
+        }
 
 </style>
 </head>
@@ -769,7 +776,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 9:11 AM</span>
+            <span>Last Updated: May 17, 2026 at 11:00 AM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
