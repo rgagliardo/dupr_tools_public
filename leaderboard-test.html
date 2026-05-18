@@ -87,9 +87,12 @@
              coral (L/movers). Distinct from `light` (cream/grey-beige
              with corporate teal/crimson): it borrows Airbnb's actual
              brand palette so cards read like a listing tile.
-             Cyan/pink are slightly darker than the literal brand
-             values (#008489, #FF5A5F) so small-text body uses still
-             clear 4.5:1 on white — same hue family, no visual loss. */
+             Cyan/pink use Airbnb's literal brand values (#008489 Babu,
+             #FF5A5F Rausch). Brand-faithful prioritized over strict
+             WCAG AA — coral on white is ~2.9:1, teal ~4.3:1 (both
+             below the 4.5:1 small-text threshold). Visual identity
+             matches the picked mockup; if AA matters for a future
+             audit, darken to #007a80 / #c8313b. */
           --bg:           #fafafa;
           --panel:        #ffffff;
           --panel-2:      #f7f7f7;
@@ -102,12 +105,12 @@
           --txt-dim:      #9b9b9b;
           --txt-faint:    #cfcfcf;
           --placeholder:  #b0b0b0;
-          --cyan:         #007a80;  /* darkened Babu — 4.9:1 on white */
-          --pink:         #c8313b;  /* darkened Rausch — 5.1:1 on white */
+          --cyan:         #008489;  /* Babu teal — Airbnb brand value */
+          --pink:         #ff5a5f;  /* Rausch coral — Airbnb brand value */
           --yellow:       #a06800;  /* warm honey */
           --gold:         #a06800;
-          --rose:         #a13a40;
-          --red:          #c8313b;
+          --rose:         #e0484c;  /* coral-leaning rose, on-brand */
+          --red:          #ff5a5f;
           --partner-pur:  #5a6cb8;  /* calm indigo */
         }
         @media (prefers-reduced-motion: no-preference) { :root { scroll-behavior: smooth; } }
@@ -230,9 +233,9 @@
             100% { box-shadow: 0 0 0 2px rgba(0, 122, 138, 0.0), 0 0 0 0 rgba(0, 122, 138, 0.0); }
         }
         @keyframes player-pulse-airbutter {
-            0%   { box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.0), 0 0 0 0 rgba(0, 122, 128, 0.0); }
-            20%  { box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.85), 0 0 18px 4px rgba(0, 122, 128, 0.45); }
-            100% { box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.0), 0 0 0 0 rgba(0, 122, 128, 0.0); }
+            0%   { box-shadow: 0 0 0 2px rgba(0, 132, 137, 0.0), 0 0 0 0 rgba(0, 132, 137, 0.0); }
+            20%  { box-shadow: 0 0 0 2px rgba(0, 132, 137, 0.85), 0 0 18px 4px rgba(0, 132, 137, 0.45); }
+            100% { box-shadow: 0 0 0 2px rgba(0, 132, 137, 0.0), 0 0 0 0 rgba(0, 132, 137, 0.0); }
         }
         /* Link wrappers around player names. At-rest affordance: a faint
            dotted underline (paint-only via text-decoration — no layout
@@ -1000,8 +1003,8 @@
 
         /* ── Airbutter theme overrides ──────────────────────────────────
            Mirrors the cream `light` overrides above but with airbutter
-           rgba tints (cyan #007a80 = rgb(0,122,128), pink #c8313b =
-           rgb(200,49,59), bg #fafafa = rgb(250,250,250)). Rules using
+           rgba tints (cyan #008489 = rgb(0,132,137), pink #ff5a5f =
+           rgb(255,90,95), bg #fafafa = rgb(250,250,250)). Rules using
            pure token vars repeat verbatim so they apply to the
            airbutter selector — duplication is intentional, keeps the
            cream theme's tested rules unmodified. */
@@ -1021,14 +1024,14 @@
                0.10 teal at the left edge was perceptible while 0.08
                coral at the right edge was nearly invisible, tilting
                the hero's visual weight to the W side. */
-            background: linear-gradient(90deg, rgba(0, 122, 128, 0.08), rgba(200, 49, 59, 0.08));
+            background: linear-gradient(90deg, rgba(0, 132, 137, 0.08), rgba(255, 90, 95, 0.08));
             border: 1px solid var(--line-soft);
         }
         :root[data-theme="airbutter"] .sh-hero:hover { border-color: var(--cyan); }
         :root[data-theme="airbutter"] .sh-mini-cell { background: var(--panel-2); }
         :root[data-theme="airbutter"] .sh-hero-cta {
-            background: rgba(0, 122, 128, 0.18);
-            border-color: rgba(0, 122, 128, 0.55);
+            background: rgba(0, 132, 137, 0.18);
+            border-color: rgba(0, 132, 137, 0.55);
         }
         :root[data-theme="airbutter"] h1,
         :root[data-theme="airbutter"] .sh-mini-count,
@@ -1047,8 +1050,8 @@
         :root[data-theme="airbutter"] .header-container {
             border-bottom-color: var(--line-soft);
         }
-        :root[data-theme="airbutter"] .streak-w { background: rgba(0, 122, 128, 0.14); }
-        :root[data-theme="airbutter"] .streak-l { background: rgba(200, 49, 59, 0.14); }
+        :root[data-theme="airbutter"] .streak-w { background: rgba(0, 132, 137, 0.14); }
+        :root[data-theme="airbutter"] .streak-l { background: rgba(255, 90, 95, 0.14); }
         :root[data-theme="airbutter"] .player-details,
         :root[data-theme="airbutter"] .sh-hof,
         :root[data-theme="airbutter"] .sh-champion,
@@ -1063,7 +1066,7 @@
             border-color: var(--line-soft);
         }
         :root[data-theme="airbutter"] .search-box:focus {
-            box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.35);
+            box-shadow: 0 0 0 2px rgba(0, 132, 137, 0.35);
         }
         :root[data-theme="airbutter"] .search-box {
             border-color: var(--line-soft);
@@ -1074,7 +1077,7 @@
             /* 0.06 alpha was functionally invisible on #ffffff cards.
                0.10 gives the chip enough teal tint to read as
                contained without dominating. */
-            background: rgba(0, 122, 128, 0.10);
+            background: rgba(0, 132, 137, 0.10);
         }
         :root[data-theme="airbutter"] .profile-link:active {
             background: var(--panel-2);
@@ -1085,26 +1088,26 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         }
         :root[data-theme="airbutter"] .group-summary {
-            background: linear-gradient(90deg, rgba(0, 122, 128, 0.06) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(0, 132, 137, 0.06) 0%, transparent 100%);
         }
         :root[data-theme="airbutter"] .movers-summary {
-            background: linear-gradient(90deg, rgba(200, 49, 59, 0.09) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(255, 90, 95, 0.09) 0%, transparent 100%);
         }
         :root[data-theme="airbutter"] .sh-hof.sh-w { border-left-color: var(--cyan); }
         :root[data-theme="airbutter"] .sh-hof.sh-l { border-left-color: var(--pink); }
         :root[data-theme="airbutter"] .cs-bar {
             background: linear-gradient(
                 to right,
-                rgba(0, 122, 128, 0.36) 0,
-                rgba(0, 122, 128, 0.36) var(--win-pct, 50%),
-                rgba(200, 49, 59, 0.20) var(--win-pct, 50%),
-                rgba(200, 49, 59, 0.20) 100%
+                rgba(0, 132, 137, 0.36) 0,
+                rgba(0, 132, 137, 0.36) var(--win-pct, 50%),
+                rgba(255, 90, 95, 0.20) var(--win-pct, 50%),
+                rgba(255, 90, 95, 0.20) 100%
             );
         }
         :root[data-theme="airbutter"] .jump-tab.current,
         :root[data-theme="airbutter"] .sort-btn.active {
-            background: rgba(0, 122, 128, 0.18);
-            border-color: rgba(0, 122, 128, 0.55);
+            background: rgba(0, 132, 137, 0.18);
+            border-color: rgba(0, 132, 137, 0.55);
         }
 
         /* Route the player-pulse animation to the theme-tinted keyframes
@@ -1164,7 +1167,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 11:15 AM</span>
+            <span>Last Updated: May 18, 2026 at 11:23 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
