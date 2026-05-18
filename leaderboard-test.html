@@ -1903,6 +1903,24 @@
             font-weight: 500;
         }
 
+        /* Jump tabs (PLAYERS (15) / PROS (2)) — same card-chip
+           treatment as group-summary so they don't fade into the
+           paper-white background. Active state already handled
+           upstream (teal fill); this restyles the rest state. */
+        :root[data-theme="airbutter"] .jump-tab {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+            padding: 9px 16px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            transition: box-shadow 0.15s ease, border-color 0.15s ease, background 0.2s ease;
+        }
+        :root[data-theme="airbutter"] .jump-tab:hover {
+            border-color: var(--line-soft);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
 </style>
 </head>
 <body>
@@ -1910,7 +1928,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 1:30 PM</span>
+            <span>Last Updated: May 18, 2026 at 1:36 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
