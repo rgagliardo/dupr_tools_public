@@ -1160,6 +1160,450 @@
         .theme-toggle:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
         .theme-toggle-icon { font-size: 11px; line-height: 1; opacity: 0.85; }
 
+        /* ═══════════════════════════════════════════════════════════════
+           Airbutter — Streak Hall editorial redesign
+           Magazine-spread treatment. Didot display type (native on
+           macOS/iOS, Bodoni/Cochin/Georgia fallback elsewhere) for
+           hero numbers and champion names; refined typographic
+           hierarchy; generous whitespace; gold honors marker for
+           All-Time tier; HoF restyled as a typographic annal.
+           Emoji ornaments removed from in-line labels (still used
+           for the dethrone/break events where they add emotion).
+           Airbutter-only — cream and dark keep their existing card-
+           grid layouts unchanged.
+           ═══════════════════════════════════════════════════════════ */
+
+        :root[data-theme="airbutter"] .sh-overlay-inner {
+            --display: "Didot", "Bodoni 72", "Bodoni MT", "Cochin", Georgia, serif;
+            max-width: 600px;
+            padding: 72px 24px 80px;
+        }
+
+        /* — Cover title block — */
+        :root[data-theme="airbutter"] .sh-overlay-title {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            text-transform: none;
+            color: var(--txt);
+            margin-bottom: 8px;
+        }
+        :root[data-theme="airbutter"] .sh-overlay-sub {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--txt-dim);
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin-bottom: 28px;
+            position: relative;
+            padding-bottom: 24px;
+        }
+        /* Gold rule under the deck — honors marker */
+        :root[data-theme="airbutter"] .sh-overlay-sub::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* — Section labels (chapter heads) — */
+        :root[data-theme="airbutter"] .sh-section-label {
+            /* Drop sticky chip styling — editorial chapter feel */
+            position: static;
+            background: transparent;
+            box-shadow: none;
+            padding: 40px 0 16px 0;
+            margin: 0 0 4px 0;
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--txt);
+            text-transform: none;
+        }
+        /* Small gold diamond above the chapter title — printed mark */
+        :root[data-theme="airbutter"] .sh-section-label::before {
+            content: '◆';
+            display: block;
+            font-size: 8px;
+            color: var(--gold);
+            letter-spacing: 0;
+            margin-bottom: 12px;
+            font-style: normal;
+        }
+
+        /* — Champions stack — */
+        :root[data-theme="airbutter"] .sh-champions {
+            gap: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* — Champion card (Current Run hero) — */
+        :root[data-theme="airbutter"] .sh-champion {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 26px 22px 22px;
+            box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.02),
+                0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+        /* Drop the 3px W/L left bar — color signal lives in the number now */
+        :root[data-theme="airbutter"] .sh-champion.sh-w,
+        :root[data-theme="airbutter"] .sh-champion.sh-l {
+            border-left: 1px solid var(--line);
+        }
+
+        /* Hide the emoji ornament inside in-line badges (🔥 / ▼ / 🏆) —
+           the Didot type + color does the signaling. Event-icons
+           (👑 / 💔) stay — they're emotional, not decorative. */
+        :root[data-theme="airbutter"] .sh-champion-badge span[aria-hidden="true"],
+        :root[data-theme="airbutter"] .sh-alltime-badge span[aria-hidden="true"],
+        :root[data-theme="airbutter"] .sh-hof-streak span[aria-hidden="true"] {
+            display: none;
+        }
+
+        /* Head: label sits above the big count */
+        :root[data-theme="airbutter"] .sh-champion-head {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        :root[data-theme="airbutter"] .sh-champion-badge {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        :root[data-theme="airbutter"] .sh-champion.sh-w .sh-champion-badge { color: var(--cyan); }
+        :root[data-theme="airbutter"] .sh-champion.sh-l .sh-champion-badge { color: var(--pink); }
+
+        /* THE HERO NUMBER */
+        :root[data-theme="airbutter"] .sh-champion-count {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 88px;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            margin-top: -6px;
+        }
+        :root[data-theme="airbutter"] .sh-champion.sh-w .sh-champion-count { color: var(--cyan); }
+        :root[data-theme="airbutter"] .sh-champion.sh-l .sh-champion-count { color: var(--pink); }
+        :root[data-theme="airbutter"] .sh-champion-count sup {
+            font-size: 22px;
+            margin-left: 4px;
+            vertical-align: top;
+            position: relative;
+            top: 12px;
+            font-weight: 400;
+        }
+
+        /* Champion name as editorial title */
+        :root[data-theme="airbutter"] .sh-champion-name {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 1.15;
+            letter-spacing: -0.005em;
+            text-transform: none;
+            color: var(--txt);
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        :root[data-theme="airbutter"] .sh-nick {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 14px;
+            color: var(--txt-mid);
+            margin-left: 0;
+            text-transform: none;
+            letter-spacing: 0;
+            display: inline;
+        }
+
+        :root[data-theme="airbutter"] .sh-champion-since {
+            font-size: 11px;
+            color: var(--txt-mid);
+            font-style: italic;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        /* — Match line (shared by champion + HoF event panels) — */
+        :root[data-theme="airbutter"] .sh-match {
+            background: var(--panel-2);
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 11px;
+            color: var(--txt-mid);
+        }
+        :root[data-theme="airbutter"] .sh-match-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        :root[data-theme="airbutter"] .sh-match-date {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            color: var(--txt-dim);
+            text-transform: uppercase;
+        }
+        :root[data-theme="airbutter"] .sh-match-result {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        :root[data-theme="airbutter"] .sh-match-result.w { color: var(--cyan); }
+        :root[data-theme="airbutter"] .sh-match-result.l { color: var(--pink); }
+        :root[data-theme="airbutter"] .sh-match-score {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 17px;
+            color: var(--txt);
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+        :root[data-theme="airbutter"] .sh-match-players {
+            font-size: 11px;
+            color: var(--txt-mid);
+            line-height: 1.5;
+        }
+        :root[data-theme="airbutter"] .sh-match-event {
+            font-size: 10px;
+            color: var(--txt-dim);
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        /* — All-Time card (featured spread) — */
+        :root[data-theme="airbutter"] .sh-alltime {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 22px 22px 20px;
+            box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.02),
+                0 4px 16px rgba(0, 0, 0, 0.035);
+        }
+        :root[data-theme="airbutter"] .sh-alltime.sh-w,
+        :root[data-theme="airbutter"] .sh-alltime.sh-l {
+            border-left: 1px solid var(--line);
+        }
+
+        :root[data-theme="airbutter"] .sh-alltime-head {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        :root[data-theme="airbutter"] .sh-alltime-badge {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 700;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        /* Gold dot prefix — the "medal" */
+        :root[data-theme="airbutter"] .sh-alltime-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        :root[data-theme="airbutter"] .sh-alltime.sh-w .sh-alltime-badge,
+        :root[data-theme="airbutter"] .sh-alltime.sh-l .sh-alltime-badge { color: var(--gold); }
+
+        :root[data-theme="airbutter"] .sh-alltime-count {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            margin-top: -4px;
+        }
+        :root[data-theme="airbutter"] .sh-alltime.sh-w .sh-alltime-count { color: var(--cyan); }
+        :root[data-theme="airbutter"] .sh-alltime.sh-l .sh-alltime-count { color: var(--pink); }
+        :root[data-theme="airbutter"] .sh-alltime-count sup {
+            font-size: 17px;
+            margin-left: 3px;
+            vertical-align: top;
+            position: relative;
+            top: 9px;
+            font-weight: 400;
+        }
+
+        :root[data-theme="airbutter"] .sh-alltime-name {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.15;
+            text-transform: none;
+            letter-spacing: -0.005em;
+            color: var(--txt);
+            margin-top: 14px;
+            min-height: auto;
+        }
+        :root[data-theme="airbutter"] .sh-alltime-meta {
+            font-size: 11px;
+            color: var(--txt-mid);
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        /* — Hall of Fame: typographic annal — */
+        :root[data-theme="airbutter"] .sh-hof-axis {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            color: var(--txt-mid);
+            font-weight: 700;
+            margin: 12px 0 8px 0;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        :root[data-theme="airbutter"] .sh-hof {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            padding: 22px 0;
+            margin: 0;
+        }
+        :root[data-theme="airbutter"] .sh-hof:last-child {
+            border-bottom: none;
+        }
+        :root[data-theme="airbutter"] .sh-hof.sh-w,
+        :root[data-theme="airbutter"] .sh-hof.sh-l {
+            border-left: none;
+        }
+
+        :root[data-theme="airbutter"] .sh-hof-head {
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            gap: 12px;
+        }
+        :root[data-theme="airbutter"] .sh-hof-name {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 20px;
+            text-transform: none;
+            letter-spacing: -0.005em;
+            color: var(--txt);
+            line-height: 1.2;
+        }
+        :root[data-theme="airbutter"] .sh-hof-streak {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+        }
+        :root[data-theme="airbutter"] .sh-hof.sh-w .sh-hof-streak { color: var(--cyan); }
+        :root[data-theme="airbutter"] .sh-hof.sh-l .sh-hof-streak { color: var(--pink); }
+
+        :root[data-theme="airbutter"] .sh-hof-when {
+            font-size: 10px;
+            color: var(--txt-mid);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        :root[data-theme="airbutter"] .sh-hof-era {
+            font-size: 10px;
+            color: var(--txt-dim);
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        /* — Events (Dethroned by / Streak broken by) — */
+        :root[data-theme="airbutter"] .sh-event {
+            background: var(--panel-2);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-top: 12px;
+            gap: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        :root[data-theme="airbutter"] .sh-event-icon {
+            font-size: 16px;
+            padding-top: 2px;
+            line-height: 1;
+        }
+        :root[data-theme="airbutter"] .sh-event-title {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--txt-mid);
+            margin-bottom: 4px;
+        }
+        :root[data-theme="airbutter"] .sh-event-broken .sh-event-title {
+            color: var(--pink);
+        }
+        :root[data-theme="airbutter"] .sh-event-body {
+            font-size: 12px;
+            color: var(--txt-2);
+            line-height: 1.4;
+        }
+
+        /* — Empty message — */
+        :root[data-theme="airbutter"] .sh-empty-msg {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 14px;
+            color: var(--txt-dim);
+            padding: 16px 0;
+            text-align: center;
+        }
+
+        /* — Entrance reveal: staggered fade-up — */
+        @keyframes sh-airbutter-reveal {
+            0%   { opacity: 0; transform: translateY(8px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-overlay-title,
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-overlay-sub,
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-section-label,
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-champion,
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-alltime,
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-hof {
+            animation: sh-airbutter-reveal 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+        }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-overlay-title { animation-delay: 0.05s; }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-overlay-sub   { animation-delay: 0.10s; }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-section-label { animation-delay: 0.15s; }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-champion      { animation-delay: 0.20s; }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-alltime       { animation-delay: 0.25s; }
+        :root[data-theme="airbutter"] .sh-overlay.open .sh-hof           { animation-delay: 0.28s; }
+
 </style>
 </head>
 <body>
@@ -1167,7 +1611,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 11:23 AM</span>
+            <span>Last Updated: May 18, 2026 at 12:54 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
