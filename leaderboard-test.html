@@ -825,11 +825,13 @@
 
         /* ── Light theme overrides for elements that can't be expressed
            purely via the token table ──────────────────────────────────── */
-        /* Streak-hall modal scrim. At 60% the "TESTING" h1's dark teal
-           was still bleeding through legibly behind the overlay header.
-           75% black gives the modal proper focus without going full
-           dark-mode-switch. */
-        :root[data-theme="light"] .sh-overlay { background: rgba(0, 0, 0, 0.75); }
+        /* Streak-hall modal scrim. Light-family themes get a paper-white
+           frosted wash instead of a dark veil — the underlying page is
+           visible through the blur, the overlay reads as a "sheet
+           lifted on top" rather than a modal interrupt. 75% alpha +
+           backdrop blur(6px) is the sweet spot: page is perceptibly
+           there but the streak hall content owns the foreground. */
+        :root[data-theme="light"] .sh-overlay { background: rgba(244, 243, 238, 0.75); }
         /* Overlay sub line + HoF axis text: `var(--txt-dim)` on the dim
            scrim reads as a barely-visible whisper. Bump one rung. */
         :root[data-theme="light"] .sh-overlay-sub,
@@ -923,11 +925,16 @@
             border-color: var(--line-soft);
         }
 
-        /* Streak-hall close button: pure white circle on a 75% black scrim
-           reads as a system-dialog interrupt. `var(--panel-2)` keeps it
-           clearly clickable while staying within the cream palette. */
-        :root[data-theme="light"] .sh-close {
-            background: var(--panel-2);
+        /* Streak-hall close button: light-family themes use a frosted
+           white scrim, so the close circle needs a real frame + drop
+           shadow to read as "tappable" instead of dissolving into the
+           wash. Same affordance for cream and airbutter — both have
+           the same low-contrast challenge against the light scrim. */
+        :root[data-theme="light"] .sh-close,
+        :root[data-theme="airbutter"] .sh-close {
+            background: var(--panel);
+            border: 1px solid var(--line-soft);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
         }
 
         /* Match-toggle rest state: `transparent` worked in dark because
@@ -998,7 +1005,7 @@
            pure token vars repeat verbatim so they apply to the
            airbutter selector — duplication is intentional, keeps the
            cream theme's tested rules unmodified. */
-        :root[data-theme="airbutter"] .sh-overlay { background: rgba(0, 0, 0, 0.75); }
+        :root[data-theme="airbutter"] .sh-overlay { background: rgba(250, 250, 250, 0.75); }
         :root[data-theme="airbutter"] .sh-overlay-sub,
         :root[data-theme="airbutter"] .sh-hof-axis { color: var(--txt-mid); }
         :root[data-theme="airbutter"] .sh-section-label {
@@ -1010,7 +1017,11 @@
             color: var(--txt-2);
         }
         :root[data-theme="airbutter"] .sh-hero {
-            background: linear-gradient(90deg, rgba(0, 122, 128, 0.10), rgba(200, 49, 59, 0.08));
+            /* Equalize teal/coral alphas at 0.08 — on paper white the
+               0.10 teal at the left edge was perceptible while 0.08
+               coral at the right edge was nearly invisible, tilting
+               the hero's visual weight to the W side. */
+            background: linear-gradient(90deg, rgba(0, 122, 128, 0.08), rgba(200, 49, 59, 0.08));
             border: 1px solid var(--line-soft);
         }
         :root[data-theme="airbutter"] .sh-hero:hover { border-color: var(--cyan); }
@@ -1057,11 +1068,13 @@
         :root[data-theme="airbutter"] .search-box {
             border-color: var(--line-soft);
         }
-        :root[data-theme="airbutter"] .sh-close {
-            background: var(--panel-2);
-        }
+        /* Airbutter `.sh-close` is handled jointly with `light` above —
+           same frosted-scrim affordance. No additional override here. */
         :root[data-theme="airbutter"] .match-toggle {
-            background: rgba(0, 122, 128, 0.06);
+            /* 0.06 alpha was functionally invisible on #ffffff cards.
+               0.10 gives the chip enough teal tint to read as
+               contained without dominating. */
+            background: rgba(0, 122, 128, 0.10);
         }
         :root[data-theme="airbutter"] .profile-link:active {
             background: var(--panel-2);
@@ -1151,7 +1164,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 11:03 AM</span>
+            <span>Last Updated: May 18, 2026 at 11:15 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
