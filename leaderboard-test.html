@@ -640,7 +640,10 @@
         .cs-info-row {
             display: flex;
             align-items: baseline;
-            gap: 6px;
+            /* 3px ≈ a single inter-word space at 11px font-size. The label's
+               own trailing colon already provides the punctuation gap — a
+               wider flex gap reads as the typewriter-era double-space. */
+            gap: 3px;
             font-size: 11px;
             color: var(--txt-mid);
             line-height: 1.5;
@@ -952,7 +955,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 17, 2026 at 7:06 PM</span>
+            <span>Last Updated: May 17, 2026 at 8:51 PM</span>
             <button class="refresh-btn" id="refreshBtn" title="Refresh">↻</button>
         </div>
         <div class="search-wrap">
