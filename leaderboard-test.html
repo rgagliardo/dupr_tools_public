@@ -112,10 +112,13 @@
           --rose:         #e0484c;  /* coral-leaning rose, on-brand */
           --red:          #ff5a5f;
           --partner-pur:  #5a6cb8;  /* calm indigo */
-          /* Editorial display font for hero numbers, champion names,
-             match scores. Didot ships natively on macOS/iOS; Bodoni
-             / Cochin / Georgia fallback chain handles everything else. */
-          --display:      "Didot", "Bodoni 72", "Bodoni MT", "Cochin", Georgia, serif;
+          /* Display font for hero numbers, champion names, scores.
+             App-cinematic sans-serif (Airbnb-hero feel, not magazine
+             cover). SF Pro Display on Apple devices via -apple-system,
+             then progressive fallbacks. Italic is intentionally absent
+             throughout the editorial layer — confidence comes from
+             weight (800-900) and size, not from oblique. */
+          --display:      -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Avenir Next", system-ui, sans-serif;
         }
         @media (prefers-reduced-motion: no-preference) { :root { scroll-behavior: smooth; } }
         body { background-color: var(--bg); color: var(--txt-2); margin: 0; padding-bottom: 60px; overflow-y: scroll; }
@@ -1762,6 +1765,144 @@
             border-left-color: var(--pink);
         }
 
+        /* ═══════════════════════════════════════════════════════════════
+           Airbutter — app-cinematic correction (v4.50)
+           First pass leaned Didot-italic-magazine ("Vanity Fair cover").
+           This block flips it to Airbnb-hero: kill italic, bump weights
+           so the sans-serif numbers carry the same confidence the
+           italic Didot did. Layout / whitespace / gold accents from
+           the prior editorial pass all stay.
+           ═══════════════════════════════════════════════════════════ */
+
+        /* Kill italic across the editorial layer (only the airbutter
+           additions used italic — base CSS italics for bylines/notes
+           are left alone). */
+        :root[data-theme="airbutter"] .sh-overlay-title,
+        :root[data-theme="airbutter"] .sh-section-label,
+        :root[data-theme="airbutter"] .sh-champion-count,
+        :root[data-theme="airbutter"] .sh-champion-name,
+        :root[data-theme="airbutter"] .sh-nick,
+        :root[data-theme="airbutter"] .sh-champion-since,
+        :root[data-theme="airbutter"] .sh-match-result,
+        :root[data-theme="airbutter"] .sh-match-score,
+        :root[data-theme="airbutter"] .sh-alltime-count,
+        :root[data-theme="airbutter"] .sh-alltime-name,
+        :root[data-theme="airbutter"] .sh-alltime-meta,
+        :root[data-theme="airbutter"] .sh-hof-name,
+        :root[data-theme="airbutter"] .sh-hof-streak,
+        :root[data-theme="airbutter"] .sh-hof-era,
+        :root[data-theme="airbutter"] .sh-event-title,
+        :root[data-theme="airbutter"] .sh-empty-msg,
+        :root[data-theme="airbutter"] .sh-hero-cta,
+        :root[data-theme="airbutter"] .sh-hero-glabel,
+        :root[data-theme="airbutter"] .sh-mini-count,
+        :root[data-theme="airbutter"] .sh-mini-type,
+        :root[data-theme="airbutter"] .sh-mini-name,
+        :root[data-theme="airbutter"] .sh-mini-nick {
+            font-style: normal;
+        }
+
+        /* Confident hero weights — sans needs 800-900 to land where
+           italic Didot at 400 was landing. */
+        :root[data-theme="airbutter"] .sh-overlay-title {
+            font-weight: 800;
+            font-size: 44px;
+            letter-spacing: -0.03em;
+        }
+        :root[data-theme="airbutter"] .sh-champion-count {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+        :root[data-theme="airbutter"] .sh-champion-count sup {
+            font-weight: 700;
+            top: 14px;
+        }
+        :root[data-theme="airbutter"] .sh-alltime-count {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+        :root[data-theme="airbutter"] .sh-alltime-count sup {
+            font-weight: 700;
+        }
+        :root[data-theme="airbutter"] .sh-mini-count {
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+        :root[data-theme="airbutter"] .sh-mini-type {
+            font-weight: 700;
+        }
+        :root[data-theme="airbutter"] .sh-hof-streak {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        /* Names and chapter heads — sans bold rather than serif italic */
+        :root[data-theme="airbutter"] .sh-section-label {
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: -0.015em;
+        }
+        :root[data-theme="airbutter"] .sh-champion-name {
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+        :root[data-theme="airbutter"] .sh-alltime-name {
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+        :root[data-theme="airbutter"] .sh-hof-name {
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        :root[data-theme="airbutter"] .sh-mini-name {
+            font-weight: 600;
+            letter-spacing: -0.005em;
+        }
+
+        /* Match details — refined sans, slightly heavier */
+        :root[data-theme="airbutter"] .sh-match-score {
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+        :root[data-theme="airbutter"] .sh-match-result {
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        /* Gender labels and "More →" — calm semibold, no italic */
+        :root[data-theme="airbutter"] .sh-hero-glabel {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--txt-mid);
+        }
+        :root[data-theme="airbutter"] .sh-hero-cta {
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        :root[data-theme="airbutter"] .sh-hero-cta::after {
+            content: ' →';
+            font-weight: 400;
+        }
+
+        /* Champion/All-Time "Leading since" + "Peak record" — small
+           neutral sans, no italic. */
+        :root[data-theme="airbutter"] .sh-champion-since,
+        :root[data-theme="airbutter"] .sh-alltime-meta,
+        :root[data-theme="airbutter"] .sh-hof-era,
+        :root[data-theme="airbutter"] .sh-event-title,
+        :root[data-theme="airbutter"] .sh-empty-msg {
+            font-weight: 500;
+        }
+        :root[data-theme="airbutter"] .sh-nick {
+            font-weight: 500;
+        }
+        :root[data-theme="airbutter"] .sh-mini-nick {
+            font-weight: 500;
+        }
+
 </style>
 </head>
 <body>
@@ -1769,7 +1910,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 1:06 PM</span>
+            <span>Last Updated: May 18, 2026 at 1:22 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
