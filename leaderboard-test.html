@@ -112,6 +112,10 @@
           --rose:         #e0484c;  /* coral-leaning rose, on-brand */
           --red:          #ff5a5f;
           --partner-pur:  #5a6cb8;  /* calm indigo */
+          /* Editorial display font for hero numbers, champion names,
+             match scores. Didot ships natively on macOS/iOS; Bodoni
+             / Cochin / Georgia fallback chain handles everything else. */
+          --display:      "Didot", "Bodoni 72", "Bodoni MT", "Cochin", Georgia, serif;
         }
         @media (prefers-reduced-motion: no-preference) { :root { scroll-behavior: smooth; } }
         body { background-color: var(--bg); color: var(--txt-2); margin: 0; padding-bottom: 60px; overflow-y: scroll; }
@@ -1174,7 +1178,7 @@
            ═══════════════════════════════════════════════════════════ */
 
         :root[data-theme="airbutter"] .sh-overlay-inner {
-            --display: "Didot", "Bodoni 72", "Bodoni MT", "Cochin", Georgia, serif;
+            /* `--display` token is defined at airbutter root; inherits here. */
             max-width: 600px;
             padding: 72px 24px 80px;
         }
@@ -1604,6 +1608,160 @@
         :root[data-theme="airbutter"] .sh-overlay.open .sh-alltime       { animation-delay: 0.25s; }
         :root[data-theme="airbutter"] .sh-overlay.open .sh-hof           { animation-delay: 0.28s; }
 
+        /* ═══════════════════════════════════════════════════════════════
+           Airbutter — Streak hero (compact) + Group summary polish
+           Compact hero on the main page gets the same Didot italic
+           treatment as the overlay (scaled down). Group summary
+           ("PLAYERS", "PROS" rows) gains card-chip presence so it
+           stops reading as faint floating text.
+           ═══════════════════════════════════════════════════════════ */
+
+        /* — Compact hero strip (entry point to the full overlay) — */
+        :root[data-theme="airbutter"] .sh-hero {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.02),
+                0 4px 16px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s ease, border-color 0.15s ease;
+        }
+        :root[data-theme="airbutter"] .sh-hero:hover {
+            border-color: var(--line-soft);
+            box-shadow:
+                0 1px 0 rgba(0, 0, 0, 0.02),
+                0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        :root[data-theme="airbutter"] .sh-hero-title {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* "More ›" — refined italic link rather than chip */
+        :root[data-theme="airbutter"] .sh-hero-cta {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--cyan);
+            background: transparent;
+            border: none;
+            padding: 0;
+            letter-spacing: -0.005em;
+        }
+        :root[data-theme="airbutter"] .sh-hero-cta::after {
+            content: ' →';
+            font-style: normal;
+            font-size: 13px;
+        }
+
+        :root[data-theme="airbutter"] .sh-hero-gender { margin-bottom: 14px; }
+        :root[data-theme="airbutter"] .sh-hero-gender:last-child { margin-bottom: 0; }
+        :root[data-theme="airbutter"] .sh-hero-glabel {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--txt-mid);
+            letter-spacing: -0.005em;
+            text-transform: none;
+            margin-bottom: 8px;
+        }
+
+        :root[data-theme="airbutter"] .sh-hero-row { gap: 10px; }
+
+        /* Mini cells: drop the 3px W/L color bar; the italic number carries color */
+        :root[data-theme="airbutter"] .sh-mini-cell {
+            background: var(--panel-2);
+            border-radius: 10px;
+            padding: 10px 12px;
+            align-items: baseline;
+            gap: 10px;
+        }
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-w,
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-l {
+            border-left: none;
+        }
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-empty {
+            background: var(--panel-2);
+            opacity: 0.5;
+        }
+
+        :root[data-theme="airbutter"] .sh-mini-stat {
+            align-items: baseline;
+            gap: 1px;
+        }
+        :root[data-theme="airbutter"] .sh-mini-count {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+        }
+        :root[data-theme="airbutter"] .sh-mini-type {
+            font-family: var(--display);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 11px;
+        }
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-w .sh-mini-count,
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-w .sh-mini-type { color: var(--cyan); }
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-l .sh-mini-count,
+        :root[data-theme="airbutter"] .sh-mini-cell.sh-l .sh-mini-type { color: var(--pink); }
+
+        :root[data-theme="airbutter"] .sh-mini-name {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--txt);
+            text-transform: none;
+            letter-spacing: -0.005em;
+            line-height: 1.2;
+        }
+        :root[data-theme="airbutter"] .sh-mini-nick {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 11px;
+            color: var(--txt-mid);
+            text-transform: none;
+            letter-spacing: 0;
+            margin-top: 2px;
+        }
+        :root[data-theme="airbutter"] .sh-mini-dash {
+            color: var(--txt-faint);
+            font-size: 16px;
+            font-family: var(--display);
+        }
+
+        /* — Group summary (PLAYERS / PROS rows) —
+           Was: faint teal gradient on transparent bg + 4px cyan
+           left bar — read as easily-missed floating text. Card-chip
+           treatment: solid panel bg with hairline border, faint
+           shadow, retained cyan accent (pink for Movers). */
+        :root[data-theme="airbutter"] .group-summary {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--cyan);
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+        }
+        :root[data-theme="airbutter"] .movers-summary {
+            border-left-color: var(--pink);
+        }
+
 </style>
 </head>
 <body>
@@ -1611,7 +1769,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 12:54 PM</span>
+            <span>Last Updated: May 18, 2026 at 1:06 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
