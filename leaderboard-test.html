@@ -10,7 +10,7 @@
      Airbutter (butter cream) is the default; the JS theme-toggle
      handler updates this tag live when the user flips to cream so
      the status-bar tint stays in sync with the current surface. -->
-<meta name="theme-color" content="#faf3dc" id="themeColorMeta">
+<meta name="theme-color" content="#fafafa" id="themeColorMeta">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -82,31 +82,33 @@
           --partner-pur:  #5a4cc4;
         }
         :root[data-theme="airbutter"] {
-          /* Palm Springs mid-century — butter walls, sun-bleached wood
-             ink, pool turquoise (W/positive), terra cotta (L/movers).
-             Warmer base than `light` (which leans grey-beige); ink is
-             warm wood not bluish-black; accents trade the corporate
-             teal/crimson for pool blue and desert clay. All body-text
-             accent values target ≥4.5:1 contrast on --bg #faf3dc. */
-          --bg:           #faf3dc;
+          /* Airbnb-faithful — paper white #fafafa, pure white cards,
+             Hof near-black ink, Babu teal (W/positive) and Rausch
+             coral (L/movers). Distinct from `light` (cream/grey-beige
+             with corporate teal/crimson): it borrows Airbnb's actual
+             brand palette so cards read like a listing tile.
+             Cyan/pink are slightly darker than the literal brand
+             values (#008489, #FF5A5F) so small-text body uses still
+             clear 4.5:1 on white — same hue family, no visual loss. */
+          --bg:           #fafafa;
           --panel:        #ffffff;
-          --panel-2:      #f4e9c1;
+          --panel-2:      #f7f7f7;
           --panel-input:  #ffffff;
-          --line:         #e8d9a8;
-          --line-soft:    #c8b787;
-          --txt:          #2b2010;
-          --txt-2:        #4d3d28;
-          --txt-mid:      #6f5e44;
-          --txt-dim:      #8c7a5c;
-          --txt-faint:    #b0a080;
-          --placeholder:  #a09078;
-          --cyan:         #006d80;  /* pool turquoise — 5.3:1 */
-          --pink:         #b24a26;  /* terra cotta — 5.0:1 */
-          --yellow:       #8a5500;  /* honey/brass */
-          --gold:         #8a5500;
-          --rose:         #a13a30;
-          --red:          #b13a26;
-          --partner-pur:  #5e51a8;  /* desert dusk */
+          --line:         #ebebeb;
+          --line-soft:    #d4d4d4;
+          --txt:          #222222;  /* Hof — Airbnb's body ink */
+          --txt-2:        #484848;
+          --txt-mid:      #717171;  /* Foggy — Airbnb's secondary */
+          --txt-dim:      #9b9b9b;
+          --txt-faint:    #cfcfcf;
+          --placeholder:  #b0b0b0;
+          --cyan:         #007a80;  /* darkened Babu — 4.9:1 on white */
+          --pink:         #c8313b;  /* darkened Rausch — 5.1:1 on white */
+          --yellow:       #a06800;  /* warm honey */
+          --gold:         #a06800;
+          --rose:         #a13a40;
+          --red:          #c8313b;
+          --partner-pur:  #5a6cb8;  /* calm indigo */
         }
         @media (prefers-reduced-motion: no-preference) { :root { scroll-behavior: smooth; } }
         body { background-color: var(--bg); color: var(--txt-2); margin: 0; padding-bottom: 60px; overflow-y: scroll; }
@@ -228,9 +230,9 @@
             100% { box-shadow: 0 0 0 2px rgba(0, 122, 138, 0.0), 0 0 0 0 rgba(0, 122, 138, 0.0); }
         }
         @keyframes player-pulse-airbutter {
-            0%   { box-shadow: 0 0 0 2px rgba(0, 109, 128, 0.0), 0 0 0 0 rgba(0, 109, 128, 0.0); }
-            20%  { box-shadow: 0 0 0 2px rgba(0, 109, 128, 0.85), 0 0 18px 4px rgba(0, 109, 128, 0.45); }
-            100% { box-shadow: 0 0 0 2px rgba(0, 109, 128, 0.0), 0 0 0 0 rgba(0, 109, 128, 0.0); }
+            0%   { box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.0), 0 0 0 0 rgba(0, 122, 128, 0.0); }
+            20%  { box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.85), 0 0 18px 4px rgba(0, 122, 128, 0.45); }
+            100% { box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.0), 0 0 0 0 rgba(0, 122, 128, 0.0); }
         }
         /* Link wrappers around player names. At-rest affordance: a faint
            dotted underline (paint-only via text-decoration — no layout
@@ -991,8 +993,8 @@
 
         /* ── Airbutter theme overrides ──────────────────────────────────
            Mirrors the cream `light` overrides above but with airbutter
-           rgba tints (cyan #006d80 = rgb(0,109,128), pink #b24a26 =
-           rgb(178,74,38), bg #faf3dc = rgb(250,243,220)). Rules using
+           rgba tints (cyan #007a80 = rgb(0,122,128), pink #c8313b =
+           rgb(200,49,59), bg #fafafa = rgb(250,250,250)). Rules using
            pure token vars repeat verbatim so they apply to the
            airbutter selector — duplication is intentional, keeps the
            cream theme's tested rules unmodified. */
@@ -1008,14 +1010,14 @@
             color: var(--txt-2);
         }
         :root[data-theme="airbutter"] .sh-hero {
-            background: linear-gradient(90deg, rgba(0, 109, 128, 0.10), rgba(178, 74, 38, 0.08));
+            background: linear-gradient(90deg, rgba(0, 122, 128, 0.10), rgba(200, 49, 59, 0.08));
             border: 1px solid var(--line-soft);
         }
         :root[data-theme="airbutter"] .sh-hero:hover { border-color: var(--cyan); }
         :root[data-theme="airbutter"] .sh-mini-cell { background: var(--panel-2); }
         :root[data-theme="airbutter"] .sh-hero-cta {
-            background: rgba(0, 109, 128, 0.18);
-            border-color: rgba(0, 109, 128, 0.55);
+            background: rgba(0, 122, 128, 0.18);
+            border-color: rgba(0, 122, 128, 0.55);
         }
         :root[data-theme="airbutter"] h1,
         :root[data-theme="airbutter"] .sh-mini-count,
@@ -1034,8 +1036,8 @@
         :root[data-theme="airbutter"] .header-container {
             border-bottom-color: var(--line-soft);
         }
-        :root[data-theme="airbutter"] .streak-w { background: rgba(0, 109, 128, 0.14); }
-        :root[data-theme="airbutter"] .streak-l { background: rgba(178, 74, 38, 0.14); }
+        :root[data-theme="airbutter"] .streak-w { background: rgba(0, 122, 128, 0.14); }
+        :root[data-theme="airbutter"] .streak-l { background: rgba(200, 49, 59, 0.14); }
         :root[data-theme="airbutter"] .player-details,
         :root[data-theme="airbutter"] .sh-hof,
         :root[data-theme="airbutter"] .sh-champion,
@@ -1050,7 +1052,7 @@
             border-color: var(--line-soft);
         }
         :root[data-theme="airbutter"] .search-box:focus {
-            box-shadow: 0 0 0 2px rgba(0, 109, 128, 0.35);
+            box-shadow: 0 0 0 2px rgba(0, 122, 128, 0.35);
         }
         :root[data-theme="airbutter"] .search-box {
             border-color: var(--line-soft);
@@ -1059,37 +1061,37 @@
             background: var(--panel-2);
         }
         :root[data-theme="airbutter"] .match-toggle {
-            background: rgba(0, 109, 128, 0.06);
+            background: rgba(0, 122, 128, 0.06);
         }
         :root[data-theme="airbutter"] .profile-link:active {
             background: var(--panel-2);
         }
         :root[data-theme="airbutter"] .lbl { color: var(--txt-mid); }
         :root[data-theme="airbutter"] .ptr-indicator {
-            background: rgba(250, 243, 220, 0.96);
+            background: rgba(250, 250, 250, 0.96);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         }
         :root[data-theme="airbutter"] .group-summary {
-            background: linear-gradient(90deg, rgba(0, 109, 128, 0.06) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(0, 122, 128, 0.06) 0%, transparent 100%);
         }
         :root[data-theme="airbutter"] .movers-summary {
-            background: linear-gradient(90deg, rgba(178, 74, 38, 0.09) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(200, 49, 59, 0.09) 0%, transparent 100%);
         }
         :root[data-theme="airbutter"] .sh-hof.sh-w { border-left-color: var(--cyan); }
         :root[data-theme="airbutter"] .sh-hof.sh-l { border-left-color: var(--pink); }
         :root[data-theme="airbutter"] .cs-bar {
             background: linear-gradient(
                 to right,
-                rgba(0, 109, 128, 0.36) 0,
-                rgba(0, 109, 128, 0.36) var(--win-pct, 50%),
-                rgba(178, 74, 38, 0.20) var(--win-pct, 50%),
-                rgba(178, 74, 38, 0.20) 100%
+                rgba(0, 122, 128, 0.36) 0,
+                rgba(0, 122, 128, 0.36) var(--win-pct, 50%),
+                rgba(200, 49, 59, 0.20) var(--win-pct, 50%),
+                rgba(200, 49, 59, 0.20) 100%
             );
         }
         :root[data-theme="airbutter"] .jump-tab.current,
         :root[data-theme="airbutter"] .sort-btn.active {
-            background: rgba(0, 109, 128, 0.18);
-            border-color: rgba(0, 109, 128, 0.55);
+            background: rgba(0, 122, 128, 0.18);
+            border-color: rgba(0, 122, 128, 0.55);
         }
 
         /* Route the player-pulse animation to the theme-tinted keyframes
@@ -1109,12 +1111,12 @@
         :root[data-theme="light"] .social-link:active,
         :root[data-theme="airbutter"] .social-link:active { background: var(--line); }
 
-        /* Player-link dotted underline at rest is a cool bluish-grey
-           (rgba(140,140,175,0.65)) — fine against cream's bluish-black
-           ink, jarring next to airbutter's warm-wood ink. Warm to a
-           sand/wood tone so the underline harmonizes. */
-        :root[data-theme="airbutter"] .player-link { text-decoration-color: rgba(140, 110, 70, 0.65); }
-        :root[data-theme="airbutter"] .cs-bp-name.player-link { text-decoration-color: rgba(160, 130, 80, 0.75); }
+        /* Player-link dotted underline default is a bluish-purple grey
+           (rgba(140,140,175,0.65)). Cream's bluish-black ink absorbs
+           that cast; airbutter's Hof-grey ink does not — override to
+           a pure neutral grey so the underline reads as Airbnb-clean. */
+        :root[data-theme="airbutter"] .player-link { text-decoration-color: rgba(155, 155, 155, 0.65); }
+        :root[data-theme="airbutter"] .cs-bp-name.player-link { text-decoration-color: rgba(170, 170, 170, 0.75); }
 
         /* ── Theme toggle (header chip) ─────────────────────────────────
            Small pill next to the refresh button. Cycles airbutter ↔
@@ -1149,7 +1151,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 18, 2026 at 10:30 AM</span>
+            <span>Last Updated: May 18, 2026 at 11:03 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -3558,7 +3560,7 @@
             // theme-color <meta> tag.
             (function () {
               var THEMES = {
-                airbutter: { next: 'light',     label: 'Butter', bgColor: '#faf3dc' },
+                airbutter: { next: 'light',     label: 'Butter', bgColor: '#fafafa' },
                 light:     { next: 'airbutter', label: 'Cream',  bgColor: '#f4f3ee' }
               };
               var btn = document.getElementById('themeToggle');
