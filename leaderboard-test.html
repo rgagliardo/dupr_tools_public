@@ -966,16 +966,15 @@
         .theme-toggle-icon { font-size: 11px; line-height: 1; opacity: 0.85; }
 
         /* ═══════════════════════════════════════════════════════════════
-           Airbutter — Streak Hall editorial redesign
-           Magazine-spread treatment. Didot display type (native on
-           macOS/iOS, Bodoni/Cochin/Georgia fallback elsewhere) for
+           Butter — Streak Hall editorial redesign
+           Magazine-spread treatment. SF Pro Display heavy weights for
            hero numbers and champion names; refined typographic
            hierarchy; generous whitespace; gold honors marker for
            All-Time tier; HoF restyled as a typographic annal.
            Emoji ornaments removed from in-line labels (still used
            for the dethrone/break events where they add emotion).
-           Butter-only — the dark theme keeps its existing card-grid
-           layout unchanged.
+           The dark theme gets a parallel editorial layer further
+           down — see "Dark — Streak Hall editorial layer".
            ═══════════════════════════════════════════════════════════ */
 
         :root[data-theme="airbutter"] .sh-overlay-inner {
@@ -1719,6 +1718,618 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
+        /* ═══════════════════════════════════════════════════════════════
+           Dark — Streak Hall editorial layer
+           The butter theme's editorial treatment (magazine-spread
+           whitespace, SF Pro Display heavy weights, gold chapter marks,
+           hero-number scale, HoF as a typographic annal, card-chip
+           summaries) carried over to dark surfaces. Layout + hierarchy
+           are identical to the butter layer; only the surface treatment
+           changes — neon cyan/pink/gold resolve from the dark token
+           table, cards gain a hairline top-inset highlight + deep
+           shadow for elevation against the near-black page, and the
+           hero numbers carry a soft wide glow so the neon reads as
+           cinematic rather than flat. */
+
+        /* — Overlay shell: narrow editorial column — */
+        :root[data-theme="dark"] .sh-overlay-inner {
+            max-width: 600px;
+            padding: 72px 24px 80px;
+        }
+
+        /* — Cover title block — */
+        :root[data-theme="dark"] .sh-overlay-title {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 800;
+            font-size: 44px;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: none;
+            color: var(--txt);
+            text-shadow: none;
+            margin-bottom: 8px;
+        }
+        :root[data-theme="dark"] .sh-overlay-sub {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--txt-dim);
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin-bottom: 28px;
+            position: relative;
+            padding-bottom: 24px;
+        }
+        /* Gold rule under the deck — honors marker */
+        :root[data-theme="dark"] .sh-overlay-sub::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* — Section labels (chapter heads): un-stickied, gold diamond — */
+        :root[data-theme="dark"] .sh-section-label {
+            position: static;
+            background: transparent;
+            box-shadow: none;
+            padding: 40px 0 16px 0;
+            margin: 0 0 4px 0;
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.1;
+            letter-spacing: -0.015em;
+            color: var(--txt);
+            text-transform: none;
+        }
+        :root[data-theme="dark"] .sh-section-label::before {
+            content: '◆';
+            display: block;
+            font-size: 8px;
+            color: var(--gold);
+            letter-spacing: 0;
+            margin-bottom: 12px;
+            font-style: normal;
+        }
+
+        /* — Champions stack — */
+        :root[data-theme="dark"] .sh-champions {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* — Champion card (Current Run hero) — */
+        :root[data-theme="dark"] .sh-champion {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 26px 22px 22px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                0 10px 30px rgba(0, 0, 0, 0.55);
+        }
+        /* Drop the 3px W/L left bar — color signal lives in the number */
+        :root[data-theme="dark"] .sh-champion.sh-w,
+        :root[data-theme="dark"] .sh-champion.sh-l {
+            border-left: 1px solid var(--line);
+        }
+
+        /* Hide decorative emoji ornaments inside in-line badges — the
+           type weight + color does the signaling. Event icons stay. */
+        :root[data-theme="dark"] .sh-champion-badge span[aria-hidden="true"],
+        :root[data-theme="dark"] .sh-alltime-badge span[aria-hidden="true"],
+        :root[data-theme="dark"] .sh-hof-streak span[aria-hidden="true"] {
+            display: none;
+        }
+
+        :root[data-theme="dark"] .sh-champion-head {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        :root[data-theme="dark"] .sh-champion-badge {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        :root[data-theme="dark"] .sh-champion.sh-w .sh-champion-badge { color: var(--cyan); }
+        :root[data-theme="dark"] .sh-champion.sh-l .sh-champion-badge { color: var(--pink); }
+
+        /* THE HERO NUMBER — soft wide glow so the neon reads cinematic */
+        :root[data-theme="dark"] .sh-champion-count {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 900;
+            font-size: 88px;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            margin-top: -6px;
+        }
+        :root[data-theme="dark"] .sh-champion.sh-w .sh-champion-count {
+            color: var(--cyan);
+            text-shadow: 0 0 32px rgba(0, 229, 255, 0.30);
+        }
+        :root[data-theme="dark"] .sh-champion.sh-l .sh-champion-count {
+            color: var(--pink);
+            text-shadow: 0 0 32px rgba(255, 0, 160, 0.30);
+        }
+        :root[data-theme="dark"] .sh-champion-count sup {
+            font-size: 22px;
+            font-weight: 700;
+            margin-left: 4px;
+            vertical-align: top;
+            position: relative;
+            top: 14px;
+        }
+
+        :root[data-theme="dark"] .sh-champion-name {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            text-transform: none;
+            color: var(--txt);
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        :root[data-theme="dark"] .sh-nick {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--txt-mid);
+            margin-left: 0;
+            text-transform: none;
+            letter-spacing: 0;
+            display: inline;
+        }
+        :root[data-theme="dark"] .sh-champion-since {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--txt-mid);
+            font-style: normal;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+
+        /* — Match line (shared by champion + HoF event panels) — */
+        :root[data-theme="dark"] .sh-match {
+            background: var(--panel-2);
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 11px;
+            color: var(--txt-mid);
+        }
+        :root[data-theme="dark"] .sh-match-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        :root[data-theme="dark"] .sh-match-date {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            color: var(--txt-dim);
+            text-transform: uppercase;
+        }
+        :root[data-theme="dark"] .sh-match-result {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        :root[data-theme="dark"] .sh-match-result.w { color: var(--cyan); }
+        :root[data-theme="dark"] .sh-match-result.l { color: var(--pink); }
+        :root[data-theme="dark"] .sh-match-score {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--txt);
+            letter-spacing: -0.01em;
+            margin-bottom: 6px;
+        }
+        :root[data-theme="dark"] .sh-match-players {
+            font-size: 11px;
+            color: var(--txt-mid);
+            line-height: 1.5;
+        }
+        :root[data-theme="dark"] .sh-match-event {
+            font-size: 10px;
+            color: var(--txt-dim);
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        /* — All-Time card (featured spread) — */
+        :root[data-theme="dark"] .sh-alltime {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 22px 22px 20px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+        :root[data-theme="dark"] .sh-alltime.sh-w,
+        :root[data-theme="dark"] .sh-alltime.sh-l {
+            border-left: 1px solid var(--line);
+        }
+        :root[data-theme="dark"] .sh-alltime-head {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        :root[data-theme="dark"] .sh-alltime-badge {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 700;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        /* Gold dot prefix — the "medal" */
+        :root[data-theme="dark"] .sh-alltime-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        /* Force gold over the base W/L (cyan/rose) badge colors */
+        :root[data-theme="dark"] .sh-alltime.sh-w .sh-alltime-badge,
+        :root[data-theme="dark"] .sh-alltime.sh-l .sh-alltime-badge {
+            color: var(--gold);
+        }
+
+        :root[data-theme="dark"] .sh-alltime-count {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 900;
+            font-size: 64px;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            margin-top: -4px;
+        }
+        :root[data-theme="dark"] .sh-alltime.sh-w .sh-alltime-count {
+            color: var(--cyan);
+            text-shadow: 0 0 26px rgba(0, 229, 255, 0.28);
+        }
+        :root[data-theme="dark"] .sh-alltime.sh-l .sh-alltime-count {
+            color: var(--pink);
+            text-shadow: 0 0 26px rgba(255, 0, 160, 0.28);
+        }
+        :root[data-theme="dark"] .sh-alltime-count sup {
+            font-size: 17px;
+            font-weight: 700;
+            margin-left: 3px;
+            vertical-align: top;
+            position: relative;
+            top: 9px;
+        }
+        :root[data-theme="dark"] .sh-alltime-name {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            text-transform: none;
+            color: var(--txt);
+            margin-top: 14px;
+            min-height: auto;
+        }
+        :root[data-theme="dark"] .sh-alltime-meta {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--txt-mid);
+            font-style: normal;
+            margin-top: 6px;
+        }
+
+        /* — Hall of Fame: typographic annal (hairline-ruled list) — */
+        :root[data-theme="dark"] .sh-hof-axis {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            color: var(--txt-mid);
+            font-weight: 700;
+            margin: 12px 0 8px 0;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        :root[data-theme="dark"] .sh-hof {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            padding: 22px 0;
+            margin: 0;
+        }
+        :root[data-theme="dark"] .sh-hof:last-child { border-bottom: none; }
+        :root[data-theme="dark"] .sh-hof.sh-w,
+        :root[data-theme="dark"] .sh-hof.sh-l {
+            border-left: none;
+        }
+        :root[data-theme="dark"] .sh-hof-head {
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+        :root[data-theme="dark"] .sh-hof-name {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: -0.01em;
+            text-transform: none;
+            color: var(--txt);
+            line-height: 1.2;
+        }
+        :root[data-theme="dark"] .sh-hof-streak {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: -0.03em;
+            flex-shrink: 0;
+        }
+        :root[data-theme="dark"] .sh-hof.sh-w .sh-hof-streak { color: var(--cyan); }
+        :root[data-theme="dark"] .sh-hof.sh-l .sh-hof-streak { color: var(--pink); }
+        :root[data-theme="dark"] .sh-hof-when {
+            font-size: 10px;
+            color: var(--txt-mid);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        :root[data-theme="dark"] .sh-hof-era {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--txt-dim);
+            font-style: normal;
+            margin-bottom: 6px;
+        }
+
+        /* — Events (Dethroned by / Streak broken by) — */
+        :root[data-theme="dark"] .sh-event {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--panel-2);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-top: 12px;
+        }
+        :root[data-theme="dark"] .sh-event-icon {
+            font-size: 16px;
+            line-height: 1;
+            padding-top: 2px;
+        }
+        :root[data-theme="dark"] .sh-event-title {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--txt-mid);
+            margin-bottom: 4px;
+        }
+        :root[data-theme="dark"] .sh-event-broken .sh-event-title { color: var(--pink); }
+        :root[data-theme="dark"] .sh-event-body {
+            font-size: 12px;
+            color: var(--txt-2);
+            line-height: 1.4;
+        }
+
+        /* — Empty message — */
+        :root[data-theme="dark"] .sh-empty-msg {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--txt-dim);
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        /* — Entrance reveal: staggered fade-up (reuses sh-airbutter-reveal) — */
+        :root[data-theme="dark"] .sh-overlay.open .sh-overlay-title,
+        :root[data-theme="dark"] .sh-overlay.open .sh-overlay-sub,
+        :root[data-theme="dark"] .sh-overlay.open .sh-section-label,
+        :root[data-theme="dark"] .sh-overlay.open .sh-champion,
+        :root[data-theme="dark"] .sh-overlay.open .sh-alltime,
+        :root[data-theme="dark"] .sh-overlay.open .sh-hof {
+            animation: sh-airbutter-reveal 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+        }
+        :root[data-theme="dark"] .sh-overlay.open .sh-overlay-title { animation-delay: 0.05s; }
+        :root[data-theme="dark"] .sh-overlay.open .sh-overlay-sub   { animation-delay: 0.10s; }
+        :root[data-theme="dark"] .sh-overlay.open .sh-section-label { animation-delay: 0.15s; }
+        :root[data-theme="dark"] .sh-overlay.open .sh-champion      { animation-delay: 0.20s; }
+        :root[data-theme="dark"] .sh-overlay.open .sh-alltime       { animation-delay: 0.25s; }
+        :root[data-theme="dark"] .sh-overlay.open .sh-hof           { animation-delay: 0.28s; }
+
+        /* — Compact hero strip (entry point to the full overlay) — */
+        :root[data-theme="dark"] .sh-hero {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                0 6px 20px rgba(0, 0, 0, 0.45);
+            transition: box-shadow 0.2s ease, border-color 0.15s ease;
+        }
+        :root[data-theme="dark"] .sh-hero:hover {
+            border-color: var(--line-soft);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.05),
+                0 10px 28px rgba(0, 0, 0, 0.6);
+        }
+        :root[data-theme="dark"] .sh-hero-title {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin-bottom: 14px;
+        }
+        /* "More →" — refined uppercase link rather than chip */
+        :root[data-theme="dark"] .sh-hero-cta {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+        :root[data-theme="dark"] .sh-hero-cta::after {
+            content: ' →';
+            font-weight: 400;
+        }
+        :root[data-theme="dark"] .sh-hero-gender { margin-bottom: 14px; }
+        :root[data-theme="dark"] .sh-hero-gender:last-child { margin-bottom: 0; }
+        :root[data-theme="dark"] .sh-hero-glabel {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: -0.005em;
+            text-transform: none;
+            color: var(--txt-mid);
+            margin-bottom: 8px;
+        }
+        :root[data-theme="dark"] .sh-hero-row { gap: 10px; }
+        /* Mini cells: drop the 3px W/L bar; the number carries the color */
+        :root[data-theme="dark"] .sh-mini-cell {
+            background: var(--panel-2);
+            border-radius: 10px;
+            padding: 10px 12px;
+            align-items: baseline;
+            gap: 10px;
+        }
+        :root[data-theme="dark"] .sh-mini-cell.sh-w,
+        :root[data-theme="dark"] .sh-mini-cell.sh-l {
+            border-left: none;
+        }
+        :root[data-theme="dark"] .sh-mini-cell.sh-empty {
+            background: var(--panel-2);
+            opacity: 0.5;
+        }
+        :root[data-theme="dark"] .sh-mini-stat {
+            align-items: baseline;
+            gap: 1px;
+        }
+        :root[data-theme="dark"] .sh-mini-count {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+        }
+        :root[data-theme="dark"] .sh-mini-type {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 11px;
+        }
+        :root[data-theme="dark"] .sh-mini-cell.sh-w .sh-mini-count,
+        :root[data-theme="dark"] .sh-mini-cell.sh-w .sh-mini-type {
+            color: var(--cyan);
+            text-shadow: 0 0 14px rgba(0, 229, 255, 0.25);
+        }
+        :root[data-theme="dark"] .sh-mini-cell.sh-l .sh-mini-count,
+        :root[data-theme="dark"] .sh-mini-cell.sh-l .sh-mini-type {
+            color: var(--pink);
+            text-shadow: 0 0 14px rgba(255, 0, 160, 0.25);
+        }
+        :root[data-theme="dark"] .sh-mini-name {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.005em;
+            text-transform: none;
+            color: var(--txt);
+            line-height: 1.2;
+        }
+        :root[data-theme="dark"] .sh-mini-nick {
+            font-family: var(--display);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--txt-mid);
+            margin-top: 2px;
+        }
+        :root[data-theme="dark"] .sh-mini-dash {
+            font-family: var(--display);
+            font-size: 16px;
+            color: var(--txt-faint);
+        }
+
+        /* — Group summary (PLAYERS / PROS rows) — card-chip — */
+        :root[data-theme="dark"] .group-summary {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--cyan);
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.03),
+                0 4px 16px rgba(0, 0, 0, 0.4);
+        }
+        :root[data-theme="dark"] .movers-summary {
+            border-left-color: var(--pink);
+        }
+
+        /* — Jump tabs (PLAYERS (15) / PROS (2)) — card-chip rest state.
+           Active fill restated here because the rest-state border
+           shorthand above outranks the base .jump-tab.current rule. */
+        :root[data-theme="dark"] .jump-tab {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+            padding: 9px 16px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            transition: box-shadow 0.15s ease, border-color 0.15s ease, background 0.2s ease;
+        }
+        :root[data-theme="dark"] .jump-tab:hover {
+            border-color: var(--line-soft);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+        }
+        :root[data-theme="dark"] .jump-tab.current {
+            background: rgba(0, 229, 255, 0.12);
+            border-color: rgba(0, 229, 255, 0.45);
+            color: var(--cyan);
+        }
+
 </style>
 </head>
 <body>
@@ -1726,7 +2337,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 20 at 7:19 AM</span>
+            <span>Last Updated: May 20 at 8:06 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
