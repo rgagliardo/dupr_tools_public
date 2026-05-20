@@ -292,7 +292,7 @@
         /* Match history is grouped by event (the lead pill), then by day
            (a date sub-pill) within each event. */
         .event-pill {
-            display: inline-block; max-width: 100%;
+            display: table; max-width: 100%;
             margin: 26px 0 6px; padding: 6px 13px;
             border-radius: 14px;
             background: var(--panel-2); border: 1px solid var(--line-soft);
@@ -303,7 +303,7 @@
         .match-list > .event-pill:first-child { margin-top: 0; }
         /* Date sub-pill — small monospace chip, mirrors the player day-pill. */
         .match-datepill {
-            display: inline-flex; align-items: center;
+            display: table;
             margin: 15px 0 8px; padding: 4px 11px;
             font-family: ui-monospace, "SF Mono", Menlo, monospace;
             font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
@@ -2321,7 +2321,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 20 at 12:58 PM</span>
+            <span>Last Updated: May 20 at 1:12 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
