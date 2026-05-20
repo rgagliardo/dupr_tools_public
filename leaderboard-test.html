@@ -1002,18 +1002,6 @@
             text-transform: uppercase;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             margin-bottom: 28px;
-            position: relative;
-            padding-bottom: 24px;
-        }
-        /* Gold rule under the deck — honors marker */
-        :root[data-theme="airbutter"] .sh-overlay-sub::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 32px;
-            height: 1px;
-            background: var(--gold);
         }
 
         /* — Section labels (chapter heads) — */
@@ -1032,16 +1020,6 @@
             letter-spacing: -0.01em;
             color: var(--txt);
             text-transform: none;
-        }
-        /* Small gold diamond above the chapter title — printed mark */
-        :root[data-theme="airbutter"] .sh-section-label::before {
-            content: '◆';
-            display: block;
-            font-size: 8px;
-            color: var(--gold);
-            letter-spacing: 0;
-            margin-bottom: 12px;
-            font-style: normal;
         }
 
         /* — Champions stack — */
@@ -1757,21 +1735,9 @@
             text-transform: uppercase;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             margin-bottom: 28px;
-            position: relative;
-            padding-bottom: 24px;
-        }
-        /* Gold rule under the deck — honors marker */
-        :root[data-theme="dark"] .sh-overlay-sub::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 32px;
-            height: 1px;
-            background: var(--gold);
         }
 
-        /* — Section labels (chapter heads): un-stickied, gold diamond — */
+        /* — Section labels (chapter heads): un-stickied — */
         :root[data-theme="dark"] .sh-section-label {
             position: static;
             background: transparent;
@@ -1786,15 +1752,6 @@
             letter-spacing: -0.015em;
             color: var(--txt);
             text-transform: none;
-        }
-        :root[data-theme="dark"] .sh-section-label::before {
-            content: '◆';
-            display: block;
-            font-size: 8px;
-            color: var(--gold);
-            letter-spacing: 0;
-            margin-bottom: 12px;
-            font-style: normal;
         }
 
         /* — Champions stack — */
@@ -2337,7 +2294,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 20 at 8:06 AM</span>
+            <span>Last Updated: May 20 at 8:25 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
