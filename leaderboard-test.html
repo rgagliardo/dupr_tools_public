@@ -756,7 +756,7 @@
         .cs-pct-high { color: var(--cyan); }
         .cs-pct-mid  { color: var(--txt-2); }
         .cs-pct-low  { color: var(--pink); }
-        .cs-best { font-size: 10px; color: var(--txt-mid); white-space: nowrap; margin-left: auto; font-weight: 600; }
+        .cs-best { font-size: 12px; color: var(--txt-mid); white-space: nowrap; margin-left: auto; font-weight: 600; }
         .cs-best-lbl {
             font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
             color: var(--txt-mid); font-weight: 800; padding: 1px 4px;
@@ -771,7 +771,7 @@
            opens the pickle-match overlay. */
         .cs-pickle {
             margin: 1px 0 9px 22px;
-            display: flex; align-items: center; gap: 4px;
+            display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
             padding: 5px 8px 5px 10px;
             background: var(--panel);
             border: 1px solid var(--line-soft);
@@ -783,8 +783,8 @@
         }
         .cs-pickle:hover { border-color: var(--cyan); }
         .cs-pickle:active { transform: scale(0.992); }
-        .cs-pk-w { color: var(--cyan); font-weight: 700; }
-        .cs-pk-l { color: var(--pink); font-weight: 700; }
+        .cs-pk-w { color: var(--cyan); font-weight: 700; white-space: nowrap; }
+        .cs-pk-l { color: var(--pink); font-weight: 700; white-space: nowrap; }
         .cs-pk-rate { color: var(--txt-mid); }
         /* Explicit call-to-action — pushed to the chip's right edge. */
         .cs-pk-cta {
@@ -2348,7 +2348,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 21 at 6:09 PM</span>
+            <span>Last Updated: May 21 at 6:32 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
