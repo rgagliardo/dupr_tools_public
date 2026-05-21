@@ -764,6 +764,16 @@
         .cs-peak-w { color: var(--cyan); font-weight: 800; }
         .cs-peak-l { color: var(--pink); font-weight: 800; }
         .cs-dot { color: var(--txt-dim); }
+        /* Pickle line under each D/S record bar — games won/lost to a
+           shutout (any 0-point game). Indented to sit under the bar. */
+        .cs-pickle {
+            margin: -2px 0 7px 22px;
+            font-size: 10px; color: var(--txt-mid);
+            font-variant-numeric: tabular-nums; line-height: 1.4;
+        }
+        .cs-pk-w { color: var(--cyan); font-weight: 700; }
+        .cs-pk-l { color: var(--pink); font-weight: 700; }
+        .cs-pk-rate { color: var(--txt-dim); }
 
         /* DUPR ID line under player name */
         .player-dupr-id {
@@ -2321,7 +2331,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 21 at 9:57 AM</span>
+            <span>Last Updated: May 21 at 10:09 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -2682,6 +2692,14 @@
                     · 3-2 (60%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Bruno Faletto (6.318)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Ariana Rodriguez (5.099)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 83%;">
@@ -2694,6 +2712,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">47 pickles</span>
+                <span class="cs-pk-rate">9.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">2 pickled</span>
+                <span class="cs-pk-rate">0.4%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 66%;">
@@ -2705,6 +2730,13 @@
                         <span class="cs-peak-l">3L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">1 pickles</span>
+                <span class="cs-pk-rate">2.2%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">2.2%</span>
             </div>
         </div>
         <div class="social-links">
@@ -2768,6 +2800,14 @@
                     · 4-7 (36%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Aj Carney (5.744)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">David Richardson (3.447)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 52%;">
@@ -2780,6 +2820,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">8 pickles</span>
+                <span class="cs-pk-rate">1.5%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">6 pickled</span>
+                <span class="cs-pk-rate">1.1%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 39%;">
@@ -2791,6 +2838,13 @@
                         <span class="cs-peak-l">6L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">1 pickles</span>
+                <span class="cs-pk-rate">0.8%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">5 pickled</span>
+                <span class="cs-pk-rate">4.1%</span>
             </div>
         </div>
         <div class="social-links">
@@ -2855,6 +2909,14 @@
                 </span>
             </div>
             <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Jason Renner (5.269)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Sriram Talluri (0.000)</span>
+            </div>
+            <div class="cs-info-row">
                 <span class="cs-info-label">Notes:</span>
                 <span class="cs-info-value player-notes">Streak test — long L streak</span>
             </div>
@@ -2870,6 +2932,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">2 pickles</span>
+                <span class="cs-pk-rate">0.3%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">10 pickled</span>
+                <span class="cs-pk-rate">1.7%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 37%;">
@@ -2881,6 +2950,13 @@
                         <span class="cs-peak-l">12L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">2 pickles</span>
+                <span class="cs-pk-rate">1.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">5 pickled</span>
+                <span class="cs-pk-rate">2.5%</span>
             </div>
         </div>
         <div class="social-links">
@@ -2944,6 +3020,14 @@
                     · 1-5 (17%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Nathaniel Hutton (4.898)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Mary Kirchoff (3.132)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 53%;">
@@ -2956,6 +3040,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">4 pickles</span>
+                <span class="cs-pk-rate">1.2%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">0.3%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 58%;">
@@ -2967,6 +3058,13 @@
                         <span class="cs-peak-l">4L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">0 pickles</span>
+                <span class="cs-pk-rate">0.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
             </div>
         </div>
         <div class="match-list"></div>
@@ -3020,6 +3118,14 @@
                     · 2-7 (22%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">George Wall (6.123)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Christina Barker (4.918)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 75%;">
@@ -3032,6 +3138,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">19 pickles</span>
+                <span class="cs-pk-rate">5.2%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">2 pickled</span>
+                <span class="cs-pk-rate">0.5%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 37%;">
@@ -3043,6 +3156,13 @@
                         <span class="cs-peak-l">4L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">0 pickles</span>
+                <span class="cs-pk-rate">0.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">3.2%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3097,6 +3217,14 @@
                     · 0-7 (0%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Dipen Patel (4.874)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Sarah Moomau (3.674)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 47%;">
@@ -3108,6 +3236,13 @@
                         <span class="cs-peak-l">8L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">2 pickles</span>
+                <span class="cs-pk-rate">1.1%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">2 pickled</span>
+                <span class="cs-pk-rate">1.1%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3174,6 +3309,14 @@
                     · 1-4 (20%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Dylan Frazier (6.923)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Christine Trifunovic (5.093)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 57%;">
@@ -3186,6 +3329,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">23 pickles</span>
+                <span class="cs-pk-rate">1.5%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">10 pickled</span>
+                <span class="cs-pk-rate">0.7%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 43%;">
@@ -3197,6 +3347,13 @@
                         <span class="cs-peak-l">8L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">6 pickles</span>
+                <span class="cs-pk-rate">2.4%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">3 pickled</span>
+                <span class="cs-pk-rate">1.2%</span>
             </div>
         </div>
         <div class="match-list"></div>
@@ -3260,6 +3417,14 @@
                     · 1-4 (20%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">David Bieger (6.040)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Margi Calder (3.198)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 69%;">
@@ -3272,6 +3437,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">21 pickles</span>
+                <span class="cs-pk-rate">2.4%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">2 pickled</span>
+                <span class="cs-pk-rate">0.2%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 64%;">
@@ -3283,6 +3455,13 @@
                         <span class="cs-peak-l">5L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">8 pickles</span>
+                <span class="cs-pk-rate">5.6%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">2 pickled</span>
+                <span class="cs-pk-rate">1.4%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3337,6 +3516,14 @@
                     · 3-5 (38%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Ryan Patrick (4.796)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Tony Chau (2.524)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 64%;">
@@ -3348,6 +3535,13 @@
                         <span class="cs-peak-l">5L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">6 pickles</span>
+                <span class="cs-pk-rate">2.1%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">4 pickled</span>
+                <span class="cs-pk-rate">1.4%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3405,6 +3599,14 @@
                 </span>
             </div>
             <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Jaime Oncins (6.074)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Oliver Wei (3.499)</span>
+            </div>
+            <div class="cs-info-row">
                 <span class="cs-info-label">Notes:</span>
                 <span class="cs-info-value player-notes">Has no socials</span>
             </div>
@@ -3420,6 +3622,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">17 pickles</span>
+                <span class="cs-pk-rate">2.6%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">3 pickled</span>
+                <span class="cs-pk-rate">0.5%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 87%;">
@@ -3431,6 +3640,13 @@
                         <span class="cs-peak-l">2L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">13 pickles</span>
+                <span class="cs-pk-rate">7.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3497,6 +3713,14 @@
                     · 3-2 (60%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Morgan Evans (6.185)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Joe Kim (3.859)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 80%;">
@@ -3509,6 +3733,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">46 pickles</span>
+                <span class="cs-pk-rate">4.7%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">3 pickled</span>
+                <span class="cs-pk-rate">0.3%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 77%;">
@@ -3520,6 +3751,13 @@
                         <span class="cs-peak-l">2L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">12 pickles</span>
+                <span class="cs-pk-rate">4.8%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">0.4%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3586,6 +3824,14 @@
                     · 1-6 (14%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Alex Salazar (4.982)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Leah Fremouw (3.291)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 57%;">
@@ -3598,6 +3844,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">8 pickles</span>
+                <span class="cs-pk-rate">2.6%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">4 pickled</span>
+                <span class="cs-pk-rate">1.3%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 58%;">
@@ -3609,6 +3862,13 @@
                         <span class="cs-peak-l">4L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">10 pickles</span>
+                <span class="cs-pk-rate">7.9%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3675,6 +3935,14 @@
                     · 2-4 (33%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Jonathan Truong (5.639)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Andrew D’Annolfo (3.495)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 61%;">
@@ -3687,6 +3955,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">11 pickles</span>
+                <span class="cs-pk-rate">2.1%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">4 pickled</span>
+                <span class="cs-pk-rate">0.7%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 43%;">
@@ -3698,6 +3973,13 @@
                         <span class="cs-peak-l">5L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">0 pickles</span>
+                <span class="cs-pk-rate">0.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">2.6%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3765,6 +4047,14 @@
                 </span>
             </div>
             <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Timothy Cass (5.607)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Quinn Mackey (0.000)</span>
+            </div>
+            <div class="cs-info-row">
                 <span class="cs-info-label">Notes:</span>
                 <span class="cs-info-value player-notes">Luis has all of the socials</span>
             </div>
@@ -3780,6 +4070,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">3 pickles</span>
+                <span class="cs-pk-rate">1.4%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">0.5%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 53%;">
@@ -3791,6 +4088,13 @@
                         <span class="cs-peak-l">4L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">3 pickles</span>
+                <span class="cs-pk-rate">6.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3852,6 +4156,14 @@
                 </span>
             </div>
             <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Dipen Patel (4.919)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Brooke Hopkins (3.840)</span>
+            </div>
+            <div class="cs-info-row">
                 <span class="cs-info-label">Notes:</span>
                 <span class="cs-info-value player-notes">Bleed test: Suraj is a RVA-based 5.1 DUPR with a legendary third-shot drop and an even more legendary habit of arriving on court with three paddles, two water bottles, and a backup pair of indoor shoes. He switched from singles to doubles last year because standing still made his knees question their career choices. Known for calling his partner 'pardner' (intentional), for an unusual grip-change during serves, and for a pre-match routine that involves eight minutes of silent visualization and one very loud high-five. Rumor has it he once won a rec-league final 11-9 after being down 1-7 by switching to lobs that defied local gravity. Also: allegedly invented a spin serve he calls 'the helicoptero,' which no one has yet confirmed exists on video. Cardio: above average. Snack game: elite. Banter: unfiltered. Do not lend him your backup grip.</span>
             </div>
@@ -3867,6 +4179,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">3 pickles</span>
+                <span class="cs-pk-rate">2.3%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 44%;">
@@ -3878,6 +4197,13 @@
                         <span class="cs-peak-l">3L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">0 pickles</span>
+                <span class="cs-pk-rate">0.0%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
             </div>
         </div>
         <div class="social-links">
@@ -3957,6 +4283,14 @@
                     · 2-4 (33%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Ben Johns (7.416)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Andre Agassi (5.084)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 90%;">
@@ -3969,6 +4303,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">159 pickles</span>
+                <span class="cs-pk-rate">7.1%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">2 pickled</span>
+                <span class="cs-pk-rate">0.1%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 96%;">
@@ -3980,6 +4321,13 @@
                         <span class="cs-peak-l">2L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">62 pickles</span>
+                <span class="cs-pk-rate">9.4%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">0 pickled</span>
+                <span class="cs-pk-rate">0.0%</span>
             </div>
         </div>
         <div class="social-links">
@@ -4037,6 +4385,14 @@
                     · 4-6 (40%)
                 </span>
             </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Strongest partner:</span>
+                <span class="cs-info-value">Andrei Daescu (7.063)</span>
+            </div>
+            <div class="cs-info-row">
+                <span class="cs-info-label">Weakest partner:</span>
+                <span class="cs-info-value">Tamaryn Emmrich (5.332)</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">D</div>
                 <div class="cs-bar" style="--win-pct: 89%;">
@@ -4049,6 +4405,13 @@
                     </div>
                 </div>
             </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">102 pickles</span>
+                <span class="cs-pk-rate">4.1%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">6 pickled</span>
+                <span class="cs-pk-rate">0.2%</span>
+            </div>
             <div class="cs-row">
                 <div class="cs-fmt">S</div>
                 <div class="cs-bar" style="--win-pct: 90%;">
@@ -4060,6 +4423,13 @@
                         <span class="cs-peak-l">3L</span>
                     </div>
                 </div>
+            </div>
+            <div class="cs-pickle">
+                <span class="cs-pk-w">33 pickles</span>
+                <span class="cs-pk-rate">4.4%</span>
+                <span class="cs-dot"> · </span>
+                <span class="cs-pk-l">1 pickled</span>
+                <span class="cs-pk-rate">0.1%</span>
             </div>
         </div>
         <div class="social-links">
