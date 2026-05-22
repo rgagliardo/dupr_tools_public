@@ -2348,7 +2348,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 22 at 10:00 AM</span>
+            <span>Last Updated: May 22 at 10:08 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -5793,7 +5793,7 @@
 
 ;
 /* ============================================================
-   a2hs_hint.js  (v1.0) — "Add to Home Screen" hint for iOS Safari.
+   a2hs_hint.js  (v1.1) — "Add to Home Screen" hint for iOS Safari.
 
    Shared, self-contained snippet — inlined verbatim into both the
    leaderboard build and the PPBRVA dashboard build. It injects its
@@ -5801,12 +5801,19 @@
    page's CSS and looks right on any surface (light or dark).
 
    The hint slides up only when ALL of these hold:
-     • the visitor is on iOS Safari (not Chrome/Firefox-on-iOS, not
-       an in-app webview, not Android, not desktop)
+     • the visitor is on iOS Safari — iPhone, iPod, or iPad (incl.
+       modern iPadOS, which reports a desktop UA); not Chrome /
+       Firefox-on-iOS, not an in-app webview, not Android, not desktop
      • the page is NOT already running as a saved home-screen app
        (navigator.standalone)
-     • the hint has NOT been dismissed in the last 5 days — tracked
-       PER PAGE (the localStorage key includes location.pathname)
+     • it has not been dismissed — see the two-tier dismiss below
+
+   Two-tier dismiss, tracked PER PAGE (storage key includes pathname):
+     • the ✕  — quiet for the rest of this browser SESSION only.
+       Uses sessionStorage, which clears when the tab is closed — so
+       it saves no lasting state, it just won't nag again this visit.
+     • "Don't show this again for 5 days" — an explicit, persistent
+       5-day suppression (a localStorage timestamp).
 
    iOS exposes no API to *trigger* "Add to Home Screen", so the hint
    can only instruct: it shows the Share glyph and the two steps.
@@ -5815,8 +5822,8 @@
   "use strict";
 
   var SUPPRESS_DAYS = 5;
-  var STORE_KEY     = "a2hs-hint:" + location.pathname;  // per-page
-  var SHOW_DELAY_MS = 1200;                              // settle, then slide in
+  var KEY = "a2hs-hint:" + location.pathname;   // per-page suppression
+  var SHOW_DELAY_MS = 1200;                     // settle, then slide in
 
   // ---- eligibility gate ------------------------------------------------
   var ua = navigator.userAgent || "";
@@ -5829,18 +5836,21 @@
 
   // Only Safari can "Add to Home Screen" — exclude Chrome (CriOS),
   // Firefox (FxiOS), Edge (EdgiOS) and in-app webviews (Google app,
-  // Instagram, Facebook) where the option doesn't exist.
-  var notSafari = /CriOS|FxiOS|EdgiOS|GSA|Instagram|FBAN|FBAV|Line\//.test(ua);
-  if (notSafari || !/Safari/.test(ua)) return;
+  // Instagram, Facebook, Line) where the option doesn't exist.
+  if (/CriOS|FxiOS|EdgiOS|GSA|Instagram|FBAN|FBAV|Line\//.test(ua) ||
+      !/Safari/.test(ua)) return;
 
   // Already installed + opened from the home screen → nothing to suggest.
   if (window.navigator.standalone === true) return;
 
-  // Suppressed by a recent dismissal?
+  // Closed with the ✕ earlier this session?
+  try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+
+  // Explicitly snoozed for 5 days?
   try {
-    var ts = parseInt(localStorage.getItem(STORE_KEY) || "0", 10);
+    var ts = parseInt(localStorage.getItem(KEY) || "0", 10);
     if (ts && (Date.now() - ts) < SUPPRESS_DAYS * 86400000) return;
-  } catch (e) { /* private mode — proceed; just won't persist the dismissal */ }
+  } catch (e) { /* private mode — proceed; just won't persist */ }
 
   // ---- self-contained styles ------------------------------------------
   var css =
@@ -5862,6 +5872,11 @@
     ".a2hs-sub{margin-top:3px;font-size:11.5px;line-height:1.5;color:rgba(255,255,255,0.64);}" +
     ".a2hs-sub b{color:rgba(255,255,255,0.92);font-weight:600;}" +
     ".a2hs-share{display:inline-block;vertical-align:-3px;margin:0 1px;}" +
+    ".a2hs-snooze{display:inline-block;margin-top:8px;padding:2px 0;border:0;" +
+    "background:none;font-family:inherit;font-size:11px;font-weight:600;" +
+    "color:rgba(255,255,255,0.5);text-decoration:underline;" +
+    "text-underline-offset:2px;cursor:pointer;-webkit-tap-highlight-color:transparent;}" +
+    ".a2hs-snooze:active{color:rgba(255,255,255,0.82);}" +
     ".a2hs-x{flex-shrink:0;width:27px;height:27px;border:0;border-radius:50%;" +
     "background:rgba(255,255,255,0.13);color:rgba(255,255,255,0.85);" +
     "font-size:13px;line-height:27px;text-align:center;padding:0;cursor:pointer;" +
@@ -5892,18 +5907,30 @@
       '<div class="a2hs-sub">Tap ' + shareSvg +
       ' in the toolbar, then <b>Add to Home Screen</b> — one tap to get ' +
       "back here, no browser.</div>" +
+      '<button class="a2hs-snooze" type="button">' +
+      "Don't show this again for 5 days</button>" +
     "</div>" +
-    '<button class="a2hs-x" type="button" ' +
-    "aria-label=\"Don't show this again\">✕</button>";
+    '<button class="a2hs-x" type="button" aria-label="Close for now">✕</button>';
 
-  function dismiss() {
-    try { localStorage.setItem(STORE_KEY, String(Date.now())); } catch (e) {}
+  function slideOut() {
     box.classList.remove("a2hs-in");
     setTimeout(function () {
       if (box.parentNode) box.parentNode.removeChild(box);
     }, 480);
   }
-  box.querySelector(".a2hs-x").addEventListener("click", dismiss);
+
+  // ✕ — session only. sessionStorage clears when the tab is closed, so
+  // this saves no lasting preference; it just stops nagging this visit.
+  box.querySelector(".a2hs-x").addEventListener("click", function () {
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
+    slideOut();
+  });
+
+  // "Don't show this again for 5 days" — explicit, persisted suppression.
+  box.querySelector(".a2hs-snooze").addEventListener("click", function () {
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+    slideOut();
+  });
 
   function init() {
     var style = document.createElement("style");
