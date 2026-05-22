@@ -2348,7 +2348,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 22 at 10:08 AM</span>
+            <span>Last Updated: May 22 at 10:15 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -5672,22 +5672,20 @@
                     } catch (e) { return; }
                     if (!card) return;
 
-                    // If the target is filtered out by an active search,
-                    // clear the search so the card becomes visible.
-                    // Without this, the scroll target's getBoundingClientRect
-                    // returns 0 for a display:none element and the jump
-                    // silently no-ops.
-                    var group = card.closest('.group-details');
-                    var targetHidden = card.classList.contains('hidden')
-                        || (group && group.style.display === 'none');
-                    if (targetHidden) {
-                        var sInput = document.getElementById('searchInput');
-                        var sClear = document.getElementById('searchClear');
-                        if (sInput && sInput.value) {
-                            sInput.value = '';
-                            if (sClear) sClear.classList.remove('visible');
-                            sInput.dispatchEvent(new Event('input', { bubbles: true }));
-                        }
+                    // Clicking a name to jump to that player is a navigation
+                    // — the search has done its job, so always clear it. This
+                    // makes the destination and the whole list around it
+                    // visible again, not just when the target itself happened
+                    // to be filtered out. (A filtered-out target would also
+                    // silently no-op the scroll — getBoundingClientRect is 0
+                    // for a display:none element — so clearing is needed there
+                    // too.)
+                    var sInput = document.getElementById('searchInput');
+                    var sClear = document.getElementById('searchClear');
+                    if (sInput && sInput.value) {
+                        sInput.value = '';
+                        if (sClear) sClear.classList.remove('visible');
+                        sInput.dispatchEvent(new Event('input', { bubbles: true }));
                     }
 
                     // Snap-close any OTHER open cards before navigating —
