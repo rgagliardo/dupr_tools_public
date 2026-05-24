@@ -2349,7 +2349,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 24 at 4:34 PM</span>
+            <span>Last Updated: May 24 at 4:43 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -5899,13 +5899,18 @@
 
 ;
 /* ============================================================
-   a2hs_hint.js  (v2.1) — "Add to Home Screen" hint for iOS Safari.
+   a2hs_hint.js  (v2.2) — "Add to Home Screen" hint for iOS Safari.
 
    Shared, self-contained snippet — inlined verbatim into both the
    leaderboard build and the PPBRVA dashboard build. It injects its
    own markup AND styles, so it depends on nothing from the host
    page's CSS and looks right on any surface (light or dark).
 
+   v2.2 (2026-05-24): Theme-aware. Reads <html data-theme="…">; on
+   the leaderboard's "airbutter" (and any other light theme), swaps
+   the dark navy card for a refined white-card variant — paper-white
+   surface, Hof-ink text, soft Foggy-gray steps — so the hint reads
+   as part of the editorial sheet rather than a transplant.
    v2.1 (2026-05-24): Title → "Add to your Home Screen"; subtitle
    line removed (the numbered steps speak for themselves).
    v2.0 (2026-05-23): Hybrid redesign. Bigger app icon, dedicated
@@ -6012,7 +6017,8 @@
     "display:flex;align-items:center;justify-content:center;" +
     "font-size:12px;font-weight:700;color:rgba(255,255,255,0.92);}" +
     ".a2hs-step b{font-weight:700;color:#fff;}" +
-    ".a2hs-share{display:inline-block;vertical-align:-3px;margin:0 1px;}" +
+    ".a2hs-share{display:inline-block;vertical-align:-3px;margin:0 1px;" +
+    "color:#aeaeb2;}" +
 
     ".a2hs-snooze{display:block;margin:11px auto 0;padding:3px 6px;border:0;" +
     "background:none;font-family:inherit;font-size:11.5px;font-weight:600;" +
@@ -6031,26 +6037,55 @@
       ".a2hs-step{padding:12px 15px;font-size:15px;border-radius:12px;}" +
       ".a2hs-num{width:26px;height:26px;font-size:13px;border-radius:8px;}" +
       ".a2hs-snooze{font-size:12.5px;margin-top:13px;}" +
-    "}";
+    "}" +
+
+    // Light / airbutter palette — paper-white card, Hof ink, Foggy gray
+    // steps. Soft 1px hairline + a low-spread shadow so the card sits on
+    // the page like a butter listing tile, not a heavy overlay.
+    ".a2hs-hint.a2hs-light{" +
+      "background:#ffffff;color:#222222;" +
+      "-webkit-backdrop-filter:none;backdrop-filter:none;" +
+      "box-shadow:0 10px 28px rgba(0,0,0,0.10)," +
+        "0 0 0 1px rgba(0,0,0,0.05);}" +
+    ".a2hs-hint.a2hs-light .a2hs-title{color:#222222;}" +
+    ".a2hs-hint.a2hs-light .a2hs-step{" +
+      "background:#fafafa;border:1px solid #ebebeb;color:#484848;}" +
+    ".a2hs-hint.a2hs-light .a2hs-step b{color:#222222;}" +
+    ".a2hs-hint.a2hs-light .a2hs-num{" +
+      "background:#f0f0f0;color:#484848;}" +
+    ".a2hs-hint.a2hs-light .a2hs-x{" +
+      "background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.55);}" +
+    ".a2hs-hint.a2hs-light .a2hs-x:active{background:rgba(0,0,0,0.12);}" +
+    ".a2hs-hint.a2hs-light .a2hs-share{color:#717171;}" +
+    ".a2hs-hint.a2hs-light .a2hs-snooze{color:rgba(0,0,0,0.42);}" +
+    ".a2hs-hint.a2hs-light .a2hs-snooze:active{color:rgba(0,0,0,0.72);}";
 
   // ---- icon from the host page (each surface brings its own) -----------
   var iconEl  = document.querySelector('link[rel="apple-touch-icon"]');
   var iconSrc = iconEl ? iconEl.href : "";
 
-  // iOS Share glyph — the standard rounded box with an up-arrow. Tone
-  // matches the native Safari toolbar icon on dark mode: a muted iOS
-  // systemGray (#aeaeb2) rather than the loud iOS blue. Strokes a touch
-  // thinner (2.0) to read closer to SF Symbol "square.and.arrow.up".
+  // iOS Share glyph — rounded box with up-arrow. Stroke uses currentColor
+  // so the surrounding `.a2hs-share` rule controls the tone per theme
+  // (muted gray on dark, darker Foggy gray on light/airbutter). Stroke-
+  // width 2 to read closer to native SF Symbol "square.and.arrow.up".
   var shareSvg =
     '<svg class="a2hs-share" width="14" height="14" viewBox="0 0 24 24" ' +
-    'fill="none" stroke="#aeaeb2" stroke-width="2" stroke-linecap="round" ' +
+    'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
     'stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M12 15V3.5"/><path d="M8 7l4-4 4 4"/>' +
     '<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
 
+  // ---- theme detection -------------------------------------------------
+  // Pick the variant from <html data-theme>. The leaderboard's "airbutter"
+  // is light; the dashboard's CRT/dark themes are dark. Unknown values
+  // fall back to dark (the safer default for our two surfaces).
+  var docTheme = (document.documentElement.getAttribute("data-theme") || "")
+                  .toLowerCase();
+  var isLight = docTheme === "airbutter" || docTheme === "light";
+
   // ---- build + inject --------------------------------------------------
   var box = document.createElement("div");
-  box.className = "a2hs-hint";
+  box.className = "a2hs-hint" + (isLight ? " a2hs-light" : "");
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-label", "Add this page to your Home Screen");
   box.innerHTML =
