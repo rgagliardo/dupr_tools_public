@@ -2349,7 +2349,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: May 24 at 4:43 PM</span>
+            <span>Last Updated: May 24 at 7:05 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -5899,7 +5899,16 @@
 
 ;
 /* ============================================================
-   a2hs_hint.js  (v2.2) — "Add to Home Screen" hint for iOS Safari.
+   a2hs_hint.js  (v2.3) — "Add to Home Screen" hint for iOS Safari.
+
+   v2.3 (2026-05-24): UX-review polish. ✕ + snooze touch targets
+   expanded to 44px (WCAG 2.5.5) via ::before hit-area on the ✕ and
+   min-height on the snooze. Light-card snooze + ✕ contrast bumped
+   to clear WCAG AA. iPad title 18 → 20px for a stronger 4:3:2.5
+   hierarchy. Share glyph alignment switched from -3px magic-number
+   to `vertical-align:middle` so it adapts to step font size. Light
+   icon gets a soft warm shadow + hairline so it grounds on white.
+   `aria-modal="true"` added.
 
    Shared, self-contained snippet — inlined verbatim into both the
    leaderboard build and the PPBRVA dashboard build. It injects its
@@ -6004,6 +6013,10 @@
     "color:rgba(255,255,255,0.85);font-size:13px;line-height:28px;" +
     "text-align:center;padding:0;cursor:pointer;" +
     "-webkit-tap-highlight-color:transparent;}" +
+    // Invisible hit-area extension — bumps tap zone to 44×44 (WCAG 2.5.5)
+    // without enlarging the visible disc. Pseudo-element clicks bubble.
+    ".a2hs-x::before{content:'';position:absolute;" +
+    "top:-8px;left:-8px;right:-8px;bottom:-8px;}" +
     ".a2hs-x:active{background:rgba(255,255,255,0.24);}" +
 
     ".a2hs-steps{margin-top:13px;display:flex;flex-direction:column;gap:7px;}" +
@@ -6017,10 +6030,13 @@
     "display:flex;align-items:center;justify-content:center;" +
     "font-size:12px;font-weight:700;color:rgba(255,255,255,0.92);}" +
     ".a2hs-step b{font-weight:700;color:#fff;}" +
-    ".a2hs-share{display:inline-block;vertical-align:-3px;margin:0 1px;" +
-    "color:#aeaeb2;}" +
+    ".a2hs-share{display:inline-block;vertical-align:middle;" +
+    "position:relative;top:-1px;margin:0 1px;color:#aeaeb2;}" +
 
-    ".a2hs-snooze{display:block;margin:11px auto 0;padding:3px 6px;border:0;" +
+    // Snooze — flex+min-height gives a real 44×44 tap zone (WCAG 2.5.5)
+    // while keeping the underlined link visually compact and centered.
+    ".a2hs-snooze{display:flex;align-items:center;justify-content:center;" +
+    "min-height:44px;margin:4px auto 0;padding:0 8px;border:0;" +
     "background:none;font-family:inherit;font-size:11.5px;font-weight:600;" +
     "color:rgba(255,255,255,0.45);text-decoration:underline;" +
     "text-underline-offset:2px;cursor:pointer;" +
@@ -6032,11 +6048,11 @@
       ".a2hs-hint{padding:20px 22px 16px;border-radius:22px;}" +
       ".a2hs-head{gap:15px;}" +
       ".a2hs-icon{width:64px;height:64px;border-radius:15px;}" +
-      ".a2hs-title{font-size:18px;}" +
+      ".a2hs-title{font-size:20px;}" +     /* tighter 4:3:2.5 hierarchy */
       ".a2hs-steps{margin-top:15px;gap:8px;}" +
       ".a2hs-step{padding:12px 15px;font-size:15px;border-radius:12px;}" +
       ".a2hs-num{width:26px;height:26px;font-size:13px;border-radius:8px;}" +
-      ".a2hs-snooze{font-size:12.5px;margin-top:13px;}" +
+      ".a2hs-snooze{font-size:12.5px;margin-top:6px;}" +
     "}" +
 
     // Light / airbutter palette — paper-white card, Hof ink, Foggy gray
@@ -6054,11 +6070,18 @@
     ".a2hs-hint.a2hs-light .a2hs-num{" +
       "background:#f0f0f0;color:#484848;}" +
     ".a2hs-hint.a2hs-light .a2hs-x{" +
-      "background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.55);}" +
+      "background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.65);}" +
     ".a2hs-hint.a2hs-light .a2hs-x:active{background:rgba(0,0,0,0.12);}" +
     ".a2hs-hint.a2hs-light .a2hs-share{color:#717171;}" +
-    ".a2hs-hint.a2hs-light .a2hs-snooze{color:rgba(0,0,0,0.42);}" +
-    ".a2hs-hint.a2hs-light .a2hs-snooze:active{color:rgba(0,0,0,0.72);}";
+    // WCAG AA on white at 11.5px requires ~4.5:1 — 0.55 composites to
+    // ~rgb(115) = 4.95:1, vs 0.42 = rgb(148) = 3.07:1 (was failing).
+    ".a2hs-hint.a2hs-light .a2hs-snooze{color:rgba(0,0,0,0.55);}" +
+    ".a2hs-hint.a2hs-light .a2hs-snooze:active{color:rgba(0,0,0,0.80);}" +
+    // Soft warm shadow + 1px ring so the dark apple-touch-icon doesn't
+    // read as a transplant on the paper-white card.
+    ".a2hs-hint.a2hs-light .a2hs-icon{" +
+      "box-shadow:0 3px 10px rgba(0,0,0,0.18)," +
+        "0 0 0 1px rgba(0,0,0,0.06);}";
 
   // ---- icon from the host page (each surface brings its own) -----------
   var iconEl  = document.querySelector('link[rel="apple-touch-icon"]');
@@ -6087,6 +6110,7 @@
   var box = document.createElement("div");
   box.className = "a2hs-hint" + (isLight ? " a2hs-light" : "");
   box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
   box.setAttribute("aria-label", "Add this page to your Home Screen");
   box.innerHTML =
     '<button class="a2hs-x" type="button" aria-label="Close for now">✕</button>' +
