@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-26T09:54:51",
-  "next_scan_at": "2026-05-26T10:24:51",
+  "generated_at": "2026-05-26T10:09:37",
+  "next_scan_at": "2026-05-26T10:39:37",
   "stats": {
     "total": 239,
     "full_count": 35
@@ -14,10 +14,10 @@
       "end_iso": "2026-05-26T12:00:00",
       "start_display": "TUE MAY 26  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 42,
-      "count": 41,
-      "pct": 98,
+      "count": 40,
+      "pct": 95,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
@@ -38,7 +38,6 @@
         "Davis J.",
         "Dennis W.",
         "Ed K.",
-        "Elton W.",
         "Gary W.",
         "Gyung Y.",
         "Hung Y.",
@@ -68,6 +67,10 @@
       "ratings": {},
       "departed": [
         {
+          "name": "Elton W.",
+          "departed_at": "2026-05-26T10:08:40"
+        },
+        {
           "name": "Bradley F.",
           "departed_at": "2026-05-26T09:53:36"
         },
@@ -96,8 +99,15 @@
           "departed_at": "2026-05-25T11:13:37"
         }
       ],
-      "last_snap_ts": "2026-05-26T09:53:36",
-      "thieves": [],
+      "last_snap_ts": "2026-05-26T10:08:40",
+      "thieves": [
+        {
+          "name": "Elton W.",
+          "last_seen_full_ts": "2026-05-25T15:41:57",
+          "first_absent_ts": "2026-05-26T10:08:40",
+          "detection_gap_min": 1107
+        }
+      ],
       "big_dogs": []
     },
     {
@@ -108,7 +118,7 @@
       "end_iso": "2026-05-26T12:00:00",
       "start_display": "TUE MAY 26  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 12,
       "count": 11,
       "pct": 92,
@@ -148,7 +158,7 @@
           "departed_at": "2026-05-26T09:53:37"
         }
       ],
-      "last_snap_ts": "2026-05-26T09:53:37",
+      "last_snap_ts": "2026-05-26T10:08:42",
       "thieves": [],
       "big_dogs": []
     },
@@ -201,7 +211,7 @@
           "departed_at": "2026-05-26T07:20:40"
         }
       ],
-      "last_snap_ts": "2026-05-26T09:53:40",
+      "last_snap_ts": "2026-05-26T10:08:43",
       "thieves": [],
       "big_dogs": []
     },
@@ -248,7 +258,7 @@
           "departed_at": "2026-05-26T07:20:42"
         }
       ],
-      "last_snap_ts": "2026-05-26T09:53:42",
+      "last_snap_ts": "2026-05-26T10:08:46",
       "thieves": [],
       "big_dogs": []
     },
@@ -275,7 +285,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:34",
+      "last_snap_ts": "2026-05-26T10:09:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -310,7 +320,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:53:44",
+      "last_snap_ts": "2026-05-26T10:08:47",
       "thieves": [],
       "big_dogs": []
     },
@@ -376,7 +386,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:53:46",
+      "last_snap_ts": "2026-05-26T10:08:50",
       "thieves": [],
       "big_dogs": []
     },
@@ -417,7 +427,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:53:48",
+      "last_snap_ts": "2026-05-26T10:08:51",
       "thieves": [],
       "big_dogs": []
     },
@@ -448,7 +458,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:53:50",
+      "last_snap_ts": "2026-05-26T10:08:53",
       "thieves": [],
       "big_dogs": []
     },
@@ -475,7 +485,7 @@
         "Naren K.": "4.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:35",
+      "last_snap_ts": "2026-05-26T10:09:22",
       "thieves": [],
       "big_dogs": []
     },
@@ -504,7 +514,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:53:52",
+      "last_snap_ts": "2026-05-26T10:08:55",
       "thieves": [],
       "big_dogs": []
     },
@@ -564,7 +574,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:53:54",
+      "last_snap_ts": "2026-05-26T10:08:57",
       "thieves": [],
       "big_dogs": []
     },
@@ -623,7 +633,7 @@
           "departed_at": "2026-05-25T17:30:25"
         }
       ],
-      "last_snap_ts": "2026-05-26T09:54:00",
+      "last_snap_ts": "2026-05-26T10:08:58",
       "thieves": [],
       "big_dogs": []
     },
@@ -651,7 +661,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:51",
+      "last_snap_ts": "2026-05-26T10:09:36",
       "thieves": [],
       "big_dogs": []
     },
@@ -709,7 +719,7 @@
           "departed_at": "2026-05-25T21:41:51"
         }
       ],
-      "last_snap_ts": "2026-05-26T09:54:11",
+      "last_snap_ts": "2026-05-26T10:09:00",
       "thieves": [],
       "big_dogs": []
     },
@@ -742,7 +752,7 @@
         "Scott S.": "3.76"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:14",
+      "last_snap_ts": "2026-05-26T10:09:02",
       "thieves": [],
       "big_dogs": []
     },
@@ -777,7 +787,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:16",
+      "last_snap_ts": "2026-05-26T10:09:04",
       "thieves": [],
       "big_dogs": []
     },
@@ -802,7 +812,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:20",
+      "last_snap_ts": "2026-05-26T10:09:06",
       "thieves": [],
       "big_dogs": []
     },
@@ -834,7 +844,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:23",
+      "last_snap_ts": "2026-05-26T10:09:08",
       "thieves": [],
       "big_dogs": []
     },
@@ -867,7 +877,7 @@
         "Ty L.": "4.29"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:25",
+      "last_snap_ts": "2026-05-26T10:09:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -905,7 +915,7 @@
         "Scott S.": "3.76"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:26",
+      "last_snap_ts": "2026-05-26T10:09:13",
       "thieves": [],
       "big_dogs": []
     },
@@ -939,7 +949,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:28",
+      "last_snap_ts": "2026-05-26T10:09:15",
       "thieves": [],
       "big_dogs": []
     },
@@ -964,7 +974,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:30",
+      "last_snap_ts": "2026-05-26T10:09:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -995,7 +1005,7 @@
         "Suhail A.": "4.21"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:32",
+      "last_snap_ts": "2026-05-26T10:09:19",
       "thieves": [],
       "big_dogs": []
     },
@@ -1024,7 +1034,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:37",
+      "last_snap_ts": "2026-05-26T10:09:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -1067,7 +1077,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:40",
+      "last_snap_ts": "2026-05-26T10:09:27",
       "thieves": [],
       "big_dogs": []
     },
@@ -1094,7 +1104,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:43",
+      "last_snap_ts": "2026-05-26T10:09:29",
       "thieves": [],
       "big_dogs": []
     },
@@ -1119,7 +1129,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:45",
+      "last_snap_ts": "2026-05-26T10:09:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -1142,7 +1152,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-26T09:54:49",
+      "last_snap_ts": "2026-05-26T10:09:34",
       "thieves": [],
       "big_dogs": []
     },
@@ -9692,12 +9702,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "departed": [
-        {
-          "name": "Sheel K.",
-          "departed_at": "2026-05-25T10:08:41"
-        }
-      ],
+      "departed": [],
       "last_snap_ts": "2026-05-25T12:02:12",
       "thieves": [
         {
@@ -9760,6 +9765,14 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-05-26T10:08:40",
+      "type": "cancel",
+      "name": "Elton W.",
+      "title": "4.0 Open Play",
+      "start": "TUE MAY 26  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbe-db0e-7aa0-93c9-53f8b1e9decb"
+    },
     {
       "ts": "2026-05-26T09:53:37",
       "type": "cancel",
@@ -30311,33 +30324,18 @@
       "title": "ADVANCED Performance Play Sunday",
       "start": "SUN APR 26  12:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019da15a-014b-7bbe-b696-a6e128031528"
-    },
-    {
-      "ts": "2026-04-26T09:59:30",
-      "type": "join",
-      "name": "+3 players",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SUN APR 26  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019da0f5-f977-7bbe-b64f-49e092c07dab"
-    },
-    {
-      "ts": "2026-04-26T09:59:30",
-      "type": "cancel",
-      "name": "+2 players",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SUN APR 26  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019da0f5-f977-7bbe-b64f-49e092c07dab"
-    },
-    {
-      "ts": "2026-04-26T09:59:30",
-      "type": "full",
-      "name": "12/12",
-      "title": "DUPR 4.5 Open Play",
-      "start": "SUN APR 26  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/019da0f5-f977-7bbe-b64f-49e092c07dab"
     }
   ],
   "thieves": [
+    {
+      "name": "Elton W.",
+      "last_seen_full_ts": "2026-05-25T15:41:57",
+      "first_absent_ts": "2026-05-26T10:08:40",
+      "detection_gap_min": 1107,
+      "session_title": "4.0 Open Play",
+      "session_start": "TUE MAY 26  10:00 AM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019dbbbe-db0e-7aa0-93c9-53f8b1e9decb"
+    },
     {
       "name": "Elton W.",
       "last_seen_full_ts": "2026-04-02T18:29:50",
@@ -30778,7 +30776,7 @@
     {
       "name": "Elton W.",
       "joins": 30,
-      "cancels": 17
+      "cancels": 18
     },
     {
       "name": "Steve Y.",
@@ -33047,7 +33045,7 @@
           "start": "TUE MAY 26  10:00 AM",
           "start_iso": "2026-05-26T10:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 12,
           "count": 11,
           "is_full": false,
@@ -33946,7 +33944,7 @@
           "start": "TUE MAY 26  10:00 AM",
           "start_iso": "2026-05-26T10:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 12,
           "count": 11,
           "is_full": false,
@@ -34126,7 +34124,7 @@
           "start": "TUE MAY 26  10:00 AM",
           "start_iso": "2026-05-26T10:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 12,
           "count": 11,
           "is_full": false,
@@ -37551,7 +37549,7 @@
       "start": "TUE MAY 26  10:00 AM",
       "start_iso": "2026-05-26T10:00:00",
       "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017",
-      "status": "upcoming",
+      "status": "live",
       "friends": [
         "Bradley L Frohman",
         "Chris Burke",
@@ -37932,12 +37930,7 @@
         "+1 player"
       ],
       "ratings": {},
-      "departed": [
-        {
-          "name": "Sheel K.",
-          "departed_at": "2026-05-25T10:08:41"
-        }
-      ]
+      "departed": []
     },
     {
       "title": "ADVANCED Performance Play Sunday",
