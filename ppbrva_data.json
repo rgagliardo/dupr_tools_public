@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-28T21:30:59",
-  "next_scan_at": "2026-05-28T22:00:59",
+  "generated_at": "2026-05-28T22:18:55",
+  "next_scan_at": "2026-05-28T22:48:55",
   "stats": {
     "total": 251,
-    "full_count": 31
+    "full_count": 32
   },
   "sessions": [
     {
@@ -16,21 +16,21 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 42,
-      "count": 32,
-      "pct": 76,
+      "count": 33,
+      "pct": 79,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Alice K.",
+        "Alicia Z.",
         "Andrew W.",
         "Becca D.",
         "Bill P.",
         "Bing Y.",
         "Bradley F.",
         "Caroline M.",
-        "Chanthachone W.",
         "CHARLIE S.",
         "David S.",
         "Dennis W.",
@@ -49,6 +49,7 @@
         "Rebecca J.",
         "Rick G.",
         "Sheryl R.",
+        "Steve Y.",
         "Steven B.",
         "Steven L.",
         "Steven S.",
@@ -58,6 +59,10 @@
       ],
       "ratings": {},
       "departed": [
+        {
+          "name": "Chanthachone W.",
+          "departed_at": "2026-05-28T22:17:57"
+        },
         {
           "name": "Mike N.",
           "departed_at": "2026-05-28T19:13:38"
@@ -79,7 +84,7 @@
           "departed_at": "2026-05-27T22:34:22"
         }
       ],
-      "last_snap_ts": "2026-05-28T19:21:34",
+      "last_snap_ts": "2026-05-28T22:17:57",
       "thieves": [],
       "big_dogs": []
     },
@@ -93,26 +98,28 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 6,
-      "count": 4,
-      "pct": 67,
+      "count": 5,
+      "pct": 83,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Bradley F.",
+        "Ken L.",
         "Mike B.",
         "Pete H.",
         "Rick G."
       ],
       "ratings": {
         "Bradley F.": "4.09",
+        "Ken L.": "4.26",
         "Mike B.": "4.37",
         "Pete H.": "3.91",
         "Rick G.": "N/A"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T19:21:39",
+      "last_snap_ts": "2026-05-28T22:17:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -136,10 +143,10 @@
         "Adriana G.",
         "Annie R.",
         "David G.",
-        "Debby D.",
         "Dipen P.",
         "G B.",
         "Joj! W.",
+        "Karthik N.",
         "Laine S.",
         "Morgan K.",
         "Richard P.",
@@ -151,11 +158,15 @@
       "ratings": {},
       "departed": [
         {
+          "name": "Debby D.",
+          "departed_at": "2026-05-28T22:18:01"
+        },
+        {
           "name": "C. Todd S.",
           "departed_at": "2026-05-28T19:13:42"
         }
       ],
-      "last_snap_ts": "2026-05-28T20:17:54",
+      "last_snap_ts": "2026-05-28T22:18:01",
       "thieves": [],
       "big_dogs": []
     },
@@ -182,7 +193,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:19:27",
+      "last_snap_ts": "2026-05-28T22:18:03",
       "thieves": [],
       "big_dogs": []
     },
@@ -196,8 +207,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 18,
-      "count": 14,
-      "pct": 78,
+      "count": 15,
+      "pct": 83,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
@@ -209,6 +220,7 @@
         "Chris P.",
         "Cindy W.",
         "Eileen T.",
+        "Gilu G.",
         "Jeffrey S.",
         "Melanie W.",
         "Mona B.",
@@ -220,7 +232,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:19:29",
+      "last_snap_ts": "2026-05-28T22:18:05",
       "thieves": [],
       "big_dogs": []
     },
@@ -257,7 +269,7 @@
         "Ty L.": "4.29"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:19:32",
+      "last_snap_ts": "2026-05-28T22:18:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -271,16 +283,17 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 9,
-      "pct": 75,
-      "is_full": false,
+      "count": 10,
+      "pct": 83,
+      "is_full": true,
       "is_takeover": false,
-      "was_ever_full": false,
+      "was_ever_full": true,
       "manually_added": false,
       "registrants": [
         "Brett P.",
         "Chanthachone W.",
         "David G.",
+        "David H.",
         "Errin M.",
         "Isabela K.",
         "Kevin M.",
@@ -288,9 +301,19 @@
         "Thaian N.",
         "+1 player"
       ],
-      "ratings": {},
+      "ratings": {
+        "Brett P.": "3.88",
+        "Chanthachone W.": "4.19",
+        "David G.": "3.94",
+        "David H.": "4.22",
+        "Errin M.": "N/A",
+        "Isabela K.": "3.86",
+        "Kevin M.": "3.69",
+        "Scott S.": "3.76",
+        "Thaian N.": "4.72"
+      },
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:22:45",
+      "last_snap_ts": "2026-05-28T22:18:09",
       "thieves": [],
       "big_dogs": []
     },
@@ -313,7 +336,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:18:15",
+      "last_snap_ts": "2026-05-28T22:18:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -350,7 +373,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T19:21:55",
+      "last_snap_ts": "2026-05-28T22:18:11",
       "thieves": [],
       "big_dogs": []
     },
@@ -373,7 +396,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T19:21:59",
+      "last_snap_ts": "2026-05-28T22:18:15",
       "thieves": [],
       "big_dogs": []
     },
@@ -407,7 +430,7 @@
         "Suhail A.": "4.21"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:24:42",
+      "last_snap_ts": "2026-05-28T22:18:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -442,7 +465,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:24:43",
+      "last_snap_ts": "2026-05-28T22:18:19",
       "thieves": [],
       "big_dogs": []
     },
@@ -456,8 +479,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 34,
-      "pct": 94,
+      "count": 35,
+      "pct": 97,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
@@ -476,6 +499,7 @@
         "Ed K.",
         "Elton W.",
         "Gary W.",
+        "Gary Z.",
         "Georgia L.",
         "Joj! W.",
         "Kim K.",
@@ -500,7 +524,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T19:22:06",
+      "last_snap_ts": "2026-05-28T22:18:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -530,7 +554,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:35:54",
+      "last_snap_ts": "2026-05-28T22:18:23",
       "thieves": [],
       "big_dogs": []
     },
@@ -555,7 +579,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:35:58",
+      "last_snap_ts": "2026-05-28T22:18:25",
       "thieves": [],
       "big_dogs": []
     },
@@ -569,21 +593,18 @@
       "end_display": "10:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 0,
-      "pct": 0,
+      "count": 1,
+      "pct": 8,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [],
-      "ratings": {},
-      "departed": [
-        {
-          "name": "Stacie R.",
-          "departed_at": "2026-05-28T20:59:13"
-        }
+      "registrants": [
+        "Stacie R."
       ],
-      "last_snap_ts": "2026-05-28T20:59:13",
+      "ratings": {},
+      "departed": [],
+      "last_snap_ts": "2026-05-28T22:18:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -612,7 +633,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T20:59:20",
+      "last_snap_ts": "2026-05-28T22:18:27",
       "thieves": [],
       "big_dogs": []
     },
@@ -665,7 +686,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:00:20",
+      "last_snap_ts": "2026-05-28T22:18:29",
       "thieves": [],
       "big_dogs": []
     },
@@ -679,8 +700,8 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 18,
-      "count": 5,
-      "pct": 28,
+      "count": 6,
+      "pct": 33,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
@@ -690,11 +711,12 @@
         "Brett W.",
         "C. Todd S.",
         "Ed K.",
+        "G B.",
         "+1 player"
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:00:23",
+      "last_snap_ts": "2026-05-28T22:18:32",
       "thieves": [],
       "big_dogs": []
     },
@@ -722,7 +744,7 @@
         "C. Todd S.": "4.29"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:16:39",
+      "last_snap_ts": "2026-05-28T22:18:34",
       "thieves": [],
       "big_dogs": []
     },
@@ -745,7 +767,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:17:36",
+      "last_snap_ts": "2026-05-28T22:18:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -797,7 +819,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:18:17",
+      "last_snap_ts": "2026-05-28T22:18:43",
       "thieves": [],
       "big_dogs": []
     },
@@ -824,7 +846,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:18:24",
+      "last_snap_ts": "2026-05-28T22:18:45",
       "thieves": [],
       "big_dogs": []
     },
@@ -851,7 +873,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:18:27",
+      "last_snap_ts": "2026-05-28T22:18:47",
       "thieves": [],
       "big_dogs": []
     },
@@ -876,7 +898,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:18:29",
+      "last_snap_ts": "2026-05-28T22:18:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -890,21 +912,20 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 0,
-      "pct": 0,
+      "count": 1,
+      "pct": 8,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
-      "registrants": [],
-      "ratings": {},
-      "departed": [
-        {
-          "name": "Pete H.",
-          "departed_at": "2026-05-28T21:30:47"
-        }
+      "registrants": [
+        "Pete H."
       ],
-      "last_snap_ts": "2026-05-28T21:30:47",
+      "ratings": {
+        "Pete H.": "3.91"
+      },
+      "departed": [],
+      "last_snap_ts": "2026-05-28T22:18:50",
       "thieves": [],
       "big_dogs": []
     },
@@ -943,7 +964,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:30:49",
+      "last_snap_ts": "2026-05-28T22:18:53",
       "thieves": [],
       "big_dogs": []
     },
@@ -957,19 +978,20 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 18,
-      "count": 2,
-      "pct": 11,
+      "count": 3,
+      "pct": 17,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
+        "Bobby L.",
         "C. Todd S.",
         "Ed K."
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-28T21:30:59",
+      "last_snap_ts": "2026-05-28T22:18:55",
       "thieves": [],
       "big_dogs": []
     },
@@ -10066,11 +10088,7 @@
       "ratings": {},
       "departed": [
         {
-          "name": "Annie L.",
-          "departed_at": "2026-05-28T12:17:48"
-        },
-        {
-          "name": "Steve M.",
+          "name": "John L.",
           "departed_at": "2026-05-28T12:17:48"
         },
         {
@@ -10078,11 +10096,15 @@
           "departed_at": "2026-05-28T12:17:48"
         },
         {
-          "name": "Mona B.",
+          "name": "Steve M.",
           "departed_at": "2026-05-28T12:17:48"
         },
         {
-          "name": "John L.",
+          "name": "Annie L.",
+          "departed_at": "2026-05-28T12:17:48"
+        },
+        {
+          "name": "Mona B.",
           "departed_at": "2026-05-28T12:17:48"
         },
         {
@@ -10215,6 +10237,118 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-05-28T22:18:55",
+      "type": "join",
+      "name": "Bobby L.",
+      "title": "4.5/4.0 Open Play",
+      "start": "THU JUN 4  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c48-3273-7cc5-9b73-02ed037e28c6"
+    },
+    {
+      "ts": "2026-05-28T22:18:50",
+      "type": "join",
+      "name": "Pete H.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "THU JUN 4  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-3ec1-7551-83e3-a5e565a0d359"
+    },
+    {
+      "ts": "2026-05-28T22:18:32",
+      "type": "join",
+      "name": "G B.",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE JUN 2  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019d9c4c-fe1f-7220-acb4-f8462d2e8484"
+    },
+    {
+      "ts": "2026-05-28T22:18:26",
+      "type": "join",
+      "name": "Stacie R.",
+      "title": "4.0 Open Play",
+      "start": "MON JUN 1  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c16-b021-7cc5-98a0-4314d079d00c"
+    },
+    {
+      "ts": "2026-05-28T22:18:21",
+      "type": "join",
+      "name": "Gary Z.",
+      "title": "4.0 Open Play",
+      "start": "MON JUN 1  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-bffc-7551-83e7-322468c4ae3d"
+    },
+    {
+      "ts": "2026-05-28T22:18:09",
+      "type": "join",
+      "name": "David H.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT MAY 30  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dcb65-510b-7dd6-8ec3-2db5e1358681"
+    },
+    {
+      "ts": "2026-05-28T22:18:09",
+      "type": "full",
+      "name": "12/12",
+      "title": "DUPR 4.0 Open Play",
+      "start": "SAT MAY 30  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dcb65-510b-7dd6-8ec3-2db5e1358681"
+    },
+    {
+      "ts": "2026-05-28T22:18:05",
+      "type": "join",
+      "name": "Gilu G.",
+      "title": "4.0 Open Play",
+      "start": "SAT MAY 30  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dcb53-9713-7dd9-bc7a-5f0b2f3ed69a"
+    },
+    {
+      "ts": "2026-05-28T22:18:01",
+      "type": "join",
+      "name": "Karthik N.",
+      "title": "4.0 Open Play",
+      "start": "FRI MAY 29  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019dd4f6-633c-7114-94e0-3b038683978e"
+    },
+    {
+      "ts": "2026-05-28T22:18:01",
+      "type": "cancel",
+      "name": "Debby D.",
+      "title": "4.0 Open Play",
+      "start": "FRI MAY 29  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019dd4f6-633c-7114-94e0-3b038683978e"
+    },
+    {
+      "ts": "2026-05-28T22:17:59",
+      "type": "join",
+      "name": "Ken L.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI MAY 29  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbd-5b56-7bb3-92dc-21e931e4ecc9"
+    },
+    {
+      "ts": "2026-05-28T22:17:57",
+      "type": "join",
+      "name": "Alicia Z.",
+      "title": "4.0 Open Play",
+      "start": "FRI MAY 29  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbe-e259-7aa0-93cb-7d4b17780eb5"
+    },
+    {
+      "ts": "2026-05-28T22:17:57",
+      "type": "join",
+      "name": "Steve Y.",
+      "title": "4.0 Open Play",
+      "start": "FRI MAY 29  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbe-e259-7aa0-93cb-7d4b17780eb5"
+    },
+    {
+      "ts": "2026-05-28T22:17:57",
+      "type": "cancel",
+      "name": "Chanthachone W.",
+      "title": "4.0 Open Play",
+      "start": "FRI MAY 29  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dbbbe-e259-7aa0-93cb-7d4b17780eb5"
+    },
     {
       "ts": "2026-05-28T21:30:59",
       "type": "join",
@@ -31598,38 +31732,6 @@
       "title": "4.0 Open Play",
       "start": "TUE APR 28  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019d4f74-e517-7aad-9359-03068e9e3cbf"
-    },
-    {
-      "ts": "2026-04-28T21:43:30",
-      "type": "join",
-      "name": "Adrian B.",
-      "title": "4.5/4.0 Open Play",
-      "start": "WED APR 29  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-252c-7aad-93de-16b7767e7dac"
-    },
-    {
-      "ts": "2026-04-28T21:43:30",
-      "type": "join",
-      "name": "Alicia Z.",
-      "title": "4.5/4.0 Open Play",
-      "start": "WED APR 29  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-252c-7aad-93de-16b7767e7dac"
-    },
-    {
-      "ts": "2026-04-28T21:43:30",
-      "type": "join",
-      "name": "Luis R.",
-      "title": "4.5/4.0 Open Play",
-      "start": "WED APR 29  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-252c-7aad-93de-16b7767e7dac"
-    },
-    {
-      "ts": "2026-04-28T21:43:30",
-      "type": "cancel",
-      "name": "Jeffrey S.",
-      "title": "4.5/4.0 Open Play",
-      "start": "WED APR 29  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019d4fd4-252c-7aad-93de-16b7767e7dac"
     }
   ],
   "thieves": [
@@ -32150,7 +32252,7 @@
     },
     {
       "name": "Steve Y.",
-      "joins": 25,
+      "joins": 26,
       "cancels": 17
     },
     {
@@ -32280,7 +32382,7 @@
     },
     {
       "name": "Pete H.",
-      "joins": 17,
+      "joins": 18,
       "cancels": 7
     },
     {
@@ -32310,7 +32412,7 @@
     },
     {
       "name": "Bobby L.",
-      "joins": 25,
+      "joins": 26,
       "cancels": 6
     },
     {
@@ -32329,12 +32431,12 @@
       "cancels": 5
     },
     {
-      "name": "Roy A.",
-      "joins": 15,
+      "name": "Alicia Z.",
+      "joins": 16,
       "cancels": 5
     },
     {
-      "name": "Alicia Z.",
+      "name": "Roy A.",
       "joins": 15,
       "cancels": 5
     },
@@ -32445,7 +32547,7 @@
     },
     {
       "name": "G B.",
-      "joins": 24,
+      "joins": 25,
       "cancels": 3
     },
     {
@@ -32490,7 +32592,7 @@
     },
     {
       "name": "David H.",
-      "joins": 4,
+      "joins": 5,
       "cancels": 3
     },
     {
@@ -32569,12 +32671,12 @@
       "cancels": 2
     },
     {
-      "name": "Steven T.",
+      "name": "Devin C.",
       "joins": 6,
       "cancels": 2
     },
     {
-      "name": "Devin C.",
+      "name": "Steven T.",
       "joins": 6,
       "cancels": 2
     },
@@ -32650,12 +32752,17 @@
     },
     {
       "name": "Stacie R.",
-      "joins": 16,
+      "joins": 17,
       "cancels": 1
     },
     {
       "name": "Daniel L.",
       "joins": 14,
+      "cancels": 1
+    },
+    {
+      "name": "Chanthachone W.",
+      "joins": 13,
       "cancels": 1
     },
     {
@@ -32690,6 +32797,11 @@
     },
     {
       "name": "Keshia B.",
+      "joins": 8,
+      "cancels": 1
+    },
+    {
+      "name": "Debby D.",
       "joins": 8,
       "cancels": 1
     },
@@ -32739,6 +32851,11 @@
       "cancels": 1
     },
     {
+      "name": "Gary Z.",
+      "joins": 6,
+      "cancels": 1
+    },
+    {
       "name": "Steven L.",
       "joins": 5,
       "cancels": 1
@@ -32755,11 +32872,6 @@
     },
     {
       "name": "Winnie B.",
-      "joins": 5,
-      "cancels": 1
-    },
-    {
-      "name": "Gary Z.",
       "joins": 5,
       "cancels": 1
     },
@@ -32894,11 +33006,6 @@
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
-      "joins": 13,
-      "cancels": 0
-    },
-    {
       "name": "Danilo A. D.",
       "joins": 13,
       "cancels": 0
@@ -32979,11 +33086,6 @@
       "cancels": 0
     },
     {
-      "name": "Debby D.",
-      "joins": 8,
-      "cancels": 0
-    },
-    {
       "name": "Ting H.",
       "joins": 8,
       "cancels": 0
@@ -33024,12 +33126,12 @@
       "cancels": 0
     },
     {
-      "name": "Greg D.",
+      "name": "Mark R.",
       "joins": 6,
       "cancels": 0
     },
     {
-      "name": "Mark R.",
+      "name": "Greg D.",
       "joins": 6,
       "cancels": 0
     },
@@ -33349,12 +33451,17 @@
       "cancels": 0
     },
     {
-      "name": "Jiyeon K.",
+      "name": "Gilu G.",
       "joins": 3,
       "cancels": 0
     },
     {
       "name": "Brian B.",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
+      "name": "Jiyeon K.",
       "joins": 3,
       "cancels": 0
     },
@@ -33373,7 +33480,7 @@
       },
       {
         "name": "Stacie R.",
-        "joins": 13,
+        "joins": 14,
         "cancels": 0
       },
       {
@@ -33407,6 +33514,11 @@
         "cancels": 0
       },
       {
+        "name": "Steve Y.",
+        "joins": 6,
+        "cancels": 1
+      },
+      {
         "name": "C. Todd S.",
         "joins": 4,
         "cancels": 3
@@ -33417,22 +33529,17 @@
         "cancels": 0
       },
       {
+        "name": "G B.",
+        "joins": 6,
+        "cancels": 0
+      },
+      {
         "name": "Jake S.",
         "joins": 5,
         "cancels": 1
       },
       {
-        "name": "Steve Y.",
-        "joins": 5,
-        "cancels": 1
-      },
-      {
         "name": "Ming W.",
-        "joins": 5,
-        "cancels": 0
-      },
-      {
-        "name": "G B.",
         "joins": 5,
         "cancels": 0
       },
@@ -33452,6 +33559,11 @@
         "cancels": 0
       },
       {
+        "name": "Debby D.",
+        "joins": 3,
+        "cancels": 1
+      },
+      {
         "name": "Joj! W.",
         "joins": 3,
         "cancels": 1
@@ -33463,11 +33575,6 @@
       },
       {
         "name": "Joe S.",
-        "joins": 3,
-        "cancels": 0
-      },
-      {
-        "name": "Debby D.",
         "joins": 3,
         "cancels": 0
       },
@@ -33498,6 +33605,11 @@
       },
       {
         "name": "Brooke H.",
+        "joins": 3,
+        "cancels": 0
+      },
+      {
+        "name": "Bobby L.",
         "joins": 3,
         "cancels": 0
       },
@@ -33562,7 +33674,7 @@
         "cancels": 0
       },
       {
-        "name": "Steven T.",
+        "name": "Devin C.",
         "joins": 2,
         "cancels": 0
       },
@@ -33572,12 +33684,12 @@
         "cancels": 0
       },
       {
-        "name": "Devin C.",
+        "name": "Chris D.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Chris D.",
+        "name": "Steven T.",
         "joins": 2,
         "cancels": 0
       },
@@ -33602,11 +33714,6 @@
         "cancels": 0
       },
       {
-        "name": "Sheel K.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
         "name": "Sai Nath K.",
         "joins": 2,
         "cancels": 0
@@ -33617,12 +33724,22 @@
         "cancels": 0
       },
       {
-        "name": "Rebecca J.",
+        "name": "Sheel K.",
         "joins": 2,
         "cancels": 0
       },
       {
         "name": "Rich K.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
+        "name": "Rebecca J.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
+        "name": "Gilu G.",
         "joins": 2,
         "cancels": 0
       },
@@ -33637,11 +33754,6 @@
         "cancels": 0
       },
       {
-        "name": "Bobby L.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
         "name": "Peyton M.",
         "joins": 2,
         "cancels": 0
@@ -33650,6 +33762,11 @@
         "name": "Wesley A.",
         "joins": 2,
         "cancels": 0
+      },
+      {
+        "name": "Chanthachone W.",
+        "joins": 1,
+        "cancels": 1
       },
       {
         "name": "Arathi K.",
@@ -33680,6 +33797,11 @@
         "name": "Suhail A.",
         "joins": 1,
         "cancels": 1
+      },
+      {
+        "name": "Alicia Z.",
+        "joins": 1,
+        "cancels": 1
       }
     ],
     "morning": [
@@ -33694,12 +33816,12 @@
         "cancels": 1
       },
       {
-        "name": "Rebecca J.",
+        "name": "Rick G.",
         "joins": 3,
         "cancels": 1
       },
       {
-        "name": "Rick G.",
+        "name": "Rebecca J.",
         "joins": 3,
         "cancels": 1
       },
@@ -33729,22 +33851,22 @@
         "cancels": 0
       },
       {
-        "name": "Steven S.",
-        "joins": 2,
-        "cancels": 1
-      },
-      {
         "name": "Sheryl R.",
         "joins": 2,
         "cancels": 1
       },
       {
-        "name": "Mark K.",
+        "name": "Steven S.",
+        "joins": 2,
+        "cancels": 1
+      },
+      {
+        "name": "Lisha Y.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Lisha Y.",
+        "name": "Mark K.",
         "joins": 2,
         "cancels": 0
       },
@@ -34993,9 +35115,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019dbbbe-e259-7aa0-93cb-7d4b17780eb5",
           "status": "upcoming",
           "capacity": 42,
-          "count": 32,
+          "count": 33,
           "is_full": false,
-          "spots_left": 10
+          "spots_left": 9
         },
         {
           "title": "DUPR 4.0 Open Play",
@@ -35004,9 +35126,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019dbbbd-5b56-7bb3-92dc-21e931e4ecc9",
           "status": "upcoming",
           "capacity": 6,
-          "count": 4,
+          "count": 5,
           "is_full": false,
-          "spots_left": 2
+          "spots_left": 1
         },
         {
           "title": "DUPR 4.5 Open Play",
@@ -35048,9 +35170,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019e231a-bffc-7551-83e7-322468c4ae3d",
           "status": "upcoming",
           "capacity": 36,
-          "count": 34,
+          "count": 35,
           "is_full": false,
-          "spots_left": 2
+          "spots_left": 1
         },
         {
           "title": "4.0 Open Play",
@@ -35917,9 +36039,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019dcb65-510b-7dd6-8ec3-2db5e1358681",
           "status": "upcoming",
           "capacity": 12,
-          "count": 9,
-          "is_full": false,
-          "spots_left": 3
+          "count": 10,
+          "is_full": true,
+          "spots_left": 2
         },
         {
           "title": "4.5/4.0 Open Play",
@@ -36279,9 +36401,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019d9c4c-fe1f-7220-acb4-f8462d2e8484",
           "status": "upcoming",
           "capacity": 18,
-          "count": 5,
+          "count": 6,
           "is_full": false,
-          "spots_left": 13
+          "spots_left": 12
         },
         {
           "title": "DUPR 4.0 Open Play",
@@ -36301,9 +36423,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019e2c48-3273-7cc5-9b73-02ed037e28c6",
           "status": "upcoming",
           "capacity": 18,
-          "count": 2,
+          "count": 3,
           "is_full": false,
-          "spots_left": 16
+          "spots_left": 15
         },
         {
           "title": "4.5/4.0 Open Play",
@@ -36768,6 +36890,183 @@
       ]
     },
     {
+      "name": "Gary Zepnick",
+      "name_raw": "Gary Z.",
+      "dupr_id": "XJ62V7",
+      "rating": "4.899",
+      "sessions": [
+        {
+          "title": "4.0 Open Play",
+          "start": "MON JUN 1  10:00 AM",
+          "start_iso": "2026-06-01T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e231a-bffc-7551-83e7-322468c4ae3d",
+          "status": "upcoming",
+          "capacity": 36,
+          "count": 35,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE MAY 26  10:00 AM",
+          "start_iso": "2026-05-26T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017",
+          "status": "completed",
+          "capacity": 12,
+          "count": 11,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "FRI MAY 22  10:00 AM",
+          "start_iso": "2026-05-22T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-d05e-7aa0-93c7-2fff0a94613c",
+          "status": "completed",
+          "capacity": 48,
+          "count": 37,
+          "is_full": false,
+          "spots_left": 11
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON MAY 18  10:00 AM",
+          "start_iso": "2026-05-18T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-426d-7bb3-92d6-b234864f8f70",
+          "status": "completed",
+          "capacity": 12,
+          "count": 7,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON MAY 11  10:00 AM",
+          "start_iso": "2026-05-11T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d9c2d-3913-7cc2-99fc-4d1df0b1f36a",
+          "status": "completed",
+          "capacity": 12,
+          "count": 12,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU MAY 7  10:00 AM",
+          "start_iso": "2026-05-07T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d923d-ec10-7552-bb5d-1248f807362f",
+          "status": "completed",
+          "capacity": 42,
+          "count": 41,
+          "is_full": true,
+          "spots_left": 1
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "MON APR 27  10:00 AM",
+          "start_iso": "2026-04-27T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d4f4f-dae4-777b-a9ba-5551557328b5",
+          "status": "completed",
+          "capacity": 48,
+          "count": 43,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "MON APR 20  10:00 AM",
+          "start_iso": "2026-04-20T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d",
+          "status": "completed",
+          "capacity": 48,
+          "count": 43,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "MON APR 13  10:00 AM",
+          "start_iso": "2026-04-13T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/a6602870-17ce-46b2-9ee9-573ab8588bd8",
+          "status": "completed",
+          "capacity": 41,
+          "count": 36,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON APR 6  10:00 AM",
+          "start_iso": "2026-04-06T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2",
+          "status": "completed",
+          "capacity": 18,
+          "count": 12,
+          "is_full": false,
+          "spots_left": 6
+        }
+      ],
+      "activity": [
+        {
+          "ts": "2026-05-28T22:18:21",
+          "type": "join",
+          "name": "Gary Z.",
+          "title": "4.0 Open Play",
+          "start": "MON JUN 1  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019e231a-bffc-7551-83e7-322468c4ae3d"
+        },
+        {
+          "ts": "2026-05-25T18:48:26",
+          "type": "join",
+          "name": "Gary Z.",
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE MAY 26  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017"
+        },
+        {
+          "ts": "2026-05-19T06:07:17",
+          "type": "join",
+          "name": "Gary Z.",
+          "title": "4.0 Open Play",
+          "start": "FRI MAY 22  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-d05e-7aa0-93c7-2fff0a94613c"
+        },
+        {
+          "ts": "2026-05-18T12:59:56",
+          "type": "join",
+          "name": "Gary Z.",
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON MAY 18  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-426d-7bb3-92d6-b234864f8f70"
+        },
+        {
+          "ts": "2026-05-18T12:59:54",
+          "type": "cancel",
+          "name": "Gary Z.",
+          "title": "4.0 Open Play",
+          "start": "MON MAY 18  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-c7a5-7bb3-92df-a1a4c27b3727"
+        },
+        {
+          "ts": "2026-05-14T14:14:53",
+          "type": "join",
+          "name": "Gary Z.",
+          "title": "4.0 Open Play",
+          "start": "MON MAY 18  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-c7a5-7bb3-92df-a1a4c27b3727"
+        },
+        {
+          "ts": "2026-05-10T21:04:43",
+          "type": "join",
+          "name": "Gary Z.",
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON MAY 11  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019d9c2d-3913-7cc2-99fc-4d1df0b1f36a"
+        }
+      ],
+      "offenses": []
+    },
+    {
       "name": "GL",
       "name_raw": "Georgia L.",
       "dupr_id": "2Q5P77",
@@ -36780,9 +37079,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019e231a-bffc-7551-83e7-322468c4ae3d",
           "status": "upcoming",
           "capacity": 36,
-          "count": 34,
+          "count": 35,
           "is_full": false,
-          "spots_left": 2
+          "spots_left": 1
         },
         {
           "title": "4.0 Open Play",
@@ -37100,14 +37399,6 @@
           "title": "DUPR 4.0 Open Play",
           "start": "WED MAY 6  6:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019dab7d-5c1e-711e-95af-d16badffd1e4"
-        },
-        {
-          "ts": "2026-04-28T21:43:30",
-          "type": "join",
-          "name": "Adrian B.",
-          "title": "4.5/4.0 Open Play",
-          "start": "WED APR 29  6:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/019d4fd4-252c-7aad-93de-16b7767e7dac"
         }
       ],
       "offenses": []
@@ -38266,164 +38557,6 @@
       "rating": "4.104",
       "sessions": [],
       "activity": [],
-      "offenses": []
-    },
-    {
-      "name": "Gary Zepnick",
-      "name_raw": "Gary Z.",
-      "dupr_id": "XJ62V7",
-      "rating": "4.899",
-      "sessions": [
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE MAY 26  10:00 AM",
-          "start_iso": "2026-05-26T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017",
-          "status": "completed",
-          "capacity": 12,
-          "count": 11,
-          "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "FRI MAY 22  10:00 AM",
-          "start_iso": "2026-05-22T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-d05e-7aa0-93c7-2fff0a94613c",
-          "status": "completed",
-          "capacity": 48,
-          "count": 37,
-          "is_full": false,
-          "spots_left": 11
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON MAY 18  10:00 AM",
-          "start_iso": "2026-05-18T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-426d-7bb3-92d6-b234864f8f70",
-          "status": "completed",
-          "capacity": 12,
-          "count": 7,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON MAY 11  10:00 AM",
-          "start_iso": "2026-05-11T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d9c2d-3913-7cc2-99fc-4d1df0b1f36a",
-          "status": "completed",
-          "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU MAY 7  10:00 AM",
-          "start_iso": "2026-05-07T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d923d-ec10-7552-bb5d-1248f807362f",
-          "status": "completed",
-          "capacity": 42,
-          "count": 41,
-          "is_full": true,
-          "spots_left": 1
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "MON APR 27  10:00 AM",
-          "start_iso": "2026-04-27T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d4f4f-dae4-777b-a9ba-5551557328b5",
-          "status": "completed",
-          "capacity": 48,
-          "count": 43,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "MON APR 20  10:00 AM",
-          "start_iso": "2026-04-20T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d4f4f-d1bf-7aad-92e2-7f89ce1e969d",
-          "status": "completed",
-          "capacity": 48,
-          "count": 43,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "MON APR 13  10:00 AM",
-          "start_iso": "2026-04-13T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/a6602870-17ce-46b2-9ee9-573ab8588bd8",
-          "status": "completed",
-          "capacity": 41,
-          "count": 36,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON APR 6  10:00 AM",
-          "start_iso": "2026-04-06T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/e43d00f8-149b-470d-8a74-3615e3b720b2",
-          "status": "completed",
-          "capacity": 18,
-          "count": 12,
-          "is_full": false,
-          "spots_left": 6
-        }
-      ],
-      "activity": [
-        {
-          "ts": "2026-05-25T18:48:26",
-          "type": "join",
-          "name": "Gary Z.",
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE MAY 26  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-51af-7bb3-92da-5282559ac017"
-        },
-        {
-          "ts": "2026-05-19T06:07:17",
-          "type": "join",
-          "name": "Gary Z.",
-          "title": "4.0 Open Play",
-          "start": "FRI MAY 22  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-d05e-7aa0-93c7-2fff0a94613c"
-        },
-        {
-          "ts": "2026-05-18T12:59:56",
-          "type": "join",
-          "name": "Gary Z.",
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON MAY 18  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-426d-7bb3-92d6-b234864f8f70"
-        },
-        {
-          "ts": "2026-05-18T12:59:54",
-          "type": "cancel",
-          "name": "Gary Z.",
-          "title": "4.0 Open Play",
-          "start": "MON MAY 18  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-c7a5-7bb3-92df-a1a4c27b3727"
-        },
-        {
-          "ts": "2026-05-14T14:14:53",
-          "type": "join",
-          "name": "Gary Z.",
-          "title": "4.0 Open Play",
-          "start": "MON MAY 18  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbe-c7a5-7bb3-92df-a1a4c27b3727"
-        },
-        {
-          "ts": "2026-05-10T21:04:43",
-          "type": "join",
-          "name": "Gary Z.",
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON MAY 11  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019d9c2d-3913-7cc2-99fc-4d1df0b1f36a"
-        }
-      ],
       "offenses": []
     },
     {
@@ -39718,12 +39851,13 @@
       "status": "upcoming",
       "friends": [
         "Bradley L Frohman",
-        "GL"
+        "GL",
+        "Gary Zepnick"
       ],
-      "count": 2,
-      "registered": 34,
+      "count": 3,
+      "registered": 35,
       "capacity": 36,
-      "spots_left": 2,
+      "spots_left": 1,
       "is_full": false,
       "registrants": [
         "Alice K.",
@@ -39739,6 +39873,7 @@
         "Ed K.",
         "Elton W.",
         "Gary W.",
+        "Gary Z.",
         "Georgia L.",
         "Joj! W.",
         "Kim K.",
