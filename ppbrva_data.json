@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T08:07:07",
-  "next_scan_at": "2026-05-30T08:37:07",
+  "generated_at": "2026-05-30T08:23:31",
+  "next_scan_at": "2026-05-30T08:53:31",
   "stats": {
     "total": 255,
     "full_count": 32
@@ -16,8 +16,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 24,
-      "count": 12,
-      "pct": 50,
+      "count": 11,
+      "pct": 46,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
@@ -25,7 +25,6 @@
       "registrants": [
         "Beth B.",
         "Bobby L.",
-        "Brian P.",
         "Chris P.",
         "Cindy W.",
         "Eileen T.",
@@ -38,6 +37,10 @@
       ],
       "ratings": {},
       "departed": [
+        {
+          "name": "Brian P.",
+          "departed_at": "2026-05-30T08:22:15"
+        },
         {
           "name": "Jeffrey S.",
           "departed_at": "2026-05-30T07:25:20"
@@ -55,7 +58,7 @@
           "departed_at": "2026-05-29T11:08:11"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:05:58",
+      "last_snap_ts": "2026-05-30T08:22:15",
       "thieves": [],
       "big_dogs": []
     },
@@ -98,7 +101,7 @@
           "departed_at": "2026-05-29T23:36:16"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:06:00",
+      "last_snap_ts": "2026-05-30T08:22:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -151,7 +154,7 @@
           "departed_at": "2026-05-29T23:36:18"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:06:02",
+      "last_snap_ts": "2026-05-30T08:22:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -174,7 +177,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:40",
+      "last_snap_ts": "2026-05-30T08:22:58",
       "thieves": [],
       "big_dogs": []
     },
@@ -211,7 +214,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:06",
+      "last_snap_ts": "2026-05-30T08:22:22",
       "thieves": [],
       "big_dogs": []
     },
@@ -237,15 +240,15 @@
       "ratings": {},
       "departed": [
         {
-          "name": "Jon L.",
+          "name": "Michael N.",
           "departed_at": "2026-05-29T19:42:59"
         },
         {
-          "name": "Michael N.",
+          "name": "Jon L.",
           "departed_at": "2026-05-29T19:42:59"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:06:08",
+      "last_snap_ts": "2026-05-30T08:22:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -289,7 +292,7 @@
         "Ty L.": "4.29"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:10",
+      "last_snap_ts": "2026-05-30T08:22:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -303,8 +306,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 4,
-      "pct": 33,
+      "count": 5,
+      "pct": 42,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
@@ -313,13 +316,15 @@
         "Bradley F.",
         "David G.",
         "Mike B.",
-        "Pete H."
+        "Pete H.",
+        "Roy A."
       ],
       "ratings": {
         "Bradley F.": "4.09",
         "David G.": "3.94",
         "Mike B.": "4.37",
-        "Pete H.": "3.91"
+        "Pete H.": "3.91",
+        "Roy A.": "4.01"
       },
       "departed": [
         {
@@ -327,7 +332,7 @@
           "departed_at": "2026-05-29T13:49:08"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:06:13",
+      "last_snap_ts": "2026-05-30T08:22:28",
       "thieves": [],
       "big_dogs": []
     },
@@ -394,7 +399,7 @@
           "departed_at": "2026-05-29T23:36:29"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:06:15",
+      "last_snap_ts": "2026-05-30T08:22:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -428,7 +433,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:18",
+      "last_snap_ts": "2026-05-30T08:22:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -453,7 +458,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:20",
+      "last_snap_ts": "2026-05-30T08:22:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -478,7 +483,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:22",
+      "last_snap_ts": "2026-05-30T08:22:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -492,22 +497,24 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 6,
-      "count": 2,
-      "pct": 33,
+      "count": 3,
+      "pct": 50,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Barbara D.",
-        "Pete H."
+        "Pete H.",
+        "Roy A."
       ],
       "ratings": {
         "Barbara D.": "4.31",
-        "Pete H.": "3.91"
+        "Pete H.": "3.91",
+        "Roy A.": "4.01"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:24",
+      "last_snap_ts": "2026-05-30T08:22:40",
       "thieves": [],
       "big_dogs": []
     },
@@ -573,7 +580,7 @@
           "departed_at": "2026-05-29T21:18:51"
         }
       ],
-      "last_snap_ts": "2026-05-30T08:06:27",
+      "last_snap_ts": "2026-05-30T08:22:42",
       "thieves": [],
       "big_dogs": []
     },
@@ -605,7 +612,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:29",
+      "last_snap_ts": "2026-05-30T08:22:45",
       "thieves": [],
       "big_dogs": []
     },
@@ -633,7 +640,7 @@
         "C. Todd S.": "4.29"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:31",
+      "last_snap_ts": "2026-05-30T08:22:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -656,7 +663,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:35",
+      "last_snap_ts": "2026-05-30T08:22:53",
       "thieves": [],
       "big_dogs": []
     },
@@ -712,7 +719,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:42",
+      "last_snap_ts": "2026-05-30T08:23:01",
       "thieves": [],
       "big_dogs": []
     },
@@ -726,20 +733,22 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 6,
-      "count": 1,
-      "pct": 17,
+      "count": 2,
+      "pct": 33,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "Pete H."
+        "Pete H.",
+        "Roy A."
       ],
       "ratings": {
-        "Pete H.": "3.91"
+        "Pete H.": "3.91",
+        "Roy A.": "4.01"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:44",
+      "last_snap_ts": "2026-05-30T08:23:04",
       "thieves": [],
       "big_dogs": []
     },
@@ -770,7 +779,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:47",
+      "last_snap_ts": "2026-05-30T08:23:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -795,7 +804,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:49",
+      "last_snap_ts": "2026-05-30T08:23:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -809,22 +818,24 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 2,
-      "pct": 17,
+      "count": 3,
+      "pct": 25,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "Jeffrey S.",
-        "Pete H."
+        "Pete H.",
+        "Roy A."
       ],
       "ratings": {
         "Jeffrey S.": "3.98",
-        "Pete H.": "3.91"
+        "Pete H.": "3.91",
+        "Roy A.": "4.01"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:51",
+      "last_snap_ts": "2026-05-30T08:23:13",
       "thieves": [],
       "big_dogs": []
     },
@@ -871,7 +882,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:53",
+      "last_snap_ts": "2026-05-30T08:23:16",
       "thieves": [],
       "big_dogs": []
     },
@@ -903,7 +914,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:55",
+      "last_snap_ts": "2026-05-30T08:23:19",
       "thieves": [],
       "big_dogs": []
     },
@@ -943,7 +954,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:06:57",
+      "last_snap_ts": "2026-05-30T08:23:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -957,20 +968,22 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 1,
-      "pct": 8,
+      "count": 2,
+      "pct": 17,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "Pete H."
+        "Pete H.",
+        "Roy A."
       ],
       "ratings": {
-        "Pete H.": "3.91"
+        "Pete H.": "3.91",
+        "Roy A.": "4.01"
       },
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:07:00",
+      "last_snap_ts": "2026-05-30T08:23:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -996,7 +1009,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:07:02",
+      "last_snap_ts": "2026-05-30T08:23:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -1019,7 +1032,7 @@
       "registrants": [],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-05-30T08:07:06",
+      "last_snap_ts": "2026-05-30T08:23:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -10259,11 +10272,11 @@
       "ratings": {},
       "departed": [
         {
-          "name": "Melba T.",
+          "name": "Ed K.",
           "departed_at": "2026-05-29T12:12:49"
         },
         {
-          "name": "Ed K.",
+          "name": "Melba T.",
           "departed_at": "2026-05-29T12:12:49"
         }
       ],
@@ -10390,6 +10403,54 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-05-30T08:23:24",
+      "type": "join",
+      "name": "Roy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI JUN 5  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-4089-7662-b5a4-2efcf62979b9"
+    },
+    {
+      "ts": "2026-05-30T08:23:13",
+      "type": "join",
+      "name": "Roy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "THU JUN 4  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-3ec1-7551-83e3-a5e565a0d359"
+    },
+    {
+      "ts": "2026-05-30T08:23:04",
+      "type": "join",
+      "name": "Roy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "WED JUN 3  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-3c7f-7662-b5a3-33dfc1813bfa"
+    },
+    {
+      "ts": "2026-05-30T08:22:40",
+      "type": "join",
+      "name": "Roy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "TUE JUN 2  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-3ab5-7551-83e2-a627c04f802d"
+    },
+    {
+      "ts": "2026-05-30T08:22:28",
+      "type": "join",
+      "name": "Roy A.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON JUN 1  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e231a-38e7-7551-83e1-a8ec9223b9c8"
+    },
+    {
+      "ts": "2026-05-30T08:22:15",
+      "type": "cancel",
+      "name": "Brian P.",
+      "title": "4.0 Open Play",
+      "start": "SAT MAY 30  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019dcb53-9713-7dd9-bc7a-5f0b2f3ed69a"
+    },
     {
       "ts": "2026-05-30T08:06:02",
       "type": "join",
@@ -32661,6 +32722,11 @@
       "cancels": 10
     },
     {
+      "name": "Brian P.",
+      "joins": 16,
+      "cancels": 10
+    },
+    {
       "name": "Gary W.",
       "joins": 15,
       "cancels": 10
@@ -32693,11 +32759,6 @@
     {
       "name": "C. Todd S.",
       "joins": 19,
-      "cancels": 9
-    },
-    {
-      "name": "Brian P.",
-      "joins": 16,
       "cancels": 9
     },
     {
@@ -32771,6 +32832,11 @@
       "cancels": 5
     },
     {
+      "name": "Roy A.",
+      "joins": 20,
+      "cancels": 5
+    },
+    {
       "name": "Sheryl R.",
       "joins": 20,
       "cancels": 5
@@ -32778,11 +32844,6 @@
     {
       "name": "Alicia Z.",
       "joins": 16,
-      "cancels": 5
-    },
-    {
-      "name": "Roy A.",
-      "joins": 15,
       "cancels": 5
     },
     {
@@ -33371,12 +33432,12 @@
       "cancels": 0
     },
     {
-      "name": "Charles N.",
+      "name": "Chanthachone W.",
       "joins": 12,
       "cancels": 0
     },
     {
-      "name": "Chanthachone W.",
+      "name": "Charles N.",
       "joins": 12,
       "cancels": 0
     },
@@ -33676,12 +33737,12 @@
       "cancels": 0
     },
     {
-      "name": "Roselyn S.",
+      "name": "Gulhan D.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Gulhan D.",
+      "name": "Roselyn S.",
       "joins": 3,
       "cancels": 0
     },
@@ -33691,12 +33752,12 @@
       "cancels": 0
     },
     {
-      "name": "Levin S.",
+      "name": "Ryan B.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Ryan B.",
+      "name": "Levin S.",
       "joins": 3,
       "cancels": 0
     },
@@ -33716,12 +33777,12 @@
       "cancels": 0
     },
     {
-      "name": "Hamoon H.",
+      "name": "Shachi P.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Shachi P.",
+      "name": "Hamoon H.",
       "joins": 3,
       "cancels": 0
     },
@@ -33801,12 +33862,12 @@
       "cancels": 0
     },
     {
-      "name": "Charlie K.",
+      "name": "Kevin S.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Kevin S.",
+      "name": "Charlie K.",
       "joins": 3,
       "cancels": 0
     },
@@ -33826,12 +33887,12 @@
       "cancels": 0
     },
     {
-      "name": "Brian B.",
+      "name": "Jiyeon K.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Jiyeon K.",
+      "name": "Brian B.",
       "joins": 3,
       "cancels": 0
     },
@@ -33994,12 +34055,12 @@
         "cancels": 0
       },
       {
-        "name": "Bobby L.",
+        "name": "Brooke H.",
         "joins": 3,
         "cancels": 0
       },
       {
-        "name": "Brooke H.",
+        "name": "Bobby L.",
         "joins": 3,
         "cancels": 0
       },
@@ -34069,6 +34130,11 @@
         "cancels": 0
       },
       {
+        "name": "Chris D.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
         "name": "Kasey D.",
         "joins": 2,
         "cancels": 0
@@ -34080,11 +34146,6 @@
       },
       {
         "name": "Devin C.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
-        "name": "Chris D.",
         "joins": 2,
         "cancels": 0
       },
@@ -34109,12 +34170,12 @@
         "cancels": 0
       },
       {
-        "name": "Sheel K.",
+        "name": "Sai Nath K.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Sai Nath K.",
+        "name": "Sheel K.",
         "joins": 2,
         "cancels": 0
       },
@@ -34134,12 +34195,12 @@
         "cancels": 0
       },
       {
-        "name": "Tim P.",
+        "name": "Tiffani L.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Tiffani L.",
+        "name": "Tim P.",
         "joins": 2,
         "cancels": 0
       },
@@ -34221,7 +34282,17 @@
         "cancels": 0
       },
       {
-        "name": "Rick G.",
+        "name": "Lori L.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
+        "name": "Mark K.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
+        "name": "Steve M.",
         "joins": 2,
         "cancels": 0
       },
@@ -34231,7 +34302,7 @@
         "cancels": 0
       },
       {
-        "name": "Mark K.",
+        "name": "Rick G.",
         "joins": 2,
         "cancels": 0
       },
@@ -34246,16 +34317,6 @@
         "cancels": 0
       },
       {
-        "name": "Lori L.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
-        "name": "Steve M.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
         "name": "Elton W.",
         "joins": 2,
         "cancels": 0
@@ -34266,12 +34327,7 @@
         "cancels": 0
       },
       {
-        "name": "Kim K.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
-        "name": "Konrad S.",
+        "name": "Dennis W.",
         "joins": 2,
         "cancels": 0
       },
@@ -34281,7 +34337,12 @@
         "cancels": 0
       },
       {
-        "name": "Dennis W.",
+        "name": "Kim K.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
+        "name": "Konrad S.",
         "joins": 2,
         "cancels": 0
       },
@@ -35507,9 +35568,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019e231a-38e7-7551-83e1-a8ec9223b9c8",
           "status": "upcoming",
           "capacity": 12,
-          "count": 4,
+          "count": 5,
           "is_full": false,
-          "spots_left": 8
+          "spots_left": 7
         },
         {
           "title": "4.0 Open Play",
