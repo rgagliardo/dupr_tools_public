@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-08T17:46:58",
-  "next_scan_at": "2026-06-08T18:16:58",
+  "generated_at": "2026-06-08T18:01:53",
+  "next_scan_at": "2026-06-08T18:31:53",
   "stats": {
     "total": 283,
-    "full_count": 35
+    "full_count": 34
   },
   "sessions": [
     {
@@ -14,29 +14,33 @@
       "end_iso": "2026-06-08T20:00:00",
       "start_display": "MON JUN 8  6:00 PM",
       "end_display": "8:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 12,
-      "count": 12,
-      "pct": 100,
-      "is_full": true,
+      "count": 11,
+      "pct": 92,
+      "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
         "Alayna H.",
         "Amity L.",
+        "Bill E.",
         "Bobby L.",
         "Carson C.",
         "Dipen P.",
         "Laine S.",
-        "Prasad P.",
         "Suhail A.",
         "Suraj Singh C.",
         "Todd B.",
-        "+2 players"
+        "+1 player"
       ],
       "ratings": {},
       "departed": [
+        {
+          "name": "Prasad P.",
+          "departed_at": "2026-06-08T18:01:24"
+        },
         {
           "name": "Michelle H.",
           "departed_at": "2026-06-08T12:48:20"
@@ -50,8 +54,21 @@
           "departed_at": "2026-06-08T07:32:18"
         }
       ],
-      "last_snap_ts": "2026-06-08T17:46:21",
-      "thieves": [],
+      "last_snap_ts": "2026-06-08T18:01:24",
+      "thieves": [
+        {
+          "name": "Prasad P.",
+          "last_seen_full_ts": "2026-06-08T16:46:48",
+          "first_absent_ts": "2026-06-08T18:01:24",
+          "detection_gap_min": 75
+        },
+        {
+          "name": "Unsolved Case (ghost player)",
+          "last_seen_full_ts": "2026-06-08T16:46:48",
+          "first_absent_ts": "2026-06-08T18:01:24",
+          "detection_gap_min": 75
+        }
+      ],
       "big_dogs": []
     },
     {
@@ -64,18 +81,18 @@
       "end_display": "10:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 2,
-      "pct": 17,
+      "count": 1,
+      "pct": 8,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "+2 players"
+        "+1 player"
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:25",
+      "last_snap_ts": "2026-06-08T18:01:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -105,7 +122,7 @@
           "departed_at": "2026-06-08T16:46:53"
         }
       ],
-      "last_snap_ts": "2026-06-08T17:46:27",
+      "last_snap_ts": "2026-06-08T18:01:28",
       "thieves": [],
       "big_dogs": []
     },
@@ -134,7 +151,7 @@
         "Pete H.": "3.91"
       },
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:30",
+      "last_snap_ts": "2026-06-08T18:01:29",
       "thieves": [],
       "big_dogs": []
     },
@@ -207,7 +224,7 @@
           "departed_at": "2026-06-08T09:22:46"
         }
       ],
-      "last_snap_ts": "2026-06-08T17:46:32",
+      "last_snap_ts": "2026-06-08T18:01:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -253,7 +270,7 @@
           "departed_at": "2026-06-08T07:32:29"
         }
       ],
-      "last_snap_ts": "2026-06-08T17:46:34",
+      "last_snap_ts": "2026-06-08T18:01:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -278,7 +295,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:36",
+      "last_snap_ts": "2026-06-08T18:01:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -303,7 +320,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:38",
+      "last_snap_ts": "2026-06-08T18:01:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -336,7 +353,7 @@
         "Roy A.": "4.01"
       },
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:40",
+      "last_snap_ts": "2026-06-08T18:01:39",
       "thieves": [],
       "big_dogs": []
     },
@@ -396,7 +413,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:42",
+      "last_snap_ts": "2026-06-08T18:01:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -447,7 +464,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:44",
+      "last_snap_ts": "2026-06-08T18:01:42",
       "thieves": [],
       "big_dogs": []
     },
@@ -473,7 +490,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:46",
+      "last_snap_ts": "2026-06-08T18:01:44",
       "thieves": [],
       "big_dogs": []
     },
@@ -498,7 +515,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:48",
+      "last_snap_ts": "2026-06-08T18:01:46",
       "thieves": [],
       "big_dogs": []
     },
@@ -558,7 +575,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:50",
+      "last_snap_ts": "2026-06-08T18:01:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -591,7 +608,7 @@
         "Roy A.": "4.01"
       },
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:56",
+      "last_snap_ts": "2026-06-08T18:01:51",
       "thieves": [],
       "big_dogs": []
     },
@@ -629,7 +646,7 @@
       ],
       "ratings": {},
       "departed": [],
-      "last_snap_ts": "2026-06-08T17:46:58",
+      "last_snap_ts": "2026-06-08T18:01:52",
       "thieves": [],
       "big_dogs": []
     },
@@ -11398,6 +11415,62 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-06-08T18:01:26",
+      "type": "join",
+      "name": "+1 player",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON JUN 8  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c18-cb19-7cc5-98c3-540d44f13b4d"
+    },
+    {
+      "ts": "2026-06-08T18:01:26",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON JUN 8  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c18-cb19-7cc5-98c3-540d44f13b4d"
+    },
+    {
+      "ts": "2026-06-08T18:01:24",
+      "type": "join",
+      "name": "+1 player",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON JUN 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
+    {
+      "ts": "2026-06-08T18:01:24",
+      "type": "join",
+      "name": "Bill E.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON JUN 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
+    {
+      "ts": "2026-06-08T18:01:24",
+      "type": "cancel",
+      "name": "+2 players",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON JUN 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
+    {
+      "ts": "2026-06-08T18:01:24",
+      "type": "cancel",
+      "name": "Prasad P.",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON JUN 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
+    {
+      "ts": "2026-06-08T18:01:24",
+      "type": "freed",
+      "name": "11/12",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON JUN 8  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
     {
       "ts": "2026-06-08T17:46:32",
       "type": "join",
@@ -31481,6 +31554,24 @@
   ],
   "thieves": [
     {
+      "name": "Prasad P.",
+      "last_seen_full_ts": "2026-06-08T16:46:48",
+      "first_absent_ts": "2026-06-08T18:01:24",
+      "detection_gap_min": 75,
+      "session_title": "4.5/4.0 Open Play",
+      "session_start": "MON JUN 8  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
+    {
+      "name": "Unsolved Case (ghost player)",
+      "last_seen_full_ts": "2026-06-08T16:46:48",
+      "first_absent_ts": "2026-06-08T18:01:24",
+      "detection_gap_min": 75,
+      "session_title": "4.5/4.0 Open Play",
+      "session_start": "MON JUN 8  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019e2c29-0b5a-7cc5-995c-6b48165976cd"
+    },
+    {
       "name": "Elton W.",
       "last_seen_full_ts": "2026-04-02T18:29:50",
       "first_absent_ts": "2026-04-03T20:01:38",
@@ -32646,6 +32737,11 @@
       "cancels": 1
     },
     {
+      "name": "Prasad P.",
+      "joins": 4,
+      "cancels": 1
+    },
+    {
       "name": "Robert B.",
       "joins": 4,
       "cancels": 1
@@ -33001,6 +33097,11 @@
       "cancels": 0
     },
     {
+      "name": "Bill E.",
+      "joins": 5,
+      "cancels": 0
+    },
+    {
       "name": "Peyton M.",
       "joins": 5,
       "cancels": 0
@@ -33012,11 +33113,6 @@
     },
     {
       "name": "Roselyn S.",
-      "joins": 4,
-      "cancels": 0
-    },
-    {
-      "name": "Prasad P.",
       "joins": 4,
       "cancels": 0
     },
@@ -33132,11 +33228,6 @@
     },
     {
       "name": "Karen W.",
-      "joins": 4,
-      "cancels": 0
-    },
-    {
-      "name": "Bill E.",
       "joins": 4,
       "cancels": 0
     },
@@ -34805,12 +34896,12 @@
           "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
         },
         {
-          "title": "DUPR 4.0 Open Play",
-          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-        },
-        {
           "title": "4.0 Open Play",
           "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
         }
       ]
     },
@@ -37806,12 +37897,12 @@
               "url": "https://ppbrva.podplay.app/community/events/019d3fc3-af9e-7000-9033-34477e343105"
             },
             {
-              "title": "DUPR 4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
-            },
-            {
               "title": "4.0 Open Play",
               "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+            },
+            {
+              "title": "DUPR 4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019d3fc1-83ca-7dde-a7c9-cddeed3bea69"
             }
           ],
           "resolved": false
