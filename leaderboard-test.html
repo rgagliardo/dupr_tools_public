@@ -708,6 +708,18 @@
             min-width: 0;
             font-variant-numeric: tabular-nums;
         }
+        /* Small mobile: "Label: name · record (pct)" overflows the card width,
+           and because the label (flex-shrink: 0) holds the left half of the row,
+           the wrapped tail (e.g. "(100%)") left-aligns inside the value box —
+           which starts mid-card — so it READS as a centered orphan. Below the
+           card's comfortable inline width, stack the value on its own full-width
+           line under the label so it's a clean left-aligned block. Wider screens
+           keep the single-line layout unchanged. */
+        @media (max-width: 600px) {
+            .cs-info-row { display: block; margin-bottom: 8px; }
+            .cs-info-label { display: block; margin-bottom: 1px; }
+            .cs-info-value { display: block; padding-left: 10px; }
+        }
         /* Career Stats is organized into meaning-groups (performance →
            context → chemistry → opponents → identity). A subtle rule
            separates consecutive groups; the first group has none. Empty
@@ -2360,7 +2372,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Last Updated: June 14 at 8:43 AM</span>
+            <span>Last Updated: June 14 at 8:52 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
