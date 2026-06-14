@@ -677,13 +677,6 @@
 
         .sh-empty-msg { color: var(--txt-faint); font-style: italic; padding: 8px 2px; font-size: 12px; }
 
-        /* ── Player meta (DUPR ID + notes, inside expanded card) ───── */
-        .player-meta {
-            padding: 8px 12px 4px; font-size: 10px; color: var(--txt-dim);
-            display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
-        }
-        .player-meta .player-notes { font-style: italic; }
-
         /* ── Career Stats (player card) ─────────────────────────────── */
         .career-stats { padding: 10px 12px 6px; }
         /* Info rows under the section header — one consistent shape for
@@ -721,7 +714,7 @@
         @media (max-width: 600px) {
             .cs-info-row { display: block; margin-bottom: 8px; }
             .cs-info-label { display: block; margin-bottom: 1px; }
-            .cs-info-value { display: block; }
+            .cs-info-value { display: block; padding-left: 10px; }
         }
         /* Career Stats is organized into meaning-groups (performance →
            context → chemistry → opponents → identity). A subtle rule
@@ -739,7 +732,10 @@
         .cs-group > :last-child { margin-bottom: 0; }
         /* Best-partner name nested in a value cell still gets the player-link
            styling; bump the underline to read clearly on the brighter color. */
-        .cs-bp-name { color: var(--txt-2); font-weight: 600; }
+        /* Value name (partner/opponent). Normal weight so the bold label is the
+           only bold element per row — the name stays distinct via its brighter
+           --txt-2 color (vs --txt-mid stats) and the link underline. */
+        .cs-bp-name { color: var(--txt-2); font-weight: 400; }
         .cs-bp-name.player-link {
             text-decoration-color: rgba(160, 160, 200, 0.75);
         }
@@ -2375,7 +2371,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Updated: 6/14 at 9:00 AM</span>
+            <span>Updated: 6/14 at 9:06 AM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
