@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-25T17:55:33",
-  "next_scan_at": "2026-06-25T18:25:33",
+  "generated_at": "2026-06-25T18:10:34",
+  "next_scan_at": "2026-06-25T18:40:34",
   "stats": {
     "total": 367,
     "full_count": 43
@@ -14,10 +14,10 @@
       "end_iso": "2026-06-25T20:00:00",
       "start_display": "THU JUN 25  6:00 PM",
       "end_display": "8:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 18,
-      "count": 15,
-      "pct": 83,
+      "count": 14,
+      "pct": 78,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
@@ -33,7 +33,6 @@
         "Matt B.",
         "Ryan K.",
         "Suhail A.",
-        "Suraj Singh C.",
         "Thaian N.",
         "Ty L.",
         "+2 players"
@@ -41,6 +40,10 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [
+        {
+          "name": "Suraj Singh C.",
+          "departed_at": "2026-06-25T18:09:14"
+        },
         {
           "name": "G B.",
           "departed_at": "2026-06-25T17:53:54"
@@ -66,8 +69,15 @@
           "departed_at": "2026-06-25T16:31:50"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:53:54",
-      "thieves": [],
+      "last_snap_ts": "2026-06-25T18:09:14",
+      "thieves": [
+        {
+          "name": "Suraj Singh C.",
+          "last_seen_full_ts": "2026-06-25T15:27:45",
+          "first_absent_ts": "2026-06-25T18:09:14",
+          "detection_gap_min": 161
+        }
+      ],
       "big_dogs": []
     },
     {
@@ -144,7 +154,7 @@
           "departed_at": "2026-06-24T18:26:06"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:53:57",
+      "last_snap_ts": "2026-06-25T18:09:16",
       "thieves": [],
       "big_dogs": []
     },
@@ -181,7 +191,7 @@
           "departed_at": "2026-06-25T09:37:35"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:54:00",
+      "last_snap_ts": "2026-06-25T18:09:18",
       "thieves": [],
       "big_dogs": []
     },
@@ -218,7 +228,7 @@
           "departed_at": "2026-06-25T10:31:31"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:54:02",
+      "last_snap_ts": "2026-06-25T18:09:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -244,7 +254,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:04",
+      "last_snap_ts": "2026-06-25T18:09:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -283,7 +293,7 @@
           "departed_at": "2026-06-24T18:25:51"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:53:45",
+      "last_snap_ts": "2026-06-25T18:09:06",
       "thieves": [],
       "big_dogs": []
     },
@@ -324,7 +334,7 @@
       },
       "min_dupr": "4.20",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:53:48",
+      "last_snap_ts": "2026-06-25T18:09:09",
       "thieves": [],
       "big_dogs": []
     },
@@ -361,7 +371,7 @@
           "departed_at": "2026-06-25T10:31:46"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:54:18",
+      "last_snap_ts": "2026-06-25T18:09:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -395,7 +405,7 @@
           "departed_at": "2026-06-25T09:37:40"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:54:07",
+      "last_snap_ts": "2026-06-25T18:09:24",
       "thieves": [],
       "big_dogs": []
     },
@@ -419,7 +429,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:11",
+      "last_snap_ts": "2026-06-25T18:09:27",
       "thieves": [],
       "big_dogs": []
     },
@@ -443,7 +453,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:23",
+      "last_snap_ts": "2026-06-25T18:09:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -477,7 +487,7 @@
       },
       "min_dupr": "4.20",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:53:50",
+      "last_snap_ts": "2026-06-25T18:09:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -514,7 +524,7 @@
           "departed_at": "2026-06-24T18:25:57"
         }
       ],
-      "last_snap_ts": "2026-06-25T17:53:52",
+      "last_snap_ts": "2026-06-25T18:09:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -538,10 +548,12 @@
         "Roy A.",
         "+1 player"
       ],
-      "ratings": {},
+      "ratings": {
+        "Roy A.": "4.01"
+      },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:37",
+      "last_snap_ts": "2026-06-25T18:09:39",
       "thieves": [],
       "big_dogs": []
     },
@@ -565,7 +577,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:53:39",
+      "last_snap_ts": "2026-06-25T18:09:00",
       "thieves": [],
       "big_dogs": []
     },
@@ -589,7 +601,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:53:43",
+      "last_snap_ts": "2026-06-25T18:09:04",
       "thieves": [],
       "big_dogs": []
     },
@@ -613,7 +625,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:40",
+      "last_snap_ts": "2026-06-25T18:09:43",
       "thieves": [],
       "big_dogs": []
     },
@@ -674,7 +686,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:43",
+      "last_snap_ts": "2026-06-25T18:09:46",
       "thieves": [],
       "big_dogs": []
     },
@@ -707,7 +719,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:45",
+      "last_snap_ts": "2026-06-25T18:09:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -737,7 +749,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:47",
+      "last_snap_ts": "2026-06-25T18:09:50",
       "thieves": [],
       "big_dogs": []
     },
@@ -761,7 +773,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:51",
+      "last_snap_ts": "2026-06-25T18:09:54",
       "thieves": [],
       "big_dogs": []
     },
@@ -785,7 +797,7 @@
       "ratings": {},
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:55",
+      "last_snap_ts": "2026-06-25T18:09:58",
       "thieves": [],
       "big_dogs": []
     },
@@ -817,7 +829,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:57",
+      "last_snap_ts": "2026-06-25T18:10:00",
       "thieves": [],
       "big_dogs": []
     },
@@ -872,7 +884,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:00",
+      "last_snap_ts": "2026-06-25T18:10:02",
       "thieves": [],
       "big_dogs": []
     },
@@ -900,7 +912,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:02",
+      "last_snap_ts": "2026-06-25T18:10:04",
       "thieves": [],
       "big_dogs": []
     },
@@ -929,7 +941,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:04",
+      "last_snap_ts": "2026-06-25T18:10:06",
       "thieves": [],
       "big_dogs": []
     },
@@ -953,7 +965,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:08",
+      "last_snap_ts": "2026-06-25T18:10:11",
       "thieves": [],
       "big_dogs": []
     },
@@ -977,7 +989,7 @@
       "ratings": {},
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:13",
+      "last_snap_ts": "2026-06-25T18:10:15",
       "thieves": [],
       "big_dogs": []
     },
@@ -1005,7 +1017,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:15",
+      "last_snap_ts": "2026-06-25T18:10:17",
       "thieves": [],
       "big_dogs": []
     },
@@ -1056,7 +1068,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:17",
+      "last_snap_ts": "2026-06-25T18:10:20",
       "thieves": [],
       "big_dogs": []
     },
@@ -1084,7 +1096,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:19",
+      "last_snap_ts": "2026-06-25T18:10:22",
       "thieves": [],
       "big_dogs": []
     },
@@ -1108,7 +1120,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:25",
+      "last_snap_ts": "2026-06-25T18:10:26",
       "thieves": [],
       "big_dogs": []
     },
@@ -1122,8 +1134,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 18,
-      "pct": 50,
+      "count": 19,
+      "pct": 53,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
@@ -1141,6 +1153,7 @@
         "Lori L.",
         "Marshall C.",
         "Melba T.",
+        "Mike B.",
         "Ming W.",
         "Rebecca J.",
         "Rick G.",
@@ -1151,7 +1164,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:27",
+      "last_snap_ts": "2026-06-25T18:10:29",
       "thieves": [],
       "big_dogs": []
     },
@@ -1179,7 +1192,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:30",
+      "last_snap_ts": "2026-06-25T18:10:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -1206,7 +1219,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:55:33",
+      "last_snap_ts": "2026-06-25T18:10:34",
       "thieves": [],
       "big_dogs": []
     },
@@ -1230,7 +1243,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-25T17:54:16",
+      "last_snap_ts": "2026-06-25T18:09:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -14757,6 +14770,22 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-06-25T18:10:29",
+      "type": "join",
+      "name": "Mike B.",
+      "title": "4.0 Open Play",
+      "start": "THU JUL 2  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c4f-121a-7cc8-9d28-146858a3c7af"
+    },
+    {
+      "ts": "2026-06-25T18:09:14",
+      "type": "cancel",
+      "name": "Suraj Singh C.",
+      "title": "4.5/4.0 Open Play",
+      "start": "THU JUN 25  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a"
+    },
     {
       "ts": "2026-06-25T17:53:54",
       "type": "cancel",
@@ -32292,25 +32321,18 @@
       "title": "DUPR 4.0 Open Play",
       "start": "TUE MAY 26  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019e0892-1406-7eeb-a740-a7efddc06767"
-    },
-    {
-      "ts": "2026-05-26T18:07:42",
-      "type": "join",
-      "name": "Monty S.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "TUE MAY 26  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019e0892-1406-7eeb-a740-a7efddc06767"
-    },
-    {
-      "ts": "2026-05-26T18:07:42",
-      "type": "cancel",
-      "name": "Jin D.",
-      "title": "DUPR 4.0 Open Play",
-      "start": "TUE MAY 26  6:00 PM",
-      "url": "https://ppbrva.podplay.app/community/events/019e0892-1406-7eeb-a740-a7efddc06767"
     }
   ],
   "thieves": [
+    {
+      "name": "Suraj Singh C.",
+      "last_seen_full_ts": "2026-06-25T15:27:45",
+      "first_absent_ts": "2026-06-25T18:09:14",
+      "detection_gap_min": 161,
+      "session_title": "4.5/4.0 Open Play",
+      "session_start": "THU JUN 25  6:00 PM",
+      "session_url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a"
+    },
     {
       "name": "Elton W.",
       "last_seen_full_ts": "2026-04-02T18:29:50",
@@ -33023,14 +33045,14 @@
       "cancels": 12
     },
     {
-      "name": "Chris P.",
-      "joins": 20,
+      "name": "Suraj Singh C.",
+      "joins": 38,
       "cancels": 11
     },
     {
-      "name": "Suraj Singh C.",
-      "joins": 38,
-      "cancels": 10
+      "name": "Chris P.",
+      "joins": 20,
+      "cancels": 11
     },
     {
       "name": "Thaian N.",
@@ -33259,7 +33281,7 @@
     },
     {
       "name": "Mike B.",
-      "joins": 29,
+      "joins": 30,
       "cancels": 3
     },
     {
@@ -36317,11 +36339,11 @@
           "start": "THU JUN 25  6:00 PM",
           "start_iso": "2026-06-25T18:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 18,
-          "count": 15,
+          "count": 14,
           "is_full": false,
-          "spots_left": 3
+          "spots_left": 4
         },
         {
           "title": "DUPR 4.5 Open Play",
@@ -36566,11 +36588,11 @@
           "start": "THU JUN 25  6:00 PM",
           "start_iso": "2026-06-25T18:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 18,
-          "count": 15,
+          "count": 14,
           "is_full": false,
-          "spots_left": 3
+          "spots_left": 4
         },
         {
           "title": "4.0 Open Play",
@@ -37064,11 +37086,11 @@
           "start": "THU JUN 25  6:00 PM",
           "start_iso": "2026-06-25T18:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 18,
-          "count": 15,
+          "count": 14,
           "is_full": false,
-          "spots_left": 3
+          "spots_left": 4
         },
         {
           "title": "DUPR 4.5 Open Play",
@@ -41235,16 +41257,16 @@
       "start": "THU JUN 25  6:00 PM",
       "start_iso": "2026-06-25T18:00:00",
       "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a",
-      "status": "upcoming",
+      "status": "live",
       "friends": [
         "Charles Neufeldt",
         "Thaian",
         "Todd Springer"
       ],
       "count": 3,
-      "registered": 15,
+      "registered": 14,
       "capacity": 18,
-      "spots_left": 3,
+      "spots_left": 4,
       "is_full": false,
       "registrants": [
         "Brian B.",
@@ -41257,13 +41279,16 @@
         "Matt B.",
         "Ryan K.",
         "Suhail A.",
-        "Suraj Singh C.",
         "Thaian N.",
         "Ty L.",
         "+2 players"
       ],
       "ratings": {},
       "departed": [
+        {
+          "name": "Suraj Singh C.",
+          "departed_at": "2026-06-25T18:09:14"
+        },
         {
           "name": "G B.",
           "departed_at": "2026-06-25T17:53:54"
