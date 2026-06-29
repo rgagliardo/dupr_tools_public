@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-29T18:10:32",
-  "next_scan_at": "2026-06-29T18:40:32",
+  "generated_at": "2026-06-29T18:27:17",
+  "next_scan_at": "2026-06-29T18:57:17",
   "stats": {
     "total": 385,
     "full_count": 45
@@ -15,9 +15,9 @@
       "start_display": "MON JUN 29  6:00 PM",
       "end_display": "8:00 PM",
       "status": "live",
-      "capacity": 18,
+      "capacity": 24,
       "count": 17,
-      "pct": 94,
+      "pct": 71,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": true,
@@ -53,15 +53,8 @@
           "departed_at": "2026-06-28T23:35:58"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:08:57",
-      "thieves": [
-        {
-          "name": "Unsolved Case (cloaked player)",
-          "last_seen_full_ts": "2026-06-29T17:53:51",
-          "first_absent_ts": "2026-06-29T18:08:57",
-          "detection_gap_min": 15
-        }
-      ],
+      "last_snap_ts": "2026-06-29T18:25:44",
+      "thieves": [],
       "big_dogs": []
     },
     {
@@ -84,7 +77,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:01",
+      "last_snap_ts": "2026-06-29T18:25:48",
       "thieves": [],
       "big_dogs": []
     },
@@ -98,30 +91,32 @@
       "end_display": "10:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 3,
-      "pct": 25,
+      "count": 2,
+      "pct": 17,
       "is_full": false,
       "is_takeover": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
         "G B.",
-        "Julian V.",
-        "Thaian N."
+        "Julian V."
       ],
       "ratings": {
         "G B.": "N/A",
-        "Julian V.": "3.97",
-        "Thaian N.": "4.51"
+        "Julian V.": "3.97"
       },
       "min_dupr": "3.70",
       "departed": [
+        {
+          "name": "Thaian N.",
+          "departed_at": "2026-06-29T18:25:50"
+        },
         {
           "name": "David G.",
           "departed_at": "2026-06-29T16:30:20"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:09:03",
+      "last_snap_ts": "2026-06-29T18:25:50",
       "thieves": [],
       "big_dogs": []
     },
@@ -157,7 +152,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:06",
+      "last_snap_ts": "2026-06-29T18:25:52",
       "thieves": [],
       "big_dogs": []
     },
@@ -233,7 +228,7 @@
           "departed_at": "2026-06-29T17:22:04"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:09:08",
+      "last_snap_ts": "2026-06-29T18:25:55",
       "thieves": [],
       "big_dogs": []
     },
@@ -267,7 +262,7 @@
           "departed_at": "2026-06-29T16:30:27"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:09:10",
+      "last_snap_ts": "2026-06-29T18:25:56",
       "thieves": [],
       "big_dogs": []
     },
@@ -314,7 +309,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:12",
+      "last_snap_ts": "2026-06-29T18:25:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -338,7 +333,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:17",
+      "last_snap_ts": "2026-06-29T18:26:03",
       "thieves": [],
       "big_dogs": []
     },
@@ -364,7 +359,7 @@
       "ratings": {},
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:18",
+      "last_snap_ts": "2026-06-29T18:26:06",
       "thieves": [],
       "big_dogs": []
     },
@@ -396,7 +391,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:20",
+      "last_snap_ts": "2026-06-29T18:26:08",
       "thieves": [],
       "big_dogs": []
     },
@@ -464,7 +459,7 @@
           "departed_at": "2026-06-29T13:00:26"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:09:23",
+      "last_snap_ts": "2026-06-29T18:26:10",
       "thieves": [],
       "big_dogs": []
     },
@@ -506,7 +501,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:26",
+      "last_snap_ts": "2026-06-29T18:26:12",
       "thieves": [],
       "big_dogs": []
     },
@@ -533,7 +528,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:29",
+      "last_snap_ts": "2026-06-29T18:26:14",
       "thieves": [],
       "big_dogs": []
     },
@@ -593,7 +588,7 @@
           "departed_at": "2026-06-28T19:41:20"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:09:31",
+      "last_snap_ts": "2026-06-29T18:26:16",
       "thieves": [],
       "big_dogs": []
     },
@@ -634,7 +629,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:33",
+      "last_snap_ts": "2026-06-29T18:26:19",
       "thieves": [],
       "big_dogs": []
     },
@@ -670,7 +665,7 @@
           "departed_at": "2026-06-29T08:40:19"
         }
       ],
-      "last_snap_ts": "2026-06-29T18:09:35",
+      "last_snap_ts": "2026-06-29T18:26:21",
       "thieves": [],
       "big_dogs": []
     },
@@ -711,7 +706,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:37",
+      "last_snap_ts": "2026-06-29T18:26:23",
       "thieves": [],
       "big_dogs": []
     },
@@ -771,7 +766,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:39",
+      "last_snap_ts": "2026-06-29T18:26:25",
       "thieves": [],
       "big_dogs": []
     },
@@ -797,7 +792,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:41",
+      "last_snap_ts": "2026-06-29T18:26:27",
       "thieves": [],
       "big_dogs": []
     },
@@ -821,7 +816,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:44",
+      "last_snap_ts": "2026-06-29T18:26:31",
       "thieves": [],
       "big_dogs": []
     },
@@ -850,7 +845,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:46",
+      "last_snap_ts": "2026-06-29T18:26:33",
       "thieves": [],
       "big_dogs": []
     },
@@ -880,7 +875,7 @@
       },
       "min_dupr": "4.20",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:48",
+      "last_snap_ts": "2026-06-29T18:26:35",
       "thieves": [],
       "big_dogs": []
     },
@@ -910,7 +905,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:50",
+      "last_snap_ts": "2026-06-29T18:26:37",
       "thieves": [],
       "big_dogs": []
     },
@@ -936,7 +931,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:08:55",
+      "last_snap_ts": "2026-06-29T18:25:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -960,7 +955,7 @@
       "ratings": {},
       "min_dupr": "4.20",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:09:54",
+      "last_snap_ts": "2026-06-29T18:26:41",
       "thieves": [],
       "big_dogs": []
     },
@@ -984,7 +979,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:01",
+      "last_snap_ts": "2026-06-29T18:26:45",
       "thieves": [],
       "big_dogs": []
     },
@@ -1008,7 +1003,7 @@
       "ratings": {},
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:05",
+      "last_snap_ts": "2026-06-29T18:26:49",
       "thieves": [],
       "big_dogs": []
     },
@@ -1037,7 +1032,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:18",
+      "last_snap_ts": "2026-06-29T18:27:02",
       "thieves": [],
       "big_dogs": []
     },
@@ -1067,7 +1062,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:20",
+      "last_snap_ts": "2026-06-29T18:27:04",
       "thieves": [],
       "big_dogs": []
     },
@@ -1095,7 +1090,7 @@
       },
       "min_dupr": "4.20",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:22",
+      "last_snap_ts": "2026-06-29T18:27:07",
       "thieves": [],
       "big_dogs": []
     },
@@ -1119,7 +1114,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:11",
+      "last_snap_ts": "2026-06-29T18:26:55",
       "thieves": [],
       "big_dogs": []
     },
@@ -1143,7 +1138,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:15",
+      "last_snap_ts": "2026-06-29T18:26:59",
       "thieves": [],
       "big_dogs": []
     },
@@ -1167,7 +1162,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:26",
+      "last_snap_ts": "2026-06-29T18:27:11",
       "thieves": [],
       "big_dogs": []
     },
@@ -1195,7 +1190,7 @@
       },
       "min_dupr": "3.70",
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:28",
+      "last_snap_ts": "2026-06-29T18:27:14",
       "thieves": [],
       "big_dogs": []
     },
@@ -1233,7 +1228,7 @@
       "ratings": {},
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-06-29T18:10:31",
+      "last_snap_ts": "2026-06-29T18:27:16",
       "thieves": [],
       "big_dogs": []
     },
@@ -15376,19 +15371,7 @@
           "departed_at": "2026-06-29T12:10:02"
         },
         {
-          "name": "Dennis W.",
-          "departed_at": "2026-06-29T12:10:02"
-        },
-        {
-          "name": "Marshall C.",
-          "departed_at": "2026-06-29T12:10:02"
-        },
-        {
-          "name": "Rick G.",
-          "departed_at": "2026-06-29T12:10:02"
-        },
-        {
-          "name": "Mike N.",
+          "name": "Mona B.",
           "departed_at": "2026-06-29T12:10:02"
         },
         {
@@ -15400,7 +15383,7 @@
           "departed_at": "2026-06-29T12:10:02"
         },
         {
-          "name": "Melba T.",
+          "name": "Dennis W.",
           "departed_at": "2026-06-29T12:10:02"
         },
         {
@@ -15408,7 +15391,19 @@
           "departed_at": "2026-06-29T12:10:02"
         },
         {
-          "name": "Mona B.",
+          "name": "Mike N.",
+          "departed_at": "2026-06-29T12:10:02"
+        },
+        {
+          "name": "Rick G.",
+          "departed_at": "2026-06-29T12:10:02"
+        },
+        {
+          "name": "Marshall C.",
+          "departed_at": "2026-06-29T12:10:02"
+        },
+        {
+          "name": "Melba T.",
           "departed_at": "2026-06-29T12:10:02"
         }
       ],
@@ -15454,6 +15449,22 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-06-29T18:25:50",
+      "type": "cancel",
+      "name": "Thaian N.",
+      "title": "DUPR 4.0 Open Play",
+      "start": "MON JUN 29  8:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e31fa-f768-7cc8-adee-b11b2bfe10f9"
+    },
+    {
+      "ts": "2026-06-29T18:25:44",
+      "type": "cap_grew",
+      "name": "18 \u2192 24",
+      "title": "4.5/4.0 Open Play",
+      "start": "MON JUN 29  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019e2c29-1337-7cc5-995d-736a559bf030"
+    },
     {
       "ts": "2026-06-29T18:09:08",
       "type": "join",
@@ -32841,15 +32852,6 @@
   ],
   "thieves": [
     {
-      "name": "Unsolved Case (cloaked player)",
-      "last_seen_full_ts": "2026-06-29T17:53:51",
-      "first_absent_ts": "2026-06-29T18:08:57",
-      "detection_gap_min": 15,
-      "session_title": "4.5/4.0 Open Play",
-      "session_start": "MON JUN 29  6:00 PM",
-      "session_url": "https://ppbrva.podplay.app/community/events/019e2c29-1337-7cc5-995d-736a559bf030"
-    },
-    {
       "name": "Elton W.",
       "last_seen_full_ts": "2026-04-02T18:29:50",
       "first_absent_ts": "2026-04-03T20:01:38",
@@ -33409,6 +33411,16 @@
       "detected_at": "2026-04-30T10:04:14"
     },
     {
+      "name": "Unsolved Case (cloaked player)",
+      "session_title": "4.5/4.0 Open Play",
+      "session_url": "https://ppbrva.podplay.app/community/events/019e2c29-1337-7cc5-995d-736a559bf030",
+      "session_start": "2026-06-29T18:00:00",
+      "last_seen_full_ts": "2026-06-29T17:53:51",
+      "first_absent_ts": "2026-06-29T18:08:57",
+      "reason": "cancellation",
+      "detected_at": "2026-06-29T18:10:31"
+    },
+    {
       "name": "Ajay M.",
       "session_title": "DUPR 4.5 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/019dcb67-e13c-7dd6-8ecb-cee15a7903eb",
@@ -33589,6 +33601,11 @@
       "cancels": 11
     },
     {
+      "name": "Thaian N.",
+      "joins": 38,
+      "cancels": 10
+    },
+    {
       "name": "Alicia Z.",
       "joins": 32,
       "cancels": 10
@@ -33607,11 +33624,6 @@
       "name": "Mark K.",
       "joins": 20,
       "cancels": 10
-    },
-    {
-      "name": "Thaian N.",
-      "joins": 38,
-      "cancels": 9
     },
     {
       "name": "Rebecca J.",
@@ -33959,12 +33971,12 @@
       "cancels": 2
     },
     {
-      "name": "Chris D.",
+      "name": "Kasey D.",
       "joins": 8,
       "cancels": 2
     },
     {
-      "name": "Kasey D.",
+      "name": "Chris D.",
       "joins": 8,
       "cancels": 2
     },
@@ -34289,12 +34301,12 @@
       "cancels": 1
     },
     {
-      "name": "Courtney H.",
+      "name": "Courtney B.",
       "joins": 2,
       "cancels": 1
     },
     {
-      "name": "Courtney B.",
+      "name": "Courtney H.",
       "joins": 2,
       "cancels": 1
     },
@@ -34539,12 +34551,12 @@
       "cancels": 0
     },
     {
-      "name": "Moab S.",
+      "name": "Charlie K.",
       "joins": 6,
       "cancels": 0
     },
     {
-      "name": "Charlie K.",
+      "name": "Moab S.",
       "joins": 6,
       "cancels": 0
     },
@@ -34629,12 +34641,12 @@
       "cancels": 0
     },
     {
-      "name": "Ryan B.",
+      "name": "Robert G.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Robert G.",
+      "name": "Ryan B.",
       "joins": 4,
       "cancels": 0
     },
@@ -34684,12 +34696,12 @@
       "cancels": 0
     },
     {
-      "name": "Patrick C.",
+      "name": "Annie R.",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Annie R.",
+      "name": "Patrick C.",
       "joins": 4,
       "cancels": 0
     },
@@ -34724,22 +34736,22 @@
       "cancels": 0
     },
     {
-      "name": "Gulhan D.",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
       "name": "Joshua O.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Charles Z.",
+      "name": "Gulhan D.",
       "joins": 3,
       "cancels": 0
     },
     {
       "name": "RAMESH K.",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
+      "name": "Charles Z.",
       "joins": 3,
       "cancels": 0
     },
@@ -34804,12 +34816,12 @@
       "cancels": 0
     },
     {
-      "name": "Carlo A.",
+      "name": "Devin G.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Devin G.",
+      "name": "Carlo A.",
       "joins": 3,
       "cancels": 0
     },
@@ -34819,12 +34831,12 @@
       "cancels": 0
     },
     {
-      "name": "Savannah S.",
+      "name": "Hope B.",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Hope B.",
+      "name": "Savannah S.",
       "joins": 3,
       "cancels": 0
     },
@@ -34997,12 +35009,12 @@
         "cancels": 0
       },
       {
-        "name": "Joe S.",
+        "name": "Debby D.",
         "joins": 4,
         "cancels": 0
       },
       {
-        "name": "Debby D.",
+        "name": "Joe S.",
         "joins": 4,
         "cancels": 0
       },
@@ -35052,12 +35064,12 @@
         "cancels": 0
       },
       {
-        "name": "David M.",
+        "name": "Erin C.",
         "joins": 3,
         "cancels": 0
       },
       {
-        "name": "Erin C.",
+        "name": "David M.",
         "joins": 3,
         "cancels": 0
       },
@@ -35087,22 +35099,22 @@
         "cancels": 0
       },
       {
-        "name": "Eric L.",
-        "joins": 3,
-        "cancels": 0
-      },
-      {
         "name": "Mike N.",
         "joins": 3,
         "cancels": 0
       },
       {
-        "name": "Brooke H.",
+        "name": "Eric L.",
         "joins": 3,
         "cancels": 0
       },
       {
         "name": "Davis J.",
+        "joins": 3,
+        "cancels": 0
+      },
+      {
+        "name": "Brooke H.",
         "joins": 3,
         "cancels": 0
       },
@@ -35182,7 +35194,7 @@
         "cancels": 0
       },
       {
-        "name": "Steven T.",
+        "name": "Kasey D.",
         "joins": 2,
         "cancels": 0
       },
@@ -35192,12 +35204,12 @@
         "cancels": 0
       },
       {
-        "name": "Kasey D.",
+        "name": "Devin C.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Devin C.",
+        "name": "Steven T.",
         "joins": 2,
         "cancels": 0
       },
@@ -35237,17 +35249,12 @@
         "cancels": 0
       },
       {
-        "name": "Becca D.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
         "name": "Gary S.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Bill P.",
+        "name": "Becca D.",
         "joins": 2,
         "cancels": 0
       },
@@ -35257,12 +35264,17 @@
         "cancels": 0
       },
       {
+        "name": "Bill P.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
         "name": "Gilu G.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Dennis W.",
+        "name": "Tom G.",
         "joins": 2,
         "cancels": 0
       },
@@ -35272,7 +35284,7 @@
         "cancels": 0
       },
       {
-        "name": "Tom G.",
+        "name": "Dennis W.",
         "joins": 2,
         "cancels": 0
       },
@@ -35369,22 +35381,22 @@
         "cancels": 0
       },
       {
-        "name": "Melba T.",
-        "joins": 3,
-        "cancels": 0
-      },
-      {
-        "name": "Rick G.",
-        "joins": 3,
-        "cancels": 0
-      },
-      {
         "name": "Lori L.",
         "joins": 3,
         "cancels": 0
       },
       {
         "name": "Lisha Y.",
+        "joins": 3,
+        "cancels": 0
+      },
+      {
+        "name": "Melba T.",
+        "joins": 3,
+        "cancels": 0
+      },
+      {
+        "name": "Rick G.",
         "joins": 3,
         "cancels": 0
       },
@@ -35404,12 +35416,12 @@
         "cancels": 0
       },
       {
-        "name": "Gary W.",
+        "name": "Alicia Z.",
         "joins": 3,
         "cancels": 0
       },
       {
-        "name": "Alicia Z.",
+        "name": "Gary W.",
         "joins": 3,
         "cancels": 0
       },
@@ -35419,7 +35431,7 @@
         "cancels": 1
       },
       {
-        "name": "Mark K.",
+        "name": "Melanie W.",
         "joins": 2,
         "cancels": 0
       },
@@ -35429,17 +35441,12 @@
         "cancels": 0
       },
       {
-        "name": "Steven B.",
+        "name": "Rally A.",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Mona B.",
-        "joins": 2,
-        "cancels": 0
-      },
-      {
-        "name": "Melanie W.",
+        "name": "Mark K.",
         "joins": 2,
         "cancels": 0
       },
@@ -35449,7 +35456,12 @@
         "cancels": 0
       },
       {
-        "name": "Rally A.",
+        "name": "Mona B.",
+        "joins": 2,
+        "cancels": 0
+      },
+      {
+        "name": "Steven B.",
         "joins": 2,
         "cancels": 0
       },
@@ -36945,10 +36957,10 @@
           "start_iso": "2026-06-29T18:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019e2c29-1337-7cc5-995d-736a559bf030",
           "status": "live",
-          "capacity": 18,
+          "capacity": 24,
           "count": 17,
           "is_full": false,
-          "spots_left": 1
+          "spots_left": 7
         },
         {
           "title": "4.0 Open Play",
@@ -37008,21 +37020,10 @@
           "start_iso": "2026-06-29T18:00:00",
           "url": "https://ppbrva.podplay.app/community/events/019e2c29-1337-7cc5-995d-736a559bf030",
           "status": "live",
-          "capacity": 18,
+          "capacity": 24,
           "count": 17,
           "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON JUN 29  8:00 PM",
-          "start_iso": "2026-06-29T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e31fa-f768-7cc8-adee-b11b2bfe10f9",
-          "status": "upcoming",
-          "capacity": 12,
-          "count": 3,
-          "is_full": false,
-          "spots_left": 9
+          "spots_left": 7
         },
         {
           "title": "DUPR 4.0 Open Play",
@@ -37345,6 +37346,14 @@
         }
       ],
       "activity": [
+        {
+          "ts": "2026-06-29T18:25:50",
+          "type": "cancel",
+          "name": "Thaian N.",
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON JUN 29  8:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019e31fa-f768-7cc8-adee-b11b2bfe10f9"
+        },
         {
           "ts": "2026-06-29T13:17:27",
           "type": "join",
@@ -42015,8 +42024,8 @@
       ],
       "count": 2,
       "registered": 17,
-      "capacity": 18,
-      "spots_left": 1,
+      "capacity": 24,
+      "spots_left": 7,
       "is_full": false,
       "registrants": [
         "Anthony B.",
@@ -42251,19 +42260,7 @@
           "departed_at": "2026-06-29T12:10:02"
         },
         {
-          "name": "Dennis W.",
-          "departed_at": "2026-06-29T12:10:02"
-        },
-        {
-          "name": "Marshall C.",
-          "departed_at": "2026-06-29T12:10:02"
-        },
-        {
-          "name": "Rick G.",
-          "departed_at": "2026-06-29T12:10:02"
-        },
-        {
-          "name": "Mike N.",
+          "name": "Mona B.",
           "departed_at": "2026-06-29T12:10:02"
         },
         {
@@ -42275,7 +42272,7 @@
           "departed_at": "2026-06-29T12:10:02"
         },
         {
-          "name": "Melba T.",
+          "name": "Dennis W.",
           "departed_at": "2026-06-29T12:10:02"
         },
         {
@@ -42283,7 +42280,19 @@
           "departed_at": "2026-06-29T12:10:02"
         },
         {
-          "name": "Mona B.",
+          "name": "Mike N.",
+          "departed_at": "2026-06-29T12:10:02"
+        },
+        {
+          "name": "Rick G.",
+          "departed_at": "2026-06-29T12:10:02"
+        },
+        {
+          "name": "Marshall C.",
+          "departed_at": "2026-06-29T12:10:02"
+        },
+        {
+          "name": "Melba T.",
           "departed_at": "2026-06-29T12:10:02"
         }
       ]
