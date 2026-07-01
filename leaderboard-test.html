@@ -257,7 +257,7 @@
 
         .player-summary {
             display: flex; align-items: center;
-            padding: 6px 8px; cursor: pointer; list-style: none; min-height: 36px; gap: 8px;
+            padding: 6px 8px; cursor: pointer; list-style: none; min-height: 44px; gap: 8px;
         }
         .player-summary::-webkit-details-marker { display: none; }
 
@@ -417,7 +417,13 @@
         }
         .ptr-indicator.visible { transform: translateY(0); }
 
-        .social-links { display: flex; gap: 6px; margin-bottom: 8px; }
+        /* Social sits at the foot of the card; a top rule anchors it instead
+           of leaving the icon(s) floating in open space. */
+        .social-links {
+            display: flex; gap: 6px;
+            margin: 12px 12px 10px; padding-top: 12px;
+            border-top: 1px solid var(--line);
+        }
         .social-link {
             display: inline-flex; align-items: center; justify-content: center;
             width: 44px; height: 44px; border-radius: 10px;
@@ -683,6 +689,9 @@
 
         /* ── Career Stats (player card) ─────────────────────────────── */
         .career-stats { padding: 10px 12px 6px; }
+        /* "More Stats" (the deep career detail below the match list) — a top
+           rule + spacing sets it apart from the Recent Matches section above. */
+        .cs-more { margin-top: 12px; border-top: 1px solid var(--line); }
         /* Info rows under the section header — one consistent shape for
            DUPR ID / Matches / Best partner / Notes. Left-aligned, same
            font-size, same label/value contrast. */
@@ -734,6 +743,13 @@
            exactly the divider's margin+padding, not that plus a stray
            row/bar margin. */
         .cs-group > :last-child { margin-bottom: 0; }
+        /* The partner-chemistry group is the densest (up to 7 rows). Hairline
+           separators between its rows give it rhythm so it doesn't read as a
+           wall — especially when rows block-stack on narrow phones. */
+        .cs-group-partners .cs-info-row + .cs-info-row {
+            margin-top: 6px; padding-top: 6px;
+            border-top: 1px solid var(--line);
+        }
         /* Best-partner name nested in a value cell still gets the player-link
            styling; bump the underline to read clearly on the brighter color. */
         /* Value name (partner/opponent). Normal weight so the bold label is the
@@ -992,6 +1008,15 @@
         }
         :root[data-theme="airbutter"] .header-container {
             border-bottom-color: var(--line-soft);
+        }
+        /* On Butter, --line (#ebebeb) on the #f7f7f7 panel is ~1.05:1 — the
+           career-stats dividers all but vanish. Use --line-soft so the group
+           rhythm survives on the light theme. */
+        :root[data-theme="airbutter"] .cs-group + .cs-group,
+        :root[data-theme="airbutter"] .cs-more,
+        :root[data-theme="airbutter"] .social-links,
+        :root[data-theme="airbutter"] .cs-group-partners .cs-info-row + .cs-info-row {
+            border-color: var(--line-soft);
         }
         :root[data-theme="airbutter"] .streak-w { background: rgba(0, 132, 137, 0.14); }
         :root[data-theme="airbutter"] .streak-l { background: rgba(255, 90, 95, 0.14); }
@@ -2429,7 +2454,7 @@
     <div class="header-container">
         <h1>Testing</h1>
         <div class="timestamp">
-            <span>Updated: 7/1 at 12:33 PM</span>
+            <span>Updated: 7/1 at 1:13 PM</span>
             <button class="theme-toggle" id="themeToggle" title="Switch theme" aria-label="Switch theme">
                 <span class="theme-toggle-icon" aria-hidden="true">◐</span>
                 <span class="theme-toggle-label">Butter</span>
@@ -2753,9 +2778,9 @@
             <div class="player-name">Youssef Bouzidi</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-up">(+0.020)</span> <span class="arrow trend-up">▲</span> 5.877 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-up">(+0.020)</span> 5.877 <span class="lbl">D</span>
             </div>
-            <div class="score-line"><span class="net-impact trend-down">(-0.041)</span> <span class="arrow trend-down">▼</span> 6.010 <span class="lbl">S</span>
+            <div class="score-line"><span class="net-impact trend-down">(-0.041)</span> 6.010 <span class="lbl">S</span>
             </div>
         </div>
     </summary>
@@ -2768,7 +2793,7 @@
                     <div class="cs-bar" style="--win-pct: 78%;">
                         <div class="cs-record"><span class="cs-w">304W</span><span class="cs-sep">-</span><span class="cs-l">87L</span></div>
                         <div class="cs-pct cs-pct-high">78%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">17W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -2782,10 +2807,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">21 thrown</span>
-                    <span class="cs-pk-rate">3.1%</span>
+                    <span class="cs-pk-rate">3.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">3 caught</span>
-                    <span class="cs-pk-rate">0.4%</span>
+                    <span class="cs-pk-rate">0.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -2793,7 +2818,7 @@
                     <div class="cs-bar" style="--win-pct: 88%;">
                         <div class="cs-record"><span class="cs-w">100W</span><span class="cs-sep">-</span><span class="cs-l">14L</span></div>
                         <div class="cs-pct cs-pct-high">88%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">19W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">2L</span>
@@ -2807,13 +2832,15 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">15 thrown</span>
-                    <span class="cs-pk-rate">7.4%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">7.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -2825,7 +2852,7 @@
                     <span class="cs-info-value">42 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -2855,14 +2882,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5629966025" target="_blank" rel="noreferrer noopener" aria-label="Jaime Oncins (opens DUPR profile)">Jaime Oncins</a>
                         · 6.074
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4572970253" target="_blank" rel="noreferrer noopener" aria-label="Oliver Wei (opens DUPR profile)">Oliver Wei</a>
                         · 3.499
@@ -2915,7 +2942,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="#3ZLKQP" data-jump="3ZLKQP">David Bieger</a>
-                        · 20 matches (11-9)
+                        · 11-9 (55%) — 20 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -2938,10 +2965,6 @@
                     <span class="cs-info-label">DUPR ID:</span>
                     <span class="cs-info-value"><a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8490017643" target="_blank" rel="noreferrer noopener" aria-label="9PDMMK (opens DUPR profile)">9PDMMK</a></span>
                 </div>
-                <div class="cs-info-row">
-                    <span class="cs-info-label">Notes:</span>
-                    <span class="cs-info-value player-notes">Has no socials</span>
-                </div>
             </div>
         </div>
         <div class="social-links">
@@ -2963,7 +2986,7 @@
             <div class="player-name">Aj Koller</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-down">(-0.068)</span> <span class="arrow trend-down">▼</span> 6.155 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-down">(-0.068)</span> 6.155 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 5.419 <span class="lbl">S</span>
             </div>
@@ -2978,7 +3001,7 @@
                     <div class="cs-bar" style="--win-pct: 57%;">
                         <div class="cs-record"><span class="cs-w">468W</span><span class="cs-sep">-</span><span class="cs-l">354L</span></div>
                         <div class="cs-pct cs-pct-mid">57%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">12W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">9L</span>
@@ -2992,10 +3015,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">23 thrown</span>
-                    <span class="cs-pk-rate">1.5%</span>
+                    <span class="cs-pk-rate">1.5%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">10 caught</span>
-                    <span class="cs-pk-rate">0.7%</span>
+                    <span class="cs-pk-rate">0.7%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -3003,7 +3026,7 @@
                     <div class="cs-bar" style="--win-pct: 43%;">
                         <div class="cs-record"><span class="cs-w">59W</span><span class="cs-sep">-</span><span class="cs-l">77L</span></div>
                         <div class="cs-pct cs-pct-low">43%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">4W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">8L</span>
@@ -3017,13 +3040,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">6 thrown</span>
-                    <span class="cs-pk-rate">2.4%</span>
+                    <span class="cs-pk-rate">2.4%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">3 caught</span>
-                    <span class="cs-pk-rate">1.2%</span>
+                    <span class="cs-pk-rate">1.2%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -3035,7 +3063,7 @@
                     <span class="cs-info-value">94 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -3065,14 +3093,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5568731674" target="_blank" rel="noreferrer noopener" aria-label="Dylan Frazier (opens DUPR profile)">Dylan Frazier</a>
                         · 6.922
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7729018543" target="_blank" rel="noreferrer noopener" aria-label="Christine Trifunovic (opens DUPR profile)">Christine Trifunovic</a>
                         · 5.093
@@ -3125,7 +3153,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6485231492" target="_blank" rel="noreferrer noopener" aria-label="Jay Devilliers (opens DUPR profile)">Jay Devilliers</a>
-                        · 46 matches (19-27)
+                        · 19-27 (41%) — 46 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -3181,7 +3209,7 @@
                     <div class="cs-bar" style="--win-pct: 58%;">
                         <div class="cs-record"><span class="cs-w">137W</span><span class="cs-sep">-</span><span class="cs-l">98L</span></div>
                         <div class="cs-pct cs-pct-mid">58%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">8W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">7L</span>
@@ -3195,10 +3223,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">8 thrown</span>
-                    <span class="cs-pk-rate">2.4%</span>
+                    <span class="cs-pk-rate">2.4%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">4 caught</span>
-                    <span class="cs-pk-rate">1.2%</span>
+                    <span class="cs-pk-rate">1.2%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -3206,7 +3234,7 @@
                     <div class="cs-bar" style="--win-pct: 58%;">
                         <div class="cs-record"><span class="cs-w">53W</span><span class="cs-sep">-</span><span class="cs-l">38L</span></div>
                         <div class="cs-pct cs-pct-mid">58%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">12W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">4L</span>
@@ -3220,13 +3248,15 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">10 thrown</span>
-                    <span class="cs-pk-rate">7.9%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">7.9%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -3238,7 +3268,7 @@
                     <span class="cs-info-value">24 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -3268,14 +3298,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5428942106" target="_blank" rel="noreferrer noopener" aria-label="Alex Salazar (opens DUPR profile)">Alex Salazar</a>
                         · 4.982
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="#8EP07W" data-jump="8EP07W">Leah Fremouw</a>
                         · 3.290
@@ -3328,7 +3358,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6097741068" target="_blank" rel="noreferrer noopener" aria-label="Elliot Tobin (opens DUPR profile)">Elliot Tobin</a>
-                        · 11 matches (9-2)
+                        · 9-2 (82%) — 11 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -3387,7 +3417,7 @@
                     <div class="cs-bar" style="--win-pct: 52%;">
                         <div class="cs-record"><span class="cs-w">200W</span><span class="cs-sep">-</span><span class="cs-l">186L</span></div>
                         <div class="cs-pct cs-pct-mid">52%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">8W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">6L</span>
@@ -3401,10 +3431,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">8 thrown</span>
-                    <span class="cs-pk-rate">1.4%</span>
+                    <span class="cs-pk-rate">1.4%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">6 caught</span>
-                    <span class="cs-pk-rate">1.1%</span>
+                    <span class="cs-pk-rate">1.1%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -3412,7 +3442,7 @@
                     <div class="cs-bar" style="--win-pct: 39%;">
                         <div class="cs-record"><span class="cs-w">31W</span><span class="cs-sep">-</span><span class="cs-l">49L</span></div>
                         <div class="cs-pct cs-pct-low">39%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">4W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">6L</span>
@@ -3426,13 +3456,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">1 thrown</span>
-                    <span class="cs-pk-rate">0.8%</span>
+                    <span class="cs-pk-rate">0.8%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">5 caught</span>
-                    <span class="cs-pk-rate">4.1%</span>
+                    <span class="cs-pk-rate">4.1%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -3444,7 +3479,7 @@
                     <span class="cs-info-value">53 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -3474,14 +3509,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6984698570" target="_blank" rel="noreferrer noopener" aria-label="Aj Carney (opens DUPR profile)">Aj Carney</a>
                         · 5.743
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5244648175" target="_blank" rel="noreferrer noopener" aria-label="David Richardson (opens DUPR profile)">David Richardson</a>
                         · 3.447
@@ -3534,7 +3569,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6240376229" target="_blank" rel="noreferrer noopener" aria-label="Nicholas Huynh (opens DUPR profile)">Nicholas Huynh</a>
-                        · 12 matches (4-8)
+                        · 4-8 (33%) — 12 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -3590,7 +3625,7 @@
                     <div class="cs-bar" style="--win-pct: 36%;">
                         <div class="cs-record"><span class="cs-w">167W</span><span class="cs-sep">-</span><span class="cs-l">295L</span></div>
                         <div class="cs-pct cs-pct-low">36%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">7W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">27L</span>
@@ -3604,10 +3639,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">2 thrown</span>
-                    <span class="cs-pk-rate">0.3%</span>
+                    <span class="cs-pk-rate">0.3%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">10 caught</span>
-                    <span class="cs-pk-rate">1.6%</span>
+                    <span class="cs-pk-rate">1.6%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -3615,7 +3650,7 @@
                     <div class="cs-bar" style="--win-pct: 37%;">
                         <div class="cs-record"><span class="cs-w">59W</span><span class="cs-sep">-</span><span class="cs-l">100L</span></div>
                         <div class="cs-pct cs-pct-low">37%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">4W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">12L</span>
@@ -3629,13 +3664,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">2 thrown</span>
-                    <span class="cs-pk-rate">1.0%</span>
+                    <span class="cs-pk-rate">1.0%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">5 caught</span>
-                    <span class="cs-pk-rate">2.5%</span>
+                    <span class="cs-pk-rate">2.5%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -3647,7 +3687,7 @@
                     <span class="cs-info-value">54 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -3677,14 +3717,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8372279743" target="_blank" rel="noreferrer noopener" aria-label="Jason Renner (opens DUPR profile)">Jason Renner</a>
                         · 5.268
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4725171974" target="_blank" rel="noreferrer noopener" aria-label="Brandon shiflett (opens DUPR profile)">Brandon shiflett</a>
                         · 3.331
@@ -3737,7 +3777,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5552110754" target="_blank" rel="noreferrer noopener" aria-label="Brooke Hopkins (opens DUPR profile)">Brooke Hopkins</a>
-                        · 22 matches (6-16)
+                        · 6-16 (27%) — 22 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -3797,7 +3837,7 @@
                     <div class="cs-bar" style="--win-pct: 61%;">
                         <div class="cs-record"><span class="cs-w">107W</span><span class="cs-sep">-</span><span class="cs-l">69L</span></div>
                         <div class="cs-pct cs-pct-mid">61%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">9W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">7L</span>
@@ -3811,10 +3851,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">3 thrown</span>
-                    <span class="cs-pk-rate">1.3%</span>
+                    <span class="cs-pk-rate">1.3%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">0.4%</span>
+                    <span class="cs-pk-rate">0.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -3822,7 +3862,7 @@
                     <div class="cs-bar" style="--win-pct: 53%;">
                         <div class="cs-record"><span class="cs-w">18W</span><span class="cs-sep">-</span><span class="cs-l">16L</span></div>
                         <div class="cs-pct cs-pct-mid">53%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">9W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">4L</span>
@@ -3836,13 +3876,15 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">3 thrown</span>
-                    <span class="cs-pk-rate">6.0%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">6.0%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -3854,7 +3896,7 @@
                     <span class="cs-info-value">22 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -3884,14 +3926,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6327075693" target="_blank" rel="noreferrer noopener" aria-label="Timothy Cass (opens DUPR profile)">Timothy Cass</a>
                         · 5.607
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7465596211" target="_blank" rel="noreferrer noopener" aria-label="Matthew Archer (opens DUPR profile)">Matthew Archer</a>
                         · 3.867
@@ -3944,7 +3986,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4931996762" target="_blank" rel="noreferrer noopener" aria-label="Cody Miller (opens DUPR profile)">Cody Miller</a>
-                        · 7 matches (1-6)
+                        · 1-6 (14%) — 7 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -4004,7 +4046,7 @@
                     <div class="cs-bar" style="--win-pct: 53%;">
                         <div class="cs-record"><span class="cs-w">155W</span><span class="cs-sep">-</span><span class="cs-l">135L</span></div>
                         <div class="cs-pct cs-pct-mid">53%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">12W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">10L</span>
@@ -4018,10 +4060,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">4 thrown</span>
-                    <span class="cs-pk-rate">1.1%</span>
+                    <span class="cs-pk-rate">1.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">0.3%</span>
+                    <span class="cs-pk-rate">0.3%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -4029,7 +4071,7 @@
                     <div class="cs-bar" style="--win-pct: 58%;">
                         <div class="cs-record"><span class="cs-w">7W</span><span class="cs-sep">-</span><span class="cs-l">5L</span></div>
                         <div class="cs-pct cs-pct-mid">58%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">6W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">4L</span>
@@ -4043,13 +4085,15 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">0 thrown</span>
-                    <span class="cs-pk-rate">0.0%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">0.0%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -4061,7 +4105,7 @@
                     <span class="cs-info-value">49 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -4091,14 +4135,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5946752976" target="_blank" rel="noreferrer noopener" aria-label="Nathaniel Hutton (opens DUPR profile)">Nathaniel Hutton</a>
                         · 4.898
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4351167895" target="_blank" rel="noreferrer noopener" aria-label="Mary Kirchoff (opens DUPR profile)">Mary Kirchoff</a>
                         · 3.132
@@ -4151,7 +4195,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7031109950" target="_blank" rel="noreferrer noopener" aria-label="Joseph Salvaggio (opens DUPR profile)">Joseph Salvaggio</a>
-                        · 9 matches (4-5)
+                        · 4-5 (44%) — 9 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -4207,7 +4251,7 @@
                     <div class="cs-bar" style="--win-pct: 81%;">
                         <div class="cs-record"><span class="cs-w">546W</span><span class="cs-sep">-</span><span class="cs-l">132L</span></div>
                         <div class="cs-pct cs-pct-high">81%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">43W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">5L</span>
@@ -4221,10 +4265,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">48 thrown</span>
-                    <span class="cs-pk-rate">4.8%</span>
+                    <span class="cs-pk-rate">4.8%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">3 caught</span>
-                    <span class="cs-pk-rate">0.3%</span>
+                    <span class="cs-pk-rate">0.3%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -4232,7 +4276,7 @@
                     <div class="cs-bar" style="--win-pct: 76%;">
                         <div class="cs-record"><span class="cs-w">108W</span><span class="cs-sep">-</span><span class="cs-l">34L</span></div>
                         <div class="cs-pct cs-pct-high">76%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">12W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">2L</span>
@@ -4246,13 +4290,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">12 thrown</span>
-                    <span class="cs-pk-rate">4.7%</span>
+                    <span class="cs-pk-rate">4.7%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">0.4%</span>
+                    <span class="cs-pk-rate">0.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -4264,7 +4313,7 @@
                     <span class="cs-info-value">71 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -4294,14 +4343,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8249767703" target="_blank" rel="noreferrer noopener" aria-label="Morgan Evans (opens DUPR profile)">Morgan Evans</a>
                         · 6.184
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5258935279" target="_blank" rel="noreferrer noopener" aria-label="Joe Kim (opens DUPR profile)">Joe Kim</a>
                         · 3.859
@@ -4354,7 +4403,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8428694704" target="_blank" rel="noreferrer noopener" aria-label="James Broker (opens DUPR profile)">James Broker</a>
-                        · 26 matches (15-11)
+                        · 15-11 (58%) — 26 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -4410,7 +4459,7 @@
                     <div class="cs-bar" style="--win-pct: 68%;">
                         <div class="cs-record"><span class="cs-w">440W</span><span class="cs-sep">-</span><span class="cs-l">204L</span></div>
                         <div class="cs-pct cs-pct-mid">68%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">19W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">6L</span>
@@ -4424,10 +4473,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">21 thrown</span>
-                    <span class="cs-pk-rate">2.3%</span>
+                    <span class="cs-pk-rate">2.3%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">2 caught</span>
-                    <span class="cs-pk-rate">0.2%</span>
+                    <span class="cs-pk-rate">0.2%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -4435,7 +4484,7 @@
                     <div class="cs-bar" style="--win-pct: 64%;">
                         <div class="cs-record"><span class="cs-w">62W</span><span class="cs-sep">-</span><span class="cs-l">35L</span></div>
                         <div class="cs-pct cs-pct-mid">64%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">7W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">5L</span>
@@ -4449,13 +4498,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">8 thrown</span>
-                    <span class="cs-pk-rate">5.6%</span>
+                    <span class="cs-pk-rate">5.6%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">2 caught</span>
-                    <span class="cs-pk-rate">1.4%</span>
+                    <span class="cs-pk-rate">1.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -4467,7 +4521,7 @@
                     <span class="cs-info-value">80 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -4497,14 +4551,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="#3ZLKQP" data-jump="3ZLKQP">David Bieger</a>
                         · 6.039
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6674308699" target="_blank" rel="noreferrer noopener" aria-label="Margi Calder (opens DUPR profile)">Margi Calder</a>
                         · 3.198
@@ -4557,7 +4611,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6696693797" target="_blank" rel="noreferrer noopener" aria-label="Natalie Kim (opens DUPR profile)">Natalie Kim</a>
-                        · 36 matches (25-11)
+                        · 25-11 (69%) — 36 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -4613,7 +4667,7 @@
                     <div class="cs-bar" style="--win-pct: 75%;">
                         <div class="cs-record"><span class="cs-w">172W</span><span class="cs-sep">-</span><span class="cs-l">58L</span></div>
                         <div class="cs-pct cs-pct-high">75%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">33W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">5L</span>
@@ -4627,10 +4681,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">19 thrown</span>
-                    <span class="cs-pk-rate">5.1%</span>
+                    <span class="cs-pk-rate">5.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">2 caught</span>
-                    <span class="cs-pk-rate">0.5%</span>
+                    <span class="cs-pk-rate">0.5%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -4638,7 +4692,7 @@
                     <div class="cs-bar" style="--win-pct: 37%;">
                         <div class="cs-record"><span class="cs-w">7W</span><span class="cs-sep">-</span><span class="cs-l">12L</span></div>
                         <div class="cs-pct cs-pct-low">37%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">3W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">4L</span>
@@ -4652,13 +4706,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">0 thrown</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">0.0%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">3.2%</span>
+                    <span class="cs-pk-rate">3.2%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -4670,7 +4729,7 @@
                     <span class="cs-info-value">31 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -4693,14 +4752,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6462495128" target="_blank" rel="noreferrer noopener" aria-label="George Wall (opens DUPR profile)">George Wall</a>
                         · 6.122
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8010850831" target="_blank" rel="noreferrer noopener" aria-label="Christina Barker (opens DUPR profile)">Christina Barker</a>
                         · 4.918
@@ -4753,7 +4812,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="#84Q6J2" data-jump="84Q6J2">Lauralei Singsank</a>
-                        · 14 matches (14-0)
+                        · 14-0 (100%) — 14 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -4805,7 +4864,7 @@
                     <div class="cs-bar" style="--win-pct: 83%;">
                         <div class="cs-record"><span class="cs-w">275W</span><span class="cs-sep">-</span><span class="cs-l">56L</span></div>
                         <div class="cs-pct cs-pct-high">83%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">32W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -4819,10 +4878,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">47 thrown</span>
-                    <span class="cs-pk-rate">9.0%</span>
+                    <span class="cs-pk-rate">9.0%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">2 caught</span>
-                    <span class="cs-pk-rate">0.4%</span>
+                    <span class="cs-pk-rate">0.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -4830,7 +4889,7 @@
                     <div class="cs-bar" style="--win-pct: 66%;">
                         <div class="cs-record"><span class="cs-w">19W</span><span class="cs-sep">-</span><span class="cs-l">10L</span></div>
                         <div class="cs-pct cs-pct-mid">66%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">8W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -4844,13 +4903,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">1 thrown</span>
-                    <span class="cs-pk-rate">2.2%</span>
+                    <span class="cs-pk-rate">2.2%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">2.2%</span>
+                    <span class="cs-pk-rate">2.2%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -4862,7 +4926,7 @@
                     <span class="cs-info-value">35 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -4892,14 +4956,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5638083931" target="_blank" rel="noreferrer noopener" aria-label="Bruno Faletto (opens DUPR profile)">Bruno Faletto</a>
                         · 6.318
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8057901902" target="_blank" rel="noreferrer noopener" aria-label="Ariana Rodriguez (opens DUPR profile)">Ariana Rodriguez</a>
                         · 5.098
@@ -4952,7 +5016,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/8057901902" target="_blank" rel="noreferrer noopener" aria-label="Ariana Rodriguez (opens DUPR profile)">Ariana Rodriguez</a>
-                        · 21 matches (18-3)
+                        · 18-3 (86%) — 21 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -5006,7 +5070,7 @@
                     <div class="cs-bar" style="--win-pct: 47%;">
                         <div class="cs-record"><span class="cs-w">59W</span><span class="cs-sep">-</span><span class="cs-l">67L</span></div>
                         <div class="cs-pct cs-pct-low">47%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">5W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">8L</span>
@@ -5020,13 +5084,18 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">2 thrown</span>
-                    <span class="cs-pk-rate">1.1%</span>
+                    <span class="cs-pk-rate">1.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">2 caught</span>
-                    <span class="cs-pk-rate">1.1%</span>
+                    <span class="cs-pk-rate">1.1%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -5038,7 +5107,7 @@
                     <span class="cs-info-value">20 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -5061,14 +5130,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5216492732" target="_blank" rel="noreferrer noopener" aria-label="Dipen Patel (opens DUPR profile)">Dipen Patel</a>
                         · 4.873
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7263693276" target="_blank" rel="noreferrer noopener" aria-label="Sarah Moomau (opens DUPR profile)">Sarah Moomau</a>
                         · 3.673
@@ -5121,7 +5190,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5552110754" target="_blank" rel="noreferrer noopener" aria-label="Brooke Hopkins (opens DUPR profile)">Brooke Hopkins</a>
-                        · 8 matches (5-3)
+                        · 5-3 (62%) — 8 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -5178,7 +5247,7 @@
                     <div class="cs-bar" style="--win-pct: 64%;">
                         <div class="cs-record"><span class="cs-w">173W</span><span class="cs-sep">-</span><span class="cs-l">99L</span></div>
                         <div class="cs-pct cs-pct-mid">64%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">12W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">5L</span>
@@ -5192,13 +5261,18 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">6 thrown</span>
-                    <span class="cs-pk-rate">2.1%</span>
+                    <span class="cs-pk-rate">2.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">4 caught</span>
-                    <span class="cs-pk-rate">1.4%</span>
+                    <span class="cs-pk-rate">1.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -5210,7 +5284,7 @@
                     <span class="cs-info-value">80 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -5233,14 +5307,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4358228452" target="_blank" rel="noreferrer noopener" aria-label="Ryan Patrick (opens DUPR profile)">Ryan Patrick</a>
                         · 4.796
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6889436123" target="_blank" rel="noreferrer noopener" aria-label="Tony Chau (opens DUPR profile)">Tony Chau</a>
                         · 2.523
@@ -5293,7 +5367,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5687869789" target="_blank" rel="noreferrer noopener" aria-label="Jacob Johnson (opens DUPR profile)">Jacob Johnson</a>
-                        · 25 matches (11-14)
+                        · 11-14 (44%) — 25 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -5352,7 +5426,7 @@
                     <div class="cs-bar" style="--win-pct: 61%;">
                         <div class="cs-record"><span class="cs-w">212W</span><span class="cs-sep">-</span><span class="cs-l">133L</span></div>
                         <div class="cs-pct cs-pct-mid">61%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">15W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">7L</span>
@@ -5366,10 +5440,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">11 thrown</span>
-                    <span class="cs-pk-rate">2.1%</span>
+                    <span class="cs-pk-rate">2.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">4 caught</span>
-                    <span class="cs-pk-rate">0.7%</span>
+                    <span class="cs-pk-rate">0.7%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -5377,7 +5451,7 @@
                     <div class="cs-bar" style="--win-pct: 43%;">
                         <div class="cs-record"><span class="cs-w">12W</span><span class="cs-sep">-</span><span class="cs-l">16L</span></div>
                         <div class="cs-pct cs-pct-low">43%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">4W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">5L</span>
@@ -5391,13 +5465,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">0 thrown</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">0.0%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">2.6%</span>
+                    <span class="cs-pk-rate">2.6%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -5409,7 +5488,7 @@
                     <span class="cs-info-value">36 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -5439,14 +5518,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7699679319" target="_blank" rel="noreferrer noopener" aria-label="Jonathan Truong (opens DUPR profile)">Jonathan Truong</a>
                         · 5.639
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6158865396" target="_blank" rel="noreferrer noopener" aria-label="Andrew D’Annolfo (opens DUPR profile)">Andrew D’Annolfo</a>
                         · 3.495
@@ -5499,7 +5578,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/4977668734" target="_blank" rel="noreferrer noopener" aria-label="Alyssa Bialek (opens DUPR profile)">Alyssa Bialek</a>
-                        · 16 matches (10-6)
+                        · 10-6 (62%) — 16 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -5559,7 +5638,7 @@
                     <div class="cs-bar" style="--win-pct: 81%;">
                         <div class="cs-record"><span class="cs-w">70W</span><span class="cs-sep">-</span><span class="cs-l">16L</span></div>
                         <div class="cs-pct cs-pct-high">81%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">14W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -5573,10 +5652,7 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">3 thrown</span>
-                    <span class="cs-pk-rate">2.3%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">2.3%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -5584,7 +5660,7 @@
                     <div class="cs-bar" style="--win-pct: 44%;">
                         <div class="cs-record"><span class="cs-w">4W</span><span class="cs-sep">-</span><span class="cs-l">5L</span></div>
                         <div class="cs-pct cs-pct-low">44%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">2W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -5598,13 +5674,15 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">0 thrown</span>
-                    <span class="cs-pk-rate">0.0%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">0.0%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -5616,7 +5694,7 @@
                     <span class="cs-info-value">10 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -5639,14 +5717,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5216492732" target="_blank" rel="noreferrer noopener" aria-label="Dipen Patel (opens DUPR profile)">Dipen Patel</a>
                         · 4.918
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5552110754" target="_blank" rel="noreferrer noopener" aria-label="Brooke Hopkins (opens DUPR profile)">Brooke Hopkins</a>
                         · 3.839
@@ -5699,7 +5777,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5074037959" target="_blank" rel="noreferrer noopener" aria-label="Devin Garcia-Roblero (opens DUPR profile)">Devin Garcia-Roblero</a>
-                        · 5 matches (3-2)
+                        · 3-2 (60%) — 5 matches
                     </span>
                 </div>
             </div>
@@ -5747,7 +5825,7 @@
             <div class="player-nickname">(ALW)</div>
         </div>
         <div class="scores-stack">
-            <div class="score-line"><span class="net-impact trend-up">(+0.006)</span> <span class="arrow trend-up">▲</span> 6.987 <span class="lbl">D</span>
+            <div class="score-line"><span class="net-impact trend-up">(+0.006)</span> 6.987 <span class="lbl">D</span>
             </div>
             <div class="score-line"> 6.453 <span class="lbl">S</span>
             </div>
@@ -5762,7 +5840,7 @@
                     <div class="cs-bar" style="--win-pct: 90%;">
                         <div class="cs-record"><span class="cs-w">1,044W</span><span class="cs-sep">-</span><span class="cs-l">118L</span></div>
                         <div class="cs-pct cs-pct-high">90%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">85W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -5776,10 +5854,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">164 thrown</span>
-                    <span class="cs-pk-rate">7.2%</span>
+                    <span class="cs-pk-rate">7.2%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">2 caught</span>
-                    <span class="cs-pk-rate">0.1%</span>
+                    <span class="cs-pk-rate">0.1%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -5787,7 +5865,7 @@
                     <div class="cs-bar" style="--win-pct: 96%;">
                         <div class="cs-record"><span class="cs-w">307W</span><span class="cs-sep">-</span><span class="cs-l">12L</span></div>
                         <div class="cs-pct cs-pct-high">96%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">124W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">2L</span>
@@ -5801,13 +5879,15 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">62 thrown</span>
-                    <span class="cs-pk-rate">9.4%</span>
-                    <span class="cs-dot"> · </span>
-                    <span class="cs-pk-l">0 caught</span>
-                    <span class="cs-pk-rate">0.0%</span>
+                    <span class="cs-pk-rate">9.4%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -5819,7 +5899,7 @@
                     <span class="cs-info-value">35 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -5849,14 +5929,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="#V8DYL8" data-jump="V8DYL8">Ben Johns</a>
                         · 7.415
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7181951157" target="_blank" rel="noreferrer noopener" aria-label="Andre Agassi (opens DUPR profile)">Andre Agassi</a>
                         · 5.084
@@ -5909,7 +5989,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7577980007" target="_blank" rel="noreferrer noopener" aria-label="Catherine Parenteau (opens DUPR profile)">Catherine Parenteau</a>
-                        · 143 matches (119-24)
+                        · 119-24 (83%) — 143 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
@@ -5969,7 +6049,7 @@
                     <div class="cs-bar" style="--win-pct: 88%;">
                         <div class="cs-record"><span class="cs-w">1,092W</span><span class="cs-sep">-</span><span class="cs-l">142L</span></div>
                         <div class="cs-pct cs-pct-high">88%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">68W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">4L</span>
@@ -5983,10 +6063,10 @@
                     <span class="cs-pk-fmt">🥒 Doubles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">104 thrown</span>
-                    <span class="cs-pk-rate">4.1%</span>
+                    <span class="cs-pk-rate">4.1%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">6 caught</span>
-                    <span class="cs-pk-rate">0.2%</span>
+                    <span class="cs-pk-rate">0.2%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
                 <div class="cs-row">
@@ -5994,7 +6074,7 @@
                     <div class="cs-bar" style="--win-pct: 90%;">
                         <div class="cs-record"><span class="cs-w">312W</span><span class="cs-sep">-</span><span class="cs-l">33L</span></div>
                         <div class="cs-pct cs-pct-high">90%</div>
-                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PB</span>
+                        <div class="cs-best"><span class="cs-best-lbl" title="Personal best W/L streak">PEAK</span>
                             <span class="cs-peak-w">78W</span>
                             <span class="cs-dot"> / </span>
                             <span class="cs-peak-l">3L</span>
@@ -6008,13 +6088,18 @@
                     <span class="cs-pk-fmt">🥒 Singles</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-w">33 thrown</span>
-                    <span class="cs-pk-rate">4.4%</span>
+                    <span class="cs-pk-rate">4.4%/game</span>
                     <span class="cs-dot"> · </span>
                     <span class="cs-pk-l">1 caught</span>
-                    <span class="cs-pk-rate">0.1%</span>
+                    <span class="cs-pk-rate">0.1%/game</span>
                     <span class="cs-pk-cta">View matches ›</span>
                 </div>
             </div>
+        </div>
+        <div class="match-label">Recent Matches</div>
+        <div class="match-list"></div>
+        <div class="career-stats cs-more">
+            <div class="career-label">More Stats</div>
             <div class="cs-group">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Matches:</span>
@@ -6026,7 +6111,7 @@
                     <span class="cs-info-value">37 different partners</span>
                 </div>
             </div>
-            <div class="cs-group">
+            <div class="cs-group cs-group-partners">
                 <div class="cs-info-row">
                     <span class="cs-info-label">Primary partner:</span>
                     <span class="cs-info-value">
@@ -6049,14 +6134,14 @@
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Strongest partner:</span>
+                    <span class="cs-info-label">Highest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/6004588839" target="_blank" rel="noreferrer noopener" aria-label="Andrei Daescu (opens DUPR profile)">Andrei Daescu</a>
                         · 7.062
                     </span>
                 </div>
                 <div class="cs-info-row">
-                    <span class="cs-info-label">Weakest partner:</span>
+                    <span class="cs-info-label">Lowest-rated partner:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/5670762650" target="_blank" rel="noreferrer noopener" aria-label="Tamaryn Emmrich (opens DUPR profile)">Tamaryn Emmrich</a>
                         · 5.332
@@ -6109,7 +6194,7 @@
                     <span class="cs-info-label">Biggest rival:</span>
                     <span class="cs-info-value">
                         <a class="player-link cs-bp-name" href="https://dashboard.dupr.com/dashboard/player/7015795226" target="_blank" rel="noreferrer noopener" aria-label="Riley Newman (opens DUPR profile)">Riley Newman</a>
-                        · 130 matches (107-23)
+                        · 107-23 (82%) — 130 matches
                     </span>
                 </div>
                 <div class="cs-info-row">
