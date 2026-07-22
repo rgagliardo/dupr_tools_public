@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mockup A — Bottom Sheet Filters</title>
+<style>
+  :root {
+    --bg:        #fafafa;
+    --panel:     #ffffff;
+    --panel-2:   #f7f7f7;
+    --line:      #ebebeb;
+    --line-soft: #d4d4d4;
+    --txt:       #222222;
+    --txt-2:     #484848;
+    --txt-mid:   #717171;
+    --txt-dim:   #9b9b9b;
+    --teal:      #008489;
+    --coral:     #ff5a5f;
+    --gold:      #a06800;
+    --purple:    #5a6cb8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--txt);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── version stamp ── */
+  .stamp {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    background: #1a1a1a; color: #fff;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px; letter-spacing: 0.3px;
+    padding: 5px 12px; text-align: center;
+  }
+
+  .frame {
+    max-width: 430px; margin: 28px auto 0; min-height: calc(100vh - 28px);
+    background: var(--bg);
+    box-shadow: 0 0 0 1px var(--line-soft);
+  }
+
+  /* ── header ── */
+  .head {
+    position: sticky; top: 28px; z-index: 20;
+    background: var(--bg);
+    padding: 16px 16px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 1.5px;
+    color: var(--txt-mid); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .search {
+    width: 100%; padding: 12px 16px; border-radius: 12px;
+    background: var(--panel); border: 1px solid var(--line);
+    color: var(--txt); font-size: 15px; outline: none;
+    font-family: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .search::placeholder { color: var(--txt-dim); }
+  .search:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,132,137,0.12); }
+
+  .filter-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+  .filter-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 999px;
+    background: var(--panel); border: 1px solid var(--line-soft);
+    font-family: inherit; font-size: 13px; font-weight: 700;
+    color: var(--txt); cursor: pointer; white-space: nowrap;
+  }
+  .filter-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .filter-btn.has-active { border-color: var(--txt); }
+  .count-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
+    background: var(--teal); color: #fff;
+    font-size: 11px; font-weight: 800;
+  }
+
+  .active-chips {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+  }
+  .active-chips:empty { margin-top: 0; }
+  .chip-token {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 8px 6px 12px; border-radius: 999px;
+    background: rgba(0,132,137,0.10); border: 1px solid rgba(0,132,137,0.35);
+    color: var(--teal); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.3px; text-transform: uppercase;
+  }
+  .chip-token button {
+    display: flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: rgba(0,132,137,0.18); border: none; color: var(--teal);
+    font-size: 10px; line-height: 1; cursor: pointer; padding: 0;
+  }
+
+  .result-line {
+    font-size: 12px; color: var(--txt-dim); letter-spacing: 0.2px;
+    margin-top: 12px; min-height: 1px;
+  }
+
+  /* ── list ── */
+  .list { padding: 12px 16px 24px; }
+  .card {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .card-name-col { min-width: 0; flex: 1; }
+  .card-name {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.4px;
+    text-transform: uppercase; color: var(--txt);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  }
+  .badge {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.5px;
+    padding: 2px 6px; border-radius: 4px; border: 1px solid currentColor;
+    opacity: 0.9; line-height: 1.4;
+  }
+  .badge-ppa   { color: var(--gold); }
+  .badge-app   { color: var(--teal); }
+  .badge-mlp   { color: var(--purple); }
+  .badge-xpro  { color: var(--txt-dim); }
+  .card-sub { font-size: 11px; color: var(--txt-dim); margin-top: 3px; }
+  .card-scores { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .score-line { font-size: 13px; font-weight: 700; color: var(--txt); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .score-line .lbl { font-size: 11px; font-weight: 700; color: var(--txt-dim); margin-left: 3px; }
+
+  .no-results {
+    display: none; text-align: center; padding: 48px 24px;
+    color: var(--txt-mid); font-size: 13px; line-height: 1.6;
+  }
+  .no-results button {
+    display: block; margin: 14px auto 0; background: none; border: none;
+    color: var(--teal); font-family: inherit; font-size: 12px; font-weight: 800;
+    letter-spacing: 0.8px; text-transform: uppercase; cursor: pointer;
+  }
+
+  /* ── scrim + sheet ── */
+  .scrim {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+    opacity: 0; pointer-events: none; transition: opacity .25s ease;
+    z-index: 600;
+  }
+  .scrim.open { opacity: 1; pointer-events: auto; }
+
+  .sheet {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 601;
+    max-width: 430px; margin: 0 auto;
+    background: var(--panel);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.10);
+    transform: translateY(100%);
+    transition: transform .28s cubic-bezier(.32,.72,0,1);
+    display: flex; flex-direction: column;
+    max-height: 86vh;
+  }
+  .sheet.open { transform: translateY(0); }
+
+  .sheet-handle {
+    width: 36px; height: 4px; border-radius: 2px;
+    background: var(--line-soft); margin: 10px auto 4px;
+    flex-shrink: 0;
+  }
+  .sheet-header {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; padding: 10px 16px 14px;
+    border-bottom: 1px solid var(--line); flex-shrink: 0;
+  }
+  .sheet-title { font-size: 15px; font-weight: 800; letter-spacing: 0.2px; }
+  .sheet-close {
+    position: absolute; right: 12px; top: 6px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--panel-2); border: none; color: var(--txt);
+    font-size: 14px; cursor: pointer; font-family: inherit;
+  }
+  .sheet-body { padding: 18px 16px 8px; overflow-y: auto; }
+  .sheet-section { margin-bottom: 24px; }
+  .sheet-label {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.8px;
+    text-transform: uppercase; color: var(--txt-mid); margin-bottom: 10px;
+  }
+  .seg {
+    display: flex; border: 1px solid var(--line); border-radius: 12px;
+    overflow: hidden; background: var(--panel-2);
+  }
+  .seg-btn {
+    flex: 1; padding: 13px 0; background: transparent; border: none;
+    font-family: inherit; font-size: 13px; font-weight: 700; color: var(--txt-2);
+    cursor: pointer; text-transform: uppercase; letter-spacing: 0.6px;
+  }
+  .seg-btn + .seg-btn { border-left: 1px solid var(--line); }
+  .seg-btn.active { background: var(--txt); color: #fff; }
+
+  .pill-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill-btn {
+    padding: 11px 18px; border-radius: 999px;
+    background: var(--panel-2); border: 1px solid var(--line);
+    color: var(--txt-2); font-family: inherit; font-size: 12px; font-weight: 800;
+    letter-spacing: 0.6px; cursor: pointer;
+  }
+  .pill-btn.active {
+    background: rgba(0,132,137,0.10); border-color: var(--teal); color: var(--teal);
+  }
+
+  .sheet-footer {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    padding: 14px 16px calc(16px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line); flex-shrink: 0;
+    background: var(--panel);
+  }
+  .clear-link {
+    background: none; border: none; color: var(--txt);
+    font-family: inherit; font-size: 13px; font-weight: 700;
+    text-decoration: underline; cursor: pointer; padding: 8px 0;
+  }
+  .apply-btn {
+    flex: 1; max-width: 240px; padding: 13px 20px; border-radius: 10px;
+    background: var(--teal); border: none; color: #fff;
+    font-family: inherit; font-size: 14px; font-weight: 800;
+    letter-spacing: 0.2px; cursor: pointer;
+  }
+  .apply-btn:disabled { opacity: 0.55; cursor: default; }
+</style>
+</head>
+<body>
+
+<div class="stamp">MOCKUP A — Bottom Sheet · v1.0 · 2026-07-14</div>
+
+<div class="frame">
+  <div class="head">
+    <div class="eyebrow">Player Leaderboard</div>
+    <input class="search" id="search" type="text" placeholder="Search players or notes...">
+    <div class="filter-row">
+      <button class="filter-btn" id="filterBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="9" cy="7" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="11" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg>
+        Filters
+        <span class="count-badge" id="countBadge" hidden>0</span>
+      </button>
+    </div>
+    <div class="active-chips" id="activeChips"></div>
+    <div class="result-line" id="resultLine"></div>
+  </div>
+  <div class="list" id="list"></div>
+  <div class="no-results" id="noResults">
+    No players match your filters.
+    <button id="clearFromEmpty">Clear filters</button>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Filters">
+  <div class="sheet-handle"></div>
+  <div class="sheet-header">
+    <span class="sheet-title">Filters</span>
+    <button class="sheet-close" id="sheetClose" aria-label="Close filters">✕</button>
+  </div>
+  <div class="sheet-body">
+    <div class="sheet-section">
+      <div class="sheet-label">Gender</div>
+      <div class="seg" id="genderSeg">
+        <button class="seg-btn" data-gender="M">Men</button>
+        <button class="seg-btn" data-gender="F">Women</button>
+      </div>
+    </div>
+    <div class="sheet-section">
+      <div class="sheet-label">Class &amp; Tour</div>
+      <div class="pill-grid" id="typeGrid">
+        <button class="pill-btn" data-type="am">AM</button>
+        <button class="pill-btn" data-type="pro">PRO</button>
+        <button class="pill-btn" data-type="app">APP</button>
+        <button class="pill-btn" data-type="mlp">MLP</button>
+        <button class="pill-btn" data-type="ppa">PPA</button>
+        <button class="pill-btn" data-type="x-pro">X-PRO</button>
+      </div>
+    </div>
+  </div>
+  <div class="sheet-footer">
+    <button class="clear-link" id="clearAll">Clear all</button>
+    <button class="apply-btn" id="applyBtn">Show <span id="applyCount">14</span> players</button>
+  </div>
+</div>
+
+<script>
+  var PLAYERS = [
+    { name: "Sarah Chen",   gender: "F", cls: "am",  tags: [],              d: "4.812", s: "4.220" },
+    { name: "Mike Torres",  gender: "M", cls: "am",  tags: [],              d: "4.355", s: "3.998" },
+    { name: "Alex Rivera",  gender: "M", cls: "pro", tags: ["mlp","ppa"],   d: "6.598", s: "5.883" },
+    { name: "Jordan Blake", gender: "M", cls: "pro", tags: ["app","ppa"],   d: "6.102", s: "5.410" },
+    { name: "Devon Ellis",  gender: "M", cls: "pro", tags: ["x-pro"],       d: "5.750", s: "5.102" },
+    { name: "Priya Nair",   gender: "F", cls: "pro", tags: ["ppa"],         d: "5.988", s: "5.312" },
+    { name: "Chris Nolan",  gender: "M", cls: "pro", tags: ["mlp"],         d: "5.601", s: null },
+    { name: "Emma Ward",    gender: "F", cls: "pro", tags: ["app"],         d: "5.744", s: "5.033" },
+    { name: "Marcus Lee",   gender: "M", cls: "am",  tags: [],              d: "4.102", s: "3.550" },
+    { name: "Olivia Grant", gender: "F", cls: "am",  tags: [],              d: "4.633", s: "4.011" },
+    { name: "Ben Foster",   gender: "M", cls: "pro", tags: ["x-pro"],       d: "5.200", s: null },
+    { name: "Nina Osei",    gender: "F", cls: "pro", tags: ["mlp","ppa"],   d: "6.301", s: "5.655" },
+    { name: "Ryan Cole",    gender: "M", cls: "pro", tags: ["ppa"],         d: "6.450", s: "5.911" },
+    { name: "Grace Kim",    gender: "F", cls: "pro", tags: ["app"],         d: "5.522", s: "4.877" }
+  ];
+
+  var TYPE_LABELS = { am: "AM", pro: "PRO", app: "APP", mlp: "MLP", ppa: "PPA", "x-pro": "X-PRO" };
+  var BADGE_CLASS = { ppa: "badge-ppa", app: "badge-app", mlp: "badge-mlp", "x-pro": "badge-xpro" };
+
+  var applied = { gender: null, types: [] };
+  var draft = { gender: null, types: [] };
+
+  var listEl = document.getElementById("list");
+  var noResultsEl = document.getElementById("noResults");
+  var resultLineEl = document.getElementById("resultLine");
+  var activeChipsEl = document.getElementById("activeChips");
+  var filterBtn = document.getElementById("filterBtn");
+  var countBadge = document.getElementById("countBadge");
+  var searchInput = document.getElementById("search");
+  var sheet = document.getElementById("sheet");
+  var scrim = document.getElementById("scrim");
+  var applyBtn = document.getElementById("applyBtn");
+  var applyCount = document.getElementById("applyCount");
+
+  function escHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function matches(state, searchTerm) {
+    var term = searchTerm.trim().toLowerCase();
+    return PLAYERS.filter(function (p) {
+      if (term && p.name.toLowerCase().indexOf(term) === -1) return false;
+      if (state.gender && p.gender !== state.gender) return false;
+      if (state.types.length) {
+        var hit = state.types.some(function (t) {
+          if (t === "am" || t === "pro") return p.cls === t;
+          return p.tags.indexOf(t) !== -1;
+        });
+        if (!hit) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderCard(p) {
+    var badges = p.tags.map(function (t) {
+      return '<span class="badge ' + (BADGE_CLASS[t] || "") + '">' + TYPE_LABELS[t] + "</span>";
+    }).join("");
+    var sLine = p.s
+      ? '<div class="score-line">' + p.s + '<span class="lbl">S</span></div>'
+      : "";
+    return (
+      '<div class="card">' +
+        '<div class="card-name-col">' +
+          '<div class="card-name">' + escHtml(p.name) + badges + "</div>" +
+          '<div class="card-sub">' + (p.cls === "am" ? "AM" : "PRO") + "</div>" +
+        "</div>" +
+        '<div class="card-scores">' +
+          '<div class="score-line">' + p.d + '<span class="lbl">D</span></div>' +
+          sLine +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  function render() {
+    var term = searchInput.value;
+    var results = matches(applied, term);
+    listEl.innerHTML = results.map(renderCard).join("");
+    var showEmpty = results.length === 0;
+    noResultsEl.style.display = showEmpty ? "block" : "none";
+    listEl.style.display = showEmpty ? "none" : "block";
+
+    var activeCount = (applied.gender ? 1 : 0) + applied.types.length;
+    var filtering = activeCount > 0 || term.trim().length > 0;
+    resultLineEl.textContent = filtering ? "Showing " + results.length + " of " + PLAYERS.length + " players" : "";
+
+    filterBtn.classList.toggle("has-active", activeCount > 0);
+    if (activeCount > 0) {
+      countBadge.hidden = false;
+      countBadge.textContent = activeCount;
+    } else {
+      countBadge.hidden = true;
+    }
+
+    var tokens = [];
+    if (applied.gender) {
+      tokens.push({ key: "gender", label: applied.gender === "M" ? "Men" : "Women" });
+    }
+    applied.types.forEach(function (t) {
+      tokens.push({ key: "type:" + t, label: TYPE_LABELS[t] });
+    });
+    activeChipsEl.innerHTML = tokens.map(function (tok) {
+      return '<span class="chip-token">' + escHtml(tok.label) +
+        '<button data-remove="' + tok.key + '" aria-label="Remove ' + escHtml(tok.label) + ' filter">✕</button></span>';
+    }).join("");
+  }
+
+  activeChipsEl.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-remove]");
+    if (!btn) return;
+    var key = btn.getAttribute("data-remove");
+    if (key === "gender") {
+      applied.gender = null;
+    } else if (key.indexOf("type:") === 0) {
+      var t = key.slice(5);
+      applied.types = applied.types.filter(function (x) { return x !== t; });
+    }
+    draft = { gender: applied.gender, types: applied.types.slice() };
+    render();
+  });
+
+  searchInput.addEventListener("input", render);
+
+  document.getElementById("clearFromEmpty").addEventListener("click", function () {
+    applied = { gender: null, types: [] };
+    draft = { gender: null, types: [] };
+    searchInput.value = "";
+    render();
+  });
+
+  function openSheet() {
+    draft = { gender: applied.gender, types: applied.types.slice() };
+    syncSheetUI();
+    sheet.classList.add("open");
+    scrim.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeSheet() {
+    sheet.classList.remove("open");
+    scrim.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  function syncSheetUI() {
+    document.querySelectorAll(".seg-btn").forEach(function (b) {
+      b.classList.toggle("active", b.getAttribute("data-gender") === draft.gender);
+    });
+    document.querySelectorAll(".pill-btn").forEach(function (b) {
+      b.classList.toggle("active", draft.types.indexOf(b.getAttribute("data-type")) !== -1);
+    });
+    var previewCount = matches(draft, searchInput.value).length;
+    applyCount.textContent = previewCount;
+    applyBtn.disabled = previewCount === 0;
+  }
+
+  filterBtn.addEventListener("click", openSheet);
+  document.getElementById("sheetClose").addEventListener("click", closeSheet);
+  scrim.addEventListener("click", closeSheet);
+
+  document.getElementById("genderSeg").addEventListener("click", function (e) {
+    var btn = e.target.closest(".seg-btn");
+    if (!btn) return;
+    var g = btn.getAttribute("data-gender");
+    draft.gender = draft.gender === g ? null : g;
+    syncSheetUI();
+  });
+
+  document.getElementById("typeGrid").addEventListener("click", function (e) {
+    var btn = e.target.closest(".pill-btn");
+    if (!btn) return;
+    var t = btn.getAttribute("data-type");
+    var idx = draft.types.indexOf(t);
+    if (idx === -1) draft.types.push(t); else draft.types.splice(idx, 1);
+    syncSheetUI();
+  });
+
+  document.getElementById("clearAll").addEventListener("click", function () {
+    draft = { gender: null, types: [] };
+    syncSheetUI();
+  });
+
+  applyBtn.addEventListener("click", function () {
+    applied = { gender: draft.gender, types: draft.types.slice() };
+    closeSheet();
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="airbutter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mockup C — Streak Beacon</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--bg:#fafafa;--panel:#ffffff;--panel-2:#f7f7f7;--panel-input:#ffffff;--line:#ebebeb;--line-soft:#d4d4d4;
+--txt:#222222;--txt-2:#484848;--txt-mid:#717171;--txt-dim:#9b9b9b;--placeholder:#b0b0b0;
+--cyan:#008489;--pink:#ff5a5f;--gold:#a06800;--partner-pur:#5a6cb8;
+--display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{overscroll-behavior-y:none}
+body{background:var(--bg);color:var(--txt-2);margin:0;padding-bottom:96px}
+body.locked{overflow:hidden}
+
+.stamp{background:#fff8e6;border-bottom:1px solid #e8d9a8;color:var(--gold);font-size:11px;font-weight:800;
+letter-spacing:1px;text-align:center;padding:6px;text-transform:uppercase;position:relative;z-index:120}
+
+/* ---------- Header ---------- */
+.header{position:sticky;top:0;z-index:100;background:var(--bg);padding:14px 12px 10px;
+border-bottom:1px solid rgba(0,132,137,.15);transition:padding .18s ease}
+.header.condensed{padding:8px 12px 8px}
+
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:8px;
+margin-bottom:10px;transition:margin .18s ease,max-height .18s ease,opacity .15s ease;overflow:hidden;max-height:40px}
+.header.condensed .hrow{max-height:0;margin-bottom:0;opacity:0}
+h1{font-size:21px;font-weight:800;margin:0;letter-spacing:.2px;color:var(--cyan);
+text-transform:uppercase;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+min-width:0;flex:1}
+.theme-pill{background:var(--panel-2);border:1px solid var(--line);border-radius:999px;padding:5px 10px;
+font-size:9px;font-weight:800;letter-spacing:1px;color:var(--txt-mid);flex:none;cursor:pointer;font-family:inherit;white-space:nowrap}
+
+.search-box{width:100%;padding:12px 16px;border-radius:12px;background:var(--panel-input);border:1px solid var(--line);
+color:var(--txt);font-size:15px;outline:none;box-sizing:border-box;margin-bottom:10px;transition:padding .18s ease,font-size .18s ease}
+.header.condensed .search-box{padding:9px 14px;font-size:14px;margin-bottom:8px}
+.search-box::placeholder{color:var(--placeholder)}
+.search-box:focus{border-color:var(--cyan);background:#fff}
+
+.tag-bar{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;position:relative;padding-bottom:2px;
+-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.tag-bar::-webkit-scrollbar{display:none}
+.tag-chip{background:var(--panel-2);color:var(--txt-mid);border:1px solid var(--line);border-radius:999px;
+padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer;
+white-space:nowrap;font-family:inherit;flex:none}
+.tag-chip.active{background:rgba(0,132,137,.12);color:var(--cyan);border-color:rgba(0,132,137,.35)}
+
+.bar{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 12px 0;margin:0 0 12px;align-items:center}
+.bar::-webkit-scrollbar{display:none}
+.sort-btn{background:var(--panel-2);color:var(--txt-mid);border:1px solid var(--line);border-radius:12px;
+padding:8px 14px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;min-height:36px;font-family:inherit;flex:none}
+.sort-btn.active{background:rgba(0,132,137,.1);color:var(--cyan);border-color:rgba(0,132,137,.3)}
+
+.day-pill{display:inline-block;margin:2px 12px 10px;background:var(--panel-2);border:1px solid var(--line);
+border-radius:12px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--txt-mid);font-family:ui-monospace,Menlo,monospace}
+
+/* ---------- Cards ---------- */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 12px 10px;padding:14px 14px;
+display:flex;align-items:center;gap:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.streak-badge{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:800;letter-spacing:.5px;border:1px solid transparent;white-space:nowrap}
+.streak-w{background:rgba(0,132,137,.08);color:var(--cyan);border-color:var(--cyan)}
+.streak-l{background:rgba(255,90,95,.08);color:var(--pink);border-color:var(--pink)}
+.nm{flex:1;min-width:0}
+.nm b{color:var(--txt);font-size:14px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.tb{display:inline-block;font-size:8px;font-weight:800;letter-spacing:1px;border:1px solid;border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:2px}
+.tb.ppa{color:var(--gold)}.tb.mlp{color:var(--partner-pur)}.tb.app{color:var(--cyan)}.tb.former{color:var(--txt-dim)}
+.rt{text-align:right;font-size:15px;font-weight:800;color:var(--txt);line-height:1.5;white-space:nowrap}
+.rt small{font-weight:700;font-size:11px;color:var(--txt-dim)}
+.imp{font-size:11px;font-weight:700}.imp.up{color:var(--cyan)}.imp.dn{color:var(--pink)}
+
+/* ---------- Streak Beacon (FAB) ---------- */
+.fab-wrap{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:150}
+.fab-ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(160,104,0,.35);
+animation:fabPulse 2.6s ease-out infinite}
+@keyframes fabPulse{
+  0%{transform:scale(.82);opacity:.9}
+  70%{transform:scale(1.28);opacity:0}
+  100%{transform:scale(1.28);opacity:0}
+}
+.fab{position:relative;width:56px;height:56px;border-radius:50%;
+background:linear-gradient(150deg,#ffffff,#fff6e0);border:2px solid #d9c88f;
+box-shadow:0 6px 16px rgba(160,104,0,.28),0 1px 3px rgba(0,0,0,.08);
+display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;
+font-family:inherit;padding:0}
+.fab:active{transform:scale(.94)}
+.fab-badge{position:absolute;top:-3px;right:-3px;min-width:21px;height:21px;border-radius:11px;
+background:var(--gold);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;
+justify-content:center;padding:0 5px;box-shadow:0 0 0 2px var(--bg);font-family:ui-monospace,Menlo,monospace}
+.fab-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(4px);
+background:var(--txt);color:#fff;font-size:11px;font-weight:700;letter-spacing:.3px;
+padding:6px 10px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;
+transition:opacity .2s ease,transform .2s ease}
+.fab-label::after{content:"";position:absolute;right:-4px;top:50%;transform:translateY(-50%);
+border:4px solid transparent;border-left-color:var(--txt)}
+.fab-wrap.hint .fab-label{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* ---------- Bottom sheet ---------- */
+.scrim{position:fixed;inset:0;background:rgba(20,20,20,.4);z-index:190;opacity:0;pointer-events:none;
+transition:opacity .25s ease}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:82vh;background:var(--bg);
+border-radius:20px 20px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.18);z-index:191;
+transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1);
+overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+.sheet.dragging{transition:none}
+.sheet.open{transform:translateY(0)}
+.sheet-grab{position:sticky;top:0;background:var(--bg);z-index:2;padding:10px 0 4px;
+display:flex;justify-content:center;touch-action:none;cursor:grab}
+.sheet-handle{width:36px;height:4px;border-radius:2px;background:var(--line-soft)}
+.sheet-inner{max-width:560px;margin:0 auto;padding:4px 18px 8px}
+.sheet-title-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.sheet-title{font-size:26px;font-weight:900;color:var(--txt);margin:0;font-family:var(--display)}
+.sheet-close{background:var(--panel-2);border:1px solid var(--line);color:var(--txt-mid);
+width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;flex:none;font-family:inherit}
+.sheet-sub{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--txt-dim);
+text-transform:uppercase;margin:4px 0 20px}
+.sec{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;
+margin:24px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sec:first-of-type{margin-top:0}
+.champ-row{display:flex;gap:10px;margin-bottom:10px}
+.champ{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.champ .n{font-size:26px;font-weight:900;font-family:var(--display)}
+.champ.w .n{color:var(--cyan)}.champ.l .n{color:var(--pink)}
+.champ .n sup{font-size:12px}
+.champ .who{font-size:13px;font-weight:800;color:var(--txt);margin-top:2px}
+.champ .since{font-size:10px;color:var(--txt-dim);margin-top:2px}
+.glabel{font-size:11px;font-weight:700;color:var(--txt-mid);margin:10px 0 6px}
+</style>
+</head>
+<body>
+<div class="stamp">Mockup C · v1 · 7/7 · Streak Beacon (FAB + bottom sheet)</div>
+
+<div class="header" id="header">
+  <div class="hrow"><h1>Player Leaderboard</h1><button class="theme-pill">◐ BUTTER</button></div>
+  <input class="search-box" placeholder="Search players or notes...">
+  <div class="tag-bar">
+    <button class="tag-chip active">ALL</button><button class="tag-chip">AM</button><button class="tag-chip">APP</button>
+    <button class="tag-chip">COLLEGE</button><button class="tag-chip">FORMER</button><button class="tag-chip">MLP</button><button class="tag-chip">PPA</button>
+  </div>
+</div>
+<div class="bar">
+  <button class="sort-btn active">Recent</button><button class="sort-btn">Name</button>
+  <button class="sort-btn">Doubles</button><button class="sort-btn">Singles</button><button class="sort-btn">Streak</button>
+</div>
+<span class="day-pill">SUN · JUN 28</span>
+<div class="card"><span class="streak-badge streak-w">🔥 9W</span><span class="nm"><b>Andrea Koop</b><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp up">(+0.122)</span> 5.706 <small>D</small><br>5.902 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-w">🔥 14W</span><span class="nm"><b>Anna Leigh Waters</b><span class="tb mlp">MLP</span><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp dn">(−0.004)</span> 6.987 <small>D</small><br>6.453 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-w">🔥 1W</span><span class="nm"><b>Casey Diamond</b><span class="tb app">APP</span><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp dn">(−0.031)</span> 6.233 <small>D</small><br>5.539 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-w">🔥 2W</span><span class="nm"><b>Sofia Sewing</b><span class="tb app">APP</span><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp dn">(−0.007)</span> 6.243 <small>D</small><br>6.004 <small>S</small></span></div>
+<span class="day-pill">SUN · JUN 21</span>
+<div class="card"><span class="streak-badge streak-w">🔥 1W</span><span class="nm"><b>Richard Livornese Jr</b></span><span class="rt">6.187 <small>D</small><br>5.929 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-l">▼ 2L</span><span class="nm"><b>Jay Devilliers</b><span class="tb former">FORMER</span></span><span class="rt">6.629 <small>D</small><br>6.159 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-l">▼ 1L</span><span class="nm"><b>Ben Johns</b><span class="tb mlp">MLP</span><span class="tb ppa">PPA</span></span><span class="rt">7.118 <small>D</small><br>6.568 <small>S</small></span></div>
+
+<!-- Streak Beacon -->
+<div class="fab-wrap" id="fabWrap">
+  <span class="fab-label" id="fabLabel">Streak Hall</span>
+  <div class="fab-ring"></div>
+  <button class="fab" id="fabBtn" aria-label="Open Streak Hall" aria-haspopup="true">🔥<span class="fab-badge">17</span></button>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Streak Hall">
+  <div class="sheet-grab" id="sheetGrab"><span class="sheet-handle"></span></div>
+  <div class="sheet-inner">
+    <div class="sheet-title-row">
+      <h2 class="sheet-title">Streak Hall</h2>
+      <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
+    </div>
+    <div class="sheet-sub">Current Run · All-Time · Hall of Fame</div>
+    <div class="sec">— PRO —</div>
+    <div class="glabel">Men's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">17<sup>W</sup></div><div class="who">Altaf Merchant</div><div class="since">Leading since 2026-07-02</div></div>
+      <div class="champ l"><div class="n">8<sup>L</sup></div><div class="who">Cason Campbell</div><div class="since">Leading since 2026-07-02</div></div>
+    </div>
+    <div class="glabel">Women's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">14<sup>W</sup></div><div class="who">Anna Leigh Waters</div><div class="since">Leading since 2026-06-28</div></div>
+      <div class="champ l"><div class="n">14<sup>L</sup></div><div class="who">Cleo Bond</div><div class="since">Leading since 2026-06-25</div></div>
+    </div>
+    <div class="sec">— AM —</div>
+    <div class="glabel">Men's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">21<sup>W</sup></div><div class="who">Ryan Truong</div><div class="since">Leading since 2026-07-06</div></div>
+      <div class="champ l"><div class="n">9<sup>L</sup></div><div class="who">Wade Tallent</div><div class="since">Leading since 2026-07-01</div></div>
+    </div>
+    <div class="glabel">Women's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">8<sup>W</sup></div><div class="who">Krista Gagliardo</div><div class="since">Leading since 2026-06-30</div></div>
+      <div class="champ l"><div class="n">15<sup>L</sup></div><div class="who">Madison Singer</div><div class="since">Leading since 2026-06-22</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var header = document.getElementById('header');
+  var lastCondensed = false;
+  function onScroll(){
+    var condensed = window.scrollY > 44;
+    if(condensed !== lastCondensed){
+      header.classList.toggle('condensed', condensed);
+      lastCondensed = condensed;
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  var fabWrap = document.getElementById('fabWrap');
+  var scrim = document.getElementById('scrim');
+  var sheet = document.getElementById('sheet');
+  var fabBtn = document.getElementById('fabBtn');
+  var sheetClose = document.getElementById('sheetClose');
+  var sheetGrab = document.getElementById('sheetGrab');
+
+  function openSheet(){
+    scrim.classList.add('open');
+    sheet.classList.add('open');
+    document.body.classList.add('locked');
+  }
+  function closeSheet(){
+    scrim.classList.remove('open');
+    sheet.classList.remove('open');
+    document.body.classList.remove('locked');
+  }
+  fabBtn.addEventListener('click', openSheet);
+  sheetClose.addEventListener('click', closeSheet);
+  scrim.addEventListener('click', closeSheet);
+
+  // One-time discoverability hint: label flashes shortly after load, then hides.
+  setTimeout(function(){ fabWrap.classList.add('hint'); }, 700);
+  setTimeout(function(){ fabWrap.classList.remove('hint'); }, 3400);
+
+  // Swipe-down-to-dismiss on the grab handle.
+  var startY = null, currentDy = 0;
+  function onStart(e){
+    startY = (e.touches ? e.touches[0].clientY : e.clientY);
+    sheet.classList.add('dragging');
+  }
+  function onMove(e){
+    if(startY === null) return;
+    var y = (e.touches ? e.touches[0].clientY : e.clientY);
+    currentDy = Math.max(0, y - startY);
+    sheet.style.transform = 'translateY(' + currentDy + 'px)';
+  }
+  function onEnd(){
+    if(startY === null) return;
+    sheet.classList.remove('dragging');
+    sheet.style.transform = '';
+    if(currentDy > 90){ closeSheet(); }
+    startY = null; currentDy = 0;
+  }
+  sheetGrab.addEventListener('touchstart', onStart, {passive:true});
+  sheetGrab.addEventListener('touchmove', onMove, {passive:true});
+  sheetGrab.addEventListener('touchend', onEnd);
+  sheetGrab.addEventListener('mousedown', onStart);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onEnd);
+})();
+</script>
+</body>
+</html>

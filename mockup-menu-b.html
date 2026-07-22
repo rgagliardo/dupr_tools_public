@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="airbutter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B — Search + Streaks behind icons</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--bg:#fafafa;--panel:#ffffff;--panel-2:#f7f7f7;--panel-input:#ffffff;--line:#ebebeb;--line-soft:#d4d4d4;
+--txt:#222222;--txt-2:#484848;--txt-mid:#717171;--txt-dim:#9b9b9b;--placeholder:#b0b0b0;
+--cyan:#008489;--pink:#ff5a5f;--gold:#a06800;--partner-pur:#5a6cb8;
+--display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",system-ui,sans-serif}
+body{background:var(--bg);color:var(--txt-2);margin:0;padding-bottom:60px}
+.stamp{background:#fff8e6;border-bottom:1px solid #e8d9a8;color:var(--gold);font-size:11px;font-weight:800;
+letter-spacing:1px;text-align:center;padding:6px;text-transform:uppercase}
+.header{position:sticky;top:0;z-index:100;background:var(--bg);padding:14px 12px 10px;border-bottom:1px solid rgba(0,132,137,.15)}
+.hrow{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+h1{font-size:24px;font-weight:800;margin:0;letter-spacing:.5px;color:var(--cyan);text-transform:uppercase;font-style:italic;flex:1;min-width:0}
+.icon-btn{width:40px;height:40px;border-radius:50%;background:var(--panel-2);border:1px solid var(--line);
+font-size:16px;cursor:pointer;flex:none;display:flex;align-items:center;justify-content:center}
+.icon-btn.active{background:rgba(0,132,137,.12);border-color:rgba(0,132,137,.35)}
+.search-wrap{max-height:0;overflow:hidden;transition:max-height .18s ease}
+.search-wrap.open{max-height:64px}
+.search-box{width:100%;padding:12px 16px;border-radius:12px;background:var(--panel-input);border:1px solid var(--line);
+color:var(--txt);font-size:15px;outline:none;box-sizing:border-box;margin-bottom:10px}
+.search-box::placeholder{color:var(--placeholder)}
+.tag-bar{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;
+-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.tag-bar::-webkit-scrollbar{display:none}
+.tag-chip{background:var(--panel-2);color:var(--txt-mid);border:1px solid var(--line);border-radius:999px;
+padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer;white-space:nowrap;font-family:inherit}
+.tag-chip.active{background:rgba(0,132,137,.12);color:var(--cyan);border-color:rgba(0,132,137,.35)}
+.bar{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 12px;margin:0 0 14px;align-items:center}
+.bar::-webkit-scrollbar{display:none}
+.sort-btn{background:var(--panel-2);color:var(--txt-mid);border:1px solid var(--line);border-radius:12px;
+padding:8px 14px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;min-height:36px;font-family:inherit}
+.sort-btn.active{background:rgba(0,132,137,.1);color:var(--cyan);border-color:rgba(0,132,137,.3)}
+.day-pill{display:inline-block;margin:2px 12px 10px;background:var(--panel-2);border:1px solid var(--line);
+border-radius:12px;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--txt-mid);font-family:ui-monospace,Menlo,monospace}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 12px 10px;padding:14px 14px;
+display:flex;align-items:center;gap:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.streak-badge{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:800;letter-spacing:.5px;border:1px solid transparent;white-space:nowrap}
+.streak-w{background:rgba(0,132,137,.08);color:var(--cyan);border-color:var(--cyan)}
+.streak-l{background:rgba(255,90,95,.08);color:var(--pink);border-color:var(--pink)}
+.nm{flex:1;min-width:0}
+.nm b{color:var(--txt);font-size:14px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.tb{display:inline-block;font-size:8px;font-weight:800;letter-spacing:1px;border:1px solid;border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:2px}
+.tb.ppa{color:var(--gold)}.tb.mlp{color:var(--partner-pur)}.tb.app{color:var(--cyan)}.tb.former{color:var(--txt-dim)}
+.rt{text-align:right;font-size:15px;font-weight:800;color:var(--txt);line-height:1.5;white-space:nowrap}
+.rt small{font-weight:700;font-size:11px;color:var(--txt-dim)}
+.imp{font-size:11px;font-weight:700}.imp.up{color:var(--cyan)}.imp.dn{color:var(--pink)}
+.overlay{position:fixed;inset:0;background:rgba(250,250,250,.95);backdrop-filter:blur(8px);z-index:200;display:none;overflow-y:auto}
+.overlay.open{display:block}
+.ov-close{position:fixed;top:14px;right:14px;width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--cyan);
+color:var(--txt);font-size:20px;cursor:pointer;z-index:201}
+.ov-inner{max-width:560px;margin:0 auto;padding:56px 16px 40px}
+.ov-title{font-size:30px;font-weight:900;color:var(--txt);margin:0;font-family:var(--display)}
+.ov-sub{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--txt-dim);text-transform:uppercase;margin:4px 0 22px}
+.sec{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.champ-row{display:flex;gap:10px;margin-bottom:10px}
+.champ{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.champ .n{font-size:26px;font-weight:900;font-family:var(--display)}
+.champ.w .n{color:var(--cyan)}.champ.l .n{color:var(--pink)}
+.champ .n sup{font-size:12px}
+.champ .who{font-size:13px;font-weight:800;color:var(--txt);margin-top:2px}
+.champ .since{font-size:10px;color:var(--txt-dim);margin-top:2px}
+.glabel{font-size:11px;font-weight:700;color:var(--txt-mid);margin:10px 0 6px}
+</style>
+</head>
+<body>
+<div class="stamp">Mockup B · v1 · 7/7 · search + streaks behind icons</div>
+<div class="header">
+  <div class="hrow">
+    <h1>Player Leaderboard</h1>
+    <button class="icon-btn" id="sBtn" aria-label="Search" onclick="toggleSearch()">🔍</button>
+    <button class="icon-btn" aria-label="Streak Hall" onclick="document.getElementById('ov').classList.add('open')">🔥</button>
+    <button class="icon-btn" aria-label="Theme">◐</button>
+  </div>
+  <div class="search-wrap" id="sWrap">
+    <input class="search-box" id="sInput" placeholder="Search players or notes...">
+  </div>
+  <div class="tag-bar">
+    <button class="tag-chip active">ALL</button><button class="tag-chip">AM</button><button class="tag-chip">APP</button>
+    <button class="tag-chip">COLLEGE</button><button class="tag-chip">FORMER</button><button class="tag-chip">MLP</button><button class="tag-chip">PPA</button>
+  </div>
+</div>
+<div class="bar">
+  <button class="sort-btn active">Recent</button><button class="sort-btn">Name</button>
+  <button class="sort-btn">Doubles</button><button class="sort-btn">Singles</button><button class="sort-btn">Streak</button>
+</div>
+<span class="day-pill">SUN · JUN 28</span>
+<div class="card"><span class="streak-badge streak-w">🔥 9W</span><span class="nm"><b>Andrea Koop</b><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp up">(+0.122)</span> 5.706 <small>D</small><br>5.902 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-w">🔥 14W</span><span class="nm"><b>Anna Leigh Waters</b><span class="tb mlp">MLP</span><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp dn">(−0.004)</span> 6.987 <small>D</small><br>6.453 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-w">🔥 1W</span><span class="nm"><b>Casey Diamond</b><span class="tb app">APP</span><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp dn">(−0.031)</span> 6.233 <small>D</small><br>5.539 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-w">🔥 2W</span><span class="nm"><b>Sofia Sewing</b><span class="tb app">APP</span><span class="tb ppa">PPA</span></span><span class="rt"><span class="imp dn">(−0.007)</span> 6.243 <small>D</small><br>6.004 <small>S</small></span></div>
+<span class="day-pill">SUN · JUN 21</span>
+<div class="card"><span class="streak-badge streak-w">🔥 1W</span><span class="nm"><b>Richard Livornese Jr</b></span><span class="rt">6.187 <small>D</small><br>5.929 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-l">▼ 2L</span><span class="nm"><b>Jay Devilliers</b><span class="tb former">FORMER</span></span><span class="rt">6.629 <small>D</small><br>6.159 <small>S</small></span></div>
+<div class="card"><span class="streak-badge streak-l">▼ 1L</span><span class="nm"><b>Ben Johns</b><span class="tb mlp">MLP</span><span class="tb ppa">PPA</span></span><span class="rt">7.118 <small>D</small><br>6.568 <small>S</small></span></div>
+
+<div class="overlay" id="ov">
+  <button class="ov-close" onclick="document.getElementById('ov').classList.remove('open')">×</button>
+  <div class="ov-inner">
+    <h2 class="ov-title">Streak Hall</h2>
+    <div class="ov-sub">Current Run · All-Time · Hall of Fame</div>
+    <div class="sec">— PRO —</div>
+    <div class="glabel">Men's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">17<sup>W</sup></div><div class="who">Altaf Merchant</div><div class="since">Leading since 2026-07-02</div></div>
+      <div class="champ l"><div class="n">8<sup>L</sup></div><div class="who">Cason Campbell</div><div class="since">Leading since 2026-07-02</div></div>
+    </div>
+    <div class="glabel">Women's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">14<sup>W</sup></div><div class="who">Anna Leigh Waters</div><div class="since">Leading since 2026-06-28</div></div>
+      <div class="champ l"><div class="n">14<sup>L</sup></div><div class="who">Cleo Bond</div><div class="since">Leading since 2026-06-25</div></div>
+    </div>
+    <div class="sec">— AM —</div>
+    <div class="glabel">Men's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">21<sup>W</sup></div><div class="who">Ryan Truong</div><div class="since">Leading since 2026-07-06</div></div>
+      <div class="champ l"><div class="n">9<sup>L</sup></div><div class="who">Wade Tallent</div><div class="since">Leading since 2026-07-01</div></div>
+    </div>
+    <div class="glabel">Women's Doubles</div>
+    <div class="champ-row">
+      <div class="champ w"><div class="n">8<sup>W</sup></div><div class="who">Krista Gagliardo</div><div class="since">Leading since 2026-06-30</div></div>
+      <div class="champ l"><div class="n">15<sup>L</sup></div><div class="who">Madison Singer</div><div class="since">Leading since 2026-06-22</div></div>
+    </div>
+  </div>
+</div>
+<script>
+function toggleSearch(){
+  var w=document.getElementById('sWrap'), b=document.getElementById('sBtn');
+  var open=w.classList.toggle('open');
+  b.classList.toggle('active',open);
+  if(open){setTimeout(function(){document.getElementById('sInput').focus();},180);}
+}
+</script>
+</body>
+</html>

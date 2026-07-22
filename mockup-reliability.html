@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reliability — Variations</title>
+<style>
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #e8e8ec; }
+  .stamp { position: sticky; top: 0; z-index: 50; background: #111; color: #ffd43b; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 8px 14px; }
+  h1 { font-size: 20px; margin: 18px 14px 4px; color: #222; }
+  .note { font-size: 13px; color: #555; margin: 0 14px 14px; max-width: 720px; line-height: 1.5; }
+  .variant { margin: 26px 10px; }
+  .variant > h2 { font-size: 15px; margin: 0 4px 2px; color: #222; }
+  .variant > p { font-size: 12.5px; color: #666; margin: 0 4px 10px; max-width: 720px; line-height: 1.45; }
+  .themes { display: flex; flex-wrap: wrap; gap: 12px; }
+  .pane { flex: 1 1 320px; max-width: 420px; border-radius: 12px; padding: 14px; }
+
+  .pane.t-dark   { background: #0d0e15;
+    --panel: #13141e; --panel-2: #1a1b28; --line: #222233;
+    --txt: #fff; --txt-2: #c8c8d8; --txt-mid: #9898b0; --txt-dim: #78788c;
+    --cyan: #00e5ff; --pink: #ff00a0; --yellow: #ffd43b; }
+  .pane.t-butter { background: #fafafa; border: 1px solid #ebebeb;
+    --panel: #ffffff; --panel-2: #f7f7f7; --line: #ebebeb;
+    --txt: #222; --txt-2: #484848; --txt-mid: #717171; --txt-dim: #9b9b9b;
+    --cyan: #008489; --pink: #ff5a5f; --yellow: #7a4f00; }
+  .pane h3 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt-dim); margin: 0 0 10px; }
+
+  .mock-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+  .who { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: var(--txt); text-transform: uppercase; margin-bottom: 5px; }
+  .who small { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--txt-dim); }
+  .cs-info-row { display: flex; align-items: center; gap: 3px; font-size: 14px; color: var(--txt-mid); line-height: 1.5; }
+  .cs-info-label { color: var(--txt-2); font-weight: 700; flex-shrink: 0; }
+  .cs-info-value { color: var(--txt-mid); font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: 5px; }
+
+  /* ── Ring (conic gradient, hole matches the dropdown surface) ── */
+  .rel-ring { position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; vertical-align: middle;
+    background: conic-gradient(var(--ring-c) calc(var(--pct) * 1%), var(--line) 0); }
+  .rel-ring::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--panel-2); }
+  .rel-ring-val { position: relative; z-index: 1; font-size: 8px; font-weight: 800; color: var(--txt-2); font-variant-numeric: tabular-nums; }
+  .rel-high { --ring-c: var(--cyan); }
+  .rel-mid  { --ring-c: var(--txt-dim); }
+  .rel-lowc { --ring-c: var(--pink); }
+  .rel-provc{ --ring-c: var(--yellow); }
+  .rel-ring.big { width: 28px; height: 28px; }
+  .rel-ring.big .rel-ring-val { font-size: 9px; }
+
+  /* DUPR-faithful ramp (variant D) */
+  .rd-100 { --ring-c: #2ecc71; }
+  .rd-70  { --ring-c: #a3b18a; }
+  .rd-mid { --ring-c: #b08d57; }
+  .rd-low { --ring-c: #a4713a; }
+
+  /* ── Micro-bar (variant C) ── */
+  .rel-bar { display: inline-flex; align-items: center; gap: 5px; }
+  .rel-bar .track { display: inline-block; width: 46px; height: 5px; border-radius: 3px; background: var(--line); overflow: hidden; }
+  .rel-bar .fill { display: block; height: 100%; border-radius: 3px; background: var(--bar-c); width: calc(var(--pct) * 1%); }
+  .rel-bar .pctxt { font-size: 12px; color: var(--txt-mid); font-variant-numeric: tabular-nums; }
+  .b-high { --bar-c: var(--cyan); } .b-mid { --bar-c: var(--txt-dim); } .b-low { --bar-c: var(--pink); } .b-prov { --bar-c: var(--yellow); }
+  .provtag { font-size: 10px; font-weight: 700; color: var(--yellow); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="stamp">RELIABILITY MOCKUP · v1 · BUILT 7/9 11:12 AM</div>
+<h1>Reliability in the expanded card — variations</h1>
+<p class="note">All data is real (test roster, fetched this morning) except Krista, borrowed from the main roster as the only provisional example. Each variant shows the same five players in both themes. The row lives in the card's identity group, under DUPR ID. Current shipped state is plain text for everyone: <b>Reliability: D: 100% · S: 30%</b>.</p>
+
+<!-- ═══════════ VARIANT A ═══════════ -->
+<div class="variant">
+  <h2>A — Ring only when flagged (agent's recommendation)</h2>
+  <p>100% stays plain text (~380 pros unchanged). Any format below 100% (or provisional) swaps its text for a ring. Ramp reuses the win-rate pill grammar: cyan ≥70 · neutral 50–69 · pink &lt;50 · amber provisional.</p>
+  <div class="themes">
+  <div class="pane t-butter"><h3>Butter</h3>
+    <div class="mock-card"><div class="who">Anna Leigh Waters <small>100 / 100</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: 100%</span></div></div>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rel-lowc" style="--pct:30"><span class="rel-ring-val">30</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Ben Johns <small>100 / 70</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rel-high" style="--pct:70"><span class="rel-ring-val">70</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Suraj Singh Chandel <small>30 / 10</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-lowc" style="--pct:30"><span class="rel-ring-val">30</span></span> · S: <span class="rel-ring rel-lowc" style="--pct:10"><span class="rel-ring-val">10</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Krista Gagliardo <small>provisional</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-provc" style="--pct:20"><span class="rel-ring-val">20</span></span> <span class="provtag">PROVISIONAL</span></span></div></div>
+  </div>
+  <div class="pane t-dark"><h3>Dark</h3>
+    <div class="mock-card"><div class="who">Anna Leigh Waters <small>100 / 100</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: 100%</span></div></div>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rel-lowc" style="--pct:30"><span class="rel-ring-val">30</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Ben Johns <small>100 / 70</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rel-high" style="--pct:70"><span class="rel-ring-val">70</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Suraj Singh Chandel <small>30 / 10</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-lowc" style="--pct:30"><span class="rel-ring-val">30</span></span> · S: <span class="rel-ring rel-lowc" style="--pct:10"><span class="rel-ring-val">10</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Krista Gagliardo <small>provisional</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-provc" style="--pct:20"><span class="rel-ring-val">20</span></span> <span class="provtag">PROVISIONAL</span></span></div></div>
+  </div>
+  </div>
+</div>
+
+<!-- ═══════════ VARIANT B ═══════════ -->
+<div class="variant">
+  <h2>B — Rings for everyone (DUPR-faithful presence)</h2>
+  <p>Both formats always get a ring, like dupr.com. Consistent, instantly scannable — but ~380 pros carry two full cyan rings that say nothing, and every card gets ~180 extra bytes.</p>
+  <div class="themes">
+  <div class="pane t-butter"><h3>Butter</h3>
+    <div class="mock-card"><div class="who">Anna Leigh Waters <small>100 / 100</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span> · S: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span> · S: <span class="rel-ring rel-lowc" style="--pct:30"><span class="rel-ring-val">30</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Sarah Hua <small>90 / 20</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:90"><span class="rel-ring-val">90</span></span> · S: <span class="rel-ring rel-lowc" style="--pct:20"><span class="rel-ring-val">20</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Christina Shifflett <small>100 / 50</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span> · S: <span class="rel-ring rel-mid" style="--pct:50"><span class="rel-ring-val">50</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Krista Gagliardo <small>provisional</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-provc" style="--pct:20"><span class="rel-ring-val">20</span></span> <span class="provtag">PROVISIONAL</span></span></div></div>
+  </div>
+  <div class="pane t-dark"><h3>Dark</h3>
+    <div class="mock-card"><div class="who">Anna Leigh Waters <small>100 / 100</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span> · S: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span> · S: <span class="rel-ring rel-lowc" style="--pct:30"><span class="rel-ring-val">30</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Sarah Hua <small>90 / 20</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:90"><span class="rel-ring-val">90</span></span> · S: <span class="rel-ring rel-lowc" style="--pct:20"><span class="rel-ring-val">20</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Christina Shifflett <small>100 / 50</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-high" style="--pct:100"><span class="rel-ring-val">100</span></span> · S: <span class="rel-ring rel-mid" style="--pct:50"><span class="rel-ring-val">50</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Krista Gagliardo <small>provisional</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rel-provc" style="--pct:20"><span class="rel-ring-val">20</span></span> <span class="provtag">PROVISIONAL</span></span></div></div>
+  </div>
+  </div>
+</div>
+
+<!-- ═══════════ VARIANT C ═══════════ -->
+<div class="variant">
+  <h2>C — Micro-bar meter (flagged only)</h2>
+  <p>Same flag-only rule as A, but a thin horizontal meter + percent text instead of a ring — speaks the same language as the W/L bars lower in the card. Wider than the ring but flatter; the exact number stays visible as text.</p>
+  <div class="themes">
+  <div class="pane t-butter"><h3>Butter</h3>
+    <div class="mock-card"><div class="who">Anna Leigh Waters <small>100 / 100</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: 100%</span></div></div>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-bar b-low" style="--pct:30"><span class="track"><span class="fill"></span></span><span class="pctxt">30%</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Ben Johns <small>100 / 70</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-bar b-high" style="--pct:70"><span class="track"><span class="fill"></span></span><span class="pctxt">70%</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Suraj Singh Chandel <small>30 / 10</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-bar b-low" style="--pct:30"><span class="track"><span class="fill"></span></span><span class="pctxt">30%</span></span> · S: <span class="rel-bar b-low" style="--pct:10"><span class="track"><span class="fill"></span></span><span class="pctxt">10%</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Krista Gagliardo <small>provisional</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-bar b-prov" style="--pct:20"><span class="track"><span class="fill"></span></span><span class="pctxt">20%</span></span> <span class="provtag">PROVISIONAL</span></span></div></div>
+  </div>
+  <div class="pane t-dark"><h3>Dark</h3>
+    <div class="mock-card"><div class="who">Anna Leigh Waters <small>100 / 100</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: 100%</span></div></div>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-bar b-low" style="--pct:30"><span class="track"><span class="fill"></span></span><span class="pctxt">30%</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Ben Johns <small>100 / 70</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-bar b-high" style="--pct:70"><span class="track"><span class="fill"></span></span><span class="pctxt">70%</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Suraj Singh Chandel <small>30 / 10</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-bar b-low" style="--pct:30"><span class="track"><span class="fill"></span></span><span class="pctxt">30%</span></span> · S: <span class="rel-bar b-low" style="--pct:10"><span class="track"><span class="fill"></span></span><span class="pctxt">10%</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Krista Gagliardo <small>provisional</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-bar b-prov" style="--pct:20"><span class="track"><span class="fill"></span></span><span class="pctxt">20%</span></span> <span class="provtag">PROVISIONAL</span></span></div></div>
+  </div>
+  </div>
+</div>
+
+<!-- ═══════════ VARIANT D ═══════════ -->
+<div class="variant">
+  <h2>D — Ring with DUPR's own color ramp (flagged only)</h2>
+  <p>Same flag-only rule as A, but colors imported from dupr.com (green high → tan/brown low) instead of our theme tokens. Familiar to DUPR users; foreign to this page — green exists nowhere else in either theme.</p>
+  <div class="themes">
+  <div class="pane t-butter"><h3>Butter</h3>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rd-low" style="--pct:30"><span class="rel-ring-val">30</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Ben Johns <small>100 / 70</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rd-70" style="--pct:70"><span class="rel-ring-val">70</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Suraj Singh Chandel <small>30 / 10</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rd-low" style="--pct:30"><span class="rel-ring-val">30</span></span> · S: <span class="rel-ring rd-low" style="--pct:10"><span class="rel-ring-val">10</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Christina Shifflett <small>100 / 50</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rd-mid" style="--pct:50"><span class="rel-ring-val">50</span></span></span></div></div>
+  </div>
+  <div class="pane t-dark"><h3>Dark</h3>
+    <div class="mock-card"><div class="who">Pete Cloutier <small>100 / 30</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rd-low" style="--pct:30"><span class="rel-ring-val">30</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Ben Johns <small>100 / 70</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rd-70" style="--pct:70"><span class="rel-ring-val">70</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Suraj Singh Chandel <small>30 / 10</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: <span class="rel-ring rd-low" style="--pct:30"><span class="rel-ring-val">30</span></span> · S: <span class="rel-ring rd-low" style="--pct:10"><span class="rel-ring-val">10</span></span></span></div></div>
+    <div class="mock-card"><div class="who">Christina Shifflett <small>100 / 50</small></div>
+      <div class="cs-info-row"><span class="cs-info-label">Reliability:</span><span class="cs-info-value">D: 100% · S: <span class="rel-ring rd-mid" style="--pct:50"><span class="rel-ring-val">50</span></span></span></div></div>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mockup C — Full-Screen Filter &amp; Sort</title>
+<style>
+  :root {
+    --bg:        #fafafa;
+    --panel:     #ffffff;
+    --panel-2:   #f7f7f7;
+    --line:      #ebebeb;
+    --line-soft: #d4d4d4;
+    --txt:       #222222;
+    --txt-2:     #484848;
+    --txt-mid:   #717171;
+    --txt-dim:   #9b9b9b;
+    --teal:      #008489;
+    --coral:     #ff5a5f;
+    --gold:      #a06800;
+    --purple:    #5a6cb8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--txt);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .stamp {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    background: #1a1a1a; color: #fff;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px; letter-spacing: 0.3px;
+    padding: 5px 12px; text-align: center;
+  }
+
+  .frame {
+    max-width: 430px; margin: 28px auto 0; min-height: calc(100vh - 28px);
+    background: var(--bg);
+    box-shadow: 0 0 0 1px var(--line-soft);
+  }
+
+  .head {
+    position: sticky; top: 28px; z-index: 20;
+    background: var(--bg);
+    padding: 16px 16px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 1.5px;
+    color: var(--txt-mid); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .search-row { display: flex; gap: 8px; }
+  .search {
+    flex: 1; min-width: 0; padding: 12px 16px; border-radius: 12px;
+    background: var(--panel); border: 1px solid var(--line);
+    color: var(--txt); font-size: 15px; outline: none;
+    font-family: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .search::placeholder { color: var(--txt-dim); }
+  .search:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,132,137,0.12); }
+
+  .fs-btn {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px;
+    padding: 0 15px; border-radius: 12px;
+    background: var(--panel); border: 1px solid var(--line-soft);
+    font-family: inherit; font-size: 13px; font-weight: 700; color: var(--txt);
+    cursor: pointer; position: relative;
+  }
+  .fs-btn svg { width: 16px; height: 16px; }
+  .fs-btn.has-active { border-color: var(--txt); }
+  .fs-count-badge {
+    position: absolute; top: -6px; right: -6px;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 4px; border-radius: 999px;
+    background: var(--teal); color: #fff; font-size: 10px; font-weight: 800;
+  }
+
+  .result-line {
+    font-size: 12px; color: var(--txt-dim); letter-spacing: 0.2px;
+    margin-top: 12px; min-height: 1px;
+  }
+
+  .list { padding: 12px 16px 24px; }
+  .card {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .card-name-col { min-width: 0; flex: 1; }
+  .card-name {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.4px;
+    text-transform: uppercase; color: var(--txt);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  }
+  .badge {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.5px;
+    padding: 2px 6px; border-radius: 4px; border: 1px solid currentColor;
+    opacity: 0.9; line-height: 1.4;
+  }
+  .badge-ppa   { color: var(--gold); }
+  .badge-app   { color: var(--teal); }
+  .badge-mlp   { color: var(--purple); }
+  .badge-xpro  { color: var(--txt-dim); }
+  .card-sub {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; color: var(--txt-dim); margin-top: 4px;
+  }
+  .streak-tag {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.3px;
+    padding: 1px 6px; border-radius: 999px; border: 1px solid currentColor;
+  }
+  .streak-w { color: var(--teal); }
+  .streak-l { color: var(--coral); }
+  .card-scores { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .score-line { font-size: 13px; font-weight: 700; color: var(--txt); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .score-line .lbl { font-size: 11px; font-weight: 700; color: var(--txt-dim); margin-left: 3px; }
+
+  .no-results {
+    display: none; text-align: center; padding: 48px 24px;
+    color: var(--txt-mid); font-size: 13px; line-height: 1.6;
+  }
+  .no-results button {
+    display: block; margin: 14px auto 0; background: none; border: none;
+    color: var(--teal); font-family: inherit; font-size: 12px; font-weight: 800;
+    letter-spacing: 0.8px; text-transform: uppercase; cursor: pointer;
+  }
+
+  /* ── full-screen takeover ── */
+  .takeover {
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 601;
+    max-width: 430px; margin: 0 auto;
+    background: var(--panel);
+    display: flex; flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .26s cubic-bezier(.32,.72,0,1);
+  }
+  .takeover.open { transform: translateX(0); }
+
+  .to-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: calc(14px + env(safe-area-inset-top)) 12px 14px;
+    border-bottom: 1px solid var(--line); flex-shrink: 0;
+    background: var(--panel);
+  }
+  .to-text-btn {
+    background: none; border: none; font-family: inherit;
+    font-size: 14px; font-weight: 700; color: var(--txt); cursor: pointer;
+    padding: 8px 10px;
+  }
+  .to-text-btn.disabled { color: var(--txt-dim); pointer-events: none; }
+  .to-title { font-size: 15px; font-weight: 800; letter-spacing: 0.2px; }
+
+  .to-body { flex: 1; overflow-y: auto; }
+  .to-section-label {
+    padding: 18px 16px 8px;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.8px;
+    text-transform: uppercase; color: var(--txt-mid);
+    background: var(--panel-2);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .to-section:first-child .to-section-label { border-top: none; }
+  .to-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px; border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+  .to-row-label { font-size: 14px; font-weight: 500; color: var(--txt); }
+  .to-mark {
+    width: 20px; height: 20px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .to-mark svg { width: 18px; height: 18px; display: none; }
+  .to-row.active .to-mark svg { display: block; }
+  .to-mark svg path { stroke: var(--teal); }
+
+  /* Class & Tour rows are pick-any — a persistent unchecked box (unlike the
+     accessory-checkmark-only Sort/Gender rows) teaches multi-select at a
+     glance, echoing the live page's capsule-vs-pill distinction. */
+  .to-check {
+    width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0;
+    border: 1.5px solid var(--line-soft); position: relative;
+  }
+  .to-row.active .to-check { border-color: var(--teal); background: var(--teal); }
+  .to-row.active .to-check::after {
+    content: ""; position: absolute; left: 6px; top: 2px;
+    width: 6px; height: 11px; border: solid #fff; border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .to-footer {
+    padding: 14px 16px calc(16px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line); flex-shrink: 0;
+    background: var(--panel);
+  }
+  .to-results-btn {
+    width: 100%; padding: 14px 20px; border-radius: 10px;
+    background: var(--teal); border: none; color: #fff;
+    font-family: inherit; font-size: 14px; font-weight: 800;
+    letter-spacing: 0.2px; cursor: pointer;
+  }
+  .to-results-btn:disabled { opacity: 0.55; cursor: default; }
+</style>
+</head>
+<body>
+
+<div class="stamp">MOCKUP C — Full-Screen Filter &amp; Sort · v1.0 · 2026-07-14</div>
+
+<div class="frame">
+  <div class="head">
+    <div class="eyebrow">Player Leaderboard</div>
+    <div class="search-row">
+      <input class="search" id="search" type="text" placeholder="Search players or notes...">
+      <button class="fs-btn" id="fsBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="9" cy="7" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="11" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg>
+        <span class="fs-count-badge" id="fsCount" hidden>0</span>
+      </button>
+    </div>
+    <div class="result-line" id="resultLine"></div>
+  </div>
+  <div class="list" id="list"></div>
+  <div class="no-results" id="noResults">
+    No players match your filters.
+    <button id="clearFromEmpty">Clear filters</button>
+  </div>
+</div>
+
+<div class="takeover" id="takeover" role="dialog" aria-modal="true" aria-label="Filter and sort">
+  <div class="to-header">
+    <button class="to-text-btn" id="toCancel">Cancel</button>
+    <span class="to-title">Filter &amp; Sort</span>
+    <button class="to-text-btn" id="toReset">Reset</button>
+  </div>
+  <div class="to-body">
+    <div class="to-section" id="sortSection">
+      <div class="to-section-label">Sort</div>
+      <div class="to-row" data-sort="recent"><span class="to-row-label">Recent</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="to-row" data-sort="name"><span class="to-row-label">Name</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="to-row" data-sort="doubles"><span class="to-row-label">Doubles rating</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="to-row" data-sort="singles"><span class="to-row-label">Singles rating</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="to-row" data-sort="streak"><span class="to-row-label">Streak</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    </div>
+    <div class="to-section" id="genderSection">
+      <div class="to-section-label">Gender</div>
+      <div class="to-row" data-gender="M"><span class="to-row-label">Men</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="to-row" data-gender="F"><span class="to-row-label">Women</span><span class="to-mark"><svg viewBox="0 0 18 18"><path d="M4 9.5L7.2 13L14 5.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    </div>
+    <div class="to-section" id="typeSection">
+      <div class="to-section-label">Class &amp; Tour</div>
+      <div class="to-row" data-type="am"><span class="to-row-label">AM</span><span class="to-check"></span></div>
+      <div class="to-row" data-type="pro"><span class="to-row-label">PRO</span><span class="to-check"></span></div>
+      <div class="to-row" data-type="app"><span class="to-row-label">APP</span><span class="to-check"></span></div>
+      <div class="to-row" data-type="mlp"><span class="to-row-label">MLP</span><span class="to-check"></span></div>
+      <div class="to-row" data-type="ppa"><span class="to-row-label">PPA</span><span class="to-check"></span></div>
+      <div class="to-row" data-type="x-pro"><span class="to-row-label">X-PRO</span><span class="to-check"></span></div>
+    </div>
+  </div>
+  <div class="to-footer">
+    <button class="to-results-btn" id="toResultsBtn">Show <span id="toResultsCount">14</span> Results</button>
+  </div>
+</div>
+
+<script>
+  var PLAYERS = [
+    { name: "Sarah Chen",   gender: "F", cls: "am",  tags: [],              d: "4.812", s: "4.220", recent: 1,  streakType: "W", streakCount: 3 },
+    { name: "Mike Torres",  gender: "M", cls: "am",  tags: [],              d: "4.355", s: "3.998", recent: 4,  streakType: "L", streakCount: 1 },
+    { name: "Alex Rivera",  gender: "M", cls: "pro", tags: ["mlp","ppa"],   d: "6.598", s: "5.883", recent: 0,  streakType: "W", streakCount: 7 },
+    { name: "Jordan Blake", gender: "M", cls: "pro", tags: ["app","ppa"],   d: "6.102", s: "5.410", recent: 2,  streakType: "W", streakCount: 2 },
+    { name: "Devon Ellis",  gender: "M", cls: "pro", tags: ["x-pro"],       d: "5.750", s: "5.102", recent: 7,  streakType: "L", streakCount: 4 },
+    { name: "Priya Nair",   gender: "F", cls: "pro", tags: ["ppa"],         d: "5.988", s: "5.312", recent: 1,  streakType: "W", streakCount: 5 },
+    { name: "Chris Nolan",  gender: "M", cls: "pro", tags: ["mlp"],         d: "5.601", s: null,     recent: 10, streakType: "W", streakCount: 1 },
+    { name: "Emma Ward",    gender: "F", cls: "pro", tags: ["app"],         d: "5.744", s: "5.033", recent: 3,  streakType: "L", streakCount: 2 },
+    { name: "Marcus Lee",   gender: "M", cls: "am",  tags: [],              d: "4.102", s: "3.550", recent: 5,  streakType: "W", streakCount: 6 },
+    { name: "Olivia Grant", gender: "F", cls: "am",  tags: [],              d: "4.633", s: "4.011", recent: 6,  streakType: "W", streakCount: 1 },
+    { name: "Ben Foster",   gender: "M", cls: "pro", tags: ["x-pro"],       d: "5.200", s: null,     recent: 12, streakType: "L", streakCount: 3 },
+    { name: "Nina Osei",    gender: "F", cls: "pro", tags: ["mlp","ppa"],   d: "6.301", s: "5.655", recent: 0,  streakType: "W", streakCount: 4 },
+    { name: "Ryan Cole",    gender: "M", cls: "pro", tags: ["ppa"],         d: "6.450", s: "5.911", recent: 2,  streakType: "L", streakCount: 2 },
+    { name: "Grace Kim",    gender: "F", cls: "pro", tags: ["app"],         d: "5.522", s: "4.877", recent: 8,  streakType: "L", streakCount: 5 }
+  ];
+
+  var TYPE_LABELS = { am: "AM", pro: "PRO", app: "APP", mlp: "MLP", ppa: "PPA", "x-pro": "X-PRO" };
+  var BADGE_CLASS = { ppa: "badge-ppa", app: "badge-app", mlp: "badge-mlp", "x-pro": "badge-xpro" };
+
+  var applied = { gender: null, types: [], sort: "recent" };
+  var draft = { gender: null, types: [], sort: "recent" };
+
+  var listEl = document.getElementById("list");
+  var noResultsEl = document.getElementById("noResults");
+  var resultLineEl = document.getElementById("resultLine");
+  var searchInput = document.getElementById("search");
+  var fsBtn = document.getElementById("fsBtn");
+  var fsCount = document.getElementById("fsCount");
+  var takeover = document.getElementById("takeover");
+  var toResultsBtn = document.getElementById("toResultsBtn");
+  var toResultsCount = document.getElementById("toResultsCount");
+
+  function escHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function streakVal(p) { return p.streakType === "W" ? p.streakCount : -p.streakCount; }
+
+  function matches(state, searchTerm) {
+    var term = searchTerm.trim().toLowerCase();
+    var out = PLAYERS.filter(function (p) {
+      if (term && p.name.toLowerCase().indexOf(term) === -1) return false;
+      if (state.gender && p.gender !== state.gender) return false;
+      if (state.types.length) {
+        var hit = state.types.some(function (t) {
+          if (t === "am" || t === "pro") return p.cls === t;
+          return p.tags.indexOf(t) !== -1;
+        });
+        if (!hit) return false;
+      }
+      return true;
+    });
+    out.sort(function (a, b) {
+      switch (state.sort) {
+        case "name": return a.name.localeCompare(b.name);
+        case "doubles": return parseFloat(b.d) - parseFloat(a.d);
+        case "singles": return (parseFloat(b.s) || -1) - (parseFloat(a.s) || -1);
+        case "streak": return streakVal(b) - streakVal(a);
+        default: return a.recent - b.recent;
+      }
+    });
+    return out;
+  }
+
+  function renderCard(p) {
+    var badges = p.tags.map(function (t) {
+      return '<span class="badge ' + (BADGE_CLASS[t] || "") + '">' + TYPE_LABELS[t] + "</span>";
+    }).join("");
+    var sLine = p.s
+      ? '<div class="score-line">' + p.s + '<span class="lbl">S</span></div>'
+      : "";
+    var streakCls = p.streakType === "W" ? "streak-w" : "streak-l";
+    var streakIcon = p.streakType === "W" ? "▲" : "▼";
+    return (
+      '<div class="card">' +
+        '<div class="card-name-col">' +
+          '<div class="card-name">' + escHtml(p.name) + badges + "</div>" +
+          '<div class="card-sub">' +
+            (p.cls === "am" ? "AM" : "PRO") +
+            '<span class="streak-tag ' + streakCls + '">' + streakIcon + " " + p.streakCount + p.streakType + "</span>" +
+          "</div>" +
+        "</div>" +
+        '<div class="card-scores">' +
+          '<div class="score-line">' + p.d + '<span class="lbl">D</span></div>' +
+          sLine +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  function render() {
+    var term = searchInput.value;
+    var results = matches(applied, term);
+    listEl.innerHTML = results.map(renderCard).join("");
+    var showEmpty = results.length === 0;
+    noResultsEl.style.display = showEmpty ? "block" : "none";
+    listEl.style.display = showEmpty ? "none" : "block";
+
+    var activeCount = (applied.gender ? 1 : 0) + applied.types.length;
+    var filtering = activeCount > 0 || term.trim().length > 0;
+    resultLineEl.textContent = filtering ? "Showing " + results.length + " of " + PLAYERS.length + " players" : "";
+
+    fsBtn.classList.toggle("has-active", activeCount > 0);
+    if (activeCount > 0) {
+      fsCount.hidden = false;
+      fsCount.textContent = activeCount;
+    } else {
+      fsCount.hidden = true;
+    }
+  }
+
+  searchInput.addEventListener("input", render);
+  document.getElementById("clearFromEmpty").addEventListener("click", function () {
+    applied = { gender: null, types: [], sort: applied.sort };
+    draft = { gender: null, types: [], sort: applied.sort };
+    searchInput.value = "";
+    render();
+  });
+
+  function syncTakeoverUI() {
+    document.querySelectorAll("#sortSection .to-row").forEach(function (r) {
+      r.classList.toggle("active", r.getAttribute("data-sort") === draft.sort);
+    });
+    document.querySelectorAll("#genderSection .to-row").forEach(function (r) {
+      r.classList.toggle("active", r.getAttribute("data-gender") === draft.gender);
+    });
+    document.querySelectorAll("#typeSection .to-row").forEach(function (r) {
+      r.classList.toggle("active", draft.types.indexOf(r.getAttribute("data-type")) !== -1);
+    });
+    var previewCount = matches(draft, searchInput.value).length;
+    toResultsCount.textContent = previewCount;
+    toResultsBtn.disabled = previewCount === 0;
+
+    var resetBtn = document.getElementById("toReset");
+    var activeCount = (draft.gender ? 1 : 0) + draft.types.length + (draft.sort !== "recent" ? 1 : 0);
+    resetBtn.classList.toggle("disabled", activeCount === 0);
+  }
+
+  function openTakeover() {
+    draft = { gender: applied.gender, types: applied.types.slice(), sort: applied.sort };
+    syncTakeoverUI();
+    takeover.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeTakeover() {
+    takeover.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  fsBtn.addEventListener("click", openTakeover);
+  document.getElementById("toCancel").addEventListener("click", closeTakeover);
+
+  document.getElementById("toReset").addEventListener("click", function () {
+    draft = { gender: null, types: [], sort: "recent" };
+    syncTakeoverUI();
+  });
+
+  document.getElementById("sortSection").addEventListener("click", function (e) {
+    var row = e.target.closest(".to-row");
+    if (!row) return;
+    draft.sort = row.getAttribute("data-sort");
+    syncTakeoverUI();
+  });
+  document.getElementById("genderSection").addEventListener("click", function (e) {
+    var row = e.target.closest(".to-row");
+    if (!row) return;
+    var g = row.getAttribute("data-gender");
+    draft.gender = draft.gender === g ? null : g;
+    syncTakeoverUI();
+  });
+  document.getElementById("typeSection").addEventListener("click", function (e) {
+    var row = e.target.closest(".to-row");
+    if (!row) return;
+    var t = row.getAttribute("data-type");
+    var idx = draft.types.indexOf(t);
+    if (idx === -1) draft.types.push(t); else draft.types.splice(idx, 1);
+    syncTakeoverUI();
+  });
+
+  toResultsBtn.addEventListener("click", function () {
+    applied = { gender: draft.gender, types: draft.types.slice(), sort: draft.sort };
+    closeTakeover();
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>
