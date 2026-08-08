@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.2",
  "spot": "Rockwood Park",
- "updated": "2026-08-07T20:39:25",
+ "updated": "2026-08-07T22:07:30",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 9a",
- "wet_note": null,
- "reason": "humidity (dew 73\u00b0) \u2014 no clean hours in 5 days \u00b7 today: raining now",
+ "wet_note": "court wet \u2014 1.1mm, drying Sat",
+ "reason": "humidity (dew 73\u00b0) \u2014 no clean hours in 5 days",
  "ranked": [
   {
    "day": "Sat",
@@ -33,32 +33,16 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 83,
+   "temp": 79,
    "dew": 73,
-   "wind": 6
+   "wind": 5
   },
   "court": {
-   "wet_mm": 0.0,
-   "obs_18h_mm": 0,
-   "radar_24h_mm": 3.8
+   "wet_mm": 1.1,
+   "obs_18h_mm": 0.4,
+   "radar_24h_mm": 6.3
   },
   "days": [
-   {
-    "date": "2026-08-07",
-    "label": "Today",
-    "sub": "8/7",
-    "grade": "F",
-    "score": 0.0,
-    "best": "",
-    "why": "raining now 8p",
-    "cells": {
-     "20": {
-      "t": 83,
-      "v": 0,
-      "c": "rnow"
-     }
-    }
-   },
    {
     "date": "2026-08-08",
     "label": "Sat",
@@ -374,17 +358,17 @@
    {
     "date": "2026-08-18",
     "d": "Tu",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-08-19",
     "d": "We",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-08-20",
     "d": "Th",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-08-21",
