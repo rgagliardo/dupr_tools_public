@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.2",
  "spot": "Pouncey Tract Park",
- "updated": "2026-08-08T02:39:31",
+ "updated": "2026-08-08T02:54:40",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 9a today",
@@ -10,23 +10,23 @@
  "reason": "humidity (dew 72\u00b0) \u2014 no clean hours in 5 days",
  "ranked": [
   {
-   "day": "Today",
+   "day": "Mon",
    "grade": "C"
   },
   {
-   "day": "Mon",
-   "grade": "C"
+   "day": "Today",
+   "grade": "D"
   },
   {
    "day": "Sun",
    "grade": "D"
   },
   {
-   "day": "Tue",
+   "day": "Thu",
    "grade": "F"
   },
   {
-   "day": "Thu",
+   "day": "Tue",
    "grade": "F"
   }
  ],
@@ -47,10 +47,10 @@
     "date": "2026-08-08",
     "label": "Today",
     "sub": "8/8",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "D",
+    "score": 0.45,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 9a-8p",
+    "why": "thunder 5p-7p \u00b7 humidity (dew 73\u00b0) 9a-4p, 8p",
     "cells": {
      "9": {
       "t": 79,
@@ -94,18 +94,18 @@
      },
      "17": {
       "t": 91,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "thn"
      },
      "18": {
       "t": 89,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "thn"
      },
      "19": {
       "t": 86,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "thn"
      },
      "20": {
       "t": 86,
@@ -119,9 +119,9 @@
     "label": "Sun",
     "sub": "8/9",
     "grade": "D",
-    "score": 0.45,
+    "score": 0.3,
     "best": "",
-    "why": "thunder 5p-7p \u00b7 humidity (dew 72\u00b0) 9a-4p, 8p",
+    "why": "thunder 2p-7p \u00b7 humidity (dew 72\u00b0) 9a-1p, 8p",
     "cells": {
      "9": {
       "t": 81,
@@ -150,18 +150,18 @@
      },
      "14": {
       "t": 91,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "thn"
      },
      "15": {
       "t": 92,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "thn"
      },
      "16": {
       "t": 93,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "thn"
      },
      "17": {
       "t": 92,
@@ -251,9 +251,9 @@
     "label": "Tue",
     "sub": "8/11",
     "grade": "F",
-    "score": 0.1,
+    "score": 0.0,
     "best": "",
-    "why": "thunder 3p-7p \u00b7 drying 8p",
+    "why": "thunder 3p-8p",
     "cells": {
      "15": {
       "t": 94,
@@ -282,8 +282,8 @@
      },
      "20": {
       "t": 86,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "thn"
      }
     }
    },
@@ -384,7 +384,7 @@
    {
     "date": "2026-08-16",
     "d": "Su",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-08-17",
