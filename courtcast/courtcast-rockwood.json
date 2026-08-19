@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.3",
  "spot": "Rockwood Park",
- "updated": "2026-08-19T07:33:22",
+ "updated": "2026-08-19T07:48:30",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "humidity (dew 67\u00b0) \u2014 clean window 8p today",
+ "reason": "humidity (dew 67\u00b0) \u2014 clean window Mon 9a",
  "ranked": [
   {
    "day": "Mon",
@@ -18,11 +18,11 @@
    "grade": "C"
   },
   {
-   "day": "Sun",
+   "day": "Sat",
    "grade": "C"
   },
   {
-   "day": "Sat",
+   "day": "Sun",
    "grade": "C"
   },
   {
@@ -48,9 +48,9 @@
     "label": "Today",
     "sub": "8/19",
     "grade": "C",
-    "score": 0.667,
-    "best": "8p",
-    "why": "humidity (dew 68\u00b0) 3p-7p",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 69\u00b0) 3p-8p",
     "cells": {
      "15": {
       "t": 88,
@@ -78,9 +78,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 83,
-      "v": 2,
-      "c": ""
+      "t": 81,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -130,29 +130,29 @@
     "label": "Fri",
     "sub": "8/21",
     "grade": "F",
-    "score": 0.0,
+    "score": 0.24,
     "best": "",
-    "why": "rain 3p-8p \u00b7 wet court 9a-12p",
+    "why": "rain 3p-8p \u00b7 humidity (dew 73\u00b0) 9a-10a, 12p \u00b7 drying 11a",
     "cells": {
      "9": {
       "t": 72,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "10": {
       "t": 74,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "11": {
       "t": 77,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dry"
      },
      "12": {
       "t": 79,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "15": {
       "t": 81,
@@ -191,19 +191,19 @@
     "label": "Sat",
     "sub": "8/22",
     "grade": "C",
-    "score": 0.55,
+    "score": 0.6,
     "best": "",
-    "why": "rain 9a \u00b7 humidity (dew 75\u00b0) 11a-8p \u00b7 drying 10a",
+    "why": "humidity (dew 75\u00b0) 9a-8p",
     "cells": {
      "9": {
       "t": 71,
-      "v": 0,
-      "c": "rain"
+      "v": 1,
+      "c": "dew"
      },
      "10": {
       "t": 74,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "11": {
       "t": 78,
@@ -211,12 +211,12 @@
       "c": "dew"
      },
      "12": {
-      "t": 82,
+      "t": 83,
       "v": 1,
       "c": "dew"
      },
      "13": {
-      "t": 82,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
@@ -262,9 +262,9 @@
     "label": "Sun",
     "sub": "8/23",
     "grade": "C",
-    "score": 0.633,
-    "best": "8p",
-    "why": "humidity (dew 73\u00b0) 9a-7p",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 73\u00b0) 9a-8p",
     "cells": {
      "9": {
       "t": 73,
@@ -322,9 +322,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 76,
-      "v": 2,
-      "c": ""
+      "t": 79,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -333,17 +333,17 @@
     "label": "Mon",
     "sub": "8/24",
     "grade": "B",
-    "score": 0.8,
+    "score": 0.76,
     "best": "9a-12p",
-    "why": "humidity (dew 68\u00b0) 3p-5p, 7p-8p",
+    "why": "humidity (dew 68\u00b0) 3p-8p",
     "cells": {
      "9": {
-      "t": 72,
+      "t": 73,
       "v": 2,
       "c": ""
      },
      "10": {
-      "t": 76,
+      "t": 77,
       "v": 2,
       "c": ""
      },
@@ -353,7 +353,7 @@
       "c": ""
      },
      "12": {
-      "t": 83,
+      "t": 84,
       "v": 2,
       "c": ""
      },
@@ -373,9 +373,9 @@
       "c": "dew"
      },
      "18": {
-      "t": 84,
-      "v": 2,
-      "c": ""
+      "t": 82,
+      "v": 1,
+      "c": "dew"
      },
      "19": {
       "t": 80,
@@ -399,17 +399,17 @@
    {
     "date": "2026-08-26",
     "d": "We",
-    "g": "F"
+    "g": "C"
    },
    {
     "date": "2026-08-27",
     "d": "Th",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-08-28",
     "d": "Fr",
-    "g": "A"
+    "g": "D"
    },
    {
     "date": "2026-08-29",
@@ -424,7 +424,7 @@
    {
     "date": "2026-08-31",
     "d": "Mo",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-09-01",
@@ -434,12 +434,12 @@
    {
     "date": "2026-09-02",
     "d": "We",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-09-03",
     "d": "Th",
-    "g": "D"
+    "g": "A"
    }
   ]
  },

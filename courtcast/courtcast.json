@@ -2,20 +2,16 @@
  "version": 1,
  "generator": "wx_play v4.3",
  "spot": "Pouncey Tract Park",
- "updated": "2026-08-19T07:03:02",
+ "updated": "2026-08-19T07:48:29",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "humidity (dew 66\u00b0) \u2014 clean window Sun 8p",
+ "reason": "humidity (dew 66\u00b0) \u2014 clean window 8p today",
  "ranked": [
   {
    "day": "Mon",
    "grade": "B"
-  },
-  {
-   "day": "Sun",
-   "grade": "C"
   },
   {
    "day": "Today",
@@ -28,14 +24,18 @@
   {
    "day": "Sat",
    "grade": "C"
+  },
+  {
+   "day": "Sun",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 69,
-   "dew": 63,
-   "wind": 6
+   "temp": 70,
+   "dew": 66,
+   "wind": 2
   },
   "court": {
    "wet_mm": 0.0,
@@ -48,9 +48,9 @@
     "label": "Today",
     "sub": "8/19",
     "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "humidity (dew 68\u00b0) 3p-8p",
+    "score": 0.667,
+    "best": "8p",
+    "why": "humidity (dew 67\u00b0) 3p-7p",
     "cells": {
      "15": {
       "t": 89,
@@ -78,9 +78,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 81,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 2,
+      "c": ""
      }
     }
    },
@@ -130,9 +130,9 @@
     "label": "Fri",
     "sub": "8/21",
     "grade": "F",
-    "score": 0.06,
+    "score": 0.0,
     "best": "",
-    "why": "rain 3p-8p \u00b7 wet court 9a-11a \u00b7 drying 12p",
+    "why": "rain 3p-8p \u00b7 wet court 9a-12p",
     "cells": {
      "9": {
       "t": 71,
@@ -151,8 +151,8 @@
      },
      "12": {
       "t": 78,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "wet"
      },
      "15": {
       "t": 82,
@@ -191,32 +191,32 @@
     "label": "Sat",
     "sub": "8/22",
     "grade": "C",
-    "score": 0.5,
+    "score": 0.6,
     "best": "",
-    "why": "rain 9a-10a \u00b7 humidity (dew 75\u00b0) 12p-8p \u00b7 drying 11a",
+    "why": "humidity (dew 75\u00b0) 9a-8p",
     "cells": {
      "9": {
-      "t": 70,
-      "v": 0,
-      "c": "rain"
+      "t": 71,
+      "v": 1,
+      "c": "dew"
      },
      "10": {
-      "t": 72,
-      "v": 0,
-      "c": "rain"
+      "t": 74,
+      "v": 1,
+      "c": "dew"
      },
      "11": {
-      "t": 77,
+      "t": 78,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "12": {
-      "t": 79,
+      "t": 82,
       "v": 1,
       "c": "dew"
      },
      "13": {
-      "t": 80,
+      "t": 85,
       "v": 1,
       "c": "dew"
      },
@@ -262,9 +262,9 @@
     "label": "Sun",
     "sub": "8/23",
     "grade": "C",
-    "score": 0.633,
-    "best": "8p",
-    "why": "humidity (dew 72\u00b0) 9a-7p",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 72\u00b0) 9a-8p",
     "cells": {
      "9": {
       "t": 72,
@@ -322,9 +322,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 76,
-      "v": 2,
-      "c": ""
+      "t": 79,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -343,17 +343,17 @@
       "c": ""
      },
      "10": {
-      "t": 74,
+      "t": 75,
       "v": 2,
       "c": ""
      },
      "11": {
-      "t": 78,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 81,
+      "t": 83,
       "v": 2,
       "c": ""
      },
@@ -373,12 +373,12 @@
       "c": "dew"
      },
      "18": {
-      "t": 83,
+      "t": 84,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 79,
+      "t": 80,
       "v": 2,
       "c": ""
      },
@@ -394,22 +394,22 @@
    {
     "date": "2026-08-25",
     "d": "Tu",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-08-26",
     "d": "We",
-    "g": "F"
+    "g": "C"
    },
    {
     "date": "2026-08-27",
     "d": "Th",
-    "g": "A"
+    "g": "D"
    },
    {
     "date": "2026-08-28",
     "d": "Fr",
-    "g": "A"
+    "g": "F"
    },
    {
     "date": "2026-08-29",
@@ -424,7 +424,7 @@
    {
     "date": "2026-08-31",
     "d": "Mo",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-09-01",
@@ -439,7 +439,7 @@
    {
     "date": "2026-09-03",
     "d": "Th",
-    "g": "D"
+    "g": "B"
    }
   ]
  },
