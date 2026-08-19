@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Alvaro Regalado</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+</style></head><body>
+<div class="stamp">MOCKUP v5.7 — 2026-08-10</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Alvaro Regalado — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-l">▼ 1L</span><span class="pname">Alvaro Regalado</span>
+    <span class="scores">5.775</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 10.1,18.9 19.2,15.3 28.2,17.0 46.4,18.2 55.5,12.0 64.5,7.6 82.7,7.6 91.8,6.3 100.8,3.4 119.0,3.1"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">4.620</div><div class="k">Tracked 6/23</div></div>
+  
+  <div class="chip"><div class="v">5.826</div><div class="k">Peak 7/26</div></div>
+  <div class="chip"><div class="v">5.775</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v pos">+1.275</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v neg">-0.121</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: tracked 4.620, peak 5.826, now 5.775 (+1.154 net)"><line class="grid" x1="41.3" y1="14" x2="41.3" y2="186"/><line class="grid" x1="93.3" y1="14" x2="93.3" y2="186"/><text class="tick" x="93.3" y="203" text-anchor="middle">2024</text><line class="grid" x1="144.7" y1="14" x2="144.7" y2="186"/><line class="grid" x1="196.7" y1="14" x2="196.7" y2="186"/><text class="tick" x="196.7" y="203" text-anchor="middle">2025</text><line class="grid" x1="247.8" y1="14" x2="247.8" y2="186"/><line class="grid" x1="299.8" y1="14" x2="299.8" y2="186"/><text class="tick" x="299.8" y="203" text-anchor="middle">2026</text><line class="grid" x1="350.9" y1="14" x2="350.9" y2="186"/><line class="grid" x1="34" y1="157.9" x2="356" y2="157.9"/><text class="tick" x="29" y="160.9" text-anchor="end">4.75</text><line class="grid" x1="34" y1="127.3" x2="356" y2="127.3"/><text class="tick" x="29" y="130.3" text-anchor="end">5.00</text><line class="grid" x1="34" y1="96.7" x2="356" y2="96.7"/><text class="tick" x="29" y="99.7" text-anchor="end">5.25</text><line class="grid" x1="34" y1="66.1" x2="356" y2="66.1"/><text class="tick" x="29" y="69.1" text-anchor="end">5.50</text><line class="grid" x1="34" y1="35.5" x2="356" y2="35.5"/><text class="tick" x="29" y="38.5" text-anchor="end">5.75</text><line class="evline" x1="46.7" y1="14" x2="46.7" y2="186"/><line class="evline" x1="49.0" y1="14" x2="49.0" y2="186"/><line class="evline" x1="52.1" y1="14" x2="52.1" y2="186"/><line class="evline" x1="52.6" y1="14" x2="52.6" y2="186"/><line class="evline" x1="69.9" y1="14" x2="69.9" y2="186"/><line class="evline" x1="80.9" y1="14" x2="80.9" y2="186"/><line class="evline" x1="101.5" y1="14" x2="101.5" y2="186"/><line class="evline" x1="178.9" y1="14" x2="178.9" y2="186"/><line class="evline" x1="200.1" y1="14" x2="200.1" y2="186"/><path class="seg-norm" d="M34.0 173.8 L56.9 125.6 L111.7 104.3"/><path class="seg-sys" d="M111.7 104.3 L123.0 114.8"/><path class="seg-norm" d="M123.0 114.8 L302.6 121.9 L324.4 84.7 L326.1 58.9 L326.9 57.5 L328.3 58.7 L330.3 51.5 L355.7 31.7 L356.0 32.5"/><line class="mk-whisk" x1="355.7" y1="31.7" x2="355.7" y2="26.2"/><circle class="mk mk-start" cx="34.0" cy="173.8" r="4"/><circle class="mk mk-peak" cx="355.7" cy="26.2" r="5"/><circle class="mk mk-low" cx="34.0" cy="173.8" r="4"/><circle class="mk mk-now" cx="356.0" cy="32.5" r="4"/><rect class="mk mk-adm" x="119.8" y="111.6" width="6.4" height="6.4" transform="rotate(45 123.0 114.8)"/><rect class="mk mk-adm" x="164.1" y="114.8" width="6.4" height="6.4" transform="rotate(45 167.3 118.0)"/><text class="anno anno-gold" x="355.7" y="17.2" text-anchor="end">peak 5.826</text><text class="anno" x="65.9" y="182.0" text-anchor="middle">low 4.620</text><text class="anno" x="38.0" y="165.8">tracked 4.620</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span><i class="ev"></i>DUPR update</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (59 changes since 2023-06-05). Solid = a match moved it; dashed pink = DUPR moved it with no match; gold verticals = system-wide DUPR updates (seen across the tracked group). 44-17 record over 61 doubles matches, 3.1-year span. The series opens at DUPR's 2023-06-05 history cutover — Alvaro was already rated 4.620 then, so the start is "tracked since", not a placement; earlier matches predate the ledger.</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+1.275</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:9%"></div></div><div class="half r"></div></div><span class="val neg">-0.121</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:91%"></div></div></div><span class="val pos">+1.154</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +0.768 / losses -0.084.</p>
+
+
+<h2>DUPR adjustments</h2>
+<div class="attr"><div class="adj-row"><span class="adj-date">9/19/24</span><span class="adj-kind adj-solo">individual adjustment</span><span class="adj-delta neg">-0.026</span><span class="adj-path">5.102 → 5.076</span></div><div class="adj-row"><span class="adj-date">4/15/24</span><span class="adj-kind adj-solo">individual adjustment</span><span class="adj-delta neg">-0.086</span><span class="adj-path">5.188 → 5.102</span></div></div>
+<p class="note">Every rating change DUPR made with no match played — flagged changedByAdmin in
+DUPR's own series. ◆ on the chart marks the individual ones; gold verticals are system-wide
+updates. 3 micro-moves under 0.02 not listed (they're in the chart's dashed segments).</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">1/11/26</span>Brick Wall Mid-Atlantic #1</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-up">(+0.292)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.089</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">4.963</span></span> <span class="match-vs">vs</span> <span>David Bieger <span class="match-rating">5.981</span></span> &amp; <span>Aibika Kalsarieva <span class="match-rating">5.845</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +1.78</summary><div class="tag-math">Alvaro 5.089 + Beatriz 4.963 = <b>10.053</b><br>David 5.981 + Aibika 5.845 = <b>11.828</b><br>→ opponents stronger by 1.775 combined DUPR (pre-match)</div></details> <span class="mx">PD -3</span> <span class="mx">match #1</span></div></div><div class="event-pill"><span class="event-pill-date">3/29/26</span>Hudson River Pickleball Mar $2100 Tournament - ($$$) Mixed Doubles…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.216)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.043</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.000</span></span> <span class="match-vs">vs</span> <span>Hannah Liu <span class="match-rating">3.997</span></span> &amp; <span>Scott Chen Cheng <span class="match-rating">4.612</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -1.43</summary><div class="tag-math">Alvaro 5.043 + Beatriz 5.000 = <b>10.044</b><br>Hannah 3.997 + Scott 4.612 = <b>8.610</b><br>→ their side stronger by 1.434 combined DUPR (pre-match)</div></details> <span class="mx">PD +11</span> <span class="mx">match #5</span></div></div><div class="event-pill"><span class="event-pill-date">1/11/26</span>Brick Wall Mid-Atlantic #1</div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.212)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.062</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.025</span></span> <span class="match-vs">vs</span> <span>Ava Kalist <span class="match-rating">5.341</span></span> &amp; <span>Tobin King <span class="match-rating">4.653</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.09</summary><div class="tag-math">Alvaro 5.062 + Beatriz 5.025 = <b>10.088</b><br>Ava 5.341 + Tobin 4.653 = <b>9.996</b><br>→ their side stronger by 0.092 combined DUPR (pre-match)</div></details> <span class="mx">PD +7</span> <span class="mx">match #3</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.320)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.381</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.247</span></span> <span class="match-vs">vs</span> <span>Weston Butcher <span class="match-rating">4.589</span></span> &amp; <span>Heidi Sung <span class="match-rating">3.979</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -2.06</summary><div class="tag-math">Alvaro 5.381 + Beatriz 5.247 = <b>10.629</b><br>Weston 4.589 + Heidi 3.979 = <b>8.569</b><br>→ their side stronger by 2.060 combined DUPR (pre-match)</div></details> <span class="mx">PD +4</span> <span class="mx">match #2</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.230)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.274</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.169</span></span> <span class="match-vs">vs</span> <span>Jack Hared <span class="match-rating">5.020</span></span> &amp; <span>Alyssa Bialek <span class="match-rating">4.893</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.53</summary><div class="tag-math">Alvaro 5.274 + Beatriz 5.169 = <b>10.443</b><br>Jack 5.020 + Alyssa 4.893 = <b>9.915</b><br>→ their side stronger by 0.529 combined DUPR (pre-match)</div></details> <span class="mx">PD -8</span> <span class="mx">match #4</span></div></div><div class="event-pill"><span class="event-pill-date">4/4/26</span>Montville PGC April Moneyball $</div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.073)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.348</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.454</span></span> <span class="match-vs">vs</span> <span>Hruday Vemparala <span class="match-rating">4.481</span></span> &amp; <span>Chad Durkin <span class="match-rating">4.573</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -1.75</summary><div class="tag-math">Alvaro 5.348 + Leo 5.454 = <b>10.803</b><br>Hruday 4.481 + Chad 4.573 = <b>9.056</b><br>→ their side stronger by 1.747 combined DUPR (pre-match)</div></details> <span class="mx">PD +4</span> <span class="mx">match #12</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">8/12/23</span>NP Kitch New Jersey Open $15k Powered by Onix (ALL Brackets Payout)…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">4.993</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.331</span></span> <span class="match-vs">vs</span> <span>Nina Pantic <span class="match-rating">4.553</span></span> &amp; <span>Jeremy Baldwin <span class="match-rating">4.820</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +201d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.014)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.075</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.433</span></span> <span class="match-vs">vs</span> <span>Connie Mall <span class="match-rating">4.533</span></span> &amp; <span>Ronald Marchese <span class="match-rating">4.806</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +201d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.085)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">4.865</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.213</span></span> <span class="match-vs">vs</span> <span>Carina Szabo <span class="match-rating">4.685</span></span> &amp; <span>Jake Sandler <span class="match-rating">4.936</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +201d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.095)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">4.770</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.128</span></span> <span class="match-vs">vs</span> <span>Anisha Malhotra <span class="match-rating">4.401</span></span> &amp; <span>Varun Prakash <span class="match-rating">4.691</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +201d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.150)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">4.620</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">4.999</span></span> <span class="match-vs">vs</span> <span>Courtney Greener <span class="match-rating">4.520</span></span> &amp; <span>Robert Oddy <span class="match-rating">4.698</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +201d late</span></div></div><div class="event-pill"><span class="event-pill-date">8/12/23</span>NP Kitch New Jersey Open $15k Powered by Onix (ALL Brackets Payout) *…</div><div class="match-group win"><div class="match-row"><span class="match-score">12-10, 9-11, 11-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.083)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.105</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.437</span></span> <span class="match-vs">vs</span> <span>Kristen Clemmer <span class="match-rating">5.577</span></span> &amp; <span>Troy Clemmer <span class="match-rating">5.801</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +244d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.024)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.128</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.459</span></span> <span class="match-vs">vs</span> <span>Kristen Clemmer <span class="match-rating">5.575</span></span> &amp; <span>Troy Clemmer <span class="match-rating">5.800</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +244d late</span></div></div><div class="event-pill"><span class="event-pill-date">1/11/26</span>Brick Wall Mid-Atlantic #1</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-up">(+0.292)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.089</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">4.963</span></span> <span class="match-vs">vs</span> <span>David Bieger <span class="match-rating">5.981</span></span> &amp; <span>Aibika Kalsarieva <span class="match-rating">5.845</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.320)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.381</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.247</span></span> <span class="match-vs">vs</span> <span>Weston Butcher <span class="match-rating">4.589</span></span> &amp; <span>Heidi Sung <span class="match-rating">3.979</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.212)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.062</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.025</span></span> <span class="match-vs">vs</span> <span>Ava Kalist <span class="match-rating">5.341</span></span> &amp; <span>Tobin King <span class="match-rating">4.653</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.230)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.274</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.169</span></span> <span class="match-vs">vs</span> <span>Jack Hared <span class="match-rating">5.020</span></span> &amp; <span>Alyssa Bialek <span class="match-rating">4.893</span></span></div></div><div class="event-pill"><span class="event-pill-date">3/29/26</span>Hudson River Pickleball Mar $2100 Tournament - ($$$) Mixed Doubles…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.216)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.043</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.000</span></span> <span class="match-vs">vs</span> <span>Hannah Liu <span class="match-rating">3.997</span></span> &amp; <span>Scott Chen Cheng <span class="match-rating">4.612</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.105)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.260</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.172</span></span> <span class="match-vs">vs</span> <span>Daisy Wang <span class="match-rating">3.288</span></span> &amp; <span>Eric Ho <span class="match-rating">4.937</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.062)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.365</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.260</span></span> <span class="match-vs">vs</span> <span>Becca Bender <span class="match-rating">4.291</span></span> &amp; <span>Geoff Watson <span class="match-rating">5.032</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.049)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.302</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.207</span></span> <span class="match-vs">vs</span> <span>Perri Lauren Goldstein <span class="match-rating">3.921</span></span> &amp; <span>Michael Mazzola <span class="match-rating">3.844</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.351</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.250</span></span> <span class="match-vs">vs</span> <span>Isabella  Daverio <span class="match-rating">4.085</span></span> &amp; <span>Manoj Jagani <span class="match-rating">4.632</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.039)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.319</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.221</span></span> <span class="match-vs">vs</span> <span>Sabrina Barisano <span class="match-rating">4.969</span></span> &amp; <span>Samuel Rodriguez <span class="match-rating">5.152</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">8-11, 11-7, 11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.011)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.358</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.257</span></span> <span class="match-vs">vs</span> <span>Estephany Tan <span class="match-rating">5.222</span></span> &amp; <span>John Meltz <span class="match-rating">5.083</span></span></div></div><div class="event-pill"><span class="event-pill-date">4/4/26</span>Montville PGC April Moneyball $</div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.073)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.348</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.454</span></span> <span class="match-vs">vs</span> <span>Hruday Vemparala <span class="match-rating">4.481</span></span> &amp; <span>Chad Durkin <span class="match-rating">4.573</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.076)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.275</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.418</span></span> <span class="match-vs">vs</span> <span>Arun Paul Gopal <span class="match-rating">4.672</span></span> &amp; <span>Nick Retzkin <span class="match-rating">4.804</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.029)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.351</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.458</span></span> <span class="match-vs">vs</span> <span>Jack Hared <span class="match-rating">5.157</span></span> &amp; <span>Ram Kotnana <span class="match-rating">5.588</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.072)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.380</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.474</span></span> <span class="match-vs">vs</span> <span>Thomas Connolly <span class="match-rating">4.785</span></span> &amp; <span>Varun Prakash <span class="match-rating">5.001</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.050)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.452</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.514</span></span> <span class="match-vs">vs</span> <span>Zhi Lin <span class="match-rating">5.072</span></span> &amp; <span>Adam Hugh <span class="match-rating">4.757</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.550</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.572</span></span> <span class="match-vs">vs</span> <span>Ted Holway <span class="match-rating">4.951</span></span> &amp; <span>Alex Szczepkowski <span class="match-rating">5.455</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6, 11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.047)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.512</span></span> w/ <span class="match-partner">Leo Kupferman <span class="match-rating">5.548</span></span> <span class="match-vs">vs</span> <span>Jack Hared <span class="match-rating">5.154</span></span> &amp; <span>Ram Kotnana <span class="match-rating">5.590</span></span></div></div><div class="event-pill"><span class="event-pill-date">4/12/26</span>Brick Wall Mid-Atlantic #5</div><div class="match-group loss"><div class="match-row"><span class="match-score">6-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.570</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.123</span></span> <span class="match-vs">vs</span> <span>Ram Kotnana <span class="match-rating">5.610</span></span> &amp; <span>Kara Wheatley <span class="match-rating">5.578</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.561</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.114</span></span> <span class="match-vs">vs</span> <span>Elisha D Turner <span class="match-rating">5.132</span></span> &amp; <span>Effie Bifsas <span class="match-rating">4.250</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.559</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.112</span></span> <span class="match-vs">vs</span> <span>Matvey Radionov <span class="match-rating">5.447</span></span> &amp; <span>Eileen Wang <span class="match-rating">4.712</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.039)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.537</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.091</span></span> <span class="match-vs">vs</span> <span>Vince Ha <span class="match-rating">5.245</span></span> &amp; <span>Ava Kalist <span class="match-rating">5.164</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.016)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Alvaro <span class="match-rating">5.576</span></span> w/ <span class="match-partner">Beatriz Lopez <span class="match-rating">5.128</span></span> <span class="match-vs">vs</span> <span>Sanil Jagtiani <span class="match-rating">5.901</span></span> &amp; <span>Rachael Fitzgerald <span class="match-rating">5.064</span></span></div></div>
+<p class="note">first 30 rated matches, from 2023-08-12 · 12 unrated matches not shown (pre-engine era) · ⏳ = late upload</p>
+
+<h2>Singles — official series, small multiple</h2>
+<div class="panel">
+  <svg width="100%" viewBox="0 0 366 120" role="img"
+    aria-label="Singles rating trajectory: tracked 5.091, now 5.513 (+0.423 net)"><line class="grid" x1="60.8" y1="14" x2="60.8" y2="100"/><line class="grid" x1="329.2" y1="14" x2="329.2" y2="100"/><text class="tick" x="48.4" y="113" text-anchor="middle">6/5/23</text><text class="tick" x="195.0" y="113" text-anchor="middle">7/17/26</text><text class="tick" x="339.2" y="113" text-anchor="middle">7/19/26</text><line class="grid" x1="34" y1="71.5" x2="356" y2="71.5"/><text class="tick" x="29" y="74.5" text-anchor="end">5.25</text><line class="grid" x1="34" y1="41.6" x2="356" y2="41.6"/><text class="tick" x="29" y="44.6" text-anchor="end">5.50</text><path class="seg-norm" d="M34.0 90.5 L87.7 43.2 L141.3 35.8 L195.0 23.5 L248.7 35.0 L302.3 40.1 L356.0 40.1"/></svg>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span><span><i class="ev"></i>DUPR update</span></div>
+</div>
+<p class="note">3-2 rated · tracked 5.091 (6/23) · now 5.513 · earned +0.423.</p>
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2023-06-05", "x": 34.0, "r": 4.62, "dl": 0.0, "m": false, "info": "DUPR adjustment \u2014 individual (only this player, no match)"}, {"d": "2023-08-25", "x": 56.9, "r": 5.014, "dl": 0.393, "m": true, "info": "match day"}, {"d": "2024-03-06", "x": 111.7, "r": 5.188, "dl": 0.174, "m": true, "info": "match day"}, {"d": "2024-04-15", "x": 123.0, "r": 5.102, "dl": -0.086, "m": false, "info": "DUPR adjustment \u2014 individual (only this player, no match)"}, {"d": "2024-09-19", "x": 167.3, "r": 5.09, "dl": -0.013, "m": true, "info": "match day"}, {"d": "2026-01-11", "x": 302.6, "r": 5.044, "dl": -0.046, "m": true, "info": "2W-2L \u00b7 Brick Wall Mid-Atlantic #1"}, {"d": "2026-03-29", "x": 324.4, "r": 5.348, "dl": 0.304, "m": true, "info": "7W-0L \u00b7 Hudson River Pickleball Mar $2100 Tournament - ($$$) Mixed D"}, {"d": "2026-04-04", "x": 326.1, "r": 5.559, "dl": 0.211, "m": true, "info": "7W-0L \u00b7 Montville PGC April Moneyball $"}, {"d": "2026-04-07", "x": 326.9, "r": 5.571, "dl": 0.012, "m": true, "info": "match day"}, {"d": "2026-04-12", "x": 328.3, "r": 5.561, "dl": -0.01, "m": true, "info": "2W-3L \u00b7 Brick Wall Mid-Atlantic #5"}, {"d": "2026-04-19", "x": 330.3, "r": 5.62, "dl": 0.059, "m": true, "info": "4W-2L \u00b7 2026 Opelika PPA Challenger - Mixed Doubles Pro Main Draw"}, {"d": "2026-07-11", "x": 353.7, "r": 5.762, "dl": 0.142, "m": true, "info": "8W-0L \u00b7 Brick Wall Mid-Atlantic #9"}, {"d": "2026-07-18", "x": 355.7, "r": 5.781, "dl": 0.019, "m": true, "info": "4W-2L \u00b7 2026 Macon PPA Challenger - Mens Doubles Pro Main Draw"}, {"d": "2026-07-19", "x": 356.0, "r": 5.775, "dl": -0.007, "m": true, "info": "1W-2L \u00b7 2026 Macon PPA Challenger - Mixed Doubles Pro Main Draw"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Trina Anise</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+</style></head><body>
+<div class="stamp">MOCKUP v5.7 — 2026-08-10</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Trina Anise — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-w">🔥 1W</span><span class="pname">Trina Anise</span>
+    <span class="scores">3.402</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,3.0 14.1,14.7 27.2,8.4 40.3,16.4 53.4,27.0 66.6,23.0 79.7,21.6 119.0,22.0"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">3.845</div><div class="k">Placed 3/24</div></div>
+  
+  <div class="chip"><div class="v">4.024</div><div class="k">Peak 3/24</div></div>
+  <div class="chip"><div class="v">3.402</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v neg">-0.483</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.040</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 3.845, peak 4.024, now 3.402 (-0.443 net)"><line class="grid" x1="105.0" y1="14" x2="105.0" y2="186"/><line class="grid" x1="212.2" y1="14" x2="212.2" y2="186"/><text class="tick" x="212.2" y="203" text-anchor="middle">2025</text><line class="grid" x1="317.6" y1="14" x2="317.6" y2="186"/><line class="grid" x1="34" y1="178.9" x2="356" y2="178.9"/><text class="tick" x="29" y="181.9" text-anchor="end">3.25</text><line class="grid" x1="34" y1="131.7" x2="356" y2="131.7"/><text class="tick" x="29" y="134.7" text-anchor="end">3.50</text><line class="grid" x1="34" y1="84.6" x2="356" y2="84.6"/><text class="tick" x="29" y="87.6" text-anchor="end">3.75</text><line class="grid" x1="34" y1="37.5" x2="356" y2="37.5"/><text class="tick" x="29" y="40.5" text-anchor="end">4.00</text><line class="evline" x1="175.5" y1="14" x2="175.5" y2="186"/><line class="evline" x1="219.2" y1="14" x2="219.2" y2="186"/><path class="seg-norm" d="M34.0 87.0 L87.6 126.2 L252.4 104.9 L260.5 167.1 L264.6 153.7 L268.7 149.3 L276.8 148.6 L277.4 150.4 L356.0 150.3"/><line class="mk-whisk" x1="34.0" y1="87.0" x2="34.0" y2="66.8"/><line class="mk-whisk" x1="34.0" y1="87.0" x2="34.0" y2="32.9"/><circle class="mk mk-start" cx="34.0" cy="66.8" r="4"/><circle class="mk mk-peak" cx="34.0" cy="32.9" r="5"/><circle class="mk mk-low" cx="260.5" cy="167.1" r="4"/><circle class="mk mk-now" cx="356.0" cy="150.3" r="4"/><rect class="mk mk-adm" x="274.2" y="139.0" width="6.4" height="6.4" transform="rotate(45 277.4 142.2)"/><text class="anno anno-gold" x="34.0" y="23.9" text-anchor="start">peak 4.024</text><text class="anno" x="260.5" y="182.0" text-anchor="middle">low 3.312</text><text class="anno" x="38.0" y="58.8">placed 3.845</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span><i class="ev"></i>DUPR update</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (36 changes since 2024-03-01). Solid = a match moved it; dashed pink = DUPR moved it with no match; gold verticals = system-wide DUPR updates (seen across the tracked group). 17-16 record over 33 doubles matches, 1.5-year span. Inactive since 2025-09-05.</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:100%"></div></div><div class="half r"></div></div><span class="val neg">-0.483</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:8%"></div></div></div><span class="val pos">+0.040</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:92%"></div></div><div class="half r"></div></div><span class="val neg">-0.443</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +0.289 / losses -0.453.</p>
+
+
+<h2>DUPR adjustments</h2>
+<div class="attr"><div class="adj-row"><span class="adj-date">4/23/25</span><span class="adj-kind adj-solo">individual adjustment</span><span class="adj-delta pos">+0.034</span><span class="adj-path">3.410 → 3.444</span></div></div>
+<p class="note">Every rating change DUPR made with no match played — flagged changedByAdmin in
+DUPR's own series. ◆ on the chart marks the individual ones; gold verticals are system-wide
+updates. 2 micro-moves under 0.02 not listed (they're in the chart's dashed segments).</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">3/11/25</span>Triple Team Pickleball: Advancing 3.5+ Women&#x27;s League</div><div class="match-group win"><div class="match-row"><span class="match-score">11-3, 11-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.061)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.577</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.959</span></span> <span class="match-vs">vs</span> <span>Theresa Rundle <span class="match-rating">3.588</span></span> &amp; <span>Melissa Weaver <span class="match-rating">3.213</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.74</summary><div class="tag-math">Trina 3.577 + Corinna 3.959 = <b>7.537</b><br>Theresa 3.588 + Melissa 3.213 = <b>6.801</b><br>→ their side stronger by 0.735 combined DUPR (pre-match)</div></details> <span class="mx">PD +16</span> <span class="mx">match #2</span></div></div><div class="event-pill"><span class="event-pill-date">4/22/25</span>Triple Team Pickleball: Advancing 3.5+ Women&#x27;s</div><div class="match-group win"><div class="match-row"><span class="match-score">11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.060)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.350</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.741</span></span> <span class="match-vs">vs</span> <span>Kristi King <span class="match-rating">4.175</span></span> &amp; <span>Alicia Zatcoff <span class="match-rating">3.478</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.56</summary><div class="tag-math">Trina 3.350 + Corinna 3.741 = <b>7.092</b><br>Kristi 4.175 + Alicia 3.478 = <b>7.654</b><br>→ opponents stronger by 0.562 combined DUPR (pre-match)</div></details> <span class="mx">PD +10</span> <span class="mx">match #21</span></div></div><div class="match-datepill">4/8/25</div><div class="match-group win"><div class="match-row"><span class="match-score">11-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.050)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.374</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.765</span></span> <span class="match-vs">vs</span> <span>Laine Sims <span class="match-rating">3.626</span></span> &amp; <span>Valerie Cao <span class="match-rating">3.681</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.17</summary><div class="tag-math">Trina 3.374 + Corinna 3.765 = <b>7.140</b><br>Laine 3.626 + Valerie 3.681 = <b>7.308</b><br>→ opponents stronger by 0.168 combined DUPR (pre-match)</div></details> <span class="mx">PD +9</span> <span class="mx">match #15</span></div></div><div class="match-datepill">3/18/25</div><div class="match-group loss"><div class="match-row"><span class="match-score">1-11, 3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.101)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.642</span></span> w/ <span class="match-partner">joanna wares <span class="match-rating">3.585</span></span> <span class="match-vs">vs</span> <span>Wendy Polka <span class="match-rating">3.665</span></span> &amp; <span>eva rondon <span class="match-rating">3.937</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.38</summary><div class="tag-math">Trina 3.642 + joanna 3.585 = <b>7.228</b><br>Wendy 3.665 + eva 3.937 = <b>7.603</b><br>→ opponents stronger by 0.375 combined DUPR (pre-match)</div></details> <span class="mx">PD -18</span> <span class="mx">match #4</span></div></div><div class="event-pill"><span class="event-pill-date">3/25/25</span>Triple Team Pickleball: Advancing 3.5 Women&#x27;s</div><div class="match-group loss"><div class="match-row"><span class="match-score">4-11, 1-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.081)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.500</span></span> w/ <span class="match-partner">Annie Lecomte <span class="match-rating">4.021</span></span> <span class="match-vs">vs</span> <span>Rita Szczeblewski <span class="match-rating">3.940</span></span> &amp; <span>Francesca Strecker <span class="match-rating">3.796</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.22</summary><div class="tag-math">Trina 3.500 + Annie 4.021 = <b>7.522</b><br>Rita 3.940 + Francesca 3.796 = <b>7.737</b><br>→ opponents stronger by 0.215 combined DUPR (pre-match)</div></details> <span class="mx">PD -17</span> <span class="mx">match #8</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11, 8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.054)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.419</span></span> w/ <span class="match-partner">Annie Lecomte <span class="match-rating">3.884</span></span> <span class="match-vs">vs</span> <span>Amity Leland <span class="match-rating">3.253</span></span> &amp; <span>KATHLEEN ANDERSON <span class="match-rating">3.968</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.08</summary><div class="tag-math">Trina 3.419 + Annie 3.884 = <b>7.303</b><br>Amity 3.253 + KATHLEEN 3.968 = <b>7.222</b><br>→ their side stronger by 0.081 combined DUPR (pre-match)</div></details> <span class="mx">PD -6</span> <span class="mx">match #9</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">3/1/24</span>Spring Fling for Cystic Fibrosis - Presented by Architectural Windows…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-12 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.032)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.844</span></span> w/ <span class="match-partner">Laura Cowperthwait <span class="match-rating">3.761</span></span> <span class="match-vs">vs</span> <span>boodie mcgurn <span class="match-rating">3.327</span></span> &amp; <span>EMT <span class="match-rating">3.114</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +226d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.090)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.876</span></span> w/ <span class="match-partner">Laura Cowperthwait <span class="match-rating">3.771</span></span> <span class="match-vs">vs</span> <span>Jane Kauder <span class="match-rating">2.983</span></span> &amp; <span>Janet Todd <span class="match-rating">3.834</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +226d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.058)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.966</span></span> w/ <span class="match-partner">Laura Cowperthwait <span class="match-rating">3.808</span></span> <span class="match-vs">vs</span> <span>Ann Hall <span class="match-rating">3.577</span></span> &amp; <span>Valerie Cao <span class="match-rating">3.673</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +226d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.151)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">4.024</span></span> w/ <span class="match-partner">Laura Cowperthwait <span class="match-rating">3.836</span></span> <span class="match-vs">vs</span> <span>Lori Perdue <span class="match-rating">3.716</span></span> &amp; <span>Brent Perdue <span class="match-rating">4.062</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +226d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.136)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.872</span></span> w/ <span class="match-partner">Laura Cowperthwait <span class="match-rating">3.754</span></span> <span class="match-vs">vs</span> <span>Ann Hall <span class="match-rating">3.488</span></span> &amp; <span>Valerie Cao <span class="match-rating">3.669</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +226d late</span></div></div><div class="event-pill"><span class="event-pill-date">6/1/24</span>Dink Fest! For The Michael J Fox Foundation for Parkinson&#x27;s - Coed…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.054)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.737</span></span> w/ <span class="match-partner">Roy Anise <span class="match-rating">4.104</span></span> <span class="match-vs">vs</span> <span>Susie MacLeod <span class="match-rating">3.546</span></span> &amp; <span>Duncan MacLeod</span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +134d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">1-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.406</span></span> w/ <span class="match-partner">Roy Anise <span class="match-rating">4.036</span></span> <span class="match-vs">vs</span> <span>Laura Cowperthwait <span class="match-rating">3.961</span></span> &amp; <span>Robert Burke <span class="match-rating">2.954</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +134d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.131)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.332</span></span> w/ <span class="match-partner">Roy Anise <span class="match-rating">3.650</span></span> <span class="match-vs">vs</span> <span>Lynn Piland <span class="match-rating">3.224</span></span> &amp; <span>Alston Williams <span class="match-rating">3.583</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +134d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.074)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.463</span></span> w/ <span class="match-partner">Roy Anise <span class="match-rating">3.795</span></span> <span class="match-vs">vs</span> <span>Beth Moore <span class="match-rating">3.512</span></span> &amp; <span>Ferd Baruch <span class="match-rating">3.741</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +134d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.537</span></span> w/ <span class="match-partner">Roy Anise <span class="match-rating">3.875</span></span> <span class="match-vs">vs</span> <span>Lori Jennings <span class="match-rating">4.223</span></span> &amp; <span>Phillip Terrell <span class="match-rating">4.652</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +134d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">9-11, 11-5, 11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.401</span></span> w/ <span class="match-partner">Roy Anise <span class="match-rating">4.013</span></span> <span class="match-vs">vs</span> <span>Laura Cowperthwait <span class="match-rating">3.970</span></span> &amp; <span>Robert Burke <span class="match-rating">3.073</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +134d late</span></div></div><div class="event-pill"><span class="event-pill-date">3/11/25</span>Triple Team Pickleball: Advancing 3.5+ Women&#x27;s League</div><div class="match-group win"><div class="match-row"><span class="match-score">11-3, 11-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.008)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.568</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.956</span></span> <span class="match-vs">vs</span> <span>Becky Hampton <span class="match-rating">2.678</span></span> &amp; <span>Shufen Krenitsky <span class="match-rating">3.409</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-3, 11-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.061)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.577</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.959</span></span> <span class="match-vs">vs</span> <span>Theresa Rundle <span class="match-rating">3.588</span></span> &amp; <span>Melissa Weaver <span class="match-rating">3.213</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-5, 11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.638</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.979</span></span> <span class="match-vs">vs</span> <span>Marisse Hammer <span class="match-rating">3.125</span></span> &amp; <span>Deirdre Wray <span class="match-rating">3.086</span></span></div></div><div class="event-pill"><span class="event-pill-date">3/18/25</span>Triple Team Pickleball: Advancing 3.5+ Women&#x27;s</div><div class="match-group loss"><div class="match-row"><span class="match-score">1-11, 3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.101)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.642</span></span> w/ <span class="match-partner">joanna wares <span class="match-rating">3.585</span></span> <span class="match-vs">vs</span> <span>Wendy Polka <span class="match-rating">3.665</span></span> &amp; <span>eva rondon <span class="match-rating">3.937</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11, 2-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.049)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.541</span></span> w/ <span class="match-partner">joanna wares <span class="match-rating">3.519</span></span> <span class="match-vs">vs</span> <span>Jessica Brooks <span class="match-rating">3.542</span></span> &amp; <span>Erin Conjerti <span class="match-rating">3.957</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">12-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.035)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.492</span></span> w/ <span class="match-partner">joanna wares <span class="match-rating">3.485</span></span> <span class="match-vs">vs</span> <span>Valerie Cao <span class="match-rating">3.603</span></span> &amp; <span>Laine Sims <span class="match-rating">3.617</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.527</span></span> w/ <span class="match-partner">joanna wares <span class="match-rating">3.510</span></span> <span class="match-vs">vs</span> <span>Valerie Cao <span class="match-rating">3.593</span></span> &amp; <span>Laine Sims <span class="match-rating">3.603</span></span></div></div><div class="event-pill"><span class="event-pill-date">3/25/25</span>Triple Team Pickleball: Advancing 3.5 Women&#x27;s</div><div class="match-group loss"><div class="match-row"><span class="match-score">4-11, 1-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.081)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.500</span></span> w/ <span class="match-partner">Annie Lecomte <span class="match-rating">4.021</span></span> <span class="match-vs">vs</span> <span>Rita Szczeblewski <span class="match-rating">3.940</span></span> &amp; <span>Francesca Strecker <span class="match-rating">3.796</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11, 8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.054)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.419</span></span> w/ <span class="match-partner">Annie Lecomte <span class="match-rating">3.884</span></span> <span class="match-vs">vs</span> <span>Amity Leland <span class="match-rating">3.253</span></span> &amp; <span>KATHLEEN ANDERSON <span class="match-rating">3.968</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">0-11, 7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.053)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.365</span></span> w/ <span class="match-partner">Annie Lecomte <span class="match-rating">3.800</span></span> <span class="match-vs">vs</span> <span>Kristi King <span class="match-rating">4.045</span></span> &amp; <span>Alicia Zatcoff <span class="match-rating">3.381</span></span></div></div><div class="event-pill"><span class="event-pill-date">4/1/25</span>Triple Team Pickleball: Advancing 3.5+ Women&#x27;s</div><div class="match-group win"><div class="match-row"><span class="match-score">11-2, 11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.022)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.312</span></span> w/ <span class="match-partner">Beth Barnett <span class="match-rating">3.538</span></span> <span class="match-vs">vs</span> <span>Nga Nguyen Weaver <span class="match-rating">3.010</span></span> &amp; <span>Marisse Hammer <span class="match-rating">3.092</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-0, 11-1 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.025)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.334</span></span> w/ <span class="match-partner">Beth Barnett <span class="match-rating">3.547</span></span> <span class="match-vs">vs</span> <span>Deirdre Wray <span class="match-rating">3.056</span></span> &amp; <span>Beth Moorman <span class="match-rating">3.148</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-2, 11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.024)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.359</span></span> w/ <span class="match-partner">Beth Barnett <span class="match-rating">3.560</span></span> <span class="match-vs">vs</span> <span>Miranda Edds <span class="match-rating">3.229</span></span> &amp; <span>Beth  Bertonneau <span class="match-rating">3.070</span></span></div></div><div class="match-datepill">4/8/25</div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11, 8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.383</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.773</span></span> <span class="match-vs">vs</span> <span>Wendy Polka <span class="match-rating">3.867</span></span> &amp; <span>Amber Underhill <span class="match-rating">3.799</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.050)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.374</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.765</span></span> <span class="match-vs">vs</span> <span>Laine Sims <span class="match-rating">3.626</span></span> &amp; <span>Valerie Cao <span class="match-rating">3.681</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.424</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.810</span></span> <span class="match-vs">vs</span> <span>Laine Sims <span class="match-rating">3.596</span></span> &amp; <span>Valerie Cao <span class="match-rating">3.652</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.004)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.411</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.798</span></span> <span class="match-vs">vs</span> <span>Jessica Brooks <span class="match-rating">3.713</span></span> &amp; <span>Erin Conjerti <span class="match-rating">4.039</span></span></div></div><div class="match-datepill">4/22/25</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11, 1-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.044)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.444</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.829</span></span> <span class="match-vs">vs</span> <span>Amity Leland <span class="match-rating">3.331</span></span> &amp; <span>KATHLEEN ANDERSON <span class="match-rating">3.957</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Trina <span class="match-rating">3.368</span></span> w/ <span class="match-partner">Corinna Sherlip <span class="match-rating">3.758</span></span> <span class="match-vs">vs</span> <span>Rita Szczeblewski <span class="match-rating">4.046</span></span> &amp; <span>Francesca Strecker <span class="match-rating">3.902</span></span></div></div>
+<p class="note">first 30 rated matches, from 2024-03-01 · 1 unrated match not shown (pre-engine era) · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2024-03-01", "x": 34.0, "r": 3.737, "dl": 0.0, "m": true, "info": "4W-2L \u00b7 Spring Fling for Cystic Fibrosis - Presented by Architectura"}, {"d": "2024-06-01", "x": 87.6, "r": 3.529, "dl": -0.208, "m": true, "info": "4W-2L \u00b7 Dink Fest! For The Michael J Fox Foundation for Parkinson's "}, {"d": "2025-03-11", "x": 252.4, "r": 3.642, "dl": 0.113, "m": true, "info": "3W-0L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's League"}, {"d": "2025-03-18", "x": 256.4, "r": 3.501, "dl": -0.142, "m": true, "info": "1W-3L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-03-25", "x": 260.5, "r": 3.312, "dl": -0.188, "m": true, "info": "0W-3L \u00b7 Triple Team Pickleball: Advancing 3.5 Women's"}, {"d": "2025-04-01", "x": 264.6, "r": 3.383, "dl": 0.071, "m": true, "info": "3W-0L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-04-08", "x": 268.7, "r": 3.407, "dl": 0.024, "m": true, "info": "1W-3L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-04-22", "x": 276.8, "r": 3.41, "dl": 0.003, "m": true, "info": "1W-3L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-04-23", "x": 277.4, "r": 3.401, "dl": -0.01, "m": true, "info": "match day"}, {"d": "2025-09-05", "x": 356.0, "r": 3.402, "dl": 0.001, "m": true, "info": "match day"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>

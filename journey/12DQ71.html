@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Wade Tallent</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+</style></head><body>
+<div class="stamp">MOCKUP v5.7 — 2026-08-10</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Wade Tallent — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-l">▼ 9L</span><span class="pname">Wade Tallent</span>
+    <span class="scores">4.104</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 20.7,14.0 40.3,15.8 60.0,3.0 79.7,20.0 99.3,20.3 119.0,22.6"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">4.063</div><div class="k">Tracked 6/23</div></div>
+  
+  <div class="chip"><div class="v">4.290</div><div class="k">Peak 1/25</div></div>
+  <div class="chip"><div class="v">4.104</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v neg">-0.009</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.050</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: tracked 4.063, peak 4.290, now 4.104 (+0.041 net)"><line class="grid" x1="46.1" y1="14" x2="46.1" y2="186"/><line class="grid" x1="131.6" y1="14" x2="131.6" y2="186"/><text class="tick" x="131.6" y="203" text-anchor="middle">2024</text><line class="grid" x1="216.1" y1="14" x2="216.1" y2="186"/><line class="grid" x1="301.6" y1="14" x2="301.6" y2="186"/><text class="tick" x="301.6" y="203" text-anchor="middle">2025</text><line class="grid" x1="34" y1="141.4" x2="356" y2="141.4"/><text class="tick" x="29" y="144.4" text-anchor="end">3.75</text><line class="grid" x1="34" y1="91.6" x2="356" y2="91.6"/><text class="tick" x="29" y="94.6" text-anchor="end">4.00</text><line class="grid" x1="34" y1="41.9" x2="356" y2="41.9"/><text class="tick" x="29" y="44.9" text-anchor="end">4.25</text><line class="evline" x1="54.9" y1="14" x2="54.9" y2="186"/><line class="evline" x1="58.6" y1="14" x2="58.6" y2="186"/><line class="evline" x1="63.7" y1="14" x2="63.7" y2="186"/><line class="evline" x1="64.7" y1="14" x2="64.7" y2="186"/><line class="evline" x1="93.0" y1="14" x2="93.0" y2="186"/><line class="evline" x1="111.1" y1="14" x2="111.1" y2="186"/><line class="evline" x1="145.1" y1="14" x2="145.1" y2="186"/><line class="evline" x1="272.4" y1="14" x2="272.4" y2="186"/><line class="evline" x1="307.2" y1="14" x2="307.2" y2="186"/><path class="seg-norm" d="M34.0 79.1 L302.6 55.1 L307.7 58.4 L326.7 34.6 L335.6 66.1 L356.0 71.0"/><line class="mk-whisk" x1="302.6" y1="55.1" x2="302.6" y2="33.9"/><line class="mk-whisk" x1="302.6" y1="55.1" x2="302.6" y2="166.1"/><circle class="mk mk-start" cx="34.0" cy="79.1" r="4"/><circle class="mk mk-peak" cx="302.6" cy="33.9" r="5"/><circle class="mk mk-low" cx="302.6" cy="166.1" r="4"/><circle class="mk mk-now" cx="356.0" cy="71.0" r="4"/><rect class="mk mk-adm" x="304.5" y="45.2" width="6.4" height="6.4" transform="rotate(45 307.7 48.4)"/><text class="anno anno-gold" x="302.6" y="24.9" text-anchor="end">peak 4.290</text><text class="anno" x="302.6" y="182.0" text-anchor="middle">low 3.626</text><text class="anno" x="38.0" y="71.1">tracked 4.063</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span><i class="ev"></i>DUPR update</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (56 changes since 2023-06-05). Solid = a match moved it; dashed pink = DUPR moved it with no match; gold verticals = system-wide DUPR updates (seen across the tracked group). 39-42 record over 81 doubles matches, 1.9-year span. Inactive since 2025-04-28. The series opens at DUPR's 2023-06-05 history cutover — Wade was already rated 4.063 then, so the start is "tracked since", not a placement; earlier matches predate the ledger.</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:17%"></div></div><div class="half r"></div></div><span class="val neg">-0.009</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.050</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:83%"></div></div></div><span class="val pos">+0.041</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +1.104 / losses -1.050.</p>
+
+
+<h2>DUPR adjustments</h2>
+<div class="attr"><div class="adj-row"><span class="adj-date">1/14/25</span><span class="adj-kind adj-solo">individual adjustment</span><span class="adj-delta pos">+0.034</span><span class="adj-path">4.184 → 4.217</span></div></div>
+<p class="note">Every rating change DUPR made with no match played — flagged changedByAdmin in
+DUPR's own series. ◆ on the chart marks the individual ones; gold verticals are system-wide
+updates. 3 micro-moves under 0.02 not listed (they're in the chart's dashed segments).</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">1/13/24</span>Liz Moore &amp; Associates 2024 Pickleball Resolution - Hosted by…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.245)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.691</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.262</span></span> <span class="match-vs">vs</span> <span>Hridhay Pothunoori <span class="match-rating">4.521</span></span> &amp; <span>Arsh Bassan <span class="match-rating">4.596</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +1.16</summary><div class="tag-math">Wade 3.691 + Joe 4.262 = <b>7.954</b><br>Hridhay 4.521 + Arsh 4.596 = <b>9.118</b><br>→ opponents stronger by 1.164 combined DUPR (pre-match)</div></details> <span class="mx">PD +14</span> <span class="mx">match #6</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.104)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.625</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.229</span></span> <span class="match-vs">vs</span> <span>Matt Haywood <span class="match-rating">4.209</span></span> &amp; <span>Shashank Golla <span class="match-rating">4.469</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.82</summary><div class="tag-math">Wade 3.625 + Joe 4.229 = <b>7.855</b><br>Matt 4.209 + Shashank 4.469 = <b>8.680</b><br>→ opponents stronger by 0.825 combined DUPR (pre-match)</div></details> <span class="mx">PD +4</span> <span class="mx">match #9</span></div></div><div class="event-pill"><span class="event-pill-date">10/26/24</span>Pickleboo Halloween Tournament - Mens Doubles Skill: (4.0 And Under)…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7, 11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.086)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.107</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">3.959</span></span> <span class="match-vs">vs</span> <span>Gregory Allen Johnson <span class="match-rating">3.733</span></span> &amp; <span>Justin Rumley <span class="match-rating">3.855</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.48</summary><div class="tag-math">Wade 4.107 + Brandon 3.959 = <b>8.067</b><br>Gregory 3.733 + Justin 3.855 = <b>7.589</b><br>→ their side stronger by 0.478 combined DUPR (pre-match)</div></details> <span class="mx">PD +8</span> <span class="mx">match #18</span></div></div><div class="event-pill"><span class="event-pill-date">12/3/23</span>5th Annual Winchester Country Club Pickleball Tournament Mixed…</div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.229)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.062</span></span> w/ <span class="match-partner">Brooke Hopkins <span class="match-rating">3.891</span></span> <span class="match-vs">vs</span> <span>Louisa Wang <span class="match-rating">3.492</span></span> &amp; <span>John Hathcoat <span class="match-rating">4.122</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.34</summary><div class="tag-math">Wade 4.062 + Brooke 3.891 = <b>7.955</b><br>Louisa 3.492 + John 4.122 = <b>7.615</b><br>→ their side stronger by 0.340 combined DUPR (pre-match)</div></details> <span class="mx">PD -3</span> <span class="mx">match #2</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-11, 10-12 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.098)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.834</span></span> w/ <span class="match-partner">Brooke Hopkins <span class="match-rating">3.891</span></span> <span class="match-vs">vs</span> <span>Courtenay Lockshin <span class="match-rating">3.988</span></span> &amp; <span>BENJAMIN Lockshin <span class="match-rating">4.124</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.39</summary><div class="tag-math">Wade 3.834 + Brooke 3.891 = <b>7.726</b><br>Courtenay 3.988 + BENJAMIN 4.124 = <b>8.113</b><br>→ opponents stronger by 0.388 combined DUPR (pre-match)</div></details> <span class="mx">PD -7</span> <span class="mx">match #1</span></div></div><div class="event-pill"><span class="event-pill-date">10/27/24</span>Pickleboo Halloween Tournament - Mens Doubles Skill: (4.0 And Under)…</div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.076)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.284</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">4.007</span></span> <span class="match-vs">vs</span> <span>Bryce Baxter <span class="match-rating">4.287</span></span> &amp; <span>Ronnie Cummings <span class="match-rating">4.033</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.03</summary><div class="tag-math">Wade 4.284 + Brandon 4.007 = <b>8.292</b><br>Bryce 4.287 + Ronnie 4.033 = <b>8.321</b><br>→ opponents stronger by 0.029 combined DUPR (pre-match)</div></details> <span class="mx">PD -6</span> <span class="mx">match #21</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">12/3/23</span>5th Annual Winchester Country Club Pickleball Tournament Mixed…</div><div class="match-group loss"><div class="match-row"><span class="match-score">6-11, 10-12 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.098)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.834</span></span> w/ <span class="match-partner">Brooke Hopkins <span class="match-rating">3.891</span></span> <span class="match-vs">vs</span> <span>Courtenay Lockshin <span class="match-rating">3.988</span></span> &amp; <span>BENJAMIN Lockshin <span class="match-rating">4.124</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.229)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.062</span></span> w/ <span class="match-partner">Brooke Hopkins <span class="match-rating">3.891</span></span> <span class="match-vs">vs</span> <span>Louisa Wang <span class="match-rating">3.492</span></span> &amp; <span>John Hathcoat <span class="match-rating">4.122</span></span></div></div><div class="event-pill"><span class="event-pill-date">1/10/24</span>B&amp;D</div><div class="match-group loss"><div class="match-row"><span class="match-score">10-12 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.069)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.735</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.257</span></span> <span class="match-vs">vs</span> <span>Devin Garcia-Roblero <span class="match-rating">4.124</span></span> &amp; <span>Lenny Ports <span class="match-rating">4.067</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">12-14 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.666</span></span> w/ <span class="match-partner">Lenny Ports <span class="match-rating">4.074</span></span> <span class="match-vs">vs</span> <span>Jacob Jackson <span class="match-rating">4.174</span></span> &amp; <span>Devin Garcia-Roblero <span class="match-rating">4.126</span></span></div></div><div class="event-pill"><span class="event-pill-date">1/13/24</span>Liz Moore &amp; Associates 2024 Pickleball Resolution - Hosted by…</div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.634</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.233</span></span> <span class="match-vs">vs</span> <span>Yash Goyal <span class="match-rating">4.625</span></span> &amp; <span>Arun Shimoga <span class="match-rating">4.543</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.245)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.691</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.262</span></span> <span class="match-vs">vs</span> <span>Hridhay Pothunoori <span class="match-rating">4.521</span></span> &amp; <span>Arsh Bassan <span class="match-rating">4.596</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.012)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.704</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.269</span></span> <span class="match-vs">vs</span> <span>Nathaniel Hutton <span class="match-rating">4.718</span></span> &amp; <span>Mac Hutton <span class="match-rating">4.476</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.025)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.729</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.283</span></span> <span class="match-vs">vs</span> <span>Jeffery OConnell <span class="match-rating">4.506</span></span> &amp; <span>Arthur Watson, Jr. <span class="match-rating">4.404</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.104)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.625</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.229</span></span> <span class="match-vs">vs</span> <span>Matt Haywood <span class="match-rating">4.209</span></span> &amp; <span>Shashank Golla <span class="match-rating">4.469</span></span></div></div><div class="event-pill"><span class="event-pill-date">1/14/24</span>Liz Moore &amp; Associates 2024 Pickleball Resolution - Hosted by…</div><div class="match-group win"><div class="match-row"><span class="match-score">16-14 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.042)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.897</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.744</span></span> <span class="match-vs">vs</span> <span>Breanna Seal <span class="match-rating">3.885</span></span> &amp; <span>Yash Goyal <span class="match-rating">4.625</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.918</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.744</span></span> <span class="match-vs">vs</span> <span>Ansley Drenner <span class="match-rating">4.305</span></span> &amp; <span>Spencer Ellingson <span class="match-rating">4.117</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.018)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.936</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.745</span></span> <span class="match-vs">vs</span> <span>Hope Venus <span class="match-rating">4.250</span></span> &amp; <span>Evan Pfeifffer <span class="match-rating">4.415</span></span></div></div><div class="event-pill"><span class="event-pill-date">1/21/24</span>PPB</div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.051)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.939</span></span> w/ <span class="match-partner">Joe Bailey <span class="match-rating">4.412</span></span> <span class="match-vs">vs</span> <span>Devin Garcia-Roblero <span class="match-rating">4.127</span></span> &amp; <span>Lenny Ports <span class="match-rating">4.070</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.054)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">3.990</span></span> w/ <span class="match-partner">Ty McFarland <span class="match-rating">4.125</span></span> <span class="match-vs">vs</span> <span>Matt Carozza <span class="match-rating">4.330</span></span> &amp; <span>Joe Bailey <span class="match-rating">4.454</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.035)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.044</span></span> w/ <span class="match-partner">Devin Garcia-Roblero <span class="match-rating">4.123</span></span> <span class="match-vs">vs</span> <span>Ty McFarland <span class="match-rating">4.182</span></span> &amp; <span>Lenny Ports <span class="match-rating">4.052</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-12 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.079</span></span> w/ <span class="match-partner">Matt Carozza <span class="match-rating">4.081</span></span> <span class="match-vs">vs</span> <span>Ty McFarland <span class="match-rating">4.145</span></span> &amp; <span>Joe Bailey <span class="match-rating">4.409</span></span></div></div><div class="event-pill"><span class="event-pill-date">2/4/24</span>Dupr</div><div class="match-group win"><div class="match-row"><span class="match-score">11-3, 11-5, 11-5, 11-6, 11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.040)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.066</span></span> w/ <span class="match-partner">Brian Singleton <span class="match-rating">4.008</span></span> <span class="match-vs">vs</span> <span>Brandon Gilbert <span class="match-rating">3.797</span></span> &amp; <span>David Parsons <span class="match-rating">4.163</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/26/24</span>Pickleboo Halloween Tournament - Mens Doubles Skill: (4.0 And Under)…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7, 11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.086)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.107</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">3.959</span></span> <span class="match-vs">vs</span> <span>Gregory Allen Johnson <span class="match-rating">3.733</span></span> &amp; <span>Justin Rumley <span class="match-rating">3.855</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7, 11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.192</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">3.977</span></span> <span class="match-vs">vs</span> <span>Matthew Sachs <span class="match-rating">3.637</span></span> &amp; <span>Hugo Rodriguez <span class="match-rating">3.646</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7, 5-11, 11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.072)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.212</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">3.982</span></span> <span class="match-vs">vs</span> <span>Bryce Baxter <span class="match-rating">4.298</span></span> &amp; <span>Ronnie Cummings <span class="match-rating">4.037</span></span></div></div><div class="match-datepill">10/27/24</div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.076)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.284</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">4.007</span></span> <span class="match-vs">vs</span> <span>Bryce Baxter <span class="match-rating">4.287</span></span> &amp; <span>Ronnie Cummings <span class="match-rating">4.033</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.207</span></span> w/ <span class="match-partner">Brandon Daniels <span class="match-rating">3.977</span></span> <span class="match-vs">vs</span> <span>Bryce Baxter <span class="match-rating">4.301</span></span> &amp; <span>Ronnie Cummings <span class="match-rating">4.039</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/27/24</span>Pickleboo Halloween Tournament - Mixed Doubles Skill: (4.0 And Under)…</div><div class="match-group loss"><div class="match-row"><span class="match-score">11-3, 8-11, 8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.176</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.745</span></span> <span class="match-vs">vs</span> <span>Katie Johnson <span class="match-rating">3.967</span></span> &amp; <span>Robert Rodriguez <span class="match-rating">4.217</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-12 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.031)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.155</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.739</span></span> <span class="match-vs">vs</span> <span>Darla Siewert <span class="match-rating">4.008</span></span> &amp; <span>Bryan Siewert <span class="match-rating">4.080</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.069)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.185</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.748</span></span> <span class="match-vs">vs</span> <span>Theda Good <span class="match-rating">4.122</span></span> &amp; <span>Justin Rumley <span class="match-rating">3.838</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.035)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.255</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.772</span></span> <span class="match-vs">vs</span> <span>Katie Johnson <span class="match-rating">3.994</span></span> &amp; <span>Robert Rodriguez <span class="match-rating">4.228</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.290</span></span> w/ <span class="match-partner">Amber Underhill <span class="match-rating">3.784</span></span> <span class="match-vs">vs</span> <span>Deeanne Shelton <span class="match-rating">4.148</span></span> &amp; <span>Marcellus Jernigan <span class="match-rating">4.718</span></span></div></div><div class="event-pill"><span class="event-pill-date">11/9/24</span>Atlantic Union Bank Open - Men&#x27;s Doubles Skill: (4.5) Age: (35+, 50+)</div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.018)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.274</span></span> w/ <span class="match-partner">Michael Nielson <span class="match-rating">4.281</span></span> <span class="match-vs">vs</span> <span>James Lauder <span class="match-rating">4.539</span></span> &amp; <span>Donnie Jones <span class="match-rating">4.425</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-12 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.030)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.257</span></span> w/ <span class="match-partner">Michael Nielson <span class="match-rating">4.268</span></span> <span class="match-vs">vs</span> <span>Lloyd zelazny <span class="match-rating">4.508</span></span> &amp; <span>Matt Behnke <span class="match-rating">4.513</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Wade <span class="match-rating">4.287</span></span> w/ <span class="match-partner">Michael Nielson <span class="match-rating">4.290</span></span> <span class="match-vs">vs</span> <span>Jon Laaser <span class="match-rating">4.308</span></span> &amp; <span>Todd Compton <span class="match-rating">4.495</span></span></div></div>
+<p class="note">first 30 rated matches, from 2023-12-03 · 28 unrated matches not shown (pre-engine era) · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2023-06-05", "x": 34.0, "r": 4.063, "dl": 0.0, "m": false, "info": "DUPR adjustment \u2014 individual (only this player, no match)"}, {"d": "2025-01-03", "x": 302.6, "r": 4.184, "dl": 0.121, "m": true, "info": "match day"}, {"d": "2025-01-14", "x": 307.7, "r": 4.167, "dl": -0.017, "m": true, "info": "match day"}, {"d": "2025-02-24", "x": 326.7, "r": 4.287, "dl": 0.12, "m": true, "info": "3W-1L \u00b7 Richmond Pickleball Club"}, {"d": "2025-03-15", "x": 335.6, "r": 4.128, "dl": -0.159, "m": true, "info": "0W-4L \u00b7 The OrthoVirginia Cup - Men's Doubles Skill: (4.5) Age: (19+"}, {"d": "2025-03-18", "x": 336.9, "r": 4.125, "dl": -0.003, "m": true, "info": "0W-1L \u00b7 Ass Spanking 101"}, {"d": "2025-04-28", "x": 356.0, "r": 4.104, "dl": -0.022, "m": true, "info": "0W-4L \u00b7 Net Shot Flex League"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>

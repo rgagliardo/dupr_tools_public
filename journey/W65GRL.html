@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Callie DeKeuster</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+</style></head><body>
+<div class="stamp">MOCKUP v5.7 — 2026-08-10</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Callie DeKeuster — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-w">🔥 1W</span><span class="pname">Callie DeKeuster</span>
+    <span class="scores">4.287</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 10.1,26.8 19.2,13.2 28.2,11.2 37.3,16.2 46.4,15.1 55.5,19.2 64.5,18.8 73.6,4.5 91.8,3.0 100.8,3.8 109.9,12.6 119.0,12.6"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">3.849</div><div class="k">Placed 9/23</div></div>
+  
+  <div class="chip"><div class="v">4.657</div><div class="k">Peak 10/24</div></div>
+  <div class="chip"><div class="v">4.287</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v pos">+0.216</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.222</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 3.849, peak 4.657, now 4.287 (+0.438 net)"><line class="grid" x1="94.4" y1="14" x2="94.4" y2="186"/><text class="tick" x="94.4" y="203" text-anchor="middle">2024</text><line class="grid" x1="199.0" y1="14" x2="199.0" y2="186"/><line class="grid" x1="304.8" y1="14" x2="304.8" y2="186"/><text class="tick" x="304.8" y="203" text-anchor="middle">2025</text><line class="grid" x1="34" y1="185.8" x2="356" y2="185.8"/><text class="tick" x="29" y="188.8" text-anchor="end">3.75</text><line class="grid" x1="34" y1="143.2" x2="356" y2="143.2"/><text class="tick" x="29" y="146.2" text-anchor="end">4.00</text><line class="grid" x1="34" y1="100.5" x2="356" y2="100.5"/><text class="tick" x="29" y="103.5" text-anchor="end">4.25</text><line class="grid" x1="34" y1="57.9" x2="356" y2="57.9"/><text class="tick" x="29" y="60.9" text-anchor="end">4.50</text><line class="grid" x1="34" y1="15.2" x2="356" y2="15.2"/><text class="tick" x="29" y="18.2" text-anchor="end">4.75</text><line class="evline" x1="46.6" y1="14" x2="46.6" y2="186"/><line class="evline" x1="69.1" y1="14" x2="69.1" y2="186"/><line class="evline" x1="111.0" y1="14" x2="111.0" y2="186"/><line class="evline" x1="268.6" y1="14" x2="268.6" y2="186"/><line class="evline" x1="311.7" y1="14" x2="311.7" y2="186"/><path class="seg-norm" d="M34.0 140.7 L38.6 140.2 L43.2 89.5 L50.1 105.7 L54.1 102.2 L92.7 115.4 L100.1 114.0"/><path class="seg-sys" d="M100.1 114.0 L111.0 67.7"/><path class="seg-norm" d="M111.0 67.7 L143.8 64.2 L180.1 62.9 L260.0 65.5 L261.1 94.2 L356.0 94.2"/><line class="mk-whisk" x1="34.0" y1="140.7" x2="34.0" y2="168.9"/><line class="mk-whisk" x1="261.1" y1="94.2" x2="261.1" y2="31.1"/><line class="mk-whisk" x1="34.0" y1="140.7" x2="34.0" y2="168.9"/><circle class="mk mk-start" cx="34.0" cy="168.9" r="4"/><circle class="mk mk-peak" cx="261.1" cy="31.1" r="5"/><circle class="mk mk-low" cx="34.0" cy="168.9" r="4"/><circle class="mk mk-now" cx="356.0" cy="94.2" r="4"/><rect class="mk mk-adm" x="40.0" y="96.3" width="6.4" height="6.4" transform="rotate(45 43.2 99.5)"/><rect class="mk mk-adm" x="256.8" y="64.0" width="6.4" height="6.4" transform="rotate(45 260.0 67.2)"/><text class="anno anno-gold" x="261.1" y="22.1" text-anchor="middle">peak 4.657</text><text class="anno" x="65.9" y="182.0" text-anchor="middle">low 3.849</text><text class="anno" x="38.0" y="160.9">placed 3.849</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span><i class="ev"></i>DUPR update</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (93 changes since 2023-09-18). Solid = a match moved it; dashed pink = DUPR moved it with no match; gold verticals = system-wide DUPR updates (seen across the tracked group). 60-24 record over 84 doubles matches, 1.5-year span. Inactive since 2025-03-31.</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:49%"></div></div></div><span class="val pos">+0.216</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:51%"></div></div></div><span class="val pos">+0.222</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.438</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +1.277 / losses -1.179.</p>
+
+
+<h2>DUPR adjustments</h2>
+<div class="attr"><div class="adj-row"><span class="adj-date">10/15/24</span><span class="adj-kind adj-solo">individual adjustment</span><span class="adj-delta neg">-0.025</span><span class="adj-path">4.470 → 4.445</span></div><div class="adj-row"><span class="adj-date">1/30/24</span><span class="adj-kind">system-wide update (5 players)</span><span class="adj-delta pos">+0.271</span><span class="adj-path">4.171 → 4.442</span></div><div class="adj-row"><span class="adj-date">10/4/23</span><span class="adj-kind adj-solo">individual adjustment</span><span class="adj-delta neg">-0.020</span><span class="adj-path">4.276 → 4.256</span></div></div>
+<p class="note">Every rating change DUPR made with no match played — flagged changedByAdmin in
+DUPR's own series. ◆ on the chart marks the individual ones; gold verticals are system-wide
+updates. 13 micro-moves under 0.02 not listed (they're in the chart's dashed segments).</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">9/14/24</span>NTPL Hilton Head Championships - Women&#x27;s 4.0 | 18+</div><div class="match-group win"><div class="match-row"><span class="match-score">11-8, 11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.207)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.447</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.382</span></span> <span class="match-vs">vs</span> <span>Tanya Goodroad <span class="match-rating">4.493</span></span> &amp; <span>Marissa Lucero <span class="match-rating">4.722</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.39</summary><div class="tag-math">Callie 4.447 + Estefania 4.382 = <b>8.831</b><br>Tanya 4.493 + Marissa 4.722 = <b>9.216</b><br>→ opponents stronger by 0.385 combined DUPR (pre-match)</div></details> <span class="mx">PD +10</span> <span class="mx">match #48</span></div></div><div class="event-pill"><span class="event-pill-date">10/2/23</span>Advanced Fixed Mixed- Week 4</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.068)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.017</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.905</span></span> <span class="match-vs">vs</span> <span>Denise Glidden <span class="match-rating">4.220</span></span> &amp; <span>William Bradshaw <span class="match-rating">4.077</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.38</summary><div class="tag-math">Callie 4.017 + Vivek 3.905 = <b>7.923</b><br>Denise 4.220 + William 4.077 = <b>8.298</b><br>→ opponents stronger by 0.376 combined DUPR (pre-match)</div></details> <span class="mx">PD +4</span> <span class="mx">match #14</span></div></div><div class="event-pill"><span class="event-pill-date">9/25/23</span>Advanced Fixed Mixed League- Week 3</div><div class="match-group win"><div class="match-row"><span class="match-score">11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.059)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.953</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.840</span></span> <span class="match-vs">vs</span> <span>Laura Crowder <span class="match-rating">4.002</span></span> &amp; <span>Brandon Daniels <span class="match-rating">3.971</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.18</summary><div class="tag-math">Callie 3.953 + Vivek 3.840 = <b>7.794</b><br>Laura 4.002 + Brandon 3.971 = <b>7.974</b><br>→ opponents stronger by 0.180 combined DUPR (pre-match)</div></details> <span class="mx">PD +6</span> <span class="mx">match #13</span></div></div><div class="event-pill"><span class="event-pill-date">9/14/24</span>NTPL Hilton Head Championships - Women&#x27;s 4.0 | 18+</div><div class="match-group loss"><div class="match-row"><span class="match-score">4-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.120)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.657</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.437</span></span> <span class="match-vs">vs</span> <span>Jenny Montgomery <span class="match-rating">4.125</span></span> &amp; <span>kimberly mars <span class="match-rating">4.176</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.79</summary><div class="tag-math">Callie 4.657 + Estefania 4.437 = <b>9.094</b><br>Jenny 4.125 + kimberly 4.176 = <b>8.302</b><br>→ their side stronger by 0.792 combined DUPR (pre-match)</div></details> <span class="mx">PD -7</span> <span class="mx">match #46</span></div></div><div class="event-pill"><span class="event-pill-date">10/16/23</span>Advanced Fixed Mixed- Week 6</div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.090)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.276</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.135</span></span> <span class="match-vs">vs</span> <span>John Kapp <span class="match-rating">3.809</span></span> &amp; <span>Lori Costa <span class="match-rating">3.515</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -1.09</summary><div class="tag-math">Callie 4.276 + Vivek 4.135 = <b>8.412</b><br>John 3.809 + Lori 3.515 = <b>7.325</b><br>→ their side stronger by 1.087 combined DUPR (pre-match)</div></details> <span class="mx">PD -2</span> <span class="mx">match #23</span></div></div><div class="event-pill"><span class="event-pill-date">12/29/23</span>2023 Legends Holiday Bash Womens Doubles Skill: (4.0)</div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.084)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.246</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.061</span></span> <span class="match-vs">vs</span> <span>Lara Moon <span class="match-rating">3.831</span></span> &amp; <span>Alexis Sheehan <span class="match-rating">3.660</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.82</summary><div class="tag-math">Callie 4.246 + Estefania 4.061 = <b>8.308</b><br>Lara 3.831 + Alexis 3.660 = <b>7.491</b><br>→ their side stronger by 0.816 combined DUPR (pre-match)</div></details> <span class="mx">PD -3</span> <span class="mx">match #38</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">7/15/23</span>Summer Smash Pickleball Tourney - Womens Doubles Skill: (3.0 And…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.287</span></span> w/ <span class="match-partner">Lindsay Longnecker <span class="match-rating">3.869</span></span> <span class="match-vs">vs</span> <span>Amy Smith <span class="match-rating">3.219</span></span> &amp; <span>tamara mackey <span class="match-rating">3.201</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +456d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.475</span></span> w/ <span class="match-partner">Lindsay Longnecker <span class="match-rating">3.801</span></span> <span class="match-vs">vs</span> <span>Melissa Whitley <span class="match-rating">3.332</span></span> &amp; <span>Jamie Brissey <span class="match-rating">3.642</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +456d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.476</span></span> w/ <span class="match-partner">Lindsay Longnecker <span class="match-rating">3.852</span></span> <span class="match-vs">vs</span> <span>Stacy L Hammer <span class="match-rating">3.716</span></span> &amp; <span>Erin Magee <span class="match-rating">2.737</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +456d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.476</span></span> w/ <span class="match-partner">Lindsay Longnecker <span class="match-rating">3.870</span></span> <span class="match-vs">vs</span> <span>Stacy L Hammer <span class="match-rating">3.715</span></span> &amp; <span>Erin Magee <span class="match-rating">2.719</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +456d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.287</span></span> w/ <span class="match-partner">Lindsay Longnecker <span class="match-rating">3.877</span></span> <span class="match-vs">vs</span> <span>Amy Smith <span class="match-rating">3.222</span></span> &amp; <span>tamara mackey <span class="match-rating">3.207</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +456d late</span></div></div><div class="event-pill"><span class="event-pill-date">7/16/23</span>Summer Smash Pickleball Tourney - Mixed Doubles Skill: (3.0 And…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.477</span></span> w/ <span class="match-partner">Matthew DeKeuster <span class="match-rating">3.699</span></span> <span class="match-vs">vs</span> <span>Taylor Kohn <span class="match-rating">3.194</span></span> &amp; <span>Rob Kohn</span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +455d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.003)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.477</span></span> w/ <span class="match-partner">Matthew DeKeuster <span class="match-rating">3.703</span></span> <span class="match-vs">vs</span> <span>Amelia Hubach <span class="match-rating">4.290</span></span> &amp; <span>Jonathan Green <span class="match-rating">3.757</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +455d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-9 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.004)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.473</span></span> w/ <span class="match-partner">Matthew DeKeuster <span class="match-rating">3.627</span></span> <span class="match-vs">vs</span> <span>tamara mackey <span class="match-rating">3.598</span></span> &amp; <span>Brian Smith <span class="match-rating">4.251</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +455d late</span></div></div><div class="event-pill"><span class="event-pill-date">9/18/23</span>Advanced Fixed Mixed- Week 2</div><div class="match-group loss"><div class="match-row"><span class="match-score">7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.040)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.849</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.736</span></span> <span class="match-vs">vs</span> <span>John Kapp <span class="match-rating">4.018</span></span> &amp; <span>Lori Costa <span class="match-rating">3.761</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.049)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.910</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.797</span></span> <span class="match-vs">vs</span> <span>Leigh Ann Stevenson <span class="match-rating">3.724</span></span> &amp; <span>Joseph Siniff <span class="match-rating">3.968</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.052)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.910</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.797</span></span> <span class="match-vs">vs</span> <span>Lynze Kapp <span class="match-rating">3.749</span></span> &amp; <span>Brian Singleton <span class="match-rating">4.005</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.037)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.962</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.849</span></span> <span class="match-vs">vs</span> <span>Corinna Sherlip <span class="match-rating">3.494</span></span> &amp; <span>Anthony Brozna <span class="match-rating">4.049</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.015)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.999</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.886</span></span> <span class="match-vs">vs</span> <span>Corinna Sherlip <span class="match-rating">3.391</span></span> &amp; <span>Patrick harris <span class="match-rating">3.639</span></span></div></div><div class="event-pill"><span class="event-pill-date">9/18/23</span>Advanced Fixed Mixed League- Week 2</div><div class="match-group loss"><div class="match-row"><span class="match-score">7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.065)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.014</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.902</span></span> <span class="match-vs">vs</span> <span>Rod G <span class="match-rating">3.817</span></span> &amp; <span>Laine Sims <span class="match-rating">3.785</span></span></div></div><div class="event-pill"><span class="event-pill-date">9/25/23</span>Advanced Fixed Mixed League- Week 3</div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.058)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.949</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.836</span></span> <span class="match-vs">vs</span> <span>Leigh Ann Stevenson <span class="match-rating">3.848</span></span> &amp; <span>Joseph Siniff <span class="match-rating">4.092</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.031)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.007</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.894</span></span> <span class="match-vs">vs</span> <span>India Williams <span class="match-rating">3.751</span></span> &amp; <span>Kevin Adler <span class="match-rating">3.751</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.038)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.086</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.973</span></span> <span class="match-vs">vs</span> <span>Tina DiBello <span class="match-rating">3.865</span></span> &amp; <span>Paul DiBello <span class="match-rating">3.956</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.045)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.142</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.030</span></span> <span class="match-vs">vs</span> <span>Denise Glidden <span class="match-rating">4.112</span></span> &amp; <span>William Bradshaw <span class="match-rating">3.970</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.071)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.166</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.053</span></span> <span class="match-vs">vs</span> <span>Lynze Kapp <span class="match-rating">3.804</span></span> &amp; <span>Brian Singleton <span class="match-rating">3.962</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.065)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.017</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.905</span></span> <span class="match-vs">vs</span> <span>India Williams <span class="match-rating">3.811</span></span> &amp; <span>Kevin Adler <span class="match-rating">3.811</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.059)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">3.953</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.840</span></span> <span class="match-vs">vs</span> <span>Laura Crowder <span class="match-rating">4.002</span></span> &amp; <span>Brandon Daniels <span class="match-rating">3.971</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/2/23</span>Advanced Fixed Mixed- Week 4</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.068)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.017</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.905</span></span> <span class="match-vs">vs</span> <span>Denise Glidden <span class="match-rating">4.220</span></span> &amp; <span>William Bradshaw <span class="match-rating">4.077</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.038)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.085</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.972</span></span> <span class="match-vs">vs</span> <span>Corinna Sherlip <span class="match-rating">3.779</span></span> &amp; <span>Patrick harris <span class="match-rating">4.039</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.027)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.123</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.011</span></span> <span class="match-vs">vs</span> <span>Dipen Patel <span class="match-rating">3.869</span></span> &amp; <span>Laine Sims <span class="match-rating">3.776</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.034)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.151</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.038</span></span> <span class="match-vs">vs</span> <span>Teresa Ragland <span class="match-rating">3.929</span></span> &amp; <span>Robert Ragland <span class="match-rating">3.929</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.047)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.185</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.072</span></span> <span class="match-vs">vs</span> <span>Lindsey Claud <span class="match-rating">4.245</span></span> &amp; <span>Brooke Hopkins <span class="match-rating">3.950</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.031)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.232</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.119</span></span> <span class="match-vs">vs</span> <span>Lynze Kapp <span class="match-rating">3.897</span></span> &amp; <span>Brian Singleton <span class="match-rating">4.055</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.263</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.150</span></span> <span class="match-vs">vs</span> <span>Corinna Sherlip <span class="match-rating">3.594</span></span> &amp; <span>Patrick harris <span class="match-rating">3.854</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/16/23</span>Advanced Fixed Mixed- Week 6</div><div class="match-group win"><div class="match-row"><span class="match-score">11-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.027)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.314</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.173</span></span> <span class="match-vs">vs</span> <span>Dipen Patel <span class="match-rating">4.152</span></span> &amp; <span>Laine Sims <span class="match-rating">3.844</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.065)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Callie <span class="match-rating">4.342</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.200</span></span> <span class="match-vs">vs</span> <span>Denise Glidden <span class="match-rating">4.143</span></span> &amp; <span>William Bradshaw <span class="match-rating">4.084</span></span></div></div>
+<p class="note">first 30 rated matches, from 2023-07-15 · 7 unrated matches not shown (pre-engine era) · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2023-09-18", "x": 34.0, "r": 4.015, "dl": 0.0, "m": true, "info": "4W-3L \u00b7 Advanced Fixed Mixed- Week 2"}, {"d": "2023-09-26", "x": 38.6, "r": 4.018, "dl": 0.003, "m": true, "info": "match day"}, {"d": "2023-10-02", "x": 42.0, "r": 4.276, "dl": 0.258, "m": true, "info": "7W-0L \u00b7 Advanced Fixed Mixed- Week 4"}, {"d": "2023-10-04", "x": 43.2, "r": 4.315, "dl": 0.039, "m": true, "info": "match day"}, {"d": "2023-10-16", "x": 50.1, "r": 4.22, "dl": -0.095, "m": true, "info": "4W-3L \u00b7 Advanced Fixed Mixed- Week 6"}, {"d": "2023-10-23", "x": 54.1, "r": 4.24, "dl": 0.021, "m": true, "info": "6W-1L \u00b7 Advanced Fixed Partner- Week 5"}, {"d": "2023-12-29", "x": 92.7, "r": 4.163, "dl": -0.078, "m": true, "info": "3W-2L \u00b7 2023 Legends Holiday Bash Womens Doubles Skill: (4.0)"}, {"d": "2024-01-11", "x": 100.1, "r": 4.171, "dl": 0.008, "m": true, "info": "match day"}, {"d": "2024-01-30", "x": 111.0, "r": 4.442, "dl": 0.271, "m": false, "info": "DUPR update \u2014 system-wide (5 tracked players moved same day)"}, {"d": "2024-03-27", "x": 143.8, "r": 4.463, "dl": 0.021, "m": true, "info": "match day"}, {"d": "2024-05-29", "x": 180.1, "r": 4.47, "dl": 0.007, "m": true, "info": "match day"}, {"d": "2024-10-15", "x": 260.0, "r": 4.455, "dl": -0.015, "m": true, "info": "match day"}, {"d": "2024-10-17", "x": 261.1, "r": 4.287, "dl": -0.168, "m": true, "info": "match day"}, {"d": "2025-03-31", "x": 356.0, "r": 4.287, "dl": -0.0, "m": true, "info": "match day"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>

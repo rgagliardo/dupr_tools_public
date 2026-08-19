@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>courtcast</title>
+<style>
+  :root {
+    /* base colors double as cell/chip BACKGROUNDS (dark cell text on top);
+       the -t variants are for TEXT on the page background — same hue,
+       contrast-safe per theme */
+    --bg:#101216; --ideal:#30d158; --degr:#ffd60a; --block:#ff453a; --off:#1c1f26;
+    --ideal-t:#30d158; --degr-t:#ffd60a; --block-t:#ff453a;
+    --ink:#f2f2f7; --dim:#98989f; --faint:#8a8a94;
+    --gA:#30d158; --gB:#64d2ff; --gC:#ffd60a; --gD:#ff9f0a; --gF:#ff453a;
+    --celltext:rgba(0,0,0,.8);
+  }
+  @media (prefers-color-scheme: light) { :root {
+    --bg:#f4f4f6; --ideal:#2fbf58; --degr:#f5c400; --block:#f04438; --off:#e2e2e8;
+    --ideal-t:#1e7a3d; --degr-t:#8a7000; --block-t:#c22a1f;
+    --ink:#1d1d1f; --dim:#5c5c62; --faint:#6f6f76;
+    --gA:#1e9e4a; --gB:#0a6fd6; --gC:#a88a00; --gD:#d96f00; --gF:#d92b20;
+    --celltext:rgba(0,0,0,.75);
+  } }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:ui-monospace,Menlo,Consolas,monospace; background:var(--bg); color:var(--ink);
+         padding:26px 22px 48px; -webkit-font-smoothing:antialiased; font-size:14px; }
+  .wrap { max-width:1080px; margin:0 auto; }
+  .top { display:flex; align-items:baseline; gap:16px; margin-bottom:16px; flex-wrap:wrap; }
+  .brand { font-size:17px; font-weight:700; }
+  .brand b { color:var(--ideal-t); font-weight:700; }
+  .meta { font-size:12px; color:var(--faint); }
+  /* spot switcher — desktop only (mobile picks its court via the widget tap) */
+  .spotnav { display:none; gap:15px; margin-left:auto; align-items:baseline; }
+  @media (min-width:700px) { .spotnav { display:flex; } }
+  .spotnav .lbl { font-size:11px; color:var(--faint); text-transform:uppercase; letter-spacing:.5px; }
+  .spotnav .spot { font-size:12px; color:var(--dim); text-decoration:none; }
+  .spotnav a.spot:hover { color:var(--ink); text-decoration:underline; }
+  .spotnav .spot.active { color:var(--ideal-t); font-weight:700; }
+  .verdict { margin-bottom:16px; line-height:1.6; }
+  .verdict .k { font-weight:700; }
+  .verdict .k.wait { color:var(--degr-t); }
+  .verdict .k.play { color:var(--ideal-t); }
+  .verdict .k.none { color:var(--block-t); }
+  .verdict .stale { color:var(--block-t); font-weight:700; }
+  .retry { color:var(--gB); text-decoration:underline; cursor:pointer; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  .gridwrap { overflow-x:auto; }
+  /* static swipe cue: right-edge fade while more columns hide off-screen */
+  .gridwrap.more { -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 30px),transparent);
+                   mask-image:linear-gradient(90deg,#000 calc(100% - 30px),transparent); }
+  table { border-collapse:collapse; }
+  th { font-size:11px; color:var(--faint); font-weight:400; padding:3px 2px; text-align:center; }
+  th.corner, th.day { position:sticky; left:0; background:var(--bg); z-index:2; }
+  th.day { font-size:12px; font-weight:700; text-align:left; padding-right:10px; white-space:nowrap; color:var(--ink); }
+  th.day small { color:var(--faint); font-weight:400; }
+  td.g { font-weight:700; padding-left:10px; }
+  td.best { font-size:11px; color:var(--dim); padding-left:8px; white-space:nowrap; }
+  td.why { font-size:11px; color:var(--faint); padding-left:12px; white-space:nowrap; }
+  td.cell { padding:1px; }
+  .sq { width:38px; height:28px; border-radius:3px; display:flex; flex-direction:column;
+        align-items:center; justify-content:center; font-size:9px; color:var(--celltext); }
+  .sq b { font-size:10px; font-weight:700; }
+  .sq.v2 { background:var(--ideal); }
+  .sq.v1 { background:var(--degr); }
+  .sq.v0 { background:var(--block); }
+  .sq.off { background:var(--off); }
+  .gA{color:var(--gA);} .gB{color:var(--gB);} .gC{color:var(--gC);}
+  .gD{color:var(--gD);} .gF{color:var(--gF);}
+  .foot { display:flex; gap:26px; margin-top:16px; font-size:11px; color:var(--faint); flex-wrap:wrap; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin:0 3px 0 8px; vertical-align:-1px; }
+  .pagefoot { margin-top:34px; font-size:11px; color:var(--faint); }
+  /* look-matching hero when opened from the widget (?look=) */
+  .hero { display:flex; align-items:center; gap:22px; margin-bottom:20px; }
+  .hero .big-letter { font-size:84px; font-weight:800; line-height:.9; }
+  .hero .h-day { font-size:14px; font-weight:700; }
+  .hero .h-best { font-size:13px; color:var(--ideal-t); font-weight:700; margin-top:2px; }
+  .hero .h-why { font-size:12px; color:var(--dim); margin-top:2px; }
+  .hero-strip { display:flex; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+  .hero-strip .chipday { text-align:center; }
+  .hero-strip .chip {
+    width:46px; height:46px; border-radius:11px; margin:0 auto 5px;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:23px; color:rgba(0,0,0,.8);
+  }
+  .hero-strip .d { font-size:12px; font-weight:700; }
+  .hero-strip .b { font-size:11px; color:var(--dim); }
+  .hero-next { margin-bottom:20px; }
+  .hero-next .hn-kicker { font-size:14px; font-weight:800; }
+  .hero-next .hn-kicker.play { color:var(--ideal-t); }
+  .hero-next .hn-kicker.wait { color:var(--degr-t); }
+  .hero-next .hn-kicker.none { color:var(--block-t); }
+  .hero-next .hn-stale { font-size:14px; font-weight:800; color:var(--block-t); }
+  .hero-next .hn-head { font-size:clamp(22px, 7vw, 32px); font-weight:800; margin:2px 0; }
+  .hero-next .hn-why { font-size:13px; color:var(--dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="brand">court<b>cast</b></span>
+    <span class="meta" id="meta">loading&hellip;</span>
+    <nav class="spotnav" id="spotnav" aria-label="courts"></nav>
+  </div>
+  <div id="lookHero"></div>
+  <div class="verdict" id="verdict">&gt; &hellip;</div>
+  <div class="gridwrap"><table id="grid"></table></div>
+  <div class="foot" id="foot"></div>
+  <div class="pagefoot" id="pagefoot"></div>
+</div>
+<script>
+const VERSION = "2.2"; // desktop spot switcher (links to sibling courts from feed roster)
+
+function nowLine(now) {
+  const parts = [];
+  if (now.temp != null) parts.push(now.temp + "°");
+  if (now.dew != null) parts.push("dew " + now.dew);
+  if (now.wind != null) parts.push("wind " + now.wind);
+  return parts.join(" ");
+}
+const SPOT_TAG = (new URLSearchParams(location.search).get("spot") || "")
+  .toLowerCase().replace(/[^a-z0-9_-]/g, "");
+const FEED = SPOT_TAG && SPOT_TAG !== "pouncey"
+  ? "courtcast-" + SPOT_TAG + ".json" : "courtcast.json";
+const STALE_MS = 4 * 60 * 60 * 1000;
+const GRADE_CLS = { A:"gA", B:"gB", C:"gC", D:"gD", F:"gF" };
+
+function fmtHour(h) { return ((h + 11) % 12 + 1) + (h < 12 ? "a" : "p"); }
+function fmtClock(d) {
+  const h = d.getHours(), m = d.getMinutes();
+  return ((h + 11) % 12 + 1) + ":" + (m < 10 ? "0" : "") + m + (h < 12 ? "a" : "p");
+}
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+const GRADE_BG = { A: "#30d158", B: "#64d2ff", C: "#ffd60a", D: "#ff9f0a", F: "#ff453a" };
+// cell cause codes rendered as plain words (mirrors the widget's CAUSE_WORD)
+const CAUSE_DISP = { dew: "humid", thn: "storm", gst: "gust", wnd: "wind", chl: "chill",
+                     rnow: "raining" };
+
+function staleLabel(upd) {
+  return "AS OF " + upd.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase() +
+         " " + fmtClock(upd) + " — ";
+}
+
+// Hero band matching the widget look that opened the page (?look=).
+// bars needs none — the grid below IS that look.
+function renderLookHero(look, d, db, stale, upd) {
+  const hero = document.getElementById("lookHero");
+  hero.textContent = "";
+  const days = db.days || [];
+  if (look === "grade" && days.length) {
+    const day = days[0];
+    const wrap = el("div", "hero");
+    wrap.appendChild(el("div", "big-letter " + (GRADE_CLS[day.grade] || ""), day.grade));
+    const meta = el("div");
+    meta.appendChild(el("div", "h-day", day.label + " " + day.sub));
+    if (day.best) meta.appendChild(el("div", "h-best", "best " + day.best));
+    if (day.why) meta.appendChild(el("div", "h-why", day.why));
+    const now = db.now || {};
+    const nl = nowLine(now);
+    if (nl) meta.appendChild(el("div", "h-why", "now " + nl));
+    wrap.appendChild(meta);
+    hero.appendChild(wrap);
+  } else if (look === "strip" && days.length) {
+    const wrap = el("div", "hero-strip");
+    days.forEach(day => {
+      const cd = el("div", "chipday");
+      const chip = el("div", "chip", day.grade);
+      chip.style.background = GRADE_BG[day.grade] || "#888";
+      cd.appendChild(chip);
+      cd.appendChild(el("div", "d", day.label));
+      cd.appendChild(el("div", "b", day.best || "—"));
+      wrap.appendChild(cd);
+    });
+    hero.appendChild(wrap);
+  } else if (look === "next") {
+    const wrap = el("div", "hero-next");
+    const kickLine = el("div");
+    // the hero replaces the verdict line, so it must carry the stale flag too
+    if (stale) kickLine.appendChild(el("span", "hn-stale", staleLabel(upd)));
+    const kcls = d.playable_now ? "play" : (d.kicker === "NO WINDOW" ? "none" : "wait");
+    kickLine.appendChild(el("span", "hn-kicker " + (stale ? "" : kcls), d.kicker));
+    wrap.appendChild(kickLine);
+    wrap.appendChild(el("div", "hn-head", d.headline));
+    if (d.reason) wrap.appendChild(el("div", "hn-why", d.reason));
+    hero.appendChild(wrap);
+    // the one-line verdict would repeat the hero — hide it for this look
+    document.getElementById("verdict").style.display = "none";
+  }
+}
+
+// Desktop-only switcher: link to every sibling court, current one marked
+// active. Roster (tag + short label + primary flag) is baked into the feed by
+// courtcast_publish, so nothing here hardcodes the spot list. Preserves the
+// widget's ?look=/?wv= when hopping courts.
+function renderSpotNav(d) {
+  const nav = document.getElementById("spotnav");
+  nav.textContent = "";
+  const roster = d.spots || [];
+  if (roster.length < 2) return;  // nothing to switch to
+  const curTag = SPOT_TAG || (roster.find(s => s.primary) || {}).tag;
+  const qs = new URLSearchParams(location.search);
+  nav.appendChild(el("span", "lbl", "courts:"));
+  roster.forEach(s => {
+    if (s.tag === curTag) {
+      nav.appendChild(el("span", "spot active", s.label));
+      return;
+    }
+    const a = el("a", "spot", s.label);
+    const p = new URLSearchParams();
+    if (!s.primary) p.set("spot", s.tag);
+    if (qs.get("look")) p.set("look", qs.get("look"));
+    if (qs.get("wv")) p.set("wv", qs.get("wv"));
+    a.href = p.toString() ? "?" + p.toString() : "./";
+    nav.appendChild(a);
+  });
+}
+
+function render(d) {
+  const db = d.dashboard || {};
+  renderSpotNav(d);
+  const upd = new Date(d.updated);
+  const stale = !isNaN(upd) && Date.now() - upd.getTime() > STALE_MS;
+
+  const qs = new URLSearchParams(location.search);
+  const wv = qs.get("wv");
+  const look = ["grade", "strip", "bars", "next"].includes(qs.get("look"))
+    ? qs.get("look") : "";
+  document.getElementById("meta").textContent =
+    d.spot.toLowerCase() + " · upd " + (isNaN(upd) ? "?" : fmtClock(upd)) +
+    " · " + (db.source || "blend") +
+    (wv ? " · via widget v" + wv.replace(/[^\d.]/g, "") +
+          (look ? " (" + look + ")" : "") : "");
+  renderLookHero(look, d, db, stale, upd);
+
+  // verdict line
+  const v = document.getElementById("verdict");
+  v.textContent = "> ";
+  if (stale) v.appendChild(el("span", "stale", staleLabel(upd)));
+  const kcls = d.playable_now ? "play" : (d.kicker === "NO WINDOW" ? "none" : "wait");
+  v.appendChild(el("span", "k " + kcls, d.kicker));
+  let tail = " — " + d.headline;
+  if (d.reason) tail += " · " + d.reason;
+  const court = db.court || {};
+  const courtPhrase = d.wet_note ||
+    ("court " + (court.wet_mm > 0.05 ? court.wet_mm + "mm wet" : "dry"));
+  tail += " · " + courtPhrase + " (station obs " + (court.obs_18h_mm ?? "?") + "mm/18h" +
+          (court.radar_24h_mm > 0 ? " · radar " + court.radar_24h_mm + "mm/24h" : "") + ")";
+  const now = db.now || {};
+  const nl = nowLine(now);
+  if (nl) tail += " · now " + nl;
+  v.appendChild(document.createTextNode(tail));
+
+  // column range = union of in-window hours across grid days
+  const days = db.days || [];
+  let h0 = 24, h1 = -1;
+  days.forEach(day => Object.keys(day.cells).forEach(h => {
+    h0 = Math.min(h0, +h); h1 = Math.max(h1, +h);
+  }));
+  if (h1 < 0) { h0 = 9; h1 = 20; }
+
+  const table = document.getElementById("grid");
+  table.textContent = "";
+  table.appendChild(el("caption", "sr", "Hour-by-hour playability by day"));
+  const hr = el("tr");
+  hr.appendChild(el("th", "corner"));
+  for (let h = h0; h <= h1; h++) {
+    const th = el("th", null, fmtHour(h));
+    th.setAttribute("scope", "col");
+    hr.appendChild(th);
+  }
+  ["grade", "best", "why"].forEach(t => {
+    const th = el("th", null, t);
+    th.setAttribute("scope", "col");
+    hr.appendChild(th);
+  });
+  table.appendChild(hr);
+
+  days.forEach(day => {
+    const tr = el("tr");
+    const th = el("th", "day", day.label + " ");
+    th.setAttribute("scope", "row");
+    th.appendChild(el("small", null, day.sub));
+    tr.appendChild(th);
+    for (let h = h0; h <= h1; h++) {
+      const c = day.cells[String(h)];
+      const cell = el("td", "cell");
+      if (!c) {
+        cell.appendChild(el("div", "sq off"));
+      } else {
+        const sq = el("div", "sq v" + c.v);
+        if (c.t != null) sq.appendChild(el("b", null, String(c.t)));
+        if (c.c) sq.appendChild(el("span", null, CAUSE_DISP[c.c] || c.c));
+        cell.appendChild(sq);
+      }
+      tr.appendChild(cell);
+    }
+    tr.appendChild(el("td", "g " + (GRADE_CLS[day.grade] || ""), day.grade));
+    tr.appendChild(el("td", "best", day.best || "—"));
+    tr.appendChild(el("td", "why", day.why === undefined ? "—" : (day.why || "clean")));
+    table.appendChild(tr);
+  });
+
+  // swipe cue: fade the right edge only while more columns hide off-screen
+  const gw = document.querySelector(".gridwrap");
+  const updFade = () => gw.classList.toggle("more",
+    gw.scrollWidth > gw.clientWidth + 4 &&
+    gw.scrollLeft < gw.scrollWidth - gw.clientWidth - 8);
+  updFade();
+  gw.addEventListener("scroll", updFade, { passive: true });
+  window.addEventListener("resize", updFade);
+
+  // footer: ranked (by score), legend, outlook tail
+  const foot = document.getElementById("foot");
+  foot.textContent = "";
+  const ranked = days.slice().sort((a, b) => b.score - a.score);
+  foot.appendChild(el("span", null,
+    "ranked: " + ranked.map((day, i) => (i + 1) + "." + day.label).join(" ")));
+  const leg = el("span", "legend");
+  [["ideal", "var(--ideal)"], ["degraded", "var(--degr)"],
+   ["blocked", "var(--block)"], ["off-window", "var(--off)"]].forEach(([t, c]) => {
+    const i = el("i"); i.style.background = c;
+    leg.appendChild(i); leg.appendChild(document.createTextNode(t));
+  });
+  foot.appendChild(leg);
+  const ol = db.outlook || [];
+  if (ol.length) foot.appendChild(el("span", null,
+    "beyond: " + ol.map(o => o.d + " " + o.g).join(" · ")));
+
+  document.getElementById("pagefoot").textContent =
+    "courtcast dashboard v" + VERSION + " · " + (d.generator || "") +
+    " · data refreshes hourly · cells show temp°F + cause";
+}
+
+(async () => {
+  try {
+    const r = await fetch(FEED + "?t=" + Date.now());
+    render(await r.json());
+  } catch (e) {
+    const v = document.getElementById("verdict");
+    v.textContent = "> ";
+    v.appendChild(el("span", "k none", "feed unreachable"));
+    v.appendChild(document.createTextNode(" — "));
+    const a = el("a", "retry", "retry");
+    a.href = "#";
+    a.addEventListener("click", ev => { ev.preventDefault(); location.reload(); });
+    v.appendChild(a);
+    document.getElementById("meta").textContent = "offline";
+  }
+})();
+</script>
+</body>
+</html>
