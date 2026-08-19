@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.3",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-08-19T09:19:25",
+ "updated": "2026-08-19T09:34:34",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
@@ -18,15 +18,15 @@
    "grade": "C"
   },
   {
+   "day": "Thu",
+   "grade": "C"
+  },
+  {
    "day": "Sat",
    "grade": "C"
   },
   {
    "day": "Sun",
-   "grade": "C"
-  },
-  {
-   "day": "Thu",
    "grade": "C"
   }
  ],
@@ -89,9 +89,9 @@
     "label": "Thu",
     "sub": "8/20",
     "grade": "C",
-    "score": 0.5,
+    "score": 0.6,
     "best": "",
-    "why": "rain 8p \u00b7 humidity (dew 73\u00b0) 3p-4p, 6p-7p \u00b7 thunder 5p",
+    "why": "humidity (dew 73\u00b0) 3p-4p, 6p-8p \u00b7 rain 5p",
     "cells": {
      "15": {
       "t": 90,
@@ -106,7 +106,7 @@
      "17": {
       "t": 93,
       "v": 1,
-      "c": "thn"
+      "c": "rain"
      },
      "18": {
       "t": 92,
@@ -119,9 +119,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 78,
-      "v": 0,
-      "c": "rain"
+      "t": 80,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
