@@ -109,7 +109,7 @@
   <div class="pagefoot" id="pagefoot"></div>
 </div>
 <script>
-const VERSION = "2.4"; // per-day "wet court?" in the why column tinted by wetness (day.wet_mm)
+const VERSION = "2.5"; // blocked "wet?" grid cells softened to a paler wetness-scaled red
 
 function nowLine(now) {
   const parts = [];
@@ -332,6 +332,14 @@ function render(d) {
         cell.appendChild(el("div", "sq off"));
       } else {
         const sq = el("div", "sq v" + c.v);
+        // a blocked "wet?" hour is our uncertain estimate, not a hard fact like
+        // rain — soften it to a paler, wetness-scaled red (mixed toward white so
+        // it always reads lighter than the solid rain block beside it)
+        if (c.v === 0 && c.c === "wet") {
+          const t = Math.max(0, Math.min(1, (day.wet_mm || 0) / 1.5));
+          sq.style.background =
+            "color-mix(in srgb, var(--block) " + Math.round(30 + 50 * t) + "%, #fff)";
+        }
         if (c.t != null) sq.appendChild(el("b", null, String(c.t)));
         if (c.c) sq.appendChild(el("span", null, CAUSE_DISP[c.c] || c.c));
         cell.appendChild(sq);
