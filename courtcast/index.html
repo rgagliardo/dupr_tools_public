@@ -109,7 +109,7 @@
   <div class="pagefoot" id="pagefoot"></div>
 </div>
 <script>
-const VERSION = "2.3"; // court status reads "wet?" with a wetness-scaled red gradient
+const VERSION = "2.4"; // per-day "wet court?" in the why column tinted by wetness (day.wet_mm)
 
 function nowLine(now) {
   const parts = [];
@@ -221,6 +221,32 @@ function renderSpotNav(d) {
   });
 }
 
+// Wetness → red: barely damp = soft/muted (mixed toward --dim), soaked =
+// full block-red. Scaled by the ~1.5mm court-film cap. Theme-safe via color-mix.
+function wetColor(mm) {
+  const t = Math.max(0, Math.min(1, (mm || 0) / 1.5));
+  return "color-mix(in srgb, var(--block) " + Math.round(45 + 55 * t) + "%, var(--dim))";
+}
+
+// why-column cell, tinting the "wet court?" token by that day's peak wetness
+function whyCell(day) {
+  const td = el("td", "why");
+  const why = day.why === undefined ? "—" : (day.why || "clean");
+  const marker = "wet court?";
+  const i = why.indexOf(marker);
+  if (i >= 0 && (day.wet_mm || 0) > 0.05) {
+    td.appendChild(document.createTextNode(why.slice(0, i)));
+    const span = el("span", null, marker);
+    span.style.color = wetColor(day.wet_mm);
+    span.style.fontWeight = "700";
+    td.appendChild(span);
+    td.appendChild(document.createTextNode(why.slice(i + marker.length)));
+  } else {
+    td.textContent = why;
+  }
+  return td;
+}
+
 function render(d) {
   const db = d.dashboard || {};
   renderSpotNav(d);
@@ -257,9 +283,7 @@ function render(d) {
     ("court " + (wetMm > 0.05 ? wetMm + "mm wet?" : "dry"));
   const courtSpan = el("span", null, courtPhrase);
   if (isWet) {
-    const t = Math.max(0, Math.min(1, wetMm / 1.5));  // 1.5mm = court-film cap
-    courtSpan.style.color =
-      "color-mix(in srgb, var(--block) " + Math.round(45 + 55 * t) + "%, var(--dim))";
+    courtSpan.style.color = wetColor(wetMm);
     courtSpan.style.fontWeight = "700";
   }
   v.appendChild(courtSpan);
@@ -316,7 +340,7 @@ function render(d) {
     }
     tr.appendChild(el("td", "g " + (GRADE_CLS[day.grade] || ""), day.grade));
     tr.appendChild(el("td", "best", day.best || "—"));
-    tr.appendChild(el("td", "why", day.why === undefined ? "—" : (day.why || "clean")));
+    tr.appendChild(whyCell(day));
     table.appendChild(tr);
   });
 
