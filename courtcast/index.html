@@ -109,7 +109,7 @@
   <div class="pagefoot" id="pagefoot"></div>
 </div>
 <script>
-const VERSION = "2.2"; // desktop spot switcher (links to sibling courts from feed roster)
+const VERSION = "2.3"; // court status reads "wet?" with a wetness-scaled red gradient
 
 function nowLine(now) {
   const parts = [];
@@ -140,7 +140,7 @@ function el(tag, cls, text) {
 const GRADE_BG = { A: "#30d158", B: "#64d2ff", C: "#ffd60a", D: "#ff9f0a", F: "#ff453a" };
 // cell cause codes rendered as plain words (mirrors the widget's CAUSE_WORD)
 const CAUSE_DISP = { dew: "humid", thn: "storm", gst: "gust", wnd: "wind", chl: "chill",
-                     rnow: "raining" };
+                     rnow: "raining", wet: "wet?" };
 
 function staleLabel(upd) {
   return "AS OF " + upd.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase() +
@@ -246,15 +246,29 @@ function render(d) {
   v.appendChild(el("span", "k " + kcls, d.kicker));
   let tail = " — " + d.headline;
   if (d.reason) tail += " · " + d.reason;
+  v.appendChild(document.createTextNode(tail + " · "));
+  // court wetness is our ledger ESTIMATE (model rain + obs + radar), so it
+  // reads "wet?" and its red scales with how wet: barely damp = soft/muted,
+  // soaked = full block-red. color-mix keeps the gradient theme-safe.
   const court = db.court || {};
+  const wetMm = court.wet_mm || 0;
+  const isWet = !!d.wet_note || wetMm > 0.05;
   const courtPhrase = d.wet_note ||
-    ("court " + (court.wet_mm > 0.05 ? court.wet_mm + "mm wet" : "dry"));
-  tail += " · " + courtPhrase + " (station obs " + (court.obs_18h_mm ?? "?") + "mm/18h" +
+    ("court " + (wetMm > 0.05 ? wetMm + "mm wet?" : "dry"));
+  const courtSpan = el("span", null, courtPhrase);
+  if (isWet) {
+    const t = Math.max(0, Math.min(1, wetMm / 1.5));  // 1.5mm = court-film cap
+    courtSpan.style.color =
+      "color-mix(in srgb, var(--block) " + Math.round(45 + 55 * t) + "%, var(--dim))";
+    courtSpan.style.fontWeight = "700";
+  }
+  v.appendChild(courtSpan);
+  let tail2 = " (station obs " + (court.obs_18h_mm ?? "?") + "mm/18h" +
           (court.radar_24h_mm > 0 ? " · radar " + court.radar_24h_mm + "mm/24h" : "") + ")";
   const now = db.now || {};
   const nl = nowLine(now);
-  if (nl) tail += " · now " + nl;
-  v.appendChild(document.createTextNode(tail));
+  if (nl) tail2 += " · now " + nl;
+  v.appendChild(document.createTextNode(tail2));
 
   // column range = union of in-window hours across grid days
   const days = db.days || [];
