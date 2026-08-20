@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-20T10:03:56",
+ "updated": "2026-08-20T10:19:08",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 11a",
+ "reason": "humidity (dew 72\u00b0) \u2014 clean window Fri 9a",
  "ranked": [
   {
    "day": "Mon",
@@ -22,11 +22,11 @@
    "grade": "C"
   },
   {
-   "day": "Today",
+   "day": "Fri",
    "grade": "C"
   },
   {
-   "day": "Fri",
+   "day": "Sat",
    "grade": "C"
   }
  ],
@@ -48,10 +48,10 @@
     "label": "Today",
     "sub": "8/20",
     "grade": "C",
-    "score": 0.6,
+    "score": 0.5,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 3p-8p",
-    "wet_mm": 0.0,
+    "why": "rain 8p \u00b7 humidity (dew 73\u00b0) 3p-7p",
+    "wet_mm": 0.6,
     "cells": {
      "15": {
       "t": 90,
@@ -79,9 +79,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 88,
-      "v": 1,
-      "c": "dew"
+      "t": 78,
+      "v": 0,
+      "c": "rain"
      }
     }
    },
@@ -90,20 +90,20 @@
     "label": "Fri",
     "sub": "8/21",
     "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "humidity (dew 75\u00b0) 9a-12p, 3p-8p",
+    "score": 0.72,
+    "best": "9a-10a",
+    "why": "humidity (dew 75\u00b0) 11a-12p, 4p-7p \u00b7 thunder 8p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 72,
-      "v": 1,
-      "c": "dew"
+      "t": 70,
+      "v": 2,
+      "c": ""
      },
      "10": {
-      "t": 75,
-      "v": 1,
-      "c": "dew"
+      "t": 73,
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 77,
@@ -116,9 +116,9 @@
       "c": "dew"
      },
      "15": {
-      "t": 82,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 2,
+      "c": ""
      },
      "16": {
       "t": 82,
@@ -131,19 +131,19 @@
       "c": "dew"
      },
      "18": {
-      "t": 83,
+      "t": 82,
       "v": 1,
       "c": "dew"
      },
      "19": {
-      "t": 82,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "20": {
       "t": 78,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      }
     }
    },
@@ -152,20 +152,20 @@
     "label": "Sat",
     "sub": "8/22",
     "grade": "C",
-    "score": 0.5,
+    "score": 0.6,
     "best": "",
-    "why": "wet court? 9a-10a \u00b7 humidity (dew 74\u00b0) 11a-8p",
-    "wet_mm": 0.8,
+    "why": "humidity (dew 74\u00b0) 9a-8p",
+    "wet_mm": 0.0,
     "cells": {
      "9": {
       "t": 73,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "10": {
       "t": 75,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "11": {
       "t": 77,
