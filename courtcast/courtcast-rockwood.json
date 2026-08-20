@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-19T22:11:47",
+ "updated": "2026-08-19T22:57:10",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Thu 3p",
@@ -14,16 +14,16 @@
    "grade": "A"
   },
   {
-   "day": "Fri",
-   "grade": "C"
-  },
-  {
    "day": "Sun",
    "grade": "C"
   },
   {
    "day": "Sat",
    "grade": "D"
+  },
+  {
+   "day": "Fri",
+   "grade": "F"
   },
   {
    "day": "Thu",
@@ -89,10 +89,10 @@
     "date": "2026-08-21",
     "label": "Fri",
     "sub": "8/21",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "F",
+    "score": 0.24,
     "best": "",
-    "why": "humidity (dew 72\u00b0) 9a-12p, 3p-8p",
+    "why": "rain 3p-8p \u00b7 humidity (dew 72\u00b0) 9a-12p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
@@ -116,34 +116,34 @@
       "c": "dew"
      },
      "15": {
-      "t": 81,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 0,
+      "c": "rain"
      },
      "16": {
-      "t": 82,
-      "v": 1,
-      "c": "dew"
+      "t": 84,
+      "v": 0,
+      "c": "rain"
      },
      "17": {
-      "t": 82,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 0,
+      "c": "rain"
      },
      "18": {
-      "t": 79,
-      "v": 1,
-      "c": "dew"
+      "t": 82,
+      "v": 0,
+      "c": "rain"
      },
      "19": {
-      "t": 77,
-      "v": 1,
-      "c": "dew"
+      "t": 80,
+      "v": 0,
+      "c": "rain"
      },
      "20": {
-      "t": 73,
-      "v": 1,
-      "c": "dew"
+      "t": 78,
+      "v": 0,
+      "c": "rain"
      }
     }
    },
