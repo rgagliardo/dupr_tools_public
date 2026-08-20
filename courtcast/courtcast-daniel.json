@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-08-20T18:55:42",
+ "updated": "2026-08-20T19:10:52",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Fri 9a",
@@ -33,14 +33,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 87,
+   "temp": 83,
    "dew": 73,
    "wind": 7
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0,
-   "radar_24h_mm": 1.5
+   "obs_18h_mm": 0.2,
+   "radar_24h_mm": 4.3
   },
   "days": [
    {
@@ -50,18 +50,13 @@
     "grade": "F",
     "score": 0.0,
     "best": "",
-    "why": "rain 7p-8p \u00b7 raining now 6p",
+    "why": "raining now 7p \u00b7 rain 8p",
     "wet_mm": 0.0,
     "cells": {
-     "18": {
-      "t": 87,
-      "v": 0,
-      "c": "rnow"
-     },
      "19": {
       "t": 83,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "20": {
       "t": 79,
