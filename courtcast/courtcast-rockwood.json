@@ -2,23 +2,23 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-19T20:25:55",
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 9p",
+ "updated": "2026-08-19T20:56:11",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 9p (humidity (dew 69\u00b0))",
  "wet_note": null,
- "reason": "then humidity (dew 72\u00b0)",
+ "reason": "clean window Fri 9a",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Mon",
    "grade": "A"
   },
   {
    "day": "Fri",
+   "grade": "C"
+  },
+  {
+   "day": "Today",
    "grade": "C"
   },
   {
@@ -33,9 +33,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 84,
-   "dew": 63,
-   "wind": 1
+   "temp": 82,
+   "dew": 69,
+   "wind": 2
   },
   "court": {
    "wet_mm": 0.0,
@@ -47,16 +47,16 @@
     "date": "2026-08-19",
     "label": "Today",
     "sub": "8/19",
-    "grade": "A",
-    "score": 1.0,
-    "best": "8p",
-    "why": "",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 69\u00b0) 8p",
     "wet_mm": 0.0,
     "cells": {
      "20": {
-      "t": 84,
-      "v": 2,
-      "c": ""
+      "t": 82,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
