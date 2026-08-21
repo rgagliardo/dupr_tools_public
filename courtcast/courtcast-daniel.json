@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-08-21T11:05:05",
+ "updated": "2026-08-21T12:05:55",
  "playable_now": true,
  "kicker": "PLAY NOW",
  "headline": "until 1p",
@@ -14,11 +14,11 @@
    "grade": "A"
   },
   {
-   "day": "Sun",
+   "day": "Today",
    "grade": "B"
   },
   {
-   "day": "Today",
+   "day": "Sun",
    "grade": "B"
   },
   {
@@ -33,9 +33,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 75,
+   "temp": 77,
    "dew": 62,
-   "wind": 8
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -48,16 +48,11 @@
     "label": "Today",
     "sub": "8/21",
     "grade": "B",
-    "score": 0.825,
+    "score": 0.886,
     "best": "3p-6p",
-    "why": "rain 8p \u00b7 humidity (dew 70\u00b0) 7p",
-    "wet_mm": 0.3,
+    "why": "humidity (dew 70\u00b0) 7p-8p",
+    "wet_mm": 0.0,
     "cells": {
-     "11": {
-      "t": 75,
-      "v": 2,
-      "c": ""
-     },
      "12": {
       "t": 77,
       "v": 2,
@@ -74,12 +69,12 @@
       "c": ""
      },
      "17": {
-      "t": 80,
+      "t": 81,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 78,
+      "t": 80,
       "v": 2,
       "c": ""
      },
@@ -90,8 +85,8 @@
      },
      "20": {
       "t": 77,
-      "v": 0,
-      "c": "rain"
+      "v": 1,
+      "c": "dew"
      }
     }
    },
