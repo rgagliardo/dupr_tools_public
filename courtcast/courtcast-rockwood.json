@@ -2,20 +2,16 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-21T14:52:40",
+ "updated": "2026-08-21T15:07:49",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 3p today",
+ "headline": "Next window: 4p today",
  "wet_note": null,
- "reason": "today grades B, best 3p-6p",
+ "reason": "today grades C, best 4p-6p",
  "ranked": [
   {
    "day": "Mon",
    "grade": "A"
-  },
-  {
-   "day": "Today",
-   "grade": "B"
   },
   {
    "day": "Sun",
@@ -26,6 +22,10 @@
    "grade": "B"
   },
   {
+   "day": "Today",
+   "grade": "C"
+  },
+  {
    "day": "Wed",
    "grade": "C"
   }
@@ -33,30 +33,30 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 82,
+   "temp": 83,
    "dew": 64,
    "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0.8,
-   "radar_24h_mm": 6.8
+   "obs_18h_mm": 0,
+   "radar_24h_mm": 6.9
   },
   "days": [
    {
     "date": "2026-08-21",
     "label": "Today",
     "sub": "8/21",
-    "grade": "B",
-    "score": 0.867,
-    "best": "3p-6p",
-    "why": "humidity (dew 67\u00b0) 7p-8p",
+    "grade": "C",
+    "score": 0.7,
+    "best": "4p-6p",
+    "why": "raining now 3p \u00b7 humidity (dew 67\u00b0) 7p-8p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
       "t": 83,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "16": {
       "t": 84,
