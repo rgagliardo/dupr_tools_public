@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-20T21:42:23",
+ "updated": "2026-08-20T22:12:40",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Fri 9a",
- "wet_note": null,
- "reason": "Fri grades C, best 9a-11a",
+ "headline": "Next OK window: Fri 9a",
+ "wet_note": "court wet? \u2014 0.6mm, drying Fri",
+ "reason": "humidity (dew 69\u00b0) \u2014 clean window Sun 4p",
  "ranked": [
   {
    "day": "Mon",
@@ -18,27 +18,27 @@
    "grade": "B"
   },
   {
-   "day": "Fri",
-   "grade": "C"
-  },
-  {
    "day": "Sun",
    "grade": "C"
   },
   {
+   "day": "Fri",
+   "grade": "C"
+  },
+  {
    "day": "Sat",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 77,
+   "temp": 76,
    "dew": 73,
    "wind": 5
   },
   "court": {
-   "wet_mm": 0.0,
+   "wet_mm": 0.6,
    "obs_18h_mm": 3.5,
    "radar_24h_mm": 6.5
   },
@@ -48,25 +48,25 @@
     "label": "Fri",
     "sub": "8/21",
     "grade": "C",
-    "score": 0.72,
-    "best": "9a-11a",
-    "why": "humidity (dew 72\u00b0) 12p, 3p-8p",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 72\u00b0) 9a-12p, 3p-8p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 70,
-      "v": 2,
-      "c": ""
+      "t": 74,
+      "v": 1,
+      "c": "dew"
      },
      "10": {
-      "t": 72,
-      "v": 2,
-      "c": ""
+      "t": 76,
+      "v": 1,
+      "c": "dew"
      },
      "11": {
-      "t": 75,
-      "v": 2,
-      "c": ""
+      "t": 78,
+      "v": 1,
+      "c": "dew"
      },
      "12": {
       "t": 80,
@@ -99,7 +99,7 @@
       "c": "dew"
      },
      "20": {
-      "t": 78,
+      "t": 77,
       "v": 1,
       "c": "dew"
      }
@@ -109,11 +109,11 @@
     "date": "2026-08-22",
     "label": "Sat",
     "sub": "8/22",
-    "grade": "D",
-    "score": 0.3,
+    "grade": "C",
+    "score": 0.55,
     "best": "",
-    "why": "rain 3p-7p \u00b7 wet court? 8p \u00b7 humidity (dew 71\u00b0) 9a-2p",
-    "wet_mm": 1.2,
+    "why": "rain 10a \u00b7 humidity (dew 73\u00b0) 9a, 12p-8p \u00b7 drying 11a",
+    "wet_mm": 0.5,
     "cells": {
      "9": {
       "t": 72,
@@ -121,59 +121,59 @@
       "c": "dew"
      },
      "10": {
-      "t": 75,
-      "v": 1,
-      "c": "dew"
+      "t": 77,
+      "v": 0,
+      "c": "rain"
      },
      "11": {
-      "t": 76,
+      "t": 74,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "12": {
-      "t": 77,
+      "t": 76,
       "v": 1,
       "c": "dew"
      },
      "13": {
-      "t": 76,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
      "14": {
-      "t": 78,
+      "t": 76,
       "v": 1,
       "c": "dew"
      },
      "15": {
-      "t": 83,
-      "v": 0,
-      "c": "rain"
+      "t": 81,
+      "v": 1,
+      "c": "dew"
      },
      "16": {
-      "t": 84,
-      "v": 0,
-      "c": "rain"
+      "t": 82,
+      "v": 1,
+      "c": "dew"
      },
      "17": {
       "t": 83,
-      "v": 0,
-      "c": "rain"
+      "v": 1,
+      "c": "dew"
      },
      "18": {
-      "t": 82,
-      "v": 0,
-      "c": "rain"
+      "t": 81,
+      "v": 1,
+      "c": "dew"
      },
      "19": {
-      "t": 80,
-      "v": 0,
-      "c": "rain"
+      "t": 78,
+      "v": 1,
+      "c": "dew"
      },
      "20": {
       "t": 78,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      }
     }
    },
