@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-21T09:56:04",
-  "next_scan_at": "2026-08-21T10:26:04",
+  "generated_at": "2026-08-21T10:11:10",
+  "next_scan_at": "2026-08-21T10:41:10",
   "stats": {
     "total": 611,
-    "full_count": 83
+    "full_count": 82
   },
   "sessions": [
     {
@@ -14,10 +14,10 @@
       "end_iso": "2026-08-21T12:00:00",
       "start_display": "FRI AUG 21  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 12,
-      "count": 8,
-      "pct": 67,
+      "count": 9,
+      "pct": 75,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -31,11 +31,12 @@
         "CHARLIE S.",
         "Rick G.",
         "Duncan W.",
-        "Gary W."
+        "Gary W.",
+        "Brendon C."
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:50",
+      "last_snap_ts": "2026-08-21T10:10:55",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -47,7 +48,8 @@
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12",
         "vOv0TGI5PsNAXbhUTFGAEl3o1rL2",
         "qUVWzotHLhcLmrsvStxHvgbJIzr1",
-        "THwsd4sALRhEgEraKq1KTUK5QAA3"
+        "THwsd4sALRhEgEraKq1KTUK5QAA3",
+        "UC2T8qBmNsgTj2p83FJqhQH6u5u1"
       ],
       "ratings_by_uid": {
         "EFxuuoSW0SapX84hg7kvLzb3gaz1": "3.91",
@@ -55,15 +57,16 @@
         "DjEIplleo1MFCOGDoQqKALKqLcE3": "3.86",
         "KS4c07AFvmhLpJ2g24gIM5qYEMx2": "4.07",
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12": "3.9",
-        "qUVWzotHLhcLmrsvStxHvgbJIzr1": "4.04"
+        "qUVWzotHLhcLmrsvStxHvgbJIzr1": "4.04",
+        "UC2T8qBmNsgTj2p83FJqhQH6u5u1": "3.76"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
+        "med": 3.9,
+        "lo": 3.8,
         "hi": 4.4,
-        "rated": 6,
-        "total": 8,
-        "tier": "ADVANCED"
+        "rated": 7,
+        "total": 9,
+        "tier": "SKILLED"
       }
     },
     {
@@ -74,7 +77,7 @@
       "end_iso": "2026-08-21T12:00:00",
       "start_display": "FRI AUG 21  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 48,
       "count": 33,
       "pct": 69,
@@ -108,7 +111,6 @@
         "Ming W.",
         "Andrew W.",
         "Bill P.",
-        "Philip C.",
         "Clark M.",
         "David M.",
         "Michael H.",
@@ -116,10 +118,16 @@
         "Tavon W.",
         "Steve S.",
         "Dwayne T.",
+        "Kelli D.",
         "+1 player"
       ],
       "min_dupr": null,
       "departed": [
+        {
+          "name": "Philip Chung",
+          "uid": "HXZMCAoGNqNIpKslLeSzY2heQT93",
+          "departed_at": "2026-08-21T10:10:55"
+        },
         {
           "name": "Gary Weiner",
           "uid": "THwsd4sALRhEgEraKq1KTUK5QAA3",
@@ -196,7 +204,7 @@
           "departed_at": "2026-08-20T14:46:59"
         }
       ],
-      "last_snap_ts": "2026-08-21T09:55:51",
+      "last_snap_ts": "2026-08-21T10:10:55",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -233,14 +241,14 @@
         "vmEkP6J7YNRgHC7P6FgOaAIZmQ53",
         "rHIkSVkC31h9jld7YAkr7RxRhDU2",
         "AWznDOgVTCfLA4irExxZc2vMXmz2",
-        "HXZMCAoGNqNIpKslLeSzY2heQT93",
         "VS2PwbKsJvPcdUYLRl7Ai28VMes2",
         "cpTU9d5bC5eC68hVqL84QIOXfSf2",
         "48nqKgDkiZcseYOuQTYJdQb88GH3",
         "sqOtEb2y2CO0mSJA7iwuDNqNe342",
         "nZLj3p2baRVuRi6p6poBU8o04HC2",
         "cAkuZPxDCohM0m0BsQRI6tihTWv2",
-        "bH6yEQratQhnvamZRtRhq1eeUaj2"
+        "bH6yEQratQhnvamZRtRhq1eeUaj2",
+        "uGrl5TqK6mRwv11Qkg7LuX74Ekv1"
       ],
       "ratings_by_uid": {
         "JYC5rCI7FEWuA8aEFSXCe8nEPa13": "4.16",
@@ -261,12 +269,12 @@
         "vmEkP6J7YNRgHC7P6FgOaAIZmQ53": "4.2",
         "rHIkSVkC31h9jld7YAkr7RxRhDU2": "4.15",
         "AWznDOgVTCfLA4irExxZc2vMXmz2": "3.33",
-        "HXZMCAoGNqNIpKslLeSzY2heQT93": "3.45",
         "cpTU9d5bC5eC68hVqL84QIOXfSf2": "4.01",
         "48nqKgDkiZcseYOuQTYJdQb88GH3": "3.11",
         "sqOtEb2y2CO0mSJA7iwuDNqNe342": "3.93",
         "nZLj3p2baRVuRi6p6poBU8o04HC2": "4.51",
-        "bH6yEQratQhnvamZRtRhq1eeUaj2": "4.18"
+        "bH6yEQratQhnvamZRtRhq1eeUaj2": "4.18",
+        "uGrl5TqK6mRwv11Qkg7LuX74Ekv1": "3.73"
       },
       "skill": {
         "med": 3.9,
@@ -314,7 +322,7 @@
           "departed_at": "2026-08-20T22:26:07"
         }
       ],
-      "last_snap_ts": "2026-08-21T09:55:51",
+      "last_snap_ts": "2026-08-21T10:10:55",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -378,7 +386,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:51",
+      "last_snap_ts": "2026-08-21T10:10:56",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -434,7 +442,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:52",
+      "last_snap_ts": "2026-08-21T10:10:56",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -501,7 +509,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:52",
+      "last_snap_ts": "2026-08-21T10:10:56",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -560,7 +568,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:52",
+      "last_snap_ts": "2026-08-21T10:10:57",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -597,8 +605,8 @@
       "end_display": "4:00 PM",
       "status": "upcoming",
       "capacity": 32,
-      "count": 17,
-      "pct": 53,
+      "count": 18,
+      "pct": 56,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -621,14 +629,23 @@
         "Mark C.",
         "Brian L.",
         "Dave R.",
-        "Bobby L."
+        "Bobby L.",
+        "+1 player"
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:52",
+      "last_snap_ts": "2026-08-21T10:10:57",
       "thieves": [],
       "big_dogs": [],
-      "cloaked_members": [],
+      "cloaked_members": [
+        {
+          "uid": "SFzb5uQN2hbPC3GcSlD4kuXwJRo2",
+          "name": "Thaian",
+          "full_name": "Thaian",
+          "rating": "4.48",
+          "joined": "2026-08-21T10:03:00"
+        }
+      ],
       "registrant_ids": [
         "todJzmfCucYrvmiqt2cLhxTtSul1",
         "0t7nCqXzQPS44sh6IFQam82UGlA2",
@@ -665,9 +682,9 @@
       "skill": {
         "med": 3.5,
         "lo": 3.1,
-        "hi": 4.2,
-        "rated": 12,
-        "total": 17,
+        "hi": 4.5,
+        "rated": 13,
+        "total": 18,
         "tier": "SKILLED"
       }
     },
@@ -696,7 +713,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:53",
+      "last_snap_ts": "2026-08-21T10:10:57",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -731,7 +748,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:53",
+      "last_snap_ts": "2026-08-21T10:10:58",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -759,7 +776,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:53",
+      "last_snap_ts": "2026-08-21T10:10:58",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -797,7 +814,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:53",
+      "last_snap_ts": "2026-08-21T10:10:58",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -860,7 +877,7 @@
           "departed_at": "2026-08-20T22:10:52"
         }
       ],
-      "last_snap_ts": "2026-08-21T09:55:54",
+      "last_snap_ts": "2026-08-21T10:10:58",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -899,7 +916,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:54",
+      "last_snap_ts": "2026-08-21T10:10:59",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -922,10 +939,10 @@
       "start_display": "SUN AUG 23  12:00 PM",
       "end_display": "4:00 PM",
       "status": "upcoming",
-      "capacity": 24,
+      "capacity": 40,
       "count": 24,
-      "pct": 100,
-      "is_full": true,
+      "pct": 60,
+      "is_full": false,
       "is_takeover": false,
       "watched": false,
       "was_ever_full": true,
@@ -958,7 +975,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:55",
+      "last_snap_ts": "2026-08-21T10:10:59",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1030,9 +1047,9 @@
       "start_display": "SUN AUG 23  12:00 PM",
       "end_display": "4:00 PM",
       "status": "upcoming",
-      "capacity": 24,
+      "capacity": 16,
       "count": 4,
-      "pct": 17,
+      "pct": 25,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -1046,7 +1063,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:55",
+      "last_snap_ts": "2026-08-21T10:10:59",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1089,7 +1106,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:55",
+      "last_snap_ts": "2026-08-21T10:11:00",
       "thieves": [],
       "big_dogs": [
         {
@@ -1146,7 +1163,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:55",
+      "last_snap_ts": "2026-08-21T10:11:00",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1186,7 +1203,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:56",
+      "last_snap_ts": "2026-08-21T10:11:00",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1264,7 +1281,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:56",
+      "last_snap_ts": "2026-08-21T10:11:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1365,7 +1382,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:56",
+      "last_snap_ts": "2026-08-21T10:11:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1429,7 +1446,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:56",
+      "last_snap_ts": "2026-08-21T10:11:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1457,7 +1474,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:57",
+      "last_snap_ts": "2026-08-21T10:11:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1511,7 +1528,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:49",
+      "last_snap_ts": "2026-08-21T10:10:54",
       "thieves": [],
       "big_dogs": [
         {
@@ -1633,7 +1650,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:50",
+      "last_snap_ts": "2026-08-21T10:10:54",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1732,7 +1749,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T09:55:57",
+      "last_snap_ts": "2026-08-21T10:11:02",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -39600,7 +39617,7 @@
         "tier": "SKILLED",
         "lo": 3.1,
         "hi": 4.5,
-        "avg": 3.82,
+        "avg": 3.83,
         "rated": 25,
         "field": 33,
         "date": "FRI AUG 21  10:00 AM",
@@ -39678,6 +39695,11 @@
             "c": false
           },
           {
+            "n": "Kelli Downs",
+            "r": "3.73",
+            "c": false
+          },
+          {
             "n": "Annie Lecomte",
             "r": "3.71",
             "c": false
@@ -39700,11 +39722,6 @@
           {
             "n": "Abbie Kinnebrew",
             "r": "3.46",
-            "c": false
-          },
-          {
-            "n": "Philip Chung",
-            "r": "3.45",
             "c": false
           },
           {
@@ -40310,7 +40327,7 @@
       "name": "Thaian",
       "rating": "4.48",
       "tier": "ADVANCED",
-      "sessions": 38,
+      "sessions": 39,
       "last": "SUN AUG 30  12:00 PM",
       "cloaked": true
     },
@@ -40379,6 +40396,61 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-08-21T10:10:59",
+      "type": "freed",
+      "name": "24/40",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN AUG 23  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a00643-16ae-7778-b462-48969b01b155"
+    },
+    {
+      "ts": "2026-08-21T10:10:59",
+      "type": "cap_grew",
+      "name": "24 \u2192 40",
+      "title": "ADVANCED Performance Play Sunday",
+      "start": "SUN AUG 23  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a00643-16ae-7778-b462-48969b01b155"
+    },
+    {
+      "ts": "2026-08-21T10:10:59",
+      "type": "cap_shrunk",
+      "name": "24 \u2192 16",
+      "title": "INTERMEDIATE Performance Play Sunday",
+      "start": "SUN AUG 23  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a00643-6321-7778-b463-471c98978c12"
+    },
+    {
+      "ts": "2026-08-21T10:10:57",
+      "type": "join",
+      "name": "Thaian",
+      "title": "ADVANCED Performance Play Saturday",
+      "start": "SAT AUG 22  12:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
+      "uid": "SFzb5uQN2hbPC3GcSlD4kuXwJRo2",
+      "cloaked": true,
+      "rating": "4.48"
+    },
+    {
+      "ts": "2026-08-21T10:10:55",
+      "type": "join",
+      "name": "Kelli Downs",
+      "title": "4.0 Open Play",
+      "start": "FRI AUG 21  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
+      "uid": "uGrl5TqK6mRwv11Qkg7LuX74Ekv1",
+      "rating": "3.73"
+    },
+    {
+      "ts": "2026-08-21T10:10:55",
+      "type": "cancel",
+      "name": "Philip Chung",
+      "title": "4.0 Open Play",
+      "start": "FRI AUG 21  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
+      "uid": "HXZMCAoGNqNIpKslLeSzY2heQT93",
+      "rating": "3.45"
+    },
     {
       "ts": "2026-08-21T09:55:51",
       "type": "join",
@@ -62743,6 +62815,12 @@
       "cancels": 1
     },
     {
+      "name": "Philip Chung",
+      "uid": "HXZMCAoGNqNIpKslLeSzY2heQT93",
+      "joins": 12,
+      "cancels": 1
+    },
+    {
       "name": "Kevin Adler",
       "uid": "1EAjj8gYMbYNejbiTbxgOQx5bG63",
       "joins": 11,
@@ -62937,7 +63015,7 @@
     {
       "name": "Kelli Downs",
       "uid": "uGrl5TqK6mRwv11Qkg7LuX74Ekv1",
-      "joins": 19,
+      "joins": 20,
       "cancels": 0
     },
     {
@@ -63087,12 +63165,6 @@
     {
       "name": "Joj! Wares",
       "uid": "72sNotMRPfZxoSntHMKP5maTeEl1",
-      "joins": 12,
-      "cancels": 0
-    },
-    {
-      "name": "Philip Chung",
-      "uid": "HXZMCAoGNqNIpKslLeSzY2heQT93",
       "joins": 12,
       "cancels": 0
     },
@@ -67942,9 +68014,9 @@
           "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
           "status": "upcoming",
           "capacity": 32,
-          "count": 17,
+          "count": 18,
           "is_full": false,
-          "spots_left": 15
+          "spots_left": 14
         },
         {
           "title": "4.5/4.0 Open Play",
@@ -68117,10 +68189,10 @@
           "start_iso": "2026-08-23T12:00:00",
           "url": "https://ppbrva.podplay.app/community/events/01a00643-16ae-7778-b462-48969b01b155",
           "status": "upcoming",
-          "capacity": 24,
+          "capacity": 40,
           "count": 24,
-          "is_full": true,
-          "spots_left": 0
+          "is_full": false,
+          "spots_left": 16
         },
         {
           "title": "Wild Donkey League - DRAFT DAY (Women's)",
@@ -72819,6 +72891,17 @@
       "rating": "4.494",
       "sessions": [],
       "activity": [
+        {
+          "ts": "2026-08-21T10:10:57",
+          "type": "join",
+          "name": "Thaian",
+          "title": "ADVANCED Performance Play Saturday",
+          "start": "SAT AUG 22  12:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
+          "uid": "SFzb5uQN2hbPC3GcSlD4kuXwJRo2",
+          "cloaked": true,
+          "rating": "4.48"
+        },
         {
           "ts": "2026-08-19T07:41:53",
           "type": "join",
@@ -84039,7 +84122,7 @@
       "start": "FRI AUG 21  10:00 AM",
       "start_iso": "2026-08-21T10:00:00",
       "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
-      "status": "upcoming",
+      "status": "live",
       "cloaked_count": 1,
       "total_count": 33,
       "capacity": 48,
@@ -84089,6 +84172,24 @@
       ]
     },
     {
+      "title": "ADVANCED Performance Play Saturday",
+      "start": "SAT AUG 22  12:00 PM",
+      "start_iso": "2026-08-22T12:00:00",
+      "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
+      "status": "upcoming",
+      "cloaked_count": 1,
+      "total_count": 18,
+      "capacity": 32,
+      "members": [
+        {
+          "name": "Thaian",
+          "uid": "SFzb5uQN2hbPC3GcSlD4kuXwJRo2",
+          "rating": "4.48",
+          "joined_display": "FRI AUG 21  10:03 AM"
+        }
+      ]
+    },
+    {
       "title": "DUPR 4.0 Open Play",
       "start": "SUN AUG 23  10:00 AM",
       "start_iso": "2026-08-23T10:00:00",
@@ -84114,7 +84215,7 @@
       "status": "upcoming",
       "cloaked_count": 1,
       "total_count": 24,
-      "capacity": 24,
+      "capacity": 40,
       "members": [
         {
           "name": "David",
@@ -84184,7 +84285,7 @@
       "uid": "SFzb5uQN2hbPC3GcSlD4kuXwJRo2",
       "name": "Thaian",
       "rating": "4.48",
-      "sessions": 38,
+      "sessions": 39,
       "last_iso": "2026-08-30T12:00:00",
       "last_title": "Wild Donkey League - DRAFT DAY (Men's)",
       "last_display": "Aug 30"
