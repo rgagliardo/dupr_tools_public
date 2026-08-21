@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Pouncey Tract Park",
- "updated": "2026-08-20T23:58:41",
+ "updated": "2026-08-21T00:13:49",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Fri 9a",
+ "headline": "Next window: 9a today",
  "wet_note": null,
- "reason": "Fri grades B, best 9a-12p",
+ "reason": "today grades B, best 9a-12p",
  "ranked": [
   {
    "day": "Mon",
@@ -18,22 +18,22 @@
    "grade": "B"
   },
   {
-   "day": "Fri",
+   "day": "Today",
    "grade": "B"
+  },
+  {
+   "day": "Wed",
+   "grade": "C"
   },
   {
    "day": "Sat",
    "grade": "C"
-  },
-  {
-   "day": "Tue",
-   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 74,
+   "temp": 73,
    "dew": 72,
    "wind": 3
   },
@@ -45,7 +45,7 @@
   "days": [
    {
     "date": "2026-08-21",
-    "label": "Fri",
+    "label": "Today",
     "sub": "8/21",
     "grade": "B",
     "score": 0.76,
@@ -352,14 +352,51 @@
       "c": "dry"
      }
     }
+   },
+   {
+    "date": "2026-08-26",
+    "label": "Wed",
+    "sub": "8/26",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 73\u00b0) 3p-8p",
+    "wet_mm": 0.0,
+    "cells": {
+     "15": {
+      "t": 86,
+      "v": 1,
+      "c": "dew"
+     },
+     "16": {
+      "t": 86,
+      "v": 1,
+      "c": "dew"
+     },
+     "17": {
+      "t": 86,
+      "v": 1,
+      "c": "dew"
+     },
+     "18": {
+      "t": 85,
+      "v": 1,
+      "c": "dew"
+     },
+     "19": {
+      "t": 82,
+      "v": 1,
+      "c": "dew"
+     },
+     "20": {
+      "t": 80,
+      "v": 1,
+      "c": "dew"
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-08-26",
-    "d": "We",
-    "g": "C"
-   },
    {
     "date": "2026-08-27",
     "d": "Th",
@@ -403,6 +440,11 @@
    {
     "date": "2026-09-04",
     "d": "Fr",
+    "g": "C"
+   },
+   {
+    "date": "2026-09-05",
+    "d": "Sa",
     "g": "C"
    }
   ]
