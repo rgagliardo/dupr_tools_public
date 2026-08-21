@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-20T19:56:19",
+ "updated": "2026-08-20T20:11:28",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: Fri 9a",
- "wet_note": null,
- "reason": "Fri grades C, best 9a \u00b7 today: raining now, then rain",
+ "wet_note": "court wet? \u2014 0.6mm, drying ~9p",
+ "reason": "Fri grades C, best 9a \u00b7 today: raining now",
  "ranked": [
   {
    "day": "Mon",
@@ -33,14 +33,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 83,
+   "temp": 79,
    "dew": 73,
-   "wind": 7
+   "wind": 6
   },
   "court": {
-   "wet_mm": 0.0,
-   "obs_18h_mm": 0.5,
-   "radar_24h_mm": 6.0
+   "wet_mm": 0.6,
+   "obs_18h_mm": 2.5,
+   "radar_24h_mm": 6.3
   },
   "days": [
    {
@@ -50,18 +50,13 @@
     "grade": "F",
     "score": 0.0,
     "best": "",
-    "why": "raining now 7p \u00b7 rain 8p",
-    "wet_mm": 0.0,
+    "why": "raining now 8p",
+    "wet_mm": 0.6,
     "cells": {
-     "19": {
-      "t": 83,
-      "v": 0,
-      "c": "rnow"
-     },
      "20": {
       "t": 79,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      }
     }
    },
