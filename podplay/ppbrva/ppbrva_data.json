@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-21T16:35:51",
-  "next_scan_at": "2026-08-21T17:05:51",
+  "generated_at": "2026-08-21T16:51:17",
+  "next_scan_at": "2026-08-21T17:21:17",
   "stats": {
     "total": 615,
     "full_count": 82
@@ -16,15 +16,14 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 7,
-      "pct": 58,
+      "count": 6,
+      "pct": 50,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "Ed K.",
         "Suraj Singh C.",
         "Bikram S.",
         "Wayne M.",
@@ -33,6 +32,11 @@
       ],
       "min_dupr": null,
       "departed": [
+        {
+          "name": "Ed Kurtz",
+          "uid": "todJzmfCucYrvmiqt2cLhxTtSul1",
+          "departed_at": "2026-08-21T16:50:59"
+        },
         {
           "name": "Suhail Arora",
           "uid": "V29a0bJHSWX0js2OPVAqC693j3j2",
@@ -44,7 +48,7 @@
           "departed_at": "2026-08-20T22:26:07"
         }
       ],
-      "last_snap_ts": "2026-08-21T16:35:36",
+      "last_snap_ts": "2026-08-21T16:50:59",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -64,7 +68,6 @@
         }
       ],
       "registrant_ids": [
-        "todJzmfCucYrvmiqt2cLhxTtSul1",
         "99lO18DA7mMpFAE7M7QWdaB10Yi1",
         "3yWyYGpalEXL7eHbf3ZGyZKFMNH3",
         "hl5iOWwybYfzkON0Sxm674mPAWO2",
@@ -77,11 +80,12 @@
         "TCOPBLh6lEf7KS1HMYjerU8ZxWC2": "4.08"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 5.2,
+        "med": "4.337",
+        "med_val": 4.337,
+        "lo": "4.080",
+        "hi": "5.151",
         "rated": 6,
-        "total": 7,
+        "total": 6,
         "tier": "ADVANCED"
       }
     },
@@ -109,7 +113,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:36",
+      "last_snap_ts": "2026-08-21T16:51:00",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -133,8 +137,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 24,
-      "count": 11,
-      "pct": 46,
+      "count": 12,
+      "pct": 50,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -151,7 +155,8 @@
         "Robert G.",
         "Jessica B.",
         "Keshia B.",
-        "David M."
+        "David M.",
+        "Amity L."
       ],
       "min_dupr": null,
       "departed": [
@@ -161,7 +166,7 @@
           "departed_at": "2026-08-21T15:18:36"
         }
       ],
-      "last_snap_ts": "2026-08-21T16:35:36",
+      "last_snap_ts": "2026-08-21T16:51:00",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -176,7 +181,8 @@
         "TbToCiVsjCeyw05bh3Q8DR4xvM53",
         "ghVZYbeJsDUaERhKMvcWPxM4aJp2",
         "V3cw9szA1tOg58FBjh0aJABVnVm1",
-        "cpTU9d5bC5eC68hVqL84QIOXfSf2"
+        "cpTU9d5bC5eC68hVqL84QIOXfSf2",
+        "2HI9bMglkbQKqwMFSL0PBCQkRMJ2"
       ],
       "ratings_by_uid": {
         "Rl7vtD1ulOOPRyCuxM7xLfna1kJ2": "3.2",
@@ -188,14 +194,16 @@
         "GA0TtK8FFlMkfAAGDUtAZD1BYo83": "3.46",
         "TbToCiVsjCeyw05bh3Q8DR4xvM53": "2.63",
         "ghVZYbeJsDUaERhKMvcWPxM4aJp2": "3.86",
-        "cpTU9d5bC5eC68hVqL84QIOXfSf2": "4.01"
+        "cpTU9d5bC5eC68hVqL84QIOXfSf2": "4.01",
+        "2HI9bMglkbQKqwMFSL0PBCQkRMJ2": "3.61"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.6,
-        "hi": 4.0,
-        "rated": 10,
-        "total": 11,
+        "med": "3.610",
+        "med_val": 3.61,
+        "lo": "2.630",
+        "hi": "4.010",
+        "rated": 11,
+        "total": 12,
         "tier": "SKILLED"
       }
     },
@@ -226,7 +234,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:37",
+      "last_snap_ts": "2026-08-21T16:51:00",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -260,9 +268,10 @@
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12": "3.9"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.7,
-        "hi": 4.5,
+        "med": "3.900",
+        "med_val": 3.9,
+        "lo": "3.720",
+        "hi": "4.510",
         "rated": 7,
         "total": 7,
         "tier": "SKILLED"
@@ -295,7 +304,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:37",
+      "last_snap_ts": "2026-08-21T16:51:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -316,9 +325,10 @@
         "zvjdibVKPIQELKXWsMJ5uU52uJS2": "4.17"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 4.2,
-        "hi": 5.2,
+        "med": "4.264",
+        "med_val": 4.2645,
+        "lo": "4.170",
+        "hi": "5.151",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -378,7 +388,7 @@
           "departed_at": "2026-08-21T15:03:13"
         }
       ],
-      "last_snap_ts": "2026-08-21T16:35:38",
+      "last_snap_ts": "2026-08-21T16:51:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -468,9 +478,10 @@
         "AoKyCxd9M1druxR4u4fFiSH6YgJ2": "3.22"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 2.9,
-        "hi": 4.5,
+        "med": "3.680",
+        "med_val": 3.68,
+        "lo": "2.910",
+        "hi": "4.494",
         "rated": 23,
         "total": 31,
         "tier": "SKILLED"
@@ -505,7 +516,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:38",
+      "last_snap_ts": "2026-08-21T16:51:01",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -525,12 +536,13 @@
         "1CwyNQkJ18dw5Pqt7EIUolLW0dz1": "3.08"
       },
       "skill": {
-        "med": 3.5,
-        "lo": 3.1,
-        "hi": 4.2,
+        "med": "3.450",
+        "med_val": 3.45,
+        "lo": "3.080",
+        "hi": "4.180",
         "rated": 3,
         "total": 8,
-        "tier": "SKILLED"
+        "tier": "RISING"
       }
     },
     {
@@ -553,7 +565,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:38",
+      "last_snap_ts": "2026-08-21T16:51:02",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -581,7 +593,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:38",
+      "last_snap_ts": "2026-08-21T16:51:02",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -619,7 +631,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:39",
+      "last_snap_ts": "2026-08-21T16:51:02",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -646,9 +658,10 @@
         "3Unt2gsixGNFG4FPs5yn9oOUU0E2": "3.88"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 3.0,
-        "hi": 4.2,
+        "med": "3.610",
+        "med_val": 3.61,
+        "lo": "3.030",
+        "hi": "4.210",
         "rated": 9,
         "total": 9,
         "tier": "SKILLED"
@@ -682,7 +695,7 @@
           "departed_at": "2026-08-20T22:10:52"
         }
       ],
-      "last_snap_ts": "2026-08-21T16:35:39",
+      "last_snap_ts": "2026-08-21T16:51:03",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -721,7 +734,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:39",
+      "last_snap_ts": "2026-08-21T16:51:03",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -782,7 +795,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:40",
+      "last_snap_ts": "2026-08-21T16:51:03",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -840,9 +853,10 @@
         "T7rRhjHNMTXZDKKNYB4daYDXoPg2": "3.09"
       },
       "skill": {
-        "med": 3.5,
-        "lo": 2.7,
-        "hi": 4.2,
+        "med": "3.530",
+        "med_val": 3.53,
+        "lo": "2.720",
+        "hi": "4.240",
         "rated": 17,
         "total": 26,
         "tier": "SKILLED"
@@ -874,7 +888,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:40",
+      "last_snap_ts": "2026-08-21T16:51:04",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -918,7 +932,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:40",
+      "last_snap_ts": "2026-08-21T16:51:04",
       "thieves": [],
       "big_dogs": [
         {
@@ -945,9 +959,10 @@
         "Jw9J93q1p2f5W23UHeQCsexed1z2": "3.74"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 3.5,
-        "hi": 4.6,
+        "med": "3.740",
+        "med_val": 3.74,
+        "lo": "3.450",
+        "hi": "4.568",
         "rated": 5,
         "total": 7,
         "tier": "SKILLED"
@@ -975,7 +990,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:41",
+      "last_snap_ts": "2026-08-21T16:51:04",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1015,7 +1030,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:41",
+      "last_snap_ts": "2026-08-21T16:51:05",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1030,9 +1045,10 @@
         "4WpOhh7GewZboSxG4uDP3yqDNJo2": "4.01"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -1093,7 +1109,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:41",
+      "last_snap_ts": "2026-08-21T16:51:05",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1157,9 +1173,10 @@
         "AWznDOgVTCfLA4irExxZc2vMXmz2": "3.33"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 3.1,
-        "hi": 4.5,
+        "med": "3.630",
+        "med_val": 3.63,
+        "lo": "3.070",
+        "hi": "4.509",
         "rated": 21,
         "total": 34,
         "tier": "SKILLED"
@@ -1195,7 +1212,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:42",
+      "last_snap_ts": "2026-08-21T16:51:05",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1232,9 +1249,10 @@
         "nCEHRPI4RLgsh4qg7fPDvUlz0rk2": "3.54"
       },
       "skill": {
-        "med": 3.5,
-        "lo": 3.3,
-        "hi": 4.5,
+        "med": "3.540",
+        "med_val": 3.54,
+        "lo": "3.270",
+        "hi": "4.510",
         "rated": 7,
         "total": 10,
         "tier": "SKILLED"
@@ -1260,7 +1278,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:42",
+      "last_snap_ts": "2026-08-21T16:51:06",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1288,7 +1306,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:42",
+      "last_snap_ts": "2026-08-21T16:51:06",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1345,7 +1363,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:43",
+      "last_snap_ts": "2026-08-21T16:51:07",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1400,9 +1418,10 @@
         "mtuMfG3jeBO2d62YfVisUYlFgwp1": "3.06"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 3.0,
-        "hi": 4.5,
+        "med": "3.670",
+        "med_val": 3.67,
+        "lo": "3.030",
+        "hi": "4.509",
         "rated": 18,
         "total": 28,
         "tier": "SKILLED"
@@ -1432,7 +1451,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:43",
+      "last_snap_ts": "2026-08-21T16:51:07",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1447,9 +1466,10 @@
         "4WpOhh7GewZboSxG4uDP3yqDNJo2": "4.01"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -1489,7 +1509,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:44",
+      "last_snap_ts": "2026-08-21T16:51:08",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1527,12 +1547,13 @@
         "g6GTLDzwfAYhU03dClj5slsNBhJ3": "2.72"
       },
       "skill": {
-        "med": 3.5,
-        "lo": 2.7,
-        "hi": 4.5,
+        "med": "3.490",
+        "med_val": 3.49,
+        "lo": "2.720",
+        "hi": "4.510",
         "rated": 10,
         "total": 13,
-        "tier": "SKILLED"
+        "tier": "RISING"
       }
     },
     {
@@ -1555,7 +1576,7 @@
       "registrants": [],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:43",
+      "last_snap_ts": "2026-08-21T16:51:07",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1611,7 +1632,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:35",
+      "last_snap_ts": "2026-08-21T16:50:59",
       "thieves": [],
       "big_dogs": [
         {
@@ -1685,9 +1706,10 @@
         "uGrl5TqK6mRwv11Qkg7LuX74Ekv1": "3.73"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 5.0,
+        "med": "4.019",
+        "med_val": 4.019,
+        "lo": "3.550",
+        "hi": "5.000",
         "rated": 27,
         "total": 27,
         "tier": "ADVANCED"
@@ -1740,7 +1762,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:35",
+      "last_snap_ts": "2026-08-21T16:50:59",
       "thieves": [],
       "big_dogs": [
         {
@@ -1820,9 +1842,10 @@
         "W8V0BlpwwLSmLaKuXM1tlWSy3io1": "4.22"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.4,
-        "hi": 4.7,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.440",
+        "hi": "4.680",
         "rated": 27,
         "total": 27,
         "tier": "ADVANCED"
@@ -1851,7 +1874,7 @@
       ],
       "min_dupr": null,
       "departed": [],
-      "last_snap_ts": "2026-08-21T16:35:42",
+      "last_snap_ts": "2026-08-21T16:51:06",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1937,9 +1960,10 @@
         "ZBbvos0bfEOU0SK0fA1Pb83uieE3": "4.47"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "4.210",
+        "med_val": 4.21,
+        "lo": "3.250",
+        "hi": "4.510",
         "rated": 8,
         "total": 11,
         "tier": "ADVANCED"
@@ -2147,9 +2171,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "3.830",
+        "med_val": 3.83,
+        "lo": "3.220",
+        "hi": "4.650",
         "rated": 3,
         "total": 7,
         "tier": "SKILLED"
@@ -2189,9 +2214,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 4.2,
-        "hi": 5.3,
+        "med": "4.310",
+        "med_val": 4.3100000000000005,
+        "lo": "4.210",
+        "hi": "5.310",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -2279,9 +2305,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.005",
+        "med_val": 4.005,
+        "lo": "3.760",
+        "hi": "5.310",
         "rated": 6,
         "total": 8,
         "tier": "ADVANCED"
@@ -2415,9 +2442,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 5.2,
+        "med": "4.110",
+        "med_val": 4.11,
+        "lo": "3.890",
+        "hi": "5.151",
         "rated": 15,
         "total": 15,
         "tier": "ADVANCED"
@@ -2598,9 +2626,10 @@
         "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2": "5.3"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.4,
-        "hi": 5.3,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "3.350",
+        "hi": "5.301",
         "rated": 25,
         "total": 33,
         "tier": "SKILLED"
@@ -2646,9 +2675,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.9,
+        "med": "4.074",
+        "med_val": 4.074999999999999,
+        "lo": "3.720",
+        "hi": "4.900",
         "rated": 10,
         "total": 12,
         "tier": "ADVANCED"
@@ -2862,9 +2892,10 @@
         "D7vaQFt5uqcr0NP5vc4GNrd0o592": "4.03"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "4.087",
+        "med_val": 4.087,
+        "lo": "3.450",
+        "hi": "5.151",
         "rated": 14,
         "total": 19,
         "tier": "ADVANCED"
@@ -2921,9 +2952,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.7,
+        "med": "4.160",
+        "med_val": 4.16,
+        "lo": "3.770",
+        "hi": "4.650",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -3070,9 +3102,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.2,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.180",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -3180,12 +3213,13 @@
         "yuMuerwhopVCjMKpeBWTomFK8Nq2": "3.68"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.990",
+        "med_val": 3.99,
+        "lo": "3.160",
+        "hi": "4.510",
         "rated": 16,
         "total": 21,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -3281,9 +3315,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.9,
-        "hi": 5.2,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "3.890",
+        "hi": "5.151",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -3321,9 +3356,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.0,
+        "med": "4.015",
+        "med_val": 4.015,
+        "lo": "3.910",
+        "hi": "4.040",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -3471,10 +3507,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.5,
-        "rated": 4,
+        "med": "4.021",
+        "med_val": 4.021,
+        "lo": "3.710",
+        "hi": "4.510",
+        "rated": 5,
         "total": 11,
         "tier": "ADVANCED"
       }
@@ -3580,9 +3617,10 @@
         "lb87rpBUooe8iBvzf7Nci6pQPdM2": "4.46"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "2.460",
+        "hi": "4.510",
         "rated": 13,
         "total": 19,
         "tier": "SKILLED"
@@ -3725,9 +3763,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.5,
+        "med": "4.087",
+        "med_val": 4.087,
+        "lo": "3.670",
+        "hi": "4.510",
         "rated": 11,
         "total": 12,
         "tier": "ADVANCED"
@@ -3765,12 +3804,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.6,
-        "hi": 4.2,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.650",
+        "hi": "4.240",
         "rated": 4,
         "total": 4,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -3932,12 +3972,13 @@
         "s7MNZBQ69ES2rEVQCqjmsdiLd0K2": "4.44"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.3,
-        "hi": 5.3,
+        "med": "3.970",
+        "med_val": 3.97,
+        "lo": "3.300",
+        "hi": "5.301",
         "rated": 17,
         "total": 21,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -4179,12 +4220,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.2,
+        "med": "3.975",
+        "med_val": 3.975,
+        "lo": "3.720",
+        "hi": "4.200",
         "rated": 8,
         "total": 8,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -4250,9 +4292,10 @@
         "hikO7jt0aSYu0GhPNYXO8PYrW2J2": "4.22"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 4.2,
-        "hi": 4.7,
+        "med": "4.218",
+        "med_val": 4.218,
+        "lo": "4.170",
+        "hi": "4.702",
         "rated": 9,
         "total": 9,
         "tier": "ADVANCED"
@@ -4332,9 +4375,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.1,
+        "med": "3.810",
+        "med_val": 3.81,
+        "lo": "3.220",
+        "hi": "4.080",
         "rated": 4,
         "total": 12,
         "tier": "SKILLED"
@@ -4430,9 +4474,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.015",
+        "med_val": 4.015,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -4624,10 +4669,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.7,
-        "hi": 4.5,
-        "rated": 5,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "3.533",
+        "hi": "5.151",
+        "rated": 7,
         "total": 17,
         "tier": "SKILLED"
       }
@@ -4709,9 +4755,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -4860,9 +4907,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "3.910",
+        "hi": "4.620",
         "rated": 7,
         "total": 7,
         "tier": "ADVANCED"
@@ -5035,10 +5083,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.5,
-        "rated": 4,
+        "med": "4.019",
+        "med_val": 4.019,
+        "lo": "3.710",
+        "hi": "4.510",
+        "rated": 5,
         "total": 23,
         "tier": "ADVANCED"
       }
@@ -5144,9 +5193,10 @@
         "tvMGz52ZX5MYLvQ1X8OhVznziwn1": "3.79"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.831",
+        "med_val": 3.8315,
+        "lo": "3.220",
+        "hi": "4.510",
         "rated": 10,
         "total": 19,
         "tier": "SKILLED"
@@ -5192,9 +5242,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.3,
+        "med": "4.050",
+        "med_val": 4.05,
+        "lo": "3.680",
+        "hi": "4.290",
         "rated": 10,
         "total": 12,
         "tier": "ADVANCED"
@@ -5441,9 +5492,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.165",
+        "med_val": 4.165,
+        "lo": "3.940",
+        "hi": "4.370",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -5533,10 +5585,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.7,
-        "rated": 3,
+        "med": "4.441",
+        "med_val": 4.441,
+        "lo": "3.790",
+        "hi": "4.860",
+        "rated": 7,
         "total": 19,
         "tier": "ADVANCED"
       }
@@ -5594,9 +5647,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 3.9,
-        "hi": 5.2,
+        "med": "4.390",
+        "med_val": 4.390499999999999,
+        "lo": "3.850",
+        "hi": "5.151",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -5825,9 +5879,10 @@
         "vH38tjNRUaTRMQTDCi7VHYVz8v53": "4"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.790",
+        "med_val": 3.79,
+        "lo": "3.160",
+        "hi": "4.510",
         "rated": 17,
         "total": 24,
         "tier": "SKILLED"
@@ -5867,9 +5922,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.3,
+        "med": "4.200",
+        "med_val": 4.2,
+        "lo": "3.910",
+        "hi": "4.290",
         "rated": 5,
         "total": 6,
         "tier": "ADVANCED"
@@ -6197,9 +6253,10 @@
         "rqOLXdPnlsYvhWtSvJhXs8bdb6p1": "3.88"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "4.033",
+        "med_val": 4.0335,
+        "lo": "3.160",
+        "hi": "4.670",
         "rated": 26,
         "total": 32,
         "tier": "ADVANCED"
@@ -6298,7 +6355,15 @@
         "6bjCMHWXyoXW5g3kMnG9y057ji12"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "3.830",
+        "med_val": 3.83,
+        "lo": "3.220",
+        "hi": "5.151",
+        "rated": 3,
+        "total": 10,
+        "tier": "SKILLED"
+      }
     },
     {
       "uuid": "019d4f4f-d71c-777b-a9b6-153e98982f25",
@@ -6505,9 +6570,10 @@
         "qZ5S9dcT58hF9CMgtWGHZQbEoW02": "4.24"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.4,
-        "hi": 4.7,
+        "med": "4.210",
+        "med_val": 4.21,
+        "lo": "3.370",
+        "hi": "4.670",
         "rated": 14,
         "total": 18,
         "tier": "ADVANCED"
@@ -6599,9 +6665,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.740",
+        "hi": "4.370",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -6705,12 +6772,13 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 5.2,
-        "rated": 3,
+        "med": "4.266",
+        "med_val": 4.266,
+        "lo": "3.220",
+        "hi": "5.148",
+        "rated": 4,
         "total": 11,
-        "tier": "SKILLED"
+        "tier": "ADVANCED"
       }
     },
     {
@@ -6771,9 +6839,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.5,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.720",
+        "hi": "4.510",
         "rated": 9,
         "total": 9,
         "tier": "ADVANCED"
@@ -6936,9 +7005,10 @@
         "HJSUUUFwaCPehrBKkLuRaHA90xN2": "4.35"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 4.8,
+        "med": "4.345",
+        "med_val": 4.345,
+        "lo": "3.760",
+        "hi": "4.751",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -7026,7 +7096,15 @@
         "ZBbvos0bfEOU0SK0fA1Pb83uieE3"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.425",
+        "med_val": 4.425,
+        "lo": "3.676",
+        "hi": "4.909",
+        "rated": 4,
+        "total": 21,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019d4f4d-2930-7aad-92c8-b1510616e960",
@@ -7064,9 +7142,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.7,
+        "med": "4.045",
+        "med_val": 4.045,
+        "lo": "3.910",
+        "hi": "4.720",
         "rated": 8,
         "total": 8,
         "tier": "ADVANCED"
@@ -7257,9 +7336,10 @@
         "hOJPwpaV7eVX3U0oCPUpXsEoG6V2": "3.45"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.1,
-        "hi": 4.7,
+        "med": "4.019",
+        "med_val": 4.019,
+        "lo": "3.450",
+        "hi": "4.670",
         "rated": 19,
         "total": 22,
         "tier": "ADVANCED"
@@ -7474,9 +7554,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.5,
+        "med": "4.064",
+        "med_val": 4.0649999999999995,
+        "lo": "3.740",
+        "hi": "4.510",
         "rated": 10,
         "total": 10,
         "tier": "ADVANCED"
@@ -7558,9 +7639,10 @@
         "yuMuerwhopVCjMKpeBWTomFK8Nq2": "3.68"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 2.7,
-        "hi": 4.5,
+        "med": "3.663",
+        "med_val": 3.6630000000000003,
+        "lo": "2.720",
+        "hi": "4.470",
         "rated": 10,
         "total": 15,
         "tier": "SKILLED"
@@ -7640,10 +7722,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 5.2,
-        "rated": 13,
+        "med": "4.264",
+        "med_val": 4.2645,
+        "lo": "3.690",
+        "hi": "5.151",
+        "rated": 14,
         "total": 15,
         "tier": "ADVANCED"
       }
@@ -7916,9 +7999,10 @@
         "Rd0G1eD19TUol8c5c25Be1MVl3O2": "4.44"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.3,
-        "hi": 5.2,
+        "med": "4.033",
+        "med_val": 4.0335,
+        "lo": "3.300",
+        "hi": "5.151",
         "rated": 28,
         "total": 31,
         "tier": "ADVANCED"
@@ -7996,9 +8080,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 4.5,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "3.830",
+        "hi": "4.510",
         "rated": 3,
         "total": 13,
         "tier": "ADVANCED"
@@ -8128,9 +8213,10 @@
         "A38k0saXWJfOPeEQdwrWQBzCWp02": "3.96"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.5,
-        "hi": 4.6,
+        "med": "4.060",
+        "med_val": 4.06,
+        "lo": "3.550",
+        "hi": "4.620",
         "rated": 23,
         "total": 29,
         "tier": "ADVANCED"
@@ -8217,9 +8303,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.015",
+        "med_val": 4.015,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -8536,9 +8623,10 @@
         "3yWyYGpalEXL7eHbf3ZGyZKFMNH3": "4.14"
       },
       "skill": {
-        "med": 3.5,
-        "lo": 3.1,
-        "hi": 4.9,
+        "med": "3.533",
+        "med_val": 3.533,
+        "lo": "3.290",
+        "hi": "4.915",
         "rated": 5,
         "total": 12,
         "tier": "SKILLED"
@@ -8698,9 +8786,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.7,
+        "med": "4.080",
+        "med_val": 4.08,
+        "lo": "3.830",
+        "hi": "4.670",
         "rated": 9,
         "total": 9,
         "tier": "ADVANCED"
@@ -8843,9 +8932,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -8994,9 +9084,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 4.5,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "4.080",
+        "hi": "4.510",
         "rated": 3,
         "total": 16,
         "tier": "ADVANCED"
@@ -9094,12 +9185,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.8,
-        "hi": 4.4,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.820",
+        "hi": "4.370",
         "rated": 4,
         "total": 4,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -9270,9 +9362,10 @@
         "rqOLXdPnlsYvhWtSvJhXs8bdb6p1": "3.88"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.260",
+        "med_val": 4.26,
+        "lo": "3.760",
+        "hi": "5.301",
         "rated": 23,
         "total": 23,
         "tier": "ADVANCED"
@@ -9395,9 +9488,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.9,
-        "hi": 5.3,
+        "med": "4.060",
+        "med_val": 4.06,
+        "lo": "3.910",
+        "hi": "5.350",
         "rated": 7,
         "total": 7,
         "tier": "ADVANCED"
@@ -9664,9 +9758,10 @@
         "D7vaQFt5uqcr0NP5vc4GNrd0o592": "4.03"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 5.2,
+        "med": "4.271",
+        "med_val": 4.271,
+        "lo": "3.760",
+        "hi": "5.166",
         "rated": 23,
         "total": 23,
         "tier": "ADVANCED"
@@ -9768,9 +9863,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 4.1,
-        "hi": 4.8,
+        "med": "4.395",
+        "med_val": 4.395,
+        "lo": "4.110",
+        "hi": "4.760",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -9993,12 +10089,13 @@
         "3yWyYGpalEXL7eHbf3ZGyZKFMNH3": "4.14"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.1,
-        "hi": 4.5,
+        "med": "3.970",
+        "med_val": 3.97,
+        "lo": "3.290",
+        "hi": "4.510",
         "rated": 29,
         "total": 35,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -10080,9 +10177,10 @@
         "ZXyYK6FWhkRD6z1mW44yNJk5tDB2": "3.88"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.6,
-        "hi": 4.7,
+        "med": "4.226",
+        "med_val": 4.226,
+        "lo": "3.640",
+        "hi": "4.670",
         "rated": 10,
         "total": 14,
         "tier": "ADVANCED"
@@ -10119,9 +10217,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.0,
+        "med": "4.000",
+        "med_val": 4.0,
+        "lo": "3.910",
+        "hi": "4.010",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -10373,9 +10472,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.5,
+        "med": "4.087",
+        "med_val": 4.087,
+        "lo": "3.720",
+        "hi": "4.510",
         "rated": 9,
         "total": 9,
         "tier": "ADVANCED"
@@ -10427,9 +10527,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.0,
-        "hi": 4.7,
+        "med": "4.240",
+        "med_val": 4.24,
+        "lo": "4.000",
+        "hi": "4.650",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -10565,9 +10666,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.1,
-        "hi": 4.7,
+        "med": "4.250",
+        "med_val": 4.25,
+        "lo": "4.140",
+        "hi": "4.660",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -10789,9 +10891,10 @@
         "n9OqZktNB5UQDvQGe3a8Q2u0Ihj1": "3.25"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 3.1,
-        "hi": 5.0,
+        "med": "3.710",
+        "med_val": 3.71,
+        "lo": "3.060",
+        "hi": "5.009",
         "rated": 33,
         "total": 44,
         "tier": "SKILLED"
@@ -10837,9 +10940,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.9,
+        "med": "4.090",
+        "med_val": 4.09,
+        "lo": "3.720",
+        "hi": "4.900",
         "rated": 9,
         "total": 12,
         "tier": "ADVANCED"
@@ -10937,10 +11041,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 4.5,
-        "rated": 5,
+        "med": "4.391",
+        "med_val": 4.391,
+        "lo": "3.790",
+        "hi": "5.151",
+        "rated": 8,
         "total": 18,
         "tier": "ADVANCED"
       }
@@ -11036,10 +11141,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 4.5,
-        "rated": 4,
+        "med": "4.390",
+        "med_val": 4.390499999999999,
+        "lo": "3.830",
+        "hi": "4.860",
+        "rated": 6,
         "total": 18,
         "tier": "ADVANCED"
       }
@@ -11076,12 +11182,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.985",
+        "med_val": 3.985,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 4,
         "total": 4,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -11218,10 +11325,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.218",
+        "med_val": 4.218,
+        "lo": "3.940",
+        "hi": "4.670",
+        "rated": 5,
         "total": 11,
         "tier": "ADVANCED"
       }
@@ -11530,7 +11638,15 @@
         "51MoFsXLC8SC8LrameT9E6bMsBD2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.353",
+        "med_val": 4.353,
+        "lo": "3.790",
+        "hi": "4.510",
+        "rated": 4,
+        "total": 30,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019dbbbd-3ee0-7bb3-92d4-e1b16b58592b",
@@ -11665,9 +11781,10 @@
         "xHB7Gtb4R8eNci6R3HmsvO9KAU52": "4.06"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.125",
+        "med_val": 4.125,
+        "lo": "3.790",
+        "hi": "5.301",
         "rated": 12,
         "total": 17,
         "tier": "ADVANCED"
@@ -11737,9 +11854,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.3,
+        "med": "3.830",
+        "med_val": 3.83,
+        "lo": "3.220",
+        "hi": "4.340",
         "rated": 3,
         "total": 9,
         "tier": "SKILLED"
@@ -11782,12 +11900,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.4,
+        "med": "3.974",
+        "med_val": 3.9749999999999996,
+        "lo": "3.720",
+        "hi": "4.370",
         "rated": 8,
         "total": 9,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -11920,10 +12039,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.1,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.474",
+        "med_val": 4.474500000000001,
+        "lo": "4.080",
+        "hi": "4.510",
+        "rated": 6,
         "total": 43,
         "tier": "ADVANCED"
       }
@@ -12136,9 +12256,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 4.3,
+        "med": "4.060",
+        "med_val": 4.0600000000000005,
+        "lo": "3.840",
+        "hi": "4.270",
         "rated": 8,
         "total": 8,
         "tier": "ADVANCED"
@@ -12330,9 +12451,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 3.8,
+        "med": "3.790",
+        "med_val": 3.79,
+        "lo": "3.220",
+        "hi": "3.830",
         "rated": 3,
         "total": 23,
         "tier": "SKILLED"
@@ -12378,9 +12500,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.7,
-        "hi": 4.9,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.720",
+        "hi": "4.910",
         "rated": 11,
         "total": 12,
         "tier": "SKILLED"
@@ -12507,9 +12630,10 @@
         "4kpP91OXh8axPj1PPZDq8VRRkDi1": "3.08"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.1,
-        "hi": 4.4,
+        "med": "4.033",
+        "med_val": 4.0335,
+        "lo": "3.533",
+        "hi": "4.260",
         "rated": 4,
         "total": 6,
         "tier": "ADVANCED"
@@ -12640,9 +12764,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.6,
-        "hi": 4.9,
+        "med": "4.200",
+        "med_val": 4.2,
+        "lo": "3.600",
+        "hi": "4.900",
         "rated": 7,
         "total": 7,
         "tier": "ADVANCED"
@@ -12720,10 +12845,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.1,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.372",
+        "med_val": 4.372,
+        "lo": "4.080",
+        "hi": "5.151",
+        "rated": 5,
         "total": 14,
         "tier": "ADVANCED"
       }
@@ -12877,9 +13003,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.6,
-        "hi": 4.4,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.600",
+        "hi": "4.370",
         "rated": 5,
         "total": 5,
         "tier": "SKILLED"
@@ -13019,9 +13146,10 @@
         "ZZUxCExkD1YcBv382D2ZkdGrxCN2": "3.94"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.4,
-        "hi": 5.3,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.360",
+        "hi": "5.301",
         "rated": 13,
         "total": 15,
         "tier": "ADVANCED"
@@ -13125,9 +13253,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.000",
+        "med_val": 4.0,
+        "lo": "3.910",
+        "hi": "4.620",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -13267,9 +13396,10 @@
         "6N4tbZBQMVYLC4S2y8aSnweqQhV2": "3.83"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.010",
+        "hi": "5.301",
         "rated": 19,
         "total": 29,
         "tier": "ADVANCED"
@@ -13401,9 +13531,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -13501,9 +13632,10 @@
         "1F9DFEvd5lebQVkzT31YvImZ6743": "3.65"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "3.895",
+        "med_val": 3.895,
+        "lo": "3.010",
+        "hi": "5.301",
         "rated": 14,
         "total": 15,
         "tier": "SKILLED"
@@ -13654,9 +13786,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.8,
-        "hi": 4.5,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.800",
+        "hi": "4.510",
         "rated": 11,
         "total": 12,
         "tier": "SKILLED"
@@ -13775,9 +13908,10 @@
         "A85kYOgvnfhN1vD8OXnb6U1UQr72": "4.91"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.1,
-        "hi": 4.9,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "3.060",
+        "hi": "4.908",
         "rated": 19,
         "total": 25,
         "tier": "ADVANCED"
@@ -13893,9 +14027,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.4,
+        "med": "4.055",
+        "med_val": 4.055,
+        "lo": "3.720",
+        "hi": "4.410",
         "rated": 14,
         "total": 17,
         "tier": "ADVANCED"
@@ -14074,12 +14209,13 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 4.1,
-        "hi": 5.2,
+        "med": "4.637",
+        "med_val": 4.6375,
+        "lo": "4.370",
+        "hi": "5.151",
         "rated": 6,
         "total": 6,
-        "tier": "ADVANCED"
+        "tier": "EXPERT"
       }
     },
     {
@@ -14210,9 +14346,10 @@
         "a92t19m80JZrAyctVmztALo5vEV2": "3.37"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.1,
-        "hi": 4.8,
+        "med": "3.860",
+        "med_val": 3.86,
+        "lo": "3.070",
+        "hi": "4.751",
         "rated": 23,
         "total": 30,
         "tier": "SKILLED"
@@ -14431,9 +14568,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.2,
+        "med": "3.810",
+        "med_val": 3.81,
+        "lo": "3.220",
+        "hi": "4.230",
         "rated": 4,
         "total": 31,
         "tier": "SKILLED"
@@ -14486,9 +14624,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 5.2,
+        "med": "4.290",
+        "med_val": 4.29,
+        "lo": "4.090",
+        "hi": "5.150",
         "rated": 11,
         "total": 12,
         "tier": "ADVANCED"
@@ -14526,9 +14665,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.9,
-        "hi": 4.1,
+        "med": "4.070",
+        "med_val": 4.07,
+        "lo": "3.900",
+        "hi": "4.140",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -14715,9 +14855,10 @@
         "TCCAJvQIaQMxfO9A17lQ5iccEqx2": "4.88"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 5.3,
+        "med": "4.020",
+        "med_val": 4.02,
+        "lo": "3.180",
+        "hi": "5.301",
         "rated": 22,
         "total": 27,
         "tier": "ADVANCED"
@@ -14853,9 +14994,10 @@
         "L8qN5eQ2rMV8RBmCxpS2miJyLVp1": "4.62"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.6,
+        "med": "4.130",
+        "med_val": 4.1305,
+        "lo": "3.720",
+        "hi": "4.623",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -15023,9 +15165,10 @@
         "1hoTWOSWwPd7cDsR4Wu7ggpygcv1": "3.66"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 2.6,
-        "hi": 4.5,
+        "med": "3.764",
+        "med_val": 3.7649999999999997,
+        "lo": "2.620",
+        "hi": "4.520",
         "rated": 30,
         "total": 43,
         "tier": "SKILLED"
@@ -15072,9 +15215,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.6,
-        "lo": 4.2,
-        "hi": 5.2,
+        "med": "4.550",
+        "med_val": 4.550000000000001,
+        "lo": "4.210",
+        "hi": "5.150",
         "rated": 6,
         "total": 6,
         "tier": "EXPERT"
@@ -15195,9 +15339,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 4.9,
+        "med": "4.125",
+        "med_val": 4.125,
+        "lo": "3.760",
+        "hi": "4.900",
         "rated": 10,
         "total": 10,
         "tier": "ADVANCED"
@@ -15288,9 +15433,10 @@
         "Yyu2izSiMKeU7J99YCsIM9Jux0x1": "3.9"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 5.2,
+        "med": "4.245",
+        "med_val": 4.2455,
+        "lo": "3.900",
+        "hi": "5.151",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -15436,9 +15582,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.135",
+        "med_val": 4.135,
+        "lo": "3.910",
+        "hi": "4.620",
         "rated": 6,
         "total": 7,
         "tier": "ADVANCED"
@@ -15628,9 +15775,10 @@
         "jaVysSY9IOS7kERSqbpVUwxPYyY2": "4.69"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "4.215",
+        "med_val": 4.215,
+        "lo": "3.540",
+        "hi": "5.151",
         "rated": 16,
         "total": 17,
         "tier": "ADVANCED"
@@ -15877,9 +16025,10 @@
         "SiNGALxqZvP0aO8uBeQUyr5HefH2": "4.67"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.145",
+        "med_val": 4.145,
+        "lo": "3.790",
+        "hi": "5.301",
         "rated": 18,
         "total": 18,
         "tier": "ADVANCED"
@@ -16014,9 +16163,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.260",
+        "med_val": 4.26,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 4,
         "tier": "ADVANCED"
@@ -16130,9 +16280,10 @@
         "yuMuerwhopVCjMKpeBWTomFK8Nq2": "3.68"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "3.833",
+        "med_val": 3.833,
+        "lo": "3.250",
+        "hi": "4.670",
         "rated": 17,
         "total": 21,
         "tier": "SKILLED"
@@ -16195,9 +16346,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.830",
+        "med_val": 3.83,
+        "lo": "3.220",
+        "hi": "4.494",
         "rated": 3,
         "total": 5,
         "tier": "SKILLED"
@@ -16318,9 +16470,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.1,
-        "hi": 4.7,
+        "med": "4.218",
+        "med_val": 4.218999999999999,
+        "lo": "4.087",
+        "hi": "4.650",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -16394,9 +16547,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.7,
-        "hi": 4.7,
+        "med": "3.900",
+        "med_val": 3.9,
+        "lo": "3.690",
+        "hi": "4.650",
         "rated": 11,
         "total": 14,
         "tier": "SKILLED"
@@ -16617,9 +16771,10 @@
         "3zCksBuSviP4fRkNjT67H3e62Q23": "4.9"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 4.9,
+        "med": "4.290",
+        "med_val": 4.29,
+        "lo": "4.080",
+        "hi": "4.900",
         "rated": 11,
         "total": 11,
         "tier": "ADVANCED"
@@ -16657,9 +16812,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.050",
+        "med_val": 4.05,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -17043,9 +17199,10 @@
         "6N4tbZBQMVYLC4S2y8aSnweqQhV2": "3.83"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "4.140",
+        "med_val": 4.14,
+        "lo": "3.540",
+        "hi": "5.151",
         "rated": 13,
         "total": 15,
         "tier": "ADVANCED"
@@ -17471,7 +17628,15 @@
         "Yyu2izSiMKeU7J99YCsIM9Jux0x1"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.372",
+        "med_val": 4.372,
+        "lo": "3.790",
+        "hi": "5.151",
+        "rated": 3,
+        "total": 17,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019e231a-cb1b-7662-b5ad-74f16348c478",
@@ -17566,9 +17731,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.420",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -17739,9 +17905,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.7,
+        "med": "4.240",
+        "med_val": 4.24,
+        "lo": "3.870",
+        "hi": "4.660",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -17903,9 +18070,10 @@
         "R1QdLEqb3AYUmEvq9nUoK8yIxqo2": "4.55"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 3.0,
-        "hi": 4.5,
+        "med": "3.560",
+        "med_val": 3.56,
+        "lo": "3.050",
+        "hi": "4.553",
         "rated": 19,
         "total": 30,
         "tier": "SKILLED"
@@ -18261,7 +18429,15 @@
         "BwjBKIQLZbZXIZ4BGqssf1lhIoB2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.510",
+        "med_val": 4.51,
+        "lo": "3.830",
+        "hi": "5.151",
+        "rated": 5,
+        "total": 11,
+        "tier": "EXPERT"
+      }
     },
     {
       "uuid": "019e2c18-cb19-7cc5-98c3-540d44f13b4d",
@@ -18528,9 +18704,10 @@
         "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2": "5.3"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.2,
-        "hi": 5.3,
+        "med": "4.095",
+        "med_val": 4.095000000000001,
+        "lo": "3.160",
+        "hi": "5.301",
         "rated": 16,
         "total": 18,
         "tier": "ADVANCED"
@@ -18804,9 +18981,10 @@
         "qZ5S9dcT58hF9CMgtWGHZQbEoW02": "4.24"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "4.180",
+        "med_val": 4.18,
+        "lo": "2.720",
+        "hi": "5.151",
         "rated": 27,
         "total": 30,
         "tier": "ADVANCED"
@@ -18874,7 +19052,15 @@
         "SiNGALxqZvP0aO8uBeQUyr5HefH2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "3.220",
+        "hi": "4.670",
+        "rated": 3,
+        "total": 11,
+        "tier": "SKILLED"
+      }
     },
     {
       "uuid": "019e84b4-31d4-733e-8d4f-f4f8971e588d",
@@ -18943,9 +19129,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.7,
-        "hi": 4.5,
+        "med": "3.925",
+        "med_val": 3.925,
+        "lo": "3.700",
+        "hi": "4.494",
         "rated": 8,
         "total": 10,
         "tier": "SKILLED"
@@ -19046,12 +19233,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.980",
+        "med_val": 3.98,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 5,
         "total": 5,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -19141,7 +19329,15 @@
         "1EAjj8gYMbYNejbiTbxgOQx5bG63"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "4.170",
+        "hi": "4.650",
+        "rated": 5,
+        "total": 23,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019e2c31-240d-7cc5-99ef-bed39021945e",
@@ -19297,9 +19493,10 @@
         "PbXyNNbG9AMUUWwTS6JuSPbubq13": "4.37"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.2,
-        "hi": 4.9,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.220",
+        "hi": "4.899",
         "rated": 29,
         "total": 41,
         "tier": "SKILLED"
@@ -19422,10 +19619,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 4.2,
-        "hi": 4.5,
-        "rated": 4,
+        "med": "4.417",
+        "med_val": 4.417,
+        "lo": "3.533",
+        "hi": "5.151",
+        "rated": 6,
         "total": 19,
         "tier": "ADVANCED"
       }
@@ -19651,7 +19849,15 @@
         "n9OqZktNB5UQDvQGe3a8Q2u0Ihj1"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.510",
+        "med_val": 4.51,
+        "lo": "4.289",
+        "hi": "5.151",
+        "rated": 3,
+        "total": 13,
+        "tier": "EXPERT"
+      }
     },
     {
       "uuid": "019e31f9-ff98-7cc5-ac71-c53c0813b733",
@@ -19883,9 +20089,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 4.2,
-        "hi": 4.5,
+        "med": "4.417",
+        "med_val": 4.417,
+        "lo": "4.200",
+        "hi": "4.510",
         "rated": 4,
         "total": 13,
         "tier": "ADVANCED"
@@ -20042,9 +20249,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -20128,9 +20336,10 @@
         "BP7YlxYz7GM0q2av8nsBzNJYfZs1": "4.14"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 3.6,
-        "hi": 5.3,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "3.650",
+        "hi": "5.301",
         "rated": 9,
         "total": 11,
         "tier": "ADVANCED"
@@ -20273,9 +20482,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.7,
+        "med": "4.090",
+        "med_val": 4.09,
+        "lo": "3.720",
+        "hi": "4.670",
         "rated": 13,
         "total": 13,
         "tier": "ADVANCED"
@@ -20395,9 +20605,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.1,
-        "hi": 5.3,
+        "med": "4.359",
+        "med_val": 4.359999999999999,
+        "lo": "4.087",
+        "hi": "5.301",
         "rated": 8,
         "total": 8,
         "tier": "ADVANCED"
@@ -20557,9 +20768,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 4.2,
-        "hi": 5.2,
+        "med": "4.355",
+        "med_val": 4.355,
+        "lo": "4.210",
+        "hi": "5.150",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -20884,9 +21096,10 @@
         "EFxuuoSW0SapX84hg7kvLzb3gaz1": "3.91"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 4.9,
+        "med": "3.880",
+        "med_val": 3.88,
+        "lo": "2.580",
+        "hi": "4.899",
         "rated": 31,
         "total": 41,
         "tier": "SKILLED"
@@ -21016,12 +21229,13 @@
         "o3yTQ1D4XzaMyWTMWObF3ZC5lFi2": "3.87"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.460",
+        "hi": "5.151",
         "rated": 17,
         "total": 18,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -21207,9 +21421,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 4.4,
+        "med": "4.025",
+        "med_val": 4.025,
+        "lo": "3.720",
+        "hi": "4.370",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -21293,7 +21508,15 @@
         "q49QhWwG95SEteP5VIdU5Nlj1U52"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.399",
+        "med_val": 4.3995,
+        "lo": "4.170",
+        "hi": "5.151",
+        "rated": 4,
+        "total": 18,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019e31fa-0257-7cc8-ade2-c215b6a56392",
@@ -21402,12 +21625,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.900",
+        "hi": "4.370",
         "rated": 4,
         "total": 5,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -21590,10 +21814,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 4.5,
-        "rated": 6,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "3.790",
+        "hi": "5.151",
+        "rated": 9,
         "total": 26,
         "tier": "ADVANCED"
       }
@@ -21756,7 +21981,15 @@
         "tvMGz52ZX5MYLvQ1X8OhVznziwn1"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.440",
+        "med_val": 4.44,
+        "lo": "4.087",
+        "hi": "4.509",
+        "rated": 3,
+        "total": 41,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019ea800-0835-7000-94ba-8eec111b6b7f",
@@ -21790,9 +22023,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.7,
+        "med": "4.189",
+        "med_val": 4.1899999999999995,
+        "lo": "3.910",
+        "hi": "4.660",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -21894,9 +22128,10 @@
         "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2": "5.3"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 3.3,
-        "hi": 5.3,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "3.300",
+        "hi": "5.301",
         "rated": 13,
         "total": 14,
         "tier": "ADVANCED"
@@ -22023,12 +22258,13 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.1,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.509",
+        "med_val": 4.509,
+        "lo": "4.087",
+        "hi": "4.510",
+        "rated": 5,
         "total": 38,
-        "tier": "ADVANCED"
+        "tier": "EXPERT"
       }
     },
     {
@@ -22062,9 +22298,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -22215,9 +22452,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 4.2,
-        "hi": 4.7,
+        "med": "4.290",
+        "med_val": 4.29,
+        "lo": "4.210",
+        "hi": "4.670",
         "rated": 7,
         "total": 7,
         "tier": "ADVANCED"
@@ -22389,9 +22627,10 @@
         "s7MNZBQ69ES2rEVQCqjmsdiLd0K2": "4.44"
       },
       "skill": {
-        "med": 4.4,
-        "lo": 2.9,
-        "hi": 5.2,
+        "med": "4.441",
+        "med_val": 4.441,
+        "lo": "2.850",
+        "hi": "5.148",
         "rated": 17,
         "total": 23,
         "tier": "ADVANCED"
@@ -22460,9 +22699,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.2,
-        "hi": 4.7,
+        "med": "4.240",
+        "med_val": 4.24,
+        "lo": "4.170",
+        "hi": "4.660",
         "rated": 7,
         "total": 7,
         "tier": "ADVANCED"
@@ -22654,9 +22894,10 @@
         "95cxqFSbszMOsbVI2WkMhACKKiB3": "3.53"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.0,
-        "hi": 5.2,
+        "med": "4.140",
+        "med_val": 4.140000000000001,
+        "lo": "3.050",
+        "hi": "5.148",
         "rated": 24,
         "total": 28,
         "tier": "ADVANCED"
@@ -22863,9 +23104,10 @@
         "dB4HMmGlP3UfWRCNyweEuJBnXSU2": "4.01"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.1,
-        "hi": 4.9,
+        "med": "4.003",
+        "med_val": 4.003,
+        "lo": "3.060",
+        "hi": "4.899",
         "rated": 27,
         "total": 34,
         "tier": "ADVANCED"
@@ -22904,9 +23146,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 4,
         "total": 5,
         "tier": "ADVANCED"
@@ -23003,9 +23246,10 @@
         "72sNotMRPfZxoSntHMKP5maTeEl1": "3.51"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 4.7,
+        "med": "4.050",
+        "med_val": 4.0504999999999995,
+        "lo": "3.510",
+        "hi": "4.670",
         "rated": 14,
         "total": 17,
         "tier": "ADVANCED"
@@ -23103,9 +23347,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.7,
-        "hi": 4.0,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.740",
+        "hi": "4.040",
         "rated": 5,
         "total": 5,
         "tier": "SKILLED"
@@ -23335,9 +23580,10 @@
         "TCOPBLh6lEf7KS1HMYjerU8ZxWC2": "4.07"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.9,
+        "med": "4.229",
+        "med_val": 4.229,
+        "lo": "3.860",
+        "hi": "4.908",
         "rated": 16,
         "total": 16,
         "tier": "ADVANCED"
@@ -23440,9 +23686,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.910",
+        "hi": "4.370",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -23557,7 +23804,15 @@
         "EFxuuoSW0SapX84hg7kvLzb3gaz1"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.509",
+        "med_val": 4.509,
+        "lo": "4.087",
+        "hi": "4.510",
+        "rated": 3,
+        "total": 37,
+        "tier": "EXPERT"
+      }
     },
     {
       "uuid": "019eb7e3-96b4-7777-9585-72ff5a7a650f",
@@ -23662,12 +23917,13 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.8,
-        "lo": 3.8,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.442",
+        "med_val": 4.442,
+        "lo": "3.790",
+        "hi": "5.151",
+        "rated": 5,
         "total": 22,
-        "tier": "SKILLED"
+        "tier": "ADVANCED"
       }
     },
     {
@@ -23840,7 +24096,15 @@
         "YmU2Zd0NvsRg71ykAUjKni6s8hA2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.353",
+        "med_val": 4.353,
+        "lo": "4.087",
+        "hi": "4.510",
+        "rated": 4,
+        "total": 31,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019ef028-8af6-7000-b57f-9bd4f5e5555c",
@@ -23951,9 +24215,10 @@
         "Gsr1Pod4eRP3uYfq33RNDOMSa103": "5.16"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 5.2,
+        "med": "4.230",
+        "med_val": 4.23,
+        "lo": "3.750",
+        "hi": "5.166",
         "rated": 24,
         "total": 24,
         "tier": "ADVANCED"
@@ -24033,9 +24298,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 5.2,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.720",
+        "hi": "5.150",
         "rated": 11,
         "total": 11,
         "tier": "ADVANCED"
@@ -24175,9 +24441,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.8,
-        "hi": 4.0,
+        "med": "3.900",
+        "med_val": 3.9,
+        "lo": "3.840",
+        "hi": "4.010",
         "rated": 3,
         "total": 4,
         "tier": "SKILLED"
@@ -24217,9 +24484,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 5.2,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "4.140",
+        "hi": "5.150",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -24389,7 +24657,15 @@
         "PaZNgdFfjugw9qem1IVPXFkxtdJ2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "3.790",
+        "med_val": 3.79,
+        "lo": "3.203",
+        "hi": "4.200",
+        "rated": 3,
+        "total": 30,
+        "tier": "SKILLED"
+      }
     },
     {
       "uuid": "019ed20c-ab95-7997-992a-dea12823eaf6",
@@ -24897,12 +25173,13 @@
         "C0F3uLdBUMWIFKyTk0AtzlgpSgv2": "4.2"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "2.720",
+        "hi": "5.148",
         "rated": 35,
         "total": 40,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -25016,9 +25293,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.5,
+        "med": "4.289",
+        "med_val": 4.2895,
+        "lo": "3.910",
+        "hi": "4.510",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -25207,9 +25485,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.0,
-        "hi": 5.2,
+        "med": "4.250",
+        "med_val": 4.25,
+        "lo": "3.960",
+        "hi": "5.150",
         "rated": 13,
         "total": 13,
         "tier": "ADVANCED"
@@ -25249,12 +25528,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 4.6,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.470",
+        "hi": "4.620",
         "rated": 6,
         "total": 6,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -25364,7 +25644,15 @@
         "Hpcep0bXDpWAgUSm03osbByKxkT2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.141",
+        "med_val": 4.1419999999999995,
+        "lo": "3.533",
+        "hi": "4.509",
+        "rated": 4,
+        "total": 36,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019f1919-6971-7667-9f75-c7ce8479678a",
@@ -25546,9 +25834,10 @@
         "0m5mGfkr0pMOR2n96Xql0i3yhp12": "3.81"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.7,
+        "med": "4.170",
+        "med_val": 4.17,
+        "lo": "3.760",
+        "hi": "4.700",
         "rated": 16,
         "total": 16,
         "tier": "ADVANCED"
@@ -25697,9 +25986,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.860",
+        "hi": "4.370",
         "rated": 5,
         "total": 5,
         "tier": "SKILLED"
@@ -25810,7 +26100,15 @@
         "eYq5EVpetiYy8t7ctfJnmUcaPb22"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.417",
+        "med_val": 4.417,
+        "lo": "4.170",
+        "hi": "4.670",
+        "rated": 4,
+        "total": 20,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019f1911-ba03-7992-a04d-e38220e10b2d",
@@ -25977,7 +26275,15 @@
         "VdelaN5r2JOVSLnmECbm30hScOT2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.087",
+        "med_val": 4.087,
+        "lo": "3.533",
+        "hi": "4.509",
+        "rated": 3,
+        "total": 36,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019f18f0-1c6a-7992-a034-9814ffca0e0a",
@@ -26013,9 +26319,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.5,
-        "hi": 4.0,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "3.470",
+        "hi": "4.030",
         "rated": 5,
         "total": 6,
         "tier": "SKILLED"
@@ -26129,12 +26436,13 @@
         "LJD0k4wdFmg4ZTnChZMywuJElEZ2": "4.7"
       },
       "skill": {
-        "med": 4.5,
-        "lo": 4.1,
-        "hi": 4.7,
+        "med": "4.470",
+        "med_val": 4.47,
+        "lo": "4.080",
+        "hi": "4.700",
         "rated": 11,
         "total": 11,
-        "tier": "EXPERT"
+        "tier": "ADVANCED"
       }
     },
     {
@@ -26254,9 +26562,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.5,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.900",
+        "hi": "4.510",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -26365,7 +26674,15 @@
         "ghVZYbeJsDUaERhKMvcWPxM4aJp2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.510",
+        "med_val": 4.51,
+        "lo": "4.087",
+        "hi": "4.623",
+        "rated": 3,
+        "total": 34,
+        "tier": "EXPERT"
+      }
     },
     {
       "uuid": "019f28a7-31b4-7aa2-8213-e72397dac69f",
@@ -26543,9 +26860,10 @@
         "qZ5S9dcT58hF9CMgtWGHZQbEoW02": "4.24"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 4.5,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "4.019",
+        "hi": "4.510",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -26649,9 +26967,10 @@
         "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2": "5.3"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "3.594",
+        "med_val": 3.5949999999999998,
+        "lo": "2.690",
+        "hi": "5.301",
         "rated": 18,
         "total": 22,
         "tier": "SKILLED"
@@ -26691,9 +27010,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.9,
-        "hi": 5.3,
+        "med": "4.090",
+        "med_val": 4.09,
+        "lo": "3.850",
+        "hi": "5.300",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -26747,9 +27067,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 4.2,
-        "hi": 4.9,
+        "med": "4.399",
+        "med_val": 4.3995,
+        "lo": "4.170",
+        "hi": "4.910",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -26817,12 +27138,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.860",
+        "hi": "4.590",
         "rated": 6,
         "total": 6,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -26948,9 +27270,10 @@
         "PUz2X4lT9IXRtS6E6HRlaRtzMj92": "4.18"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 2.6,
-        "hi": 4.6,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "2.620",
+        "hi": "4.623",
         "rated": 21,
         "total": 33,
         "tier": "ADVANCED"
@@ -27034,12 +27357,13 @@
         "C0F3uLdBUMWIFKyTk0AtzlgpSgv2": "4.2"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 5.3,
+        "med": "3.995",
+        "med_val": 3.995,
+        "lo": "3.250",
+        "hi": "5.301",
         "rated": 12,
         "total": 15,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -27104,12 +27428,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.974",
+        "med_val": 3.9749999999999996,
+        "lo": "3.860",
+        "hi": "4.370",
         "rated": 6,
         "total": 6,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -27307,12 +27632,13 @@
         "A38k0saXWJfOPeEQdwrWQBzCWp02": "3.96"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.010",
+        "hi": "5.301",
         "rated": 21,
         "total": 29,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -27470,9 +27796,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.118",
+        "med_val": 4.1185,
+        "lo": "3.860",
+        "hi": "4.623",
         "rated": 10,
         "total": 11,
         "tier": "ADVANCED"
@@ -27672,12 +27999,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 4.6,
+        "med": "3.955",
+        "med_val": 3.955,
+        "lo": "3.470",
+        "hi": "4.620",
         "rated": 6,
         "total": 6,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -27900,9 +28228,10 @@
         "Wh5AcpWb0rWufsOqHFPKfa5ovvz1": "3.88"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 4.7,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "3.010",
+        "hi": "4.670",
         "rated": 29,
         "total": 36,
         "tier": "SKILLED"
@@ -28080,9 +28409,10 @@
         "bH6yEQratQhnvamZRtRhq1eeUaj2": "4.18"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.1,
-        "hi": 5.3,
+        "med": "3.889",
+        "med_val": 3.8899999999999997,
+        "lo": "3.060",
+        "hi": "5.301",
         "rated": 28,
         "total": 39,
         "tier": "SKILLED"
@@ -28229,10 +28559,11 @@
         "O38VrSrUeJPSqeOht9ieZVZ8Zlh2": "4.53"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 3.7,
-        "hi": 5.3,
-        "rated": 14,
+        "med": "4.462",
+        "med_val": 4.462,
+        "lo": "3.680",
+        "hi": "5.301",
+        "rated": 15,
         "total": 16,
         "tier": "ADVANCED"
       }
@@ -28415,9 +28746,10 @@
         "A85kYOgvnfhN1vD8OXnb6U1UQr72": "4.91"
       },
       "skill": {
-        "med": 4.5,
-        "lo": 4.2,
-        "hi": 4.9,
+        "med": "4.510",
+        "med_val": 4.51,
+        "lo": "4.210",
+        "hi": "4.908",
         "rated": 7,
         "total": 7,
         "tier": "EXPERT"
@@ -28785,9 +29117,10 @@
         "s7MNZBQ69ES2rEVQCqjmsdiLd0K2": "4.44"
       },
       "skill": {
-        "med": 4.1,
-        "lo": 3.1,
-        "hi": 5.2,
+        "med": "4.130",
+        "med_val": 4.13,
+        "lo": "3.150",
+        "hi": "5.148",
         "rated": 19,
         "total": 28,
         "tier": "ADVANCED"
@@ -28887,9 +29220,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.2,
-        "hi": 4.5,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "4.200",
+        "hi": "4.510",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -29210,10 +29544,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 4.5,
-        "rated": 6,
+        "med": "4.210",
+        "med_val": 4.21,
+        "lo": "3.220",
+        "hi": "4.670",
+        "rated": 8,
         "total": 41,
         "tier": "ADVANCED"
       }
@@ -29460,9 +29795,10 @@
         "4WpOhh7GewZboSxG4uDP3yqDNJo2": "4.01"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.048",
+        "med_val": 4.0485,
+        "lo": "3.900",
+        "hi": "4.623",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -29647,9 +29983,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.087",
+        "med_val": 4.087,
+        "lo": "3.900",
+        "hi": "4.623",
         "rated": 11,
         "total": 12,
         "tier": "ADVANCED"
@@ -29803,9 +30140,10 @@
         "SiNGALxqZvP0aO8uBeQUyr5HefH2": "4.67"
       },
       "skill": {
-        "med": 4.4,
-        "lo": 3.6,
-        "hi": 4.8,
+        "med": "4.442",
+        "med_val": 4.442,
+        "lo": "3.600",
+        "hi": "4.780",
         "rated": 9,
         "total": 10,
         "tier": "ADVANCED"
@@ -29869,9 +30207,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.030",
+        "med_val": 4.03,
+        "lo": "3.900",
+        "hi": "4.623",
         "rated": 9,
         "total": 11,
         "tier": "ADVANCED"
@@ -30036,9 +30375,10 @@
         "xTh6vu6kbQTZzsBHoRsh1Td30Jo1": "2.46"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.730",
+        "med_val": 3.73,
+        "lo": "2.460",
+        "hi": "4.509",
         "rated": 31,
         "total": 46,
         "tier": "SKILLED"
@@ -30129,10 +30469,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 4.3,
-        "rated": 3,
+        "med": "4.080",
+        "med_val": 4.08,
+        "lo": "3.830",
+        "hi": "4.670",
+        "rated": 5,
         "total": 16,
         "tier": "ADVANCED"
       }
@@ -30188,9 +30529,10 @@
         "43MRTFLrCyXnns3hBvwZ5kAUHBy2": "4.22"
       },
       "skill": {
-        "med": 4.3,
-        "lo": 4.2,
-        "hi": 5.2,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "4.220",
+        "hi": "5.166",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -30262,9 +30604,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.4,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.380",
+        "med_val": 4.38,
+        "lo": "3.900",
+        "hi": "4.620",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -30392,7 +30735,15 @@
         "DTbEA3FEH2hC4Zf2F6XxBG8jPpq1"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.509",
+        "med_val": 4.509,
+        "lo": "4.087",
+        "hi": "5.301",
+        "rated": 3,
+        "total": 40,
+        "tier": "EXPERT"
+      }
     },
     {
       "uuid": "019f6122-4752-799f-9492-d04273efcd27",
@@ -30526,9 +30877,10 @@
         "G6FlassA9gMLckkAeou3HfXr3sj2": "3.16"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 2.7,
-        "hi": 4.7,
+        "med": "3.830",
+        "med_val": 3.83,
+        "lo": "2.720",
+        "hi": "4.670",
         "rated": 21,
         "total": 28,
         "tier": "SKILLED"
@@ -30596,12 +30948,13 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.990",
+        "med_val": 3.99,
+        "lo": "3.900",
+        "hi": "4.370",
         "rated": 4,
         "total": 4,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -30722,7 +31075,15 @@
         "o3yTQ1D4XzaMyWTMWObF3ZC5lFi2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.298",
+        "med_val": 4.298,
+        "lo": "4.080",
+        "hi": "4.510",
+        "rated": 4,
+        "total": 39,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019ee686-de4e-7000-9b15-b46dd7b3d595",
@@ -30887,9 +31248,10 @@
         "dCTsvDoEeDVlEyrie9z1sU9Znqm2": "4.57"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.6,
+        "med": "4.240",
+        "med_val": 4.24,
+        "lo": "3.760",
+        "hi": "4.623",
         "rated": 10,
         "total": 10,
         "tier": "ADVANCED"
@@ -31006,9 +31368,10 @@
         "HooiAYxIOvdnQ9NHOgoc3lZpGA93": "4.09"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.9,
-        "hi": 4.1,
+        "med": "3.600",
+        "med_val": 3.6,
+        "lo": "2.910",
+        "hi": "4.019",
         "rated": 6,
         "total": 24,
         "tier": "SKILLED"
@@ -31200,9 +31563,10 @@
         "Gsr1Pod4eRP3uYfq33RNDOMSa103": "5.16"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 5.2,
+        "med": "3.858",
+        "med_val": 3.8585000000000003,
+        "lo": "3.010",
+        "hi": "5.166",
         "rated": 28,
         "total": 44,
         "tier": "SKILLED"
@@ -31307,9 +31671,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 4.2,
-        "hi": 4.6,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "4.210",
+        "hi": "4.620",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -31470,9 +31835,10 @@
         "6jQv08PqK4PGHgyNr5i9PZcFx802": "3.61"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "3.680",
+        "med_val": 3.68,
+        "lo": "2.720",
+        "hi": "5.301",
         "rated": 29,
         "total": 40,
         "tier": "SKILLED"
@@ -31658,9 +32024,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.9,
-        "hi": 4.0,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.900",
+        "hi": "4.010",
         "rated": 3,
         "total": 3,
         "tier": "SKILLED"
@@ -31809,9 +32176,10 @@
         "24mQ1W4jmwVKKgUegTtdBEDC04Y2": "2.62"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 4.6,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "2.620",
+        "hi": "4.623",
         "rated": 27,
         "total": 40,
         "tier": "SKILLED"
@@ -31987,9 +32355,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.020",
+        "med_val": 4.02,
+        "lo": "3.860",
+        "hi": "4.620",
         "rated": 4,
         "total": 5,
         "tier": "ADVANCED"
@@ -32233,9 +32602,10 @@
         "1F9DFEvd5lebQVkzT31YvImZ6743": "3.65"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "3.900",
+        "med_val": 3.9,
+        "lo": "3.250",
+        "hi": "4.670",
         "rated": 19,
         "total": 24,
         "tier": "SKILLED"
@@ -32356,9 +32726,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.2,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.900",
+        "hi": "4.180",
         "rated": 5,
         "total": 7,
         "tier": "ADVANCED"
@@ -32561,10 +32932,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.2,
-        "hi": 4.1,
-        "rated": 4,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "3.220",
+        "hi": "4.442",
+        "rated": 5,
         "total": 20,
         "tier": "SKILLED"
       }
@@ -32669,9 +33041,10 @@
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12": "3.9"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 5.3,
+        "med": "4.048",
+        "med_val": 4.0485,
+        "lo": "3.860",
+        "hi": "5.301",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -32840,10 +33213,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.9,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.425",
+        "med_val": 4.425,
+        "lo": "3.940",
+        "hi": "5.151",
+        "rated": 6,
         "total": 25,
         "tier": "ADVANCED"
       }
@@ -32930,9 +33304,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.7,
-        "hi": 5.3,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.740",
+        "hi": "5.300",
         "rated": 11,
         "total": 13,
         "tier": "ADVANCED"
@@ -33178,9 +33553,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.9,
-        "hi": 5.2,
+        "med": "4.439",
+        "med_val": 4.4399999999999995,
+        "lo": "3.900",
+        "hi": "5.151",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -33482,9 +33858,10 @@
         "s7MNZBQ69ES2rEVQCqjmsdiLd0K2": "4.44"
       },
       "skill": {
-        "med": 4.4,
-        "lo": 3.4,
-        "hi": 5.2,
+        "med": "4.260",
+        "med_val": 4.26,
+        "lo": "3.410",
+        "hi": "5.148",
         "rated": 11,
         "total": 20,
         "tier": "ADVANCED"
@@ -33550,9 +33927,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 4.2,
-        "hi": 5.2,
+        "med": "4.250",
+        "med_val": 4.25,
+        "lo": "4.210",
+        "hi": "5.150",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -33882,9 +34260,10 @@
         "Xzm1GMlnEcSr1lRbJX5AjKcrAC23": "3.9"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "3.820",
+        "med_val": 3.8200000000000003,
+        "lo": "2.720",
+        "hi": "5.148",
         "rated": 40,
         "total": 52,
         "tier": "SKILLED"
@@ -34018,9 +34397,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.850",
+        "hi": "4.370",
         "rated": 11,
         "total": 12,
         "tier": "ADVANCED"
@@ -34139,7 +34519,15 @@
         "Yld2figMleOx6eGeLhbPNK708KC3"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.141",
+        "med_val": 4.1419999999999995,
+        "lo": "4.060",
+        "hi": "4.509",
+        "rated": 4,
+        "total": 39,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019f803c-0256-7ff6-a1df-7b76ca16ad04",
@@ -34218,9 +34606,10 @@
         "ZZUxCExkD1YcBv382D2ZkdGrxCN2": "3.94"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 5.3,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "2.630",
+        "hi": "5.301",
         "rated": 11,
         "total": 15,
         "tier": "SKILLED"
@@ -34431,9 +34820,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.0,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "2.720",
+        "hi": "5.300",
         "rated": 17,
         "total": 22,
         "tier": "ADVANCED"
@@ -34495,9 +34885,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.6,
+        "med": "4.155",
+        "med_val": 4.155,
+        "lo": "3.760",
+        "hi": "4.640",
         "rated": 8,
         "total": 9,
         "tier": "ADVANCED"
@@ -34596,9 +34987,10 @@
       "registrant_ids": [],
       "ratings_by_uid": {},
       "skill": {
-        "med": 3.9,
-        "lo": 3.9,
-        "hi": 4.0,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.900",
+        "hi": "4.010",
         "rated": 3,
         "total": 3,
         "tier": "SKILLED"
@@ -34738,7 +35130,15 @@
         "2dnTdTmDGxQCNMdDFtKrzJKHy5k1"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.197",
+        "med_val": 4.197,
+        "lo": "4.087",
+        "hi": "4.509",
+        "rated": 3,
+        "total": 46,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019fb392-b56e-7ee4-8991-69244cfa75a6",
@@ -34806,10 +35206,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.425",
+        "med_val": 4.425,
+        "lo": "3.790",
+        "hi": "5.301",
+        "rated": 4,
         "total": 10,
         "tier": "ADVANCED"
       }
@@ -35068,9 +35469,10 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.1,
-        "lo": 3.9,
-        "hi": 4.5,
+        "med": "4.085",
+        "med_val": 4.085,
+        "lo": "3.870",
+        "hi": "4.510",
         "rated": 6,
         "total": 8,
         "tier": "ADVANCED"
@@ -35395,9 +35797,10 @@
         "lb87rpBUooe8iBvzf7Nci6pQPdM2": "4.46"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "4.170",
+        "med_val": 4.17,
+        "lo": "2.720",
+        "hi": "5.148",
         "rated": 11,
         "total": 27,
         "tier": "ADVANCED"
@@ -35605,9 +36008,10 @@
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12": "3.9"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.9,
-        "hi": 4.8,
+        "med": "3.860",
+        "med_val": 3.86,
+        "lo": "2.910",
+        "hi": "4.751",
         "rated": 30,
         "total": 39,
         "tier": "SKILLED"
@@ -35789,7 +36193,15 @@
         "51MoFsXLC8SC8LrameT9E6bMsBD2"
       ],
       "ratings_by_uid": {},
-      "skill": null
+      "skill": {
+        "med": "4.141",
+        "med_val": 4.1419999999999995,
+        "lo": "4.060",
+        "hi": "4.509",
+        "rated": 4,
+        "total": 34,
+        "tier": "ADVANCED"
+      }
     },
     {
       "uuid": "019fbaf7-909f-733a-ac18-3a63a1307ece",
@@ -35887,10 +36299,11 @@
       ],
       "ratings_by_uid": {},
       "skill": {
-        "med": 4.3,
-        "lo": 3.7,
-        "hi": 4.5,
-        "rated": 3,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "3.533",
+        "hi": "5.151",
+        "rated": 5,
         "total": 25,
         "tier": "ADVANCED"
       }
@@ -36038,9 +36451,10 @@
         "L8qN5eQ2rMV8RBmCxpS2miJyLVp1": "4.62"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 4.6,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "3.030",
+        "hi": "4.623",
         "rated": 19,
         "total": 30,
         "tier": "SKILLED"
@@ -36087,9 +36501,10 @@
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12": "3.9"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.900",
+        "hi": "4.370",
         "rated": 3,
         "total": 4,
         "tier": "SKILLED"
@@ -36207,9 +36622,10 @@
         "uGrl5TqK6mRwv11Qkg7LuX74Ekv1": "3.71"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "3.885",
+        "med_val": 3.885,
+        "lo": "2.720",
+        "hi": "5.301",
         "rated": 20,
         "total": 24,
         "tier": "SKILLED"
@@ -36287,12 +36703,13 @@
         "qUVWzotHLhcLmrsvStxHvgbJIzr1": "4.04"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.2,
+        "med": "3.975",
+        "med_val": 3.975,
+        "lo": "3.900",
+        "hi": "4.180",
         "rated": 4,
         "total": 5,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -36444,9 +36861,10 @@
         "ghVZYbeJsDUaERhKMvcWPxM4aJp2": "3.86"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.710",
+        "med_val": 3.71,
+        "lo": "2.460",
+        "hi": "4.509",
         "rated": 31,
         "total": 41,
         "tier": "SKILLED"
@@ -36609,9 +37027,10 @@
         "rqOLXdPnlsYvhWtSvJhXs8bdb6p1": "3.76"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 5.3,
+        "med": "3.850",
+        "med_val": 3.85,
+        "lo": "2.640",
+        "hi": "5.301",
         "rated": 31,
         "total": 40,
         "tier": "SKILLED"
@@ -36847,9 +37266,10 @@
         "HXZMCAoGNqNIpKslLeSzY2heQT93": "3.43"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.645",
+        "med_val": 3.645,
+        "lo": "2.460",
+        "hi": "4.509",
         "rated": 30,
         "total": 44,
         "tier": "SKILLED"
@@ -36902,9 +37322,10 @@
         "qUVWzotHLhcLmrsvStxHvgbJIzr1": "4.04"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.8,
-        "hi": 4.4,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.750",
+        "hi": "4.370",
         "rated": 5,
         "total": 6,
         "tier": "SKILLED"
@@ -37022,9 +37443,10 @@
         "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2": "5.3"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.6,
-        "hi": 5.3,
+        "med": "3.650",
+        "med_val": 3.65,
+        "lo": "2.630",
+        "hi": "5.301",
         "rated": 15,
         "total": 21,
         "tier": "SKILLED"
@@ -37072,9 +37494,10 @@
         "SiNGALxqZvP0aO8uBeQUyr5HefH2": "4.67"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 3.7,
-        "hi": 4.7,
+        "med": "4.252",
+        "med_val": 4.252,
+        "lo": "3.720",
+        "hi": "4.670",
         "rated": 4,
         "total": 4,
         "tier": "ADVANCED"
@@ -37132,9 +37555,10 @@
         "KxeoMug05QbQwEju4R8cuN7JEXS2": "3.36"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 3.3,
-        "hi": 4.5,
+        "med": "3.735",
+        "med_val": 3.7350000000000003,
+        "lo": "3.280",
+        "hi": "4.494",
         "rated": 4,
         "total": 6,
         "tier": "SKILLED"
@@ -37275,9 +37699,10 @@
         "MbCj9WvftJO6AGjHsb2aYBoYluw1": "3.06"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.670",
+        "med_val": 3.67,
+        "lo": "2.460",
+        "hi": "4.510",
         "rated": 14,
         "total": 24,
         "tier": "SKILLED"
@@ -37385,9 +37810,10 @@
         "AoKyCxd9M1druxR4u4fFiSH6YgJ2": "3.22"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "3.929",
+        "med_val": 3.9299999999999997,
+        "lo": "3.050",
+        "hi": "5.301",
         "rated": 18,
         "total": 20,
         "tier": "SKILLED"
@@ -37611,9 +38037,10 @@
         "Xzm1GMlnEcSr1lRbJX5AjKcrAC23": "3.99"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 2.9,
-        "hi": 5.3,
+        "med": "3.840",
+        "med_val": 3.84,
+        "lo": "2.850",
+        "hi": "5.301",
         "rated": 32,
         "total": 43,
         "tier": "SKILLED"
@@ -37751,9 +38178,10 @@
         "P1JLphNs8bfZV1vMfsGMk3fcXVh1": "3.6"
       },
       "skill": {
-        "med": 3.1,
-        "lo": 2.7,
-        "hi": 3.6,
+        "med": "3.130",
+        "med_val": 3.13,
+        "lo": "2.720",
+        "hi": "3.600",
         "rated": 7,
         "total": 26,
         "tier": "RISING"
@@ -37804,12 +38232,13 @@
         "zvjdibVKPIQELKXWsMJ5uU52uJS2": "4.17"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.900",
+        "hi": "4.623",
         "rated": 5,
         "total": 5,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -37950,9 +38379,10 @@
         "HXZMCAoGNqNIpKslLeSzY2heQT93": "3.46"
       },
       "skill": {
-        "med": 3.8,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.790",
+        "med_val": 3.79,
+        "lo": "2.460",
+        "hi": "4.509",
         "rated": 27,
         "total": 37,
         "tier": "SKILLED"
@@ -38077,9 +38507,10 @@
         "Z2pVTw46Oad1GkFupy5slODASKG3": "4.59"
       },
       "skill": {
-        "med": 4.2,
-        "lo": 2.6,
-        "hi": 5.2,
+        "med": "4.220",
+        "med_val": 4.22,
+        "lo": "2.630",
+        "hi": "5.151",
         "rated": 19,
         "total": 25,
         "tier": "ADVANCED"
@@ -38190,9 +38621,10 @@
         "L8qN5eQ2rMV8RBmCxpS2miJyLVp1": "4.62"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 4.0,
-        "hi": 4.6,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "4.010",
+        "hi": "4.623",
         "rated": 3,
         "total": 3,
         "tier": "ADVANCED"
@@ -38317,9 +38749,10 @@
         "MoESwfswXzVJbMYky0LhMzEFm0u1": "3.24"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.630",
+        "med_val": 3.63,
+        "lo": "2.460",
+        "hi": "4.509",
         "rated": 23,
         "total": 33,
         "tier": "SKILLED"
@@ -38441,9 +38874,10 @@
         "dB4HMmGlP3UfWRCNyweEuJBnXSU2": "4.01"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.025",
+        "med_val": 4.025,
+        "lo": "3.880",
+        "hi": "4.623",
         "rated": 10,
         "total": 10,
         "tier": "ADVANCED"
@@ -38603,9 +39037,10 @@
         "2dnCAJFnEiXaIC7tCKB0isyNntA2": "3.49"
       },
       "skill": {
-        "med": 3.6,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.650",
+        "med_val": 3.65,
+        "lo": "2.460",
+        "hi": "4.510",
         "rated": 35,
         "total": 45,
         "tier": "SKILLED"
@@ -38658,9 +39093,10 @@
         "cpTU9d5bC5eC68hVqL84QIOXfSf2": "4.01"
       },
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.4,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.900",
+        "hi": "4.370",
         "rated": 5,
         "total": 6,
         "tier": "ADVANCED"
@@ -38800,9 +39236,10 @@
         "S4Ct7rPb7rWSXvI266Ze5DT8WWp1": "3.52"
       },
       "skill": {
-        "med": 3.7,
-        "lo": 3.0,
-        "hi": 4.6,
+        "med": "3.679",
+        "med_val": 3.6799999999999997,
+        "lo": "3.030",
+        "hi": "4.623",
         "rated": 28,
         "total": 34,
         "tier": "SKILLED"
@@ -38853,13 +39290,13 @@
       "min_dupr": null,
       "departed": [
         {
-          "name": "Jiyeon Kim",
-          "uid": "mJePuRp0WZccZsBl10dY5u6BU9B2",
+          "name": "Suhail Arora",
+          "uid": "V29a0bJHSWX0js2OPVAqC693j3j2",
           "departed_at": "2026-08-20T20:08:13"
         },
         {
-          "name": "Suhail Arora",
-          "uid": "V29a0bJHSWX0js2OPVAqC693j3j2",
+          "name": "Jiyeon Kim",
+          "uid": "mJePuRp0WZccZsBl10dY5u6BU9B2",
           "departed_at": "2026-08-20T20:08:13"
         },
         {
@@ -38871,16 +39308,6 @@
           "name": "Aimee Zona",
           "uid": "pppEEp7o4dMxXqtZEcyIcTw3cVH2",
           "departed_at": "2026-08-20T17:04:55"
-        },
-        {
-          "name": "Todd Springer",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "departed_at": "2026-08-20T16:49:37"
-        },
-        {
-          "name": "Ty Levy",
-          "uid": "WPgEuUvYlBbA6xiZghRJzf1WKn43",
-          "departed_at": "2026-08-20T16:49:37"
         }
       ],
       "last_snap_ts": "2026-08-20T20:08:13",
@@ -38954,9 +39381,10 @@
         "dFE2wBntaQgywGvGZ4ajSQ5whFo1": "4.26"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.3,
-        "hi": 4.7,
+        "med": "3.930",
+        "med_val": 3.93,
+        "lo": "3.270",
+        "hi": "4.670",
         "rated": 19,
         "total": 24,
         "tier": "SKILLED"
@@ -39017,9 +39445,10 @@
         "UC2T8qBmNsgTj2p83FJqhQH6u5u1": "3.76"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.8,
-        "hi": 4.4,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.760",
+        "hi": "4.370",
         "rated": 7,
         "total": 9,
         "tier": "SKILLED"
@@ -39080,28 +39509,8 @@
       "min_dupr": null,
       "departed": [
         {
-          "name": "Elton Wade",
-          "uid": "Wh5AcpWb0rWufsOqHFPKfa5ovvz1",
-          "departed_at": "2026-08-21T12:13:57"
-        },
-        {
-          "name": "Rich Knarr",
-          "uid": "64L4bMziOJQkRl5xktDlRY3gwFq1",
-          "departed_at": "2026-08-21T12:13:57"
-        },
-        {
-          "name": "Caroline Moomaw",
-          "uid": "YmU2Zd0NvsRg71ykAUjKni6s8hA2",
-          "departed_at": "2026-08-21T12:13:57"
-        },
-        {
-          "name": "Melanie Weaver",
-          "uid": "GA0TtK8FFlMkfAAGDUtAZD1BYo83",
-          "departed_at": "2026-08-21T12:13:57"
-        },
-        {
-          "name": "Gary Weiner",
-          "uid": "THwsd4sALRhEgEraKq1KTUK5QAA3",
+          "name": "Rick Greene",
+          "uid": "vOv0TGI5PsNAXbhUTFGAEl3o1rL2",
           "departed_at": "2026-08-21T12:13:57"
         },
         {
@@ -39110,18 +39519,33 @@
           "departed_at": "2026-08-21T12:13:57"
         },
         {
-          "name": "Shufen Krenitsky",
-          "uid": "eB6NViU7epOKdZxTb9qXeMC9N4t2",
-          "departed_at": "2026-08-21T12:13:57"
-        },
-        {
           "name": "Lilia Dietz",
           "uid": "S4Ct7rPb7rWSXvI266Ze5DT8WWp1",
           "departed_at": "2026-08-21T12:13:57"
         },
         {
-          "name": "Rick Greene",
-          "uid": "vOv0TGI5PsNAXbhUTFGAEl3o1rL2",
+          "name": "Rich Knarr",
+          "uid": "64L4bMziOJQkRl5xktDlRY3gwFq1",
+          "departed_at": "2026-08-21T12:13:57"
+        },
+        {
+          "name": "Kristi King",
+          "uid": "iJMC40NsEShSorrd5WTnKvVQhqA3",
+          "departed_at": "2026-08-21T12:13:57"
+        },
+        {
+          "name": "Shufen Krenitsky",
+          "uid": "eB6NViU7epOKdZxTb9qXeMC9N4t2",
+          "departed_at": "2026-08-21T12:13:57"
+        },
+        {
+          "name": "Elton Wade",
+          "uid": "Wh5AcpWb0rWufsOqHFPKfa5ovvz1",
+          "departed_at": "2026-08-21T12:13:57"
+        },
+        {
+          "name": "Gary Weiner",
+          "uid": "THwsd4sALRhEgEraKq1KTUK5QAA3",
           "departed_at": "2026-08-21T12:13:57"
         },
         {
@@ -39130,8 +39554,13 @@
           "departed_at": "2026-08-21T12:13:57"
         },
         {
-          "name": "Kristi King",
-          "uid": "iJMC40NsEShSorrd5WTnKvVQhqA3",
+          "name": "Melanie Weaver",
+          "uid": "GA0TtK8FFlMkfAAGDUtAZD1BYo83",
+          "departed_at": "2026-08-21T12:13:57"
+        },
+        {
+          "name": "Caroline Moomaw",
+          "uid": "YmU2Zd0NvsRg71ykAUjKni6s8hA2",
           "departed_at": "2026-08-21T12:13:57"
         }
       ],
@@ -39208,9 +39637,10 @@
         "uGrl5TqK6mRwv11Qkg7LuX74Ekv1": "3.73"
       },
       "skill": {
-        "med": 3.9,
-        "lo": 3.1,
-        "hi": 4.5,
+        "med": "3.880",
+        "med_val": 3.88,
+        "lo": "3.060",
+        "hi": "4.510",
         "rated": 25,
         "total": 33,
         "tier": "SKILLED"
@@ -40757,6 +41187,25 @@
   ],
   "activity": [
     {
+      "ts": "2026-08-21T16:51:00",
+      "type": "join",
+      "name": "Amity Leland",
+      "title": "4.0 Open Play",
+      "start": "SAT AUG 22  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/019ffce0-36f6-7000-80da-99b054a93834",
+      "uid": "2HI9bMglkbQKqwMFSL0PBCQkRMJ2",
+      "rating": "3.61"
+    },
+    {
+      "ts": "2026-08-21T16:50:59",
+      "type": "cancel",
+      "name": "Ed Kurtz",
+      "title": "4.5/4.0 Open Play",
+      "start": "FRI AUG 21  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/019fd7e6-4836-7ee9-b916-0d5204808ad9",
+      "uid": "todJzmfCucYrvmiqt2cLhxTtSul1"
+    },
+    {
       "ts": "2026-08-21T16:35:38",
       "type": "freed",
       "name": "31/39",
@@ -40946,7 +41395,8 @@
       "title": "Performance Poker Tournament",
       "start": "SAT AUG 22  4:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fb37e-7817-7ee4-8989-991f0bf7b99f",
-      "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2"
+      "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2",
+      "rating": "4.021"
     },
     {
       "ts": "2026-08-21T14:16:50",
@@ -45039,7 +45489,8 @@
       "title": "DUPR 4.0 Open Play",
       "start": "MON AUG 17  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019fc84c-2bcb-7ee1-aaf9-8fde9710a1b6",
-      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2"
+      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2",
+      "rating": "4.197"
     },
     {
       "ts": "2026-08-15T13:59:31",
@@ -45378,7 +45829,8 @@
       "title": "DUPR 4.0 Open Play",
       "start": "MON AUG 17  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019fc84c-2bcb-7ee1-aaf9-8fde9710a1b6",
-      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2"
+      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2",
+      "rating": "4.197"
     },
     {
       "ts": "2026-08-14T13:06:06",
@@ -46101,7 +46553,8 @@
       "title": "4.0 Open Play",
       "start": "THU AUG 13  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fd7ce-f160-7ee9-b8fb-07c9a9e7acdc",
-      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1"
+      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+      "rating": "4.289"
     },
     {
       "ts": "2026-08-13T09:00:12",
@@ -47443,7 +47896,8 @@
       "title": "4.0 Open Play",
       "start": "FRI AUG 14  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fe67d-cb10-7554-bbfa-e789703f3a40",
-      "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93"
+      "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93",
+      "rating": "4.019"
     },
     {
       "ts": "2026-08-11T15:29:32",
@@ -47470,7 +47924,8 @@
       "title": "4.0 Open Play",
       "start": "FRI AUG 14  8:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fe67d-cb10-7554-bbfa-e789703f3a40",
-      "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93"
+      "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93",
+      "rating": "4.019"
     },
     {
       "ts": "2026-08-11T15:14:16",
@@ -48013,7 +48468,8 @@
       "title": "4.5/4.0 Open Play",
       "start": "MON AUG 10  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fbaf7-909f-733a-ac18-3a63a1307ece",
-      "uid": "4kpP91OXh8axPj1PPZDq8VRRkDi1"
+      "uid": "4kpP91OXh8axPj1PPZDq8VRRkDi1",
+      "rating": "3.533"
     },
     {
       "ts": "2026-08-10T17:47:45",
@@ -48591,7 +49047,8 @@
       "title": "4.5/4.0 Open Play",
       "start": "MON AUG 10  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fbaf7-909f-733a-ac18-3a63a1307ece",
-      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1"
+      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
+      "rating": "5.151"
     },
     {
       "ts": "2026-08-09T17:13:31",
@@ -51442,7 +51899,8 @@
       "title": "4.0 Open Play",
       "start": "WED AUG 5  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019f9095-f253-7ee2-a003-a83553688342",
-      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2"
+      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2",
+      "rating": "4.197"
     },
     {
       "ts": "2026-08-04T17:01:26",
@@ -52656,7 +53114,8 @@
       "title": "4.0 Open Play",
       "start": "MON AUG 3  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019f613e-102b-799f-94b9-9468a58cfa74",
-      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2"
+      "uid": "SPm7qtngHOUR0YinExG46b7qA2L2",
+      "rating": "4.197"
     },
     {
       "ts": "2026-08-03T09:37:30",
@@ -52880,7 +53339,8 @@
       "title": "4.0 Open Play",
       "start": "MON AUG 3  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019f613e-102b-799f-94b9-9468a58cfa74",
-      "uid": "UKyQZU4G4hUjT096jCENm0P2yho1"
+      "uid": "UKyQZU4G4hUjT096jCENm0P2yho1",
+      "rating": "4.509"
     },
     {
       "ts": "2026-08-02T21:16:39",
@@ -53162,7 +53622,8 @@
       "title": "4.0 Open Play",
       "start": "MON AUG 3  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019f613e-102b-799f-94b9-9468a58cfa74",
-      "uid": "GXz1kCvZ0Yb8BLMfCAJ3uKIs4CG3"
+      "uid": "GXz1kCvZ0Yb8BLMfCAJ3uKIs4CG3",
+      "rating": "4.060"
     },
     {
       "ts": "2026-08-02T13:12:48",
@@ -54495,7 +54956,8 @@
       "title": "DUPR 4.5 Open Play",
       "start": "SAT AUG 1  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019ee68b-2bd6-7000-a6bb-3c37d3f8a3a9",
-      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1"
+      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
+      "rating": "5.151"
     },
     {
       "ts": "2026-07-31T20:00:01",
@@ -55203,7 +55665,8 @@
       "title": "DUPR 4.5 Open Play",
       "start": "SAT AUG 1  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019ee68b-2bd6-7000-a6bb-3c37d3f8a3a9",
-      "uid": "SiNGALxqZvP0aO8uBeQUyr5HefH2"
+      "uid": "SiNGALxqZvP0aO8uBeQUyr5HefH2",
+      "rating": "4.670"
     },
     {
       "ts": "2026-07-30T17:23:03",
@@ -55278,7 +55741,8 @@
       "title": "4.0 Open Play",
       "start": "WED AUG 5  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019fb392-b56e-7ee4-8991-69244cfa75a6",
-      "uid": "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2"
+      "uid": "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2",
+      "rating": "5.301"
     },
     {
       "ts": "2026-07-30T15:27:29",
@@ -55830,7 +56294,8 @@
       "title": "4.0 Open Play",
       "start": "THU JUL 30  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019f613a-c3c2-799f-94ad-01d4b7ed3aa3",
-      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1"
+      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+      "rating": "4.289"
     },
     {
       "ts": "2026-07-29T22:17:05",
@@ -56227,7 +56692,8 @@
       "title": "4.0 Open Play",
       "start": "WED JUL 29  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019f61b9-2e20-799f-950a-a3d89657fd10",
-      "uid": "Rd0G1eD19TUol8c5c25Be1MVl3O2"
+      "uid": "Rd0G1eD19TUol8c5c25Be1MVl3O2",
+      "rating": "4.442"
     },
     {
       "ts": "2026-07-29T10:50:05",
@@ -56580,7 +57046,8 @@
       "title": "4.0 Open Play",
       "start": "THU JUL 30  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019f613a-c3c2-799f-94ad-01d4b7ed3aa3",
-      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1"
+      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
+      "rating": "5.151"
     },
     {
       "ts": "2026-07-28T16:15:47",
@@ -56615,7 +57082,8 @@
       "title": "4.0 Open Play",
       "start": "THU JUL 30  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019f613a-c3c2-799f-94ad-01d4b7ed3aa3",
-      "uid": "SiNGALxqZvP0aO8uBeQUyr5HefH2"
+      "uid": "SiNGALxqZvP0aO8uBeQUyr5HefH2",
+      "rating": "4.670"
     },
     {
       "ts": "2026-07-28T15:43:35",
@@ -60982,7 +61450,8 @@
       "title": "4.0 Open Play",
       "start": "FRI JUL 24  10:00 AM",
       "url": "https://ppbrva.podplay.app/community/events/019f5c5b-fc42-7667-80d7-245f2c666ead",
-      "uid": "UKyQZU4G4hUjT096jCENm0P2yho1"
+      "uid": "UKyQZU4G4hUjT096jCENm0P2yho1",
+      "rating": "4.509"
     },
     {
       "ts": "2026-07-23T21:57:16",
@@ -61960,7 +62429,8 @@
       "title": "4.0 Open Play",
       "start": "WED JUL 22  6:00 PM",
       "url": "https://ppbrva.podplay.app/community/events/019f7f8b-a0da-7224-993a-c13589fa61ac",
-      "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2"
+      "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2",
+      "rating": "4.021"
     },
     {
       "ts": "2026-07-22T17:37:49",
@@ -62999,7 +63469,7 @@
       "name": "Ed Kurtz",
       "uid": "todJzmfCucYrvmiqt2cLhxTtSul1",
       "joins": 40,
-      "cancels": 5
+      "cancels": 6
     },
     {
       "name": "Kristi King",
@@ -63872,14 +64342,14 @@
       "cancels": 0
     },
     {
-      "name": "Prasad Pamidipati",
-      "uid": "q49QhWwG95SEteP5VIdU5Nlj1U52",
+      "name": "Quinton Baylor",
+      "uid": "NjhNtr6DzXdsVdHifTsZdqIGMgt2",
       "joins": 7,
       "cancels": 0
     },
     {
-      "name": "Quinton Baylor",
-      "uid": "NjhNtr6DzXdsVdHifTsZdqIGMgt2",
+      "name": "Prasad Pamidipati",
+      "uid": "q49QhWwG95SEteP5VIdU5Nlj1U52",
       "joins": 7,
       "cancels": 0
     },
@@ -63892,6 +64362,12 @@
     {
       "name": "Bryan Still",
       "uid": "LGoWJn8jkPS6a5OeXokUEK3Hnzy2",
+      "joins": 7,
+      "cancels": 0
+    },
+    {
+      "name": "Amity Leland",
+      "uid": "2HI9bMglkbQKqwMFSL0PBCQkRMJ2",
       "joins": 7,
       "cancels": 0
     },
@@ -63950,6 +64426,12 @@
       "cancels": 0
     },
     {
+      "name": "Robert Bowman",
+      "uid": "QqsjdfHojqd2Dhhu5Po2CYVL9BG3",
+      "joins": 6,
+      "cancels": 0
+    },
+    {
       "name": "Beth Barnett",
       "uid": "oI4nPgE2GaUG15i04stivpYSPT43",
       "joins": 6,
@@ -63958,12 +64440,6 @@
     {
       "name": "Raouf Gharbo",
       "uid": "24mQ1W4jmwVKKgUegTtdBEDC04Y2",
-      "joins": 6,
-      "cancels": 0
-    },
-    {
-      "name": "Robert Bowman",
-      "uid": "QqsjdfHojqd2Dhhu5Po2CYVL9BG3",
       "joins": 6,
       "cancels": 0
     },
@@ -63992,14 +64468,14 @@
       "cancels": 0
     },
     {
-      "name": "Corinna Sherlip",
-      "uid": "tvMGz52ZX5MYLvQ1X8OhVznziwn1",
+      "name": "James Stewart",
+      "uid": "yxMtET0ycAf8cGq6INkLmUyfLQG2",
       "joins": 6,
       "cancels": 0
     },
     {
-      "name": "James Stewart",
-      "uid": "yxMtET0ycAf8cGq6INkLmUyfLQG2",
+      "name": "Corinna Sherlip",
+      "uid": "tvMGz52ZX5MYLvQ1X8OhVznziwn1",
       "joins": 6,
       "cancels": 0
     },
@@ -64010,20 +64486,14 @@
       "cancels": 0
     },
     {
-      "name": "Amity Leland",
-      "uid": "2HI9bMglkbQKqwMFSL0PBCQkRMJ2",
+      "name": "Winnie Brown",
+      "uid": "LNC3XdEylrek3GNSkxUgpadxDs02",
       "joins": 6,
       "cancels": 0
     },
     {
       "name": "Brandon Daniels",
       "uid": "A38k0saXWJfOPeEQdwrWQBzCWp02",
-      "joins": 6,
-      "cancels": 0
-    },
-    {
-      "name": "Winnie Brown",
-      "uid": "LNC3XdEylrek3GNSkxUgpadxDs02",
       "joins": 6,
       "cancels": 0
     },
@@ -64076,14 +64546,14 @@
       "cancels": 0
     },
     {
-      "name": "Howard Yu",
-      "uid": "AuKhWJ5vM4MPrHC7NAP1DeqqGQD3",
+      "name": "Thuan Trinh",
+      "uid": "jcdAdbHYRzSVmmsEDGzEkdsY0Ey1",
       "joins": 5,
       "cancels": 0
     },
     {
-      "name": "Thuan Trinh",
-      "uid": "jcdAdbHYRzSVmmsEDGzEkdsY0Ey1",
+      "name": "Howard Yu",
+      "uid": "AuKhWJ5vM4MPrHC7NAP1DeqqGQD3",
       "joins": 5,
       "cancels": 0
     },
@@ -64292,14 +64762,14 @@
       "cancels": 0
     },
     {
-      "name": "Dominic Dao",
-      "uid": "s7MNZBQ69ES2rEVQCqjmsdiLd0K2",
+      "name": "My Trinh",
+      "uid": "PVgJrzwPLDQtznMRxCbuRB5YaHz2",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "My Trinh",
-      "uid": "PVgJrzwPLDQtznMRxCbuRB5YaHz2",
+      "name": "Dominic Dao",
+      "uid": "s7MNZBQ69ES2rEVQCqjmsdiLd0K2",
       "joins": 4,
       "cancels": 0
     },
@@ -64424,8 +64894,14 @@
       "cancels": 0
     },
     {
-      "name": "Susan Martin",
-      "uid": "ERYiCykPKnauDuHfc4sEYujixRm2",
+      "name": "John Winkler",
+      "uid": "3M0Pa0Km5HamktDsHp8bjxQoG2v1",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
+      "name": "Jovin Mujar",
+      "uid": "UDdBHjZcqcXOwxcdhJh1La8gzTn1",
       "joins": 3,
       "cancels": 0
     },
@@ -64436,20 +64912,14 @@
       "cancels": 0
     },
     {
+      "name": "Susan Martin",
+      "uid": "ERYiCykPKnauDuHfc4sEYujixRm2",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
       "name": "Karl Schwehr",
       "uid": "HkpaSflarDbHqqB1rGbyJayF6Hq2",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
-      "name": "John Winkler",
-      "uid": "3M0Pa0Km5HamktDsHp8bjxQoG2v1",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
-      "name": "Jovin Mujar",
-      "uid": "UDdBHjZcqcXOwxcdhJh1La8gzTn1",
       "joins": 3,
       "cancels": 0
     },
@@ -64490,8 +64960,8 @@
       "cancels": 0
     },
     {
-      "name": "Leah Fremouw",
-      "uid": "c6Wctke8W4VUXjkylLIDqIqIDlp1",
+      "name": "Jim Opalka",
+      "uid": "Iv5I6ScjSKPOPhcMtmqdkE0oveC3",
       "joins": 3,
       "cancels": 0
     },
@@ -64502,8 +64972,8 @@
       "cancels": 0
     },
     {
-      "name": "Jim Opalka",
-      "uid": "Iv5I6ScjSKPOPhcMtmqdkE0oveC3",
+      "name": "Leah Fremouw",
+      "uid": "c6Wctke8W4VUXjkylLIDqIqIDlp1",
       "joins": 3,
       "cancels": 0
     },
@@ -64514,14 +64984,14 @@
       "cancels": 0
     },
     {
-      "name": "Kyann Jemmott",
-      "uid": "UVORTygJiVZyiyuAWZD10KJExPl1",
+      "name": "Rona Goldberg",
+      "uid": "6ggmOVRndlcGr2DE470sgRWdiMJ3",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Rona Goldberg",
-      "uid": "6ggmOVRndlcGr2DE470sgRWdiMJ3",
+      "name": "Kyann Jemmott",
+      "uid": "UVORTygJiVZyiyuAWZD10KJExPl1",
       "joins": 3,
       "cancels": 0
     },
@@ -64592,14 +65062,14 @@
       "cancels": 0
     },
     {
-      "name": "Rick Vial",
-      "uid": "p55rfilz38ZeQg8REPIHpeayM0P2",
+      "name": "Pam Andrews",
+      "uid": "aofNbsut9pQcJif2LGFig4bK32i1",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Pam Andrews",
-      "uid": "aofNbsut9pQcJif2LGFig4bK32i1",
+      "name": "Rick Vial",
+      "uid": "p55rfilz38ZeQg8REPIHpeayM0P2",
       "joins": 3,
       "cancels": 0
     },
@@ -64610,20 +65080,20 @@
       "cancels": 0
     },
     {
-      "name": "alex karram",
-      "uid": "ZAwts3ywRzVQV6jXg4GIVaFZcWr1",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
       "name": "Rishin Jeenu",
       "uid": "PhGBYELjF3fvceoqpVrq9NcEBdk1",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Jon Daly",
-      "uid": "vH38tjNRUaTRMQTDCi7VHYVz8v53",
+      "name": "alex karram",
+      "uid": "ZAwts3ywRzVQV6jXg4GIVaFZcWr1",
+      "joins": 3,
+      "cancels": 0
+    },
+    {
+      "name": "Dave Robertson",
+      "uid": "8DJWJKFVjTdMAAPgDWoFcBAuYc22",
       "joins": 3,
       "cancels": 0
     },
@@ -64634,8 +65104,8 @@
       "cancels": 0
     },
     {
-      "name": "Dave Robertson",
-      "uid": "8DJWJKFVjTdMAAPgDWoFcBAuYc22",
+      "name": "Jon Daly",
+      "uid": "vH38tjNRUaTRMQTDCi7VHYVz8v53",
       "joins": 3,
       "cancels": 0
     },
@@ -64667,8 +65137,8 @@
         "cancels": 0
       },
       {
-        "name": "Karuna Rajamanickam",
-        "uid": "Rc1nGMJT5aev3z3sDSF5hhJZqi82",
+        "name": "Peyton Monge",
+        "uid": "khLqYfz4IpgGIEzu0YaEvXLa66I2",
         "joins": 2,
         "cancels": 0
       },
@@ -64679,14 +65149,14 @@
         "cancels": 0
       },
       {
-        "name": "Peyton Monge",
-        "uid": "khLqYfz4IpgGIEzu0YaEvXLa66I2",
+        "name": "Karuna Rajamanickam",
+        "uid": "Rc1nGMJT5aev3z3sDSF5hhJZqi82",
         "joins": 2,
         "cancels": 0
       },
       {
-        "name": "Jake Spiro",
-        "uid": "0t7nCqXzQPS44sh6IFQam82UGlA2",
+        "name": "Dipen Patel",
+        "uid": "SiNGALxqZvP0aO8uBeQUyr5HefH2",
         "joins": 2,
         "cancels": 0
       },
@@ -64697,8 +65167,8 @@
         "cancels": 0
       },
       {
-        "name": "Dipen Patel",
-        "uid": "SiNGALxqZvP0aO8uBeQUyr5HefH2",
+        "name": "Jake Spiro",
+        "uid": "0t7nCqXzQPS44sh6IFQam82UGlA2",
         "joins": 2,
         "cancels": 0
       },
@@ -65440,6 +65910,69 @@
     "fTAwBjLGudWqnVJULJpMeuv88hs1": "Tyler Hyun",
     "HooiAYxIOvdnQ9NHOgoc3lZpGA93": "Gabi Cao",
     "xYLdTlM7LOhKgQ433QmHiUkqtIE2": "Ryan Truong"
+  },
+  "uid_ratings": {
+    "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2": "5.301",
+    "99lO18DA7mMpFAE7M7QWdaB10Yi1": "5.151",
+    "Gsr1Pod4eRP3uYfq33RNDOMSa103": "5.166",
+    "PRkcw0Rz5jgFRiDF94JadDLeezo1": "4.702",
+    "L8qN5eQ2rMV8RBmCxpS2miJyLVp1": "4.623",
+    "qtigWqrvjFSAdJOomyj24M8WWw63": "4.899",
+    "A85kYOgvnfhN1vD8OXnb6U1UQr72": "4.908",
+    "YIV2NgT0C2gWLdLQ7cDray6I3002": "5.148",
+    "YDHcjnodcGa2MC4MmmpbOBmKE7x1": "4.669",
+    "CRq6VeymEQcvqs7XCgAdcYMWgy92": "4.751",
+    "SiNGALxqZvP0aO8uBeQUyr5HefH2": "4.670",
+    "UKyQZU4G4hUjT096jCENm0P2yho1": "4.509",
+    "8QR0R5oKCJRAqzDxNpGaBb672243": "4.661",
+    "O38VrSrUeJPSqeOht9ieZVZ8Zlh2": "4.525",
+    "0kJRM7GJ1zLRJQCp44kLQ9870Gy1": "4.909",
+    "F36iaacixGYC8J5FwijtTYaClkd2": "4.538",
+    "5Q9ml1ltAPMlY4BQP260vxBSEM12": "4.915",
+    "LLwroVNIgJeHKsBO8KloVT4rWs12": "4.828",
+    "EqmVq28uTnQT7WDUydmq8zQcxl92": "4.860",
+    "LJD0k4wdFmg4ZTnChZMywuJElEZ2": "4.700",
+    "dCTsvDoEeDVlEyrie9z1sU9Znqm2": "4.568",
+    "Z2pVTw46Oad1GkFupy5slODASKG3": "4.590",
+    "nZLj3p2baRVuRi6p6poBU8o04HC2": "4.510",
+    "xYLdTlM7LOhKgQ433QmHiUkqtIE2": "4.605",
+    "8MpmeNpFsXacy197QvfVcVTHZZy1": "4.289",
+    "i5XcoHJVXmSeOauR4UDH3TVfogs2": "3.985",
+    "69gek0BxaJWTu8TIkaR0kwj7jhB2": "4.159",
+    "yuMuerwhopVCjMKpeBWTomFK8Nq2": "3.676",
+    "V1Qpgg3eghdKr24LjRYWo5JEHts1": "4.271",
+    "cY6K18sxECSqVGpCyosLxRMECEl2": "4.738",
+    "oEkejiDN4NQMjrYgWFFhomgQCQj2": "4.033",
+    "6N4tbZBQMVYLC4S2y8aSnweqQhV2": "3.833",
+    "6jGem3ftR5gj2KOXt0VMhjqfUw82": "4.440",
+    "fuz5rrqwf4XmbYyqoiJogzOQkUS2": "5.009",
+    "7vHzUzpKgFQtLr7TjSVwUiEA26G3": "4.462",
+    "SFzb5uQN2hbPC3GcSlD4kuXwJRo2": "4.494",
+    "LGoWJn8jkPS6a5OeXokUEK3Hnzy2": "4.372",
+    "4kpP91OXh8axPj1PPZDq8VRRkDi1": "3.533",
+    "R1QdLEqb3AYUmEvq9nUoK8yIxqo2": "4.553",
+    "IE8NdzVB7Ch7rqSjURjhn7eVpaT2": "4.272",
+    "QSR8Icy4S7Y407h54h0T28RTucA2": "4.418",
+    "zz2Qm9yZv5gaHMwe0Vz0m6Rom2i1": "4.003",
+    "xKeZEfYfjVN7nFIxqWYW0HH9BKP2": "4.087",
+    "LNC3XdEylrek3GNSkxUgpadxDs02": "4.300",
+    "Rd0G1eD19TUol8c5c25Be1MVl3O2": "4.442",
+    "NznolFUV88avPagkyL4yjB67Du42": "3.203",
+    "D7vaQFt5uqcr0NP5vc4GNrd0o592": "4.034",
+    "fTAwBjLGudWqnVJULJpMeuv88hs1": "4.644",
+    "lb87rpBUooe8iBvzf7Nci6pQPdM2": "4.459",
+    "Opzn7R4EDxXw49a57NuQUjUN7IV2": "3.867",
+    "pppEEp7o4dMxXqtZEcyIcTw3cVH2": "4.357",
+    "gC81u0FQaYgkObdzXAbrrDPKXVn2": "4.021",
+    "GtTXJ6SVgNYZYsbxbGf8g9miFoj1": "4.536",
+    "bcnOOM2r1UX3OiNRt6ZCOt7Qvso2": "4.802",
+    "CEXefslXAbZuvH4aSgW253DQDdq1": "4.545",
+    "GXz1kCvZ0Yb8BLMfCAJ3uKIs4CG3": "4.060",
+    "HooiAYxIOvdnQ9NHOgoc3lZpGA93": "4.019",
+    "SPm7qtngHOUR0YinExG46b7qA2L2": "4.197",
+    "hikO7jt0aSYu0GhPNYXO8PYrW2J2": "4.218",
+    "s7MNZBQ69ES2rEVQCqjmsdiLd0K2": "4.441",
+    "zvjdibVKPIQELKXWsMJ5uU52uJS2": "4.170"
   },
   "friend_uids": [
     "1FCgZJmnotZ8bTti1A0APKrSPTq2",
@@ -68315,7 +68848,8 @@
           "title": "4.0 Open Play",
           "start": "THU AUG 13  8:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019fd7ce-f160-7ee9-b8fb-07c9a9e7acdc",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1"
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.289"
         },
         {
           "ts": "2026-08-13T09:00:11",
@@ -68334,7 +68868,8 @@
           "title": "4.0 Open Play",
           "start": "THU JUL 30  6:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019f613a-c3c2-799f-94ad-01d4b7ed3aa3",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1"
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.289"
         },
         {
           "ts": "2026-07-27T21:07:56",
@@ -68778,7 +69313,8 @@
           "title": "4.5/4.0 Open Play",
           "start": "MON AUG 10  6:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019fbaf7-909f-733a-ac18-3a63a1307ece",
-          "uid": "4kpP91OXh8axPj1PPZDq8VRRkDi1"
+          "uid": "4kpP91OXh8axPj1PPZDq8VRRkDi1",
+          "rating": "3.533"
         }
       ],
       "offenses": []
@@ -69074,7 +69610,8 @@
           "title": "Performance Poker Tournament",
           "start": "SAT AUG 22  4:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019fb37e-7817-7ee4-8989-991f0bf7b99f",
-          "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2"
+          "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2",
+          "rating": "4.021"
         },
         {
           "ts": "2026-08-15T21:07:06",
@@ -69103,7 +69640,8 @@
           "title": "4.0 Open Play",
           "start": "WED JUL 22  6:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019f7f8b-a0da-7224-993a-c13589fa61ac",
-          "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2"
+          "uid": "gC81u0FQaYgkObdzXAbrrDPKXVn2",
+          "rating": "4.021"
         }
       ],
       "offenses": []
@@ -69321,7 +69859,8 @@
           "title": "4.0 Open Play",
           "start": "FRI AUG 14  8:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019fe67d-cb10-7554-bbfa-e789703f3a40",
-          "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93"
+          "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93",
+          "rating": "4.019"
         },
         {
           "ts": "2026-08-11T15:14:19",
@@ -69330,7 +69869,8 @@
           "title": "4.0 Open Play",
           "start": "FRI AUG 14  8:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019fe67d-cb10-7554-bbfa-e789703f3a40",
-          "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93"
+          "uid": "HooiAYxIOvdnQ9NHOgoc3lZpGA93",
+          "rating": "4.019"
         },
         {
           "ts": "2026-08-11T15:14:16",
@@ -71163,7 +71703,8 @@
           "title": "4.0 Open Play",
           "start": "WED AUG 5  6:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019fb392-b56e-7ee4-8991-69244cfa75a6",
-          "uid": "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2"
+          "uid": "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2",
+          "rating": "5.301"
         },
         {
           "ts": "2026-07-26T12:17:50",
@@ -73002,7 +73543,8 @@
           "title": "4.0 Open Play",
           "start": "MON AUG 3  10:00 AM",
           "url": "https://ppbrva.podplay.app/community/events/019f613e-102b-799f-94b9-9468a58cfa74",
-          "uid": "GXz1kCvZ0Yb8BLMfCAJ3uKIs4CG3"
+          "uid": "GXz1kCvZ0Yb8BLMfCAJ3uKIs4CG3",
+          "rating": "4.060"
         }
       ],
       "offenses": []
@@ -73330,7 +73872,8 @@
           "title": "4.0 Open Play",
           "start": "WED JUL 29  6:00 PM",
           "url": "https://ppbrva.podplay.app/community/events/019f61b9-2e20-799f-950a-a3d89657fd10",
-          "uid": "Rd0G1eD19TUol8c5c25Be1MVl3O2"
+          "uid": "Rd0G1eD19TUol8c5c25Be1MVl3O2",
+          "rating": "4.442"
         },
         {
           "ts": "2026-07-26T21:37:54",
@@ -73774,9 +74317,10 @@
         }
       ],
       "skill": {
-        "med": 3.7,
-        "lo": 2.9,
-        "hi": 4.5,
+        "med": "3.680",
+        "med_val": 3.68,
+        "lo": "2.910",
+        "hi": "4.494",
         "rated": 23,
         "total": 31,
         "tier": "SKILLED"
@@ -73901,9 +74445,10 @@
       "cloaked_members": [],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 5.0,
+        "med": "4.019",
+        "med_val": 4.019,
+        "lo": "3.550",
+        "hi": "5.000",
         "rated": 27,
         "total": 27,
         "tier": "ADVANCED"
@@ -74035,9 +74580,10 @@
       "cloaked_members": [],
       "departed": [],
       "skill": {
-        "med": 3.7,
-        "lo": 3.0,
-        "hi": 4.6,
+        "med": "3.679",
+        "med_val": 3.6799999999999997,
+        "lo": "3.030",
+        "hi": "4.623",
         "rated": 28,
         "total": 34,
         "tier": "SKILLED"
@@ -74160,9 +74706,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 2.6,
-        "hi": 5.2,
+        "med": "4.220",
+        "med_val": 4.22,
+        "lo": "2.630",
+        "hi": "5.151",
         "rated": 19,
         "total": 25,
         "tier": "ADVANCED"
@@ -74347,9 +74894,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 2.9,
-        "hi": 5.3,
+        "med": "3.840",
+        "med_val": 3.84,
+        "lo": "2.850",
+        "hi": "5.301",
         "rated": 32,
         "total": 43,
         "tier": "SKILLED"
@@ -74461,9 +75009,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "3.929",
+        "med_val": 3.9299999999999997,
+        "lo": "3.050",
+        "hi": "5.301",
         "rated": 18,
         "total": 20,
         "tier": "SKILLED"
@@ -74624,9 +75173,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 5.3,
+        "med": "3.850",
+        "med_val": 3.85,
+        "lo": "2.640",
+        "hi": "5.301",
         "rated": 31,
         "total": 40,
         "tier": "SKILLED"
@@ -74744,9 +75294,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "3.885",
+        "med_val": 3.885,
+        "lo": "2.720",
+        "hi": "5.301",
         "rated": 20,
         "total": 24,
         "tier": "SKILLED"
@@ -74921,9 +75472,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.9,
-        "hi": 4.8,
+        "med": "3.860",
+        "med_val": 3.86,
+        "lo": "2.910",
+        "hi": "4.751",
         "rated": 30,
         "total": 39,
         "tier": "SKILLED"
@@ -75039,9 +75591,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "4.170",
+        "med_val": 4.17,
+        "lo": "2.720",
+        "hi": "5.148",
         "rated": 11,
         "total": 27,
         "tier": "ADVANCED"
@@ -75105,9 +75658,10 @@
       "cloaked_members": [],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "2.720",
+        "hi": "5.300",
         "rated": 17,
         "total": 22,
         "tier": "ADVANCED"
@@ -75190,9 +75744,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 5.3,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "2.630",
+        "hi": "5.301",
         "rated": 11,
         "total": 15,
         "tier": "SKILLED"
@@ -75403,9 +75958,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "3.820",
+        "med_val": 3.8200000000000003,
+        "lo": "2.720",
+        "hi": "5.148",
         "rated": 40,
         "total": 52,
         "tier": "SKILLED"
@@ -75511,9 +76067,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.4,
-        "lo": 3.4,
-        "hi": 5.2,
+        "med": "4.260",
+        "med_val": 4.26,
+        "lo": "3.410",
+        "hi": "5.148",
         "rated": 11,
         "total": 20,
         "tier": "ADVANCED"
@@ -75591,9 +76148,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 5.3,
+        "med": "4.048",
+        "med_val": 4.0485,
+        "lo": "3.860",
+        "hi": "5.301",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -75715,9 +76273,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "3.900",
+        "med_val": 3.9,
+        "lo": "3.250",
+        "hi": "4.670",
         "rated": 19,
         "total": 24,
         "tier": "SKILLED"
@@ -75866,9 +76425,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 4.6,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "2.620",
+        "hi": "4.623",
         "rated": 27,
         "total": 40,
         "tier": "SKILLED"
@@ -76033,9 +76593,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.7,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "3.680",
+        "med_val": 3.68,
+        "lo": "2.720",
+        "hi": "5.301",
         "rated": 29,
         "total": 40,
         "tier": "SKILLED"
@@ -76152,9 +76713,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.6,
-        "lo": 2.9,
-        "hi": 4.1,
+        "med": "3.600",
+        "med_val": 3.6,
+        "lo": "2.910",
+        "hi": "4.019",
         "rated": 6,
         "total": 24,
         "tier": "SKILLED"
@@ -76347,9 +76909,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 5.2,
+        "med": "3.858",
+        "med_val": 3.8585000000000003,
+        "lo": "3.010",
+        "hi": "5.166",
         "rated": 28,
         "total": 44,
         "tier": "SKILLED"
@@ -76421,9 +76984,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.6,
+        "med": "4.240",
+        "med_val": 4.24,
+        "lo": "3.760",
+        "hi": "4.623",
         "rated": 10,
         "total": 10,
         "tier": "ADVANCED"
@@ -76548,9 +77112,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 2.7,
-        "hi": 4.7,
+        "med": "3.830",
+        "med_val": 3.83,
+        "lo": "2.720",
+        "hi": "4.670",
         "rated": 21,
         "total": 28,
         "tier": "SKILLED"
@@ -76611,9 +77176,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 4.2,
-        "hi": 5.2,
+        "med": "4.340",
+        "med_val": 4.34,
+        "lo": "4.220",
+        "hi": "5.166",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -76778,9 +77344,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.7,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.730",
+        "med_val": 3.73,
+        "lo": "2.460",
+        "hi": "4.509",
         "rated": 31,
         "total": 46,
         "tier": "SKILLED"
@@ -76856,9 +77423,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.4,
-        "lo": 3.6,
-        "hi": 4.8,
+        "med": "4.442",
+        "med_val": 4.442,
+        "lo": "3.600",
+        "hi": "4.780",
         "rated": 9,
         "total": 10,
         "tier": "ADVANCED"
@@ -76918,9 +77486,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.9,
-        "hi": 4.6,
+        "med": "4.048",
+        "med_val": 4.0485,
+        "lo": "3.900",
+        "hi": "4.623",
         "rated": 6,
         "total": 6,
         "tier": "ADVANCED"
@@ -77048,9 +77617,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.1,
-        "hi": 5.2,
+        "med": "4.130",
+        "med_val": 4.13,
+        "lo": "3.150",
+        "hi": "5.148",
         "rated": 19,
         "total": 28,
         "tier": "ADVANCED"
@@ -77113,9 +77683,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.5,
-        "lo": 4.2,
-        "hi": 4.9,
+        "med": "4.510",
+        "med_val": 4.51,
+        "lo": "4.210",
+        "hi": "4.908",
         "rated": 7,
         "total": 7,
         "tier": "EXPERT"
@@ -77219,10 +77790,11 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 3.7,
-        "hi": 5.3,
-        "rated": 14,
+        "med": "4.462",
+        "med_val": 4.462,
+        "lo": "3.680",
+        "hi": "5.301",
+        "rated": 15,
         "total": 16,
         "tier": "ADVANCED"
       }
@@ -77369,9 +77941,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.1,
-        "hi": 5.3,
+        "med": "3.889",
+        "med_val": 3.8899999999999997,
+        "lo": "3.060",
+        "hi": "5.301",
         "rated": 28,
         "total": 39,
         "tier": "SKILLED"
@@ -77533,9 +78106,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 4.7,
+        "med": "3.870",
+        "med_val": 3.87,
+        "lo": "3.010",
+        "hi": "4.670",
         "rated": 29,
         "total": 36,
         "tier": "SKILLED"
@@ -77672,12 +78246,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.010",
+        "hi": "5.301",
         "rated": 21,
         "total": 29,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -77758,12 +78333,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 5.3,
+        "med": "3.995",
+        "med_val": 3.995,
+        "lo": "3.250",
+        "hi": "5.301",
         "rated": 12,
         "total": 15,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -77893,9 +78469,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 2.6,
-        "hi": 4.6,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "2.620",
+        "hi": "4.623",
         "rated": 21,
         "total": 33,
         "tier": "ADVANCED"
@@ -77999,9 +78576,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.6,
-        "lo": 2.7,
-        "hi": 5.3,
+        "med": "3.594",
+        "med_val": 3.5949999999999998,
+        "lo": "2.690",
+        "hi": "5.301",
         "rated": 18,
         "total": 22,
         "tier": "SKILLED"
@@ -78062,9 +78640,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 4.5,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "4.019",
+        "hi": "4.510",
         "rated": 5,
         "total": 5,
         "tier": "ADVANCED"
@@ -78150,12 +78729,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.5,
-        "lo": 4.1,
-        "hi": 4.7,
+        "med": "4.470",
+        "med_val": 4.47,
+        "lo": "4.080",
+        "hi": "4.700",
         "rated": 11,
         "total": 11,
-        "tier": "EXPERT"
+        "tier": "ADVANCED"
       }
     },
     {
@@ -78254,9 +78834,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 4.7,
+        "med": "4.170",
+        "med_val": 4.17,
+        "lo": "3.760",
+        "hi": "4.700",
         "rated": 16,
         "total": 16,
         "tier": "ADVANCED"
@@ -78438,12 +79019,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "2.720",
+        "hi": "5.148",
         "rated": 35,
         "total": 40,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -78571,9 +79153,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.8,
-        "hi": 5.2,
+        "med": "4.230",
+        "med_val": 4.23,
+        "lo": "3.750",
+        "hi": "5.166",
         "rated": 24,
         "total": 24,
         "tier": "ADVANCED"
@@ -78667,9 +79250,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 4.9,
+        "med": "4.229",
+        "med_val": 4.229,
+        "lo": "3.860",
+        "hi": "4.908",
         "rated": 16,
         "total": 16,
         "tier": "ADVANCED"
@@ -78766,9 +79350,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 4.7,
+        "med": "4.050",
+        "med_val": 4.0504999999999995,
+        "lo": "3.510",
+        "hi": "4.670",
         "rated": 14,
         "total": 17,
         "tier": "ADVANCED"
@@ -78917,9 +79502,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.1,
-        "hi": 4.9,
+        "med": "4.003",
+        "med_val": 4.003,
+        "lo": "3.060",
+        "hi": "4.899",
         "rated": 27,
         "total": 34,
         "tier": "ADVANCED"
@@ -79055,9 +79641,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.0,
-        "hi": 5.2,
+        "med": "4.140",
+        "med_val": 4.140000000000001,
+        "lo": "3.050",
+        "hi": "5.148",
         "rated": 24,
         "total": 28,
         "tier": "ADVANCED"
@@ -79185,9 +79772,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.4,
-        "lo": 2.9,
-        "hi": 5.2,
+        "med": "4.441",
+        "med_val": 4.441,
+        "lo": "2.850",
+        "hi": "5.148",
         "rated": 17,
         "total": 23,
         "tier": "ADVANCED"
@@ -79276,9 +79864,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 3.3,
-        "hi": 5.3,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "3.300",
+        "hi": "5.301",
         "rated": 13,
         "total": 14,
         "tier": "ADVANCED"
@@ -79381,12 +79970,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "3.960",
+        "med_val": 3.96,
+        "lo": "3.460",
+        "hi": "5.151",
         "rated": 17,
         "total": 18,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -79546,9 +80136,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.6,
-        "hi": 4.9,
+        "med": "3.880",
+        "med_val": 3.88,
+        "lo": "2.580",
+        "hi": "4.899",
         "rated": 31,
         "total": 41,
         "tier": "SKILLED"
@@ -79625,9 +80216,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 3.6,
-        "hi": 5.3,
+        "med": "4.289",
+        "med_val": 4.289,
+        "lo": "3.650",
+        "hi": "5.301",
         "rated": 9,
         "total": 11,
         "tier": "ADVANCED"
@@ -79784,9 +80376,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.2,
-        "hi": 4.9,
+        "med": "3.910",
+        "med_val": 3.91,
+        "lo": "3.220",
+        "hi": "4.899",
         "rated": 29,
         "total": 41,
         "tier": "SKILLED"
@@ -79936,9 +80529,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 2.7,
-        "hi": 5.2,
+        "med": "4.180",
+        "med_val": 4.18,
+        "lo": "2.720",
+        "hi": "5.151",
         "rated": 27,
         "total": 30,
         "tier": "ADVANCED"
@@ -80040,9 +80634,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.2,
-        "hi": 5.3,
+        "med": "4.095",
+        "med_val": 4.095000000000001,
+        "lo": "3.160",
+        "hi": "5.301",
         "rated": 16,
         "total": 18,
         "tier": "ADVANCED"
@@ -80204,9 +80799,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.6,
-        "lo": 3.0,
-        "hi": 4.5,
+        "med": "3.560",
+        "med_val": 3.56,
+        "lo": "3.050",
+        "hi": "4.553",
         "rated": 19,
         "total": 30,
         "tier": "SKILLED"
@@ -80308,9 +80904,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "4.140",
+        "med_val": 4.14,
+        "lo": "3.540",
+        "hi": "5.151",
         "rated": 13,
         "total": 15,
         "tier": "ADVANCED"
@@ -80387,9 +80984,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 4.1,
-        "hi": 4.9,
+        "med": "4.290",
+        "med_val": 4.29,
+        "lo": "4.080",
+        "hi": "4.900",
         "rated": 11,
         "total": 11,
         "tier": "ADVANCED"
@@ -80503,9 +81101,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "3.833",
+        "med_val": 3.833,
+        "lo": "3.250",
+        "hi": "4.670",
         "rated": 17,
         "total": 21,
         "tier": "SKILLED"
@@ -80618,9 +81217,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.145",
+        "med_val": 4.145,
+        "lo": "3.790",
+        "hi": "5.301",
         "rated": 18,
         "total": 18,
         "tier": "ADVANCED"
@@ -80724,9 +81324,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "4.215",
+        "med_val": 4.215,
+        "lo": "3.540",
+        "hi": "5.151",
         "rated": 16,
         "total": 17,
         "tier": "ADVANCED"
@@ -80814,9 +81415,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.9,
-        "hi": 5.2,
+        "med": "4.245",
+        "med_val": 4.2455,
+        "lo": "3.900",
+        "hi": "5.151",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -80977,9 +81579,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 2.6,
-        "hi": 4.5,
+        "med": "3.764",
+        "med_val": 3.7649999999999997,
+        "lo": "2.620",
+        "hi": "4.520",
         "rated": 30,
         "total": 43,
         "tier": "SKILLED"
@@ -81061,9 +81664,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.7,
-        "hi": 4.6,
+        "med": "4.130",
+        "med_val": 4.1305,
+        "lo": "3.720",
+        "hi": "4.623",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -81245,9 +81849,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 5.3,
+        "med": "4.020",
+        "med_val": 4.02,
+        "lo": "3.180",
+        "hi": "5.301",
         "rated": 22,
         "total": 27,
         "tier": "ADVANCED"
@@ -81386,9 +81991,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.1,
-        "hi": 4.8,
+        "med": "3.860",
+        "med_val": 3.86,
+        "lo": "3.070",
+        "hi": "4.751",
         "rated": 23,
         "total": 30,
         "tier": "SKILLED"
@@ -81515,9 +82121,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.1,
-        "hi": 4.9,
+        "med": "4.040",
+        "med_val": 4.04,
+        "lo": "3.060",
+        "hi": "4.908",
         "rated": 19,
         "total": 25,
         "tier": "ADVANCED"
@@ -81608,9 +82215,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "3.895",
+        "med_val": 3.895,
+        "lo": "3.010",
+        "hi": "5.301",
         "rated": 14,
         "total": 15,
         "tier": "SKILLED"
@@ -81749,9 +82357,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.0,
-        "hi": 5.3,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.010",
+        "hi": "5.301",
         "rated": 19,
         "total": 29,
         "tier": "ADVANCED"
@@ -81840,9 +82449,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.4,
-        "hi": 5.3,
+        "med": "4.010",
+        "med_val": 4.01,
+        "lo": "3.360",
+        "hi": "5.301",
         "rated": 13,
         "total": 15,
         "tier": "ADVANCED"
@@ -81901,9 +82511,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.1,
-        "hi": 4.4,
+        "med": "4.033",
+        "med_val": 4.0335,
+        "lo": "3.533",
+        "hi": "4.260",
         "rated": 4,
         "total": 6,
         "tier": "ADVANCED"
@@ -82008,9 +82619,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.125",
+        "med_val": 4.125,
+        "lo": "3.790",
+        "hi": "5.301",
         "rated": 12,
         "total": 17,
         "tier": "ADVANCED"
@@ -82173,9 +82785,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.7,
-        "lo": 3.1,
-        "hi": 5.0,
+        "med": "3.710",
+        "med_val": 3.71,
+        "lo": "3.060",
+        "hi": "5.009",
         "rated": 33,
         "total": 44,
         "tier": "SKILLED"
@@ -82264,9 +82877,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.6,
-        "hi": 4.7,
+        "med": "4.226",
+        "med_val": 4.226,
+        "lo": "3.640",
+        "hi": "4.670",
         "rated": 10,
         "total": 14,
         "tier": "ADVANCED"
@@ -82424,12 +83038,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.1,
-        "hi": 4.5,
+        "med": "3.970",
+        "med_val": 3.97,
+        "lo": "3.290",
+        "hi": "4.510",
         "rated": 29,
         "total": 35,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -82558,9 +83173,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 5.2,
+        "med": "4.271",
+        "med_val": 4.271,
+        "lo": "3.760",
+        "hi": "5.166",
         "rated": 23,
         "total": 23,
         "tier": "ADVANCED"
@@ -82693,9 +83309,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 5.3,
+        "med": "4.260",
+        "med_val": 4.26,
+        "lo": "3.760",
+        "hi": "5.301",
         "rated": 23,
         "total": 23,
         "tier": "ADVANCED"
@@ -82767,9 +83384,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.5,
-        "lo": 3.1,
-        "hi": 4.9,
+        "med": "3.533",
+        "med_val": 3.533,
+        "lo": "3.290",
+        "hi": "4.915",
         "rated": 5,
         "total": 12,
         "tier": "SKILLED"
@@ -82899,9 +83517,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.5,
-        "hi": 4.6,
+        "med": "4.060",
+        "med_val": 4.06,
+        "lo": "3.550",
+        "hi": "4.620",
         "rated": 23,
         "total": 29,
         "tier": "ADVANCED"
@@ -83064,9 +83683,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.3,
-        "hi": 5.2,
+        "med": "4.033",
+        "med_val": 4.0335,
+        "lo": "3.300",
+        "hi": "5.151",
         "rated": 28,
         "total": 31,
         "tier": "ADVANCED"
@@ -83148,9 +83768,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.7,
-        "lo": 2.7,
-        "hi": 4.5,
+        "med": "3.663",
+        "med_val": 3.6630000000000003,
+        "lo": "2.720",
+        "hi": "4.470",
         "rated": 10,
         "total": 15,
         "tier": "SKILLED"
@@ -83273,9 +83894,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.1,
-        "hi": 4.7,
+        "med": "4.019",
+        "med_val": 4.019,
+        "lo": "3.450",
+        "hi": "4.670",
         "rated": 19,
         "total": 22,
         "tier": "ADVANCED"
@@ -83361,9 +83983,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.3,
-        "lo": 3.8,
-        "hi": 4.8,
+        "med": "4.345",
+        "med_val": 4.345,
+        "lo": "3.760",
+        "hi": "4.751",
         "rated": 12,
         "total": 12,
         "tier": "ADVANCED"
@@ -83473,9 +84096,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.4,
-        "hi": 4.7,
+        "med": "4.210",
+        "med_val": 4.21,
+        "lo": "3.370",
+        "hi": "4.670",
         "rated": 14,
         "total": 18,
         "tier": "ADVANCED"
@@ -83646,9 +84270,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 4.7,
+        "med": "4.033",
+        "med_val": 4.0335,
+        "lo": "3.160",
+        "hi": "4.670",
         "rated": 26,
         "total": 32,
         "tier": "ADVANCED"
@@ -83776,9 +84401,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.790",
+        "med_val": 3.79,
+        "lo": "3.160",
+        "hi": "4.510",
         "rated": 17,
         "total": 24,
         "tier": "SKILLED"
@@ -83885,9 +84511,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.8,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.831",
+        "med_val": 3.8315,
+        "lo": "3.220",
+        "hi": "4.510",
         "rated": 10,
         "total": 19,
         "tier": "SKILLED"
@@ -83956,9 +84583,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 4.2,
-        "hi": 4.7,
+        "med": "4.218",
+        "med_val": 4.218,
+        "lo": "4.170",
+        "hi": "4.702",
         "rated": 9,
         "total": 9,
         "tier": "ADVANCED"
@@ -84070,12 +84698,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.3,
-        "hi": 5.3,
+        "med": "3.970",
+        "med_val": 3.97,
+        "lo": "3.300",
+        "hi": "5.301",
         "rated": 17,
         "total": 21,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -84179,9 +84808,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 2.5,
-        "hi": 4.5,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "2.460",
+        "hi": "4.510",
         "rated": 13,
         "total": 19,
         "tier": "SKILLED"
@@ -84293,12 +84923,13 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.0,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "3.990",
+        "med_val": 3.99,
+        "lo": "3.160",
+        "hi": "4.510",
         "rated": 16,
         "total": 21,
-        "tier": "ADVANCED"
+        "tier": "SKILLED"
       }
     },
     {
@@ -84406,9 +85037,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.1,
-        "lo": 3.5,
-        "hi": 5.2,
+        "med": "4.087",
+        "med_val": 4.087,
+        "lo": "3.450",
+        "hi": "5.151",
         "rated": 14,
         "total": 19,
         "tier": "ADVANCED"
@@ -84565,9 +85197,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 3.9,
-        "lo": 3.4,
-        "hi": 5.3,
+        "med": "3.940",
+        "med_val": 3.94,
+        "lo": "3.350",
+        "hi": "5.301",
         "rated": 25,
         "total": 33,
         "tier": "SKILLED"
@@ -84639,9 +85272,10 @@
       ],
       "departed": [],
       "skill": {
-        "med": 4.2,
-        "lo": 3.2,
-        "hi": 4.5,
+        "med": "4.210",
+        "med_val": 4.21,
+        "lo": "3.250",
+        "hi": "4.510",
         "rated": 8,
         "total": 11,
         "tier": "ADVANCED"
@@ -84698,7 +85332,7 @@
       "url": "https://ppbrva.podplay.app/community/events/019fd7e6-4836-7ee9-b916-0d5204808ad9",
       "status": "upcoming",
       "cloaked_count": 2,
-      "total_count": 7,
+      "total_count": 6,
       "capacity": 12,
       "members": [
         {
