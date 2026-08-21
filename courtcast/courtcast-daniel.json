@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-08-21T12:51:21",
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 1p",
+ "updated": "2026-08-21T13:06:30",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: 3p today",
  "wet_note": null,
- "reason": "back 3p",
+ "reason": "today grades B, best 3p-6p",
  "ranked": [
   {
    "day": "Mon",
@@ -33,13 +33,13 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 78,
-   "dew": 63,
+   "temp": 79,
+   "dew": 62,
    "wind": 4
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 3.5,
+   "obs_18h_mm": 3.3,
    "radar_24h_mm": 8.7
   },
   "days": [
@@ -48,16 +48,11 @@
     "label": "Today",
     "sub": "8/21",
     "grade": "B",
-    "score": 0.886,
+    "score": 0.867,
     "best": "3p-6p",
     "why": "humidity (dew 67\u00b0) 7p-8p",
     "wet_mm": 0.0,
     "cells": {
-     "12": {
-      "t": 78,
-      "v": 2,
-      "c": ""
-     },
      "15": {
       "t": 81,
       "v": 2,
@@ -94,10 +89,10 @@
     "date": "2026-08-22",
     "label": "Sat",
     "sub": "8/22",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "D",
+    "score": 0.45,
     "best": "",
-    "why": "humidity (dew 72\u00b0) 10a-8p \u00b7 drying 9a",
+    "why": "rain 5p-7p \u00b7 humidity (dew 72\u00b0) 10a-4p, 8p \u00b7 drying 9a",
     "wet_mm": 0.1,
     "cells": {
      "9": {
@@ -141,19 +136,19 @@
       "c": "dew"
      },
      "17": {
-      "t": 83,
-      "v": 1,
-      "c": "dew"
+      "t": 82,
+      "v": 0,
+      "c": "rain"
      },
      "18": {
-      "t": 82,
-      "v": 1,
-      "c": "dew"
+      "t": 81,
+      "v": 0,
+      "c": "rain"
      },
      "19": {
-      "t": 81,
-      "v": 1,
-      "c": "dew"
+      "t": 79,
+      "v": 0,
+      "c": "rain"
      },
      "20": {
       "t": 76,
