@@ -2,19 +2,15 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Pouncey Tract Park",
- "updated": "2026-08-21T15:22:57",
+ "updated": "2026-08-21T16:08:27",
  "playable_now": true,
  "kicker": "PLAY NOW",
- "headline": "until 8p",
+ "headline": "until 7p",
  "wet_note": null,
- "reason": "then humidity (dew 67\u00b0)",
+ "reason": "then humidity (dew 66\u00b0)",
  "ranked": [
   {
    "day": "Mon",
-   "grade": "A"
-  },
-  {
-   "day": "Today",
    "grade": "A"
   },
   {
@@ -23,7 +19,11 @@
   },
   {
    "day": "Sun",
-   "grade": "A"
+   "grade": "B"
+  },
+  {
+   "day": "Today",
+   "grade": "B"
   },
   {
    "day": "Wed",
@@ -33,8 +33,8 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 83,
-   "dew": 63,
+   "temp": 84,
+   "dew": 64,
    "wind": 5
   },
   "court": {
@@ -47,17 +47,12 @@
     "date": "2026-08-21",
     "label": "Today",
     "sub": "8/21",
-    "grade": "A",
-    "score": 0.933,
-    "best": "3p-7p",
-    "why": "humidity (dew 67\u00b0) 8p",
+    "grade": "B",
+    "score": 0.84,
+    "best": "4p-6p",
+    "why": "humidity (dew 67\u00b0) 7p-8p",
     "wet_mm": 0.0,
     "cells": {
-     "15": {
-      "t": 83,
-      "v": 2,
-      "c": ""
-     },
      "16": {
       "t": 84,
       "v": 2,
@@ -69,14 +64,14 @@
       "c": ""
      },
      "18": {
-      "t": 82,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 81,
-      "v": 2,
-      "c": ""
+      "t": 79,
+      "v": 1,
+      "c": "dew"
      },
      "20": {
       "t": 76,
@@ -106,12 +101,12 @@
       "c": "dew"
      },
      "11": {
-      "t": 76,
+      "t": 73,
       "v": 1,
       "c": "dew"
      },
      "12": {
-      "t": 77,
+      "t": 75,
       "v": 1,
       "c": "dew"
      },
@@ -161,41 +156,41 @@
     "date": "2026-08-23",
     "label": "Sun",
     "sub": "8/23",
-    "grade": "A",
-    "score": 0.9,
-    "best": "9a-1p",
-    "why": "humidity (dew 66\u00b0) 2p-3p \u00b7 heat 4p",
+    "grade": "B",
+    "score": 0.867,
+    "best": "11a-2p",
+    "why": "humidity (dew 68\u00b0) 9a-10a, 3p \u00b7 heat 4p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 72,
-      "v": 2,
-      "c": ""
+      "t": 73,
+      "v": 1,
+      "c": "dew"
      },
      "10": {
-      "t": 76,
-      "v": 2,
-      "c": ""
+      "t": 77,
+      "v": 1,
+      "c": "dew"
      },
      "11": {
-      "t": 80,
+      "t": 77,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 83,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "13": {
-      "t": 84,
+      "t": 82,
       "v": 2,
       "c": ""
      },
      "14": {
-      "t": 84,
-      "v": 1,
-      "c": "dew"
+      "t": 85,
+      "v": 2,
+      "c": ""
      },
      "15": {
       "t": 85,
