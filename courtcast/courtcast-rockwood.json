@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-21T22:27:44",
+ "updated": "2026-08-21T22:58:03",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 9a",
@@ -34,13 +34,13 @@
   "source": "best",
   "now": {
    "temp": 74,
-   "dew": 70,
-   "wind": 4
+   "dew": 69,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.1,
    "obs_18h_mm": 0.2,
-   "radar_24h_mm": 1.2
+   "radar_24h_mm": 1.4
   },
   "days": [
    {
@@ -50,8 +50,8 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 72\u00b0) 9a-8p",
-    "wet_mm": 0.0,
+    "why": "humidity (dew 72\u00b0) 9a-10a, 12p-8p \u00b7 drying 11a",
+    "wet_mm": 0.3,
     "cells": {
      "9": {
       "t": 72,
@@ -66,7 +66,7 @@
      "11": {
       "t": 78,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "12": {
       "t": 79,

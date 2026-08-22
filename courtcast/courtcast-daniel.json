@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-08-21T22:42:55",
+ "updated": "2026-08-21T22:58:04",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 9a",
@@ -27,31 +27,31 @@
   },
   {
    "day": "Sat",
-   "grade": "C"
+   "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
    "temp": 73,
-   "dew": 70,
-   "wind": 3
+   "dew": 69,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0.2,
-   "radar_24h_mm": 1.7
+   "radar_24h_mm": 2.0
   },
   "days": [
    {
     "date": "2026-08-22",
     "label": "Sat",
     "sub": "8/22",
-    "grade": "C",
-    "score": 0.55,
+    "grade": "D",
+    "score": 0.4,
     "best": "",
-    "why": "rain 5p \u00b7 humidity (dew 73\u00b0) 9a-4p, 6p-8p",
-    "wet_mm": 0.5,
+    "why": "wet court? 12p-1p \u00b7 rain 2p, 5p \u00b7 humidity (dew 73\u00b0) 9a-11a, 4p",
+    "wet_mm": 1.2,
     "cells": {
      "9": {
       "t": 72,
@@ -70,23 +70,23 @@
      },
      "12": {
       "t": 79,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "13": {
       "t": 81,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "14": {
-      "t": 82,
-      "v": 1,
-      "c": "dew"
+      "t": 81,
+      "v": 0,
+      "c": "rain"
      },
      "15": {
-      "t": 83,
+      "t": 78,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "16": {
       "t": 82,
