@@ -2,11 +2,11 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Pouncey Tract Park",
- "updated": "2026-08-22T09:04:30",
+ "updated": "2026-08-22T10:05:12",
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 9p (drying)",
- "wet_note": "court wet? \u2014 0.1mm, drying ~10a",
+ "headline": "not clean \u2014 until 9p (humidity (dew 69\u00b0))",
+ "wet_note": null,
  "reason": "clean window Sun 12p",
  "ranked": [
   {
@@ -33,12 +33,12 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 70,
+   "temp": 72,
    "dew": 69,
    "wind": 3
   },
   "court": {
-   "wet_mm": 0.1,
+   "wet_mm": 0.0,
    "obs_18h_mm": 2.5,
    "radar_24h_mm": 4.1
   },
@@ -50,14 +50,9 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 71\u00b0) 10a-8p \u00b7 drying 9a",
-    "wet_mm": 0.1,
+    "why": "humidity (dew 71\u00b0) 10a-8p",
+    "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 70,
-      "v": 1,
-      "c": "dry"
-     },
      "10": {
       "t": 72,
       "v": 1,
