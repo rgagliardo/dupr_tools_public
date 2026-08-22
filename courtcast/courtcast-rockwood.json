@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-08-21T23:43:33",
+ "updated": "2026-08-21T23:58:43",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Sat 9a",
+ "headline": "Next OK window: Sat 2p",
  "wet_note": "court wet? \u2014 0.5mm, drying Sat",
- "reason": "humidity (dew 70\u00b0) \u2014 clean window Sun 12p",
+ "reason": "humidity (dew 71\u00b0) \u2014 clean window Sun 12p",
  "ranked": [
   {
    "day": "Mon",
@@ -22,12 +22,12 @@
    "grade": "B"
   },
   {
-   "day": "Sat",
+   "day": "Wed",
    "grade": "C"
   },
   {
-   "day": "Wed",
-   "grade": "C"
+   "day": "Sat",
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -40,43 +40,43 @@
   "court": {
    "wet_mm": 0.5,
    "obs_18h_mm": 0.4,
-   "radar_24h_mm": 2.2
+   "radar_24h_mm": 2.3
   },
   "days": [
    {
     "date": "2026-08-22",
     "label": "Sat",
     "sub": "8/22",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "D",
+    "score": 0.35,
     "best": "",
-    "why": "humidity (dew 72\u00b0) 9a-10a, 12p-8p \u00b7 drying 11a",
-    "wet_mm": 0.3,
+    "why": "wet court? 9a-1p \u00b7 humidity (dew 72\u00b0) 2p-8p",
+    "wet_mm": 1.3,
     "cells": {
      "9": {
       "t": 72,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "10": {
       "t": 75,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "11": {
       "t": 78,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "wet"
      },
      "12": {
       "t": 79,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "13": {
       "t": 81,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "14": {
       "t": 81,
@@ -296,9 +296,9 @@
     "label": "Wed",
     "sub": "8/26",
     "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "humidity (dew 72\u00b0) 3p-8p",
+    "score": 0.667,
+    "best": "8p",
+    "why": "humidity (dew 72\u00b0) 3p-7p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -327,9 +327,9 @@
       "c": "dew"
      },
      "20": {
-      "t": 79,
-      "v": 1,
-      "c": "dew"
+      "t": 80,
+      "v": 2,
+      "c": ""
      }
     }
    }
