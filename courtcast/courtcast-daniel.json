@@ -2,31 +2,31 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-08-21T22:12:37",
+ "updated": "2026-08-21T22:27:45",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 9a",
  "wet_note": null,
- "reason": "humidity (dew 70\u00b0) \u2014 clean window Sun 12p",
+ "reason": "humidity (dew 70\u00b0) \u2014 clean window Sun 1p",
  "ranked": [
   {
    "day": "Mon",
    "grade": "A"
   },
   {
-   "day": "Tue",
-   "grade": "B"
-  },
-  {
    "day": "Sun",
    "grade": "B"
   },
   {
-   "day": "Sat",
-   "grade": "C"
+   "day": "Tue",
+   "grade": "B"
   },
   {
    "day": "Wed",
+   "grade": "C"
+  },
+  {
+   "day": "Sat",
    "grade": "C"
   }
  ],
@@ -35,12 +35,12 @@
   "now": {
    "temp": 73,
    "dew": 70,
-   "wind": 4
+   "wind": 3
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0.2,
-   "radar_24h_mm": 1.2
+   "radar_24h_mm": 1.4
   },
   "days": [
    {
@@ -48,10 +48,10 @@
     "label": "Sat",
     "sub": "8/22",
     "grade": "C",
-    "score": 0.6,
+    "score": 0.55,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 9a-8p",
-    "wet_mm": 0.0,
+    "why": "rain 5p \u00b7 humidity (dew 73\u00b0) 9a-4p, 6p-8p",
+    "wet_mm": 0.5,
     "cells": {
      "9": {
       "t": 72,
@@ -79,32 +79,32 @@
       "c": "dew"
      },
      "14": {
-      "t": 76,
-      "v": 1,
-      "c": "dew"
-     },
-     "15": {
-      "t": 77,
-      "v": 1,
-      "c": "dew"
-     },
-     "16": {
-      "t": 80,
-      "v": 1,
-      "c": "dew"
-     },
-     "17": {
-      "t": 81,
-      "v": 1,
-      "c": "dew"
-     },
-     "18": {
       "t": 82,
       "v": 1,
       "c": "dew"
      },
+     "15": {
+      "t": 83,
+      "v": 1,
+      "c": "dew"
+     },
+     "16": {
+      "t": 82,
+      "v": 1,
+      "c": "dew"
+     },
+     "17": {
+      "t": 82,
+      "v": 0,
+      "c": "rain"
+     },
+     "18": {
+      "t": 78,
+      "v": 1,
+      "c": "dew"
+     },
      "19": {
-      "t": 80,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
@@ -120,9 +120,9 @@
     "label": "Sun",
     "sub": "8/23",
     "grade": "B",
-    "score": 0.8,
-    "best": "12p-2p",
-    "why": "humidity (dew 69\u00b0) 9a-11a, 3p-4p \u00b7 heat 5p",
+    "score": 0.867,
+    "best": "1p-8p",
+    "why": "humidity (dew 69\u00b0) 9a-12p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
@@ -141,34 +141,34 @@
       "c": "dew"
      },
      "12": {
+      "t": 83,
+      "v": 1,
+      "c": "dew"
+     },
+     "13": {
       "t": 81,
       "v": 2,
       "c": ""
      },
-     "13": {
-      "t": 83,
-      "v": 2,
-      "c": ""
-     },
      "14": {
-      "t": 85,
+      "t": 82,
       "v": 2,
       "c": ""
      },
      "15": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 2,
+      "c": ""
      },
      "16": {
-      "t": 87,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 2,
+      "c": ""
      },
      "17": {
-      "t": 85,
-      "v": 1,
-      "c": "hot"
+      "t": 83,
+      "v": 2,
+      "c": ""
      },
      "18": {
       "t": 83,
