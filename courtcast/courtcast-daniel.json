@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-04T17:46:15",
+ "updated": "2026-09-04T18:01:26",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Sat 9a",
+ "headline": "Next OK window: 8p today",
  "wet_note": null,
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 1p \u00b7 today: raining now, then thunder",
+ "reason": "humidity (dew 73\u00b0) \u2014 clean window Sun 1p",
  "ranked": [
   {
    "day": "Mon",
@@ -33,14 +33,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 95,
+   "temp": 91,
    "dew": 72,
-   "wind": 7
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0,
-   "radar_24h_mm": 0.9
+   "obs_18h_mm": 0.2,
+   "radar_24h_mm": 3.5
   },
   "days": [
    {
@@ -48,20 +48,15 @@
     "label": "Today",
     "sub": "9/4",
     "grade": "F",
-    "score": 0.0,
+    "score": 0.2,
     "best": "",
-    "why": "thunder 6p-7p \u00b7 raining now 5p \u00b7 wet court? 8p",
-    "wet_mm": 0.4,
+    "why": "raining now 6p \u00b7 thunder 7p \u00b7 humidity (dew 73\u00b0) 8p",
+    "wet_mm": 0.0,
     "cells": {
-     "17": {
-      "t": 95,
-      "v": 0,
-      "c": "rnow"
-     },
      "18": {
       "t": 91,
       "v": 0,
-      "c": "thn"
+      "c": "rnow"
      },
      "19": {
       "t": 88,
@@ -70,8 +65,8 @@
      },
      "20": {
       "t": 84,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      }
     }
    },
