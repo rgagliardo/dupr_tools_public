@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-04T18:45:32",
+ "updated": "2026-09-04T19:00:43",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 8p today",
@@ -33,35 +33,30 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 91,
+   "temp": 88,
    "dew": 72,
-   "wind": 6
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0.2,
-   "radar_24h_mm": 10.6
+   "obs_18h_mm": 8.7,
+   "radar_24h_mm": 10.9
   },
   "days": [
    {
     "date": "2026-09-04",
     "label": "Today",
     "sub": "9/4",
-    "grade": "F",
-    "score": 0.2,
+    "grade": "D",
+    "score": 0.3,
     "best": "",
-    "why": "raining now 6p \u00b7 rain 7p \u00b7 humidity (dew 73\u00b0) 8p",
+    "why": "raining now 7p \u00b7 humidity (dew 73\u00b0) 8p",
     "wet_mm": 0.0,
     "cells": {
-     "18": {
-      "t": 91,
-      "v": 0,
-      "c": "rnow"
-     },
      "19": {
       "t": 88,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "20": {
       "t": 84,
