@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-09-05T12:46:41",
+ "updated": "2026-09-05T13:01:50",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 1p today",
- "wet_note": null,
- "reason": "drying \u2014 clean window Sun 2p",
+ "headline": "Next OK window: 8p today",
+ "wet_note": "court wet? \u2014 0.2mm, drying ~2p",
+ "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 2p",
  "ranked": [
   {
    "day": "Mon",
@@ -34,13 +34,13 @@
   "source": "best",
   "now": {
    "temp": 86,
-   "dew": 72,
-   "wind": 6
+   "dew": 70,
+   "wind": 9
   },
   "court": {
-   "wet_mm": 0.0,
-   "obs_18h_mm": 10.4,
-   "radar_24h_mm": 12.6
+   "wet_mm": 0.2,
+   "obs_18h_mm": 1.7,
+   "radar_24h_mm": 14.3
   },
   "days": [
    {
@@ -48,20 +48,15 @@
     "label": "Today",
     "sub": "9/5",
     "grade": "F",
-    "score": 0.133,
+    "score": 0.075,
     "best": "",
-    "why": "rain 2p-7p \u00b7 raining now 12p \u00b7 drying 1p",
+    "why": "rain 2p-7p \u00b7 raining now 1p \u00b7 humidity (dew 72\u00b0) 8p",
     "wet_mm": 0.2,
     "cells": {
-     "12": {
+     "13": {
       "t": 86,
       "v": 0,
       "c": "rnow"
-     },
-     "13": {
-      "t": 86,
-      "v": 1,
-      "c": "dry"
      },
      "14": {
       "t": 88,
