@@ -2,23 +2,23 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-09-04T21:46:25",
+ "updated": "2026-09-04T22:01:42",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 9a",
- "wet_note": "court wet? \u2014 0.7mm, drying Sat",
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 9a",
+ "wet_note": "court wet? \u2014 0.5mm, drying Sat",
+ "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 11a",
  "ranked": [
-  {
-   "day": "Sun",
-   "grade": "A"
-  },
   {
    "day": "Mon",
    "grade": "A"
   },
   {
    "day": "Tue",
+   "grade": "A"
+  },
+  {
+   "day": "Sun",
    "grade": "A"
   },
   {
@@ -33,12 +33,12 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 82,
+   "temp": 80,
    "dew": 72,
-   "wind": 3
+   "wind": 2
   },
   "court": {
-   "wet_mm": 0.7,
+   "wet_mm": 0.5,
    "obs_18h_mm": 10.9,
    "radar_24h_mm": 10.6
   },
@@ -120,63 +120,63 @@
     "label": "Sun",
     "sub": "9/6",
     "grade": "A",
-    "score": 1.0,
-    "best": "9a-8p",
-    "why": "",
+    "score": 0.933,
+    "best": "11a-8p",
+    "why": "humidity (dew 69\u00b0) 9a-10a",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 74,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "dew"
      },
      "10": {
-      "t": 73,
-      "v": 2,
-      "c": ""
+      "t": 74,
+      "v": 1,
+      "c": "dew"
      },
      "11": {
-      "t": 74,
-      "v": 2,
-      "c": ""
-     },
-     "12": {
-      "t": 75,
-      "v": 2,
-      "c": ""
-     },
-     "13": {
-      "t": 78,
-      "v": 2,
-      "c": ""
-     },
-     "14": {
-      "t": 82,
-      "v": 2,
-      "c": ""
-     },
-     "15": {
-      "t": 84,
-      "v": 2,
-      "c": ""
-     },
-     "16": {
-      "t": 84,
-      "v": 2,
-      "c": ""
-     },
-     "17": {
       "t": 79,
       "v": 2,
       "c": ""
      },
+     "12": {
+      "t": 80,
+      "v": 2,
+      "c": ""
+     },
+     "13": {
+      "t": 79,
+      "v": 2,
+      "c": ""
+     },
+     "14": {
+      "t": 81,
+      "v": 2,
+      "c": ""
+     },
+     "15": {
+      "t": 79,
+      "v": 2,
+      "c": ""
+     },
+     "16": {
+      "t": 77,
+      "v": 2,
+      "c": ""
+     },
+     "17": {
+      "t": 80,
+      "v": 2,
+      "c": ""
+     },
      "18": {
-      "t": 75,
+      "t": 79,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 75,
+      "t": 77,
       "v": 2,
       "c": ""
      },
