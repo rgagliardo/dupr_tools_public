@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-09-05T16:48:54",
+ "updated": "2026-09-05T17:04:12",
  "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next OK window: 5p today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~5p",
- "reason": "humidity (dew 70\u00b0) \u2014 clean window Sun 3p",
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 9p (humidity (dew 71\u00b0))",
+ "wet_note": null,
+ "reason": "clean window Sun 2p",
  "ranked": [
   {
    "day": "Mon",
@@ -26,55 +26,50 @@
    "grade": "C"
   },
   {
-   "day": "Thu",
+   "day": "Today",
    "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 85,
-   "dew": 73,
+   "temp": 80,
+   "dew": 71,
    "wind": 6
   },
   "court": {
-   "wet_mm": 0.9,
+   "wet_mm": 0.0,
    "obs_18h_mm": 27.7,
-   "radar_24h_mm": 17.1
+   "radar_24h_mm": 17.0
   },
   "days": [
    {
     "date": "2026-09-05",
     "label": "Today",
     "sub": "9/5",
-    "grade": "D",
-    "score": 0.48,
+    "grade": "C",
+    "score": 0.6,
     "best": "",
-    "why": "rain 4p \u00b7 humidity (dew 72\u00b0) 5p-8p",
-    "wet_mm": 0.9,
+    "why": "humidity (dew 72\u00b0) 5p-8p",
+    "wet_mm": 0.0,
     "cells": {
-     "16": {
-      "t": 85,
-      "v": 0,
-      "c": "rain"
-     },
      "17": {
-      "t": 81,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "18": {
-      "t": 81,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "19": {
-      "t": 79,
+      "t": 78,
       "v": 1,
       "c": "dew"
      },
      "20": {
-      "t": 79,
+      "t": 77,
       "v": 1,
       "c": "dew"
      }
@@ -85,9 +80,9 @@
     "label": "Sun",
     "sub": "9/6",
     "grade": "B",
-    "score": 0.8,
-    "best": "3p-8p",
-    "why": "humidity (dew 68\u00b0) 9a-2p",
+    "score": 0.833,
+    "best": "2p-8p",
+    "why": "humidity (dew 67\u00b0) 9a-1p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
@@ -117,11 +112,11 @@
      },
      "14": {
       "t": 81,
-      "v": 1,
-      "c": "dew"
+      "v": 2,
+      "c": ""
      },
      "15": {
-      "t": 78,
+      "t": 82,
       "v": 2,
       "c": ""
      },
