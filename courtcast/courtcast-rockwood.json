@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Rockwood Park",
- "updated": "2026-09-04T19:46:06",
+ "updated": "2026-09-04T20:01:17",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 9a",
- "wet_note": null,
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 9a \u00b7 today: raining now, then wet court?",
+ "wet_note": "court wet? \u2014 0.7mm, drying Sat",
+ "reason": "humidity (dew 72\u00b0) \u2014 clean window Sun 9a \u00b7 today: raining now",
  "ranked": [
   {
    "day": "Sun",
@@ -33,14 +33,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 87,
-   "dew": 72,
-   "wind": 5
+   "temp": 84,
+   "dew": 73,
+   "wind": 3
   },
   "court": {
-   "wet_mm": 0.0,
+   "wet_mm": 0.7,
    "obs_18h_mm": 10.7,
-   "radar_24h_mm": 9.8
+   "radar_24h_mm": 10.3
   },
   "days": [
    {
@@ -50,18 +50,13 @@
     "grade": "F",
     "score": 0.0,
     "best": "",
-    "why": "raining now 7p \u00b7 wet court? 8p",
+    "why": "raining now 8p",
     "wet_mm": 0.7,
     "cells": {
-     "19": {
-      "t": 87,
-      "v": 0,
-      "c": "rnow"
-     },
      "20": {
       "t": 84,
       "v": 0,
-      "c": "wet"
+      "c": "rnow"
      }
     }
    },
