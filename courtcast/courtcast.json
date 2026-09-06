@@ -2,19 +2,23 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-05T23:36:11",
+ "updated": "2026-09-06T00:06:25",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Sun 9a",
+ "headline": "Next window: 9a today",
  "wet_note": null,
- "reason": "Sun grades A, best 9a-8p",
+ "reason": "today grades A, best 9a-8p",
  "ranked": [
   {
-   "day": "Sun",
+   "day": "Today",
    "grade": "A"
   },
   {
    "day": "Mon",
+   "grade": "A"
+  },
+  {
+   "day": "Fri",
    "grade": "A"
   },
   {
@@ -24,17 +28,13 @@
   {
    "day": "Wed",
    "grade": "C"
-  },
-  {
-   "day": "Thu",
-   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 73,
-   "dew": 71,
+   "temp": 72,
+   "dew": 70,
    "wind": 2
   },
   "court": {
@@ -45,7 +45,7 @@
   "days": [
    {
     "date": "2026-09-06",
-    "label": "Sun",
+    "label": "Today",
     "sub": "9/6",
     "grade": "A",
     "score": 1.0,
@@ -302,14 +302,71 @@
       "c": "dew"
      }
     }
+   },
+   {
+    "date": "2026-09-11",
+    "label": "Fri",
+    "sub": "9/11",
+    "grade": "A",
+    "score": 1.0,
+    "best": "3p-8p",
+    "why": "",
+    "wet_mm": 0.0,
+    "cells": {
+     "9": {
+      "t": 70,
+      "v": 2,
+      "c": ""
+     },
+     "10": {
+      "t": 73,
+      "v": 2,
+      "c": ""
+     },
+     "11": {
+      "t": 77,
+      "v": 2,
+      "c": ""
+     },
+     "12": {
+      "t": 79,
+      "v": 2,
+      "c": ""
+     },
+     "15": {
+      "t": 83,
+      "v": 2,
+      "c": ""
+     },
+     "16": {
+      "t": 84,
+      "v": 2,
+      "c": ""
+     },
+     "17": {
+      "t": 83,
+      "v": 2,
+      "c": ""
+     },
+     "18": {
+      "t": 81,
+      "v": 2,
+      "c": ""
+     },
+     "19": {
+      "t": 79,
+      "v": 2,
+      "c": ""
+     },
+     "20": {
+      "t": 76,
+      "v": 2,
+      "c": ""
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-09-11",
-    "d": "Fr",
-    "g": "A"
-   },
    {
     "date": "2026-09-12",
     "d": "Sa",
@@ -354,6 +411,11 @@
     "date": "2026-09-20",
     "d": "Su",
     "g": "B"
+   },
+   {
+    "date": "2026-09-21",
+    "d": "Mo",
+    "g": "C"
    }
   ]
  },
