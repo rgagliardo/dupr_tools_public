@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-05T21:34:22",
+ "updated": "2026-09-05T22:04:36",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Sun 9a",
+ "headline": "Next window: Sun 9a",
  "wet_note": null,
- "reason": "humidity (dew 66\u00b0) \u2014 clean window Sun 10a",
+ "reason": "Sun grades A, best 12p-8p",
  "ranked": [
   {
    "day": "Mon",
@@ -33,9 +33,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 75,
-   "dew": 72,
-   "wind": 3
+   "temp": 73,
+   "dew": 71,
+   "wind": 2
   },
   "court": {
    "wet_mm": 0.0,
@@ -48,25 +48,25 @@
     "label": "Sun",
     "sub": "9/6",
     "grade": "A",
-    "score": 0.967,
-    "best": "10a-8p",
-    "why": "humidity (dew 66\u00b0) 9a",
+    "score": 0.933,
+    "best": "12p-8p",
+    "why": "humidity (dew 66\u00b0) 10a-11a",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 72,
+      "t": 70,
+      "v": 2,
+      "c": ""
+     },
+     "10": {
+      "t": 75,
       "v": 1,
       "c": "dew"
      },
-     "10": {
-      "t": 74,
-      "v": 2,
-      "c": ""
-     },
      "11": {
-      "t": 75,
-      "v": 2,
-      "c": ""
+      "t": 78,
+      "v": 1,
+      "c": "dew"
      },
      "12": {
       "t": 79,
@@ -136,7 +136,7 @@
       "c": ""
      },
      "11": {
-      "t": 77,
+      "t": 78,
       "v": 2,
       "c": ""
      },
