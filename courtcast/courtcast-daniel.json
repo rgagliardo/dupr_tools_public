@@ -2,23 +2,23 @@
  "version": 1,
  "generator": "wx_play v4.5",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-06T09:10:57",
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 9p (humidity (dew 68\u00b0))",
+ "updated": "2026-09-06T09:56:53",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 11a",
  "wet_note": null,
- "reason": "clean window 11a today",
+ "reason": "then humidity (dew 68\u00b0) \u00b7 back 12p",
  "ranked": [
   {
    "day": "Fri",
    "grade": "A"
   },
   {
-   "day": "Mon",
+   "day": "Today",
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Mon",
    "grade": "A"
   },
   {
@@ -33,13 +33,13 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 72,
-   "dew": 68,
-   "wind": 5
+   "temp": 74,
+   "dew": 63,
+   "wind": 7
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0.5,
+   "obs_18h_mm": 0.2,
    "radar_24h_mm": 8.2
   },
   "days": [
@@ -48,25 +48,25 @@
     "label": "Today",
     "sub": "9/6",
     "grade": "A",
-    "score": 0.933,
-    "best": "11a-8p",
-    "why": "humidity (dew 68\u00b0) 9a-10a",
+    "score": 0.967,
+    "best": "12p-8p",
+    "why": "humidity (dew 68\u00b0) 11a",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 72,
-      "v": 1,
-      "c": "dew"
-     },
-     "10": {
       "t": 74,
-      "v": 1,
-      "c": "dew"
-     },
-     "11": {
-      "t": 79,
       "v": 2,
       "c": ""
+     },
+     "10": {
+      "t": 76,
+      "v": 2,
+      "c": ""
+     },
+     "11": {
+      "t": 76,
+      "v": 1,
+      "c": "dew"
      },
      "12": {
       "t": 81,
@@ -122,18 +122,18 @@
     "grade": "A",
     "score": 0.96,
     "best": "3p-8p",
-    "why": "humidity (dew 65\u00b0) 9a",
+    "why": "humidity (dew 65\u00b0) 10a",
     "wet_mm": 0.0,
     "cells": {
      "9": {
-      "t": 70,
-      "v": 1,
-      "c": "dew"
-     },
-     "10": {
-      "t": 77,
+      "t": 73,
       "v": 2,
       "c": ""
+     },
+     "10": {
+      "t": 74,
+      "v": 1,
+      "c": "dew"
      },
      "11": {
       "t": 79,
