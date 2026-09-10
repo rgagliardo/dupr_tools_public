@@ -2,19 +2,15 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-10T18:14:47",
+ "updated": "2026-09-10T18:29:56",
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 71\u00b0))",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 7p today",
  "wet_note": null,
- "reason": "clean window Tue 3p",
+ "reason": "humidity (dew 71\u00b0) \u2014 clean window Tue 3p",
  "ranked": [
   {
    "day": "Tue",
-   "grade": "C"
-  },
-  {
-   "day": "Today",
    "grade": "C"
   },
   {
@@ -28,6 +24,10 @@
   {
    "day": "Sat",
    "grade": "D"
+  },
+  {
+   "day": "Sun",
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -40,23 +40,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0
+   "radar_24h_mm": 1.3
   },
   "days": [
    {
     "date": "2026-09-10",
     "label": "Today",
     "sub": "9/10",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "D",
+    "score": 0.45,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 6p-9p",
+    "why": "raining now 6p \u00b7 humidity (dew 73\u00b0) 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "18": {
       "t": 88,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "rnow"
      },
      "19": {
       "t": 82,
