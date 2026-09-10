@@ -2,16 +2,16 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-10T19:30:40",
+ "updated": "2026-09-10T19:45:49",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 8p today",
+ "headline": "Next OK window: 9p today",
  "wet_note": null,
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Tue 3p",
+ "reason": "drying \u2014 clean window Tue 3p",
  "ranked": [
   {
    "day": "Tue",
-   "grade": "B"
+   "grade": "A"
   },
   {
    "day": "Fri",
@@ -39,19 +39,19 @@
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0,
-   "radar_24h_mm": 1.8
+   "obs_18h_mm": 0.2,
+   "radar_24h_mm": 4.2
   },
   "days": [
    {
     "date": "2026-09-10",
     "label": "Today",
     "sub": "9/10",
-    "grade": "D",
-    "score": 0.4,
+    "grade": "F",
+    "score": 0.2,
     "best": "",
-    "why": "raining now 7p \u00b7 humidity (dew 72\u00b0) 8p-9p",
-    "wet_mm": 0.0,
+    "why": "raining now 7p \u00b7 wet court? 8p \u00b7 drying 9p",
+    "wet_mm": 0.4,
     "cells": {
      "19": {
       "t": 84,
@@ -60,13 +60,13 @@
      },
      "20": {
       "t": 80,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 79,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      }
     }
    },
@@ -149,7 +149,7 @@
     "grade": "D",
     "score": 0.471,
     "best": "",
-    "why": "rain 7p-9p \u00b7 humidity (dew 74\u00b0) 8a-6p",
+    "why": "rain 7p-9p \u00b7 humidity (dew 74\u00b0) 8a-5p \u00b7 drying 6p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -183,29 +183,29 @@
       "c": "dew"
      },
      "14": {
-      "t": 89,
+      "t": 87,
       "v": 1,
       "c": "dew"
      },
      "15": {
-      "t": 93,
+      "t": 88,
       "v": 1,
       "c": "dew"
      },
      "16": {
-      "t": 93,
-      "v": 1,
-      "c": "dew"
-     },
-     "17": {
       "t": 89,
       "v": 1,
       "c": "dew"
      },
-     "18": {
-      "t": 75,
+     "17": {
+      "t": 88,
       "v": 1,
       "c": "dew"
+     },
+     "18": {
+      "t": 82,
+      "v": 1,
+      "c": "dry"
      },
      "19": {
       "t": 82,
@@ -231,8 +231,8 @@
     "grade": "C",
     "score": 0.514,
     "best": "",
-    "why": "wet court? 8a-9a \u00b7 humidity (dew 77\u00b0) 11a-9p \u00b7 drying 10a",
-    "wet_mm": 1.0,
+    "why": "wet court? 8a-9a \u00b7 humidity (dew 77\u00b0) 10a-9p",
+    "wet_mm": 0.9,
     "cells": {
      "8": {
       "t": 72,
@@ -247,7 +247,7 @@
      "10": {
       "t": 78,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "11": {
       "t": 81,
@@ -382,41 +382,41 @@
     "date": "2026-09-15",
     "label": "Tue",
     "sub": "9/15",
-    "grade": "B",
-    "score": 0.829,
-    "best": "3p-5p",
-    "why": "humidity (dew 68\u00b0) 6p-8p",
+    "grade": "A",
+    "score": 1.0,
+    "best": "3p-9p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 82,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "16": {
-      "t": 83,
+      "t": 81,
       "v": 2,
       "c": ""
      },
      "17": {
-      "t": 83,
+      "t": 82,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 82,
-      "v": 1,
-      "c": "dew"
+      "t": 80,
+      "v": 2,
+      "c": ""
      },
      "19": {
-      "t": 79,
-      "v": 1,
-      "c": "dew"
+      "t": 78,
+      "v": 2,
+      "c": ""
      },
      "20": {
       "t": 76,
-      "v": 1,
-      "c": "dew"
+      "v": 2,
+      "c": ""
      },
      "21": {
       "t": 74,
@@ -435,22 +435,22 @@
    {
     "date": "2026-09-17",
     "d": "Th",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-09-18",
     "d": "Fr",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-09-19",
     "d": "Sa",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-09-20",
     "d": "Su",
-    "g": "A"
+    "g": "F"
    },
    {
     "date": "2026-09-21",
@@ -460,7 +460,7 @@
    {
     "date": "2026-09-22",
     "d": "Tu",
-    "g": "F"
+    "g": "A"
    },
    {
     "date": "2026-09-23",
