@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-10T19:15:32",
+ "updated": "2026-09-10T19:30:41",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 8p today",
+ "headline": "Next OK window: Fri 8a",
  "wet_note": null,
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Tue 3p",
+ "reason": "humidity (dew 71\u00b0) \u2014 clean window Tue 3p \u00b7 today: raining now, then wet court?",
  "ranked": [
   {
    "day": "Tue",
@@ -40,18 +40,18 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.4
+   "radar_24h_mm": 4.3
   },
   "days": [
    {
     "date": "2026-09-10",
     "label": "Today",
     "sub": "9/10",
-    "grade": "D",
-    "score": 0.4,
+    "grade": "F",
+    "score": 0.0,
     "best": "",
-    "why": "raining now 7p \u00b7 humidity (dew 72\u00b0) 8p-9p",
-    "wet_mm": 0.0,
+    "why": "wet court? 8p-9p \u00b7 raining now 7p",
+    "wet_mm": 0.6,
     "cells": {
      "19": {
       "t": 84,
@@ -60,13 +60,13 @@
      },
      "20": {
       "t": 80,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 79,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      }
     }
    },
