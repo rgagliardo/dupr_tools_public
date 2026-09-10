@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Rockwood Park",
- "updated": "2026-09-10T19:00:18",
+ "updated": "2026-09-10T19:15:30",
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 8p (humidity (dew 71\u00b0))",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 9p today",
  "wet_note": null,
- "reason": "no clean hours in 5 days",
+ "reason": "humidity (dew 73\u00b0) \u2014 no clean hours in 5 days",
  "ranked": [
   {
    "day": "Mon",
@@ -33,38 +33,38 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 85,
-   "dew": 71,
-   "wind": 6
+   "temp": 84,
+   "dew": 72,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.1
+   "radar_24h_mm": 0.4
   },
   "days": [
    {
     "date": "2026-09-10",
     "label": "Today",
     "sub": "9/10",
-    "grade": "D",
-    "score": 0.4,
+    "grade": "F",
+    "score": 0.2,
     "best": "",
-    "why": "wet court? 8p \u00b7 humidity (dew 73\u00b0) 7p, 9p",
+    "why": "raining now 7p \u00b7 wet court? 8p \u00b7 humidity (dew 73\u00b0) 9p",
     "wet_mm": 0.6,
     "cells": {
      "19": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
+      "t": 84,
+      "v": 0,
+      "c": "rnow"
      },
      "20": {
-      "t": 80,
+      "t": 79,
       "v": 0,
       "c": "wet"
      },
      "21": {
-      "t": 77,
+      "t": 78,
       "v": 1,
       "c": "dew"
      }
@@ -295,12 +295,12 @@
       "c": "dew"
      },
      "20": {
-      "t": 80,
+      "t": 79,
       "v": 1,
       "c": "dew"
      },
      "21": {
-      "t": 78,
+      "t": 77,
       "v": 1,
       "c": "dew"
      }
@@ -317,17 +317,17 @@
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 71,
+      "t": 70,
       "v": 1,
       "c": "dew"
      },
      "9": {
-      "t": 74,
+      "t": 73,
       "v": 1,
       "c": "dew"
      },
      "10": {
-      "t": 78,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
@@ -342,32 +342,32 @@
       "c": "dew"
      },
      "15": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
-     },
-     "16": {
       "t": 86,
       "v": 1,
       "c": "dew"
      },
+     "16": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
      "17": {
-      "t": 85,
+      "t": 86,
       "v": 1,
       "c": "dew"
      },
      "18": {
-      "t": 82,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
      "19": {
-      "t": 79,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "20": {
-      "t": 76,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
@@ -389,37 +389,37 @@
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
-     },
-     "16": {
-      "t": 86,
-      "v": 1,
-      "c": "dew"
-     },
-     "17": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
-     },
-     "18": {
       "t": 83,
       "v": 1,
       "c": "dew"
      },
+     "16": {
+      "t": 84,
+      "v": 1,
+      "c": "dew"
+     },
+     "17": {
+      "t": 84,
+      "v": 1,
+      "c": "dew"
+     },
+     "18": {
+      "t": 82,
+      "v": 1,
+      "c": "dew"
+     },
      "19": {
-      "t": 80,
+      "t": 79,
       "v": 1,
       "c": "dew"
      },
      "20": {
-      "t": 77,
+      "t": 76,
       "v": 1,
       "c": "dew"
      },
      "21": {
-      "t": 74,
+      "t": 73,
       "v": 1,
       "c": "dew"
      }

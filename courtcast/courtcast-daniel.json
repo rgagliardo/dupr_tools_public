@@ -2,20 +2,16 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-10T19:00:21",
+ "updated": "2026-09-10T19:15:31",
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 72\u00b0))",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 8p today",
  "wet_note": null,
- "reason": "clean window Tue 3p",
+ "reason": "humidity (dew 72\u00b0) \u2014 clean window Tue 3p",
  "ranked": [
   {
    "day": "Tue",
    "grade": "B"
-  },
-  {
-   "day": "Today",
-   "grade": "C"
   },
   {
    "day": "Fri",
@@ -28,14 +24,18 @@
   {
    "day": "Sun",
    "grade": "C"
+  },
+  {
+   "day": "Sat",
+   "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 86,
+   "temp": 84,
    "dew": 72,
-   "wind": 6
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -47,24 +47,24 @@
     "date": "2026-09-10",
     "label": "Today",
     "sub": "9/10",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "D",
+    "score": 0.4,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 7p-9p",
+    "why": "raining now 7p \u00b7 humidity (dew 72\u00b0) 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "19": {
-      "t": 86,
-      "v": 1,
-      "c": "dew"
+      "t": 84,
+      "v": 0,
+      "c": "rnow"
      },
      "20": {
-      "t": 81,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "21": {
-      "t": 78,
+      "t": 79,
       "v": 1,
       "c": "dew"
      }
@@ -295,12 +295,12 @@
       "c": "dew"
      },
      "20": {
-      "t": 80,
+      "t": 79,
       "v": 1,
       "c": "dew"
      },
      "21": {
-      "t": 78,
+      "t": 77,
       "v": 1,
       "c": "dew"
      }
@@ -317,27 +317,27 @@
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 71,
+      "t": 70,
       "v": 1,
       "c": "dew"
      },
      "9": {
-      "t": 74,
+      "t": 73,
       "v": 1,
       "c": "dew"
      },
      "10": {
-      "t": 78,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
      "11": {
-      "t": 81,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "12": {
-      "t": 83,
+      "t": 82,
       "v": 1,
       "c": "dew"
      },
@@ -352,27 +352,27 @@
       "c": "dew"
      },
      "17": {
-      "t": 85,
+      "t": 86,
       "v": 1,
       "c": "dew"
      },
      "18": {
-      "t": 82,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
      "19": {
-      "t": 78,
+      "t": 81,
       "v": 1,
       "c": "dew"
      },
      "20": {
-      "t": 75,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
      "21": {
-      "t": 73,
+      "t": 74,
       "v": 1,
       "c": "dew"
      }
@@ -404,17 +404,17 @@
       "c": ""
      },
      "18": {
-      "t": 83,
+      "t": 82,
       "v": 1,
       "c": "dew"
      },
      "19": {
-      "t": 80,
+      "t": 79,
       "v": 1,
       "c": "dew"
      },
      "20": {
-      "t": 77,
+      "t": 76,
       "v": 1,
       "c": "dew"
      },
