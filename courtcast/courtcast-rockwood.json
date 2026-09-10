@@ -2,17 +2,13 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Rockwood Park",
- "updated": "2026-09-10T18:14:48",
+ "updated": "2026-09-10T18:45:06",
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 71\u00b0))",
+ "headline": "not clean \u2014 until 8p (humidity (dew 71\u00b0))",
  "wet_note": null,
  "reason": "no clean hours in 5 days",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "C"
-  },
   {
    "day": "Mon",
    "grade": "C"
@@ -28,6 +24,10 @@
   {
    "day": "Sun",
    "grade": "C"
+  },
+  {
+   "day": "Sat",
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -47,11 +47,11 @@
     "date": "2026-09-10",
     "label": "Today",
     "sub": "9/10",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "D",
+    "score": 0.45,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 6p-9p",
-    "wet_mm": 0.0,
+    "why": "wet court? 8p \u00b7 humidity (dew 73\u00b0) 6p-7p, 9p",
+    "wet_mm": 0.7,
     "cells": {
      "18": {
       "t": 89,
@@ -65,8 +65,8 @@
      },
      "20": {
       "t": 80,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 77,
