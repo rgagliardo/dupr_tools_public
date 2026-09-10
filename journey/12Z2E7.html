@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Felipe Nascimento</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+  --green:#2ecc71; --adj:#ff3db4;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+  --green:#1a9e56; --adj:#c2007a;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+/* ---- Change story ribbon ---- */
+.story-sum { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+.sp { font-size:11px; font-weight:700; padding:3px 8px; border-radius:12px;
+  border:1px solid var(--line-soft); color:var(--txt-2); white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.sp-match { border-color:var(--cyan); color:var(--cyan); }
+.sp-adj { border-color:var(--adj); color:var(--adj); }
+.sp-late { border-color:var(--partner-pur); color:var(--partner-pur); }
+.sp-reset { border-color:var(--adj); color:var(--adj); font-weight:800; }
+.story { position:relative; margin:0 0 8px; padding-left:6px; }
+.sr { display:grid; grid-template-columns:52px 20px 1fr; align-items:start;
+  gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }
+.sr:last-child { border-bottom:0; }
+.sr-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); padding-top:2px; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums; }
+.sr-ico { font-size:13px; line-height:1.2; text-align:center; color:var(--txt-mid); }
+.sr-adj .sr-ico { color:var(--adj); }
+.sr-reset .sr-ico { color:var(--adj); }
+.sr-late .sr-ico, .sr-latemore .sr-ico { color:var(--partner-pur); }
+.sr-peak .sr-ico, .sr-now .sr-ico { color:var(--cyan); }
+.sr-nowstale .sr-ico { color:var(--txt-dim); opacity:.6; }
+.sr-latemore .sr-title { font-weight:500; color:var(--txt-mid); }
+.sr-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.sr-title { font-size:13px; font-weight:600; color:var(--txt); }
+.sr-sub { font-size:11px; color:var(--txt-mid); margin-top:2px; line-height:1.4; }
+.sr-delta { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums;
+  margin-left:auto; flex:0 0 auto; }
+.sr-delta.pos { color:var(--green); } .sr-delta.neg { color:var(--red); }
+.sr-reset { background:color-mix(in srgb, var(--adj) 8%, transparent); }
+</style></head><body>
+<div class="stamp">MOCKUP v6.3 — 2026-08-27</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Felipe Nascimento — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-w">🔥 2W</span><span class="pname">Felipe Nascimento</span>
+    <span class="scores">3.925</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,22.6 7.2,23.8 13.4,27.0 19.6,22.6 25.8,11.8 32.1,7.5 44.5,5.5 50.7,3.0 56.9,5.8 63.1,11.3 69.3,10.9 75.5,17.5 81.7,17.4 87.9,15.9 94.2,16.3 106.6,18.9 119.0,26.8"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">4.020</div><div class="k">Tracked 6/23</div></div>
+  
+  <div class="chip"><div class="v">4.464</div><div class="k">Peak 10/24</div></div>
+  <div class="chip"><div class="v">3.925</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v neg">-0.139</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.044</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: tracked 4.020, peak 4.464, now 3.925 (-0.095 net)"><line class="grid" x1="41.2" y1="14" x2="41.2" y2="186"/><line class="grid" x1="91.8" y1="14" x2="91.8" y2="186"/><text class="tick" x="91.8" y="203" text-anchor="middle">2024</text><line class="grid" x1="141.9" y1="14" x2="141.9" y2="186"/><line class="grid" x1="192.5" y1="14" x2="192.5" y2="186"/><text class="tick" x="192.5" y="203" text-anchor="middle">2025</text><line class="grid" x1="242.3" y1="14" x2="242.3" y2="186"/><line class="grid" x1="293.0" y1="14" x2="293.0" y2="186"/><text class="tick" x="293.0" y="203" text-anchor="middle">2026</text><line class="grid" x1="342.8" y1="14" x2="342.8" y2="186"/><line class="grid" x1="34" y1="179.3" x2="356" y2="179.3"/><text class="tick" x="29" y="182.3" text-anchor="end">3.75</text><line class="grid" x1="34" y1="128.5" x2="356" y2="128.5"/><text class="tick" x="29" y="131.5" text-anchor="end">4.00</text><line class="grid" x1="34" y1="77.7" x2="356" y2="77.7"/><text class="tick" x="29" y="80.7" text-anchor="end">4.25</text><line class="grid" x1="34" y1="27.0" x2="356" y2="27.0"/><text class="tick" x="29" y="30.0" text-anchor="end">4.50</text><path class="seg-norm" d="M34.0 124.4 L81.1 130.0 L106.4 144.6 L120.4 124.3 L164.2 74.6 L169.7 55.1 L173.5 34.3 L180.1 47.0 L198.6 72.6 L199.7 70.8 L200.5 100.9 L202.4 100.7 L204.4 93.5 L206.3 95.4 L209.9 107.4 L354.1 127.3 L356.0 143.7"/><line class="mk-whisk" x1="356.0" y1="143.7" x2="356.0" y2="165.7"/><circle class="mk mk-start" cx="34.0" cy="124.4" r="4"/><circle class="mk mk-peak" cx="173.5" cy="34.3" r="5"/><circle class="mk mk-low" cx="356.0" cy="165.7" r="4"/><circle class="mk mk-now" cx="356.0" cy="143.7" r="4"/><rect class="mk mk-adm" x="196.5" y="61.1" width="6.4" height="6.4" transform="rotate(45 199.7 64.3)"/><text class="anno anno-gold" x="173.5" y="25.3" text-anchor="middle">peak 4.464</text><text class="anno" x="324.1" y="181.7" text-anchor="middle">low 3.817</text><text class="anno" x="38.0" y="116.4">tracked 4.020</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span>◆ DUPR adjustment</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (65 changes since 2023-06-05). Solid = a match moved it; dashed pink = DUPR moved it with no match; ◆ marks a DUPR adjustment (no match played). 27-38 record over 65 doubles matches, 3.2-year span. The series opens at DUPR's 2023-06-05 history cutover — Felipe was already rated 4.020 then, so the start is "tracked since", not a placement; earlier matches predate the ledger.</p>
+
+
+<h2>Change story</h2>
+<div class="story-sum"><span class="sp sp-match">65 matches</span><span class="sp sp-adj">1 DUPR adjustment · +0.041</span><span class="sp sp-late">11 late recalcs</span><span class="sp sp-reset">⟳ reset · doubles → 4.385</span></div>
+<p class="note" style="margin:0 0 10px">The events that shaped this rating, in order.
+Ordinary match results are summarized in the sections below — this ribbon spotlights what
+you can't see on a scorecard.</p>
+<div class="story"><div class="sr sr-late"><div class="sr-date">5/20/23</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Loss vs Ryan & Thomas — recalculated late</span><span class="sr-delta neg">-0.072</span></div><div class="sr-sub">played 5/20/23, processed 95 days later · 9-11, 9-11</div></div></div><div class="sr sr-late"><div class="sr-date">5/20/23</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Loss vs Derek & Chris — recalculated late</span><span class="sr-delta neg">-0.060</span></div><div class="sr-sub">played 5/20/23, processed 187 days later · 2-15</div></div></div><div class="sr sr-latemore"><div class="sr-date">5/20/23</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">9 more late recalcs — under 0.03, not itemized</span></div><div class="sr-sub">matches DUPR reprocessed late that barely moved the rating</div></div></div><div class="sr sr-start"><div class="sr-date">6/5/23</div><div class="sr-ico" aria-hidden="true">◎</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Tracked at 4.020</span></div><div class="sr-sub">history cutover — earlier matches predate the ledger</div></div></div><div class="sr sr-reset"><div class="sr-date">10/11/24</div><div class="sr-ico" aria-hidden="true">⟳</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Rating reset — doubles</span></div><div class="sr-sub">held at 4.385 across 9 matches (DUPR reset floor — inferred)</div></div></div><div class="sr sr-peak"><div class="sr-date">10/24/24</div><div class="sr-ico" aria-hidden="true">▲</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Peak 4.464</span></div><div class="sr-sub">highest rating reached</div></div></div><div class="sr sr-adj"><div class="sr-date">1/27/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.041</span></div><div class="sr-sub">DUPR changed this rating with no match played</div></div></div><div class="sr sr-now"><div class="sr-date">8/18/26</div><div class="sr-ico" aria-hidden="true">●</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Now 3.925</span></div><div class="sr-sub">current rating</div></div></div></div>
+<p class="note">◆ DUPR changing the rating with no match played, ⟳ resets, and ↩ matches DUPR
+processed long after they were played — all DUPR's doing, not the player's. We don't label
+an adjustment as system-wide, individual, or paid: only DUPR knows which, and the raw record
+just says a change happened with no match. Resets are inferred from a rating held flat across
+many matches (DUPR doesn't flag them).</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:100%"></div></div><div class="half r"></div></div><span class="val neg">-0.139</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:31%"></div></div></div><span class="val pos">+0.044</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:69%"></div></div><div class="half r"></div></div><span class="val neg">-0.095</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +1.416 / losses -1.407.</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">4/14/24</span>Ladybug Classic - Presented by Coca-Cola Consolidated Mixed Doubles…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.449)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">3.920</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.311</span></span> <span class="match-vs">vs</span> <span>Lynze Kapp <span class="match-rating">4.063</span></span> &amp; <span>Brian Singleton <span class="match-rating">4.127</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.04</summary><div class="tag-math">Felipe 3.920 + Estefania 4.311 = <b>8.232</b><br>Lynze 4.063 + Brian 4.127 = <b>8.191</b><br>→ their side stronger by 0.041 combined DUPR (pre-match)</div></details> <span class="mx">PD +13</span> <span class="mx">match #5</span></div></div><div class="event-pill"><span class="event-pill-date">9/20/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 2 - Thu Sep 19…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-1, 11-9, 11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.245)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.020</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.216</span></span> <span class="match-vs">vs</span> <span>Tavon Woodson <span class="match-rating">4.526</span></span> &amp; <span>Kyle Javorich <span class="match-rating">3.790</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.08</summary><div class="tag-math">Felipe 4.020 + Sriram 4.216 = <b>8.237</b><br>Tavon 4.526 + Kyle 3.790 = <b>8.317</b><br>→ opponents stronger by 0.080 combined DUPR (pre-match)</div></details> <span class="mx">PD +15</span> <span class="mx">match #6</span></div></div><div class="event-pill"><span class="event-pill-date">8/11/26</span>Late Summer Leagues 2026 - Men’s Tuesday Nights</div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.115)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.019</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.516</span></span> <span class="match-vs">vs</span> <span>David Parsons <span class="match-rating">4.315</span></span> &amp; <span>Pete Cloutier <span class="match-rating">4.214</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.01</summary><div class="tag-math">Felipe 4.019 + Sriram 4.516 = <b>8.537</b><br>David 4.315 + Pete 4.214 = <b>8.530</b><br>→ their side stronger by 0.007 combined DUPR (pre-match)</div></details> <span class="mx">PD +5</span> <span class="mx">match #42</span></div></div><div class="event-pill"><span class="event-pill-date">4/14/24</span>Ladybug Classic - Presented by Coca-Cola Consolidated Mixed Doubles…</div><div class="match-group loss"><div class="match-row"><span class="match-score">9-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.259)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.450</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.356</span></span> <span class="match-vs">vs</span> <span>Kathleen Chavez <span class="match-rating">4.106</span></span> &amp; <span>Arnold Mendoza <span class="match-rating">3.999</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.70</summary><div class="tag-math">Felipe 4.450 + Estefania 4.356 = <b>8.807</b><br>Kathleen 4.106 + Arnold 3.999 = <b>8.106</b><br>→ their side stronger by 0.701 combined DUPR (pre-match)</div></details> <span class="mx">PD -6</span> <span class="mx">match #3</span></div></div><div class="event-pill"><span class="event-pill-date">8/11/26</span>Late Summer Leagues 2026 - Men’s Tuesday Nights</div><div class="match-group loss"><div class="match-row"><span class="match-score">7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.174)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.103</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.583</span></span> <span class="match-vs">vs</span> <span>Pete Cloutier <span class="match-rating">4.211</span></span> &amp; <span>David Parsons <span class="match-rating">4.311</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.16</summary><div class="tag-math">Felipe 4.103 + Sriram 4.583 = <b>8.687</b><br>Pete 4.211 + David 4.311 = <b>8.523</b><br>→ their side stronger by 0.163 combined DUPR (pre-match)</div></details> <span class="mx">PD -4</span> <span class="mx">match #40</span></div></div><div class="match-datepill">8/18/26</div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.119)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.005</span></span> w/ <span class="match-partner">McKeane Bennett <span class="match-rating">4.522</span></span> <span class="match-vs">vs</span> <span>Jason Renner <span class="match-rating">4.848</span></span> &amp; <span>Perry Clements <span class="match-rating">3.617</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.06</summary><div class="tag-math">Felipe 4.005 + McKeane 4.522 = <b>8.528</b><br>Jason 4.848 + Perry 3.617 = <b>8.466</b><br>→ their side stronger by 0.062 combined DUPR (pre-match)</div></details> <span class="mx">PD -8</span> <span class="mx">match #46</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">5/8/21</span>Virginia Pickleball Classic 2021 - 3.0:19+</div><div class="match-group win"><div class="match-row"><span class="match-score">11-6, 11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>Brian Post <span class="match-rating">3.442</span></span> &amp; <span>Erwin Soto</span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1254d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 6-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>Juan Mora <span class="match-rating">3.484</span></span> &amp; <span>Jaures Garcia <span class="match-rating">3.806</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1254d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>Joseph Quattrone <span class="match-rating">3.337</span></span> &amp; <span>Joey Quattrone <span class="match-rating">3.875</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1254d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>jp dimarco <span class="match-rating">3.235</span></span> &amp; <span>casey glick <span class="match-rating">3.421</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1254d late</span></div></div><div class="event-pill"><span class="event-pill-date">6/26/21</span>The 2021 Rockwood Summer Bash - Mens Doubles 3.0</div><div class="match-group win"><div class="match-row"><span class="match-score">11-3, 11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>Mitch Kirtley</span> &amp; <span>Ryan Romano</span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1205d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7, 11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>leo madern <span class="match-rating">3.326</span></span> &amp; <span>Lawrence Wittenberg <span class="match-rating">3.498</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1205d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 11-13 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>Travis Miller <span class="match-rating">3.591</span></span> &amp; <span>Brady Weller <span class="match-rating">3.582</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1205d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Pete Cloutier <span class="match-rating">4.420</span></span> <span class="match-vs">vs</span> <span>jp dimarco <span class="match-rating">3.236</span></span> &amp; <span>Matthew Roe <span class="match-rating">3.656</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +1205d late</span></div></div><div class="event-pill"><span class="event-pill-date">5/20/23</span>OOLA 5th Annual Virginia Pickleball Classic</div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11, 9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.072)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">3.992</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">4.077</span></span> <span class="match-vs">vs</span> <span>Ryan Watson</span> &amp; <span>Thomas Webster <span class="match-rating">4.078</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +95d late</span></div></div><div class="event-pill"><span class="event-pill-date">5/20/23</span>JOOLA 5th Annual Virginia Pickleball Classic</div><div class="match-group win"><div class="match-row"><span class="match-score">15-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.029)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.022</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.659</span></span> <span class="match-vs">vs</span> <span>Robert Howell <span class="match-rating">3.965</span></span> &amp; <span>Bradley Chaffee <span class="match-rating">3.895</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +95d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">2-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.060)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.052</span></span> w/ <span class="match-partner">Vivek Jaiswal <span class="match-rating">3.688</span></span> <span class="match-vs">vs</span> <span>Derek Biendl <span class="match-rating">3.414</span></span> &amp; <span>Chris Beemer <span class="match-rating">4.128</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +187d late</span></div></div><div class="event-pill"><span class="event-pill-date">4/14/24</span>Ladybug Classic - Presented by Coca-Cola Consolidated Mixed Doubles…</div><div class="match-group loss"><div class="match-row"><span class="match-score">13-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.074)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.094</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.309</span></span> <span class="match-vs">vs</span> <span>Kathleen Chavez <span class="match-rating">4.120</span></span> &amp; <span>Arnold Mendoza <span class="match-rating">4.028</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">13-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.096)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.190</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.324</span></span> <span class="match-vs">vs</span> <span>Lindsey Claud <span class="match-rating">4.173</span></span> &amp; <span>Bruce Sibley <span class="match-rating">4.038</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.259)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.450</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.356</span></span> <span class="match-vs">vs</span> <span>Kathleen Chavez <span class="match-rating">4.106</span></span> &amp; <span>Arnold Mendoza <span class="match-rating">3.999</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-12 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.080)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.370</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.349</span></span> <span class="match-vs">vs</span> <span>Jennifer Spratley <span class="match-rating">3.983</span></span> &amp; <span>Jon Laaser <span class="match-rating">4.174</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.449)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">3.920</span></span> w/ <span class="match-partner">Estefania Flores <span class="match-rating">4.311</span></span> <span class="match-vs">vs</span> <span>Lynze Kapp <span class="match-rating">4.063</span></span> &amp; <span>Brian Singleton <span class="match-rating">4.127</span></span></div></div><div class="event-pill"><span class="event-pill-date">9/20/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 2 - Thu Sep 19…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-1, 11-9, 11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.245)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.020</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.216</span></span> <span class="match-vs">vs</span> <span>Tavon Woodson <span class="match-rating">4.526</span></span> &amp; <span>Kyle Javorich <span class="match-rating">3.790</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/10/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 4 - Thu Oct 3…</div><div class="match-group win"><div class="match-row"><span class="match-score">12-10, 5-11, 11-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.062)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.265</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.318</span></span> <span class="match-vs">vs</span> <span>Everett Hettema <span class="match-rating">4.406</span></span> &amp; <span>David Parsons <span class="match-rating">4.098</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/10/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 4 - Thu Oct 3…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-2, 11-6, 8-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.034)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.327</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.343</span></span> <span class="match-vs">vs</span> <span>Christopher Ryan Kuester <span class="match-rating">3.929</span></span> &amp; <span>Bryan Siewert <span class="match-rating">4.149</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/11/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 5 - Thu Oct 10…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-6, 11-5, 9-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.024)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.361</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.359</span></span> <span class="match-vs">vs</span> <span>Wayne Miao <span class="match-rating">4.038</span></span> &amp; <span>Todd Boss <span class="match-rating">4.103</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/18/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 6 - Thu Oct 17…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-9, 11-9, 11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.022)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.385</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.372</span></span> <span class="match-vs">vs</span> <span>Donald Kendall <span class="match-rating">4.028</span></span> &amp; <span>Todd Springer <span class="match-rating">4.209</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/18/24</span>4.0+ Men&#x27;s Partner Thursday Night - Session 1, Week 6 - Thu Oct 17…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-1, 11-0, 11-3 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.407</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.386</span></span> <span class="match-vs">vs</span> <span>Chris Berrier <span class="match-rating">3.967</span></span> &amp; <span>David Murphy <span class="match-rating">3.384</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/24/24</span>4.0+ Men&#x27;s Thursday Night - Week 7 Playoffs</div><div class="match-group win"><div class="match-row"><span class="match-score">13-11, 11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.408</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.386</span></span> <span class="match-vs">vs</span> <span>Todd Boss <span class="match-rating">4.071</span></span> &amp; <span>Wayne Miao <span class="match-rating">4.003</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-3, 11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.047)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.417</span></span> w/ <span class="match-partner">Sriram Talluri <span class="match-rating">4.392</span></span> <span class="match-vs">vs</span> <span>Keith Tam <span class="match-rating">3.952</span></span> &amp; <span>Shawn Koons <span class="match-rating">4.610</span></span></div></div><div class="event-pill"><span class="event-pill-date">11/17/24</span>Sibley Showdown at Performance Pickleball RVA</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.463</span></span> w/ <span class="match-partner">Keith Tam <span class="match-rating">3.977</span></span> <span class="match-vs">vs</span> <span>Carlo Ares <span class="match-rating">5.147</span></span> &amp; <span>Tharith Earasi <span class="match-rating">4.449</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.026)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.457</span></span> w/ <span class="match-partner">Keith Tam <span class="match-rating">3.974</span></span> <span class="match-vs">vs</span> <span>Anthony Molyneaux <span class="match-rating">3.800</span></span> &amp; <span>McKeane Bennett <span class="match-rating">4.230</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.026)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.430</span></span> w/ <span class="match-partner">Keith Tam <span class="match-rating">3.963</span></span> <span class="match-vs">vs</span> <span>Yash Goyal <span class="match-rating">4.621</span></span> &amp; <span>Harris Lazarus <span class="match-rating">4.133</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.004)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.404</span></span> w/ <span class="match-partner">Keith Tam <span class="match-rating">3.951</span></span> <span class="match-vs">vs</span> <span>Payton Noyes <span class="match-rating">5.133</span></span> &amp; <span>Arsh Bassan <span class="match-rating">4.532</span></span></div></div><div class="event-pill"><span class="event-pill-date">1/23/25</span>4.5+ Co-Gender Advancing Team League</div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11, 7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.029)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.401</span></span> w/ <span class="match-partner">Neil Joshi <span class="match-rating">3.931</span></span> <span class="match-vs">vs</span> <span>Christopher Corts <span class="match-rating">4.217</span></span> &amp; <span>Pete Cloutier <span class="match-rating">4.600</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11, 9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Felipe <span class="match-rating">4.316</span></span> w/ <span class="match-partner">eva rondon <span class="match-rating">4.042</span></span> <span class="match-vs">vs</span> <span>Pete Cloutier <span class="match-rating">4.565</span></span> &amp; <span>Lindsey Claud <span class="match-rating">4.075</span></span></div></div>
+<p class="note">first 30 rated matches, from 2021-05-08 · 13 unrated matches not shown (pre-engine era) · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2023-06-05", "x": 34.0, "r": 4.02, "dl": 0.0, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2023-11-23", "x": 81.1, "r": 3.993, "dl": -0.027, "m": true, "info": "match day"}, {"d": "2024-02-23", "x": 106.4, "r": 3.921, "dl": -0.072, "m": true, "info": "match day"}, {"d": "2024-04-14", "x": 120.4, "r": 4.021, "dl": 0.1, "m": true, "info": "2W-3L \u00b7 Ladybug Classic - Presented by Coca-Cola Consolidated Mixed "}, {"d": "2024-09-20", "x": 164.2, "r": 4.266, "dl": 0.245, "m": true, "info": "1W-0L \u00b7 4.0+ Men's Partner Thursday Night - Session 1, Week 2 - Thu "}, {"d": "2024-10-10", "x": 169.7, "r": 4.361, "dl": 0.096, "m": true, "info": "2W-0L \u00b7 4.0+ Men's Partner Thursday Night - Session 1, Week 4 - Thu "}, {"d": "2024-10-11", "x": 170.0, "r": 4.385, "dl": 0.024, "m": true, "info": "1W-0L \u00b7 4.0+ Men's Partner Thursday Night - Session 1, Week 5 - Thu "}, {"d": "2024-10-18", "x": 171.9, "r": 4.408, "dl": 0.023, "m": true, "info": "2W-0L \u00b7 4.0+ Men's Partner Thursday Night - Session 1, Week 6 - Thu "}, {"d": "2024-10-24", "x": 173.5, "r": 4.464, "dl": 0.056, "m": true, "info": "2W-0L \u00b7 4.0+ Men's Thursday Night - Week 7 Playoffs"}, {"d": "2024-11-17", "x": 180.1, "r": 4.401, "dl": -0.063, "m": true, "info": "0W-4L \u00b7 Sibley Showdown at Performance Pickleball RVA"}, {"d": "2025-01-23", "x": 198.6, "r": 4.275, "dl": -0.126, "m": true, "info": "0W-3L \u00b7 4.5+ Co-Gender Advancing Team League"}, {"d": "2025-01-27", "x": 199.7, "r": 4.284, "dl": 0.009, "m": true, "info": "match day"}, {"d": "2025-01-30", "x": 200.5, "r": 4.136, "dl": -0.149, "m": true, "info": "1W-3L \u00b7 Triple Team Pickleball: Advancing 4.5+ Co-Gender"}, {"d": "2025-02-06", "x": 202.4, "r": 4.137, "dl": 0.001, "m": true, "info": "1W-3L \u00b7 Triple Team Pickleball: Advancing 4.5+ Co-Gender"}, {"d": "2025-02-13", "x": 204.4, "r": 4.173, "dl": 0.036, "m": true, "info": "1W-2L \u00b7 Triple Team Pickleball: Advancing 4.5+ Co-Gender"}, {"d": "2025-02-20", "x": 206.3, "r": 4.163, "dl": -0.01, "m": true, "info": "1W-3L \u00b7 Performance Pickleball RVA"}, {"d": "2025-02-27", "x": 208.2, "r": 4.123, "dl": -0.04, "m": true, "info": "0W-3L \u00b7 Triple Team Pickleball: Advancing 4.5+ Co-Gender"}, {"d": "2025-03-05", "x": 209.9, "r": 4.104, "dl": -0.019, "m": true, "info": "0W-1L \u00b7 Richmond Pickleball Club"}, {"d": "2026-08-11", "x": 354.1, "r": 4.006, "dl": -0.098, "m": true, "info": "4W-2L \u00b7 Late Summer Leagues 2026 - Men\u2019s Tuesday Nights"}, {"d": "2026-08-18", "x": 356.0, "r": 3.925, "dl": -0.081, "m": true, "info": "3W-3L \u00b7 Late Summer Leagues 2026 - Men\u2019s Tuesday Nights"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>

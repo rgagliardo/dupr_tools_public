@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Journey Mockup</title>
+<!-- Variant A avg 1303B/card (22-pt spark, paid on EVERY collapsed row — real impl should ship this as a compact data-* array + client-render, per leaderboard.py's existing lazy-render pattern, not raw inline SVG x400 players). Variant B avg 2026B/card (36-pt spark, but only inside the already-large expanded dropdown — negligible % of that section's weight). Variant C avg 1195B/card (18-pt spark, cheapest raw markup, still paid on every collapsed row like variant A). -->
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:           #0d0e15;
+  --panel:        #13141e;
+  --panel-2:      #1a1b28;
+  --line:         #222233;
+  --line-soft:    #333;
+  --txt:          #ffffff;
+  --txt-2:        #c8c8d8;
+  --txt-mid:      #9898b0;
+  --txt-dim:      #78788c;
+  --txt-faint:    #555570;
+  --cyan:         #00e5ff;
+  --pink:         #ff00a0;
+  --gold:         #ffd700;
+  --partner-pur:  #7a8fcc;
+}
+:root[data-theme="light"] {
+  --bg:           #fafafa;
+  --panel:        #ffffff;
+  --panel-2:      #f7f7f7;
+  --line:         #ebebeb;
+  --line-soft:    #d4d4d4;
+  --txt:          #222222;
+  --txt-2:        #484848;
+  --txt-mid:      #717171;
+  --txt-dim:      #9b9b9b;
+  --txt-faint:    #cfcfcf;
+  --cyan:         #008489;
+  --pink:         #ff5a5f;
+  --gold:         #a06800;
+  --partner-pur:  #5a6cb8;
+}
+body { background: var(--bg); color: var(--txt-2); margin: 0; padding: 0 0 60px; }
+
+.stamp { background: var(--pink); color: #fff; font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-align: center; padding: 6px; }
+.theme-chip { position: fixed; top: 10px; right: 10px; z-index: 50; font-size: 10px;
+  letter-spacing: 1px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+  background: var(--panel); color: var(--txt-mid); cursor: pointer; }
+.phone { max-width: 390px; margin: 0 auto; padding: 0 10px; }
+
+h1 { font-size: 16px; font-weight: 800; letter-spacing: 1px; color: var(--cyan);
+  text-transform: uppercase; margin: 16px 0 2px; }
+.sub { font-size: 11px; color: var(--txt-dim); letter-spacing: .3px; margin-bottom: 8px; }
+h2.variant-h { font-size: 13px; font-weight: 800; letter-spacing: 1px; color: var(--txt);
+  text-transform: uppercase; margin: 26px 0 4px; padding-top: 16px; border-top: 1px solid var(--line); }
+.variant-note { font-size: 11px; color: var(--txt-dim); line-height: 1.5; margin: 0 0 10px; }
+
+/* ── player card idiom — copied from static/leaderboard.css ── */
+.player-details {
+  background: var(--panel); border-radius: 6px; margin-bottom: 3px; overflow: hidden;
+  border: 1px solid var(--line);
+}
+.player-summary {
+  display: flex; align-items: center;
+  padding: 6px 8px; cursor: pointer; list-style: none; min-height: 44px; gap: 8px;
+}
+.player-summary::-webkit-details-marker { display: none; }
+.streak-col { flex-shrink: 0; width: 52px; display: flex; justify-content: center; }
+.streak-badge { font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 800;
+  letter-spacing: 0.5px; border: 1px solid transparent; white-space: nowrap; }
+.streak-w { background: rgba(0,255,255,0.1); color: var(--cyan); border-color: var(--cyan); }
+.streak-l { background: rgba(255,0,160,0.1); color: var(--pink); border-color: var(--pink); }
+.name-col { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.player-name { font-size: 14px; font-weight: 700; letter-spacing: 1px; color: var(--txt);
+  text-transform: uppercase; overflow-wrap: break-word; }
+.scores-stack { display: flex; flex-direction: column; gap: 1px; align-items: flex-end;
+  flex-shrink: 0; margin-left: 8px; }
+.score-line { font-size: 13px; font-weight: 700; color: var(--txt); font-variant-numeric: tabular-nums;
+  display: flex; align-items: center; justify-content: flex-end; white-space: nowrap; gap: 3px; }
+.svgi-s { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+:root:not([data-theme="light"]) .svgi-s { color: var(--txt-dim); }
+.trend-up { color: var(--cyan); }
+.trend-down { color: var(--pink); }
+.trend-flat { color: var(--txt-mid); }
+.net-impact { font-size: 13px; font-weight: 700; }
+.history-dropdown { padding: 10px 12px 16px; background: var(--panel-2); font-size: 12px;
+  color: var(--txt-mid); border-top: 1px solid var(--line); }
+.career-header { display: flex; align-items: center; gap: 12px; margin: 12px 0 2px; }
+.avatar { position: relative; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--panel); border: 1px solid var(--line);
+  overflow: hidden; flex-shrink: 0; width: 64px; height: 64px; }
+.avatar-initials { font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: var(--txt-dim); }
+.career-header-text { display: flex; flex-direction: column; gap: 2px; }
+.career-label { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; color: var(--txt);
+  text-transform: uppercase; }
+.career-subtitle { font-size: 12px; color: var(--txt-dim); font-style: italic; }
+
+/* ── sparkline additions (candidate CSS for all three variants) ── */
+.spark { stroke: var(--cyan); stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.spark-now { fill: var(--cyan); }
+.spark-mini-row { margin-top: 2px; line-height: 0; }
+.spark-mini { display: block; }
+.spark-full { flex-shrink: 0; }
+.spark-stacked { display: block; margin-bottom: 2px; }
+
+/* Variant B journey strip — one row: label / chart / CTA pill */
+.journey-strip { display: flex; align-items: center; gap: 10px; padding-bottom: 12px;
+  margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+.journey-label { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; color: var(--txt-dim);
+  text-transform: uppercase; flex-shrink: 0; }
+.journey-cta { margin-left: auto; font-size: 10px; font-weight: 800; letter-spacing: 0.6px;
+  color: var(--cyan); border: 1px solid var(--cyan); border-radius: 999px; padding: 5px 10px;
+  white-space: nowrap; flex-shrink: 0; }
+</style></head><body>
+<div class="stamp">CARD MOCKUP v1 — 2026-07-22</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<div class="phone">
+<h1>Journey Sparkline — Card Mockups</h1>
+<div class="sub">Real DUPR doubles rating series &middot; 5 players &middot; 390px column</div>
+
+<h2 class="variant-h">Variant A &mdash; micro-sparkline in collapsed row</h2>
+<p class="variant-note">Thin trend line sits under the name, inside the tap target. 22 points, no
+interactive elements &mdash; the whole row (including the spark) still opens the card on tap.</p>
+
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Ryan Torresin</div>
+              <div class="spark-mini-row">
+                <svg class="spark-mini" width="64" height="16" viewBox="0 0 64 16" aria-hidden="true" focusable="false">
+                  <polyline class="spark" points="1.5,14.5 4.4,12.6 7.3,10.5 10.2,10.8 13.1,10.0 16.0,7.6 18.9,6.7 21.8,6.6 24.7,6.6 27.6,5.8 30.5,4.7 33.5,5.0 36.4,3.8 39.3,1.5 42.2,3.3 45.1,1.5 48.0,1.5 50.9,1.9 53.8,2.5 56.7,1.9 59.6,1.5 62.5,2.0"/>
+                  <circle class="spark-now" cx="62.5" cy="2.0" r="1.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.014)</span>
+                6.092 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Oscar Serra</div>
+              <div class="spark-mini-row">
+                <svg class="spark-mini" width="64" height="16" viewBox="0 0 64 16" aria-hidden="true" focusable="false">
+                  <polyline class="spark" points="1.5,14.5 4.4,7.4 7.3,6.6 10.2,6.3 13.1,5.6 16.0,5.5 18.9,5.4 21.8,4.3 24.7,4.0 27.6,3.6 30.5,3.4 33.5,2.9 36.4,3.0 39.3,2.9 42.2,2.4 45.1,1.9 48.0,2.0 50.9,1.6 53.8,1.7 56.7,1.7 59.6,1.5 62.5,1.8"/>
+                  <circle class="spark-now" cx="62.5" cy="1.8" r="1.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.030)</span>
+                6.060 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+            <div class="name-col">
+              <div class="player-name">Ben Johns</div>
+              <div class="spark-mini-row">
+                <svg class="spark-mini" width="64" height="16" viewBox="0 0 64 16" aria-hidden="true" focusable="false">
+                  <polyline class="spark" points="1.5,13.5 4.4,12.8 7.3,7.5 10.2,6.1 13.1,6.9 16.0,7.6 18.9,6.7 21.8,6.3 24.7,1.5 27.6,4.0 30.5,2.3 33.5,1.5 36.4,4.0 39.3,4.7 42.2,4.3 45.1,7.9 48.0,11.8 50.9,12.7 53.8,13.5 56.7,14.5 59.6,13.3 62.5,13.9"/>
+                  <circle class="spark-now" cx="62.5" cy="13.9" r="1.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.012)</span>
+                7.102 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Leah Fremouw</div>
+              <div class="spark-mini-row">
+                <svg class="spark-mini" width="64" height="16" viewBox="0 0 64 16" aria-hidden="true" focusable="false">
+                  <polyline class="spark" points="1.5,1.5 4.4,14.5 7.3,13.4 10.2,10.2 13.1,10.0 16.0,8.3 18.9,7.2 21.8,9.4 24.7,8.3 27.6,9.2 30.5,7.9 33.5,7.9 36.4,7.9 39.3,8.7 42.2,7.6 45.1,6.3 48.0,6.2 50.9,6.6 53.8,6.5 56.7,7.0 59.6,6.4 62.5,7.7"/>
+                  <circle class="spark-now" cx="62.5" cy="7.7" r="1.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.033)</span>
+                3.635 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+            <div class="name-col">
+              <div class="player-name">Tama Shimabukuro</div>
+              <div class="spark-mini-row">
+                <svg class="spark-mini" width="64" height="16" viewBox="0 0 64 16" aria-hidden="true" focusable="false">
+                  <polyline class="spark" points="1.5,1.5 4.4,13.8 7.3,13.1 10.2,14.5 13.1,12.7 16.0,12.3 18.9,12.1 21.8,11.4 24.7,10.2 27.6,11.5 30.5,10.7 33.5,9.7 36.4,9.3 39.3,7.9 42.2,7.1 45.1,6.2 48.0,5.6 50.9,5.3 53.8,5.6 56.7,5.6 59.6,5.3 62.5,5.3"/>
+                  <circle class="spark-now" cx="62.5" cy="5.3" r="1.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-up">(+0.007)</span>
+                6.126 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+
+<h2 class="variant-h">Variant B &mdash; Journey strip at top of expanded card</h2>
+<p class="variant-note">Collapsed row is untouched (identical to today). Cards below are pinned open
+to show the new strip: label + 36-pt preview chart + a real "FULL JOURNEY" entry point, ahead of the
+existing Career Stats header.</p>
+
+        <details class="player-details" open>
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Ryan Torresin</div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.014)</span>
+                6.092 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="history-dropdown">
+            <div class="journey-strip">
+              <span class="journey-label">Journey</span>
+              <svg class="spark-full" width="116" height="26" viewBox="0 0 116 26" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="2.0,24.0 5.2,24.0 8.4,19.1 11.6,17.5 14.8,15.6 18.0,17.9 21.2,18.7 24.4,14.5 27.6,12.8 30.8,12.1 34.0,11.1 37.2,11.0 40.4,10.9 43.6,10.8 46.8,11.7 50.0,9.6 53.2,6.6 56.4,7.7 59.6,9.4 62.8,9.2 66.0,6.3 69.2,3.6 72.4,4.9 75.6,5.8 78.8,3.8 82.0,2.4 85.2,3.1 88.4,3.1 91.6,2.8 94.8,3.4 98.0,4.0 101.2,2.8 104.4,2.0 107.6,2.6 110.8,2.5 114.0,3.3"/>
+                <circle class="spark-now" cx="114" cy="3.3" r="2"/>
+              </svg>
+              <span class="journey-cta">FULL JOURNEY &rarr;</span>
+            </div>
+            <div class="career-header">
+              <span class="avatar avatar-lg"><span class="avatar-initials">RT</span></span>
+              <div class="career-header-text">
+                <div class="career-label">Career Stats</div>
+                <div class="career-subtitle"><span class="career-subtitle-line">— rest of card continues —</span></div>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="player-details" open>
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Oscar Serra</div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.030)</span>
+                6.060 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="history-dropdown">
+            <div class="journey-strip">
+              <span class="journey-label">Journey</span>
+              <svg class="spark-full" width="116" height="26" viewBox="0 0 116 26" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="2.0,24.0 5.2,16.4 8.4,11.8 11.6,10.7 14.8,10.4 18.0,10.0 21.2,8.8 24.4,8.6 27.6,8.8 30.8,8.5 34.0,8.5 37.2,7.6 40.4,6.6 43.6,6.5 46.8,5.7 50.0,5.5 53.2,5.2 56.4,4.9 59.6,4.4 62.8,3.8 66.0,4.4 69.2,4.2 72.4,4.2 75.6,3.5 78.8,2.7 82.0,2.5 85.2,2.8 88.4,2.6 91.6,2.2 94.8,2.1 98.0,2.2 101.2,2.0 104.4,2.2 107.6,2.2 110.8,2.0 114.0,2.4"/>
+                <circle class="spark-now" cx="114" cy="2.4" r="2"/>
+              </svg>
+              <span class="journey-cta">FULL JOURNEY &rarr;</span>
+            </div>
+            <div class="career-header">
+              <span class="avatar avatar-lg"><span class="avatar-initials">OS</span></span>
+              <div class="career-header-text">
+                <div class="career-label">Career Stats</div>
+                <div class="career-subtitle"><span class="career-subtitle-line">— rest of card continues —</span></div>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="player-details" open>
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+            <div class="name-col">
+              <div class="player-name">Ben Johns</div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.012)</span>
+                7.102 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="history-dropdown">
+            <div class="journey-strip">
+              <span class="journey-label">Journey</span>
+              <svg class="spark-full" width="116" height="26" viewBox="0 0 116 26" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="2.0,20.4 5.2,24.0 8.4,9.7 11.6,11.6 14.8,10.3 18.0,9.4 21.2,9.9 24.4,10.3 27.6,11.2 30.8,11.8 34.0,10.4 37.2,9.8 40.4,8.8 43.6,7.9 46.8,4.2 50.0,6.3 53.2,3.3 56.4,3.1 59.6,2.0 62.8,3.9 66.0,6.4 69.2,7.0 72.4,7.2 75.6,7.9 78.8,10.4 82.0,12.1 85.2,15.5 88.4,17.7 91.6,18.9 94.8,20.7 98.0,20.5 101.2,21.8 104.4,21.3 107.6,19.9 110.8,20.2 114.0,21.1"/>
+                <circle class="spark-now" cx="114" cy="21.1" r="2"/>
+              </svg>
+              <span class="journey-cta">FULL JOURNEY &rarr;</span>
+            </div>
+            <div class="career-header">
+              <span class="avatar avatar-lg"><span class="avatar-initials">BJ</span></span>
+              <div class="career-header-text">
+                <div class="career-label">Career Stats</div>
+                <div class="career-subtitle"><span class="career-subtitle-line">— rest of card continues —</span></div>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="player-details" open>
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Leah Fremouw</div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.033)</span>
+                3.635 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="history-dropdown">
+            <div class="journey-strip">
+              <span class="journey-label">Journey</span>
+              <svg class="spark-full" width="116" height="26" viewBox="0 0 116 26" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="2.0,2.0 5.2,20.1 8.4,18.1 11.6,19.1 14.8,24.0 18.0,18.8 21.2,19.7 24.4,19.0 27.6,14.6 30.8,14.9 34.0,13.1 37.2,17.2 40.4,16.4 43.6,16.4 46.8,13.9 50.0,16.8 53.2,17.0 56.4,14.5 59.6,14.2 62.8,14.3 66.0,14.4 69.2,14.9 72.4,15.5 75.6,17.4 78.8,12.5 82.0,11.3 85.2,10.6 88.4,12.4 91.6,12.2 94.8,12.1 98.0,11.7 101.2,12.9 104.4,12.1 107.6,12.4 110.8,11.7 114.0,14.0"/>
+                <circle class="spark-now" cx="114" cy="14.0" r="2"/>
+              </svg>
+              <span class="journey-cta">FULL JOURNEY &rarr;</span>
+            </div>
+            <div class="career-header">
+              <span class="avatar avatar-lg"><span class="avatar-initials">LF</span></span>
+              <div class="career-header-text">
+                <div class="career-label">Career Stats</div>
+                <div class="career-subtitle"><span class="career-subtitle-line">— rest of card continues —</span></div>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="player-details" open>
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+            <div class="name-col">
+              <div class="player-name">Tama Shimabukuro</div>
+            </div>
+            <div class="scores-stack">
+              <div class="score-line">
+                <span class="net-impact trend-up">(+0.007)</span>
+                6.126 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="history-dropdown">
+            <div class="journey-strip">
+              <span class="journey-label">Journey</span>
+              <svg class="spark-full" width="116" height="26" viewBox="0 0 116 26" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="2.0,2.0 5.2,22.4 8.4,21.8 11.6,21.3 14.8,23.2 18.0,24.0 21.2,21.4 24.4,21.0 27.6,20.8 30.8,20.0 34.0,20.0 37.2,19.2 40.4,17.5 43.6,16.4 46.8,18.6 50.0,19.0 53.2,18.6 56.4,16.3 59.6,15.3 62.8,16.0 66.0,15.2 69.2,14.3 72.4,12.6 75.6,11.7 78.8,10.9 82.0,10.0 85.2,9.1 88.4,9.1 91.6,8.5 94.8,8.4 98.0,8.9 101.2,9.0 104.4,9.0 107.6,8.5 110.8,8.6 114.0,8.4"/>
+                <circle class="spark-now" cx="114" cy="8.4" r="2"/>
+              </svg>
+              <span class="journey-cta">FULL JOURNEY &rarr;</span>
+            </div>
+            <div class="career-header">
+              <span class="avatar avatar-lg"><span class="avatar-initials">TS</span></span>
+              <div class="career-header-text">
+                <div class="career-label">Career Stats</div>
+                <div class="career-subtitle"><span class="career-subtitle-line">— rest of card continues —</span></div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+<h2 class="variant-h">Variant C &mdash; hybrid: spark stacked above the D score</h2>
+<p class="variant-note">Best-of idea: an 18-pt spark rides its own right-aligned row directly above
+the D score line, inside the already-vertical scores-stack column &mdash; shape sits right next to the
+exact (&plusmn;net impact) number, nothing removed or rounded, and (unlike an earlier inline-before-the-number
+draft) it costs the row height, never name-col's width.</p>
+
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Ryan Torresin</div>
+            </div>
+            <div class="scores-stack">
+              <svg class="spark-stacked" width="52" height="13" viewBox="0 0 52 13" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="1.5,11.5 4.4,7.9 7.3,7.5 10.1,8.9 13.0,6.2 15.9,5.7 18.8,5.4 21.7,5.4 24.6,4.0 27.4,4.4 30.3,3.6 33.2,2.8 36.1,1.5 39.0,1.5 41.9,1.9 44.7,1.7 47.6,1.5 50.5,2.0"/>
+                <circle class="spark-now" cx="50.5" cy="2.0" r="1.5"/>
+              </svg>
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.014)</span>
+                6.092 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Oscar Serra</div>
+            </div>
+            <div class="scores-stack">
+              <svg class="spark-stacked" width="52" height="13" viewBox="0 0 52 13" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="1.5,11.5 4.4,6.1 7.3,5.4 10.1,4.7 13.0,4.6 15.9,4.4 18.8,3.6 21.7,3.2 24.6,3.0 27.4,2.5 30.3,2.6 33.2,2.5 36.1,1.9 39.0,1.9 41.9,1.5 44.7,1.6 47.6,1.7 50.5,1.7"/>
+                <circle class="spark-now" cx="50.5" cy="1.7" r="1.5"/>
+              </svg>
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.030)</span>
+                6.060 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+            <div class="name-col">
+              <div class="player-name">Ben Johns</div>
+            </div>
+            <div class="scores-stack">
+              <svg class="spark-stacked" width="52" height="13" viewBox="0 0 52 13" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="1.5,10.9 4.4,5.2 7.3,5.3 10.1,5.6 13.0,6.3 15.9,5.4 18.8,4.7 21.7,3.6 24.6,2.2 27.4,1.5 30.3,3.4 33.2,4.1 36.1,6.2 39.0,9.7 41.9,11.2 44.7,11.5 47.6,10.5 50.5,11.2"/>
+                <circle class="spark-now" cx="50.5" cy="11.2" r="1.5"/>
+              </svg>
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.012)</span>
+                7.102 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-l">▼ 1L</span></div>
+            <div class="name-col">
+              <div class="player-name">Leah Fremouw</div>
+            </div>
+            <div class="scores-stack">
+              <svg class="spark-stacked" width="52" height="13" viewBox="0 0 52 13" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="1.5,1.5 4.4,9.0 7.3,11.5 10.1,9.1 13.0,7.6 15.9,7.1 18.8,7.9 21.7,7.2 24.6,7.6 27.4,6.6 30.3,8.1 33.2,8.7 36.1,5.5 39.0,5.9 41.9,5.5 44.7,6.5 47.6,6.4 50.5,6.9"/>
+                <circle class="spark-now" cx="50.5" cy="6.9" r="1.5"/>
+              </svg>
+              <div class="score-line">
+                <span class="net-impact trend-down">(-0.033)</span>
+                3.635 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+        <details class="player-details">
+          <summary class="player-summary">
+            <div class="streak-col"><span class="streak-badge streak-w">🔥 2W</span></div>
+            <div class="name-col">
+              <div class="player-name">Tama Shimabukuro</div>
+            </div>
+            <div class="scores-stack">
+              <svg class="spark-stacked" width="52" height="13" viewBox="0 0 52 13" aria-hidden="true" focusable="false">
+                <polyline class="spark" points="1.5,1.5 4.4,10.8 7.3,11.5 10.1,10.5 13.0,10.2 15.9,10.1 18.8,8.3 21.7,9.4 24.6,8.9 27.4,8.3 30.3,7.4 33.2,6.2 36.1,5.5 39.0,4.8 41.9,4.6 44.7,4.8 47.6,4.6 50.5,4.6"/>
+                <circle class="spark-now" cx="50.5" cy="4.6" r="1.5"/>
+              </svg>
+              <div class="score-line">
+                <span class="net-impact trend-up">(+0.007)</span>
+                6.126 <svg class="svgi svgi-s" width="13" height="13" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+          </summary>
+        </details>
+
+</div>
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+})();
+</script>
+</body></html>
