@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-10T10:00:52",
+ "updated": "2026-09-10T10:27:04",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
@@ -18,15 +18,15 @@
    "grade": "C"
   },
   {
-   "day": "Sun",
-   "grade": "C"
-  },
-  {
    "day": "Mon",
    "grade": "C"
   },
   {
    "day": "Tue",
+   "grade": "C"
+  },
+  {
+   "day": "Sun",
    "grade": "C"
   }
  ],
@@ -50,7 +50,7 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 74\u00b0) 3p-8p",
+    "why": "humidity (dew 74\u00b0) 3p-9p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -82,6 +82,11 @@
       "t": 79,
       "v": 1,
       "c": "dew"
+     },
+     "21": {
+      "t": 77,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -92,9 +97,14 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 71\u00b0) 9a-12p, 3p-8p",
+    "why": "humidity (dew 71\u00b0) 8a-12p, 3p-9p",
     "wet_mm": 0.0,
     "cells": {
+     "8": {
+      "t": 71,
+      "v": 1,
+      "c": "dew"
+     },
      "9": {
       "t": 72,
       "v": 1,
@@ -144,6 +154,11 @@
       "t": 76,
       "v": 1,
       "c": "dew"
+     },
+     "21": {
+      "t": 74,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -152,11 +167,16 @@
     "label": "Sat",
     "sub": "9/12",
     "grade": "F",
-    "score": 0.2,
+    "score": 0.171,
     "best": "",
-    "why": "rain 3p-8p \u00b7 wet court? 9a-10a \u00b7 humidity (dew 73\u00b0) 11a-2p",
+    "why": "rain 3p-9p \u00b7 wet court? 8a-10a \u00b7 humidity (dew 73\u00b0) 11a-2p",
     "wet_mm": 1.2,
     "cells": {
+     "8": {
+      "t": 70,
+      "v": 0,
+      "c": "wet"
+     },
      "9": {
       "t": 72,
       "v": 0,
@@ -216,6 +236,11 @@
       "t": 76,
       "v": 0,
       "c": "rain"
+     },
+     "21": {
+      "t": 75,
+      "v": 0,
+      "c": "rain"
      }
     }
    },
@@ -224,11 +249,16 @@
     "label": "Sun",
     "sub": "9/13",
     "grade": "C",
-    "score": 0.6,
+    "score": 0.557,
     "best": "",
-    "why": "humidity (dew 74\u00b0) 9a-8p",
-    "wet_mm": 0.0,
+    "why": "wet court? 8a \u00b7 humidity (dew 74\u00b0) 9a-9p",
+    "wet_mm": 0.4,
     "cells": {
+     "8": {
+      "t": 72,
+      "v": 0,
+      "c": "wet"
+     },
      "9": {
       "t": 74,
       "v": 1,
@@ -288,6 +318,11 @@
       "t": 79,
       "v": 1,
       "c": "dew"
+     },
+     "21": {
+      "t": 77,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -298,9 +333,14 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 72\u00b0) 9a-12p, 3p-8p",
+    "why": "humidity (dew 72\u00b0) 8a-12p, 3p-9p",
     "wet_mm": 0.0,
     "cells": {
+     "8": {
+      "t": 69,
+      "v": 1,
+      "c": "dew"
+     },
      "9": {
       "t": 72,
       "v": 1,
@@ -350,6 +390,11 @@
       "t": 78,
       "v": 1,
       "c": "dew"
+     },
+     "21": {
+      "t": 76,
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -360,7 +405,7 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 70\u00b0) 3p-8p",
+    "why": "humidity (dew 70\u00b0) 3p-9p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -390,6 +435,11 @@
      },
      "20": {
       "t": 80,
+      "v": 1,
+      "c": "dew"
+     },
+     "21": {
+      "t": 78,
       "v": 1,
       "c": "dew"
      }
