@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Rockwood Park",
- "updated": "2026-09-10T13:09:33",
+ "updated": "2026-09-10T13:55:00",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
@@ -27,7 +27,7 @@
   },
   {
    "day": "Sun",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
@@ -166,26 +166,26 @@
     "date": "2026-09-12",
     "label": "Sat",
     "sub": "9/12",
-    "grade": "F",
-    "score": 0.214,
+    "grade": "D",
+    "score": 0.3,
     "best": "",
-    "why": "rain 3p-9p \u00b7 wet court? 8a-9a \u00b7 humidity (dew 74\u00b0) 11a-2p",
-    "wet_mm": 1.2,
+    "why": "rain 3p-9p \u00b7 humidity (dew 74\u00b0) 8a-2p",
+    "wet_mm": 1.3,
     "cells": {
      "8": {
       "t": 73,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "9": {
       "t": 75,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "10": {
       "t": 78,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "11": {
       "t": 81,
@@ -203,7 +203,7 @@
       "c": "dew"
      },
      "14": {
-      "t": 89,
+      "t": 90,
       "v": 1,
       "c": "dew"
      },
@@ -248,11 +248,11 @@
     "date": "2026-09-13",
     "label": "Sun",
     "sub": "9/13",
-    "grade": "D",
-    "score": 0.471,
+    "grade": "C",
+    "score": 0.514,
     "best": "",
-    "why": "wet court? 8a-10a \u00b7 humidity (dew 77\u00b0) 11a-9p",
-    "wet_mm": 1.2,
+    "why": "wet court? 8a-9a \u00b7 humidity (dew 77\u00b0) 11a-9p \u00b7 drying 10a",
+    "wet_mm": 0.9,
     "cells": {
      "8": {
       "t": 72,
@@ -266,8 +266,8 @@
      },
      "10": {
       "t": 78,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dry"
      },
      "11": {
       "t": 81,
@@ -455,12 +455,12 @@
    {
     "date": "2026-09-17",
     "d": "Th",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-09-18",
     "d": "Fr",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-09-19",
@@ -475,17 +475,17 @@
    {
     "date": "2026-09-21",
     "d": "Mo",
-    "g": "A"
+    "g": "D"
    },
    {
     "date": "2026-09-22",
     "d": "Tu",
-    "g": "B"
+    "g": "F"
    },
    {
     "date": "2026-09-23",
     "d": "We",
-    "g": "A"
+    "g": "D"
    },
    {
     "date": "2026-09-24",
@@ -495,7 +495,7 @@
    {
     "date": "2026-09-25",
     "d": "Fr",
-    "g": "C"
+    "g": "B"
    }
   ]
  },
