@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-11T09:31:44",
-  "next_scan_at": "2026-09-11T10:01:44",
+  "generated_at": "2026-09-11T09:39:22",
+  "next_scan_at": "2026-09-11T10:09:22",
   "stats": {
     "total": 720,
-    "full_count": 90
+    "full_count": 89
   },
   "sessions": [
     {
@@ -16,8 +16,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 6,
-      "pct": 50,
+      "count": 5,
+      "pct": 42,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -25,7 +25,6 @@
       "manually_added": false,
       "registrants": [
         "Pete H.",
-        "Mike B.",
         "Rick G.",
         "CHARLIE S.",
         "Gary W.",
@@ -35,18 +34,22 @@
       "gate_type": "Doubles",
       "departed": [
         {
+          "name": "Mike Barr",
+          "uid": "PbXyNNbG9AMUUWwTS6JuSPbubq13",
+          "departed_at": "2026-09-11T09:39:12"
+        },
+        {
           "name": "Steve Yim",
           "uid": "ZZUxCExkD1YcBv382D2ZkdGrxCN2",
           "departed_at": "2026-09-10T14:58:32"
         }
       ],
-      "last_snap_ts": "2026-09-11T09:31:36",
+      "last_snap_ts": "2026-09-11T09:39:12",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
       "registrant_ids": [
         "EFxuuoSW0SapX84hg7kvLzb3gaz1",
-        "PbXyNNbG9AMUUWwTS6JuSPbubq13",
         "vOv0TGI5PsNAXbhUTFGAEl3o1rL2",
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12",
         "THwsd4sALRhEgEraKq1KTUK5QAA3",
@@ -54,17 +57,16 @@
       ],
       "ratings_by_uid": {
         "EFxuuoSW0SapX84hg7kvLzb3gaz1": "3.91",
-        "PbXyNNbG9AMUUWwTS6JuSPbubq13": "4.37",
         "3Y9umdk4pBdu6Nv2ztVXawb1Mp12": "3.9",
         "4WpOhh7GewZboSxG4uDP3yqDNJo2": "4.01"
       },
       "skill": {
-        "med": "3.960",
-        "med_val": 3.96,
+        "med": "3.910",
+        "med_val": 3.91,
         "lo": "3.900",
-        "hi": "4.370",
-        "rated": 4,
-        "total": 6,
+        "hi": "4.010",
+        "rated": 3,
+        "total": 5,
         "tier": "SKILLED"
       }
     },
@@ -78,8 +80,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 48,
-      "count": 38,
-      "pct": 79,
+      "count": 39,
+      "pct": 81,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -123,6 +125,7 @@
         "Steven L.",
         "James D.",
         "Colby P.",
+        "Dwayne T.",
         "+1 player"
       ],
       "min_dupr": null,
@@ -169,7 +172,7 @@
           "departed_at": "2026-09-10T13:07:38"
         }
       ],
-      "last_snap_ts": "2026-09-11T09:31:37",
+      "last_snap_ts": "2026-09-11T09:39:13",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -218,7 +221,8 @@
         "VdelaN5r2JOVSLnmECbm30hScOT2",
         "ktMj5051QMRdX627as2oDZHeN1y1",
         "26ikv931kWMmyP9mYeYnwfdzJ4A3",
-        "cM2KpPZZYFhYbHotXDGuw3XXOZB2"
+        "cM2KpPZZYFhYbHotXDGuw3XXOZB2",
+        "bH6yEQratQhnvamZRtRhq1eeUaj2"
       ],
       "ratings_by_uid": {
         "834Ht70ytQOUmHHIdFumeobl5se2": "3.71",
@@ -241,15 +245,16 @@
         "yyuVtkAymeWLusR2rSQrNMaQHFG3": "3.26",
         "qUVWzotHLhcLmrsvStxHvgbJIzr1": "4.04",
         "vlBHUN89tcdnAUmDwDFXT7LILuR2": "3.41",
-        "ZZUxCExkD1YcBv382D2ZkdGrxCN2": "3.99"
+        "ZZUxCExkD1YcBv382D2ZkdGrxCN2": "3.99",
+        "bH6yEQratQhnvamZRtRhq1eeUaj2": "4.18"
       },
       "skill": {
-        "med": "3.670",
-        "med_val": 3.67,
+        "med": "3.710",
+        "med_val": 3.71,
         "lo": "2.460",
         "hi": "4.509",
-        "rated": 22,
-        "total": 38,
+        "rated": 23,
+        "total": 39,
         "tier": "SKILLED"
       }
     },
@@ -274,7 +279,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:37",
+      "last_snap_ts": "2026-09-11T09:39:14",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -303,7 +308,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:38",
+      "last_snap_ts": "2026-09-11T09:39:14",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -351,7 +356,7 @@
           "departed_at": "2026-09-11T08:06:22"
         }
       ],
-      "last_snap_ts": "2026-09-11T09:31:38",
+      "last_snap_ts": "2026-09-11T09:39:15",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -417,7 +422,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:37",
+      "last_snap_ts": "2026-09-11T09:39:13",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -473,7 +478,7 @@
           "departed_at": "2026-09-11T06:10:21"
         }
       ],
-      "last_snap_ts": "2026-09-11T09:31:38",
+      "last_snap_ts": "2026-09-11T09:39:15",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -496,10 +501,10 @@
       "start_display": "SAT SEP 12  9:00 AM",
       "end_display": "11:00 AM",
       "status": "upcoming",
-      "capacity": 12,
+      "capacity": 24,
       "count": 12,
-      "pct": 100,
-      "is_full": true,
+      "pct": 50,
+      "is_full": false,
       "is_takeover": false,
       "watched": false,
       "was_ever_full": true,
@@ -521,7 +526,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:38",
+      "last_snap_ts": "2026-09-11T09:39:16",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -606,7 +611,7 @@
           "departed_at": "2026-09-11T09:08:24"
         }
       ],
-      "last_snap_ts": "2026-09-11T09:31:37",
+      "last_snap_ts": "2026-09-11T09:39:14",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -662,7 +667,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:39",
+      "last_snap_ts": "2026-09-11T09:39:16",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -694,7 +699,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:39",
+      "last_snap_ts": "2026-09-11T09:39:16",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -728,7 +733,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:39",
+      "last_snap_ts": "2026-09-11T09:39:17",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -757,7 +762,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:40",
+      "last_snap_ts": "2026-09-11T09:39:17",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -790,7 +795,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:35",
+      "last_snap_ts": "2026-09-11T09:39:09",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -825,7 +830,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:35",
+      "last_snap_ts": "2026-09-11T09:39:10",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -858,7 +863,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:35",
+      "last_snap_ts": "2026-09-11T09:39:10",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -917,7 +922,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:36",
+      "last_snap_ts": "2026-09-11T09:39:11",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -968,7 +973,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:36",
+      "last_snap_ts": "2026-09-11T09:39:12",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -997,7 +1002,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:40",
+      "last_snap_ts": "2026-09-11T09:39:17",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1030,7 +1035,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:40",
+      "last_snap_ts": "2026-09-11T09:39:18",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1107,7 +1112,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:41",
+      "last_snap_ts": "2026-09-11T09:39:18",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1200,7 +1205,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:41",
+      "last_snap_ts": "2026-09-11T09:39:19",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1229,7 +1234,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:41",
+      "last_snap_ts": "2026-09-11T09:39:19",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1258,7 +1263,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:41",
+      "last_snap_ts": "2026-09-11T09:39:20",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1296,7 +1301,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:42",
+      "last_snap_ts": "2026-09-11T09:39:20",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1362,7 +1367,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-11T09:31:42",
+      "last_snap_ts": "2026-09-11T09:39:20",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -48777,13 +48782,13 @@
       },
       {
         "rank": 2,
-        "median": "3.670",
+        "median": "3.710",
         "tier": "SKILLED",
         "lo": "2.460",
         "hi": "4.509",
-        "avg": "3.673",
-        "rated": 22,
-        "field": 38,
+        "avg": "3.692",
+        "rated": 23,
+        "field": 39,
         "date": "FRI SEP 11  10:00 AM",
         "title": "4.0 Open Play",
         "url": "https://ppbrva.podplay.app/community/events/01a01100-31c1-7229-8b11-a01b5052d2ca",
@@ -48801,6 +48806,11 @@
           {
             "n": "Andrew Wu",
             "r": "4.15",
+            "c": false
+          },
+          {
+            "n": "Dwayne Tasin",
+            "r": "4.111",
             "c": false
           },
           {
@@ -49550,6 +49560,42 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-09-11T09:39:16",
+      "type": "freed",
+      "name": "12/24",
+      "title": "4.0 Open Play",
+      "start": "SAT SEP 12  9:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07237-41c6-7dd7-9e79-8bbb6ae0792f"
+    },
+    {
+      "ts": "2026-09-11T09:39:16",
+      "type": "cap_grew",
+      "name": "12 \u2192 24",
+      "title": "4.0 Open Play",
+      "start": "SAT SEP 12  9:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07237-41c6-7dd7-9e79-8bbb6ae0792f"
+    },
+    {
+      "ts": "2026-09-11T09:39:13",
+      "type": "join",
+      "name": "Dwayne Tasin",
+      "title": "4.0 Open Play",
+      "start": "FRI SEP 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a01100-31c1-7229-8b11-a01b5052d2ca",
+      "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+      "rating": "4.18"
+    },
+    {
+      "ts": "2026-09-11T09:39:12",
+      "type": "cancel",
+      "name": "Mike Barr",
+      "title": "DUPR 4.0 Open Play",
+      "start": "FRI SEP 11  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a067b7-0dba-777f-a692-1a51bdfe6511",
+      "uid": "PbXyNNbG9AMUUWwTS6JuSPbubq13",
+      "rating": "4.37"
+    },
     {
       "ts": "2026-09-11T09:31:38",
       "type": "cap_shrunk",
@@ -71246,6 +71292,12 @@
       "cancels": 6
     },
     {
+      "name": "Mike Barr",
+      "uid": "PbXyNNbG9AMUUWwTS6JuSPbubq13",
+      "joins": 16,
+      "cancels": 6
+    },
+    {
       "name": "Kristi King",
       "uid": "iJMC40NsEShSorrd5WTnKvVQhqA3",
       "joins": 14,
@@ -71273,12 +71325,6 @@
       "name": "Steve Yim",
       "uid": "ZZUxCExkD1YcBv382D2ZkdGrxCN2",
       "joins": 22,
-      "cancels": 5
-    },
-    {
-      "name": "Mike Barr",
-      "uid": "PbXyNNbG9AMUUWwTS6JuSPbubq13",
-      "joins": 16,
       "cancels": 5
     },
     {
@@ -72086,6 +72132,12 @@
       "cancels": 0
     },
     {
+      "name": "Dwayne Tasin",
+      "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+      "joins": 11,
+      "cancels": 0
+    },
+    {
       "name": "Lori Laws",
       "uid": "jIUHQa9VKEhivadyjOeOGTmm3543",
       "joins": 11,
@@ -72095,12 +72147,6 @@
       "name": "Matt Behnke",
       "uid": "zvjdibVKPIQELKXWsMJ5uU52uJS2",
       "joins": 11,
-      "cancels": 0
-    },
-    {
-      "name": "Dwayne Tasin",
-      "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-      "joins": 10,
       "cancels": 0
     },
     {
@@ -76951,6 +76997,232 @@
   "cloaked_recent": 3,
   "friends": [
     {
+      "name": "Dwayne Tasin",
+      "name_raw": "Dwayne Tasin",
+      "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+      "dupr_id": "PKL9MM",
+      "rating": "4.111",
+      "sessions": [
+        {
+          "title": "4.0 Open Play",
+          "start": "FRI SEP 11  10:00 AM",
+          "start_iso": "2026-09-11T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a01100-31c1-7229-8b11-a01b5052d2ca",
+          "status": "upcoming",
+          "capacity": 48,
+          "count": 39,
+          "is_full": false,
+          "spots_left": 9
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "FRI SEP 4  10:00 AM",
+          "start_iso": "2026-09-04T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ffc0f-60c3-7eed-a227-3f55c17819d5",
+          "status": "completed",
+          "capacity": 60,
+          "count": 57,
+          "is_full": false,
+          "spots_left": 3
+        },
+        {
+          "title": "Wild Donkey League - DRAFT DAY (Men's)",
+          "start": "SUN AUG 30  12:00 PM",
+          "start_iso": "2026-08-30T12:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019faf85-2fb1-7ee4-8900-8863f34cae91",
+          "status": "completed",
+          "capacity": 35,
+          "count": 35,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "FRI AUG 28  10:00 AM",
+          "start_iso": "2026-08-28T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fe70d-1537-7ff8-8a0a-e22252fefa66",
+          "status": "completed",
+          "capacity": 48,
+          "count": 40,
+          "is_full": false,
+          "spots_left": 8
+        },
+        {
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN AUG 23  4:00 PM",
+          "start_iso": "2026-08-23T16:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a00645-fbc4-7229-8989-5a845490726d",
+          "status": "completed",
+          "capacity": 21,
+          "count": 12,
+          "is_full": false,
+          "spots_left": 9
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "FRI AUG 21  10:00 AM",
+          "start_iso": "2026-08-21T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
+          "status": "completed",
+          "capacity": 48,
+          "count": 33,
+          "is_full": false,
+          "spots_left": 15
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "WED AUG 19  10:00 AM",
+          "start_iso": "2026-08-19T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fcdae-ac6b-7113-b7de-aca06fd8065d",
+          "status": "completed",
+          "capacity": 12,
+          "count": 10,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN AUG 9  4:00 PM",
+          "start_iso": "2026-08-09T16:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fcedc-5f4b-7113-b85c-82fc9252945e",
+          "status": "completed",
+          "capacity": 40,
+          "count": 39,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE JUL 21  10:00 AM",
+          "start_iso": "2026-07-21T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f5c5b-9020-7667-80d0-3721dca6369c",
+          "status": "completed",
+          "capacity": 12,
+          "count": 12,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "FRI JUL 17  10:00 AM",
+          "start_iso": "2026-07-17T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f2896-ac40-7aa2-8202-9805fd6f6f92",
+          "status": "completed",
+          "capacity": 42,
+          "count": 39,
+          "is_full": true,
+          "spots_left": 3
+        },
+        {
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN JUL 5  12:00 PM",
+          "start_iso": "2026-07-05T12:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ee6d7-ccc3-7000-9bc5-aad3382c6c82",
+          "status": "completed",
+          "capacity": 40,
+          "count": 40,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN JUN 28  12:00 PM",
+          "start_iso": "2026-06-28T12:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ebd74-1f79-766f-89df-2024beb7240a",
+          "status": "completed",
+          "capacity": 38,
+          "count": 27,
+          "is_full": false,
+          "spots_left": 11
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU MAY 28  6:00 PM",
+          "start_iso": "2026-05-28T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e1882-c792-7112-9e14-f12e1ba7bbea",
+          "status": "completed",
+          "capacity": 18,
+          "count": 18,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU MAY 14  8:00 PM",
+          "start_iso": "2026-05-14T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019df489-38a2-7775-ae36-592f4484872b",
+          "status": "completed",
+          "capacity": 12,
+          "count": 9,
+          "is_full": false,
+          "spots_left": 3
+        }
+      ],
+      "activity": [
+        {
+          "ts": "2026-09-11T09:39:13",
+          "type": "join",
+          "name": "Dwayne Tasin",
+          "title": "4.0 Open Play",
+          "start": "FRI SEP 11  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/01a01100-31c1-7229-8b11-a01b5052d2ca",
+          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+          "rating": "4.18"
+        },
+        {
+          "ts": "2026-09-02T06:44:09",
+          "type": "join",
+          "name": "Dwayne Tasin",
+          "title": "4.0 Open Play",
+          "start": "FRI SEP 4  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019ffc0f-60c3-7eed-a227-3f55c17819d5",
+          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+          "rating": "4.18"
+        },
+        {
+          "ts": "2026-08-28T09:36:46",
+          "type": "join",
+          "name": "Dwayne Tasin",
+          "title": "4.0 Open Play",
+          "start": "FRI AUG 28  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019fe70d-1537-7ff8-8a0a-e22252fefa66",
+          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+          "rating": "4.18"
+        },
+        {
+          "ts": "2026-08-23T15:59:06",
+          "type": "join",
+          "name": "Dwayne Tasin",
+          "title": "ADVANCED Performance Play Sunday",
+          "start": "SUN AUG 23  4:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/01a00645-fbc4-7229-8989-5a845490726d",
+          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+          "rating": "4.18"
+        },
+        {
+          "ts": "2026-08-21T09:55:51",
+          "type": "join",
+          "name": "Dwayne Tasin",
+          "title": "4.0 Open Play",
+          "start": "FRI AUG 21  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
+          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+          "rating": "4.18"
+        },
+        {
+          "ts": "2026-08-19T09:28:43",
+          "type": "join",
+          "name": "Dwayne Tasin",
+          "title": "DUPR 4.0 Open Play",
+          "start": "WED AUG 19  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/019fcdae-ac6b-7113-b7de-aca06fd8065d",
+          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
+          "rating": "4.18"
+        }
+      ],
+      "offenses": []
+    },
+    {
       "name": "Bryan Still",
       "name_raw": "Bryan S.",
       "uid": "LGoWJn8jkPS6a5OeXokUEK3Hnzy2",
@@ -77417,10 +77689,10 @@
           "start_iso": "2026-09-12T09:00:00",
           "url": "https://ppbrva.podplay.app/community/events/01a07237-41c6-7dd7-9e79-8bbb6ae0792f",
           "status": "upcoming",
-          "capacity": 12,
+          "capacity": 24,
           "count": 12,
-          "is_full": true,
-          "spots_left": 0
+          "is_full": false,
+          "spots_left": 12
         },
         {
           "title": "4.0 Open Play",
@@ -77560,10 +77832,10 @@
           "start_iso": "2026-09-12T09:00:00",
           "url": "https://ppbrva.podplay.app/community/events/01a07237-41c6-7dd7-9e79-8bbb6ae0792f",
           "status": "upcoming",
-          "capacity": 12,
+          "capacity": 24,
           "count": 12,
-          "is_full": true,
-          "spots_left": 0
+          "is_full": false,
+          "spots_left": 12
         },
         {
           "title": "DUPR 4.5 Open Play",
@@ -81503,211 +81775,6 @@
       "offenses": []
     },
     {
-      "name": "Dwayne Tasin",
-      "name_raw": "Dwayne Tasin",
-      "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-      "dupr_id": "PKL9MM",
-      "rating": "4.111",
-      "sessions": [
-        {
-          "title": "4.0 Open Play",
-          "start": "FRI SEP 4  10:00 AM",
-          "start_iso": "2026-09-04T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ffc0f-60c3-7eed-a227-3f55c17819d5",
-          "status": "completed",
-          "capacity": 60,
-          "count": 57,
-          "is_full": false,
-          "spots_left": 3
-        },
-        {
-          "title": "Wild Donkey League - DRAFT DAY (Men's)",
-          "start": "SUN AUG 30  12:00 PM",
-          "start_iso": "2026-08-30T12:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019faf85-2fb1-7ee4-8900-8863f34cae91",
-          "status": "completed",
-          "capacity": 35,
-          "count": 35,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "FRI AUG 28  10:00 AM",
-          "start_iso": "2026-08-28T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fe70d-1537-7ff8-8a0a-e22252fefa66",
-          "status": "completed",
-          "capacity": 48,
-          "count": 40,
-          "is_full": false,
-          "spots_left": 8
-        },
-        {
-          "title": "ADVANCED Performance Play Sunday",
-          "start": "SUN AUG 23  4:00 PM",
-          "start_iso": "2026-08-23T16:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a00645-fbc4-7229-8989-5a845490726d",
-          "status": "completed",
-          "capacity": 21,
-          "count": 12,
-          "is_full": false,
-          "spots_left": 9
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "FRI AUG 21  10:00 AM",
-          "start_iso": "2026-08-21T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
-          "status": "completed",
-          "capacity": 48,
-          "count": 33,
-          "is_full": false,
-          "spots_left": 15
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "WED AUG 19  10:00 AM",
-          "start_iso": "2026-08-19T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fcdae-ac6b-7113-b7de-aca06fd8065d",
-          "status": "completed",
-          "capacity": 12,
-          "count": 10,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "ADVANCED Performance Play Sunday",
-          "start": "SUN AUG 9  4:00 PM",
-          "start_iso": "2026-08-09T16:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fcedc-5f4b-7113-b85c-82fc9252945e",
-          "status": "completed",
-          "capacity": 40,
-          "count": 39,
-          "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE JUL 21  10:00 AM",
-          "start_iso": "2026-07-21T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f5c5b-9020-7667-80d0-3721dca6369c",
-          "status": "completed",
-          "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "FRI JUL 17  10:00 AM",
-          "start_iso": "2026-07-17T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f2896-ac40-7aa2-8202-9805fd6f6f92",
-          "status": "completed",
-          "capacity": 42,
-          "count": 39,
-          "is_full": true,
-          "spots_left": 3
-        },
-        {
-          "title": "ADVANCED Performance Play Sunday",
-          "start": "SUN JUL 5  12:00 PM",
-          "start_iso": "2026-07-05T12:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ee6d7-ccc3-7000-9bc5-aad3382c6c82",
-          "status": "completed",
-          "capacity": 40,
-          "count": 40,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "ADVANCED Performance Play Sunday",
-          "start": "SUN JUN 28  12:00 PM",
-          "start_iso": "2026-06-28T12:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ebd74-1f79-766f-89df-2024beb7240a",
-          "status": "completed",
-          "capacity": 38,
-          "count": 27,
-          "is_full": false,
-          "spots_left": 11
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU MAY 28  6:00 PM",
-          "start_iso": "2026-05-28T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e1882-c792-7112-9e14-f12e1ba7bbea",
-          "status": "completed",
-          "capacity": 18,
-          "count": 18,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU MAY 14  8:00 PM",
-          "start_iso": "2026-05-14T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019df489-38a2-7775-ae36-592f4484872b",
-          "status": "completed",
-          "capacity": 12,
-          "count": 9,
-          "is_full": false,
-          "spots_left": 3
-        }
-      ],
-      "activity": [
-        {
-          "ts": "2026-09-02T06:44:09",
-          "type": "join",
-          "name": "Dwayne Tasin",
-          "title": "4.0 Open Play",
-          "start": "FRI SEP 4  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019ffc0f-60c3-7eed-a227-3f55c17819d5",
-          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-          "rating": "4.18"
-        },
-        {
-          "ts": "2026-08-28T09:36:46",
-          "type": "join",
-          "name": "Dwayne Tasin",
-          "title": "4.0 Open Play",
-          "start": "FRI AUG 28  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019fe70d-1537-7ff8-8a0a-e22252fefa66",
-          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-          "rating": "4.18"
-        },
-        {
-          "ts": "2026-08-23T15:59:06",
-          "type": "join",
-          "name": "Dwayne Tasin",
-          "title": "ADVANCED Performance Play Sunday",
-          "start": "SUN AUG 23  4:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/01a00645-fbc4-7229-8989-5a845490726d",
-          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-          "rating": "4.18"
-        },
-        {
-          "ts": "2026-08-21T09:55:51",
-          "type": "join",
-          "name": "Dwayne Tasin",
-          "title": "4.0 Open Play",
-          "start": "FRI AUG 21  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019fcdaf-1b3a-7ffc-aca0-680cca376def",
-          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-          "rating": "4.18"
-        },
-        {
-          "ts": "2026-08-19T09:28:43",
-          "type": "join",
-          "name": "Dwayne Tasin",
-          "title": "DUPR 4.0 Open Play",
-          "start": "WED AUG 19  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/019fcdae-ac6b-7113-b7de-aca06fd8065d",
-          "uid": "bH6yEQratQhnvamZRtRhq1eeUaj2",
-          "rating": "4.18"
-        }
-      ],
-      "offenses": []
-    },
-    {
       "name": "Esty Flores",
       "name_raw": "Esty F.",
       "uid": null,
@@ -85099,9 +85166,9 @@
       ],
       "count": 2,
       "registered": 12,
-      "capacity": 12,
-      "spots_left": 0,
-      "is_full": true,
+      "capacity": 24,
+      "spots_left": 12,
+      "is_full": false,
       "registrants": [
         "Suraj Singh C.",
         "Suhail A.",
@@ -99450,7 +99517,7 @@
       "url": "https://ppbrva.podplay.app/community/events/01a01100-31c1-7229-8b11-a01b5052d2ca",
       "status": "upcoming",
       "cloaked_count": 1,
-      "total_count": 38,
+      "total_count": 39,
       "capacity": 48,
       "members": [
         {
@@ -99469,7 +99536,7 @@
       "status": "upcoming",
       "cloaked_count": 1,
       "total_count": 12,
-      "capacity": 12,
+      "capacity": 24,
       "members": [
         {
           "name": "Dipen",
