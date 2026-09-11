@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-11T13:11:35",
+ "updated": "2026-09-11T13:57:03",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "humidity (dew 72\u00b0) \u2014 clean window Mon 3p",
+ "reason": "humidity (dew 72\u00b0) \u2014 clean window Mon 4p",
  "ranked": [
   {
    "day": "Tue",
@@ -39,7 +39,7 @@
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 7.7,
+   "obs_18h_mm": 6.4,
    "radar_24h_mm": 12.5
   },
   "days": [
@@ -179,8 +179,8 @@
     "grade": "C",
     "score": 0.514,
     "best": "",
-    "why": "wet court? 8a, 12p \u00b7 humidity (dew 75\u00b0) 10a-11a, 2p-9p \u00b7 drying 9a, 1p",
-    "wet_mm": 0.4,
+    "why": "wet court? 8a-9a \u00b7 humidity (dew 75\u00b0) 11a-9p \u00b7 drying 10a",
+    "wet_mm": 0.9,
     "cells": {
      "8": {
       "t": 71,
@@ -189,13 +189,13 @@
      },
      "9": {
       "t": 73,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "wet"
      },
      "10": {
       "t": 77,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "11": {
       "t": 80,
@@ -204,13 +204,13 @@
      },
      "12": {
       "t": 82,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      },
      "13": {
       "t": 84,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "14": {
       "t": 85,
@@ -259,10 +259,10 @@
     "label": "Mon",
     "sub": "9/14",
     "grade": "B",
-    "score": 0.833,
-    "best": "3p-9p",
-    "why": "humidity (dew 69\u00b0) 8a-12p",
-    "wet_mm": 0.0,
+    "score": 0.75,
+    "best": "4p-9p",
+    "why": "wet court? 10a \u00b7 humidity (dew 69\u00b0) 8a-9a, 12p \u00b7 drying 11a",
+    "wet_mm": 0.4,
     "cells": {
      "8": {
       "t": 70,
@@ -276,13 +276,13 @@
      },
      "10": {
       "t": 76,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "11": {
       "t": 79,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "12": {
       "t": 81,
@@ -290,9 +290,9 @@
       "c": "dew"
      },
      "15": {
-      "t": 74,
-      "v": 2,
-      "c": ""
+      "t": 84,
+      "v": 1,
+      "c": "dew"
      },
      "16": {
       "t": 75,
@@ -357,7 +357,7 @@
       "c": ""
      },
      "19": {
-      "t": 72,
+      "t": 71,
       "v": 2,
       "c": ""
      },
@@ -384,37 +384,37 @@
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 83,
+      "t": 79,
       "v": 2,
       "c": ""
      },
      "16": {
-      "t": 83,
+      "t": 79,
       "v": 2,
       "c": ""
      },
      "17": {
-      "t": 82,
+      "t": 78,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 80,
+      "t": 75,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 76,
+      "t": 71,
       "v": 2,
       "c": ""
      },
      "20": {
-      "t": 72,
+      "t": 68,
       "v": 2,
       "c": ""
      },
      "21": {
-      "t": 70,
+      "t": 66,
       "v": 2,
       "c": ""
      }
@@ -430,17 +430,17 @@
    {
     "date": "2026-09-18",
     "d": "Fr",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-09-19",
     "d": "Sa",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-09-20",
     "d": "Su",
-    "g": "F"
+    "g": "C"
    },
    {
     "date": "2026-09-21",
@@ -455,7 +455,7 @@
    {
     "date": "2026-09-23",
     "d": "We",
-    "g": "A"
+    "g": "F"
    },
    {
     "date": "2026-09-24",
@@ -465,12 +465,12 @@
    {
     "date": "2026-09-25",
     "d": "Fr",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-09-26",
     "d": "Sa",
-    "g": "A"
+    "g": "F"
    }
   ]
  },
