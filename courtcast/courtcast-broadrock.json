@@ -2,11 +2,11 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-11T08:08:23",
+ "updated": "2026-09-11T08:53:51",
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 1p (humidity (dew 72\u00b0))",
- "wet_note": null,
+ "headline": "not clean \u2014 until 1p (drying)",
+ "wet_note": "court wet? \u2014 0.1mm, drying ~9a",
  "reason": "clean window Mon 3p",
  "ranked": [
   {
@@ -38,7 +38,7 @@
    "wind": 2
   },
   "court": {
-   "wet_mm": 0.0,
+   "wet_mm": 0.1,
    "obs_18h_mm": 7.7,
    "radar_24h_mm": 12.5
   },
@@ -50,13 +50,13 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 72\u00b0) 8a-12p, 3p-9p",
-    "wet_mm": 0.0,
+    "why": "humidity (dew 72\u00b0) 9a-12p, 3p-9p \u00b7 drying 8a",
+    "wet_mm": 0.1,
     "cells": {
      "8": {
       "t": 73,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "9": {
       "t": 76,
@@ -470,7 +470,7 @@
    {
     "date": "2026-09-21",
     "d": "Mo",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-09-22",
@@ -495,7 +495,7 @@
    {
     "date": "2026-09-26",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
