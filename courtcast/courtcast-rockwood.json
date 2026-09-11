@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Rockwood Park",
- "updated": "2026-09-11T15:59:45",
+ "updated": "2026-09-11T17:10:56",
  "playable_now": false,
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 10p (humidity (dew 72\u00b0))",
@@ -26,16 +26,16 @@
    "grade": "C"
   },
   {
-   "day": "Sun",
+   "day": "Sat",
    "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 86,
+   "temp": 84,
    "dew": 72,
-   "wind": 5
+   "wind": 7
   },
   "court": {
    "wet_mm": 0.0,
@@ -50,19 +50,9 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "humidity (dew 73\u00b0) 3p-9p",
+    "why": "humidity (dew 73\u00b0) 5p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "15": {
-      "t": 86,
-      "v": 1,
-      "c": "dew"
-     },
-     "16": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
-     },
      "17": {
       "t": 84,
       "v": 1,
@@ -97,7 +87,7 @@
     "grade": "C",
     "score": 0.557,
     "best": "",
-    "why": "rain 7p \u00b7 humidity (dew 75\u00b0) 8a-6p, 8p-9p",
+    "why": "rain 8p \u00b7 humidity (dew 75\u00b0) 8a-7p, 9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -156,17 +146,17 @@
       "c": "dew"
      },
      "19": {
-      "t": 79,
-      "v": 0,
-      "c": "rain"
-     },
-     "20": {
-      "t": 76,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
+     "20": {
+      "t": 76,
+      "v": 0,
+      "c": "rain"
+     },
      "21": {
-      "t": 75,
+      "t": 77,
       "v": 1,
       "c": "dew"
      }
@@ -177,20 +167,20 @@
     "label": "Sun",
     "sub": "9/13",
     "grade": "C",
-    "score": 0.6,
+    "score": 0.557,
     "best": "",
-    "why": "humidity (dew 75\u00b0) 8a-9p",
-    "wet_mm": 0.0,
+    "why": "wet court? 8a \u00b7 humidity (dew 75\u00b0) 10a-9p \u00b7 drying 9a",
+    "wet_mm": 0.7,
     "cells": {
      "8": {
       "t": 72,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "wet"
      },
      "9": {
       "t": 73,
       "v": 1,
-      "c": "dew"
+      "c": "dry"
      },
      "10": {
       "t": 76,
