@@ -2,11 +2,11 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Rockwood Park",
- "updated": "2026-09-10T22:02:33",
+ "updated": "2026-09-10T22:17:45",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Fri 8a",
- "wet_note": "court wet? \u2014 1.3mm, drying Fri",
+ "wet_note": "court wet? \u2014 1.2mm, drying Fri",
  "reason": "humidity (dew 71\u00b0) \u2014 clean window Tue 8p",
  "ranked": [
   {
@@ -14,11 +14,11 @@
    "grade": "C"
   },
   {
-   "day": "Mon",
+   "day": "Fri",
    "grade": "C"
   },
   {
-   "day": "Fri",
+   "day": "Mon",
    "grade": "C"
   },
   {
@@ -38,7 +38,7 @@
    "wind": 2
   },
   "court": {
-   "wet_mm": 1.3,
+   "wet_mm": 1.2,
    "obs_18h_mm": 7.7,
    "radar_24h_mm": 10.3
   },
@@ -48,10 +48,10 @@
     "label": "Fri",
     "sub": "9/11",
     "grade": "C",
-    "score": 0.55,
+    "score": 0.6,
     "best": "",
-    "why": "wet court? 9p \u00b7 humidity (dew 72\u00b0) 8a-12p, 3p-7p \u00b7 drying 8p",
-    "wet_mm": 1.1,
+    "why": "humidity (dew 72\u00b0) 8a-12p, 3p-9p",
+    "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 72,
@@ -106,12 +106,12 @@
      "20": {
       "t": 76,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "21": {
       "t": 74,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -122,8 +122,8 @@
     "grade": "D",
     "score": 0.386,
     "best": "",
-    "why": "rain 3p, 6p-9p \u00b7 humidity (dew 74\u00b0) 8a-2p, 4p-5p",
-    "wet_mm": 1.2,
+    "why": "rain 5p-9p \u00b7 humidity (dew 76\u00b0) 8a-4p",
+    "wet_mm": 1.0,
     "cells": {
      "8": {
       "t": 73,
@@ -156,24 +156,24 @@
       "c": "dew"
      },
      "14": {
-      "t": 86,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
      "15": {
-      "t": 85,
-      "v": 0,
-      "c": "rain"
+      "t": 84,
+      "v": 1,
+      "c": "dew"
      },
      "16": {
-      "t": 88,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
      "17": {
-      "t": 88,
-      "v": 1,
-      "c": "dew"
+      "t": 85,
+      "v": 0,
+      "c": "rain"
      },
      "18": {
       "t": 84,
