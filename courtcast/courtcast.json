@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-10T21:01:40",
+ "updated": "2026-09-10T22:02:30",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: Fri 8a",
- "wet_note": "court wet? \u2014 0.6mm, drying ~11p",
- "reason": "humidity (dew 70\u00b0) \u2014 clean window Tue 8p \u00b7 today: wet court?",
+ "wet_note": "court wet? \u2014 0.4mm, drying Fri",
+ "reason": "humidity (dew 70\u00b0) \u2014 clean window Tue 8p",
  "ranked": [
   {
    "day": "Tue",
@@ -33,33 +33,16 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 78,
-   "dew": 72,
-   "wind": 2
+   "temp": 77,
+   "dew": 73,
+   "wind": 1
   },
   "court": {
-   "wet_mm": 0.6,
+   "wet_mm": 0.4,
    "obs_18h_mm": 1.7,
    "radar_24h_mm": 3.5
   },
   "days": [
-   {
-    "date": "2026-09-10",
-    "label": "Today",
-    "sub": "9/10",
-    "grade": "F",
-    "score": 0.0,
-    "best": "",
-    "why": "wet court? 9p",
-    "wet_mm": 0.6,
-    "cells": {
-     "21": {
-      "t": 78,
-      "v": 0,
-      "c": "wet"
-     }
-    }
-   },
    {
     "date": "2026-09-11",
     "label": "Fri",
