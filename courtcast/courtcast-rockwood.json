@@ -2,11 +2,11 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Rockwood Park",
- "updated": "2026-09-10T23:48:38",
+ "updated": "2026-09-11T00:03:46",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Fri 8a",
- "wet_note": "court wet? \u2014 1.1mm, drying Fri",
+ "headline": "Next OK window: 8a today",
+ "wet_note": "court wet? \u2014 0.9mm, drying ~6a",
  "reason": "humidity (dew 71\u00b0) \u2014 clean window Tue 8p",
  "ranked": [
   {
@@ -14,7 +14,7 @@
    "grade": "C"
   },
   {
-   "day": "Fri",
+   "day": "Today",
    "grade": "C"
   },
   {
@@ -22,30 +22,30 @@
    "grade": "C"
   },
   {
-   "day": "Sun",
+   "day": "Wed",
    "grade": "C"
   },
   {
-   "day": "Sat",
-   "grade": "D"
+   "day": "Sun",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 76,
+   "temp": 75,
    "dew": 73,
    "wind": 2
   },
   "court": {
-   "wet_mm": 1.1,
+   "wet_mm": 0.9,
    "obs_18h_mm": 7.7,
    "radar_24h_mm": 10.3
   },
   "days": [
    {
     "date": "2026-09-11",
-    "label": "Fri",
+    "label": "Today",
     "sub": "9/11",
     "grade": "C",
     "score": 0.6,
@@ -397,14 +397,56 @@
       "c": ""
      }
     }
+   },
+   {
+    "date": "2026-09-16",
+    "label": "Wed",
+    "sub": "9/16",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 70\u00b0) 3p-9p",
+    "wet_mm": 0.0,
+    "cells": {
+     "15": {
+      "t": 86,
+      "v": 1,
+      "c": "dew"
+     },
+     "16": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
+     "17": {
+      "t": 86,
+      "v": 1,
+      "c": "dew"
+     },
+     "18": {
+      "t": 84,
+      "v": 1,
+      "c": "dew"
+     },
+     "19": {
+      "t": 81,
+      "v": 1,
+      "c": "dew"
+     },
+     "20": {
+      "t": 78,
+      "v": 1,
+      "c": "dew"
+     },
+     "21": {
+      "t": 75,
+      "v": 1,
+      "c": "dew"
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-09-16",
-    "d": "We",
-    "g": "C"
-   },
    {
     "date": "2026-09-17",
     "d": "Th",
@@ -448,6 +490,11 @@
    {
     "date": "2026-09-25",
     "d": "Fr",
+    "g": "A"
+   },
+   {
+    "date": "2026-09-26",
+    "d": "Sa",
     "g": "A"
    }
   ]

@@ -2,11 +2,11 @@
  "version": 1,
  "generator": "wx_play v4.6",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-10T23:03:14",
+ "updated": "2026-09-11T00:03:45",
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Fri 8a",
- "wet_note": "court wet? \u2014 0.4mm, drying Fri",
+ "headline": "Next OK window: 8a today",
+ "wet_note": "court wet? \u2014 0.2mm, drying ~1a",
  "reason": "humidity (dew 70\u00b0) \u2014 clean window Tue 8p",
  "ranked": [
   {
@@ -18,34 +18,34 @@
    "grade": "C"
   },
   {
-   "day": "Fri",
+   "day": "Wed",
+   "grade": "C"
+  },
+  {
+   "day": "Today",
    "grade": "C"
   },
   {
    "day": "Sun",
-   "grade": "D"
-  },
-  {
-   "day": "Sat",
    "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 76,
+   "temp": 75,
    "dew": 73,
    "wind": 1
   },
   "court": {
-   "wet_mm": 0.4,
+   "wet_mm": 0.2,
    "obs_18h_mm": 1.7,
    "radar_24h_mm": 3.5
   },
   "days": [
    {
     "date": "2026-09-11",
-    "label": "Fri",
+    "label": "Today",
     "sub": "9/11",
     "grade": "C",
     "score": 0.55,
@@ -397,14 +397,56 @@
       "c": ""
      }
     }
+   },
+   {
+    "date": "2026-09-16",
+    "label": "Wed",
+    "sub": "9/16",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 71\u00b0) 3p-9p",
+    "wet_mm": 0.0,
+    "cells": {
+     "15": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
+     "16": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
+     "17": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
+     "18": {
+      "t": 85,
+      "v": 1,
+      "c": "dew"
+     },
+     "19": {
+      "t": 81,
+      "v": 1,
+      "c": "dew"
+     },
+     "20": {
+      "t": 78,
+      "v": 1,
+      "c": "dew"
+     },
+     "21": {
+      "t": 76,
+      "v": 1,
+      "c": "dew"
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-09-16",
-    "d": "We",
-    "g": "C"
-   },
    {
     "date": "2026-09-17",
     "d": "Th",
@@ -448,6 +490,11 @@
    {
     "date": "2026-09-25",
     "d": "Fr",
+    "g": "A"
+   },
+   {
+    "date": "2026-09-26",
+    "d": "Sa",
     "g": "A"
    }
   ]
