@@ -2,10 +2,10 @@
  "version": 1,
  "generator": "wx_play v4.8",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-12T13:54:14",
+ "updated": "2026-09-12T14:18:36",
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 5p (humidity (dew 75\u00b0))",
+ "headline": "not clean \u2014 until 5p (thunder)",
  "wet_note": null,
  "reason": "clean window Mon 12p",
  "ranked": [
@@ -33,9 +33,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 81,
-   "dew": 75,
-   "wind": 6
+   "temp": 82,
+   "dew": 74,
+   "wind": 8
   },
   "court": {
    "wet_mm": 0.0,
@@ -48,16 +48,11 @@
     "label": "Today",
     "sub": "9/12",
     "grade": "D",
-    "score": 0.4,
+    "score": 0.375,
     "best": "",
-    "why": "rain 5p-7p \u00b7 thunder 2p-3p, 8p-9p \u00b7 humidity (dew 75\u00b0) 1p \u00b7 NWS: rain 2p-4p, 8p-9p",
+    "why": "rain 5p-7p \u00b7 rain 4p, 8p-9p \u00b7 thunder 2p-3p \u00b7 NWS: rain 2p-4p, 8p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "13": {
-      "t": 81,
-      "v": 1,
-      "c": "dew"
-     },
      "14": {
       "t": 82,
       "v": 1,
@@ -91,12 +86,12 @@
      "20": {
       "t": 80,
       "v": 1,
-      "c": "thn"
+      "c": "rain"
      },
      "21": {
       "t": 75,
       "v": 1,
-      "c": "thn"
+      "c": "rain"
      }
     }
    },

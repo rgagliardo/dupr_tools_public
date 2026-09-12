@@ -2,11 +2,11 @@
  "version": 1,
  "generator": "wx_play v4.8",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-12T13:54:15",
+ "updated": "2026-09-12T14:18:38",
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 8p today",
- "wet_note": null,
+ "wet_note": "court wet? \u2014 0.1mm, drying ~4p",
  "reason": "rain \u2014 clean window Mon 3p",
  "ranked": [
   {
@@ -33,14 +33,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 82,
+   "temp": 83,
    "dew": 76,
    "wind": 6
   },
   "court": {
-   "wet_mm": 0.0,
-   "obs_18h_mm": 0,
-   "radar_24h_mm": 1.8
+   "wet_mm": 0.1,
+   "obs_18h_mm": 0.4,
+   "radar_24h_mm": 2.0
   },
   "days": [
    {
@@ -48,20 +48,15 @@
     "label": "Today",
     "sub": "9/12",
     "grade": "F",
-    "score": 0.133,
+    "score": 0.15,
     "best": "",
-    "why": "rain 2p-7p \u00b7 raining now 1p \u00b7 rain 8p \u00b7 NWS: rain 8p-9p",
+    "why": "rain 3p-7p \u00b7 raining now 2p \u00b7 rain 8p-9p \u00b7 NWS: rain 8p-9p",
     "wet_mm": 0.5,
     "cells": {
-     "13": {
-      "t": 82,
-      "v": 0,
-      "c": "rnow"
-     },
      "14": {
       "t": 83,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "15": {
       "t": 84,
@@ -96,7 +91,7 @@
      "21": {
       "t": 76,
       "v": 1,
-      "c": "thn"
+      "c": "rain"
      }
     }
    },
