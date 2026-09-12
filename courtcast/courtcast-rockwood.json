@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.8",
  "spot": "Rockwood Park",
- "updated": "2026-09-12T13:39:05",
+ "updated": "2026-09-12T13:54:14",
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 2p (thunder)",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 8p today",
  "wet_note": null,
- "reason": "clean window Mon 3p",
+ "reason": "rain \u2014 clean window Mon 12p",
  "ranked": [
   {
    "day": "Tue",
@@ -40,7 +40,7 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.1
+   "radar_24h_mm": 0.2
   },
   "days": [
    {
@@ -48,15 +48,15 @@
     "label": "Today",
     "sub": "9/12",
     "grade": "F",
-    "score": 0.2,
+    "score": 0.133,
     "best": "",
-    "why": "rain 2p-7p \u00b7 thunder 1p, 9p \u00b7 rain 8p \u00b7 NWS: rain 8p-9p",
-    "wet_mm": 0.2,
+    "why": "rain 2p-7p \u00b7 raining now 1p \u00b7 rain 8p \u00b7 NWS: rain 8p-9p",
+    "wet_mm": 0.5,
     "cells": {
      "13": {
       "t": 82,
-      "v": 1,
-      "c": "thn"
+      "v": 0,
+      "c": "rnow"
      },
      "14": {
       "t": 83,
@@ -89,12 +89,12 @@
       "c": "rain"
      },
      "20": {
-      "t": 80,
+      "t": 79,
       "v": 1,
       "c": "rain"
      },
      "21": {
-      "t": 75,
+      "t": 76,
       "v": 1,
       "c": "thn"
      }
@@ -108,7 +108,7 @@
     "score": 0.514,
     "best": "",
     "why": "wet court? 8a-9a \u00b7 humidity (dew 75\u00b0) 10a-9p",
-    "wet_mm": 0.9,
+    "wet_mm": 0.8,
     "cells": {
      "8": {
       "t": 73,
@@ -187,9 +187,9 @@
     "label": "Mon",
     "sub": "9/14",
     "grade": "B",
-    "score": 0.833,
+    "score": 0.867,
     "best": "3p-9p",
-    "why": "humidity (dew 68\u00b0) 8a-12p",
+    "why": "humidity (dew 68\u00b0) 8a-11a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -213,17 +213,17 @@
       "c": "dew"
      },
      "12": {
-      "t": 80,
-      "v": 1,
-      "c": "dew"
+      "t": 76,
+      "v": 2,
+      "c": ""
      },
      "15": {
-      "t": 81,
+      "t": 82,
       "v": 2,
       "c": ""
      },
      "16": {
-      "t": 83,
+      "t": 82,
       "v": 2,
       "c": ""
      },
@@ -317,17 +317,17 @@
       "c": ""
      },
      "16": {
-      "t": 82,
+      "t": 84,
       "v": 2,
       "c": ""
      },
      "17": {
-      "t": 82,
+      "t": 83,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 79,
+      "t": 80,
       "v": 2,
       "c": ""
      },
@@ -405,27 +405,27 @@
    {
     "date": "2026-09-19",
     "d": "Sa",
-    "g": "A"
+    "g": "D"
    },
    {
     "date": "2026-09-20",
     "d": "Su",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-09-21",
     "d": "Mo",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-09-22",
     "d": "Tu",
-    "g": "F"
+    "g": "A"
    },
    {
     "date": "2026-09-23",
     "d": "We",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-09-24",
