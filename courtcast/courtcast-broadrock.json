@@ -2,12 +2,12 @@
  "version": 1,
  "generator": "wx_play v4.7",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-11T21:03:19",
+ "updated": "2026-09-11T22:14:52",
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (rain)",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Sat 8a",
  "wet_note": null,
- "reason": "clean window Mon 12p",
+ "reason": "humidity (dew 71\u00b0) \u2014 clean window Mon 12p",
  "ranked": [
   {
    "day": "Tue",
@@ -22,44 +22,27 @@
    "grade": "B"
   },
   {
-   "day": "Today",
+   "day": "Sat",
    "grade": "C"
   },
   {
-   "day": "Sat",
+   "day": "Sun",
    "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 75,
-   "dew": 73,
+   "temp": 74,
+   "dew": 72,
    "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.7
+   "radar_24h_mm": 0
   },
   "days": [
-   {
-    "date": "2026-09-11",
-    "label": "Today",
-    "sub": "9/11",
-    "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "rain 9p",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 75,
-      "v": 1,
-      "c": "rain"
-     }
-    }
-   },
    {
     "date": "2026-09-12",
     "label": "Sat",
@@ -121,17 +104,17 @@
       "c": "rain"
      },
      "18": {
-      "t": 85,
+      "t": 82,
       "v": 1,
       "c": "rain"
      },
      "19": {
-      "t": 80,
+      "t": 81,
       "v": 1,
       "c": "rain"
      },
      "20": {
-      "t": 77,
+      "t": 78,
       "v": 1,
       "c": "rain"
      },
@@ -147,20 +130,20 @@
     "label": "Sun",
     "sub": "9/13",
     "grade": "C",
-    "score": 0.6,
+    "score": 0.514,
     "best": "",
-    "why": "rain 8a-1p \u00b7 humidity (dew 73\u00b0) 5p-9p \u00b7 thunder 2p-4p",
-    "wet_mm": 0.0,
+    "why": "wet court? 8a-9a \u00b7 humidity (dew 73\u00b0) 5p-9p \u00b7 rain 10a-1p",
+    "wet_mm": 1.0,
     "cells": {
      "8": {
       "t": 71,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "9": {
       "t": 73,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "10": {
       "t": 77,
@@ -290,7 +273,7 @@
       "c": ""
      },
      "21": {
-      "t": 71,
+      "t": 73,
       "v": 2,
       "c": ""
      }
@@ -307,22 +290,22 @@
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 81,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "16": {
-      "t": 82,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "17": {
-      "t": 81,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 79,
+      "t": 78,
       "v": 2,
       "c": ""
      },
