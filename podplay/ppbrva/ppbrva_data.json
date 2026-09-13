@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-13T07:48:55",
-  "next_scan_at": "2026-09-13T08:18:55",
+  "generated_at": "2026-09-13T07:56:30",
+  "next_scan_at": "2026-09-13T08:26:30",
   "stats": {
     "total": 736,
     "full_count": 94
@@ -16,8 +16,8 @@
       "end_display": "10:00 AM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 3,
-      "pct": 25,
+      "count": 6,
+      "pct": 50,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -26,7 +26,10 @@
       "registrants": [
         "Brandon S.",
         "Steven L.",
-        "Chris M."
+        "Chris M.",
+        "James D.",
+        "Jim O.",
+        "Geoff E."
       ],
       "min_dupr": null,
       "gate_type": null,
@@ -37,20 +40,32 @@
           "departed_at": "2026-09-12T10:59:15"
         }
       ],
-      "last_snap_ts": "2026-09-13T07:48:48",
+      "last_snap_ts": "2026-09-13T07:56:21",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
       "registrant_ids": [
         "sqOtEb2y2CO0mSJA7iwuDNqNe342",
         "ktMj5051QMRdX627as2oDZHeN1y1",
-        "1YI32lplMRTAXdlwIuE0tqB3hAQ2"
+        "1YI32lplMRTAXdlwIuE0tqB3hAQ2",
+        "26ikv931kWMmyP9mYeYnwfdzJ4A3",
+        "Iv5I6ScjSKPOPhcMtmqdkE0oveC3",
+        "iaKOI66VFNS8nuoUw1IcE0FWAbH3"
       ],
       "ratings_by_uid": {
         "sqOtEb2y2CO0mSJA7iwuDNqNe342": "3.93",
-        "1YI32lplMRTAXdlwIuE0tqB3hAQ2": "3.85"
+        "1YI32lplMRTAXdlwIuE0tqB3hAQ2": "3.85",
+        "Iv5I6ScjSKPOPhcMtmqdkE0oveC3": "3.52"
       },
-      "skill": null
+      "skill": {
+        "med": "3.850",
+        "med_val": 3.85,
+        "lo": "3.520",
+        "hi": "3.930",
+        "rated": 3,
+        "total": 6,
+        "tier": "SKILLED"
+      }
     },
     {
       "uuid": "01a07779-9bd7-7dd7-9fd8-4491528853f6",
@@ -73,7 +88,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:48",
+      "last_snap_ts": "2026-09-13T07:56:21",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -102,7 +117,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:48",
+      "last_snap_ts": "2026-09-13T07:56:22",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -151,7 +166,7 @@
           "departed_at": "2026-09-13T01:14:31"
         }
       ],
-      "last_snap_ts": "2026-09-13T07:48:47",
+      "last_snap_ts": "2026-09-13T07:56:20",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -209,7 +224,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:47",
+      "last_snap_ts": "2026-09-13T07:56:20",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -227,23 +242,28 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 4,
-      "pct": 33,
+      "count": 3,
+      "pct": 25,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
       "was_ever_full": false,
       "manually_added": false,
       "registrants": [
-        "C. Todd S.",
         "Suraj Singh C.",
         "Dave S.",
         "+1 player"
       ],
       "min_dupr": "4.20",
       "gate_type": "Doubles",
-      "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:47",
+      "departed": [
+        {
+          "name": "Todd Springer",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "departed_at": "2026-09-13T07:56:20"
+        }
+      ],
+      "last_snap_ts": "2026-09-13T07:56:20",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -256,22 +276,20 @@
         }
       ],
       "registrant_ids": [
-        "8MpmeNpFsXacy197QvfVcVTHZZy1",
         "99lO18DA7mMpFAE7M7QWdaB10Yi1",
         "kxtJpFlOslXwKwloRsnEONl8HvN2"
       ],
       "ratings_by_uid": {
-        "8MpmeNpFsXacy197QvfVcVTHZZy1": "4.29",
         "99lO18DA7mMpFAE7M7QWdaB10Yi1": "5.15",
         "kxtJpFlOslXwKwloRsnEONl8HvN2": "4.24"
       },
       "skill": {
-        "med": "4.314",
-        "med_val": 4.3145,
+        "med": "4.340",
+        "med_val": 4.34,
         "lo": "4.240",
         "hi": "5.151",
-        "rated": 4,
-        "total": 4,
+        "rated": 3,
+        "total": 3,
         "tier": "ADVANCED"
       }
     },
@@ -322,7 +340,7 @@
           "departed_at": "2026-09-12T10:43:35"
         }
       ],
-      "last_snap_ts": "2026-09-13T07:48:47",
+      "last_snap_ts": "2026-09-13T07:56:21",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -395,7 +413,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:48",
+      "last_snap_ts": "2026-09-13T07:56:21",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -426,7 +444,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:48",
+      "last_snap_ts": "2026-09-13T07:56:22",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -463,7 +481,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:49",
+      "last_snap_ts": "2026-09-13T07:56:22",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -557,7 +575,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:49",
+      "last_snap_ts": "2026-09-13T07:56:22",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -663,7 +681,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:49",
+      "last_snap_ts": "2026-09-13T07:56:22",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -692,7 +710,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:49",
+      "last_snap_ts": "2026-09-13T07:56:23",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -721,7 +739,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:50",
+      "last_snap_ts": "2026-09-13T07:56:23",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -761,7 +779,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:50",
+      "last_snap_ts": "2026-09-13T07:56:23",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -829,7 +847,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:50",
+      "last_snap_ts": "2026-09-13T07:56:24",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -864,7 +882,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:50",
+      "last_snap_ts": "2026-09-13T07:56:24",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -941,7 +959,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:50",
+      "last_snap_ts": "2026-09-13T07:56:25",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1034,7 +1052,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:51",
+      "last_snap_ts": "2026-09-13T07:56:25",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1063,7 +1081,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:51",
+      "last_snap_ts": "2026-09-13T07:56:25",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1092,7 +1110,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:51",
+      "last_snap_ts": "2026-09-13T07:56:25",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1134,7 +1152,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:51",
+      "last_snap_ts": "2026-09-13T07:56:25",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1199,7 +1217,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:52",
+      "last_snap_ts": "2026-09-13T07:56:26",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1234,7 +1252,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:52",
+      "last_snap_ts": "2026-09-13T07:56:26",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1319,7 +1337,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:52",
+      "last_snap_ts": "2026-09-13T07:56:26",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1428,7 +1446,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:52",
+      "last_snap_ts": "2026-09-13T07:56:26",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1463,7 +1481,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:53",
+      "last_snap_ts": "2026-09-13T07:56:27",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1512,7 +1530,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:53",
+      "last_snap_ts": "2026-09-13T07:56:27",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1553,7 +1571,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-13T07:48:53",
+      "last_snap_ts": "2026-09-13T07:56:28",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -50724,6 +50742,35 @@
   ],
   "activity": [
     {
+      "ts": "2026-09-13T07:56:21",
+      "type": "join",
+      "name": "James Daley",
+      "title": "4.0 Open Play",
+      "start": "SUN SEP 13  8:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07779-07c2-7dd7-9fd6-8e0e462bb688",
+      "uid": "26ikv931kWMmyP9mYeYnwfdzJ4A3"
+    },
+    {
+      "ts": "2026-09-13T07:56:21",
+      "type": "join",
+      "name": "Jim Opalka",
+      "title": "4.0 Open Play",
+      "start": "SUN SEP 13  8:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07779-07c2-7dd7-9fd6-8e0e462bb688",
+      "uid": "Iv5I6ScjSKPOPhcMtmqdkE0oveC3",
+      "rating": "3.52"
+    },
+    {
+      "ts": "2026-09-13T07:56:20",
+      "type": "cancel",
+      "name": "Todd Springer",
+      "title": "DUPR 4.5 Open Play",
+      "start": "SUN SEP 13  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07781-3933-7dd7-9fdf-869ea96ea884",
+      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+      "rating": "4.29"
+    },
+    {
       "ts": "2026-09-13T07:48:52",
       "type": "join",
       "name": "David Serio",
@@ -72340,6 +72387,12 @@
       "cancels": 4
     },
     {
+      "name": "Todd Springer",
+      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+      "joins": 30,
+      "cancels": 3
+    },
+    {
       "name": "Ming Wong",
       "uid": "vmEkP6J7YNRgHC7P6FgOaAIZmQ53",
       "joins": 30,
@@ -72409,12 +72462,6 @@
       "name": "Charles Neufeldt",
       "uid": "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2",
       "joins": 33,
-      "cancels": 2
-    },
-    {
-      "name": "Todd Springer",
-      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-      "joins": 30,
       "cancels": 2
     },
     {
@@ -73432,6 +73479,12 @@
       "cancels": 0
     },
     {
+      "name": "Jim Opalka",
+      "uid": "Iv5I6ScjSKPOPhcMtmqdkE0oveC3",
+      "joins": 5,
+      "cancels": 0
+    },
+    {
       "name": "Brian Bins",
       "uid": "Qhrhvq7F5Uh8q6tjwY5bfyoyx4h1",
       "joins": 5,
@@ -73528,8 +73581,8 @@
       "cancels": 0
     },
     {
-      "name": "Jim Opalka",
-      "uid": "Iv5I6ScjSKPOPhcMtmqdkE0oveC3",
+      "name": "James Daley",
+      "uid": "26ikv931kWMmyP9mYeYnwfdzJ4A3",
       "joins": 4,
       "cancels": 0
     },
@@ -73746,12 +73799,6 @@
     {
       "name": "Christie Cox",
       "uid": "ULhMScjjWJZgjaKs5dQ1iLmSQfx2",
-      "joins": 3,
-      "cancels": 0
-    },
-    {
-      "name": "James Daley",
-      "uid": "26ikv931kWMmyP9mYeYnwfdzJ4A3",
       "joins": 3,
       "cancels": 0
     },
@@ -77997,918 +78044,6 @@
   "cloaked_recent": 3,
   "friends": [
     {
-      "name": "Todd Springer",
-      "name_raw": "C. Todd S.",
-      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-      "dupr_id": "35NX2V",
-      "rating": "4.289",
-      "sessions": [
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN SEP 13  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-09-13T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a07781-3933-7dd7-9fdf-869ea96ea884",
-          "status": "upcoming",
-          "capacity": 12,
-          "count": 4,
-          "is_full": false,
-          "spots_left": 8
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE SEP 15  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-09-15T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
-          "status": "upcoming",
-          "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "SAT SEP 12  9:00 AM",
-          "end": "11:00 AM",
-          "start_iso": "2026-09-12T09:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a07237-41c6-7dd7-9e79-8bbb6ae0792f",
-          "status": "completed",
-          "capacity": 24,
-          "count": 13,
-          "is_full": false,
-          "spots_left": 11
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "THU SEP 10  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-09-10T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a0597a-54a6-7662-8366-efb13968df4b",
-          "status": "completed",
-          "capacity": 6,
-          "count": 1,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "TUE SEP 8  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-09-08T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ffc10-2ecf-7eed-a22e-3ea06022a415",
-          "status": "completed",
-          "capacity": 6,
-          "count": 1,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "TUE SEP 8  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-09-08T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a05950-9d64-7aa3-adf1-2042e85fc338",
-          "status": "completed",
-          "capacity": 12,
-          "count": 8,
-          "is_full": false,
-          "spots_left": 4
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE SEP 1  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-09-01T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ffc0d-fe65-7eed-a21e-ee6213de95be",
-          "status": "completed",
-          "capacity": 18,
-          "count": 9,
-          "is_full": false,
-          "spots_left": 9
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN AUG 30  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-08-30T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a01b1f-22be-7885-8644-c621a5fef4f0",
-          "status": "completed",
-          "capacity": 12,
-          "count": 4,
-          "is_full": false,
-          "spots_left": 8
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT AUG 29  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-08-29T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a01b1f-216c-7885-8644-1b5eb0338f60",
-          "status": "completed",
-          "capacity": 18,
-          "count": 11,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU AUG 27  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-08-27T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fe71f-3b38-7554-bc2e-f47b31675da6",
-          "status": "completed",
-          "capacity": 36,
-          "count": 36,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "TUE AUG 25  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-08-25T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a024c3-b0a0-7885-87c0-1982b55402ae",
-          "status": "completed",
-          "capacity": 12,
-          "count": 1,
-          "is_full": false,
-          "spots_left": 11
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE AUG 25  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-08-25T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fe71f-3954-7554-bc2e-1a242343f37e",
-          "status": "completed",
-          "capacity": 30,
-          "count": 26,
-          "is_full": false,
-          "spots_left": 4
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "MON AUG 24  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-08-24T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fdd26-8684-7ee9-b9fd-a0c32ceda43b",
-          "status": "completed",
-          "capacity": 24,
-          "count": 20,
-          "is_full": false,
-          "spots_left": 4
-        },
-        {
-          "title": "ADVANCED Performance Play Saturday",
-          "start": "SAT AUG 22  12:00 PM",
-          "end": "4:00 PM",
-          "start_iso": "2026-08-22T12:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
-          "status": "completed",
-          "capacity": 47,
-          "count": 38,
-          "is_full": false,
-          "spots_left": 9
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT AUG 22  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-08-22T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/01a00620-ddfb-7778-b455-381be65e881c",
-          "status": "completed",
-          "capacity": 12,
-          "count": 7,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "MON AUG 17  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-08-17T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019fd7e2-030a-766c-bd95-299be3452cf4",
-          "status": "completed",
-          "capacity": 30,
-          "count": 25,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU JUL 30  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-07-30T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f6142-b5cc-799f-94cd-9e9fcb26636c",
-          "status": "completed",
-          "capacity": 12,
-          "count": 2,
-          "is_full": false,
-          "spots_left": 10
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU JUL 30  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-30T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f613a-c3c2-799f-94ad-01d4b7ed3aa3",
-          "status": "completed",
-          "capacity": 30,
-          "count": 25,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE JUL 28  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-07-28T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f617b-1ee6-7dd6-97ae-d06460211159",
-          "status": "completed",
-          "capacity": 12,
-          "count": 3,
-          "is_full": false,
-          "spots_left": 9
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "TUE JUL 28  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-28T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f6141-1073-799f-94c7-f9b93007ce43",
-          "status": "completed",
-          "capacity": 24,
-          "count": 24,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT JUL 25  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-07-25T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ee68b-29dc-7000-a6b9-6b2401d312b0",
-          "status": "completed",
-          "capacity": 12,
-          "count": 10,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU JUL 23  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-23T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f6122-4752-799f-9492-d04273efcd27",
-          "status": "completed",
-          "capacity": 30,
-          "count": 29,
-          "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "TUE JUL 21  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-07-21T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f5cdb-f452-7dd9-93a1-3a940e0f5b4f",
-          "status": "completed",
-          "capacity": 24,
-          "count": 10,
-          "is_full": false,
-          "spots_left": 14
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN JUL 19  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-07-19T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ee68b-2851-7000-9b21-598e89a3687b",
-          "status": "completed",
-          "capacity": 12,
-          "count": 5,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT JUL 18  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-07-18T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ee68b-269f-7000-9b20-758eaa35cf80",
-          "status": "completed",
-          "capacity": 12,
-          "count": 7,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU JUL 16  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-16T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f4750-4aad-777d-a3b3-4e762d1ecb1a",
-          "status": "completed",
-          "capacity": 36,
-          "count": 35,
-          "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "TUE JUL 14  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-14T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f2df5-9d69-7aaf-850f-cf5de730339b",
-          "status": "completed",
-          "capacity": 30,
-          "count": 29,
-          "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN JUL 12  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-07-12T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ee68b-2521-7000-9b1f-8ba7046df3dc",
-          "status": "completed",
-          "capacity": 12,
-          "count": 6,
-          "is_full": false,
-          "spots_left": 6
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "SAT JUL 11  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-07-11T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ee688-20a2-7000-9b19-925b13505f54",
-          "status": "completed",
-          "capacity": 12,
-          "count": 5,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "THU JUL 9  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-09T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f246c-cf2f-7ff1-9eb9-a545ce0105f0",
-          "status": "completed",
-          "capacity": 18,
-          "count": 10,
-          "is_full": false,
-          "spots_left": 8
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE JUL 7  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-07T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019f1919-2fe2-7667-9f74-9c3e5820fc42",
-          "status": "completed",
-          "capacity": 18,
-          "count": 16,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON JUL 6  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-07-06T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ead8e-8815-7883-a5cf-6547bdbb4161",
-          "status": "completed",
-          "capacity": 6,
-          "count": 6,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "THU JUL 2  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-07-02T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ef028-8af6-7000-b57f-9bd4f5e5555c",
-          "status": "completed",
-          "capacity": 30,
-          "count": 23,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE JUN 30  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-30T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ead67-aa42-7000-8435-d4575c52ba16",
-          "status": "completed",
-          "capacity": 18,
-          "count": 16,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT JUN 27  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-06-27T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ebd29-3330-7777-9d86-eac3b32bc103",
-          "status": "completed",
-          "capacity": 12,
-          "count": 7,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU JUN 25  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-25T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a",
-          "status": "completed",
-          "capacity": 18,
-          "count": 13,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE JUN 23  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-06-23T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e31fa-f635-7cc8-aded-bf5f512baf2b",
-          "status": "completed",
-          "capacity": 12,
-          "count": 4,
-          "is_full": false,
-          "spots_left": 8
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE JUN 23  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-23T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019ea7f8-5141-7000-82dd-3da489d75b00",
-          "status": "completed",
-          "capacity": 18,
-          "count": 18,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU JUN 18  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-18T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e31e6-95a2-7cc5-ac16-c7a444c08010",
-          "status": "completed",
-          "capacity": 12,
-          "count": 11,
-          "is_full": true,
-          "spots_left": 1
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE JUN 16  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-16T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d9c4d-00b6-7cc2-9a3f-838df9564ae0",
-          "status": "completed",
-          "capacity": 18,
-          "count": 13,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU JUN 11  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-11T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e31e6-938e-7cc8-ad86-630ce3d46dd6",
-          "status": "completed",
-          "capacity": 30,
-          "count": 23,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE JUN 9  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-09T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d9c4c-ff49-7cc2-9a3e-49558c566f1d",
-          "status": "completed",
-          "capacity": 18,
-          "count": 16,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE JUN 2  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-06-02T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e2c18-c729-7cc8-9a04-1f310de3a717",
-          "status": "completed",
-          "capacity": 12,
-          "count": 4,
-          "is_full": false,
-          "spots_left": 8
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE JUN 2  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-06-02T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d9c4c-fe1f-7220-acb4-f8462d2e8484",
-          "status": "completed",
-          "capacity": 18,
-          "count": 14,
-          "is_full": false,
-          "spots_left": 4
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN MAY 31  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-05-31T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dcb67-e79e-7dd6-8ece-81c27056cb1b",
-          "status": "completed",
-          "capacity": 12,
-          "count": 10,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU MAY 28  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-05-28T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e1882-c792-7112-9e14-f12e1ba7bbea",
-          "status": "completed",
-          "capacity": 18,
-          "count": 18,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "WED MAY 27  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-05-27T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019e1845-b138-7ee7-a0fe-6fa251272d2f",
-          "status": "completed",
-          "capacity": 18,
-          "count": 17,
-          "is_full": false,
-          "spots_left": 1
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "MON MAY 25  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-05-25T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-4fbc-7bb3-92d9-6c1bfc4fd208",
-          "status": "completed",
-          "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SAT MAY 9  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-05-09T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dcb67-d043-7dd9-bcad-38c16f962521",
-          "status": "completed",
-          "capacity": 12,
-          "count": 5,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "THU MAY 7  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-05-07T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d9cf3-3843-711e-893a-f18c794bae4c",
-          "status": "completed",
-          "capacity": 24,
-          "count": 14,
-          "is_full": false,
-          "spots_left": 10
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU MAY 7  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-05-07T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dab7e-b20d-7bbe-bfdd-e5dc685ed52e",
-          "status": "completed",
-          "capacity": 36,
-          "count": 36,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.0 Open Play",
-          "start": "TUE MAY 5  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-05-05T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d9cf3-34fa-711e-8939-26e6a0ca6a09",
-          "status": "completed",
-          "capacity": 12,
-          "count": 7,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE MAY 5  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-05-05T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019dd0e2-985a-7ee4-a4dd-1cd33c0098c8",
-          "status": "completed",
-          "capacity": 24,
-          "count": 22,
-          "is_full": false,
-          "spots_left": 2
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE APR 28  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-04-28T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d7301-4031-799b-9d72-4bd01d76d731",
-          "status": "completed",
-          "capacity": 18,
-          "count": 13,
-          "is_full": false,
-          "spots_left": 5
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN APR 26  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-04-26T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019da0f5-f977-7bbe-b64f-49e092c07dab",
-          "status": "completed",
-          "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU APR 23  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-04-23T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d72f1-d742-799b-9d57-43e6204cbc24",
-          "status": "completed",
-          "capacity": 17,
-          "count": 17,
-          "is_full": true,
-          "spots_left": 0
-        },
-        {
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN APR 12  10:00 AM",
-          "end": "12:00 PM",
-          "start_iso": "2026-04-12T10:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/019d62de-bc14-777b-bc95-35524dc55dfa",
-          "status": "completed",
-          "capacity": 12,
-          "count": 9,
-          "is_full": false,
-          "spots_left": 3
-        },
-        {
-          "title": "DUPR 4.0 Open Play",
-          "start": "TUE APR 7  8:00 PM",
-          "end": "10:00 PM",
-          "start_iso": "2026-04-07T20:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/b7c2c45e-d42d-4b6d-b689-e5df8e6c8879",
-          "status": "completed",
-          "capacity": 12,
-          "count": 5,
-          "is_full": false,
-          "spots_left": 7
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "TUE APR 7  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-04-07T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/1d677a3f-52b8-4799-bd47-b1d544aa342e",
-          "status": "completed",
-          "capacity": 24,
-          "count": 21,
-          "is_full": false,
-          "spots_left": 3
-        },
-        {
-          "title": "4.5/4.0 Open Play",
-          "start": "THU APR 2  6:00 PM",
-          "end": "8:00 PM",
-          "start_iso": "2026-04-02T18:00:00",
-          "url": "https://ppbrva.podplay.app/community/events/60f2865e-1452-4047-b3c0-6d565023ff61",
-          "status": "completed",
-          "capacity": 12,
-          "count": 11,
-          "is_full": false,
-          "spots_left": 1
-        }
-      ],
-      "activity": [
-        {
-          "ts": "2026-09-08T20:03:02",
-          "type": "join",
-          "name": "Todd Springer",
-          "title": "4.0 Open Play",
-          "start": "TUE SEP 8  8:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/019ffc10-2ecf-7eed-a22e-3ea06022a415",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "rating": "4.29"
-        },
-        {
-          "ts": "2026-09-07T08:51:59",
-          "type": "join",
-          "name": "Todd Springer",
-          "title": "DUPR 4.5 Open Play",
-          "start": "SUN SEP 13  10:00 AM",
-          "url": "https://ppbrva.podplay.app/community/events/01a07781-3933-7dd7-9fdf-869ea96ea884",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "rating": "4.29"
-        },
-        {
-          "ts": "2026-08-25T17:49:31",
-          "type": "join",
-          "name": "Todd Springer",
-          "title": "4.0 Open Play",
-          "start": "TUE AUG 25  8:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/01a024c3-b0a0-7885-87c0-1982b55402ae",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "rating": "4.29"
-        },
-        {
-          "ts": "2026-08-22T16:07:45",
-          "type": "join",
-          "name": "Todd Springer",
-          "title": "4.5/4.0 Open Play",
-          "start": "MON AUG 24  6:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/019fdd26-8684-7ee9-b9fd-a0c32ceda43b",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "rating": "4.29"
-        },
-        {
-          "ts": "2026-08-22T12:17:28",
-          "type": "join",
-          "name": "Todd Springer",
-          "title": "ADVANCED Performance Play Saturday",
-          "start": "SAT AUG 22  12:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "rating": "4.29"
-        },
-        {
-          "ts": "2026-08-20T14:16:10",
-          "type": "cancel",
-          "name": "Todd Springer",
-          "title": "4.5/4.0 Open Play",
-          "start": "THU AUG 20  6:00 PM",
-          "url": "https://ppbrva.podplay.app/community/events/019fd7e6-4662-766c-bd9e-11343468050a",
-          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
-          "rating": "4.29"
-        }
-      ],
-      "offenses": [
-        {
-          "kind": "double-booker",
-          "time": "SAT AUG 8  4:00 PM",
-          "ts": "2026-08-08T16:00:00",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "ADVANCED Performance Play Saturday",
-              "url": "https://ppbrva.podplay.app/community/events/019fceda-1dd9-7ffc-ad19-99192ad88f16"
-            },
-            {
-              "title": "Performance Challenge Court",
-              "url": "https://ppbrva.podplay.app/community/events/019fceeb-3801-7113-b865-3bb5c51123a0"
-            }
-          ],
-          "resolved": false
-        },
-        {
-          "kind": "double-booker",
-          "time": "TUE AUG 4  6:00 PM",
-          "ts": "2026-08-04T18:00:00",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "4.5/4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019fba9e-ac77-7448-ab1d-d80824b3a7e4"
-            },
-            {
-              "title": "DUPR 4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019fbaa1-06ab-7448-ab23-11d1a72e9f2d"
-            }
-          ],
-          "resolved": false
-        },
-        {
-          "kind": "double-booker",
-          "time": "SUN JUL 19  10:00 AM",
-          "ts": "2026-07-19T10:00:00",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "DUPR 4.5 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019ee68b-2851-7000-9b21-598e89a3687b"
-            },
-            {
-              "title": "DUPR 4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019ee688-25ce-7000-a6ae-129e9390340f"
-            }
-          ],
-          "resolved": false
-        },
-        {
-          "kind": "double-booker",
-          "time": "SAT JUL 11  10:00 AM",
-          "ts": "2026-07-11T10:00:00",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "DUPR 4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019ee688-20a2-7000-9b19-925b13505f54"
-            },
-            {
-              "title": "DUPR 4.5 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019ee68b-23d5-7000-a6b8-87505e4a184a"
-            }
-          ],
-          "resolved": false
-        },
-        {
-          "kind": "double-booker",
-          "time": "TUE MAY 26  6:00 PM",
-          "ts": "2026-05-26T18:00:00",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "DUPR 4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019e0892-1406-7eeb-a740-a7efddc06767"
-            },
-            {
-              "title": "4.5/4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019d9c4c-fce9-7220-acb3-c64b5aeffbc0"
-            }
-          ],
-          "resolved": false
-        },
-        {
-          "kind": "double-booker",
-          "time": "TUE APR 28  6:00 PM",
-          "ts": "2026-04-24T21:06:33",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "4.5/4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019d7300-b66b-799b-9d70-a0c3f439a87e"
-            },
-            {
-              "title": "DUPR 4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019d7301-4031-799b-9d72-4bd01d76d731"
-            }
-          ],
-          "resolved": false
-        },
-        {
-          "kind": "double-booker",
-          "time": "SAT APR 25  4:00 PM",
-          "ts": "2026-04-25T10:06:14",
-          "count": 2,
-          "sessions": [
-            {
-              "title": "ADVANCED Performance Play Saturday",
-              "url": "https://ppbrva.podplay.app/community/events/019da101-49f1-711e-8bca-14c4b1e0bc1e"
-            },
-            {
-              "title": "4.5/4.0 Open Play",
-              "url": "https://ppbrva.podplay.app/community/events/019da104-b19a-7bbe-b657-02a5d8433156"
-            }
-          ],
-          "resolved": false
-        }
-      ]
-    },
-    {
       "name": "Charles Neufeldt",
       "name_raw": "Charles N.",
       "uid": "lBbCtGxxMhd0tLCLB9vJDCK9fUZ2",
@@ -79644,6 +78779,916 @@
             {
               "title": "4.0 Open Play",
               "url": "https://ppbrva.podplay.app/community/events/019d3fb4-1c27-7dde-a7ae-d6b7056682e2"
+            }
+          ],
+          "resolved": false
+        }
+      ]
+    },
+    {
+      "name": "Todd Springer",
+      "name_raw": "C. Todd S.",
+      "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+      "dupr_id": "35NX2V",
+      "rating": "4.289",
+      "sessions": [
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE SEP 15  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-09-15T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
+          "status": "upcoming",
+          "capacity": 12,
+          "count": 12,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "SAT SEP 12  9:00 AM",
+          "end": "11:00 AM",
+          "start_iso": "2026-09-12T09:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a07237-41c6-7dd7-9e79-8bbb6ae0792f",
+          "status": "completed",
+          "capacity": 24,
+          "count": 13,
+          "is_full": false,
+          "spots_left": 11
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "THU SEP 10  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-09-10T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a0597a-54a6-7662-8366-efb13968df4b",
+          "status": "completed",
+          "capacity": 6,
+          "count": 1,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "TUE SEP 8  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-09-08T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ffc10-2ecf-7eed-a22e-3ea06022a415",
+          "status": "completed",
+          "capacity": 6,
+          "count": 1,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "TUE SEP 8  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-09-08T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a05950-9d64-7aa3-adf1-2042e85fc338",
+          "status": "completed",
+          "capacity": 12,
+          "count": 8,
+          "is_full": false,
+          "spots_left": 4
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE SEP 1  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-09-01T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ffc0d-fe65-7eed-a21e-ee6213de95be",
+          "status": "completed",
+          "capacity": 18,
+          "count": 9,
+          "is_full": false,
+          "spots_left": 9
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN AUG 30  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-08-30T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a01b1f-22be-7885-8644-c621a5fef4f0",
+          "status": "completed",
+          "capacity": 12,
+          "count": 4,
+          "is_full": false,
+          "spots_left": 8
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SAT AUG 29  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-08-29T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a01b1f-216c-7885-8644-1b5eb0338f60",
+          "status": "completed",
+          "capacity": 18,
+          "count": 11,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU AUG 27  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-08-27T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fe71f-3b38-7554-bc2e-f47b31675da6",
+          "status": "completed",
+          "capacity": 36,
+          "count": 36,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "TUE AUG 25  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-08-25T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a024c3-b0a0-7885-87c0-1982b55402ae",
+          "status": "completed",
+          "capacity": 12,
+          "count": 1,
+          "is_full": false,
+          "spots_left": 11
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE AUG 25  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-08-25T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fe71f-3954-7554-bc2e-1a242343f37e",
+          "status": "completed",
+          "capacity": 30,
+          "count": 26,
+          "is_full": false,
+          "spots_left": 4
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "MON AUG 24  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-08-24T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fdd26-8684-7ee9-b9fd-a0c32ceda43b",
+          "status": "completed",
+          "capacity": 24,
+          "count": 20,
+          "is_full": false,
+          "spots_left": 4
+        },
+        {
+          "title": "ADVANCED Performance Play Saturday",
+          "start": "SAT AUG 22  12:00 PM",
+          "end": "4:00 PM",
+          "start_iso": "2026-08-22T12:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
+          "status": "completed",
+          "capacity": 47,
+          "count": 38,
+          "is_full": false,
+          "spots_left": 9
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SAT AUG 22  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-08-22T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/01a00620-ddfb-7778-b455-381be65e881c",
+          "status": "completed",
+          "capacity": 12,
+          "count": 7,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "MON AUG 17  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-08-17T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019fd7e2-030a-766c-bd95-299be3452cf4",
+          "status": "completed",
+          "capacity": 30,
+          "count": 25,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU JUL 30  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-07-30T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f6142-b5cc-799f-94cd-9e9fcb26636c",
+          "status": "completed",
+          "capacity": 12,
+          "count": 2,
+          "is_full": false,
+          "spots_left": 10
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU JUL 30  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-30T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f613a-c3c2-799f-94ad-01d4b7ed3aa3",
+          "status": "completed",
+          "capacity": 30,
+          "count": 25,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE JUL 28  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-07-28T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f617b-1ee6-7dd6-97ae-d06460211159",
+          "status": "completed",
+          "capacity": 12,
+          "count": 3,
+          "is_full": false,
+          "spots_left": 9
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "TUE JUL 28  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-28T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f6141-1073-799f-94c7-f9b93007ce43",
+          "status": "completed",
+          "capacity": 24,
+          "count": 24,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SAT JUL 25  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-07-25T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ee68b-29dc-7000-a6b9-6b2401d312b0",
+          "status": "completed",
+          "capacity": 12,
+          "count": 10,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU JUL 23  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-23T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f6122-4752-799f-9492-d04273efcd27",
+          "status": "completed",
+          "capacity": 30,
+          "count": 29,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "TUE JUL 21  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-07-21T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f5cdb-f452-7dd9-93a1-3a940e0f5b4f",
+          "status": "completed",
+          "capacity": 24,
+          "count": 10,
+          "is_full": false,
+          "spots_left": 14
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN JUL 19  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-07-19T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ee68b-2851-7000-9b21-598e89a3687b",
+          "status": "completed",
+          "capacity": 12,
+          "count": 5,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SAT JUL 18  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-07-18T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ee68b-269f-7000-9b20-758eaa35cf80",
+          "status": "completed",
+          "capacity": 12,
+          "count": 7,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU JUL 16  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-16T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f4750-4aad-777d-a3b3-4e762d1ecb1a",
+          "status": "completed",
+          "capacity": 36,
+          "count": 35,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "TUE JUL 14  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-14T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f2df5-9d69-7aaf-850f-cf5de730339b",
+          "status": "completed",
+          "capacity": 30,
+          "count": 29,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN JUL 12  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-07-12T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ee68b-2521-7000-9b1f-8ba7046df3dc",
+          "status": "completed",
+          "capacity": 12,
+          "count": 6,
+          "is_full": false,
+          "spots_left": 6
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "SAT JUL 11  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-07-11T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ee688-20a2-7000-9b19-925b13505f54",
+          "status": "completed",
+          "capacity": 12,
+          "count": 5,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "THU JUL 9  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-09T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f246c-cf2f-7ff1-9eb9-a545ce0105f0",
+          "status": "completed",
+          "capacity": 18,
+          "count": 10,
+          "is_full": false,
+          "spots_left": 8
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE JUL 7  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-07T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019f1919-2fe2-7667-9f74-9c3e5820fc42",
+          "status": "completed",
+          "capacity": 18,
+          "count": 16,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON JUL 6  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-07-06T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ead8e-8815-7883-a5cf-6547bdbb4161",
+          "status": "completed",
+          "capacity": 6,
+          "count": 6,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "THU JUL 2  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-07-02T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ef028-8af6-7000-b57f-9bd4f5e5555c",
+          "status": "completed",
+          "capacity": 30,
+          "count": 23,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE JUN 30  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-30T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ead67-aa42-7000-8435-d4575c52ba16",
+          "status": "completed",
+          "capacity": 18,
+          "count": 16,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SAT JUN 27  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-06-27T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ebd29-3330-7777-9d86-eac3b32bc103",
+          "status": "completed",
+          "capacity": 12,
+          "count": 7,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU JUN 25  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-25T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e31e6-97e4-7cc5-ac18-0a8d3e2ded3a",
+          "status": "completed",
+          "capacity": 18,
+          "count": 13,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE JUN 23  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-06-23T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e31fa-f635-7cc8-aded-bf5f512baf2b",
+          "status": "completed",
+          "capacity": 12,
+          "count": 4,
+          "is_full": false,
+          "spots_left": 8
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE JUN 23  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-23T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019ea7f8-5141-7000-82dd-3da489d75b00",
+          "status": "completed",
+          "capacity": 18,
+          "count": 18,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU JUN 18  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-18T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e31e6-95a2-7cc5-ac16-c7a444c08010",
+          "status": "completed",
+          "capacity": 12,
+          "count": 11,
+          "is_full": true,
+          "spots_left": 1
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE JUN 16  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-16T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d9c4d-00b6-7cc2-9a3f-838df9564ae0",
+          "status": "completed",
+          "capacity": 18,
+          "count": 13,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU JUN 11  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-11T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e31e6-938e-7cc8-ad86-630ce3d46dd6",
+          "status": "completed",
+          "capacity": 30,
+          "count": 23,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE JUN 9  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-09T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d9c4c-ff49-7cc2-9a3e-49558c566f1d",
+          "status": "completed",
+          "capacity": 18,
+          "count": 16,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE JUN 2  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-06-02T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e2c18-c729-7cc8-9a04-1f310de3a717",
+          "status": "completed",
+          "capacity": 12,
+          "count": 4,
+          "is_full": false,
+          "spots_left": 8
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE JUN 2  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-06-02T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d9c4c-fe1f-7220-acb4-f8462d2e8484",
+          "status": "completed",
+          "capacity": 18,
+          "count": 14,
+          "is_full": false,
+          "spots_left": 4
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN MAY 31  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-05-31T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dcb67-e79e-7dd6-8ece-81c27056cb1b",
+          "status": "completed",
+          "capacity": 12,
+          "count": 10,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU MAY 28  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-05-28T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e1882-c792-7112-9e14-f12e1ba7bbea",
+          "status": "completed",
+          "capacity": 18,
+          "count": 18,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "WED MAY 27  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-05-27T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019e1845-b138-7ee7-a0fe-6fa251272d2f",
+          "status": "completed",
+          "capacity": 18,
+          "count": 17,
+          "is_full": false,
+          "spots_left": 1
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "MON MAY 25  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-05-25T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dbbbd-4fbc-7bb3-92d9-6c1bfc4fd208",
+          "status": "completed",
+          "capacity": 12,
+          "count": 12,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SAT MAY 9  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-05-09T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dcb67-d043-7dd9-bcad-38c16f962521",
+          "status": "completed",
+          "capacity": 12,
+          "count": 5,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "THU MAY 7  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-05-07T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d9cf3-3843-711e-893a-f18c794bae4c",
+          "status": "completed",
+          "capacity": 24,
+          "count": 14,
+          "is_full": false,
+          "spots_left": 10
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU MAY 7  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-05-07T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dab7e-b20d-7bbe-bfdd-e5dc685ed52e",
+          "status": "completed",
+          "capacity": 36,
+          "count": 36,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.0 Open Play",
+          "start": "TUE MAY 5  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-05-05T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d9cf3-34fa-711e-8939-26e6a0ca6a09",
+          "status": "completed",
+          "capacity": 12,
+          "count": 7,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE MAY 5  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-05-05T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019dd0e2-985a-7ee4-a4dd-1cd33c0098c8",
+          "status": "completed",
+          "capacity": 24,
+          "count": 22,
+          "is_full": false,
+          "spots_left": 2
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE APR 28  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-04-28T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d7301-4031-799b-9d72-4bd01d76d731",
+          "status": "completed",
+          "capacity": 18,
+          "count": 13,
+          "is_full": false,
+          "spots_left": 5
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN APR 26  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-04-26T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019da0f5-f977-7bbe-b64f-49e092c07dab",
+          "status": "completed",
+          "capacity": 12,
+          "count": 12,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU APR 23  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-04-23T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d72f1-d742-799b-9d57-43e6204cbc24",
+          "status": "completed",
+          "capacity": 17,
+          "count": 17,
+          "is_full": true,
+          "spots_left": 0
+        },
+        {
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN APR 12  10:00 AM",
+          "end": "12:00 PM",
+          "start_iso": "2026-04-12T10:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/019d62de-bc14-777b-bc95-35524dc55dfa",
+          "status": "completed",
+          "capacity": 12,
+          "count": 9,
+          "is_full": false,
+          "spots_left": 3
+        },
+        {
+          "title": "DUPR 4.0 Open Play",
+          "start": "TUE APR 7  8:00 PM",
+          "end": "10:00 PM",
+          "start_iso": "2026-04-07T20:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/b7c2c45e-d42d-4b6d-b689-e5df8e6c8879",
+          "status": "completed",
+          "capacity": 12,
+          "count": 5,
+          "is_full": false,
+          "spots_left": 7
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "TUE APR 7  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-04-07T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/1d677a3f-52b8-4799-bd47-b1d544aa342e",
+          "status": "completed",
+          "capacity": 24,
+          "count": 21,
+          "is_full": false,
+          "spots_left": 3
+        },
+        {
+          "title": "4.5/4.0 Open Play",
+          "start": "THU APR 2  6:00 PM",
+          "end": "8:00 PM",
+          "start_iso": "2026-04-02T18:00:00",
+          "url": "https://ppbrva.podplay.app/community/events/60f2865e-1452-4047-b3c0-6d565023ff61",
+          "status": "completed",
+          "capacity": 12,
+          "count": 11,
+          "is_full": false,
+          "spots_left": 1
+        }
+      ],
+      "activity": [
+        {
+          "ts": "2026-09-13T07:56:20",
+          "type": "cancel",
+          "name": "Todd Springer",
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN SEP 13  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/01a07781-3933-7dd7-9fdf-869ea96ea884",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        },
+        {
+          "ts": "2026-09-08T20:03:02",
+          "type": "join",
+          "name": "Todd Springer",
+          "title": "4.0 Open Play",
+          "start": "TUE SEP 8  8:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019ffc10-2ecf-7eed-a22e-3ea06022a415",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        },
+        {
+          "ts": "2026-09-07T08:51:59",
+          "type": "join",
+          "name": "Todd Springer",
+          "title": "DUPR 4.5 Open Play",
+          "start": "SUN SEP 13  10:00 AM",
+          "url": "https://ppbrva.podplay.app/community/events/01a07781-3933-7dd7-9fdf-869ea96ea884",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        },
+        {
+          "ts": "2026-08-25T17:49:31",
+          "type": "join",
+          "name": "Todd Springer",
+          "title": "4.0 Open Play",
+          "start": "TUE AUG 25  8:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/01a024c3-b0a0-7885-87c0-1982b55402ae",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        },
+        {
+          "ts": "2026-08-22T16:07:45",
+          "type": "join",
+          "name": "Todd Springer",
+          "title": "4.5/4.0 Open Play",
+          "start": "MON AUG 24  6:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019fdd26-8684-7ee9-b9fd-a0c32ceda43b",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        },
+        {
+          "ts": "2026-08-22T12:17:28",
+          "type": "join",
+          "name": "Todd Springer",
+          "title": "ADVANCED Performance Play Saturday",
+          "start": "SAT AUG 22  12:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019ffcdc-7662-7000-80d6-7046e471acb5",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        },
+        {
+          "ts": "2026-08-20T14:16:10",
+          "type": "cancel",
+          "name": "Todd Springer",
+          "title": "4.5/4.0 Open Play",
+          "start": "THU AUG 20  6:00 PM",
+          "url": "https://ppbrva.podplay.app/community/events/019fd7e6-4662-766c-bd9e-11343468050a",
+          "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+          "rating": "4.29"
+        }
+      ],
+      "offenses": [
+        {
+          "kind": "double-booker",
+          "time": "SAT AUG 8  4:00 PM",
+          "ts": "2026-08-08T16:00:00",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "ADVANCED Performance Play Saturday",
+              "url": "https://ppbrva.podplay.app/community/events/019fceda-1dd9-7ffc-ad19-99192ad88f16"
+            },
+            {
+              "title": "Performance Challenge Court",
+              "url": "https://ppbrva.podplay.app/community/events/019fceeb-3801-7113-b865-3bb5c51123a0"
+            }
+          ],
+          "resolved": false
+        },
+        {
+          "kind": "double-booker",
+          "time": "TUE AUG 4  6:00 PM",
+          "ts": "2026-08-04T18:00:00",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "4.5/4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019fba9e-ac77-7448-ab1d-d80824b3a7e4"
+            },
+            {
+              "title": "DUPR 4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019fbaa1-06ab-7448-ab23-11d1a72e9f2d"
+            }
+          ],
+          "resolved": false
+        },
+        {
+          "kind": "double-booker",
+          "time": "SUN JUL 19  10:00 AM",
+          "ts": "2026-07-19T10:00:00",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "DUPR 4.5 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019ee68b-2851-7000-9b21-598e89a3687b"
+            },
+            {
+              "title": "DUPR 4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019ee688-25ce-7000-a6ae-129e9390340f"
+            }
+          ],
+          "resolved": false
+        },
+        {
+          "kind": "double-booker",
+          "time": "SAT JUL 11  10:00 AM",
+          "ts": "2026-07-11T10:00:00",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "DUPR 4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019ee688-20a2-7000-9b19-925b13505f54"
+            },
+            {
+              "title": "DUPR 4.5 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019ee68b-23d5-7000-a6b8-87505e4a184a"
+            }
+          ],
+          "resolved": false
+        },
+        {
+          "kind": "double-booker",
+          "time": "TUE MAY 26  6:00 PM",
+          "ts": "2026-05-26T18:00:00",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "DUPR 4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019e0892-1406-7eeb-a740-a7efddc06767"
+            },
+            {
+              "title": "4.5/4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019d9c4c-fce9-7220-acb3-c64b5aeffbc0"
+            }
+          ],
+          "resolved": false
+        },
+        {
+          "kind": "double-booker",
+          "time": "TUE APR 28  6:00 PM",
+          "ts": "2026-04-24T21:06:33",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "4.5/4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019d7300-b66b-799b-9d70-a0c3f439a87e"
+            },
+            {
+              "title": "DUPR 4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019d7301-4031-799b-9d72-4bd01d76d731"
+            }
+          ],
+          "resolved": false
+        },
+        {
+          "kind": "double-booker",
+          "time": "SAT APR 25  4:00 PM",
+          "ts": "2026-04-25T10:06:14",
+          "count": 2,
+          "sessions": [
+            {
+              "title": "ADVANCED Performance Play Saturday",
+              "url": "https://ppbrva.podplay.app/community/events/019da101-49f1-711e-8bca-14c4b1e0bc1e"
+            },
+            {
+              "title": "4.5/4.0 Open Play",
+              "url": "https://ppbrva.podplay.app/community/events/019da104-b19a-7bbe-b657-02a5d8433156"
             }
           ],
           "resolved": false
@@ -101124,7 +101169,7 @@
       "url": "https://ppbrva.podplay.app/community/events/01a07781-3933-7dd7-9fdf-869ea96ea884",
       "status": "upcoming",
       "cloaked_count": 1,
-      "total_count": 4,
+      "total_count": 3,
       "capacity": 12,
       "members": [
         {
