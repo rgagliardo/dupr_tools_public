@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-14T00:38:57",
-  "next_scan_at": "2026-09-14T01:08:57",
+  "generated_at": "2026-09-14T00:46:43",
+  "next_scan_at": "2026-09-14T01:16:43",
   "stats": {
     "total": 743,
     "full_count": 96
@@ -36,7 +36,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:49",
+      "last_snap_ts": "2026-09-14T00:46:33",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -153,7 +153,7 @@
           "departed_at": "2026-09-13T17:56:34"
         }
       ],
-      "last_snap_ts": "2026-09-14T00:38:50",
+      "last_snap_ts": "2026-09-14T00:46:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -260,7 +260,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:50",
+      "last_snap_ts": "2026-09-14T00:46:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -289,7 +289,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:50",
+      "last_snap_ts": "2026-09-14T00:46:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -318,7 +318,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:50",
+      "last_snap_ts": "2026-09-14T00:46:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -359,7 +359,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:51",
+      "last_snap_ts": "2026-09-14T00:46:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -429,7 +429,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:51",
+      "last_snap_ts": "2026-09-14T00:46:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -464,7 +464,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:51",
+      "last_snap_ts": "2026-09-14T00:46:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -500,8 +500,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 36,
-      "count": 32,
-      "pct": 89,
+      "count": 31,
+      "pct": 86,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -526,7 +526,6 @@
         "Ming W.",
         "Abbie  K.",
         "Mark K.",
-        "Steph Y.",
         "Mitra P.",
         "Jim M.",
         "Chris P.",
@@ -543,8 +542,14 @@
       ],
       "min_dupr": null,
       "gate_type": null,
-      "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:51",
+      "departed": [
+        {
+          "name": "Steph Yim",
+          "uid": "xTh6vu6kbQTZzsBHoRsh1Td30Jo1",
+          "departed_at": "2026-09-14T00:46:35"
+        }
+      ],
+      "last_snap_ts": "2026-09-14T00:46:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -575,7 +580,6 @@
         "vmEkP6J7YNRgHC7P6FgOaAIZmQ53",
         "YUVpnjjGsGbY3gsmbv8835FZrXz2",
         "yyNIkdOdTZPVbHk6B43KrnTfb1w1",
-        "xTh6vu6kbQTZzsBHoRsh1Td30Jo1",
         "yyuVtkAymeWLusR2rSQrNMaQHFG3",
         "ocUUMpfxvTTIqUEpT1LFyrJ8bum1",
         "KRxDfptEYwecwEoJdTR0OJd6qeT2",
@@ -603,7 +607,6 @@
         "AoKyCxd9M1druxR4u4fFiSH6YgJ2": "3.21",
         "vmEkP6J7YNRgHC7P6FgOaAIZmQ53": "4.2",
         "YUVpnjjGsGbY3gsmbv8835FZrXz2": "3.46",
-        "xTh6vu6kbQTZzsBHoRsh1Td30Jo1": "2.46",
         "yyuVtkAymeWLusR2rSQrNMaQHFG3": "3.26",
         "0Il47JOt7ra6akOCoXpmnjp2mqm1": "3.73",
         "834Ht70ytQOUmHHIdFumeobl5se2": "3.71",
@@ -612,12 +615,12 @@
         "Vsln0DAdmgYg4PPh3cry5MenQTq2": "3.07"
       },
       "skill": {
-        "med": "3.560",
-        "med_val": 3.56,
-        "lo": "2.460",
+        "med": "3.594",
+        "med_val": 3.5949999999999998,
+        "lo": "3.060",
         "hi": "4.509",
-        "rated": 21,
-        "total": 32,
+        "rated": 20,
+        "total": 31,
         "tier": "SKILLED"
       }
     },
@@ -642,7 +645,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:52",
+      "last_snap_ts": "2026-09-14T00:46:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -671,7 +674,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:52",
+      "last_snap_ts": "2026-09-14T00:46:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -700,7 +703,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:52",
+      "last_snap_ts": "2026-09-14T00:46:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -742,7 +745,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:52",
+      "last_snap_ts": "2026-09-14T00:46:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -807,7 +810,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:52",
+      "last_snap_ts": "2026-09-14T00:46:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -842,7 +845,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:53",
+      "last_snap_ts": "2026-09-14T00:46:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -933,7 +936,7 @@
           "departed_at": "2026-09-13T18:25:25"
         }
       ],
-      "last_snap_ts": "2026-09-14T00:38:53",
+      "last_snap_ts": "2026-09-14T00:46:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1042,7 +1045,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:53",
+      "last_snap_ts": "2026-09-14T00:46:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1077,7 +1080,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:53",
+      "last_snap_ts": "2026-09-14T00:46:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1128,7 +1131,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:54",
+      "last_snap_ts": "2026-09-14T00:46:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1196,7 +1199,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:54",
+      "last_snap_ts": "2026-09-14T00:46:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1270,7 +1273,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:54",
+      "last_snap_ts": "2026-09-14T00:46:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1343,7 +1346,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:54",
+      "last_snap_ts": "2026-09-14T00:46:39",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1430,7 +1433,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:55",
+      "last_snap_ts": "2026-09-14T00:46:39",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1459,7 +1462,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:55",
+      "last_snap_ts": "2026-09-14T00:46:39",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1488,7 +1491,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:55",
+      "last_snap_ts": "2026-09-14T00:46:40",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1536,7 +1539,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:55",
+      "last_snap_ts": "2026-09-14T00:46:40",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1613,7 +1616,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-14T00:38:55",
+      "last_snap_ts": "2026-09-14T00:46:41",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -49509,13 +49512,13 @@
       "gate_type": null,
       "departed": [
         {
-          "name": "Robert Bowman",
-          "uid": "QqsjdfHojqd2Dhhu5Po2CYVL9BG3",
+          "name": "Mona Bowman",
+          "uid": "8uFxG1VfwcSRd5TgVITIInN6GE23",
           "departed_at": "2026-09-13T09:14:05"
         },
         {
-          "name": "Mona Bowman",
-          "uid": "8uFxG1VfwcSRd5TgVITIInN6GE23",
+          "name": "Robert Bowman",
+          "uid": "QqsjdfHojqd2Dhhu5Po2CYVL9BG3",
           "departed_at": "2026-09-13T09:14:05"
         }
       ],
@@ -50748,13 +50751,13 @@
       },
       {
         "rank": 5,
-        "median": "3.560",
+        "median": "3.594",
         "tier": "SKILLED",
-        "lo": "2.460",
+        "lo": "3.060",
         "hi": "4.509",
-        "avg": "3.581",
-        "rated": 21,
-        "field": 32,
+        "avg": "3.637",
+        "rated": 20,
+        "field": 31,
         "date": "TUE SEP 15  10:00 AM",
         "title": "4.0 Open Play",
         "url": "https://ppbrva.podplay.app/community/events/01a063b0-641f-777f-a021-d3e372977e2a",
@@ -50857,11 +50860,6 @@
           {
             "n": "Louis DiCello",
             "r": "3.06",
-            "c": false
-          },
-          {
-            "n": "Steph Yim",
-            "r": "2.46",
             "c": false
           }
         ]
@@ -51321,6 +51319,16 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-09-14T00:46:35",
+      "type": "cancel",
+      "name": "Steph Yim",
+      "title": "4.0 Open Play",
+      "start": "TUE SEP 15  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a063b0-641f-777f-a021-d3e372977e2a",
+      "uid": "xTh6vu6kbQTZzsBHoRsh1Td30Jo1",
+      "rating": "2.46"
+    },
     {
       "ts": "2026-09-13T22:18:07",
       "type": "join",
@@ -73411,14 +73419,14 @@
       "cancels": 6
     },
     {
-      "name": "Cyndi Schulte",
-      "uid": "p8P6voZFmGceATQQFMggpC1jdbk1",
+      "name": "Kristi King",
+      "uid": "iJMC40NsEShSorrd5WTnKvVQhqA3",
       "joins": 14,
       "cancels": 6
     },
     {
-      "name": "Kristi King",
-      "uid": "iJMC40NsEShSorrd5WTnKvVQhqA3",
+      "name": "Cyndi Schulte",
+      "uid": "p8P6voZFmGceATQQFMggpC1jdbk1",
       "joins": 14,
       "cancels": 6
     },
@@ -73675,6 +73683,12 @@
       "cancels": 2
     },
     {
+      "name": "Steph Yim",
+      "uid": "xTh6vu6kbQTZzsBHoRsh1Td30Jo1",
+      "joins": 9,
+      "cancels": 2
+    },
+    {
       "name": "Beth Ashton",
       "uid": "WlUFaY0S5kc6emIcl8jTKQtTCyj1",
       "joins": 9,
@@ -73687,14 +73701,14 @@
       "cancels": 2
     },
     {
-      "name": "Gary Shepherd",
-      "uid": "0Il47JOt7ra6akOCoXpmnjp2mqm1",
+      "name": "Boodie Mcgurn",
+      "uid": "r7PYSAY4jQN5mbARVGy0xiHqFMj2",
       "joins": 8,
       "cancels": 2
     },
     {
-      "name": "Boodie Mcgurn",
-      "uid": "r7PYSAY4jQN5mbARVGy0xiHqFMj2",
+      "name": "Gary Shepherd",
+      "uid": "0Il47JOt7ra6akOCoXpmnjp2mqm1",
       "joins": 8,
       "cancels": 2
     },
@@ -73855,12 +73869,6 @@
       "cancels": 1
     },
     {
-      "name": "Steph Yim",
-      "uid": "xTh6vu6kbQTZzsBHoRsh1Td30Jo1",
-      "joins": 9,
-      "cancels": 1
-    },
-    {
       "name": "Davon Allen",
       "uid": "flEtmGjGHGUeW9se80EGm1BAghG3",
       "joins": 8,
@@ -73969,14 +73977,14 @@
       "cancels": 1
     },
     {
-      "name": "Rona Goldberg",
-      "uid": "6ggmOVRndlcGr2DE470sgRWdiMJ3",
+      "name": "Wesley Allen",
+      "uid": "ltek1zI7A0hCwY2cf9az6uS1Vi12",
       "joins": 3,
       "cancels": 1
     },
     {
-      "name": "Wesley Allen",
-      "uid": "ltek1zI7A0hCwY2cf9az6uS1Vi12",
+      "name": "Rona Goldberg",
+      "uid": "6ggmOVRndlcGr2DE470sgRWdiMJ3",
       "joins": 3,
       "cancels": 1
     },
@@ -74173,14 +74181,14 @@
       "cancels": 0
     },
     {
-      "name": "Janet Green",
-      "uid": "njVUlOo2U7ZHQqtU9DITVgL1JNC2",
+      "name": "Sheryl Raulston",
+      "uid": "1hoTWOSWwPd7cDsR4Wu7ggpygcv1",
       "joins": 14,
       "cancels": 0
     },
     {
-      "name": "Sheryl Raulston",
-      "uid": "1hoTWOSWwPd7cDsR4Wu7ggpygcv1",
+      "name": "Janet Green",
+      "uid": "njVUlOo2U7ZHQqtU9DITVgL1JNC2",
       "joins": 14,
       "cancels": 0
     },
@@ -74347,14 +74355,14 @@
       "cancels": 0
     },
     {
-      "name": "Wayne Miao",
-      "uid": "hl5iOWwybYfzkON0Sxm674mPAWO2",
+      "name": "Jin Deng",
+      "uid": "0m5mGfkr0pMOR2n96Xql0i3yhp12",
       "joins": 8,
       "cancels": 0
     },
     {
-      "name": "Jin Deng",
-      "uid": "0m5mGfkr0pMOR2n96Xql0i3yhp12",
+      "name": "Wayne Miao",
+      "uid": "hl5iOWwybYfzkON0Sxm674mPAWO2",
       "joins": 8,
       "cancels": 0
     },
@@ -74401,6 +74409,12 @@
       "cancels": 0
     },
     {
+      "name": "Patrick Catullo",
+      "uid": "Z2pVTw46Oad1GkFupy5slODASKG3",
+      "joins": 7,
+      "cancels": 0
+    },
+    {
       "name": "Suzanna King",
       "uid": "51MoFsXLC8SC8LrameT9E6bMsBD2",
       "joins": 7,
@@ -74413,6 +74427,12 @@
       "cancels": 0
     },
     {
+      "name": "Levin Smith",
+      "uid": "KZfLXzYneBcyda0mTbS2IDjdKTf2",
+      "joins": 7,
+      "cancels": 0
+    },
+    {
       "name": "Matt Mattingly",
       "uid": "xzFfENHiCQcrz20ULkhx8fz5nYO2",
       "joins": 7,
@@ -74421,18 +74441,6 @@
     {
       "name": "Rob G",
       "uid": "ioNAuxCjuMbn9NbnJMdSeoVW9fm1",
-      "joins": 7,
-      "cancels": 0
-    },
-    {
-      "name": "Patrick Catullo",
-      "uid": "Z2pVTw46Oad1GkFupy5slODASKG3",
-      "joins": 7,
-      "cancels": 0
-    },
-    {
-      "name": "Levin Smith",
-      "uid": "KZfLXzYneBcyda0mTbS2IDjdKTf2",
       "joins": 7,
       "cancels": 0
     },
@@ -74467,14 +74475,14 @@
       "cancels": 0
     },
     {
-      "name": "Charlie Kim",
-      "uid": "Opzn7R4EDxXw49a57NuQUjUN7IV2",
+      "name": "Dominic Dao",
+      "uid": "s7MNZBQ69ES2rEVQCqjmsdiLd0K2",
       "joins": 7,
       "cancels": 0
     },
     {
-      "name": "Dominic Dao",
-      "uid": "s7MNZBQ69ES2rEVQCqjmsdiLd0K2",
+      "name": "Charlie Kim",
+      "uid": "Opzn7R4EDxXw49a57NuQUjUN7IV2",
       "joins": 7,
       "cancels": 0
     },
@@ -74731,14 +74739,14 @@
       "cancels": 0
     },
     {
-      "name": "Carl Eichenlaub",
-      "uid": "zz2Qm9yZv5gaHMwe0Vz0m6Rom2i1",
+      "name": "Rally Axselle",
+      "uid": "AN0I1lrXsXh7sYauzK3y6MifeoA3",
       "joins": 4,
       "cancels": 0
     },
     {
-      "name": "Rally Axselle",
-      "uid": "AN0I1lrXsXh7sYauzK3y6MifeoA3",
+      "name": "Carl Eichenlaub",
+      "uid": "zz2Qm9yZv5gaHMwe0Vz0m6Rom2i1",
       "joins": 4,
       "cancels": 0
     },
@@ -74803,8 +74811,8 @@
       "cancels": 0
     },
     {
-      "name": "Rick Vial",
-      "uid": "p55rfilz38ZeQg8REPIHpeayM0P2",
+      "name": "Karl Schwehr",
+      "uid": "HkpaSflarDbHqqB1rGbyJayF6Hq2",
       "joins": 4,
       "cancels": 0
     },
@@ -74815,8 +74823,8 @@
       "cancels": 0
     },
     {
-      "name": "Karl Schwehr",
-      "uid": "HkpaSflarDbHqqB1rGbyJayF6Hq2",
+      "name": "Rick Vial",
+      "uid": "p55rfilz38ZeQg8REPIHpeayM0P2",
       "joins": 4,
       "cancels": 0
     },
@@ -74923,14 +74931,14 @@
       "cancels": 0
     },
     {
-      "name": "Rick Frederick",
-      "uid": "dV2fmDayJZO3ctm7VdcCp9LqhBp2",
+      "name": "Christie Cox",
+      "uid": "ULhMScjjWJZgjaKs5dQ1iLmSQfx2",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Christie Cox",
-      "uid": "ULhMScjjWJZgjaKs5dQ1iLmSQfx2",
+      "name": "Rick Frederick",
+      "uid": "dV2fmDayJZO3ctm7VdcCp9LqhBp2",
       "joins": 3,
       "cancels": 0
     },
@@ -74977,14 +74985,14 @@
       "cancels": 0
     },
     {
-      "name": "Hope Bocchi",
-      "uid": "dFE2wBntaQgywGvGZ4ajSQ5whFo1",
+      "name": "Maddie Ndaw",
+      "uid": "h6O1eQju3La3CZqyjWYCiKCz2f02",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Maddie Ndaw",
-      "uid": "h6O1eQju3La3CZqyjWYCiKCz2f02",
+      "name": "Hope Bocchi",
+      "uid": "dFE2wBntaQgywGvGZ4ajSQ5whFo1",
       "joins": 3,
       "cancels": 0
     },
@@ -75037,14 +75045,14 @@
       "cancels": 0
     },
     {
-      "name": "Frank Deng",
-      "uid": "1BZeVCyAcwZ1R3kDCZFTebLg9QH2",
+      "name": "Monty Smalley",
+      "uid": "Yyu2izSiMKeU7J99YCsIM9Jux0x1",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "Monty Smalley",
-      "uid": "Yyu2izSiMKeU7J99YCsIM9Jux0x1",
+      "name": "Frank Deng",
+      "uid": "1BZeVCyAcwZ1R3kDCZFTebLg9QH2",
       "joins": 3,
       "cancels": 0
     },
@@ -75079,14 +75087,14 @@
       "cancels": 0
     },
     {
-      "name": "Magdy Youakim",
-      "uid": "b9Q1tjNbcCei99HJsg3Po9QcF8p2",
+      "name": "alex karram",
+      "uid": "ZAwts3ywRzVQV6jXg4GIVaFZcWr1",
       "joins": 3,
       "cancels": 0
     },
     {
-      "name": "alex karram",
-      "uid": "ZAwts3ywRzVQV6jXg4GIVaFZcWr1",
+      "name": "Magdy Youakim",
+      "uid": "b9Q1tjNbcCei99HJsg3Po9QcF8p2",
       "joins": 3,
       "cancels": 0
     },
@@ -75142,14 +75150,14 @@
         "cancels": 0
       },
       {
-        "name": "Todd Springer",
-        "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
+        "name": "G B",
+        "uid": "OfwpFBuJ4jboZNG21nfGjGYbASG3",
         "joins": 5,
         "cancels": 0
       },
       {
-        "name": "G B",
-        "uid": "OfwpFBuJ4jboZNG21nfGjGYbASG3",
+        "name": "Todd Springer",
+        "uid": "8MpmeNpFsXacy197QvfVcVTHZZy1",
         "joins": 5,
         "cancels": 0
       },
@@ -102818,7 +102826,7 @@
       "url": "https://ppbrva.podplay.app/community/events/01a063b0-641f-777f-a021-d3e372977e2a",
       "status": "upcoming",
       "cloaked_count": 1,
-      "total_count": 32,
+      "total_count": 31,
       "capacity": 36,
       "members": [
         {
