@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-14T11:11:38",
+ "updated": "2026-09-14T11:57:09",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,22 +40,22 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 1p",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 1p (wind (12 mph))",
  "wet_note": null,
- "reason": "back 3p",
+ "reason": "clean window 3p today",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
   },
   {
    "day": "Wed",
+   "grade": "A"
+  },
+  {
+   "day": "Today",
    "grade": "A"
   },
   {
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 79,
-   "dew": 64,
-   "wind": 11
+   "temp": 78,
+   "dew": 66,
+   "wind": 12
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,23 +85,23 @@
     "label": "Today",
     "sub": "9/14",
     "grade": "A",
-    "score": 1.0,
+    "score": 0.911,
     "best": "3p-9p",
-    "why": "",
+    "why": "wind (12 mph) 11a-12p",
     "wet_mm": 0.0,
     "cells": {
      "11": {
-      "t": 79,
-      "v": 2,
-      "c": ""
+      "t": 78,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
-      "t": 79,
-      "v": 2,
-      "c": ""
+      "t": 80,
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
-      "t": 81,
+      "t": 82,
       "v": 2,
       "c": ""
      },
