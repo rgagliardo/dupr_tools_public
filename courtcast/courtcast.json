@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-14T16:13:58",
+ "updated": "2026-09-14T17:43:01",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -64,14 +64,14 @@
   },
   {
    "day": "Fri",
-   "grade": "B"
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
    "temp": 82,
-   "dew": 62,
+   "dew": 60,
    "wind": 10
   },
   "court": {
@@ -86,15 +86,10 @@
     "sub": "9/14",
     "grade": "A",
     "score": 1.0,
-    "best": "4p-9p",
+    "best": "5p-9p",
     "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "16": {
-      "t": 82,
-      "v": 2,
-      "c": ""
-     },
      "17": {
       "t": 82,
       "v": 2,
@@ -267,10 +262,10 @@
     "date": "2026-09-18",
     "label": "Fri",
     "sub": "9/18",
-    "grade": "B",
-    "score": 0.8,
+    "grade": "C",
+    "score": 0.733,
     "best": "8a-11a",
-    "why": "humidity (dew 70\u00b0) 12p, 3p-6p",
+    "why": "humidity (dew 70\u00b0) 12p, 3p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -320,13 +315,13 @@
      },
      "19": {
       "t": 84,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "20": {
-      "t": 82,
-      "v": 2,
-      "c": ""
+      "t": 80,
+      "v": 1,
+      "c": "dew"
      },
      "21": {
       "t": 77,
@@ -452,7 +447,7 @@
    {
     "date": "2026-09-26",
     "d": "Sa",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-09-27",
