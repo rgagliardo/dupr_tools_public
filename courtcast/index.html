@@ -70,6 +70,15 @@
   .foot { display:flex; gap:26px; margin-top:16px; font-size:11px; color:var(--faint); flex-wrap:wrap; }
   .legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin:0 3px 0 8px; vertical-align:-1px; }
   .pagefoot { margin-top:34px; font-size:11px; color:var(--faint); }
+  /* "how it's scored" notes — the thresholds behind each cell color, quoted
+     from the feed so they never drift from the engine */
+  .notes { margin-top:14px; font-size:11px; color:var(--faint); max-width:640px; }
+  .notes summary { cursor:pointer; color:var(--dim); user-select:none; }
+  .notes summary:hover { color:var(--ink); }
+  .notes .row { display:flex; gap:10px; margin-top:8px; line-height:1.5; }
+  .notes .row i { flex:none; width:10px; height:10px; border-radius:2px; margin-top:4px; }
+  .notes .row b { color:var(--dim); font-weight:700; }
+  .notes .grades { margin-top:8px; line-height:1.5; }
   /* look-matching hero when opened from the widget (?look=) */
   .hero { display:flex; align-items:center; gap:22px; margin-bottom:20px; }
   .hero .big-letter { font-size:84px; font-weight:800; line-height:.9; }
@@ -106,10 +115,11 @@
   <div class="verdict" id="verdict">&gt; &hellip;</div>
   <div class="gridwrap"><table id="grid"></table></div>
   <div class="foot" id="foot"></div>
+  <details class="notes" id="notes"><summary>how it's scored</summary><div id="notesbody"></div></details>
   <div class="pagefoot" id="pagefoot"></div>
 </div>
 <script>
-const VERSION = "2.5"; // blocked "wet?" grid cells softened to a paler wetness-scaled red
+const VERSION = "2.6"; // "how it's scored" notes under the legend, thresholds quoted from the feed
 
 function nowLine(now) {
   const parts = [];
@@ -378,9 +388,54 @@ function render(d) {
   if (ol.length) foot.appendChild(el("span", null,
     "beyond: " + ol.map(o => o.d + " " + o.g).join(" · ")));
 
+  renderNotes(d.thresholds);
+
   document.getElementById("pagefoot").textContent =
     "courtcast dashboard v" + VERSION + " · " + (d.generator || "") +
     " · data refreshes hourly · cells show temp°F + cause";
+}
+
+// "how it's scored": one line per color, quoting the engine's live thresholds
+// from the feed (feeds older than wx_play 4.10 carry none → the note explains
+// the colors without numbers rather than inventing any).
+function renderNotes(t) {
+  const body = document.getElementById("notesbody");
+  body.textContent = "";
+  const row = (color, title, text) => {
+    const r = el("div", "row");
+    const i = el("i"); i.style.background = color; r.appendChild(i);
+    const span = el("span"); span.appendChild(el("b", null, title + " — "));
+    span.appendChild(document.createTextNode(text)); r.appendChild(span);
+    body.appendChild(r);
+  };
+  if (!t) {
+    row("var(--ideal)", "green", "nothing below applies: play.");
+    row("var(--degr)", "yellow", "playable with a flaw: some rain or storm risk, wind, humidity, heat, chill, or a court still drying.");
+    row("var(--block)", "red", "don't bother: likely rain or thunder, strong gusts, cold, a wet court, or radar showing rain on the court right now.");
+    return;
+  }
+  const r = t.rain_pct || {}, th = t.thunder_pct || {}, w = t.wind_mph || {}, g = t.gust_mph || {};
+  const tp = t.temp_f || {}, dw = t.dew_f || {}, wet = t.wet_mm || {};
+  const pct = v => v + "%";
+  row("var(--ideal)", "green (ideal)",
+    "rain under " + pct(r.degrade) + ", storm risk under " + pct(th.degrade) +
+    ", wind under " + w.degrade + " mph, dew point under " + dw.sticky + "°, " +
+    tp.chilly + "–" + (tp.hot - 1) + "°F, court dry.");
+  row("var(--degr)", "yellow (playable, with a flaw)",
+    "rain " + r.degrade + "–" + (r.block - 1) + "%, storm risk " + th.degrade + "–" + (th.block - 1) +
+    "%, wind " + w.degrade + "+ mph, dew " + dw.sticky + "–" + (dw.soupy - 1) + "° sticky or " +
+    dw.soupy + "°+ soupy, " + tp.hot + "°F+ hot or under " + tp.chilly + "° chilly, or a court still drying (over " +
+    wet.damp + " mm).");
+  row("var(--block)", "red (blocked)",
+    "rain " + pct(r.block) + "+, thunder " + pct(th.block) + "+, gusts " + g.block +
+    "+ mph, under " + tp.cold + "°F, a wet court (" + wet.block + " mm+), or radar showing rain on the court within the last " +
+    t.radar_now_max_age_min + " min.");
+  const gr = t.grades || {};
+  const credit = Math.round((t.degrade_credit || 0) * 100);
+  body.appendChild(el("div", "grades",
+    "Day grade: green hours count full, yellow " + credit + "%, red nothing — the average over your play window is " +
+    "A at " + Math.round(gr.A * 100) + "%+, B " + Math.round(gr.B * 100) + "%+, C " + Math.round(gr.C * 100) +
+    "%+, D " + Math.round(gr.D * 100) + "%+, else F."));
 }
 
 (async () => {
