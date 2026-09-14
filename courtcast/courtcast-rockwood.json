@@ -1,8 +1,45 @@
 {
  "version": 1,
- "generator": "wx_play v4.9",
+ "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-14T08:07:35",
+ "updated": "2026-09-14T08:28:16",
+ "thresholds": {
+  "rain_pct": {
+   "degrade": 25,
+   "block": 50
+  },
+  "thunder_pct": {
+   "degrade": 20,
+   "block": 45
+  },
+  "wind_mph": {
+   "degrade": 12
+  },
+  "gust_mph": {
+   "block": 25
+  },
+  "temp_f": {
+   "hot": 85,
+   "chilly": 50,
+   "cold": 40
+  },
+  "dew_f": {
+   "sticky": 65,
+   "soupy": 70
+  },
+  "wet_mm": {
+   "damp": 0.05,
+   "block": 0.3
+  },
+  "radar_now_max_age_min": 30,
+  "degrade_credit": 0.6,
+  "grades": {
+   "A": 0.9,
+   "B": 0.75,
+   "C": 0.5,
+   "D": 0.25
+  }
+ },
  "playable_now": false,
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 1p (humidity (dew 69\u00b0))",
