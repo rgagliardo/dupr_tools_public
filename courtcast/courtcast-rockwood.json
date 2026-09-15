@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-15T01:14:34",
+ "updated": "2026-09-15T01:29:44",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -228,7 +228,7 @@
     "grade": "C",
     "score": 0.733,
     "best": "8a-11a",
-    "why": "humidity (dew 69\u00b0) 12p, 3p-9p",
+    "why": "thunder 3p-9p \u00b7 humidity (dew 68\u00b0) 12p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -259,37 +259,37 @@
      "15": {
       "t": 90,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      },
      "16": {
       "t": 90,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      },
      "17": {
       "t": 90,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      },
      "18": {
       "t": 88,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      },
      "19": {
       "t": 84,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      },
      "20": {
       "t": 81,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      },
      "21": {
       "t": 78,
       "v": 1,
-      "c": "dew"
+      "c": "thn"
      }
     }
    },
@@ -502,12 +502,12 @@
    {
     "date": "2026-09-29",
     "d": "Tu",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-09-30",
     "d": "We",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
