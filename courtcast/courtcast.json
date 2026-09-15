@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-14T23:43:31",
+ "updated": "2026-09-15T00:14:08",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,12 +42,12 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Tue 3p",
+ "headline": "Next window: 3p today",
  "wet_note": null,
- "reason": "Tue grades A, best 3p-9p",
+ "reason": "today grades A, best 3p-9p",
  "ranked": [
   {
-   "day": "Tue",
+   "day": "Today",
    "grade": "A"
   },
   {
@@ -63,16 +63,16 @@
    "grade": "C"
   },
   {
-   "day": "Sat",
-   "grade": "D"
+   "day": "Sun",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 65,
+   "temp": 63,
    "dew": 53,
-   "wind": 5
+   "wind": 3
   },
   "court": {
    "wet_mm": 0.0,
@@ -82,7 +82,7 @@
   "days": [
    {
     "date": "2026-09-15",
-    "label": "Tue",
+    "label": "Today",
     "sub": "9/15",
     "grade": "A",
     "score": 1.0,
@@ -374,14 +374,91 @@
       "c": "wet"
      }
     }
+   },
+   {
+    "date": "2026-09-20",
+    "label": "Sun",
+    "sub": "9/20",
+    "grade": "C",
+    "score": 0.557,
+    "best": "",
+    "why": "wet court? 9p \u00b7 humidity (dew 72\u00b0) 8a-7p \u00b7 rain 8p",
+    "wet_mm": 0.6,
+    "cells": {
+     "8": {
+      "t": 71,
+      "v": 1,
+      "c": "dew"
+     },
+     "9": {
+      "t": 74,
+      "v": 1,
+      "c": "dew"
+     },
+     "10": {
+      "t": 78,
+      "v": 1,
+      "c": "dew"
+     },
+     "11": {
+      "t": 82,
+      "v": 1,
+      "c": "dew"
+     },
+     "12": {
+      "t": 85,
+      "v": 1,
+      "c": "dew"
+     },
+     "13": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
+     "14": {
+      "t": 88,
+      "v": 1,
+      "c": "dew"
+     },
+     "15": {
+      "t": 89,
+      "v": 1,
+      "c": "dew"
+     },
+     "16": {
+      "t": 90,
+      "v": 1,
+      "c": "dew"
+     },
+     "17": {
+      "t": 89,
+      "v": 1,
+      "c": "dew"
+     },
+     "18": {
+      "t": 87,
+      "v": 1,
+      "c": "dew"
+     },
+     "19": {
+      "t": 84,
+      "v": 1,
+      "c": "dew"
+     },
+     "20": {
+      "t": 81,
+      "v": 1,
+      "c": "rain"
+     },
+     "21": {
+      "t": 78,
+      "v": 0,
+      "c": "wet"
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-09-20",
-    "d": "Su",
-    "g": "C"
-   },
    {
     "date": "2026-09-21",
     "d": "Mo",
@@ -426,6 +503,11 @@
     "date": "2026-09-29",
     "d": "Tu",
     "g": "B"
+   },
+   {
+    "date": "2026-09-30",
+    "d": "We",
+    "g": "A"
    }
   ]
  },
