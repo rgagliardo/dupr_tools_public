@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-14T20:58:07",
+ "updated": "2026-09-14T22:40:38",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: Tue 3p",
  "wet_note": null,
- "reason": "back 3p",
+ "reason": "Tue grades A, best 3p-9p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Fri",
    "grade": "C"
+  },
+  {
+   "day": "Sat",
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 72,
-   "dew": 58,
-   "wind": 7
+   "temp": 66,
+   "dew": 56,
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -80,28 +80,6 @@
    "radar_24h_mm": 0
   },
   "days": [
-   {
-    "date": "2026-09-14",
-    "label": "Today",
-    "sub": "9/14",
-    "grade": "A",
-    "score": 1.0,
-    "best": "8p-9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "20": {
-      "t": 72,
-      "v": 2,
-      "c": ""
-     },
-     "21": {
-      "t": 69,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
    {
     "date": "2026-09-15",
     "label": "Tue",
@@ -432,12 +410,12 @@
    {
     "date": "2026-09-26",
     "d": "Sa",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-09-27",
     "d": "Su",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-09-28",
