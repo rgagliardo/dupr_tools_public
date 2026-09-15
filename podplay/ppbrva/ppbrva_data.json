@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-15T17:45:09",
-  "next_scan_at": "2026-09-15T18:15:09",
+  "generated_at": "2026-09-15T17:52:42",
+  "next_scan_at": "2026-09-15T18:22:42",
   "stats": {
     "total": 759,
-    "full_count": 92
+    "full_count": 91
   },
   "sessions": [
     {
@@ -27,7 +27,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:44:57",
+      "last_snap_ts": "2026-09-15T17:52:31",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -45,15 +45,14 @@
       "end_display": "8:00 PM",
       "status": "upcoming",
       "capacity": 12,
-      "count": 12,
-      "pct": 100,
-      "is_full": true,
+      "count": 10,
+      "pct": 83,
+      "is_full": false,
       "is_takeover": false,
       "watched": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
-        "Suraj Singh C.",
         "Kelly S.",
         "Bart Z.",
         "Eric K.",
@@ -63,12 +62,16 @@
         "Richard  P.",
         "Eleanor B.",
         "Scott B.",
-        "Todd B.",
-        "+1 player"
+        "Todd B."
       ],
       "min_dupr": null,
       "gate_type": null,
       "departed": [
+        {
+          "name": "Suraj Singh",
+          "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
+          "departed_at": "2026-09-15T17:52:31"
+        },
         {
           "name": "Pete Waldbauer",
           "uid": "nCEHRPI4RLgsh4qg7fPDvUlz0rk2",
@@ -90,20 +93,11 @@
           "departed_at": "2026-09-15T13:21:12"
         }
       ],
-      "last_snap_ts": "2026-09-15T17:44:58",
+      "last_snap_ts": "2026-09-15T17:52:31",
       "thieves": [],
       "big_dogs": [],
-      "cloaked_members": [
-        {
-          "uid": "7vnCEU0BFyWTUBK5dErhBRC9ojz2",
-          "name": "Arun",
-          "full_name": "Arun",
-          "rating": "4.34",
-          "joined": "2026-09-10T05:21:22"
-        }
-      ],
+      "cloaked_members": [],
       "registrant_ids": [
-        "99lO18DA7mMpFAE7M7QWdaB10Yi1",
         "xEU0sLQzl7YPcFnHBW6w6JB1RDh1",
         "1CwyNQkJ18dw5Pqt7EIUolLW0dz1",
         "FrscxTKL74U4mPaihVGPISFQKGt1",
@@ -116,7 +110,6 @@
         "D7vaQFt5uqcr0NP5vc4GNrd0o592"
       ],
       "ratings_by_uid": {
-        "99lO18DA7mMpFAE7M7QWdaB10Yi1": "5.15",
         "1CwyNQkJ18dw5Pqt7EIUolLW0dz1": "3.08",
         "FrscxTKL74U4mPaihVGPISFQKGt1": "3.53",
         "8MpmeNpFsXacy197QvfVcVTHZZy1": "4.29",
@@ -125,13 +118,13 @@
         "D7vaQFt5uqcr0NP5vc4GNrd0o592": "4.03"
       },
       "skill": {
-        "med": "3.782",
-        "med_val": 3.782,
+        "med": "3.485",
+        "med_val": 3.485,
         "lo": "3.010",
-        "hi": "5.151",
-        "rated": 8,
-        "total": 12,
-        "tier": "SKILLED"
+        "hi": "4.289",
+        "rated": 6,
+        "total": 10,
+        "tier": "RISING"
       }
     },
     {
@@ -155,7 +148,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:44:58",
+      "last_snap_ts": "2026-09-15T17:52:31",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -191,7 +184,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:44:58",
+      "last_snap_ts": "2026-09-15T17:52:31",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -229,8 +222,8 @@
       "end_display": "12:00 PM",
       "status": "upcoming",
       "capacity": 48,
-      "count": 38,
-      "pct": 79,
+      "count": 37,
+      "pct": 77,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -250,7 +243,6 @@
         "Bill P.",
         "Abbie  K.",
         "Mike N.",
-        "Cyndi S.",
         "Steve Y.",
         "Bing Y.",
         "Lisha Y.",
@@ -279,6 +271,11 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [
+        {
+          "name": "Cyndi Schulte",
+          "uid": "p8P6voZFmGceATQQFMggpC1jdbk1",
+          "departed_at": "2026-09-15T17:52:32"
+        },
         {
           "name": "Rich Knarr",
           "uid": "64L4bMziOJQkRl5xktDlRY3gwFq1",
@@ -315,7 +312,7 @@
           "departed_at": "2026-09-14T19:47:21"
         }
       ],
-      "last_snap_ts": "2026-09-15T17:44:58",
+      "last_snap_ts": "2026-09-15T17:52:32",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -341,7 +338,6 @@
         "AWznDOgVTCfLA4irExxZc2vMXmz2",
         "YUVpnjjGsGbY3gsmbv8835FZrXz2",
         "HxtkkeXtmNMwznxG3yFu5DoHZGY2",
-        "p8P6voZFmGceATQQFMggpC1jdbk1",
         "ZZUxCExkD1YcBv382D2ZkdGrxCN2",
         "UKyQZU4G4hUjT096jCENm0P2yho1",
         "jDcizXkiVCdkVsg4GS6uvqfLelf2",
@@ -375,7 +371,6 @@
         "nn4d9pVxjASvRVtn1Kb3SPPBuhK2": "3.44",
         "AWznDOgVTCfLA4irExxZc2vMXmz2": "3.33",
         "YUVpnjjGsGbY3gsmbv8835FZrXz2": "3.46",
-        "p8P6voZFmGceATQQFMggpC1jdbk1": "3.32",
         "ZZUxCExkD1YcBv382D2ZkdGrxCN2": "3.99",
         "UKyQZU4G4hUjT096jCENm0P2yho1": "4.51",
         "jDcizXkiVCdkVsg4GS6uvqfLelf2": "3.63",
@@ -395,12 +390,12 @@
         "DTbEA3FEH2hC4Zf2F6XxBG8jPpq1": "3.86"
       },
       "skill": {
-        "med": "3.610",
-        "med_val": 3.61,
+        "med": "3.620",
+        "med_val": 3.62,
         "lo": "2.460",
         "hi": "4.509",
-        "rated": 27,
-        "total": 38,
+        "rated": 26,
+        "total": 37,
         "tier": "SKILLED"
       }
     },
@@ -425,7 +420,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:03",
+      "last_snap_ts": "2026-09-15T17:52:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -443,8 +438,8 @@
       "end_display": "7:00 PM",
       "status": "upcoming",
       "capacity": 24,
-      "count": 15,
-      "pct": 62,
+      "count": 16,
+      "pct": 67,
       "is_full": false,
       "is_takeover": false,
       "watched": false,
@@ -465,6 +460,7 @@
         "Winnie B.",
         "Dwayne T.",
         "Nicholas W.",
+        "Debby D.",
         "+1 player"
       ],
       "min_dupr": null,
@@ -481,7 +477,7 @@
           "departed_at": "2026-09-15T12:42:16"
         }
       ],
-      "last_snap_ts": "2026-09-15T17:44:59",
+      "last_snap_ts": "2026-09-15T17:52:32",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -507,7 +503,8 @@
         "9EbBe7DEa4fh2WNhnSUAPVNZ7993",
         "LNC3XdEylrek3GNSkxUgpadxDs02",
         "bH6yEQratQhnvamZRtRhq1eeUaj2",
-        "W8V0BlpwwLSmLaKuXM1tlWSy3io1"
+        "W8V0BlpwwLSmLaKuXM1tlWSy3io1",
+        "KDeBfup5RfV7QRg8Ge4WzGrU51b2"
       ],
       "ratings_by_uid": {
         "2dnCAJFnEiXaIC7tCKB0isyNntA2": "3.44",
@@ -520,15 +517,16 @@
         "9EbBe7DEa4fh2WNhnSUAPVNZ7993": "3.74",
         "LNC3XdEylrek3GNSkxUgpadxDs02": "4.3",
         "bH6yEQratQhnvamZRtRhq1eeUaj2": "4.18",
-        "W8V0BlpwwLSmLaKuXM1tlWSy3io1": "4.22"
+        "W8V0BlpwwLSmLaKuXM1tlWSy3io1": "4.22",
+        "KDeBfup5RfV7QRg8Ge4WzGrU51b2": "3.97"
       },
       "skill": {
-        "med": "3.620",
-        "med_val": 3.62,
+        "med": "3.700",
+        "med_val": 3.7,
         "lo": "3.010",
         "hi": "4.340",
-        "rated": 12,
-        "total": 15,
+        "rated": 13,
+        "total": 16,
         "tier": "SKILLED"
       }
     },
@@ -561,7 +559,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:44:59",
+      "last_snap_ts": "2026-09-15T17:52:32",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -649,7 +647,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:44:59",
+      "last_snap_ts": "2026-09-15T17:52:33",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -743,7 +741,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:44:59",
+      "last_snap_ts": "2026-09-15T17:52:33",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -825,7 +823,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:00",
+      "last_snap_ts": "2026-09-15T17:52:33",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -916,7 +914,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:00",
+      "last_snap_ts": "2026-09-15T17:52:33",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -945,7 +943,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:00",
+      "last_snap_ts": "2026-09-15T17:52:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -974,7 +972,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:01",
+      "last_snap_ts": "2026-09-15T17:52:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1032,7 +1030,7 @@
           "departed_at": "2026-09-15T16:11:40"
         }
       ],
-      "last_snap_ts": "2026-09-15T17:45:01",
+      "last_snap_ts": "2026-09-15T17:52:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1123,7 +1121,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:01",
+      "last_snap_ts": "2026-09-15T17:52:34",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1158,7 +1156,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:01",
+      "last_snap_ts": "2026-09-15T17:52:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1243,7 +1241,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:02",
+      "last_snap_ts": "2026-09-15T17:52:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1350,7 +1348,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:02",
+      "last_snap_ts": "2026-09-15T17:52:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1379,7 +1377,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:02",
+      "last_snap_ts": "2026-09-15T17:52:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1417,7 +1415,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:02",
+      "last_snap_ts": "2026-09-15T17:52:35",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1472,7 +1470,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:02",
+      "last_snap_ts": "2026-09-15T17:52:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1501,7 +1499,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:03",
+      "last_snap_ts": "2026-09-15T17:52:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1530,7 +1528,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:03",
+      "last_snap_ts": "2026-09-15T17:52:36",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1566,7 +1564,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:03",
+      "last_snap_ts": "2026-09-15T17:52:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1619,7 +1617,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:04",
+      "last_snap_ts": "2026-09-15T17:52:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1655,7 +1653,7 @@
       "min_dupr": "4.20",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:04",
+      "last_snap_ts": "2026-09-15T17:52:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1696,7 +1694,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:04",
+      "last_snap_ts": "2026-09-15T17:52:37",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1745,7 +1743,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:05",
+      "last_snap_ts": "2026-09-15T17:52:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1774,7 +1772,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:05",
+      "last_snap_ts": "2026-09-15T17:52:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1803,7 +1801,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:05",
+      "last_snap_ts": "2026-09-15T17:52:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -1832,7 +1830,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-09-15T17:45:05",
+      "last_snap_ts": "2026-09-15T17:52:38",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -51292,61 +51290,6 @@
       },
       {
         "rank": 3,
-        "median": "3.782",
-        "tier": "SKILLED",
-        "lo": "3.010",
-        "hi": "5.151",
-        "avg": "3.859",
-        "rated": 8,
-        "field": 12,
-        "date": "TUE SEP 15  6:00 PM",
-        "title": "4.5/4.0 Open Play",
-        "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
-        "players": [
-          {
-            "n": "Suraj Singh",
-            "r": "5.151",
-            "c": false
-          },
-          {
-            "n": "Arun",
-            "r": "4.34",
-            "c": true
-          },
-          {
-            "n": "Todd Springer",
-            "r": "4.289",
-            "c": false
-          },
-          {
-            "n": "Todd Boss",
-            "r": "4.034",
-            "c": false
-          },
-          {
-            "n": "Eric Kim",
-            "r": "3.53",
-            "c": false
-          },
-          {
-            "n": "Richard Papcun",
-            "r": "3.44",
-            "c": false
-          },
-          {
-            "n": "Bart Zekert",
-            "r": "3.08",
-            "c": false
-          },
-          {
-            "n": "Scott Brame",
-            "r": "3.01",
-            "c": false
-          }
-        ]
-      },
-      {
-        "rank": 4,
         "median": "3.745",
         "tier": "SKILLED",
         "lo": "2.460",
@@ -51451,7 +51394,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 4,
         "median": "3.720",
         "tier": "SKILLED",
         "lo": "2.460",
@@ -51589,6 +51532,86 @@
             "c": false
           }
         ]
+      },
+      {
+        "rank": 5,
+        "median": "3.700",
+        "tier": "SKILLED",
+        "lo": "3.010",
+        "hi": "4.340",
+        "avg": "3.739",
+        "rated": 13,
+        "field": 16,
+        "date": "WED SEP 16  5:00 PM",
+        "title": "4.5/4.0 Open Play",
+        "url": "https://ppbrva.podplay.app/community/events/01a06d72-a6e6-7dd7-99a1-6c2812554b0e",
+        "players": [
+          {
+            "n": "Arun",
+            "r": "4.34",
+            "c": true
+          },
+          {
+            "n": "Winnie Brown",
+            "r": "4.300",
+            "c": false
+          },
+          {
+            "n": "Nicholas W.",
+            "r": "4.22",
+            "c": false
+          },
+          {
+            "n": "Dwayne Tasin",
+            "r": "4.110",
+            "c": false
+          },
+          {
+            "n": "Debby Dimaculangan",
+            "r": "3.97",
+            "c": false
+          },
+          {
+            "n": "Kayla  W.",
+            "r": "3.74",
+            "c": false
+          },
+          {
+            "n": "Beth Ashton",
+            "r": "3.7",
+            "c": false
+          },
+          {
+            "n": "Pete Waldbauer",
+            "r": "3.54",
+            "c": false
+          },
+          {
+            "n": "Eric Kim",
+            "r": "3.53",
+            "c": false
+          },
+          {
+            "n": "Jim Opalka",
+            "r": "3.52",
+            "c": false
+          },
+          {
+            "n": "Michelle Headley",
+            "r": "3.44",
+            "c": false
+          },
+          {
+            "n": "Dana Gigliotti",
+            "r": "3.2",
+            "c": false
+          },
+          {
+            "n": "Scott Brame",
+            "r": "3.01",
+            "c": false
+          }
+        ]
       }
     ]
   },
@@ -51616,7 +51639,7 @@
       "name": "Suraj Singh",
       "rating": "5.15",
       "tier": "PRO",
-      "sessions": 32,
+      "sessions": 31,
       "last": "THU SEP 17  6:00 PM",
       "cloaked": false
     },
@@ -52045,6 +52068,53 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-09-15T17:52:32",
+      "type": "cancel",
+      "name": "Cyndi Schulte",
+      "title": "4.0 Open Play",
+      "start": "WED SEP 16  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a063b0-64e1-777f-a023-3b83463d39ad",
+      "uid": "p8P6voZFmGceATQQFMggpC1jdbk1",
+      "rating": "3.32"
+    },
+    {
+      "ts": "2026-09-15T17:52:32",
+      "type": "join",
+      "name": "Debby Dimaculangan",
+      "title": "4.5/4.0 Open Play",
+      "start": "WED SEP 16  5:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a06d72-a6e6-7dd7-99a1-6c2812554b0e",
+      "uid": "KDeBfup5RfV7QRg8Ge4WzGrU51b2",
+      "rating": "3.97"
+    },
+    {
+      "ts": "2026-09-15T17:52:31",
+      "type": "cancel",
+      "name": "Suraj Singh",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE SEP 15  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
+      "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
+      "rating": "5.15"
+    },
+    {
+      "ts": "2026-09-15T17:52:31",
+      "type": "cancel",
+      "name": "\ud83d\udc64 Guest Player",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE SEP 15  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
+      "guest": true
+    },
+    {
+      "ts": "2026-09-15T17:52:31",
+      "type": "freed",
+      "name": "10/12",
+      "title": "4.5/4.0 Open Play",
+      "start": "TUE SEP 15  6:00 PM",
+      "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9"
+    },
     {
       "ts": "2026-09-15T17:45:02",
       "type": "join",
@@ -74537,7 +74607,7 @@
       "name": "Suraj Singh",
       "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
       "joins": 22,
-      "cancels": 11
+      "cancels": 12
     },
     {
       "name": "David Serio",
@@ -74636,6 +74706,12 @@
       "cancels": 7
     },
     {
+      "name": "Cyndi Schulte",
+      "uid": "p8P6voZFmGceATQQFMggpC1jdbk1",
+      "joins": 14,
+      "cancels": 7
+    },
+    {
       "name": "Don Barnett",
       "uid": "yJiUKytjwKeXZ4FV6otMgI5puE42",
       "joins": 10,
@@ -74662,12 +74738,6 @@
     {
       "name": "Kristi King",
       "uid": "iJMC40NsEShSorrd5WTnKvVQhqA3",
-      "joins": 14,
-      "cancels": 6
-    },
-    {
-      "name": "Cyndi Schulte",
-      "uid": "p8P6voZFmGceATQQFMggpC1jdbk1",
       "joins": 14,
       "cancels": 6
     },
@@ -75896,6 +75966,12 @@
       "cancels": 0
     },
     {
+      "name": "Debby Dimaculangan",
+      "uid": "KDeBfup5RfV7QRg8Ge4WzGrU51b2",
+      "joins": 5,
+      "cancels": 0
+    },
+    {
       "name": "Allison Newman",
       "uid": "7OfSK8LyRyciEBt19YcarPw5lgy1",
       "joins": 5,
@@ -76036,12 +76112,6 @@
     {
       "name": "Gavin Mills",
       "uid": "NIVmZe4OvOUXcMyVz7h4h2ISg5m1",
-      "joins": 4,
-      "cancels": 0
-    },
-    {
-      "name": "Debby Dimaculangan",
-      "uid": "KDeBfup5RfV7QRg8Ge4WzGrU51b2",
       "joins": 4,
       "cancels": 0
     },
@@ -80457,9 +80527,9 @@
           "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
           "status": "upcoming",
           "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
+          "count": 10,
+          "is_full": false,
+          "spots_left": 2
         },
         {
           "title": "4.5/4.0 Open Play",
@@ -80784,9 +80854,9 @@
           "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
           "status": "upcoming",
           "capacity": 12,
-          "count": 12,
-          "is_full": true,
-          "spots_left": 0
+          "count": 10,
+          "is_full": false,
+          "spots_left": 2
         },
         {
           "title": "4.5/4.0 Open Play",
@@ -81740,9 +81810,9 @@
           "url": "https://ppbrva.podplay.app/community/events/01a06d72-a6e6-7dd7-99a1-6c2812554b0e",
           "status": "upcoming",
           "capacity": 24,
-          "count": 15,
+          "count": 16,
           "is_full": false,
-          "spots_left": 9
+          "spots_left": 8
         },
         {
           "title": "4.0 Open Play",
@@ -82308,9 +82378,9 @@
           "url": "https://ppbrva.podplay.app/community/events/01a06d72-a6e6-7dd7-99a1-6c2812554b0e",
           "status": "upcoming",
           "capacity": 24,
-          "count": 15,
+          "count": 16,
           "is_full": false,
-          "spots_left": 9
+          "spots_left": 8
         },
         {
           "title": "4.5/4.0 Open Play",
@@ -89419,12 +89489,11 @@
         }
       ],
       "count": 2,
-      "registered": 12,
+      "registered": 10,
       "capacity": 12,
-      "spots_left": 0,
-      "is_full": true,
+      "spots_left": 2,
+      "is_full": false,
       "registrants": [
-        "Suraj Singh C.",
         "Kelly S.",
         "Bart Z.",
         "Eric K.",
@@ -89434,11 +89503,9 @@
         "Richard  P.",
         "Eleanor B.",
         "Scott B.",
-        "Todd B.",
-        "+1 player"
+        "Todd B."
       ],
       "registrant_ids": [
-        "99lO18DA7mMpFAE7M7QWdaB10Yi1",
         "xEU0sLQzl7YPcFnHBW6w6JB1RDh1",
         "1CwyNQkJ18dw5Pqt7EIUolLW0dz1",
         "FrscxTKL74U4mPaihVGPISFQKGt1",
@@ -89451,7 +89518,6 @@
         "D7vaQFt5uqcr0NP5vc4GNrd0o592"
       ],
       "ratings_by_uid": {
-        "99lO18DA7mMpFAE7M7QWdaB10Yi1": "5.15",
         "1CwyNQkJ18dw5Pqt7EIUolLW0dz1": "3.08",
         "FrscxTKL74U4mPaihVGPISFQKGt1": "3.53",
         "8MpmeNpFsXacy197QvfVcVTHZZy1": "4.29",
@@ -89459,16 +89525,13 @@
         "gObDp9OrNiRpG8U73ef7Wm4pDFX2": "3.01",
         "D7vaQFt5uqcr0NP5vc4GNrd0o592": "4.03"
       },
-      "cloaked_members": [
-        {
-          "uid": "7vnCEU0BFyWTUBK5dErhBRC9ojz2",
-          "name": "Arun",
-          "full_name": "Arun",
-          "rating": "4.34",
-          "joined": "2026-09-10T05:21:22"
-        }
-      ],
+      "cloaked_members": [],
       "departed": [
+        {
+          "name": "Suraj Singh",
+          "uid": "99lO18DA7mMpFAE7M7QWdaB10Yi1",
+          "departed_at": "2026-09-15T17:52:31"
+        },
         {
           "name": "Pete Waldbauer",
           "uid": "nCEHRPI4RLgsh4qg7fPDvUlz0rk2",
@@ -89491,13 +89554,13 @@
         }
       ],
       "skill": {
-        "med": "3.782",
-        "med_val": 3.782,
+        "med": "3.485",
+        "med_val": 3.485,
         "lo": "3.010",
-        "hi": "5.151",
-        "rated": 8,
-        "total": 12,
-        "tier": "SKILLED"
+        "hi": "4.289",
+        "rated": 6,
+        "total": 10,
+        "tier": "RISING"
       }
     },
     {
@@ -89518,9 +89581,9 @@
         }
       ],
       "count": 2,
-      "registered": 15,
+      "registered": 16,
       "capacity": 24,
-      "spots_left": 9,
+      "spots_left": 8,
       "is_full": false,
       "registrants": [
         "Ed K.",
@@ -89537,6 +89600,7 @@
         "Winnie B.",
         "Dwayne T.",
         "Nicholas W.",
+        "Debby D.",
         "+1 player"
       ],
       "registrant_ids": [
@@ -89553,7 +89617,8 @@
         "9EbBe7DEa4fh2WNhnSUAPVNZ7993",
         "LNC3XdEylrek3GNSkxUgpadxDs02",
         "bH6yEQratQhnvamZRtRhq1eeUaj2",
-        "W8V0BlpwwLSmLaKuXM1tlWSy3io1"
+        "W8V0BlpwwLSmLaKuXM1tlWSy3io1",
+        "KDeBfup5RfV7QRg8Ge4WzGrU51b2"
       ],
       "ratings_by_uid": {
         "2dnCAJFnEiXaIC7tCKB0isyNntA2": "3.44",
@@ -89566,7 +89631,8 @@
         "9EbBe7DEa4fh2WNhnSUAPVNZ7993": "3.74",
         "LNC3XdEylrek3GNSkxUgpadxDs02": "4.3",
         "bH6yEQratQhnvamZRtRhq1eeUaj2": "4.18",
-        "W8V0BlpwwLSmLaKuXM1tlWSy3io1": "4.22"
+        "W8V0BlpwwLSmLaKuXM1tlWSy3io1": "4.22",
+        "KDeBfup5RfV7QRg8Ge4WzGrU51b2": "3.97"
       },
       "cloaked_members": [
         {
@@ -89590,12 +89656,12 @@
         }
       ],
       "skill": {
-        "med": "3.620",
-        "med_val": 3.62,
+        "med": "3.700",
+        "med_val": 3.7,
         "lo": "3.010",
         "hi": "4.340",
-        "rated": 12,
-        "total": 15,
+        "rated": 13,
+        "total": 16,
         "tier": "SKILLED"
       }
     },
@@ -104773,25 +104839,6 @@
       ]
     },
     {
-      "title": "4.5/4.0 Open Play",
-      "start": "TUE SEP 15  6:00 PM",
-      "end": "8:00 PM",
-      "start_iso": "2026-09-15T18:00:00",
-      "url": "https://ppbrva.podplay.app/community/events/01a07d4d-c5ba-700d-b0cf-6c8f68b872b9",
-      "status": "upcoming",
-      "cloaked_count": 1,
-      "total_count": 12,
-      "capacity": 12,
-      "members": [
-        {
-          "name": "Arun",
-          "uid": "7vnCEU0BFyWTUBK5dErhBRC9ojz2",
-          "rating": "4.34",
-          "joined_display": "THU SEP 10  5:21 AM"
-        }
-      ]
-    },
-    {
       "title": "4.0 Open Play",
       "start": "WED SEP 16  10:00 AM",
       "end": "12:00 PM",
@@ -104799,7 +104846,7 @@
       "url": "https://ppbrva.podplay.app/community/events/01a063b0-64e1-777f-a023-3b83463d39ad",
       "status": "upcoming",
       "cloaked_count": 1,
-      "total_count": 38,
+      "total_count": 37,
       "capacity": 48,
       "members": [
         {
@@ -104818,7 +104865,7 @@
       "url": "https://ppbrva.podplay.app/community/events/01a06d72-a6e6-7dd7-99a1-6c2812554b0e",
       "status": "upcoming",
       "cloaked_count": 1,
-      "total_count": 15,
+      "total_count": 16,
       "capacity": 24,
       "members": [
         {
@@ -104918,7 +104965,7 @@
       "uid": "7vnCEU0BFyWTUBK5dErhBRC9ojz2",
       "name": "Arun",
       "rating": "4.34",
-      "sessions": 82,
+      "sessions": 81,
       "last_iso": "2026-09-16T19:00:00",
       "last_title": "4.0 Open Play",
       "last_display": "Sep 16"
