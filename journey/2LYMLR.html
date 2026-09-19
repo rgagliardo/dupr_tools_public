@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Todd Compton</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+  --green:#2ecc71; --adj:#ff3db4;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+  --green:#1a9e56; --adj:#c2007a;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+/* ---- Change story ribbon ---- */
+.story-sum { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+.sp { font-size:11px; font-weight:700; padding:3px 8px; border-radius:12px;
+  border:1px solid var(--line-soft); color:var(--txt-2); white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.sp-match { border-color:var(--cyan); color:var(--cyan); }
+.sp-adj { border-color:var(--adj); color:var(--adj); }
+.sp-late { border-color:var(--partner-pur); color:var(--partner-pur); }
+.sp-reset { border-color:var(--adj); color:var(--adj); font-weight:800; }
+.story { position:relative; margin:0 0 8px; padding-left:6px; }
+.sr { display:grid; grid-template-columns:52px 20px 1fr; align-items:start;
+  gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }
+.sr:last-child { border-bottom:0; }
+.sr-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); padding-top:2px; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums; }
+.sr-ico { font-size:13px; line-height:1.2; text-align:center; color:var(--txt-mid); }
+.sr-adj .sr-ico { color:var(--adj); }
+.sr-reset .sr-ico { color:var(--adj); }
+.sr-late .sr-ico, .sr-latemore .sr-ico { color:var(--partner-pur); }
+.sr-peak .sr-ico, .sr-now .sr-ico { color:var(--cyan); }
+.sr-nowstale .sr-ico { color:var(--txt-dim); opacity:.6; }
+.sr-latemore .sr-title { font-weight:500; color:var(--txt-mid); }
+.sr-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.sr-title { font-size:13px; font-weight:600; color:var(--txt); }
+.sr-sub { font-size:11px; color:var(--txt-mid); margin-top:2px; line-height:1.4; }
+.sr-delta { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums;
+  margin-left:auto; flex:0 0 auto; }
+.sr-delta.pos { color:var(--green); } .sr-delta.neg { color:var(--red); }
+.sr-reset { background:color-mix(in srgb, var(--adj) 8%, transparent); }
+</style></head><body>
+<div class="stamp">MOCKUP v6.3 — 2026-08-27</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Todd Compton — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-l">▼ 1L</span><span class="pname">Todd Compton</span>
+    <span class="scores">4.751</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 14.1,26.7 20.7,22.5 33.8,16.8 40.3,20.5 60.0,19.6 66.6,9.8 73.1,9.9 79.7,14.3 86.2,10.0 92.8,11.1 99.3,15.1 105.9,3.8 112.4,3.0 119.0,6.9"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">3.807</div><div class="k">Placed 6/24</div></div>
+  <div class="chip"><div class="v neg">-0.086</div><div class="k">Corrected &lt;90d</div></div>
+  <div class="chip"><div class="v">5.028</div><div class="k">Peak 7/26</div></div>
+  <div class="chip"><div class="v">4.751</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v pos">+0.840</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.104</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 3.807, peak 5.028, now 4.751 (+0.945 net)"><line class="grid" x1="40.5" y1="14" x2="40.5" y2="186"/><line class="grid" x1="115.4" y1="14" x2="115.4" y2="186"/><text class="tick" x="115.4" y="203" text-anchor="middle">2025</text><line class="grid" x1="189.1" y1="14" x2="189.1" y2="186"/><line class="grid" x1="264.0" y1="14" x2="264.0" y2="186"/><text class="tick" x="264.0" y="203" text-anchor="middle">2026</text><line class="grid" x1="337.7" y1="14" x2="337.7" y2="186"/><line class="grid" x1="34" y1="180.8" x2="356" y2="180.8"/><text class="tick" x="29" y="183.8" text-anchor="end">3.75</text><line class="grid" x1="34" y1="150.5" x2="356" y2="150.5"/><text class="tick" x="29" y="153.5" text-anchor="end">4.00</text><line class="grid" x1="34" y1="120.3" x2="356" y2="120.3"/><text class="tick" x="29" y="123.3" text-anchor="end">4.25</text><line class="grid" x1="34" y1="90.0" x2="356" y2="90.0"/><text class="tick" x="29" y="93.0" text-anchor="end">4.50</text><line class="grid" x1="34" y1="59.8" x2="356" y2="59.8"/><text class="tick" x="29" y="62.8" text-anchor="end">4.75</text><line class="grid" x1="34" y1="29.5" x2="356" y2="29.5"/><text class="tick" x="29" y="32.5" text-anchor="end">5.00</text><path class="seg-norm" d="M34.0 105.8 L52.7 105.1"/><path class="seg-sys" d="M52.7 105.1 L56.0 105.1"/><path class="seg-norm" d="M56.0 105.1 L65.8 95.4 L93.8 88.6 L102.8 82.3 L105.6 90.7 L108.5 89.0 L116.2 88.8"/><path class="seg-sys" d="M116.2 88.8 L120.3 66.3"/><path class="seg-norm" d="M120.3 66.3 L196.4 76.6 L242.0 66.6 L264.8 69.3 L273.4 78.5 L305.5 52.5 L340.1 50.6 L356.0 59.6"/><line class="mk-whisk" x1="34.0" y1="105.8" x2="34.0" y2="173.9"/><line class="mk-whisk" x1="340.1" y1="50.6" x2="340.1" y2="26.1"/><line class="mk-whisk" x1="34.0" y1="105.8" x2="34.0" y2="173.9"/><circle class="mk mk-start" cx="34.0" cy="173.9" r="4"/><circle class="mk mk-peak" cx="340.1" cy="26.1" r="5"/><circle class="mk mk-low" cx="34.0" cy="173.9" r="4"/><circle class="mk mk-now" cx="356.0" cy="59.6" r="4"/><rect class="mk mk-adm" x="49.5" y="112.9" width="6.4" height="6.4" transform="rotate(45 52.7 116.1)"/><rect class="mk mk-adm" x="52.8" y="91.7" width="6.4" height="6.4" transform="rotate(45 56.0 94.9)"/><rect class="mk mk-adm" x="52.8" y="86.9" width="6.4" height="6.4" transform="rotate(45 56.0 90.1)"/><rect class="mk mk-adm" x="52.8" y="91.4" width="6.4" height="6.4" transform="rotate(45 56.0 94.6)"/><rect class="mk mk-adm" x="52.8" y="100.4" width="6.4" height="6.4" transform="rotate(45 56.0 103.6)"/><rect class="mk mk-adm" x="62.6" y="95.5" width="6.4" height="6.4" transform="rotate(45 65.8 98.7)"/><rect class="mk mk-adm" x="62.6" y="99.5" width="6.4" height="6.4" transform="rotate(45 65.8 102.7)"/><rect class="mk mk-adm" x="62.6" y="95.2" width="6.4" height="6.4" transform="rotate(45 65.8 98.4)"/><rect class="mk mk-adm" x="62.6" y="101.2" width="6.4" height="6.4" transform="rotate(45 65.8 104.4)"/><rect class="mk mk-adm" x="117.1" y="63.1" width="6.4" height="6.4" transform="rotate(45 120.3 66.3)"/><text class="anno anno-gold" x="340.1" y="17.1" text-anchor="end">peak 5.028</text><text class="anno" x="65.9" y="182.0" text-anchor="middle">low 3.807</text><text class="anno" x="38.0" y="165.9">placed 3.807</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span>◆ DUPR adjustment</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (86 changes since 2024-06-15). Solid = a match moved it; dashed pink = DUPR moved it with no match; ◆ marks a DUPR adjustment (no match played). 39-27 record over 66 doubles matches, 2.2-year span.</p>
+
+
+<h2>Change story</h2>
+<div class="story-sum"><span class="sp sp-match">66 matches</span><span class="sp sp-adj">10 DUPR adjustments · +0.162</span></div>
+<p class="note" style="margin:0 0 10px">The events that shaped this rating, in order.
+Ordinary match results are summarized in the sections below — this ribbon spotlights what
+you can't see on a scorecard.</p>
+<div class="story"><div class="sr sr-start"><div class="sr-date">6/15/24</div><div class="sr-ico" aria-hidden="true">◎</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Placed at 3.807</span></div><div class="sr-sub">DUPR engine start</div></div></div><div class="sr sr-adj"><div class="sr-date">7/31/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta neg">-0.085</span></div><div class="sr-sub">DUPR changed this rating with no match played</div></div></div><div class="sr sr-adj"><div class="sr-date">8/8/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.036</span></div><div class="sr-sub">DUPR changed this rating with no match played · 4 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">9/1/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.025</span></div><div class="sr-sub">DUPR changed this rating with no match played · 4 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">1/13/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.186</span></div><div class="sr-sub">DUPR changed this rating with no match played</div></div></div><div class="sr sr-peak"><div class="sr-date">7/7/26</div><div class="sr-ico" aria-hidden="true">▲</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Peak 5.028</span></div><div class="sr-sub">highest rating reached</div></div></div><div class="sr sr-now"><div class="sr-date">8/15/26</div><div class="sr-ico" aria-hidden="true">●</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Now 4.751</span></div><div class="sr-sub">current rating</div></div></div></div>
+<p class="note">◆ DUPR changing the rating with no match played, ⟳ resets, and ↩ matches DUPR
+processed long after they were played — all DUPR's doing, not the player's. We don't label
+an adjustment as system-wide, individual, or paid: only DUPR knows which, and the raw record
+just says a change happened with no match. Resets are inferred from a rating held flat across
+many matches (DUPR doesn't flag them).</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:89%"></div></div></div><span class="val pos">+0.840</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:11%"></div></div></div><span class="val pos">+0.104</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.945</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +1.830 / losses -1.439.</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">6/15/24</span>Body Armor 804 Open Men&#x27;s Doubles Skill: (4.0) Age: (30+40+50+)</div><div class="match-group win"><div class="match-row"><span class="match-score">15-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.246)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">3.900</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.137</span></span> <span class="match-vs">vs</span> <span>Hemanth Math <span class="match-rating">4.351</span></span> &amp; <span>Gilu Gopi <span class="match-rating">4.351</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.67</summary><div class="tag-math">Todd 3.900 + Jon 4.137 = <b>8.038</b><br>Hemanth 4.351 + Gilu 4.351 = <b>8.704</b><br>→ opponents stronger by 0.665 combined DUPR (pre-match)</div></details> <span class="mx">PD +8</span> <span class="mx">match #3</span></div></div><div class="event-pill"><span class="event-pill-date">7/7/26</span>2026 Grand Rapids BEER CITY OPEN Pickleball Championships - Mens…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-1, 11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.218)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.809</span></span> w/ <span class="match-partner">Patrick Catullo <span class="match-rating">4.629</span></span> <span class="match-vs">vs</span> <span>Jc Sicard <span class="match-rating">4.350</span></span> &amp; <span>William Morris <span class="match-rating">4.664</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.42</summary><div class="tag-math">Todd 4.809 + Patrick 4.629 = <b>9.439</b><br>Jc 4.350 + William 4.664 = <b>9.015</b><br>→ their side stronger by 0.424 combined DUPR (pre-match)</div></details> <span class="mx">PD +21</span> <span class="mx">match #56</span></div></div><div class="event-pill"><span class="event-pill-date">7/19/25</span>2025 Virginia Amateur Pickleball Championships powered by Carvana PPA…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.169)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.568</span></span> w/ <span class="match-partner">Lloyd zelazny <span class="match-rating">4.578</span></span> <span class="match-vs">vs</span> <span>Sean Hyland <span class="match-rating">4.379</span></span> &amp; <span>Peter Schweitzer <span class="match-rating">4.607</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.16</summary><div class="tag-math">Todd 4.568 + Lloyd 4.578 = <b>9.146</b><br>Sean 4.379 + Peter 4.607 = <b>8.987</b><br>→ their side stronger by 0.159 combined DUPR (pre-match)</div></details> <span class="mx">PD +11</span> <span class="mx">match #34</span></div></div><div class="event-pill"><span class="event-pill-date">6/15/24</span>Body Armor 804 Open Men&#x27;s Doubles Skill: (4.0) Age: (30+40+50+)</div><div class="match-group loss"><div class="match-row"><span class="match-score">3-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.311)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.118</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.160</span></span> <span class="match-vs">vs</span> <span>Charles Wilson <span class="match-rating">4.066</span></span> &amp; <span>Kevin Rawls <span class="match-rating">4.452</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.24</summary><div class="tag-math">Todd 4.118 + Jon 4.160 = <b>8.279</b><br>Charles 4.066 + Kevin 4.452 = <b>8.518</b><br>→ opponents stronger by 0.239 combined DUPR (pre-match)</div></details> <span class="mx">PD -12</span> <span class="mx">match #5</span></div></div><div class="event-pill"><span class="event-pill-date">11/8/25</span>YMCA National Pickleball Tournament - Men&#x27;s Doubles 4.5 Round Robin…</div><div class="match-group loss"><div class="match-row"><span class="match-score">5-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.160)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.768</span></span> w/ <span class="match-partner">xavier aiach <span class="match-rating">4.788</span></span> <span class="match-vs">vs</span> <span>WILSON BOSSOJUNIOR <span class="match-rating">4.407</span></span> &amp; <span>Eduardo De Abreu Assuncao <span class="match-rating">4.384</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.77</summary><div class="tag-math">Todd 4.768 + xavier 4.788 = <b>9.557</b><br>WILSON 4.407 + Eduardo 4.384 = <b>8.792</b><br>→ their side stronger by 0.765 combined DUPR (pre-match)</div></details> <span class="mx">PD -10</span> <span class="mx">match #40</span></div></div><div class="event-pill"><span class="event-pill-date">7/7/26</span>2026 Grand Rapids BEER CITY OPEN Pickleball Championships - Mens…</div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11, 2-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.152)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">5.028</span></span> w/ <span class="match-partner">Patrick Catullo <span class="match-rating">4.672</span></span> <span class="match-vs">vs</span> <span>Matthew McCubbins <span class="match-rating">4.667</span></span> &amp; <span>Matt Carpenter <span class="match-rating">4.870</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.16</summary><div class="tag-math">Todd 5.028 + Patrick 4.672 = <b>9.701</b><br>Matthew 4.667 + Matt 4.870 = <b>9.538</b><br>→ their side stronger by 0.163 combined DUPR (pre-match)</div></details> <span class="mx">PD -15</span> <span class="mx">match #57</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">6/15/24</span>Body Armor 804 Open Men&#x27;s Doubles Skill: (4.0) Age: (30+40+50+)</div><div class="match-group win"><div class="match-row"><span class="match-score">7-11, 11-7, 12-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.100)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.269</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.227</span></span> <span class="match-vs">vs</span> <span>Charles Wilson <span class="match-rating">4.111</span></span> &amp; <span>Kevin Rawls <span class="match-rating">4.680</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.091)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.284</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.231</span></span> <span class="match-vs">vs</span> <span>Matt Behnke <span class="match-rating">4.804</span></span> &amp; <span>Lloyd zelazny <span class="match-rating">4.374</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.246)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">3.900</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.137</span></span> <span class="match-vs">vs</span> <span>Hemanth Math <span class="match-rating">4.351</span></span> &amp; <span>Gilu Gopi <span class="match-rating">4.351</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.094)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">3.806</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.120</span></span> <span class="match-vs">vs</span> <span>Charles Allbaugh <span class="match-rating">3.608</span></span> &amp; <span>Ernesto Abud <span class="match-rating">3.377</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.311)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.118</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.160</span></span> <span class="match-vs">vs</span> <span>Charles Wilson <span class="match-rating">4.066</span></span> &amp; <span>Kevin Rawls <span class="match-rating">4.452</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.693</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.431</span></span> <span class="match-vs">vs</span> <span>Suhail Arora <span class="match-rating">4.296</span></span> &amp; <span>Mehul Garnara MG  <span class="match-rating">3.860</span></span></div></div><div class="event-pill"><span class="event-pill-date">8/4/24</span>2024 Virginia State Championships - UPA by Southern Pickleball Mens…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-2, 11-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.450</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.290</span></span> <span class="match-vs">vs</span> <span>Josh Haddad <span class="match-rating">3.735</span></span> &amp; <span>Jordan Ames <span class="match-rating">3.858</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.045)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.496</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.305</span></span> <span class="match-vs">vs</span> <span>Christopher Cosgrove <span class="match-rating">4.399</span></span> &amp; <span>Lucas Lese <span class="match-rating">4.204</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.040)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.456</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.293</span></span> <span class="match-vs">vs</span> <span>Brian Singleton <span class="match-rating">3.964</span></span> &amp; <span>Bruce Sibley <span class="match-rating">4.196</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.452</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.292</span></span> <span class="match-vs">vs</span> <span>Sandeep Kanchiraju <span class="match-rating">3.728</span></span> &amp; <span>Allan Zamora (deleted) <span class="match-rating">3.407</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.018)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.434</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.287</span></span> <span class="match-vs">vs</span> <span>David Phetmixay <span class="match-rating">3.522</span></span> &amp; <span>Scott Latshaw <span class="match-rating">3.699</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.047)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.387</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.277</span></span> <span class="match-vs">vs</span> <span>Spencer Ellingson <span class="match-rating">4.149</span></span> &amp; <span>Dennis Thompson <span class="match-rating">3.800</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.012)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.375</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.275</span></span> <span class="match-vs">vs</span> <span>Josh Haddad <span class="match-rating">3.575</span></span> &amp; <span>Jordan Ames <span class="match-rating">3.819</span></span></div></div><div class="event-pill"><span class="event-pill-date">11/9/24</span>Atlantic Union Bank Open - Men&#x27;s Doubles Skill: (4.5) Age: (35+, 50+)</div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.061)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.455</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.296</span></span> <span class="match-vs">vs</span> <span>salvador palazon <span class="match-rating">3.857</span></span> &amp; <span>Sean Hyland <span class="match-rating">4.191</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.015)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.495</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.308</span></span> <span class="match-vs">vs</span> <span>Michael Nielson <span class="match-rating">4.290</span></span> &amp; <span>Wade Tallent <span class="match-rating">4.287</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.060)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.555</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.327</span></span> <span class="match-vs">vs</span> <span>James Lauder <span class="match-rating">4.525</span></span> &amp; <span>Donnie Jones <span class="match-rating">4.411</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.068)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.615</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.347</span></span> <span class="match-vs">vs</span> <span>Lloyd zelazny <span class="match-rating">4.566</span></span> &amp; <span>Matt Behnke <span class="match-rating">4.726</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">7-11, 11-9, 11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.007)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.547</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.322</span></span> <span class="match-vs">vs</span> <span>salvador palazon <span class="match-rating">3.859</span></span> &amp; <span>Sean Hyland <span class="match-rating">4.194</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-12, 5-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.043)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.554</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.325</span></span> <span class="match-vs">vs</span> <span>James Lauder <span class="match-rating">4.629</span></span> &amp; <span>Donnie Jones <span class="match-rating">4.477</span></span></div></div><div class="event-pill"><span class="event-pill-date">12/1/24</span>Kaitlyn Kerr DUPR Challenge!</div><div class="match-group win"><div class="match-row"><span class="match-score">11-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.066)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.512</span></span> w/ <span class="match-partner">Lee Chaney <span class="match-rating">4.111</span></span> <span class="match-vs">vs</span> <span>Lloyd zelazny <span class="match-rating">4.499</span></span> &amp; <span>Todd Boss <span class="match-rating">4.103</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.022)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.578</span></span> w/ <span class="match-partner">Lloyd zelazny <span class="match-rating">4.489</span></span> <span class="match-vs">vs</span> <span>Lee Chaney <span class="match-rating">4.243</span></span> &amp; <span>Lee warfield <span class="match-rating">4.324</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.023)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.600</span></span> w/ <span class="match-partner">Jared Racicot <span class="match-rating">4.907</span></span> <span class="match-vs">vs</span> <span>Lloyd zelazny <span class="match-rating">4.500</span></span> &amp; <span>David Bieger <span class="match-rating">5.761</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.578</span></span> w/ <span class="match-partner">Jared Racicot <span class="match-rating">4.886</span></span> <span class="match-vs">vs</span> <span>Lloyd zelazny <span class="match-rating">4.511</span></span> &amp; <span>David Bieger <span class="match-rating">5.774</span></span></div></div><div class="event-pill"><span class="event-pill-date">12/8/24</span>Jingle Ball Classic</div><div class="match-group loss"><div class="match-row"><span class="match-score">1-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.025)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.540</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.333</span></span> <span class="match-vs">vs</span> <span>Ho Kim <span class="match-rating">5.468</span></span> &amp; <span>Bruce Sibley <span class="match-rating">4.215</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.516</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.322</span></span> <span class="match-vs">vs</span> <span>Dipen Patel <span class="match-rating">4.809</span></span> &amp; <span>Suraj Singh Chandel <span class="match-rating">4.946</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.509</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.319</span></span> <span class="match-vs">vs</span> <span>Nathaniel Hutton <span class="match-rating">4.735</span></span> &amp; <span>Mac Hutton <span class="match-rating">4.488</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.513</span></span> w/ <span class="match-partner">Jon Laaser <span class="match-rating">4.321</span></span> <span class="match-vs">vs</span> <span>Rodney Giese <span class="match-rating">4.556</span></span> &amp; <span>John Jean Pierre <span class="match-rating">4.667</span></span></div></div><div class="event-pill"><span class="event-pill-date">12/15/24</span>Dupr</div><div class="match-group win"><div class="match-row"><span class="match-score">11-9, 7-11, 12-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.007)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.500</span></span> w/ <span class="match-partner">Bradley L Frohman <span class="match-rating">4.006</span></span> <span class="match-vs">vs</span> <span>Lloyd zelazny <span class="match-rating">4.495</span></span> &amp; <span>Matt Behnke <span class="match-rating">4.499</span></span></div></div><div class="event-pill"><span class="event-pill-date">7/19/25</span>2025 Virginia Amateur Pickleball Championships powered by Carvana PPA…</div><div class="match-group win"><div class="match-row"><span class="match-score">12-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.062)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.695</span></span> w/ <span class="match-partner">Lloyd zelazny <span class="match-rating">4.616</span></span> <span class="match-vs">vs</span> <span>Clifford Toms <span class="match-rating">4.590</span></span> &amp; <span>Bernard Chau <span class="match-rating">4.083</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">12-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.070)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Todd <span class="match-rating">4.632</span></span> w/ <span class="match-partner">Lloyd zelazny <span class="match-rating">4.602</span></span> <span class="match-vs">vs</span> <span>Rob Vieyra <span class="match-rating">4.930</span></span> &amp; <span>Derek Biendl <span class="match-rating">4.641</span></span></div></div>
+<p class="note">first 30 rated matches, from 2024-06-15 · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2024-06-15", "x": 34.0, "r": 4.37, "dl": 0.0, "m": true, "info": "5W-1L \u00b7 Body Armor 804 Open Men's Doubles Skill: (4.0) Age: (30+40+5"}, {"d": "2024-07-31", "x": 52.7, "r": 4.375, "dl": 0.006, "m": true, "info": "match day"}, {"d": "2024-08-08", "x": 56.0, "r": 4.375, "dl": -0.0, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2024-09-01", "x": 65.8, "r": 4.456, "dl": 0.08, "m": true, "info": "match day"}, {"d": "2024-11-09", "x": 93.8, "r": 4.512, "dl": 0.057, "m": true, "info": "4W-2L \u00b7 Atlantic Union Bank Open - Men's Doubles Skill: (4.5) Age: ("}, {"d": "2024-12-01", "x": 102.8, "r": 4.564, "dl": 0.052, "m": true, "info": "2W-2L \u00b7 Kaitlyn Kerr DUPR Challenge!"}, {"d": "2024-12-08", "x": 105.6, "r": 4.494, "dl": -0.07, "m": true, "info": "0W-4L \u00b7 Jingle Ball Classic"}, {"d": "2024-12-09", "x": 106.1, "r": 4.501, "dl": 0.007, "m": true, "info": "match day"}, {"d": "2024-12-15", "x": 108.5, "r": 4.508, "dl": 0.007, "m": true, "info": "1W-0L \u00b7 Dupr"}, {"d": "2025-01-03", "x": 116.2, "r": 4.51, "dl": 0.002, "m": true, "info": "match day"}, {"d": "2025-01-13", "x": 120.3, "r": 4.696, "dl": 0.186, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2025-01-15", "x": 121.1, "r": 4.695, "dl": -0.001, "m": true, "info": "match day"}, {"d": "2025-07-19", "x": 196.4, "r": 4.611, "dl": -0.084, "m": true, "info": "4W-4L \u00b7 2025 Virginia Amateur Pickleball Championships powered by Ca"}, {"d": "2025-11-08", "x": 242.0, "r": 4.694, "dl": 0.082, "m": true, "info": "4W-3L \u00b7 YMCA National Pickleball Tournament - Men's Doubles 4.5 Roun"}, {"d": "2026-01-03", "x": 264.8, "r": 4.671, "dl": -0.022, "m": true, "info": "0W-2L \u00b7 The Kickoff Classic - Open Gendered Moneyball"}, {"d": "2026-01-24", "x": 273.4, "r": 4.595, "dl": -0.076, "m": true, "info": "3W-1L \u00b7 Marco Island Police Foundation Pickleball Slammer 2026 - Men"}, {"d": "2026-04-13", "x": 305.5, "r": 4.81, "dl": 0.215, "m": true, "info": "4W-2L \u00b7 2026 Franklin US Open Pickleball Championships - Men's Doubl"}, {"d": "2026-07-07", "x": 340.1, "r": 4.826, "dl": 0.016, "m": true, "info": "1W-2L \u00b7 2026 Grand Rapids BEER CITY OPEN Pickleball Championships - "}, {"d": "2026-08-15", "x": 356.0, "r": 4.751, "dl": -0.074, "m": true, "info": "5W-3L \u00b7 Paddle in the Burg BEAT THE HEAT - CASH PRIZE M Doubles - OP"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>
