@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-19T13:27:33",
+ "updated": "2026-09-19T13:42:42",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 10p (humidity (dew 67\u00b0))",
  "wet_note": null,
- "reason": "clean window 4p today",
+ "reason": "clean window 6p today",
  "ranked": [
   {
    "day": "Today",
@@ -63,16 +63,16 @@
    "grade": "C"
   },
   {
-   "day": "Tue",
-   "grade": "D"
+   "day": "Wed",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 78,
+   "temp": 80,
    "dew": 67,
-   "wind": 7
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,35 +85,35 @@
     "label": "Today",
     "sub": "9/19",
     "grade": "B",
-    "score": 0.867,
-    "best": "4p-9p",
-    "why": "humidity (dew 67\u00b0) 1p-3p",
+    "score": 0.778,
+    "best": "6p-9p",
+    "why": "humidity (dew 67\u00b0) 1p-5p",
     "wet_mm": 0.0,
     "cells": {
      "13": {
-      "t": 78,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
      "14": {
-      "t": 80,
+      "t": 81,
       "v": 1,
       "c": "dew"
      },
      "15": {
-      "t": 80,
+      "t": 81,
       "v": 1,
       "c": "dew"
      },
      "16": {
-      "t": 84,
-      "v": 2,
-      "c": ""
+      "t": 82,
+      "v": 1,
+      "c": "dew"
      },
      "17": {
-      "t": 83,
-      "v": 2,
-      "c": ""
+      "t": 81,
+      "v": 1,
+      "c": "dew"
      },
      "18": {
       "t": 82,
@@ -144,7 +144,7 @@
     "grade": "C",
     "score": 0.686,
     "best": "12p-1p",
-    "why": "humidity (dew 70\u00b0) 9a-11a, 2p-7p \u00b7 thunder 8p-9p",
+    "why": "humidity (dew 69\u00b0) 9a-11a, 2p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -153,17 +153,17 @@
       "c": ""
      },
      "9": {
-      "t": 71,
+      "t": 73,
       "v": 1,
       "c": "dew"
      },
      "10": {
-      "t": 74,
+      "t": 77,
       "v": 1,
       "c": "dew"
      },
      "11": {
-      "t": 77,
+      "t": 80,
       "v": 1,
       "c": "dew"
      },
@@ -178,17 +178,17 @@
       "c": ""
      },
      "14": {
-      "t": 84,
+      "t": 85,
       "v": 1,
       "c": "dew"
      },
      "15": {
-      "t": 84,
+      "t": 85,
       "v": 1,
       "c": "dew"
      },
      "16": {
-      "t": 85,
+      "t": 87,
       "v": 1,
       "c": "dew"
      },
@@ -198,24 +198,24 @@
       "c": "dew"
      },
      "18": {
-      "t": 82,
+      "t": 84,
       "v": 1,
       "c": "dew"
      },
      "19": {
-      "t": 80,
+      "t": 81,
       "v": 1,
       "c": "dew"
      },
      "20": {
-      "t": 77,
+      "t": 78,
       "v": 1,
-      "c": "thn"
+      "c": "dew"
      },
      "21": {
       "t": 76,
       "v": 1,
-      "c": "thn"
+      "c": "dew"
      }
     }
    },
@@ -226,56 +226,56 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "rain 3p-9p \u00b7 humidity (dew 69\u00b0) 8a-10a \u00b7 wind (12 mph) 11a-12p \u00b7 NWS: rain 8p-9p",
+    "why": "rain 3p-9p \u00b7 humidity (dew 69\u00b0) 8a-12p \u00b7 NWS: rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 69,
-      "v": 1,
-      "c": "dew"
-     },
-     "9": {
       "t": 70,
       "v": 1,
       "c": "dew"
      },
-     "10": {
+     "9": {
       "t": 72,
       "v": 1,
       "c": "dew"
      },
-     "11": {
-      "t": 75,
+     "10": {
+      "t": 74,
       "v": 1,
-      "c": "wnd"
+      "c": "dew"
      },
-     "12": {
+     "11": {
       "t": 76,
       "v": 1,
-      "c": "wnd"
+      "c": "dew"
+     },
+     "12": {
+      "t": 78,
+      "v": 1,
+      "c": "dew"
      },
      "15": {
-      "t": 78,
+      "t": 80,
       "v": 1,
       "c": "rain"
      },
      "16": {
-      "t": 77,
+      "t": 81,
       "v": 1,
       "c": "rain"
      },
      "17": {
-      "t": 76,
+      "t": 79,
       "v": 1,
       "c": "rain"
      },
      "18": {
-      "t": 74,
+      "t": 78,
       "v": 1,
       "c": "rain"
      },
      "19": {
-      "t": 71,
+      "t": 76,
       "v": 1,
       "c": "rain"
      },
@@ -295,46 +295,46 @@
     "date": "2026-09-22",
     "label": "Tue",
     "sub": "9/22",
-    "grade": "D",
-    "score": 0.429,
+    "grade": "F",
+    "score": 0.0,
     "best": "",
-    "why": "rain 3p, 7p \u00b7 rain 4p-6p, 8p-9p \u00b7 NWS: rain 4p-6p",
-    "wet_mm": 0.6,
+    "why": "rain 3p-7p \u00b7 wet court? 8p-9p",
+    "wet_mm": 1.1,
     "cells": {
      "15": {
-      "t": 71,
+      "t": 74,
       "v": 0,
       "c": "rain"
      },
      "16": {
-      "t": 71,
-      "v": 1,
+      "t": 75,
+      "v": 0,
       "c": "rain"
      },
      "17": {
-      "t": 70,
-      "v": 1,
+      "t": 74,
+      "v": 0,
       "c": "rain"
      },
      "18": {
-      "t": 69,
-      "v": 1,
+      "t": 73,
+      "v": 0,
       "c": "rain"
      },
      "19": {
-      "t": 67,
+      "t": 71,
       "v": 0,
       "c": "rain"
      },
      "20": {
-      "t": 65,
-      "v": 1,
-      "c": "rain"
+      "t": 69,
+      "v": 0,
+      "c": "wet"
      },
      "21": {
-      "t": 64,
-      "v": 1,
-      "c": "rain"
+      "t": 67,
+      "v": 0,
+      "c": "wet"
      }
     }
    },
@@ -342,44 +342,44 @@
     "date": "2026-09-23",
     "label": "Wed",
     "sub": "9/23",
-    "grade": "F",
-    "score": 0.171,
+    "grade": "C",
+    "score": 0.6,
     "best": "",
-    "why": "gusts (29 mph) 3p-7p \u00b7 rain 8p-9p",
+    "why": "rain 3p-9p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 67,
-      "v": 0,
-      "c": "gst"
+      "t": 69,
+      "v": 1,
+      "c": "rain"
      },
      "16": {
-      "t": 67,
-      "v": 0,
-      "c": "gst"
+      "t": 69,
+      "v": 1,
+      "c": "rain"
      },
      "17": {
-      "t": 67,
-      "v": 0,
-      "c": "gst"
+      "t": 68,
+      "v": 1,
+      "c": "rain"
      },
      "18": {
-      "t": 66,
-      "v": 0,
-      "c": "gst"
+      "t": 67,
+      "v": 1,
+      "c": "rain"
      },
      "19": {
-      "t": 64,
-      "v": 0,
-      "c": "gst"
+      "t": 65,
+      "v": 1,
+      "c": "rain"
      },
      "20": {
-      "t": 63,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
      "21": {
-      "t": 62,
+      "t": 63,
       "v": 1,
       "c": "rain"
      }
@@ -392,7 +392,7 @@
     "grade": "C",
     "score": 0.657,
     "best": "9p",
-    "why": "rain 3p-7p \u00b7 wind (12 mph) 8p \u00b7 NWS: gusts 3p-6p",
+    "why": "rain 3p-8p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -401,7 +401,7 @@
       "c": "rain"
      },
      "16": {
-      "t": 68,
+      "t": 69,
       "v": 1,
       "c": "rain"
      },
@@ -411,7 +411,7 @@
       "c": "rain"
      },
      "18": {
-      "t": 66,
+      "t": 67,
       "v": 1,
       "c": "rain"
      },
@@ -423,10 +423,10 @@
      "20": {
       "t": 62,
       "v": 1,
-      "c": "wnd"
+      "c": "rain"
      },
      "21": {
-      "t": 61,
+      "t": 59,
       "v": 2,
       "c": ""
      }

@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-19T13:27:30",
+ "updated": "2026-09-19T13:42:39",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 10p (humidity (dew 66\u00b0))",
  "wet_note": null,
- "reason": "clean window 4p today",
+ "reason": "clean window 3p today",
  "ranked": [
   {
    "day": "Today",
@@ -60,10 +60,10 @@
   },
   {
    "day": "Mon",
-   "grade": "C"
+   "grade": "D"
   },
   {
-   "day": "Wed",
+   "day": "Tue",
    "grade": "F"
   }
  ],
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "9/19",
     "grade": "B",
-    "score": 0.778,
-    "best": "8p-9p",
-    "why": "humidity (dew 66\u00b0) 1p-3p, 5p",
+    "score": 0.867,
+    "best": "3p-7p",
+    "why": "humidity (dew 66\u00b0) 1p-2p, 8p",
     "wet_mm": 0.0,
     "cells": {
      "13": {
@@ -101,34 +101,34 @@
       "c": "dew"
      },
      "15": {
-      "t": 80,
-      "v": 1,
-      "c": "dew"
-     },
-     "16": {
       "t": 83,
       "v": 2,
       "c": ""
      },
+     "16": {
+      "t": 84,
+      "v": 2,
+      "c": ""
+     },
      "17": {
-      "t": 80,
-      "v": 1,
-      "c": "dew"
+      "t": 83,
+      "v": 2,
+      "c": ""
      },
      "18": {
-      "t": 81,
+      "t": 82,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 76,
-      "v": 1,
-      "c": "dew"
-     },
-     "20": {
-      "t": 77,
+      "t": 79,
       "v": 2,
       "c": ""
+     },
+     "20": {
+      "t": 75,
+      "v": 1,
+      "c": "dew"
      },
      "21": {
       "t": 74,
@@ -223,11 +223,11 @@
     "date": "2026-09-21",
     "label": "Mon",
     "sub": "9/21",
-    "grade": "C",
-    "score": 0.5,
+    "grade": "D",
+    "score": 0.45,
     "best": "",
-    "why": "wet court? 8p-9p \u00b7 rain 3p-7p \u00b7 wind (13 mph) 9a-12p",
-    "wet_mm": 1.1,
+    "why": "wet court? 7p-9p \u00b7 wind (13 mph) 9a-12p \u00b7 rain 3p-6p",
+    "wet_mm": 1.2,
     "cells": {
      "8": {
       "t": 67,
@@ -276,8 +276,8 @@
      },
      "19": {
       "t": 72,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 70,
@@ -296,10 +296,10 @@
     "label": "Tue",
     "sub": "9/22",
     "grade": "F",
-    "score": 0.0,
+    "score": 0.086,
     "best": "",
-    "why": "rain 3p-7p \u00b7 gusts (25 mph) 8p \u00b7 wet court? 9p",
-    "wet_mm": 1.1,
+    "why": "rain 3p-7p \u00b7 gusts (25 mph) 8p \u00b7 rain 9p",
+    "wet_mm": 1.2,
     "cells": {
      "15": {
       "t": 70,
@@ -333,8 +333,8 @@
      },
      "21": {
       "t": 64,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      }
     }
    },
@@ -346,7 +346,7 @@
     "score": 0.086,
     "best": "",
     "why": "rain 3p-7p \u00b7 gusts (25 mph) 8p \u00b7 rain 9p",
-    "wet_mm": 0.0,
+    "wet_mm": 1.0,
     "cells": {
      "15": {
       "t": 66,
