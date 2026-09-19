@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-19T13:12:19",
+ "updated": "2026-09-19T13:27:30",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -224,10 +224,10 @@
     "label": "Mon",
     "sub": "9/21",
     "grade": "C",
-    "score": 0.55,
+    "score": 0.5,
     "best": "",
-    "why": "wet court? 9p \u00b7 rain 3p-8p \u00b7 wind (13 mph) 9a-12p",
-    "wet_mm": 1.0,
+    "why": "wet court? 8p-9p \u00b7 rain 3p-7p \u00b7 wind (13 mph) 9a-12p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 67,
@@ -281,8 +281,8 @@
      },
      "20": {
       "t": 70,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 69,
@@ -396,27 +396,27 @@
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 59,
+      "t": 67,
       "v": 1,
       "c": "rain"
      },
      "16": {
-      "t": 59,
+      "t": 68,
       "v": 1,
       "c": "rain"
      },
      "17": {
-      "t": 59,
+      "t": 68,
       "v": 1,
       "c": "rain"
      },
      "18": {
-      "t": 58,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
      "19": {
-      "t": 56,
+      "t": 62,
       "v": 1,
       "c": "rain"
      },
@@ -426,7 +426,7 @@
       "c": "wnd"
      },
      "21": {
-      "t": 55,
+      "t": 56,
       "v": 2,
       "c": ""
      }
@@ -482,7 +482,7 @@
    {
     "date": "2026-10-04",
     "d": "Su",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
