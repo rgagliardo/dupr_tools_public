@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-19T08:54:42",
+ "updated": "2026-09-19T09:09:49",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -51,11 +51,11 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Sun",
    "grade": "C"
   },
   {
-   "day": "Sun",
+   "day": "Today",
    "grade": "C"
   },
   {
@@ -70,7 +70,7 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
+   "temp": 70,
    "dew": 64,
    "wind": 7
   },
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/19",
     "grade": "C",
-    "score": 0.714,
-    "best": "8a-9a",
+    "score": 0.692,
+    "best": "8p-9p",
     "why": "humidity (dew 66\u00b0) 10a-7p",
     "wet_mm": 0.0,
     "cells": {
-     "8": {
-      "t": 68,
-      "v": 2,
-      "c": ""
-     },
      "9": {
       "t": 70,
       "v": 2,
