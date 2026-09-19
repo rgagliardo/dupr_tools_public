@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-19T06:07:02",
+ "updated": "2026-09-19T06:37:24",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -47,15 +47,15 @@
  "reason": "humidity (dew 66\u00b0) \u2014 clean window 9a today",
  "ranked": [
   {
-   "day": "Thu",
-   "grade": "A"
-  },
-  {
    "day": "Today",
    "grade": "A"
   },
   {
    "day": "Sun",
+   "grade": "C"
+  },
+  {
+   "day": "Thu",
    "grade": "C"
   },
   {
@@ -414,41 +414,41 @@
     "date": "2026-09-24",
     "label": "Thu",
     "sub": "9/24",
-    "grade": "A",
-    "score": 1.0,
-    "best": "3p-9p",
-    "why": "NWS: gusts 3p-6p",
+    "grade": "C",
+    "score": 0.657,
+    "best": "9p",
+    "why": "rain 3p-7p \u00b7 wind (12 mph) 8p \u00b7 NWS: gusts 3p-6p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
       "t": 67,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "16": {
       "t": 67,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "17": {
       "t": 66,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "18": {
       "t": 65,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "19": {
-      "t": 63,
-      "v": 2,
-      "c": ""
+      "t": 64,
+      "v": 1,
+      "c": "rain"
      },
      "20": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "21": {
       "t": 61,
