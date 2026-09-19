@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-19T12:57:10",
+ "updated": "2026-09-19T13:12:20",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 77,
+   "temp": 79,
    "dew": 67,
-   "wind": 8
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/19",
     "grade": "B",
-    "score": 0.84,
+    "score": 0.867,
     "best": "4p-9p",
-    "why": "humidity (dew 67\u00b0) 12p-3p",
+    "why": "humidity (dew 67\u00b0) 1p-3p",
     "wet_mm": 0.0,
     "cells": {
-     "12": {
-      "t": 77,
-      "v": 1,
-      "c": "dew"
-     },
      "13": {
       "t": 79,
       "v": 1,
@@ -231,7 +226,7 @@
     "grade": "C",
     "score": 0.55,
     "best": "",
-    "why": "rain 9p \u00b7 rain 3p-8p \u00b7 humidity (dew 68\u00b0) 8a-10a \u00b7 NWS: rain 8p",
+    "why": "rain 9p \u00b7 rain 3p-8p \u00b7 humidity (dew 69\u00b0) 8a-12p \u00b7 NWS: rain 8p",
     "wet_mm": 0.7,
     "cells": {
      "8": {
@@ -252,12 +247,12 @@
      "11": {
       "t": 75,
       "v": 1,
-      "c": "wnd"
+      "c": "dew"
      },
      "12": {
       "t": 76,
       "v": 1,
-      "c": "wnd"
+      "c": "dew"
      },
      "15": {
       "t": 78,
@@ -350,33 +345,33 @@
     "grade": "F",
     "score": 0.171,
     "best": "",
-    "why": "rain 3p-7p \u00b7 rain 8p-9p",
+    "why": "gusts (29 mph) 3p-7p \u00b7 rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
       "t": 67,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "16": {
       "t": 67,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "17": {
       "t": 66,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "18": {
       "t": 65,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "19": {
       "t": 64,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "20": {
       "t": 63,
