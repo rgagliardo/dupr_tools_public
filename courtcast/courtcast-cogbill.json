@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-19T10:10:27",
+ "updated": "2026-09-19T10:25:36",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 10p (humidity (dew 67\u00b0))",
  "wet_note": null,
- "reason": "clean window 11a today",
+ "reason": "clean window 6p today",
  "ranked": [
   {
    "day": "Thu",
@@ -52,7 +52,7 @@
   },
   {
    "day": "Today",
-   "grade": "B"
+   "grade": "C"
   },
   {
    "day": "Sun",
@@ -84,10 +84,10 @@
     "date": "2026-09-19",
     "label": "Today",
     "sub": "9/19",
-    "grade": "B",
-    "score": 0.833,
-    "best": "11a-1p",
-    "why": "humidity (dew 67\u00b0) 10a, 2p-4p",
+    "grade": "C",
+    "score": 0.733,
+    "best": "6p-9p",
+    "why": "humidity (dew 67\u00b0) 10a-5p",
     "wet_mm": 0.0,
     "cells": {
      "10": {
@@ -96,19 +96,19 @@
       "c": "dew"
      },
      "11": {
-      "t": 77,
-      "v": 2,
-      "c": ""
+      "t": 75,
+      "v": 1,
+      "c": "dew"
      },
      "12": {
       "t": 77,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "13": {
-      "t": 80,
-      "v": 2,
-      "c": ""
+      "t": 79,
+      "v": 1,
+      "c": "dew"
      },
      "14": {
       "t": 80,
@@ -127,13 +127,13 @@
      },
      "17": {
       "t": 80,
-      "v": 2,
-      "c": ""
-     },
-     "18": {
-      "t": 78,
       "v": 1,
       "c": "dew"
+     },
+     "18": {
+      "t": 80,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 78,
