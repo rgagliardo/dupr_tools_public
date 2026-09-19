@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-19T06:37:22",
+ "updated": "2026-09-19T06:52:31",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
  "wet_note": null,
- "reason": "today grades A, best 11a-9p",
+ "reason": "today grades A, best 8a-4p",
  "ranked": [
   {
    "day": "Today",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 69,
+   "temp": 70,
    "dew": 65,
-   "wind": 6
+   "wind": 3
   },
   "court": {
    "wet_mm": 0.0,
@@ -86,8 +86,8 @@
     "sub": "9/19",
     "grade": "A",
     "score": 0.971,
-    "best": "11a-9p",
-    "why": "humidity (dew 65\u00b0) 10a",
+    "best": "8a-4p",
+    "why": "humidity (dew 66\u00b0) 5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -102,16 +102,16 @@
      },
      "10": {
       "t": 72,
-      "v": 1,
-      "c": "dew"
+      "v": 2,
+      "c": ""
      },
      "11": {
-      "t": 74,
+      "t": 73,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 75,
+      "t": 74,
       "v": 2,
       "c": ""
      },
@@ -121,27 +121,27 @@
       "c": ""
      },
      "14": {
-      "t": 78,
-      "v": 2,
-      "c": ""
-     },
-     "15": {
       "t": 80,
       "v": 2,
       "c": ""
      },
+     "15": {
+      "t": 78,
+      "v": 2,
+      "c": ""
+     },
      "16": {
-      "t": 81,
+      "t": 82,
       "v": 2,
       "c": ""
      },
      "17": {
       "t": 80,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "18": {
-      "t": 80,
+      "t": 81,
       "v": 2,
       "c": ""
      },
@@ -167,9 +167,9 @@
     "label": "Sun",
     "sub": "9/20",
     "grade": "C",
-    "score": 0.686,
+    "score": 0.657,
     "best": "8a-9a",
-    "why": "humidity (dew 70\u00b0) 10a-6p \u00b7 rain 8p-9p",
+    "why": "humidity (dew 70\u00b0) 10a-6p \u00b7 rain 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -228,9 +228,9 @@
       "c": "dew"
      },
      "19": {
-      "t": 82,
-      "v": 2,
-      "c": ""
+      "t": 80,
+      "v": 1,
+      "c": "rain"
      },
      "20": {
       "t": 78,
