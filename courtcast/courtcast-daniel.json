@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-19T11:11:05",
+ "updated": "2026-09-19T11:26:16",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -47,11 +47,11 @@
  "reason": "clean window 7p today",
  "ranked": [
   {
-   "day": "Thu",
-   "grade": "A"
+   "day": "Today",
+   "grade": "C"
   },
   {
-   "day": "Today",
+   "day": "Thu",
    "grade": "C"
   },
   {
@@ -154,7 +154,7 @@
     "grade": "C",
     "score": 0.643,
     "best": "11a-12p",
-    "why": "wet court? 5p \u00b7 humidity (dew 69\u00b0) 9a-10a, 1p-4p \u00b7 drying 6p",
+    "why": "wet court? 5p \u00b7 humidity (dew 69\u00b0) 9a-10a, 1p-4p",
     "wet_mm": 0.6,
     "cells": {
      "8": {
@@ -210,7 +210,7 @@
      "18": {
       "t": 82,
       "v": 1,
-      "c": "dry"
+      "c": "dew"
      },
      "19": {
       "t": 80,
@@ -309,7 +309,7 @@
     "score": 0.429,
     "best": "",
     "why": "rain 3p, 7p \u00b7 rain 4p-6p, 8p-9p \u00b7 NWS: rain 4p-6p",
-    "wet_mm": 0.5,
+    "wet_mm": 0.6,
     "cells": {
      "15": {
       "t": 72,
@@ -399,41 +399,41 @@
     "date": "2026-09-24",
     "label": "Thu",
     "sub": "9/24",
-    "grade": "A",
-    "score": 1.0,
-    "best": "3p-9p",
-    "why": "NWS: gusts 3p-6p",
+    "grade": "C",
+    "score": 0.657,
+    "best": "9p",
+    "why": "rain 3p-7p \u00b7 wind (12 mph) 8p \u00b7 NWS: gusts 3p-6p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
       "t": 60,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "16": {
       "t": 60,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "17": {
       "t": 60,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "18": {
       "t": 59,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "19": {
-      "t": 58,
-      "v": 2,
-      "c": ""
+      "t": 64,
+      "v": 1,
+      "c": "rain"
      },
      "20": {
-      "t": 57,
-      "v": 2,
-      "c": ""
+      "t": 62,
+      "v": 1,
+      "c": "wnd"
      },
      "21": {
       "t": 61,
