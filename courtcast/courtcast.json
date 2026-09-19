@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-19T10:25:33",
+ "updated": "2026-09-19T10:55:53",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 65\u00b0))",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 11a",
  "wet_note": null,
- "reason": "clean window 8p today",
+ "reason": "then humidity (dew 66\u00b0) \u00b7 back 8p",
  "ranked": [
   {
    "day": "Thu",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 72,
-   "dew": 65,
-   "wind": 7
+   "temp": 71,
+   "dew": 64,
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,15 +85,15 @@
     "label": "Today",
     "sub": "9/19",
     "grade": "C",
-    "score": 0.667,
+    "score": 0.7,
     "best": "8p-9p",
-    "why": "humidity (dew 66\u00b0) 10a-7p",
+    "why": "humidity (dew 66\u00b0) 11a-7p",
     "wet_mm": 0.0,
     "cells": {
      "10": {
-      "t": 72,
-      "v": 1,
-      "c": "dew"
+      "t": 71,
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 74,
@@ -141,7 +141,7 @@
       "c": "dew"
      },
      "20": {
-      "t": 76,
+      "t": 75,
       "v": 2,
       "c": ""
      },
@@ -159,13 +159,13 @@
     "grade": "C",
     "score": 0.714,
     "best": "10a-12p",
-    "why": "humidity (dew 70\u00b0) 9a, 1p-6p \u00b7 rain 7p-9p",
+    "why": "humidity (dew 70\u00b0) 8a-9a, 1p-3p \u00b7 rain 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 69,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "9": {
       "t": 71,
@@ -173,17 +173,17 @@
       "c": "dew"
      },
      "10": {
-      "t": 75,
+      "t": 74,
       "v": 2,
       "c": ""
      },
      "11": {
-      "t": 78,
+      "t": 77,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 81,
+      "t": 82,
       "v": 2,
       "c": ""
      },
@@ -203,9 +203,9 @@
       "c": "dew"
      },
      "16": {
-      "t": 84,
-      "v": 1,
-      "c": "dew"
+      "t": 75,
+      "v": 2,
+      "c": ""
      },
      "17": {
       "t": 85,
