@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-19T04:51:22",
+ "updated": "2026-09-19T05:06:29",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 8a today",
+ "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "today grades A, best 12p-9p",
+ "reason": "humidity (dew 66\u00b0) \u2014 clean window 9a today",
  "ranked": [
   {
    "day": "Today",
@@ -52,7 +52,7 @@
   },
   {
    "day": "Sun",
-   "grade": "B"
+   "grade": "C"
   },
   {
    "day": "Thu",
@@ -71,7 +71,7 @@
   "source": "best",
   "now": {
    "temp": 71,
-   "dew": 68,
+   "dew": 67,
    "wind": 5
   },
   "court": {
@@ -85,25 +85,25 @@
     "label": "Today",
     "sub": "9/19",
     "grade": "A",
-    "score": 0.971,
+    "score": 0.914,
     "best": "12p-9p",
-    "why": "humidity (dew 67\u00b0) 11a",
+    "why": "humidity (dew 67\u00b0) 8a, 10a-11a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 69,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "9": {
-      "t": 70,
+      "t": 72,
       "v": 2,
       "c": ""
      },
      "10": {
       "t": 73,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "11": {
       "t": 75,
@@ -111,7 +111,7 @@
       "c": "dew"
      },
      "12": {
-      "t": 78,
+      "t": 77,
       "v": 2,
       "c": ""
      },
@@ -126,7 +126,7 @@
       "c": ""
      },
      "15": {
-      "t": 82,
+      "t": 81,
       "v": 2,
       "c": ""
      },
@@ -136,12 +136,12 @@
       "c": ""
      },
      "17": {
-      "t": 82,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 81,
+      "t": 80,
       "v": 2,
       "c": ""
      },
@@ -166,19 +166,19 @@
     "date": "2026-09-20",
     "label": "Sun",
     "sub": "9/20",
-    "grade": "B",
-    "score": 0.8,
-    "best": "11a-2p",
-    "why": "humidity (dew 70\u00b0) 10a, 3p-6p \u00b7 thunder 8p-9p",
+    "grade": "C",
+    "score": 0.714,
+    "best": "8a-9a",
+    "why": "humidity (dew 70\u00b0) 10a-12p, 2p-6p \u00b7 thunder 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 70,
+      "t": 68,
       "v": 2,
       "c": ""
      },
      "9": {
-      "t": 71,
+      "t": 72,
       "v": 2,
       "c": ""
      },
@@ -188,24 +188,24 @@
       "c": "dew"
      },
      "11": {
-      "t": 76,
-      "v": 2,
-      "c": ""
+      "t": 77,
+      "v": 1,
+      "c": "dew"
      },
      "12": {
       "t": 80,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "13": {
-      "t": 83,
+      "t": 84,
       "v": 2,
       "c": ""
      },
      "14": {
       "t": 84,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "15": {
       "t": 85,
