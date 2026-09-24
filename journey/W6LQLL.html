@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Becky Villeda</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+  --green:#2ecc71; --adj:#ff3db4;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+  --green:#1a9e56; --adj:#c2007a;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+/* ---- Change story ribbon ---- */
+.story-sum { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+.sp { font-size:11px; font-weight:700; padding:3px 8px; border-radius:12px;
+  border:1px solid var(--line-soft); color:var(--txt-2); white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.sp-match { border-color:var(--cyan); color:var(--cyan); }
+.sp-adj { border-color:var(--adj); color:var(--adj); }
+.sp-late { border-color:var(--partner-pur); color:var(--partner-pur); }
+.sp-reset { border-color:var(--adj); color:var(--adj); font-weight:800; }
+.story { position:relative; margin:0 0 8px; padding-left:6px; }
+.sr { display:grid; grid-template-columns:52px 20px 1fr; align-items:start;
+  gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }
+.sr:last-child { border-bottom:0; }
+.sr-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); padding-top:2px; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums; }
+.sr-ico { font-size:13px; line-height:1.2; text-align:center; color:var(--txt-mid); }
+.sr-adj .sr-ico { color:var(--adj); }
+.sr-reset .sr-ico { color:var(--adj); }
+.sr-late .sr-ico, .sr-latemore .sr-ico { color:var(--partner-pur); }
+.sr-peak .sr-ico, .sr-now .sr-ico { color:var(--cyan); }
+.sr-nowstale .sr-ico { color:var(--txt-dim); opacity:.6; }
+.sr-latemore .sr-title { font-weight:500; color:var(--txt-mid); }
+.sr-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.sr-title { font-size:13px; font-weight:600; color:var(--txt); }
+.sr-sub { font-size:11px; color:var(--txt-mid); margin-top:2px; line-height:1.4; }
+.sr-delta { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums;
+  margin-left:auto; flex:0 0 auto; }
+.sr-delta.pos { color:var(--green); } .sr-delta.neg { color:var(--red); }
+.sr-reset { background:color-mix(in srgb, var(--adj) 8%, transparent); }
+</style></head><body>
+<div class="stamp">MOCKUP v6.3 — 2026-08-27</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Becky Villeda — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-w">🔥 1W</span><span class="pname">Becky Villeda</span>
+    <span class="scores">4.678</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 3.4,3.0 5.7,6.0 8.1,4.9 15.2,15.6 17.5,16.0 19.9,20.1 22.2,17.5 24.6,18.8 27.0,18.7 29.3,15.5 34.0,16.7 36.4,13.9 50.6,15.4 52.9,13.0 55.3,12.8 57.6,13.9 60.0,12.3 64.7,12.6 67.1,11.1 69.4,10.8 74.2,12.4 76.5,14.8 78.9,12.9 83.6,12.2 86.0,8.2 88.3,9.2 93.0,8.0 95.4,6.1 100.1,6.4 102.5,7.7 107.2,6.1 119.0,6.9"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">4.057</div><div class="k">Placed 12/23</div></div>
+  <div class="chip"><div class="v pos">+0.740</div><div class="k">Corrected &lt;90d</div></div>
+  <div class="chip"><div class="v">5.060</div><div class="k">Peak 2/24</div></div>
+  <div class="chip"><div class="v">4.678</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v neg">-0.122</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.743</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 4.057, peak 5.060, now 4.678 (+0.621 net)"><line class="grid" x1="39.3" y1="14" x2="39.3" y2="186"/><text class="tick" x="39.3" y="203" text-anchor="middle">2024</text><line class="grid" x1="99.5" y1="14" x2="99.5" y2="186"/><line class="grid" x1="160.3" y1="14" x2="160.3" y2="186"/><text class="tick" x="160.3" y="203" text-anchor="middle">2025</text><line class="grid" x1="220.1" y1="14" x2="220.1" y2="186"/><line class="grid" x1="281.0" y1="14" x2="281.0" y2="186"/><text class="tick" x="281.0" y="203" text-anchor="middle">2026</text><line class="grid" x1="340.8" y1="14" x2="340.8" y2="186"/><line class="grid" x1="34" y1="179.9" x2="356" y2="179.9"/><text class="tick" x="29" y="182.9" text-anchor="end">4.00</text><line class="grid" x1="34" y1="144.1" x2="356" y2="144.1"/><text class="tick" x="29" y="147.1" text-anchor="end">4.25</text><line class="grid" x1="34" y1="108.4" x2="356" y2="108.4"/><text class="tick" x="29" y="111.4" text-anchor="end">4.50</text><line class="grid" x1="34" y1="72.6" x2="356" y2="72.6"/><text class="tick" x="29" y="75.6" text-anchor="end">4.75</text><line class="grid" x1="34" y1="36.9" x2="356" y2="36.9"/><text class="tick" x="29" y="39.9" text-anchor="end">5.00</text><path class="seg-sys" d="M34.0 171.7 L48.9 65.9"/><path class="seg-norm" d="M48.9 65.9 L54.2 79.2 L54.8 74.1 L73.3 103.1 L130.2 123.2 L131.2 141.3 L133.5 129.8 L136.2 135.6 L139.5 135.3 L145.4 121.1 L154.0 126.2 L154.7 113.8 L163.6 114.6 L163.9 118.7 L168.6 119.8 L177.5 117.5 L179.8 120.7 L184.8 110.0 L191.7 109.3 L204.9 114.1 L209.9 106.9 L214.8 108.1 L216.8 100.4 L218.5 107.3 L223.8 117.8 L226.4 107.2 L242.6 106.6 L256.5 88.8 L256.8 93.1 L276.7 90.7 L277.3 79.8"/><path class="seg-sys" d="M277.3 79.8 L295.2 79.8"/><path class="seg-norm" d="M295.2 79.8 L305.1 86.7 L309.4 82.7 L309.7 79.8 L339.5 80.7 L339.8 82.5 L356.0 82.9"/><line class="mk-whisk" x1="54.8" y1="74.1" x2="54.8" y2="28.3"/><circle class="mk mk-start" cx="34.0" cy="171.7" r="4"/><circle class="mk mk-peak" cx="54.8" cy="28.3" r="5"/><circle class="mk mk-low" cx="34.0" cy="171.7" r="4"/><circle class="mk mk-now" cx="356.0" cy="82.9" r="4"/><rect class="mk mk-adm" x="45.7" y="62.7" width="6.4" height="6.4" transform="rotate(45 48.9 65.9)"/><rect class="mk mk-adm" x="70.1" y="97.0" width="6.4" height="6.4" transform="rotate(45 73.3 100.2)"/><rect class="mk mk-adm" x="70.1" y="93.0" width="6.4" height="6.4" transform="rotate(45 73.3 96.2)"/><rect class="mk mk-adm" x="70.1" y="89.1" width="6.4" height="6.4" transform="rotate(45 73.3 92.3)"/><text class="anno anno-gold" x="54.8" y="19.3" text-anchor="start">peak 5.060</text><text class="anno" x="65.9" y="182.0" text-anchor="middle">low 4.057</text><text class="anno" x="38.0" y="163.7">placed 4.057</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span>◆ DUPR adjustment</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (228 changes since 2023-12-16). Solid = a match moved it; dashed pink = DUPR moved it with no match; ◆ marks a DUPR adjustment (no match played). 133-79 record over 212 doubles matches, 2.7-year span.</p>
+
+
+<h2>Change story</h2>
+<div class="story-sum"><span class="sp sp-match">212 matches</span><span class="sp sp-adj">4 DUPR adjustments · +0.745</span><span class="sp sp-reset">⟳ reset · singles → 3.986</span></div>
+<p class="note" style="margin:0 0 10px">The events that shaped this rating, in order.
+Ordinary match results are summarized in the sections below — this ribbon spotlights what
+you can't see on a scorecard.</p>
+<div class="story"><div class="sr sr-start"><div class="sr-date">12/16/23</div><div class="sr-ico" aria-hidden="true">◎</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Placed at 4.057</span></div><div class="sr-sub">DUPR engine start</div></div></div><div class="sr sr-adj"><div class="sr-date">1/30/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.740</span></div><div class="sr-sub">DUPR changed this rating with no match played</div></div></div><div class="sr sr-peak"><div class="sr-date">2/17/24</div><div class="sr-ico" aria-hidden="true">▲</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Peak 5.060</span></div><div class="sr-sub">highest rating reached</div></div></div><div class="sr sr-adj"><div class="sr-date">4/13/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.005</span></div><div class="sr-sub">DUPR changed this rating with no match played · 3 steps netted</div></div></div><div class="sr sr-reset"><div class="sr-date">4/4/25</div><div class="sr-ico" aria-hidden="true">⟳</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Rating reset — singles</span></div><div class="sr-sub">held at 3.986 across 121 matches (DUPR reset floor — inferred)</div></div></div><div class="sr sr-now"><div class="sr-date">8/16/26</div><div class="sr-ico" aria-hidden="true">●</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Now 4.678</span></div><div class="sr-sub">current rating</div></div></div></div>
+<p class="note">◆ DUPR changing the rating with no match played, ⟳ resets, and ↩ matches DUPR
+processed long after they were played — all DUPR's doing, not the player's. We don't label
+an adjustment as system-wide, individual, or paid: only DUPR knows which, and the raw record
+just says a change happened with no match. Resets are inferred from a rating held flat across
+many matches (DUPR doesn't flag them).</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:16%"></div></div><div class="half r"></div></div><span class="val neg">-0.122</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.743</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:84%"></div></div></div><span class="val pos">+0.621</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +1.496 / losses -1.618.</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Pool F - Round 1 - Ranolph Macon 1 vs UMD 2</div><div class="match-group win"><div class="match-row"><span class="match-score">21-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.286)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.704</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.793</span></span> <span class="match-vs">vs</span> <span>Christie Tran</span> &amp; <span>Kylee Sanders</span></div><div class="match-extra"><span class="mx">PD +17</span> <span class="mx">match #11</span></div></div><div class="event-pill"><span class="event-pill-date">10/12/24</span>1st Advantage Pickleball Tournament - Mixed Doubles Skill: (4.0 And…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.069)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.269</span></span> w/ <span class="match-partner">James L Callis <span class="match-rating">3.966</span></span> <span class="match-vs">vs</span> <span>dee Wrinkle</span> &amp; <span>Terrence Riggins <span class="match-rating">4.504</span></span></div><div class="match-extra"><span class="mx">PD +12</span> <span class="mx">match #40</span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Pool F - Round 1 - Ranolph Macon 1 vs UMD 2</div><div class="match-group win"><div class="match-row"><span class="match-score">21-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.065)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.990</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.626</span></span> <span class="match-vs">vs</span> <span>Spencer Eisemann <span class="match-rating">4.424</span></span> &amp; <span>Kylee Sanders <span class="match-rating">4.453</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.74</summary><div class="tag-math">Becky 4.990 + luis 4.626 = <b>9.617</b><br>Spencer 4.424 + Kylee 4.453 = <b>8.878</b><br>→ their side stronger by 0.738 combined DUPR (pre-match)</div></details> <span class="mx">PD +10</span> <span class="mx">match #10</span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Quarterfinals - VT 1 vs Randolph-Macon 1</div><div class="match-group loss"><div class="match-row"><span class="match-score">9-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.138)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.904</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.928</span></span> <span class="match-vs">vs</span> <span>Nyliam Gazze <span class="match-rating">4.017</span></span> &amp; <span>Julia Hoffman <span class="match-rating">4.283</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -1.53</summary><div class="tag-math">Becky 4.904 + Meg 4.928 = <b>9.833</b><br>Nyliam 4.017 + Julia 4.283 = <b>8.301</b><br>→ their side stronger by 1.532 combined DUPR (pre-match)</div></details> <span class="mx">PD -12</span> <span class="mx">match #3</span></div></div><div class="event-pill"><span class="event-pill-date">9/15/24</span>PickleBrawl in the Blue Ridge Mixed Doubles OPEN</div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11, 0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.115)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.536</span></span> w/ <span class="match-partner">Blake Washburn</span> <span class="match-vs">vs</span> <span>MacKenzie Cassady <span class="match-rating">4.332</span></span> &amp; <span>Sahith Mandala <span class="match-rating">5.025</span></span></div><div class="match-extra"><span class="mx">PD -19</span> <span class="mx">match #27</span></div></div><div class="event-pill"><span class="event-pill-date">10/5/24</span>Pool A</div><div class="match-group loss"><div class="match-row"><span class="match-score">10-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.096)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.335</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.502</span></span> <span class="match-vs">vs</span> <span>Julia Hoffman <span class="match-rating">4.365</span></span> &amp; <span>Heather Murphy <span class="match-rating">3.848</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.62</summary><div class="tag-math">Becky 4.335 + Meg 4.502 = <b>8.838</b><br>Julia 4.365 + Heather 3.848 = <b>8.214</b><br>→ their side stronger by 0.624 combined DUPR (pre-match)</div></details> <span class="mx">PD -11</span> <span class="mx">match #32</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">2/15/24</span>Dupr</div><div class="match-group loss"><div class="match-row"><span class="match-score">21-18, 19-21, 17-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.093)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.796</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.629</span></span> <span class="match-vs">vs</span> <span>Alex Benne <span class="match-rating">4.586</span></span> &amp; <span>Meg Hemphill</span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Quarterfinals - VT 1 vs Randolph-Macon 1</div><div class="match-group loss"><div class="match-row"><span class="match-score">19-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.766</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.581</span></span> <span class="match-vs">vs</span> <span>Cody Miller <span class="match-rating">4.975</span></span> &amp; <span>Julia Hoffman <span class="match-rating">4.318</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.138)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.904</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.928</span></span> <span class="match-vs">vs</span> <span>Nyliam Gazze <span class="match-rating">4.017</span></span> &amp; <span>Julia Hoffman <span class="match-rating">4.283</span></span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Pool F - Round 5 - VT 1 vs Randolph Macon 1</div><div class="match-group loss"><div class="match-row"><span class="match-score">13-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.078)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.981</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.635</span></span> <span class="match-vs">vs</span> <span>Cody Miller <span class="match-rating">4.942</span></span> &amp; <span>Julia Hoffman <span class="match-rating">4.264</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">18-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.078)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">5.060</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">5.106</span></span> <span class="match-vs">vs</span> <span>Nyliam Gazze <span class="match-rating">3.962</span></span> &amp; <span>Julia Hoffman <span class="match-rating">4.247</span></span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Pool F - Round 4 - Randolph Macon 1 vs Duke 3</div><div class="match-group win"><div class="match-row"><span class="match-score">21-15 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">5.059</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.646</span></span> <span class="match-vs">vs</span> <span>Daniel Shih <span class="match-rating">3.450</span></span> &amp; <span>Sharan Sokhi <span class="match-rating">3.812</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">23-21 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.001)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">5.058</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">5.104</span></span> <span class="match-vs">vs</span> <span>Sharan Sokhi <span class="match-rating">3.813</span></span> &amp; <span>Nicole Rosenzweig <span class="match-rating">3.810</span></span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Pool F - Round 3 - Randolph Macon 1 vs UVA 5</div><div class="match-group win"><div class="match-row"><span class="match-score">21-17 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">5.056</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.645</span></span> <span class="match-vs">vs</span> <span>Victoria Sanchez Patout <span class="match-rating">3.890</span></span> &amp; <span>Caleb Peake <span class="match-rating">3.693</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">21-15 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">5.054</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">5.100</span></span> <span class="match-vs">vs</span> <span>Lily Egenrieder <span class="match-rating">3.811</span></span> &amp; <span>Victoria Sanchez Patout <span class="match-rating">3.892</span></span></div></div><div class="event-pill"><span class="event-pill-date">2/17/24</span>TowneBank College Cup - Pool F - Round 1 - Ranolph Macon 1 vs UMD 2</div><div class="match-group win"><div class="match-row"><span class="match-score">21-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.065)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.990</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.626</span></span> <span class="match-vs">vs</span> <span>Spencer Eisemann <span class="match-rating">4.424</span></span> &amp; <span>Kylee Sanders <span class="match-rating">4.453</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">21-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.286)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.704</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.793</span></span> <span class="match-vs">vs</span> <span>Christie Tran</span> &amp; <span>Kylee Sanders</span></div></div><div class="event-pill"><span class="event-pill-date">3/23/24</span>Virginia Super Regional - Group D</div><div class="match-group win"><div class="match-row"><span class="match-score">21-13 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.010)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.694</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.588</span></span> <span class="match-vs">vs</span> <span>Caeden Simpson <span class="match-rating">3.982</span></span> &amp; <span>Mollie Morrisey <span class="match-rating">4.418</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">22-20 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.689</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.722</span></span> <span class="match-vs">vs</span> <span>Mollie Morrisey <span class="match-rating">4.423</span></span> &amp; <span>Abbi Thurman <span class="match-rating">3.951</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">22-20 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.680</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.832</span></span> <span class="match-vs">vs</span> <span>Drake Som <span class="match-rating">4.954</span></span> &amp; <span>Kara Ferner <span class="match-rating">4.089</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">16-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.060)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.743</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.784</span></span> <span class="match-vs">vs</span> <span>Kara Ferner <span class="match-rating">4.383</span></span> &amp; <span>Scotty McGee <span class="match-rating">4.126</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">21-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.004)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.739</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.569</span></span> <span class="match-vs">vs</span> <span>Zach Naas <span class="match-rating">4.100</span></span> &amp; <span>Emily Borell <span class="match-rating">3.540</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">22-20 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.739</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.784</span></span> <span class="match-vs">vs</span> <span>Emily Carl <span class="match-rating">3.115</span></span> &amp; <span>Emily Borell <span class="match-rating">3.541</span></span></div></div><div class="event-pill"><span class="event-pill-date">3/23/24</span>Virginia Super Regional - Round of 16</div><div class="match-group loss"><div class="match-row"><span class="match-score">21-23 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.626</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.575</span></span> <span class="match-vs">vs</span> <span>Ryan Morneau <span class="match-rating">5.325</span></span> &amp; <span>Alida Schreuders <span class="match-rating">4.026</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-21 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.078)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.704</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.692</span></span> <span class="match-vs">vs</span> <span>Jenna Tilghman <span class="match-rating">4.005</span></span> &amp; <span>Renee Kozlowski <span class="match-rating">3.556</span></span></div></div><div class="event-pill"><span class="event-pill-date">4/6/24</span>DUPR Collegiate Georgia Super Regional - Round 2</div><div class="match-group win"><div class="match-row"><span class="match-score">21-17 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.611</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.596</span></span> <span class="match-vs">vs</span> <span>Tyler Zacher <span class="match-rating">3.347</span></span> &amp; <span>Sadie Boggess <span class="match-rating">3.212</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">21-16 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-flat">(0.000)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.611</span></span> w/ <span class="match-partner">Meg Hemphill <span class="match-rating">4.560</span></span> <span class="match-vs">vs</span> <span>Hailey Herzog</span> &amp; <span>Sadie Boggess <span class="match-rating">3.214</span></span></div></div><div class="event-pill"><span class="event-pill-date">4/6/24</span>DUPR Collegiate Georgia Super Regional - Round 4</div><div class="match-group win"><div class="match-row"><span class="match-score">21-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.580</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.601</span></span> <span class="match-vs">vs</span> <span>Amy Yan <span class="match-rating">3.711</span></span> &amp; <span>Cole Lazerow <span class="match-rating">4.120</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">20-22 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.032)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.612</span></span> w/ <span class="match-partner">Camilla Thurman <span class="match-rating">4.751</span></span> <span class="match-vs">vs</span> <span>Amy Yan <span class="match-rating">3.596</span></span> &amp; <span>Martinna Roldan <span class="match-rating">3.207</span></span></div></div><div class="event-pill"><span class="event-pill-date">4/6/24</span>DUPR Collegiate Georgia Super Regional - Round 5</div><div class="match-group loss"><div class="match-row"><span class="match-score">24-26 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.021)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.557</span></span> w/ <span class="match-partner">luis geyne <span class="match-rating">4.617</span></span> <span class="match-vs">vs</span> <span>Kayla Hess <span class="match-rating">3.772</span></span> &amp; <span>Brady Meer <span class="match-rating">4.697</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">20-22 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.027)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.585</span></span> w/ <span class="match-partner">Camilla Thurman <span class="match-rating">4.605</span></span> <span class="match-vs">vs</span> <span>Grace Petty <span class="match-rating">3.905</span></span> &amp; <span>Kayla Hess <span class="match-rating">3.697</span></span></div></div><div class="event-pill"><span class="event-pill-date">9/15/24</span>PickleBrawl in the Blue Ridge Mixed Doubles OPEN</div><div class="match-group loss"><div class="match-row"><span class="match-score">0-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.421</span></span> w/ <span class="match-partner">Blake Washburn <span class="match-rating">4.306</span></span> <span class="match-vs">vs</span> <span>Bini Wethington <span class="match-rating">4.813</span></span> &amp; <span>Rosen Naydenov <span class="match-rating">5.489</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11, 0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.115)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.536</span></span> w/ <span class="match-partner">Blake Washburn</span> <span class="match-vs">vs</span> <span>MacKenzie Cassady <span class="match-rating">4.332</span></span> &amp; <span>Sahith Mandala <span class="match-rating">5.025</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/2/24</span>Dupr</div><div class="match-group win"><div class="match-row"><span class="match-score">15-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.408</span></span> w/ <span class="match-partner">James L Callis <span class="match-rating">3.959</span></span> <span class="match-vs">vs</span> <span>Jaime Maese <span class="match-rating">3.849</span></span> &amp; <span>John Dent <span class="match-rating">3.530</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.413</span></span> w/ <span class="match-partner">James L Callis <span class="match-rating">3.977</span></span> <span class="match-vs">vs</span> <span>Jaime Maese <span class="match-rating">3.844</span></span> &amp; <span>Joe Young <span class="match-rating">3.983</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Becky <span class="match-rating">4.399</span></span> w/ <span class="match-partner">Dylan Thomas <span class="match-rating">3.335</span></span> <span class="match-vs">vs</span> <span>James L Callis <span class="match-rating">3.909</span></span> &amp; <span>Joe Young <span class="match-rating">3.996</span></span></div></div>
+<p class="note">first 30 rated matches, from 2024-02-15 · 2 unrated matches not shown (pre-engine era) · ⏳ = late upload</p>
+
+<h2>Singles — official series, small multiple</h2>
+<div class="panel">
+  <svg width="100%" viewBox="0 0 366 120" role="img"
+    aria-label="Singles rating trajectory: placed 4.528, now 3.986 (-0.542 net)"><line class="grid" x1="241.0" y1="14" x2="241.0" y2="100"/><line class="grid" x1="333.0" y1="14" x2="333.0" y2="100"/><text class="tick" x="126.0" y="113" text-anchor="middle">12/13/24</text><text class="tick" x="287.0" y="113" text-anchor="middle">4/4/25</text><text class="tick" x="339.2" y="113" text-anchor="middle">8/16/26</text><line class="grid" x1="34" y1="89.9" x2="356" y2="89.9"/><text class="tick" x="29" y="92.9" text-anchor="end">4.00</text><line class="grid" x1="34" y1="63.1" x2="356" y2="63.1"/><text class="tick" x="29" y="66.1" text-anchor="end">4.25</text><line class="grid" x1="34" y1="36.2" x2="356" y2="36.2"/><text class="tick" x="29" y="39.2" text-anchor="end">4.50</text><path class="seg-norm" d="M34.0 33.2 L80.0 22.6 L126.0 49.8 L172.0 74.3 L218.0 69.5 L264.0 83.0 L310.0 91.4 L356.0 91.4"/></svg>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span></div>
+</div>
+<p class="note">2-4 rated · placed 4.528 (12/24) · now 3.986 · earned -0.542.</p>
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2023-12-16", "x": 34.0, "r": 4.057, "dl": 0.0, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2024-01-30", "x": 48.9, "r": 4.797, "dl": 0.74, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2024-02-15", "x": 54.2, "r": 4.704, "dl": -0.093, "m": true, "info": "0W-1L \u00b7 Dupr"}, {"d": "2024-02-17", "x": 54.8, "r": 4.739, "dl": 0.035, "m": true, "info": "6W-4L \u00b7 TowneBank College Cup - Quarterfinals - VT 1 vs Randolph-Mac"}, {"d": "2024-03-23", "x": 66.4, "r": 4.612, "dl": -0.128, "m": true, "info": "5W-3L \u00b7 Virginia Super Regional - Group D"}, {"d": "2024-04-13", "x": 73.3, "r": 4.537, "dl": -0.075, "m": true, "info": "match day"}, {"d": "2024-09-15", "x": 124.6, "r": 4.408, "dl": -0.129, "m": true, "info": "0W-2L \u00b7 PickleBrawl in the Blue Ridge Mixed Doubles OPEN"}, {"d": "2024-10-02", "x": 130.2, "r": 4.396, "dl": -0.012, "m": true, "info": "2W-2L \u00b7 Dupr"}, {"d": "2024-10-05", "x": 131.2, "r": 4.269, "dl": -0.127, "m": true, "info": "6W-2L \u00b7 Pool A"}, {"d": "2024-10-12", "x": 133.5, "r": 4.35, "dl": 0.08, "m": true, "info": "4W-4L \u00b7 1st Advantage Pickleball Tournament - Mixed Doubles Skill: ("}, {"d": "2024-10-20", "x": 136.2, "r": 4.31, "dl": -0.04, "m": true, "info": "3W-3L \u00b7 Legends 7th Annual dink dink BANG! - Mixed Doubles 4.0 Age: "}, {"d": "2024-10-30", "x": 139.5, "r": 4.312, "dl": 0.002, "m": true, "info": "3W-0L \u00b7 DUPR 10"}, {"d": "2024-11-17", "x": 145.4, "r": 4.411, "dl": 0.099, "m": true, "info": "4W-2L \u00b7 Fall Ball Paddle in the Burg - Mixed Doubles Skill: (OPEN - "}, {"d": "2024-12-08", "x": 152.4, "r": 4.386, "dl": -0.025, "m": true, "info": "0W-2L \u00b7 Jingle Ball Classic"}, {"d": "2024-12-13", "x": 154.0, "r": 4.375, "dl": -0.011, "m": true, "info": "match day"}, {"d": "2024-12-15", "x": 154.7, "r": 4.462, "dl": 0.087, "m": true, "info": "4W-1L \u00b7 Holiday Classic 2024 - Mixed Doubles Skill: (4.5) Age: (All "}, {"d": "2025-01-03", "x": 160.9, "r": 4.461, "dl": -0.001, "m": true, "info": "match day"}, {"d": "2025-01-11", "x": 163.6, "r": 4.456, "dl": -0.005, "m": true, "info": "0W-2L \u00b7 The Pickleball Resolution - Women's Doubles OPEN"}, {"d": "2025-01-12", "x": 163.9, "r": 4.428, "dl": -0.028, "m": true, "info": "0W-2L \u00b7 The Pickleball Resolution - Mixed Doubles OPEN"}, {"d": "2025-01-26", "x": 168.6, "r": 4.42, "dl": -0.007, "m": true, "info": "1W-4L \u00b7 Paddle in the Burg sponsored by Harry's Ale House - Mixed Do"}, {"d": "2025-02-22", "x": 177.5, "r": 4.436, "dl": 0.016, "m": true, "info": "6W-2L \u00b7 Pool G"}, {"d": "2025-03-01", "x": 179.8, "r": 4.414, "dl": -0.023, "m": true, "info": "match day"}, {"d": "2025-03-16", "x": 184.8, "r": 4.489, "dl": 0.075, "m": true, "info": "6W-1L \u00b7 St. Patricks Day Tournament - Mixed Doubles Skill: (4.5 And "}, {"d": "2025-04-06", "x": 191.7, "r": 4.494, "dl": 0.005, "m": true, "info": "1W-2L \u00b7 PPA Tour: Veolia North Carolina Open - Mixed Doubles Skill: "}, {"d": "2025-05-16", "x": 204.9, "r": 4.46, "dl": -0.034, "m": true, "info": "3W-2L \u00b7 Triple Team Pickleball: Advancing 4.5+ Women's"}, {"d": "2025-05-31", "x": 209.9, "r": 4.511, "dl": 0.051, "m": true, "info": "5W-0L \u00b7 Kiwanis Club of Kiln Creek Annual Pickleball Tournament - Wo"}, {"d": "2025-06-05", "x": 211.5, "r": 4.512, "dl": 0.001, "m": true, "info": "3W-0L \u00b7 Triple Team Pickleball: Advancing 4.5+ Women's"}, {"d": "2025-06-15", "x": 214.8, "r": 4.502, "dl": -0.01, "m": true, "info": "0W-2L \u00b7 The BodyArmor 804 Open - Mixed Doubles Skill: (Open) Age: (1"}, {"d": "2025-06-19", "x": 216.2, "r": 4.548, "dl": 0.046, "m": true, "info": "3W-0L \u00b7 Triple Team Pickleball: Advancing 4.5+ Women's"}, {"d": "2025-06-21", "x": 216.8, "r": 4.556, "dl": 0.008, "m": true, "info": "3W-2L \u00b7 Sizzlin Summer Shindig"}, {"d": "2025-06-23", "x": 217.5, "r": 4.54, "dl": -0.016, "m": true, "info": "match day"}, {"d": "2025-06-26", "x": 218.5, "r": 4.507, "dl": -0.033, "m": true, "info": "1W-3L \u00b7 Triple Team Pickleball: Advancing 4.5+ Women's"}, {"d": "2025-07-12", "x": 223.8, "r": 4.434, "dl": -0.073, "m": true, "info": "6W-3L \u00b7 Men's Doubles: DUPR 9.0+ - M8 Pickleball x ECCO - Battle at "}, {"d": "2025-07-19", "x": 226.1, "r": 4.493, "dl": 0.059, "m": true, "info": "5W-0L \u00b7 2025 Virginia Amateur Pickleball Championships powered by Ca"}, {"d": "2025-07-20", "x": 226.4, "r": 4.508, "dl": 0.015, "m": true, "info": "0W-1L \u00b7 2025 Virginia Amateur Pickleball Championships powered by Ca"}, {"d": "2025-09-07", "x": 242.6, "r": 4.512, "dl": 0.004, "m": true, "info": "2W-2L \u00b7 2025 DC DPR Pickleball Challenge, Senior Games and PPA Natio"}, {"d": "2025-10-19", "x": 256.5, "r": 4.637, "dl": 0.125, "m": true, "info": "6W-0L \u00b7 1st Advantage Credit Union Foundation's 3rd Annual Tournamen"}, {"d": "2025-10-20", "x": 256.8, "r": 4.607, "dl": -0.03, "m": true, "info": "0W-1L \u00b7 Picklr Fall League 2025 XD Week 3"}, {"d": "2025-12-19", "x": 276.7, "r": 4.624, "dl": 0.017, "m": true, "info": "5W-1L \u00b7 Holiday Classic 25' by CAM OHANA @The Picklr Williamsburg - "}, {"d": "2025-12-20", "x": 277.0, "r": 4.644, "dl": 0.02, "m": true, "info": "4W-3L \u00b7 Holiday Classic 25' by CAM OHANA @The Picklr Williamsburg - "}, {"d": "2025-12-21", "x": 277.3, "r": 4.7, "dl": 0.056, "m": true, "info": "7W-0L \u00b7 Holiday Classic 25' by CAM OHANA @The Picklr Williamsburg - "}, {"d": "2026-02-13", "x": 295.2, "r": 4.7, "dl": -0.0, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2026-02-15", "x": 295.8, "r": 4.693, "dl": -0.006, "m": true, "info": "0W-2L \u00b7 No Love Just Dinks Classic presented by LFG Tourneys - $$ Mi"}, {"d": "2026-03-15", "x": 305.1, "r": 4.652, "dl": -0.042, "m": true, "info": "5W-2L \u00b7 MIXED ONLY SUNDAY MARCH 15 - CASH PRIZE: Mixed Open, Any Age"}, {"d": "2026-03-28", "x": 309.4, "r": 4.679, "dl": 0.028, "m": true, "info": "3W-2L \u00b7 MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH "}, {"d": "2026-03-29", "x": 309.7, "r": 4.7, "dl": 0.02, "m": true, "info": "7W-2L \u00b7 MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH "}, {"d": "2026-05-02", "x": 321.0, "r": 4.697, "dl": -0.002, "m": true, "info": "6W-1L \u00b7 Kiwanis Club of Kiln Creek Annual Pickleball Tournament - $$"}, {"d": "2026-06-27", "x": 339.5, "r": 4.694, "dl": -0.004, "m": true, "info": "0W-4L \u00b7 1st Advantage Credit Union Foundation's 4th Annual Tournamen"}, {"d": "2026-06-28", "x": 339.8, "r": 4.681, "dl": -0.013, "m": true, "info": "4W-4L \u00b7 1st Advantage Credit Union Foundation's 4th Annual Tournamen"}, {"d": "2026-07-08", "x": 343.1, "r": 4.68, "dl": -0.001, "m": true, "info": "match day"}, {"d": "2026-08-16", "x": 356.0, "r": 4.678, "dl": -0.002, "m": true, "info": "match day"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>
