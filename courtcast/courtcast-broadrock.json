@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-24T13:02:50",
+ "updated": "2026-09-24T13:51:26",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,10 +44,10 @@
  "kicker": "HOLD UP",
  "headline": "Next window: 3p today",
  "wet_note": null,
- "reason": "today grades A, best 3p-6p",
+ "reason": "today grades A, best 3p-9p",
  "ranked": [
   {
-   "day": "Sat",
+   "day": "Today",
    "grade": "A"
   },
   {
@@ -63,16 +63,16 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Sat",
    "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 62,
-   "dew": 54,
-   "wind": 12
+   "temp": 61,
+   "dew": 55,
+   "wind": 11
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,13 +85,13 @@
     "label": "Today",
     "sub": "9/24",
     "grade": "A",
-    "score": 0.943,
-    "best": "3p-6p",
-    "why": "wind (12 mph) 7p",
+    "score": 1.0,
+    "best": "3p-9p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 61,
+      "t": 62,
       "v": 2,
       "c": ""
      },
@@ -106,14 +106,14 @@
       "c": ""
      },
      "18": {
-      "t": 59,
+      "t": 60,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 62,
-      "v": 1,
-      "c": "wnd"
+      "t": 59,
+      "v": 2,
+      "c": ""
      },
      "20": {
       "t": 60,
@@ -204,9 +204,9 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "A",
-    "score": 1.0,
-    "best": "8a-9p",
-    "why": "",
+    "score": 0.971,
+    "best": "8a-3p",
+    "why": "wind (12 mph) 4p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -235,7 +235,7 @@
       "c": ""
      },
      "13": {
-      "t": 75,
+      "t": 76,
       "v": 2,
       "c": ""
      },
@@ -250,9 +250,9 @@
       "c": ""
      },
      "16": {
-      "t": 77,
-      "v": 2,
-      "c": ""
+      "t": 75,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 76,
@@ -317,12 +317,12 @@
       "c": ""
      },
      "13": {
-      "t": 75,
+      "t": 73,
       "v": 2,
       "c": ""
      },
      "14": {
-      "t": 74,
+      "t": 75,
       "v": 2,
       "c": ""
      },
@@ -487,7 +487,7 @@
    {
     "date": "2026-09-30",
     "d": "We",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-10-01",
@@ -497,7 +497,7 @@
    {
     "date": "2026-10-02",
     "d": "Fr",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-10-03",
@@ -507,12 +507,12 @@
    {
     "date": "2026-10-04",
     "d": "Su",
-    "g": "F"
+    "g": "C"
    },
    {
     "date": "2026-10-05",
     "d": "Mo",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-10-06",
@@ -532,7 +532,7 @@
    {
     "date": "2026-10-09",
     "d": "Fr",
-    "g": "A"
+    "g": "B"
    }
   ]
  },

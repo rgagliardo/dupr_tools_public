@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-24T13:02:52",
+ "updated": "2026-09-24T13:51:27",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,12 +44,8 @@
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "wind (15 mph) \u2014 clean window 4p today",
+ "reason": "wind (15 mph) \u2014 clean window 5p today",
  "ranked": [
-  {
-   "day": "Sat",
-   "grade": "A"
-  },
   {
    "day": "Sun",
    "grade": "A"
@@ -63,6 +59,10 @@
    "grade": "A"
   },
   {
+   "day": "Sat",
+   "grade": "A"
+  },
+  {
    "day": "Today",
    "grade": "B"
   }
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 63,
-   "dew": 55,
-   "wind": 15
+   "temp": 61,
+   "dew": 54,
+   "wind": 12
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "9/24",
     "grade": "B",
-    "score": 0.886,
-    "best": "4p-6p",
-    "why": "wind (15 mph) 3p, 7p",
+    "score": 0.829,
+    "best": "5p-6p",
+    "why": "wind (15 mph) 3p-4p, 7p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -96,9 +96,9 @@
       "c": "wnd"
      },
      "16": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 64,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 61,
@@ -106,7 +106,7 @@
       "c": ""
      },
      "18": {
-      "t": 60,
+      "t": 61,
       "v": 2,
       "c": ""
      },
@@ -204,9 +204,9 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "A",
-    "score": 1.0,
-    "best": "8a-9p",
-    "why": "",
+    "score": 0.971,
+    "best": "8a-3p",
+    "why": "wind (12 mph) 4p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -235,7 +235,7 @@
       "c": ""
      },
      "13": {
-      "t": 75,
+      "t": 76,
       "v": 2,
       "c": ""
      },
@@ -250,9 +250,9 @@
       "c": ""
      },
      "16": {
-      "t": 78,
-      "v": 2,
-      "c": ""
+      "t": 75,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 76,
@@ -487,7 +487,7 @@
    {
     "date": "2026-09-30",
     "d": "We",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-10-01",
@@ -497,7 +497,7 @@
    {
     "date": "2026-10-02",
     "d": "Fr",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-10-03",
@@ -507,12 +507,12 @@
    {
     "date": "2026-10-04",
     "d": "Su",
-    "g": "F"
+    "g": "C"
    },
    {
     "date": "2026-10-05",
     "d": "Mo",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-10-06",
@@ -532,7 +532,7 @@
    {
     "date": "2026-10-09",
     "d": "Fr",
-    "g": "A"
+    "g": "B"
    }
   ]
  },
