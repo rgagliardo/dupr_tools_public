@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-24T15:52:49",
+ "updated": "2026-09-24T17:03:50",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 4p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: 6p today",
  "wet_note": null,
- "reason": "then wind (14 mph) \u00b7 back 5p",
+ "reason": "today grades C, best 8p-9p",
  "ranked": [
-  {
-   "day": "Sat",
-   "grade": "A"
-  },
   {
    "day": "Sun",
    "grade": "A"
@@ -63,47 +59,41 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Sat",
+   "grade": "B"
+  },
+  {
+   "day": "Fri",
    "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 64,
-   "dew": 55,
-   "wind": 12
+   "temp": 62,
+   "dew": 54,
+   "wind": 10
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 2.7
+   "radar_24h_mm": 0.5
   },
   "days": [
    {
     "date": "2026-09-24",
     "label": "Today",
     "sub": "9/24",
-    "grade": "B",
-    "score": 0.886,
-    "best": "5p-6p",
-    "why": "wind (14 mph) 4p, 7p",
+    "grade": "C",
+    "score": 0.72,
+    "best": "8p-9p",
+    "why": "raining now 5p \u00b7 wind (12 mph) 7p",
     "wet_mm": 0.0,
     "cells": {
-     "15": {
-      "t": 64,
-      "v": 2,
-      "c": ""
-     },
-     "16": {
-      "t": 64,
-      "v": 1,
-      "c": "wnd"
-     },
      "17": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "18": {
       "t": 61,
@@ -132,9 +122,9 @@
     "label": "Fri",
     "sub": "9/25",
     "grade": "B",
-    "score": 0.8,
+    "score": 0.767,
     "best": "6p-9p",
-    "why": "wind (13 mph) 9a-10a, 12p",
+    "why": "wind (13 mph) 9a-12p, 3p-5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -153,9 +143,9 @@
       "c": "wnd"
      },
      "11": {
-      "t": 56,
-      "v": 2,
-      "c": ""
+      "t": 61,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
       "t": 63,
@@ -203,10 +193,10 @@
     "date": "2026-09-26",
     "label": "Sat",
     "sub": "9/26",
-    "grade": "A",
-    "score": 1.0,
-    "best": "8a-9p",
-    "why": "",
+    "grade": "B",
+    "score": 0.857,
+    "best": "3p-9p",
+    "why": "wind (12 mph) 10a-2p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -220,29 +210,29 @@
       "c": ""
      },
      "10": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 63,
+      "v": 1,
+      "c": "wnd"
      },
      "11": {
-      "t": 70,
-      "v": 2,
-      "c": ""
+      "t": 68,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
-      "t": 73,
-      "v": 2,
-      "c": ""
+      "t": 71,
+      "v": 1,
+      "c": "wnd"
      },
      "13": {
-      "t": 76,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "wnd"
      },
      "14": {
-      "t": 77,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
       "t": 78,

@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-24T15:52:50",
+ "updated": "2026-09-24T17:03:51",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,10 +42,14 @@
  },
  "playable_now": true,
  "kicker": "PLAY NOW",
- "headline": "until 4p",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "then wind (15 mph) \u00b7 back 5p",
+ "reason": "then wind (12 mph)",
  "ranked": [
+  {
+   "day": "Today",
+   "grade": "A"
+  },
   {
    "day": "Sun",
    "grade": "A"
@@ -60,24 +64,20 @@
   },
   {
    "day": "Sat",
-   "grade": "A"
-  },
-  {
-   "day": "Today",
-   "grade": "A"
+   "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 64,
-   "dew": 55,
-   "wind": 12
+   "temp": 61,
+   "dew": 54,
+   "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 2.5
+   "radar_24h_mm": 0.4
   },
   "days": [
    {
@@ -85,28 +85,18 @@
     "label": "Today",
     "sub": "9/24",
     "grade": "A",
-    "score": 0.943,
+    "score": 1.0,
     "best": "5p-9p",
-    "why": "wind (15 mph) 4p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "15": {
-      "t": 64,
-      "v": 2,
-      "c": ""
-     },
-     "16": {
-      "t": 64,
-      "v": 1,
-      "c": "wnd"
-     },
      "17": {
       "t": 61,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 60,
+      "t": 61,
       "v": 2,
       "c": ""
      },
@@ -131,10 +121,10 @@
     "date": "2026-09-25",
     "label": "Fri",
     "sub": "9/25",
-    "grade": "B",
-    "score": 0.767,
+    "grade": "C",
+    "score": 0.733,
     "best": "6p-9p",
-    "why": "wind (14 mph) 8a-10a, 12p",
+    "why": "wind (14 mph) 8a-12p, 3p-5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -153,9 +143,9 @@
       "c": "wnd"
      },
      "11": {
-      "t": 55,
-      "v": 2,
-      "c": ""
+      "t": 61,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
       "t": 63,
@@ -178,7 +168,7 @@
       "c": "wnd"
      },
      "18": {
-      "t": 66,
+      "t": 67,
       "v": 2,
       "c": ""
      },
@@ -203,10 +193,10 @@
     "date": "2026-09-26",
     "label": "Sat",
     "sub": "9/26",
-    "grade": "A",
-    "score": 0.971,
-    "best": "8a-3p",
-    "why": "wind (12 mph) 4p",
+    "grade": "B",
+    "score": 0.829,
+    "best": "5p-9p",
+    "why": "wind (13 mph) 10a-2p, 4p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -220,29 +210,29 @@
       "c": ""
      },
      "10": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 62,
+      "v": 1,
+      "c": "wnd"
      },
      "11": {
-      "t": 70,
-      "v": 2,
-      "c": ""
+      "t": 67,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
-      "t": 73,
-      "v": 2,
-      "c": ""
+      "t": 70,
+      "v": 1,
+      "c": "wnd"
      },
      "13": {
-      "t": 76,
-      "v": 2,
-      "c": ""
+      "t": 71,
+      "v": 1,
+      "c": "wnd"
      },
      "14": {
-      "t": 77,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
       "t": 78,
