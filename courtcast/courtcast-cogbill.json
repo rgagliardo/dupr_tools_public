@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-25T08:13:20",
+ "updated": "2026-09-25T08:43:45",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -63,7 +63,7 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
+   "day": "Today",
    "grade": "C"
   }
  ],
@@ -87,7 +87,7 @@
     "grade": "C",
     "score": 0.733,
     "best": "6p-9p",
-    "why": "wind (14 mph) 8a-12p, 3p-5p",
+    "why": "wind (15 mph) 8a-12p, 3p-5p \u00b7 NWS: gusts 3p-4p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -121,7 +121,7 @@
       "c": "wnd"
      },
      "16": {
-      "t": 68,
+      "t": 69,
       "v": 1,
       "c": "wnd"
      },
@@ -157,9 +157,9 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "C",
-    "score": 0.743,
+    "score": 0.529,
     "best": "6p-9p",
-    "why": "wind (14 mph) 9a-5p",
+    "why": "gusts (28 mph) 12p-4p \u00b7 wind (14 mph) 9a-11a, 5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -184,28 +184,28 @@
      },
      "12": {
       "t": 69,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "13": {
       "t": 70,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "14": {
       "t": 72,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "15": {
       "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "16": {
       "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 70,
@@ -512,7 +512,7 @@
    {
     "date": "2026-10-06",
     "d": "Tu",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-10-07",
@@ -532,7 +532,7 @@
    {
     "date": "2026-10-10",
     "d": "Sa",
-    "g": "A"
+    "g": "B"
    }
   ]
  },
