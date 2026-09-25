@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-25T16:17:03",
+ "updated": "2026-09-25T16:47:23",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,10 +41,10 @@
   }
  },
  "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next OK window: 5p today",
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 10p (wind (13 mph))",
  "wet_note": null,
- "reason": "wind (15 mph) \u2014 clean window 6p today",
+ "reason": "clean window 6p today",
  "ranked": [
   {
    "day": "Mon",
@@ -59,20 +59,20 @@
    "grade": "A"
   },
   {
-   "day": "Wed",
+   "day": "Today",
    "grade": "B"
   },
   {
-   "day": "Today",
+   "day": "Wed",
    "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 70,
-   "dew": 46,
-   "wind": 15
+   "temp": 71,
+   "dew": 44,
+   "wind": 13
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,15 +85,15 @@
     "label": "Today",
     "sub": "9/25",
     "grade": "B",
-    "score": 0.767,
+    "score": 0.867,
     "best": "6p-9p",
-    "why": "gusts (25 mph) 4p \u00b7 wind (15 mph) 5p",
+    "why": "wind (15 mph) 4p-5p \u00b7 NWS: gusts 4p",
     "wet_mm": 0.0,
     "cells": {
      "16": {
-      "t": 70,
-      "v": 0,
-      "c": "gst"
+      "t": 71,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 71,
