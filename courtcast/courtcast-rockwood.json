@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-25T08:43:41",
+ "updated": "2026-09-25T09:11:40",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 9a",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 1p (wind (12 mph))",
  "wet_note": null,
- "reason": "then wind (12 mph) \u00b7 back 6p",
+ "reason": "clean window 7p today",
  "ranked": [
   {
    "day": "Mon",
@@ -64,15 +64,15 @@
   },
   {
    "day": "Today",
-   "grade": "B"
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 53,
-   "dew": 43,
-   "wind": 10
+   "temp": 56,
+   "dew": 44,
+   "wind": 12
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,17 +84,12 @@
     "date": "2026-09-25",
     "label": "Today",
     "sub": "9/25",
-    "grade": "B",
-    "score": 0.767,
-    "best": "6p-9p",
-    "why": "wind (14 mph) 9a-12p, 3p-5p \u00b7 NWS: gusts 3p-4p",
+    "grade": "C",
+    "score": 0.709,
+    "best": "7p-9p",
+    "why": "wind (14 mph) 9a-12p, 3p-6p \u00b7 NWS: gusts 3p-4p",
     "wet_mm": 0.0,
     "cells": {
-     "8": {
-      "t": 53,
-      "v": 2,
-      "c": ""
-     },
      "9": {
       "t": 56,
       "v": 1,
@@ -131,9 +126,9 @@
       "c": "wnd"
      },
      "18": {
-      "t": 67,
-      "v": 2,
-      "c": ""
+      "t": 66,
+      "v": 1,
+      "c": "wnd"
      },
      "19": {
       "t": 64,
