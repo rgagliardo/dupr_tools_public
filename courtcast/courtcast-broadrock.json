@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-25T08:13:19",
+ "updated": "2026-09-25T08:28:33",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -63,7 +63,7 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
+   "day": "Today",
    "grade": "C"
   }
  ],
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "9/25",
     "grade": "C",
-    "score": 0.7,
+    "score": 0.65,
     "best": "7p-9p",
-    "why": "wind (14 mph) 8a-12p, 3p-6p",
+    "why": "gusts (25 mph) 4p \u00b7 wind (15 mph) 8a-12p, 3p \u00b7 NWS: gusts 3p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -116,14 +116,14 @@
       "c": "wnd"
      },
      "15": {
-      "t": 68,
+      "t": 69,
       "v": 1,
       "c": "wnd"
      },
      "16": {
       "t": 69,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 69,
@@ -156,16 +156,16 @@
     "date": "2026-09-26",
     "label": "Sat",
     "sub": "9/26",
-    "grade": "C",
-    "score": 0.714,
+    "grade": "D",
+    "score": 0.429,
     "best": "7p-9p",
-    "why": "wind (14 mph) 9a-6p",
+    "why": "gusts (29 mph) 11a-4p \u00b7 wind (14 mph) 8a-10a, 5p-6p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 55,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "9": {
       "t": 60,
@@ -179,33 +179,33 @@
      },
      "11": {
       "t": 67,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "12": {
       "t": 69,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "13": {
       "t": 70,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "14": {
       "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "15": {
       "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "16": {
       "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 70,
