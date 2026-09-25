@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-25T09:11:42",
+ "updated": "2026-09-25T10:12:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,7 +42,7 @@
  },
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 1p (wind (13 mph))",
+ "headline": "not clean \u2014 until 1p (wind (14 mph))",
  "wet_note": null,
  "reason": "clean window 7p today",
  "ranked": [
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 56,
+   "temp": 58,
    "dew": 45,
-   "wind": 13
+   "wind": 14
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/25",
     "grade": "C",
-    "score": 0.709,
+    "score": 0.66,
     "best": "7p-9p",
-    "why": "wind (15 mph) 9a-12p, 3p-6p \u00b7 NWS: gusts 3p-4p",
+    "why": "gusts (25 mph) 4p \u00b7 wind (15 mph) 10a-12p, 3p \u00b7 NWS: gusts 3p",
     "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 56,
-      "v": 1,
-      "c": "wnd"
-     },
      "10": {
       "t": 58,
       "v": 1,
@@ -116,9 +111,9 @@
       "c": "wnd"
      },
      "16": {
-      "t": 70,
-      "v": 1,
-      "c": "wnd"
+      "t": 69,
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 69,
@@ -152,9 +147,9 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "D",
-    "score": 0.429,
-    "best": "7p-9p",
-    "why": "gusts (29 mph) 11a-4p \u00b7 wind (14 mph) 8a-10a, 5p-6p",
+    "score": 0.457,
+    "best": "6p-9p",
+    "why": "gusts (29 mph) 11a-4p \u00b7 wind (14 mph) 8a-10a, 5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -208,9 +203,9 @@
       "c": "wnd"
      },
      "18": {
-      "t": 68,
-      "v": 1,
-      "c": "wnd"
+      "t": 72,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 66,

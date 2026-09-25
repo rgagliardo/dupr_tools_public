@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-25T09:26:53",
+ "updated": "2026-09-25T10:12:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 1p (wind (13 mph))",
+ "headline": "not clean \u2014 until 1p (wind (14 mph))",
  "wet_note": null,
- "reason": "clean window 7p today",
+ "reason": "clean window 6p today",
  "ranked": [
   {
    "day": "Sun",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 56,
-   "dew": 44,
-   "wind": 13
+   "temp": 58,
+   "dew": 45,
+   "wind": 14
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/25",
     "grade": "C",
-    "score": 0.709,
-    "best": "7p-9p",
-    "why": "wind (15 mph) 9a-12p, 3p-6p \u00b7 NWS: gusts 3p-4p",
+    "score": 0.7,
+    "best": "6p-9p",
+    "why": "gusts (25 mph) 4p \u00b7 wind (15 mph) 10a-12p, 3p \u00b7 NWS: gusts 3p",
     "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 56,
-      "v": 1,
-      "c": "wnd"
-     },
      "10": {
       "t": 58,
       "v": 1,
@@ -116,9 +111,9 @@
       "c": "wnd"
      },
      "16": {
-      "t": 69,
-      "v": 1,
-      "c": "wnd"
+      "t": 68,
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 69,
@@ -126,9 +121,9 @@
       "c": "wnd"
      },
      "18": {
-      "t": 66,
-      "v": 1,
-      "c": "wnd"
+      "t": 68,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 64,
@@ -151,10 +146,10 @@
     "date": "2026-09-26",
     "label": "Sat",
     "sub": "9/26",
-    "grade": "D",
-    "score": 0.471,
-    "best": "7p-9p",
-    "why": "gusts (28 mph) 12p-4p \u00b7 wind (15 mph) 8a-11a, 5p-6p",
+    "grade": "C",
+    "score": 0.5,
+    "best": "6p-9p",
+    "why": "gusts (28 mph) 12p-4p \u00b7 wind (15 mph) 8a-11a, 5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -208,9 +203,9 @@
       "c": "wnd"
      },
      "18": {
-      "t": 68,
-      "v": 1,
-      "c": "wnd"
+      "t": 71,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 65,
