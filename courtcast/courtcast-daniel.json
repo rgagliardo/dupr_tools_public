@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-25T10:42:41",
+ "updated": "2026-09-25T11:13:04",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 11a",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 1p (wind (14 mph))",
  "wet_note": null,
- "reason": "then wind (14 mph) \u00b7 back 7p",
+ "reason": "clean window 7p today",
  "ranked": [
   {
    "day": "Sun",
@@ -64,15 +64,15 @@
   },
   {
    "day": "Today",
-   "grade": "B"
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 57,
-   "dew": 45,
-   "wind": 10
+   "temp": 59,
+   "dew": 46,
+   "wind": 14
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,17 +84,12 @@
     "date": "2026-09-25",
     "label": "Today",
     "sub": "9/25",
-    "grade": "B",
-    "score": 0.76,
+    "grade": "C",
+    "score": 0.733,
     "best": "7p-9p",
     "why": "wind (15 mph) 11a-12p, 3p-6p \u00b7 NWS: gusts 3p-4p",
     "wet_mm": 0.0,
     "cells": {
-     "10": {
-      "t": 57,
-      "v": 2,
-      "c": ""
-     },
      "11": {
       "t": 59,
       "v": 1,
