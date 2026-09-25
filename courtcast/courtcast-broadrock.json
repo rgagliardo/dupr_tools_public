@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-24T21:51:49",
+ "updated": "2026-09-24T22:07:08",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Fri 8a",
  "wet_note": null,
- "reason": "then wind (12 mph)",
+ "reason": "wind (12 mph) \u2014 clean window Fri 7p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Sun",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Sat",
    "grade": "B"
+  },
+  {
+   "day": "Fri",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
    "temp": 59,
-   "dew": 55,
-   "wind": 10
+   "dew": 53,
+   "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
@@ -81,30 +81,13 @@
   },
   "days": [
    {
-    "date": "2026-09-24",
-    "label": "Today",
-    "sub": "9/24",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 59,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
-   {
     "date": "2026-09-25",
     "label": "Fri",
     "sub": "9/25",
     "grade": "C",
-    "score": 0.733,
-    "best": "6p-9p",
-    "why": "wind (14 mph) 8a-12p, 3p-5p",
+    "score": 0.7,
+    "best": "7p-9p",
+    "why": "wind (14 mph) 8a-12p, 3p-6p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -149,8 +132,8 @@
      },
      "18": {
       "t": 67,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "19": {
       "t": 65,
@@ -174,9 +157,9 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "B",
-    "score": 0.829,
-    "best": "4p-9p",
-    "why": "wind (13 mph) 10a-3p",
+    "score": 0.8,
+    "best": "5p-9p",
+    "why": "wind (13 mph) 10a-4p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -220,9 +203,9 @@
       "c": "wnd"
      },
      "16": {
-      "t": 68,
-      "v": 2,
-      "c": ""
+      "t": 73,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 72,

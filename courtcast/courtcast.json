@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-24T21:51:46",
+ "updated": "2026-09-24T22:06:58",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: Fri 8a",
  "wet_note": null,
- "reason": "back 8a",
+ "reason": "Fri grades B, best 6p-9p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Sun",
    "grade": "A"
@@ -65,13 +61,17 @@
   {
    "day": "Sat",
    "grade": "B"
+  },
+  {
+   "day": "Fri",
+   "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 59,
-   "dew": 53,
+   "temp": 58,
+   "dew": 52,
    "wind": 9
   },
   "court": {
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0.1
   },
   "days": [
-   {
-    "date": "2026-09-24",
-    "label": "Today",
-    "sub": "9/24",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 59,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
    {
     "date": "2026-09-25",
     "label": "Fri",
@@ -174,9 +157,9 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "B",
-    "score": 0.886,
-    "best": "3p-9p",
-    "why": "wind (14 mph) 11a-2p",
+    "score": 0.8,
+    "best": "6p-9p",
+    "why": "wind (14 mph) 11a-5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -215,19 +198,19 @@
       "c": "wnd"
      },
      "15": {
-      "t": 70,
-      "v": 2,
-      "c": ""
+      "t": 73,
+      "v": 1,
+      "c": "wnd"
      },
      "16": {
-      "t": 69,
-      "v": 2,
-      "c": ""
+      "t": 73,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
-      "t": 67,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "wnd"
      },
      "18": {
       "t": 70,
