@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-25T15:01:01",
+ "updated": "2026-09-25T16:01:48",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,10 +41,10 @@
   }
  },
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 4p (wind (14 mph))",
+ "kicker": "HOLD UP",
+ "headline": "Next window: 5p today",
  "wet_note": null,
- "reason": "clean window 5p today",
+ "reason": "today grades B, best 5p-9p",
  "ranked": [
   {
    "day": "Sun",
@@ -59,18 +59,18 @@
    "grade": "A"
   },
   {
-   "day": "Wed",
+   "day": "Today",
    "grade": "B"
   },
   {
-   "day": "Today",
+   "day": "Wed",
    "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
+   "temp": 70,
    "dew": 46,
    "wind": 14
   },
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/25",
     "grade": "B",
-    "score": 0.8,
+    "score": 0.833,
     "best": "5p-9p",
-    "why": "gusts (25 mph) 4p \u00b7 wind (14 mph) 3p \u00b7 NWS: gusts 3p",
+    "why": "gusts (25 mph) 4p",
     "wet_mm": 0.0,
     "cells": {
-     "15": {
-      "t": 68,
-      "v": 1,
-      "c": "wnd"
-     },
      "16": {
       "t": 70,
       "v": 0,
