@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-24T23:07:45",
+ "updated": "2026-09-25T00:08:26",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Fri 8a",
+ "headline": "Next window: 8a today",
  "wet_note": null,
- "reason": "Fri grades B, best 6p-9p",
+ "reason": "today grades B, best 6p-9p",
  "ranked": [
   {
    "day": "Sun",
@@ -55,23 +55,23 @@
    "grade": "A"
   },
   {
+   "day": "Wed",
+   "grade": "A"
+  },
+  {
    "day": "Tue",
    "grade": "A"
   },
   {
    "day": "Sat",
    "grade": "B"
-  },
-  {
-   "day": "Fri",
-   "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 57,
-   "dew": 51,
+   "temp": 56,
+   "dew": 50,
    "wind": 8
   },
   "court": {
@@ -82,7 +82,7 @@
   "days": [
    {
     "date": "2026-09-25",
-    "label": "Fri",
+    "label": "Today",
     "sub": "9/25",
     "grade": "B",
     "score": 0.767,
@@ -434,14 +434,56 @@
       "c": ""
      }
     }
+   },
+   {
+    "date": "2026-09-30",
+    "label": "Wed",
+    "sub": "9/30",
+    "grade": "A",
+    "score": 1.0,
+    "best": "3p-9p",
+    "why": "",
+    "wet_mm": 0.0,
+    "cells": {
+     "15": {
+      "t": 80,
+      "v": 2,
+      "c": ""
+     },
+     "16": {
+      "t": 82,
+      "v": 2,
+      "c": ""
+     },
+     "17": {
+      "t": 83,
+      "v": 2,
+      "c": ""
+     },
+     "18": {
+      "t": 80,
+      "v": 2,
+      "c": ""
+     },
+     "19": {
+      "t": 77,
+      "v": 2,
+      "c": ""
+     },
+     "20": {
+      "t": 74,
+      "v": 2,
+      "c": ""
+     },
+     "21": {
+      "t": 72,
+      "v": 2,
+      "c": ""
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-09-30",
-    "d": "We",
-    "g": "A"
-   },
    {
     "date": "2026-10-01",
     "d": "Th",
@@ -486,6 +528,11 @@
     "date": "2026-10-09",
     "d": "Fr",
     "g": "C"
+   },
+   {
+    "date": "2026-10-10",
+    "d": "Sa",
+    "g": "A"
    }
   ]
  },
