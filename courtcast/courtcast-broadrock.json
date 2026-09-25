@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-25T12:44:09",
+ "updated": "2026-09-25T13:14:27",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 1p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "then wind (14 mph) \u00b7 back 7p",
+ "reason": "wind (14 mph) \u2014 clean window 7p today",
  "ranked": [
   {
    "day": "Mon",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 63,
-   "dew": 48,
-   "wind": 12
+   "temp": 65,
+   "dew": 49,
+   "wind": 13
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/25",
     "grade": "B",
-    "score": 0.8,
+    "score": 0.771,
     "best": "7p-9p",
     "why": "wind (15 mph) 3p-6p \u00b7 NWS: gusts 3p-4p",
     "wet_mm": 0.0,
     "cells": {
-     "12": {
-      "t": 63,
-      "v": 2,
-      "c": ""
-     },
      "15": {
       "t": 69,
       "v": 1,
