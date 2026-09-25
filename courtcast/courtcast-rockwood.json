@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-25T16:01:48",
+ "updated": "2026-09-25T16:17:00",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,15 +41,11 @@
   }
  },
  "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 5p today",
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 10p (wind (13 mph))",
  "wet_note": null,
- "reason": "today grades B, best 5p-9p",
+ "reason": "clean window 5p today",
  "ranked": [
-  {
-   "day": "Sun",
-   "grade": "A"
-  },
   {
    "day": "Mon",
    "grade": "A"
@@ -59,8 +55,12 @@
    "grade": "A"
   },
   {
+   "day": "Sun",
+   "grade": "A"
+  },
+  {
    "day": "Today",
-   "grade": "B"
+   "grade": "A"
   },
   {
    "day": "Wed",
@@ -71,8 +71,8 @@
   "source": "best",
   "now": {
    "temp": 70,
-   "dew": 46,
-   "wind": 14
+   "dew": 47,
+   "wind": 13
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,19 +84,19 @@
     "date": "2026-09-25",
     "label": "Today",
     "sub": "9/25",
-    "grade": "B",
-    "score": 0.833,
+    "grade": "A",
+    "score": 0.933,
     "best": "5p-9p",
-    "why": "gusts (25 mph) 4p",
+    "why": "wind (13 mph) 4p \u00b7 NWS: gusts 4p",
     "wet_mm": 0.0,
     "cells": {
      "16": {
       "t": 70,
-      "v": 0,
-      "c": "gst"
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
-      "t": 69,
+      "t": 70,
       "v": 2,
       "c": ""
      },
@@ -127,15 +127,15 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "C",
-    "score": 0.5,
-    "best": "6p-9p",
-    "why": "gusts (28 mph) 10a-1p, 3p \u00b7 wind (15 mph) 8a-9a, 2p \u00b7 NWS: gusts 2p, 4p",
+    "score": 0.514,
+    "best": "5p-9p",
+    "why": "gusts (28 mph) 10a-2p, 4p \u00b7 wind (15 mph) 9a, 3p \u00b7 NWS: gusts 3p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 54,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "9": {
       "t": 58,
@@ -163,32 +163,32 @@
       "c": "gst"
      },
      "14": {
-      "t": 72,
-      "v": 1,
-      "c": "wnd"
-     },
-     "15": {
       "t": 71,
       "v": 0,
       "c": "gst"
      },
-     "16": {
+     "15": {
       "t": 74,
       "v": 1,
       "c": "wnd"
      },
-     "17": {
+     "16": {
       "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "v": 0,
+      "c": "gst"
+     },
+     "17": {
+      "t": 74,
+      "v": 2,
+      "c": ""
      },
      "18": {
-      "t": 72,
+      "t": 71,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 68,
+      "t": 65,
       "v": 2,
       "c": ""
      },
@@ -209,9 +209,9 @@
     "label": "Sun",
     "sub": "9/27",
     "grade": "A",
-    "score": 1.0,
-    "best": "8a-9p",
-    "why": "",
+    "score": 0.971,
+    "best": "12p-9p",
+    "why": "wind (12 mph) 11a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -231,21 +231,21 @@
      },
      "11": {
       "t": 65,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
-      "t": 69,
+      "t": 72,
       "v": 2,
       "c": ""
      },
      "13": {
-      "t": 70,
+      "t": 72,
       "v": 2,
       "c": ""
      },
      "14": {
-      "t": 70,
+      "t": 71,
       "v": 2,
       "c": ""
      },
