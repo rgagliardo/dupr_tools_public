@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-26T06:41:52",
+ "updated": "2026-09-26T06:57:02",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 8a today",
+ "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "today grades C, best 5p-9p",
+ "reason": "wind (13 mph) \u2014 clean window 5p today",
  "ranked": [
   {
    "day": "Mon",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 52,
-   "dew": 46,
-   "wind": 13
+   "temp": 57,
+   "dew": 45,
+   "wind": 12
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,16 +84,16 @@
     "date": "2026-09-26",
     "label": "Today",
     "sub": "9/26",
-    "grade": "C",
-    "score": 0.514,
+    "grade": "D",
+    "score": 0.486,
     "best": "5p-9p",
-    "why": "gusts (29 mph) 10a-3p \u00b7 wind (15 mph) 9a, 4p",
+    "why": "gusts (29 mph) 10a-3p \u00b7 wind (15 mph) 8a-9a, 4p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 58,
-      "v": 2,
-      "c": ""
+      "t": 53,
+      "v": 1,
+      "c": "wnd"
      },
      "9": {
       "t": 56,
