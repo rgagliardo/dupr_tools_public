@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-09-26T05:10:50",
+ "updated": "2026-09-26T05:56:18",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
  "wet_note": null,
- "reason": "today grades D, best 4p-8p",
+ "reason": "today grades C, best 5p-9p",
  "ranked": [
   {
    "day": "Mon",
@@ -71,8 +71,8 @@
   "source": "best",
   "now": {
    "temp": 56,
-   "dew": 46,
-   "wind": 8
+   "dew": 45,
+   "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,11 +84,11 @@
     "date": "2026-09-26",
     "label": "Today",
     "sub": "9/26",
-    "grade": "D",
-    "score": 0.471,
-    "best": "4p-8p",
-    "why": "gusts (28 mph) 10a-3p \u00b7 wet court? 9p \u00b7 wind (14 mph) 9a",
-    "wet_mm": 0.4,
+    "grade": "C",
+    "score": 0.514,
+    "best": "5p-9p",
+    "why": "gusts (28 mph) 10a-3p \u00b7 wind (14 mph) 9a, 4p",
+    "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 57,
@@ -132,8 +132,8 @@
      },
      "16": {
       "t": 70,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 69,
@@ -141,7 +141,7 @@
       "c": ""
      },
      "18": {
-      "t": 67,
+      "t": 66,
       "v": 2,
       "c": ""
      },
@@ -157,8 +157,8 @@
      },
      "21": {
       "t": 62,
-      "v": 0,
-      "c": "wet"
+      "v": 2,
+      "c": ""
      }
     }
    },
