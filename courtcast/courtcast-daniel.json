@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-09-26T04:40:32",
+ "updated": "2026-09-26T04:55:41",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 8a today",
+ "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "today grades C, best 4p-9p",
+ "reason": "wind (13 mph) \u2014 clean window 4p today",
  "ranked": [
   {
    "day": "Mon",
@@ -85,15 +85,15 @@
     "label": "Today",
     "sub": "9/26",
     "grade": "C",
-    "score": 0.629,
+    "score": 0.514,
     "best": "4p-9p",
-    "why": "gusts (28 mph) 10a-1p \u00b7 wind (14 mph) 9a, 2p-3p \u00b7 NWS: gusts 2p-3p",
+    "why": "gusts (28 mph) 10a-3p \u00b7 wind (14 mph) 8a-9a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 58,
-      "v": 2,
-      "c": ""
+      "t": 53,
+      "v": 1,
+      "c": "wnd"
      },
      "9": {
       "t": 55,
@@ -121,14 +121,14 @@
       "c": "gst"
      },
      "14": {
-      "t": 73,
-      "v": 1,
-      "c": "wnd"
+      "t": 70,
+      "v": 0,
+      "c": "gst"
      },
      "15": {
-      "t": 71,
-      "v": 1,
-      "c": "wnd"
+      "t": 69,
+      "v": 0,
+      "c": "gst"
      },
      "16": {
       "t": 70,
