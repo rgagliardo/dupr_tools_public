@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-26T08:12:51",
+ "updated": "2026-09-26T08:58:18",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10a (wind (13 mph))",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 9a",
  "wet_note": null,
- "reason": "clean window 7p today",
+ "reason": "then wind (15 mph) \u00b7 back 7p",
  "ranked": [
   {
    "day": "Mon",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 53,
-   "dew": 47,
-   "wind": 13
+   "temp": 58,
+   "dew": 45,
+   "wind": 11
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,16 +84,16 @@
     "date": "2026-09-26",
     "label": "Today",
     "sub": "9/26",
-    "grade": "D",
-    "score": 0.357,
-    "best": "7p-8p",
-    "why": "gusts (29 mph) 10a-3p \u00b7 wet court? 9p \u00b7 wind (15 mph) 8a-9a, 4p-6p",
-    "wet_mm": 0.6,
+    "grade": "C",
+    "score": 0.5,
+    "best": "7p-9p",
+    "why": "gusts (28 mph) 10a-12p, 2p-3p \u00b7 wind (15 mph) 9a, 1p \u00b7 NWS: gusts 1p",
+    "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 53,
-      "v": 1,
-      "c": "wnd"
+      "t": 58,
+      "v": 2,
+      "c": ""
      },
      "9": {
       "t": 56,
@@ -116,9 +116,9 @@
       "c": "gst"
      },
      "13": {
-      "t": 68,
-      "v": 0,
-      "c": "gst"
+      "t": 70,
+      "v": 1,
+      "c": "wnd"
      },
      "14": {
       "t": 70,
@@ -157,8 +157,8 @@
      },
      "21": {
       "t": 62,
-      "v": 0,
-      "c": "wet"
+      "v": 2,
+      "c": ""
      }
     }
    },
