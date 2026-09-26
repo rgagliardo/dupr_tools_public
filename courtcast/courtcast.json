@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-09-26T08:58:16",
+ "updated": "2026-09-26T09:13:25",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 9a",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 11a (wind (13 mph))",
  "wet_note": null,
- "reason": "then wind (13 mph) \u00b7 back 7p",
+ "reason": "clean window 7p today",
  "ranked": [
   {
    "day": "Mon",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 53,
-   "dew": 47,
-   "wind": 10
+   "temp": 56,
+   "dew": 50,
+   "wind": 13
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "9/26",
     "grade": "C",
-    "score": 0.629,
+    "score": 0.6,
     "best": "7p-9p",
     "why": "gusts (25 mph) 11a-12p \u00b7 wind (15 mph) 9a-10a, 1p-6p",
     "wet_mm": 0.0,
     "cells": {
-     "8": {
-      "t": 53,
-      "v": 2,
-      "c": ""
-     },
      "9": {
       "t": 56,
       "v": 1,
