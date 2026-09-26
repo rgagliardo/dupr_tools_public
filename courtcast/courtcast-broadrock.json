@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-25T23:07:08",
+ "updated": "2026-09-25T23:37:26",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next window: Sat 8a",
  "wet_note": null,
- "reason": "Sat grades D, best 4p-6p",
+ "reason": "Sat grades D, best 5p-6p",
  "ranked": [
   {
    "day": "Mon",
@@ -70,8 +70,8 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 60,
-   "dew": 42,
+   "temp": 61,
+   "dew": 44,
    "wind": 12
   },
   "court": {
@@ -85,13 +85,13 @@
     "label": "Sat",
     "sub": "9/26",
     "grade": "D",
-    "score": 0.471,
-    "best": "4p-6p",
-    "why": "gusts (32 mph) 9a-3p \u00b7 wind (12 mph) 7p \u00b7 NWS: gusts 4p-5p",
+    "score": 0.4,
+    "best": "5p-6p",
+    "why": "gusts (32 mph) 9a-4p \u00b7 wind (12 mph) 7p \u00b7 NWS: gusts 5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 55,
+      "t": 56,
       "v": 2,
       "c": ""
      },
@@ -131,9 +131,9 @@
       "c": "gst"
      },
      "16": {
-      "t": 69,
-      "v": 2,
-      "c": ""
+      "t": 70,
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 67,
