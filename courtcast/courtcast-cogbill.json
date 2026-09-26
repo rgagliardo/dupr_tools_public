@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-09-25T21:20:51",
+ "updated": "2026-09-25T22:06:26",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: Sat 8a",
  "wet_note": null,
- "reason": "back 8a",
+ "reason": "Sat grades C, best 4p-9p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Mon",
    "grade": "A"
@@ -60,19 +56,23 @@
   },
   {
    "day": "Sun",
-   "grade": "A"
+   "grade": "B"
   },
   {
    "day": "Wed",
    "grade": "B"
+  },
+  {
+   "day": "Sat",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 62,
+   "temp": 61,
    "dew": 46,
-   "wind": 9
+   "wind": 10
   },
   "court": {
    "wet_mm": 0.0,
@@ -81,30 +81,13 @@
   },
   "days": [
    {
-    "date": "2026-09-25",
-    "label": "Today",
-    "sub": "9/25",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 62,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
-   {
     "date": "2026-09-26",
     "label": "Sat",
     "sub": "9/26",
     "grade": "C",
-    "score": 0.557,
-    "best": "5p-9p",
-    "why": "gusts (28 mph) 10a-2p \u00b7 wind (16 mph) 9a, 3p-4p \u00b7 NWS: gusts 3p-4p",
+    "score": 0.543,
+    "best": "4p-9p",
+    "why": "gusts (31 mph) 10a-3p \u00b7 wind (15 mph) 9a \u00b7 NWS: gusts 4p-5p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -143,22 +126,22 @@
       "c": "gst"
      },
      "15": {
-      "t": 74,
-      "v": 1,
-      "c": "wnd"
+      "t": 70,
+      "v": 0,
+      "c": "gst"
      },
      "16": {
-      "t": 75,
-      "v": 1,
-      "c": "wnd"
+      "t": 69,
+      "v": 2,
+      "c": ""
      },
      "17": {
-      "t": 73,
+      "t": 67,
       "v": 2,
       "c": ""
      },
      "18": {
-      "t": 69,
+      "t": 65,
       "v": 2,
       "c": ""
      },
@@ -183,10 +166,10 @@
     "date": "2026-09-27",
     "label": "Sun",
     "sub": "9/27",
-    "grade": "A",
-    "score": 0.943,
-    "best": "1p-9p",
-    "why": "wind (12 mph) 11a-12p",
+    "grade": "B",
+    "score": 0.857,
+    "best": "4p-9p",
+    "why": "wind (12 mph) 11a-3p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -215,19 +198,19 @@
       "c": "wnd"
      },
      "13": {
-      "t": 73,
-      "v": 2,
-      "c": ""
+      "t": 68,
+      "v": 1,
+      "c": "wnd"
      },
      "14": {
-      "t": 75,
-      "v": 2,
-      "c": ""
+      "t": 69,
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
-      "t": 71,
-      "v": 2,
-      "c": ""
+      "t": 69,
+      "v": 1,
+      "c": "wnd"
      },
      "16": {
       "t": 69,
