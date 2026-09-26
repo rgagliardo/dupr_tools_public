@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-09-26T07:57:40",
+ "updated": "2026-09-26T08:12:50",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 8a today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 9a",
  "wet_note": null,
- "reason": "today grades F, best 8a",
+ "reason": "then gusts (25 mph)",
  "ranked": [
   {
    "day": "Mon",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 55,
-   "dew": 45,
-   "wind": 10
+   "temp": 57,
+   "dew": 47,
+   "wind": 12
   },
   "court": {
    "wet_mm": 0.0,
@@ -477,7 +477,7 @@
    {
     "date": "2026-10-05",
     "d": "Mo",
-    "g": "F"
+    "g": "D"
    },
    {
     "date": "2026-10-06",
