@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Whitney Liebler</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+  --green:#2ecc71; --adj:#ff3db4;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+  --green:#1a9e56; --adj:#c2007a;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+/* ---- Change story ribbon ---- */
+.story-sum { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+.sp { font-size:11px; font-weight:700; padding:3px 8px; border-radius:12px;
+  border:1px solid var(--line-soft); color:var(--txt-2); white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.sp-match { border-color:var(--cyan); color:var(--cyan); }
+.sp-adj { border-color:var(--adj); color:var(--adj); }
+.sp-late { border-color:var(--partner-pur); color:var(--partner-pur); }
+.sp-reset { border-color:var(--adj); color:var(--adj); font-weight:800; }
+.story { position:relative; margin:0 0 8px; padding-left:6px; }
+.sr { display:grid; grid-template-columns:52px 20px 1fr; align-items:start;
+  gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }
+.sr:last-child { border-bottom:0; }
+.sr-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); padding-top:2px; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums; }
+.sr-ico { font-size:13px; line-height:1.2; text-align:center; color:var(--txt-mid); }
+.sr-adj .sr-ico { color:var(--adj); }
+.sr-reset .sr-ico { color:var(--adj); }
+.sr-late .sr-ico, .sr-latemore .sr-ico { color:var(--partner-pur); }
+.sr-peak .sr-ico, .sr-now .sr-ico { color:var(--cyan); }
+.sr-nowstale .sr-ico { color:var(--txt-dim); opacity:.6; }
+.sr-latemore .sr-title { font-weight:500; color:var(--txt-mid); }
+.sr-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.sr-title { font-size:13px; font-weight:600; color:var(--txt); }
+.sr-sub { font-size:11px; color:var(--txt-mid); margin-top:2px; line-height:1.4; }
+.sr-delta { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums;
+  margin-left:auto; flex:0 0 auto; }
+.sr-delta.pos { color:var(--green); } .sr-delta.neg { color:var(--red); }
+.sr-reset { background:color-mix(in srgb, var(--adj) 8%, transparent); }
+</style></head><body>
+<div class="stamp">MOCKUP v6.3 — 2026-08-27</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Whitney Liebler — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-l">▼ 1L</span><span class="pname">Whitney Liebler</span>
+    <span class="scores">4.100</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 4.7,24.9 8.4,12.1 12.1,6.0 15.8,12.8 19.4,10.0 23.1,10.9 26.8,13.3 30.5,14.3 41.6,14.7 48.9,18.5 52.6,18.2 60.0,11.8 78.4,10.4 93.2,4.1 100.6,4.5 104.2,3.2 111.6,3.5 115.3,5.1 119.0,3.0"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">4.136</div><div class="k">Placed 5/24</div></div>
+  
+  <div class="chip"><div class="v">4.136</div><div class="k">Peak 5/24</div></div>
+  <div class="chip"><div class="v">4.100</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v pos">+0.071</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v neg">-0.107</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 4.136, peak 4.136, now 4.100 (-0.036 net)"><line class="grid" x1="51.2" y1="14" x2="51.2" y2="186"/><line class="grid" x1="124.8" y1="14" x2="124.8" y2="186"/><text class="tick" x="124.8" y="203" text-anchor="middle">2025</text><line class="grid" x1="197.2" y1="14" x2="197.2" y2="186"/><line class="grid" x1="270.8" y1="14" x2="270.8" y2="186"/><text class="tick" x="270.8" y="203" text-anchor="middle">2026</text><line class="grid" x1="343.2" y1="14" x2="343.2" y2="186"/><line class="grid" x1="34" y1="162.3" x2="356" y2="162.3"/><text class="tick" x="29" y="165.3" text-anchor="end">3.50</text><line class="grid" x1="34" y1="112.0" x2="356" y2="112.0"/><text class="tick" x="29" y="115.0" text-anchor="end">3.75</text><line class="grid" x1="34" y1="61.6" x2="356" y2="61.6"/><text class="tick" x="29" y="64.6" text-anchor="end">4.00</text><path class="seg-norm" d="M34.0 131.0 L128.8 123.0 L235.2 75.2 L240.4 52.6 L241.2 78.1 L241.6 67.5 L243.2 79.9 L245.2 83.6 L248.0 82.5 L253.6 85.0 L258.4 93.4 L259.2 99.4 L265.6 98.1 L266.4 74.5 L276.0 73.8 L278.8 70.9 L286.4 69.0 L287.2 61.4 L290.8 57.5 L292.8 50.6 L305.2 45.5 L318.8 47.0 L319.2 42.2 L336.0 44.2 L341.6 43.1 L342.0 49.1 L356.0 41.4"/><line class="mk-whisk" x1="34.0" y1="131.0" x2="34.0" y2="34.1"/><line class="mk-whisk" x1="128.8" y1="123.0" x2="128.8" y2="165.9"/><circle class="mk mk-start" cx="34.0" cy="34.1" r="4"/><circle class="mk mk-low" cx="128.8" cy="165.9" r="4"/><circle class="mk mk-now" cx="356.0" cy="41.4" r="4"/><rect class="mk mk-adm" x="240.0" y="81.0" width="6.4" height="6.4" transform="rotate(45 243.2 84.2)"/><rect class="mk mk-adm" x="240.0" y="88.2" width="6.4" height="6.4" transform="rotate(45 243.2 91.4)"/><text class="anno" x="128.8" y="181.9" text-anchor="middle">low 3.483</text><text class="anno" x="38.0" y="26.1">placed 4.136 (peak)</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span>◆ DUPR adjustment</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (118 changes since 2024-05-19). Solid = a match moved it; dashed pink = DUPR moved it with no match; ◆ marks a DUPR adjustment (no match played). 59-56 record over 115 doubles matches, 2.2-year span.</p>
+
+
+<h2>Change story</h2>
+<div class="story-sum"><span class="sp sp-match">115 matches</span><span class="sp sp-adj">2 DUPR adjustments · -0.102</span><span class="sp sp-late">5 late recalcs</span><span class="sp sp-reset">⟳ reset · singles → 3.674</span></div>
+<p class="note" style="margin:0 0 10px">The events that shaped this rating, in order.
+Ordinary match results are summarized in the sections below — this ribbon spotlights what
+you can't see on a scorecard.</p>
+<div class="story"><div class="sr sr-start"><div class="sr-date">5/19/24</div><div class="sr-ico" aria-hidden="true">◎</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Placed at 4.136</span></div><div class="sr-sub">DUPR engine start</div></div></div><div class="sr sr-late"><div class="sr-date">5/19/24</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Loss vs Lauren & Aimee — recalculated late</span><span class="sr-delta neg">-0.229</span></div><div class="sr-sub">played 5/19/24, processed 147 days later · 12-15</div></div></div><div class="sr sr-late"><div class="sr-date">5/19/24</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Loss vs Lynze & David — recalculated late</span><span class="sr-delta neg">-0.172</span></div><div class="sr-sub">played 5/19/24, processed 147 days later · 11-6, 1-11, 10-12</div></div></div><div class="sr sr-late"><div class="sr-date">5/19/24</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Loss vs Brooke & Megan — recalculated late</span><span class="sr-delta neg">-0.137</span></div><div class="sr-sub">played 5/19/24, processed 147 days later · 10-15</div></div></div><div class="sr sr-latemore"><div class="sr-date">5/19/24</div><div class="sr-ico" aria-hidden="true">↩</div><div class="sr-body"><div class="sr-head"><span class="sr-title">2 more late recalcs — under 0.03, not itemized</span></div><div class="sr-sub">matches DUPR reprocessed late that barely moved the rating</div></div></div><div class="sr sr-reset"><div class="sr-date">10/13/24</div><div class="sr-ico" aria-hidden="true">⟳</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Rating reset — singles</span></div><div class="sr-sub">held at 3.674 across 116 matches (DUPR reset floor — inferred)</div></div></div><div class="sr sr-adj"><div class="sr-date">10/24/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta neg">-0.102</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-now"><div class="sr-date">8/2/26</div><div class="sr-ico" aria-hidden="true">●</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Now 4.100</span></div><div class="sr-sub">current rating</div></div></div></div>
+<p class="note">◆ DUPR changing the rating with no match played, ⟳ resets, and ↩ matches DUPR
+processed long after they were played — all DUPR's doing, not the player's. We don't label
+an adjustment as system-wide, individual, or paid: only DUPR knows which, and the raw record
+just says a change happened with no match. Resets are inferred from a rating held flat across
+many matches (DUPR doesn't flag them).</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:66%"></div></div></div><span class="val pos">+0.071</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:100%"></div></div><div class="half r"></div></div><span class="val neg">-0.107</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"><div class="bar neg" style="width:34%"></div></div><div class="half r"></div></div><span class="val neg">-0.036</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +0.801 / losses -0.681.</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">1/11/25</span>The Pickleball Resolution - Women&#x27;s Doubles Skill: (4.0/4.5) Age…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.213)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.482</span></span> w/ <span class="match-partner">Beth Ashton <span class="match-rating">3.696</span></span> <span class="match-vs">vs</span> <span>Marta Locklear <span class="match-rating">3.653</span></span> &amp; <span>Winnie Brown <span class="match-rating">4.192</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.67</summary><div class="tag-math">Whitney 3.482 + Beth 3.696 = <b>7.179</b><br>Marta 3.653 + Winnie 4.192 = <b>7.846</b><br>→ opponents stronger by 0.668 combined DUPR (pre-match)</div></details> <span class="mx">PD +7</span> <span class="mx">match #3</span></div></div><div class="event-pill"><span class="event-pill-date">10/20/25</span>Picklr Fall League 2025 XD Week 3</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7, 11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.053)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.918</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.807</span></span> <span class="match-vs">vs</span> <span>Becky Villeda <span class="match-rating">4.637</span></span> &amp; <span>Sean Hyland <span class="match-rating">4.363</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.28</summary><div class="tag-math">Whitney 3.918 + Chase 4.807 = <b>8.725</b><br>Becky 4.637 + Sean 4.363 = <b>9.001</b><br>→ opponents stronger by 0.276 combined DUPR (pre-match)</div></details> <span class="mx">PD +10</span> <span class="mx">match #23</span></div></div><div class="event-pill"><span class="event-pill-date">10/19/25</span>1st Advantage Credit Union Foundation&#x27;s 3rd Annual Tournament…</div><div class="match-group win"><div class="match-row"><span class="match-score">7-11, 11-6, 11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.046)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.871</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.757</span></span> <span class="match-vs">vs</span> <span>Listel Boney <span class="match-rating">4.124</span></span> &amp; <span>Hugh Spain <span class="match-rating">4.930</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.43</summary><div class="tag-math">Whitney 3.871 + Chase 4.757 = <b>8.629</b><br>Listel 4.124 + Hugh 4.930 = <b>9.056</b><br>→ opponents stronger by 0.427 combined DUPR (pre-match)</div></details> <span class="mx">PD +8</span> <span class="mx">match #22</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">0-11, 0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.110)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.981</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.877</span></span> <span class="match-vs">vs</span> <span>Becky Villeda <span class="match-rating">4.574</span></span> &amp; <span>Christopher Correll <span class="match-rating">4.944</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.66</summary><div class="tag-math">Whitney 3.981 + Chase 4.877 = <b>8.859</b><br>Becky 4.574 + Christopher 4.944 = <b>9.519</b><br>→ opponents stronger by 0.660 combined DUPR (pre-match)</div></details> <span class="mx">PD -22</span> <span class="mx">match #21</span></div></div><div class="event-pill"><span class="event-pill-date">1/11/25</span>The Pickleball Resolution - Women&#x27;s Doubles Skill: (4.0/4.5) Age…</div><div class="match-group loss"><div class="match-row"><span class="match-score">2-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.096)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.578</span></span> w/ <span class="match-partner">Beth Ashton <span class="match-rating">3.732</span></span> <span class="match-vs">vs</span> <span>Brianna Neal <span class="match-rating">4.322</span></span> &amp; <span>Brooke Hopkins <span class="match-rating">3.883</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.90</summary><div class="tag-math">Whitney 3.578 + Beth 3.732 = <b>7.311</b><br>Brianna 4.322 + Brooke 3.883 = <b>8.207</b><br>→ opponents stronger by 0.896 combined DUPR (pre-match)</div></details> <span class="mx">PD -13</span> <span class="mx">match #2</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">4-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.077)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.655</span></span> w/ <span class="match-partner">Beth Ashton <span class="match-rating">3.755</span></span> <span class="match-vs">vs</span> <span>Kelly Waring <span class="match-rating">4.575</span></span> &amp; <span>Maddie Burrows <span class="match-rating">3.943</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +1.11</summary><div class="tag-math">Whitney 3.655 + Beth 3.755 = <b>7.411</b><br>Kelly 4.575 + Maddie 3.943 = <b>8.519</b><br>→ opponents stronger by 1.108 combined DUPR (pre-match)</div></details> <span class="mx">PD -11</span> <span class="mx">match #1</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">5/17/24</span>6th Annual Virginia Pickleball Classic - Womens Singles Skill: (3.5…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.183)</span> <span class="lbl">S</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.299</span></span> <span class="match-vs">vs</span> <span>Allison Oyon <span class="match-rating">3.332</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +149d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.216)</span> <span class="lbl">S</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.482</span></span> <span class="match-vs">vs</span> <span>Melissa Hunt <span class="match-rating">3.681</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +149d late</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-13 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.054)</span> <span class="lbl">S</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.698</span></span> <span class="match-vs">vs</span> <span>laura riefner <span class="match-rating">3.651</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +149d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.078)</span> <span class="lbl">S</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.752</span></span> <span class="match-vs">vs</span> <span>Lauren Martinez <span class="match-rating">3.735</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +149d late</span></div></div><div class="event-pill"><span class="event-pill-date">5/19/24</span>6th Annual Virginia Pickleball Classic - Womens Doubles Skill…</div><div class="match-group loss"><div class="match-row"><span class="match-score">12-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.229)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.136</span></span> w/ <span class="match-partner">Morgan Fuqua <span class="match-rating">4.460</span></span> <span class="match-vs">vs</span> <span>Lauren Giedgowd <span class="match-rating">4.192</span></span> &amp; <span>aimee zona <span class="match-rating">4.063</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +147d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.137)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.907</span></span> w/ <span class="match-partner">Morgan Fuqua <span class="match-rating">4.452</span></span> <span class="match-vs">vs</span> <span>Brooke Hopkins <span class="match-rating">3.789</span></span> &amp; <span>Megan Fisher <span class="match-rating">4.648</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +147d late</span></div></div><div class="event-pill"><span class="event-pill-date">5/19/24</span>6th Annual Virginia Pickleball Classic - Mixed Doubles Skill: (4.0…</div><div class="match-group win"><div class="match-row"><span class="match-score">8-11, 11-8, 11-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.095)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.770</span></span> w/ <span class="match-partner">Jon Liebler <span class="match-rating">4.452</span></span> <span class="match-vs">vs</span> <span>Sarah Marie Kidd <span class="match-rating">4.208</span></span> &amp; <span>Robert Gagliardo <span class="match-rating">3.983</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +147d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-6, 1-11, 10-12 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.172)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.865</span></span> w/ <span class="match-partner">Jon Liebler <span class="match-rating">4.571</span></span> <span class="match-vs">vs</span> <span>Lynze Kapp <span class="match-rating">3.742</span></span> &amp; <span>David Parsons <span class="match-rating">4.134</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +147d late</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">13-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.038)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.693</span></span> w/ <span class="match-partner">Jon Liebler <span class="match-rating">4.272</span></span> <span class="match-vs">vs</span> <span>Brooke Hopkins <span class="match-rating">3.784</span></span> &amp; <span>Devin Garcia-Roblero <span class="match-rating">4.182</span></span></div><div class="match-extra"><span class="lateflag" title="rating stamped at upload time, excluded from trajectory">⏳ uploaded +147d late</span></div></div><div class="event-pill"><span class="event-pill-date">1/11/25</span>The Pickleball Resolution - Women&#x27;s Doubles Skill: (4.0/4.5) Age…</div><div class="match-group loss"><div class="match-row"><span class="match-score">4-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.077)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.655</span></span> w/ <span class="match-partner">Beth Ashton <span class="match-rating">3.755</span></span> <span class="match-vs">vs</span> <span>Kelly Waring <span class="match-rating">4.575</span></span> &amp; <span>Maddie Burrows <span class="match-rating">3.943</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">2-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.096)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.578</span></span> w/ <span class="match-partner">Beth Ashton <span class="match-rating">3.732</span></span> <span class="match-vs">vs</span> <span>Brianna Neal <span class="match-rating">4.322</span></span> &amp; <span>Brooke Hopkins <span class="match-rating">3.883</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.213)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.482</span></span> w/ <span class="match-partner">Beth Ashton <span class="match-rating">3.696</span></span> <span class="match-vs">vs</span> <span>Marta Locklear <span class="match-rating">3.653</span></span> &amp; <span>Winnie Brown <span class="match-rating">4.192</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/1/25</span>Picklr Fall League 2025 XD Week 1</div><div class="match-group win"><div class="match-row"><span class="match-score">11-4, 11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.040)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.852</span></span> w/ <span class="match-partner">Dipin Khati <span class="match-rating">4.873</span></span> <span class="match-vs">vs</span> <span>Claudia Ferrini <span class="match-rating">4.197</span></span> &amp; <span>Luis Long <span class="match-rating">3.752</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/4/25</span>Pickle For A Purpose Tournament - Womens Doubles Skill: (4.0 And…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-11 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.031)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.001</span></span> w/ <span class="match-partner">Tori Pierce <span class="match-rating">4.115</span></span> <span class="match-vs">vs</span> <span>Nicole Ackerson <span class="match-rating">4.143</span></span> &amp; <span>Andi Grant <span class="match-rating">3.771</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">18-16 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.015)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.031</span></span> w/ <span class="match-partner">Tori Pierce <span class="match-rating">4.119</span></span> <span class="match-vs">vs</span> <span>Nancy Buchanan <span class="match-rating">4.158</span></span> &amp; <span>Abbey Ridley <span class="match-rating">3.950</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.054)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.046</span></span> w/ <span class="match-partner">Tori Pierce <span class="match-rating">4.122</span></span> <span class="match-vs">vs</span> <span>Deliah McLane <span class="match-rating">3.669</span></span> &amp; <span>Kate Lague <span class="match-rating">3.585</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-13 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.068)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.992</span></span> w/ <span class="match-partner">Tori Pierce <span class="match-rating">4.111</span></span> <span class="match-vs">vs</span> <span>Deliah McLane <span class="match-rating">3.677</span></span> &amp; <span>Kate Lague <span class="match-rating">3.618</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-8, 8-11, 8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-up">(+0.007)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.924</span></span> w/ <span class="match-partner">Tori Pierce <span class="match-rating">4.096</span></span> <span class="match-vs">vs</span> <span>Nicole Ackerson <span class="match-rating">4.381</span></span> &amp; <span>Andi Grant <span class="match-rating">3.814</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/11/25</span>Picklr Fall League 2025 XD Week 2</div><div class="match-group win"><div class="match-row"><span class="match-score">11-2, 11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.017)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.891</span></span> w/ <span class="match-partner">Dipin Khati <span class="match-rating">4.870</span></span> <span class="match-vs">vs</span> <span>Jamie Fox <span class="match-rating">4.117</span></span> &amp; <span>Chris Fox <span class="match-rating">3.635</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/17/25</span>1st Advantage Credit Union Foundation&#x27;s 3rd Annual Tournament…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-8 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.029</span></span> w/ <span class="match-partner">Jennifer Liebler <span class="match-rating">3.783</span></span> <span class="match-vs">vs</span> <span>Kimberly Valesky <span class="match-rating">3.429</span></span> &amp; <span>Robyn Callis <span class="match-rating">3.326</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.060)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.010</span></span> w/ <span class="match-partner">Jennifer Liebler <span class="match-rating">3.751</span></span> <span class="match-vs">vs</span> <span>Leslie SimanTov <span class="match-rating">4.093</span></span> &amp; <span>Tori Pierce <span class="match-rating">4.268</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.017)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.950</span></span> w/ <span class="match-partner">Jennifer Liebler <span class="match-rating">3.659</span></span> <span class="match-vs">vs</span> <span>Julie Gravette <span class="match-rating">3.556</span></span> &amp; <span>Sarah Walsh <span class="match-rating">3.348</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.931</span></span> w/ <span class="match-partner">Jennifer Liebler <span class="match-rating">3.683</span></span> <span class="match-vs">vs</span> <span>Katharine Smith <span class="match-rating">3.958</span></span> &amp; <span>Pamela  Marthinson <span class="match-rating">3.345</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.035)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.996</span></span> w/ <span class="match-partner">Jennifer Liebler <span class="match-rating">3.726</span></span> <span class="match-vs">vs</span> <span>Kimberly Valesky <span class="match-rating">3.483</span></span> &amp; <span>Robyn Callis <span class="match-rating">3.363</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11, 7-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-up">(+0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.031</span></span> w/ <span class="match-partner">Jennifer Liebler <span class="match-rating">3.775</span></span> <span class="match-vs">vs</span> <span>Leslie SimanTov <span class="match-rating">4.114</span></span> &amp; <span>Tori Pierce <span class="match-rating">4.293</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/19/25</span>1st Advantage Credit Union Foundation&#x27;s 3rd Annual Tournament…</div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.044</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.946</span></span> <span class="match-vs">vs</span> <span>Listel Boney <span class="match-rating">4.437</span></span> &amp; <span>Hugh Spain <span class="match-rating">4.980</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.046)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">4.042</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.944</span></span> <span class="match-vs">vs</span> <span>Becky Villeda <span class="match-rating">4.510</span></span> &amp; <span>Christopher Correll <span class="match-rating">4.898</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.008)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.996</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.893</span></span> <span class="match-vs">vs</span> <span>julianne molina <span class="match-rating">4.854</span></span> &amp; <span>Ben Holtzclaw <span class="match-rating">4.546</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.007)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.988</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.884</span></span> <span class="match-vs">vs</span> <span>Abbey Ridley <span class="match-rating">3.747</span></span> &amp; <span>Antonio Morales <span class="match-rating">4.460</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">0-11, 0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.110)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Whitney <span class="match-rating">3.981</span></span> w/ <span class="match-partner">Chase Stokes <span class="match-rating">4.877</span></span> <span class="match-vs">vs</span> <span>Becky Villeda <span class="match-rating">4.574</span></span> &amp; <span>Christopher Correll <span class="match-rating">4.944</span></span></div></div>
+<p class="note">first 30 rated matches, from 2024-05-17 · 2 unrated matches not shown (pre-engine era) · ⏳ = late upload</p>
+
+<h2>Singles — official series, small multiple</h2>
+<div class="panel">
+  <svg width="100%" viewBox="0 0 366 120" role="img"
+    aria-label="Singles rating trajectory: placed 3.300, now 3.675 (+0.375 net)"><line class="grid" x1="323.8" y1="14" x2="323.8" y2="100"/><text class="tick" x="162.8" y="113" text-anchor="middle">5/17/24</text><text class="tick" x="341.6" y="113" text-anchor="middle">8/2/26</text><line class="grid" x1="34" y1="95.7" x2="356" y2="95.7"/><text class="tick" x="29" y="98.7" text-anchor="end">3.25</text><line class="grid" x1="34" y1="60.6" x2="356" y2="60.6"/><text class="tick" x="29" y="63.6" text-anchor="end">3.50</text><line class="grid" x1="34" y1="25.5" x2="356" y2="25.5"/><text class="tick" x="29" y="28.5" text-anchor="end">3.75</text><path class="seg-norm" d="M34.0 88.8 L98.4 63.0 L162.8 32.8 L227.2 25.2 L291.6 36.1 L356.0 36.1"/></svg>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span></div>
+</div>
+<p class="note">0-0 rated · placed 3.300 (5/24) · now 3.675 · earned +0.375.</p>
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2024-05-19", "x": 34.0, "r": 3.656, "dl": 0.0, "m": true, "info": "2W-4L \u00b7 6th Annual Virginia Pickleball Classic - Womens Doubles Skil"}, {"d": "2025-01-11", "x": 128.8, "r": 3.695, "dl": 0.04, "m": true, "info": "1W-2L \u00b7 The Pickleball Resolution - Women's Doubles Skill: (4.0/4.5)"}, {"d": "2025-10-04", "x": 235.2, "r": 3.932, "dl": 0.237, "m": true, "info": "4W-1L \u00b7 Pickle For A Purpose Tournament - Womens Doubles Skill: (4.0"}, {"d": "2025-10-17", "x": 240.4, "r": 4.045, "dl": 0.112, "m": true, "info": "4W-2L \u00b7 1st Advantage Credit Union Foundation's 3rd Annual Tournamen"}, {"d": "2025-10-19", "x": 241.2, "r": 3.918, "dl": -0.127, "m": true, "info": "2W-4L \u00b7 1st Advantage Credit Union Foundation's 3rd Annual Tournamen"}, {"d": "2025-10-20", "x": 241.6, "r": 3.971, "dl": 0.053, "m": true, "info": "1W-0L \u00b7 Picklr Fall League 2025 XD Week 3"}, {"d": "2025-10-22", "x": 242.4, "r": 3.955, "dl": -0.016, "m": true, "info": "1W-0L \u00b7 Picklr Fall League 2025 XD Week 4"}, {"d": "2025-10-24", "x": 243.2, "r": 3.909, "dl": -0.045, "m": true, "info": "match day"}, {"d": "2025-10-29", "x": 245.2, "r": 3.891, "dl": -0.018, "m": true, "info": "0W-1L \u00b7 Picklr Fall League 2025 XD Week 5"}, {"d": "2025-11-05", "x": 248.0, "r": 3.896, "dl": 0.006, "m": true, "info": "1W-0L \u00b7 Picklr Fall League 2025 XD Week 6"}, {"d": "2025-11-14", "x": 251.6, "r": 3.889, "dl": -0.008, "m": true, "info": "1W-0L \u00b7 Picklr Fall League 2025 XD Week 7"}, {"d": "2025-11-19", "x": 253.6, "r": 3.884, "dl": -0.005, "m": true, "info": "1W-1L \u00b7 Picklr Fall League 2025 XD Semifinal"}, {"d": "2025-12-01", "x": 258.4, "r": 3.842, "dl": -0.042, "m": true, "info": "3W-4L \u00b7 Dec 01"}, {"d": "2025-12-03", "x": 259.2, "r": 3.812, "dl": -0.03, "m": true, "info": "2W-3L \u00b7 Dec 03"}, {"d": "2025-12-19", "x": 265.6, "r": 3.819, "dl": 0.006, "m": true, "info": "0W-5L \u00b7 Holiday Classic 25' by CAM OHANA @The Picklr Williamsburg - "}, {"d": "2025-12-20", "x": 266.0, "r": 3.884, "dl": 0.066, "m": true, "info": "2W-3L \u00b7 Holiday Classic 25' by CAM OHANA @The Picklr Williamsburg - "}, {"d": "2025-12-21", "x": 266.4, "r": 3.936, "dl": 0.052, "m": true, "info": "2W-3L \u00b7 Holiday Classic 25' by CAM OHANA @The Picklr Williamsburg - "}, {"d": "2026-01-05", "x": 272.4, "r": 3.936, "dl": -0.0, "m": true, "info": "match day"}, {"d": "2026-01-14", "x": 276.0, "r": 3.94, "dl": 0.004, "m": true, "info": "1W-0L \u00b7 Picklr Winter League 2026 XD Week 1"}, {"d": "2026-01-21", "x": 278.8, "r": 3.954, "dl": 0.014, "m": true, "info": "1W-0L \u00b7 Picklr Winter League 2026 XD Week 2"}, {"d": "2026-02-02", "x": 283.6, "r": 3.962, "dl": 0.008, "m": true, "info": "1W-0L \u00b7 Picklr Winter League 2026 XD Week 3"}, {"d": "2026-02-09", "x": 286.4, "r": 3.963, "dl": 0.001, "m": true, "info": "1W-0L \u00b7 Picklr Winter League 2026 XD Week 4"}, {"d": "2026-02-11", "x": 287.2, "r": 4.001, "dl": 0.038, "m": true, "info": "1W-0L \u00b7 Picklr Winter League 2026 XD Week 5"}, {"d": "2026-02-20", "x": 290.8, "r": 4.02, "dl": 0.02, "m": true, "info": "1W-0L \u00b7 Picklr Winter League 2026 XD Week 6"}, {"d": "2026-02-25", "x": 292.8, "r": 4.054, "dl": 0.034, "m": true, "info": "2W-0L \u00b7 Picklr Winter League 2026 XD Semifinal"}, {"d": "2026-03-28", "x": 305.2, "r": 4.08, "dl": 0.026, "m": true, "info": "3W-2L \u00b7 MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH "}, {"d": "2026-03-29", "x": 305.6, "r": 4.08, "dl": 0.0, "m": true, "info": "3W-4L \u00b7 MARCH MADNESS by CAM OHANA @ The Picklr Williamsburg - CASH "}, {"d": "2026-05-01", "x": 318.8, "r": 4.072, "dl": -0.008, "m": true, "info": "3W-2L \u00b7 Kiwanis Club of Kiln Creek Annual Pickleball Tournament - $$"}, {"d": "2026-05-02", "x": 319.2, "r": 4.096, "dl": 0.024, "m": true, "info": "5W-2L \u00b7 Kiwanis Club of Kiln Creek Annual Pickleball Tournament - $$"}, {"d": "2026-06-13", "x": 336.0, "r": 4.086, "dl": -0.01, "m": true, "info": "0W-4L \u00b7 The Skechers 804 Open - Women's Doubles Skill: (4.0) Age: (A"}, {"d": "2026-06-27", "x": 341.6, "r": 4.092, "dl": 0.005, "m": true, "info": "3W-3L \u00b7 1st Advantage Credit Union Foundation's 4th Annual Tournamen"}, {"d": "2026-06-28", "x": 342.0, "r": 4.062, "dl": -0.03, "m": true, "info": "1W-5L \u00b7 1st Advantage Credit Union Foundation's 4th Annual Tournamen"}, {"d": "2026-08-02", "x": 356.0, "r": 4.1, "dl": 0.038, "m": true, "info": "4W-1L \u00b7 Pickle For A Purpose 2026 Tournament - CASH PRIZE EVENT: Mix"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>
