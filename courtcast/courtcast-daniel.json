@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-02T12:34:48",
+ "updated": "2026-10-02T13:05:15",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 1p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "then heat \u00b7 back 7p",
+ "reason": "heat \u2014 clean window 7p today",
  "ranked": [
   {
    "day": "Mon",
@@ -64,13 +64,13 @@
   },
   {
    "day": "Sat",
-   "grade": "D"
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 84,
+   "temp": 86,
    "dew": 62,
    "wind": 10
   },
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "10/2",
     "grade": "B",
-    "score": 0.8,
+    "score": 0.771,
     "best": "7p-9p",
     "why": "heat 3p-6p",
     "wet_mm": 0.0,
     "cells": {
-     "12": {
-      "t": 84,
-      "v": 2,
-      "c": ""
-     },
      "15": {
       "t": 89,
       "v": 1,
@@ -136,10 +131,10 @@
     "date": "2026-10-03",
     "label": "Sat",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.257,
+    "grade": "F",
+    "score": 0.214,
     "best": "",
-    "why": "rain 2p-3p, 5p-7p \u00b7 wet court? 11a, 8p-9p \u00b7 rain 8a-10a, 12p-1p \u00b7 NWS: rain 4p",
+    "why": "rain 2p-7p \u00b7 wet court? 11a, 8p-9p \u00b7 rain 8a-10a, 12p-1p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
@@ -184,7 +179,7 @@
      },
      "16": {
       "t": 63,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "17": {
