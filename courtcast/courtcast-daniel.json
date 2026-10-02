@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-02T18:54:21",
+ "updated": "2026-10-02T19:09:30",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,12 +40,16 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 68\u00b0))",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "clean window 7p today",
+ "reason": "then rain",
  "ranked": [
+  {
+   "day": "Today",
+   "grade": "A"
+  },
   {
    "day": "Mon",
    "grade": "A"
@@ -59,10 +63,6 @@
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "A"
-  },
-  {
    "day": "Sat",
    "grade": "D"
   }
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 85,
-   "dew": 68,
-   "wind": 7
+   "temp": 83,
+   "dew": 54,
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "10/2",
     "grade": "A",
-    "score": 0.9,
+    "score": 1.0,
     "best": "7p-9p",
-    "why": "humidity (dew 68\u00b0) 6p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "18": {
-      "t": 85,
-      "v": 1,
-      "c": "dew"
-     },
      "19": {
       "t": 83,
       "v": 2,
@@ -117,13 +112,13 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.471,
-    "best": "9a-10a",
-    "why": "rain 3p-6p \u00b7 wet court? 9p \u00b7 rain 8a, 11a \u00b7 NWS: rain 11a-2p, 7p",
+    "score": 0.414,
+    "best": "9a",
+    "why": "rain 3p-6p \u00b7 wet court? 9p \u00b7 rain 8a, 10a-2p \u00b7 NWS: rain 11a-2p, 7p",
     "wet_mm": 1.0,
     "cells": {
      "8": {
-      "t": 65,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
@@ -133,9 +128,9 @@
       "c": ""
      },
      "10": {
-      "t": 61,
-      "v": 2,
-      "c": ""
+      "t": 64,
+      "v": 1,
+      "c": "rain"
      },
      "11": {
       "t": 62,
@@ -144,8 +139,8 @@
      },
      "12": {
       "t": 63,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "13": {
       "t": 63,
@@ -158,17 +153,17 @@
       "c": "rain"
      },
      "15": {
-      "t": 64,
+      "t": 63,
       "v": 0,
       "c": "rain"
      },
      "16": {
-      "t": 63,
+      "t": 62,
       "v": 0,
       "c": "rain"
      },
      "17": {
-      "t": 63,
+      "t": 62,
       "v": 0,
       "c": "rain"
      },
