@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-02T18:39:14",
+ "updated": "2026-10-02T18:54:21",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -117,28 +117,28 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.329,
-    "best": "8a",
-    "why": "rain 1p-6p \u00b7 wet court? 9p \u00b7 rain 9a-12p, 7p-8p \u00b7 NWS: rain 8a-12p, 7p",
+    "score": 0.357,
+    "best": "9a-10a",
+    "why": "rain 1p-6p \u00b7 wet court? 9p \u00b7 rain 11a-12p, 7p-8p \u00b7 NWS: rain 8a-12p, 7p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 62,
+      "v": 1,
+      "c": "wnd"
+     },
+     "9": {
+      "t": 61,
       "v": 2,
       "c": ""
      },
-     "9": {
-      "t": 63,
-      "v": 1,
-      "c": "rain"
-     },
      "10": {
-      "t": 63,
-      "v": 1,
-      "c": "rain"
+      "t": 60,
+      "v": 2,
+      "c": ""
      },
      "11": {
-      "t": 62,
+      "t": 61,
       "v": 1,
       "c": "rain"
      },
