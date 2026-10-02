@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-02T19:39:48",
+ "updated": "2026-10-02T19:54:57",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "PLAY NOW",
  "headline": "until 10p",
  "wet_note": null,
- "reason": "back 8a",
+ "reason": "then drying",
  "ranked": [
   {
    "day": "Today",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 82,
-   "dew": 59,
-   "wind": 5
+   "temp": 80,
+   "dew": 62,
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -91,12 +91,12 @@
     "wet_mm": 0.0,
     "cells": {
      "19": {
-      "t": 82,
+      "t": 80,
       "v": 2,
       "c": ""
      },
      "20": {
-      "t": 79,
+      "t": 78,
       "v": 2,
       "c": ""
      },
@@ -112,58 +112,58 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.371,
-    "best": "8a",
-    "why": "rain 11a, 1p-5p \u00b7 rain 9a-10a, 12p \u00b7 NWS: rain 8a-10a, 12p",
+    "score": 0.3,
+    "best": "",
+    "why": "rain 11a-5p \u00b7 rain 9a-10a, 6p-9p \u00b7 drying 8a \u00b7 NWS: rain 8a-10a, 6p-7p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 59,
-      "v": 2,
-      "c": ""
+      "t": 60,
+      "v": 1,
+      "c": "dry"
      },
      "9": {
-      "t": 57,
-      "v": 1,
-      "c": "rain"
-     },
-     "10": {
-      "t": 57,
-      "v": 1,
-      "c": "rain"
-     },
-     "11": {
-      "t": 62,
-      "v": 0,
-      "c": "rain"
-     },
-     "12": {
       "t": 60,
       "v": 1,
       "c": "rain"
      },
+     "10": {
+      "t": 60,
+      "v": 1,
+      "c": "rain"
+     },
+     "11": {
+      "t": 61,
+      "v": 0,
+      "c": "rain"
+     },
+     "12": {
+      "t": 61,
+      "v": 0,
+      "c": "rain"
+     },
      "13": {
-      "t": 62,
+      "t": 61,
       "v": 0,
       "c": "rain"
      },
      "14": {
-      "t": 62,
+      "t": 61,
       "v": 0,
       "c": "rain"
      },
      "15": {
-      "t": 62,
+      "t": 61,
       "v": 0,
       "c": "rain"
      },
      "16": {
-      "t": 62,
+      "t": 61,
       "v": 0,
       "c": "rain"
      },
      "17": {
-      "t": 62,
+      "t": 61,
       "v": 0,
       "c": "rain"
      },
