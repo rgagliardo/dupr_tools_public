@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-02T16:53:09",
+ "updated": "2026-10-02T17:08:21",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,7 +42,7 @@
  },
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 67\u00b0))",
+ "headline": "not clean \u2014 until 10p (humidity (dew 68\u00b0))",
  "wet_note": null,
  "reason": "clean window 7p today",
  "ranked": [
@@ -70,8 +70,8 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 88,
-   "dew": 67,
+   "temp": 87,
+   "dew": 68,
    "wind": 8
   },
   "court": {
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "10/2",
     "grade": "B",
-    "score": 0.8,
+    "score": 0.84,
     "best": "7p-9p",
-    "why": "humidity (dew 68\u00b0) 4p-6p",
+    "why": "humidity (dew 68\u00b0) 5p-6p",
     "wet_mm": 0.0,
     "cells": {
-     "16": {
-      "t": 88,
-      "v": 1,
-      "c": "dew"
-     },
      "17": {
       "t": 87,
       "v": 1,
@@ -127,15 +122,15 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.257,
-    "best": "",
-    "why": "rain 1p-7p \u00b7 wet court? 9p \u00b7 rain 8a-12p, 8p \u00b7 NWS: rain 8a-12p",
+    "score": 0.329,
+    "best": "8a",
+    "why": "rain 1p-6p \u00b7 wet court? 9p \u00b7 rain 9a-12p, 7p-8p \u00b7 NWS: rain 8a-12p, 7p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "9": {
       "t": 63,
@@ -189,7 +184,7 @@
      },
      "19": {
       "t": 62,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "20": {
