@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-02T08:01:58",
+ "updated": "2026-10-02T08:17:10",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -64,7 +64,7 @@
   },
   {
    "day": "Sat",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
@@ -156,10 +156,10 @@
     "date": "2026-10-03",
     "label": "Sat",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.457,
-    "best": "4p",
-    "why": "wet court? 11a-1p \u00b7 rain 7p \u00b7 rain 8a-10a, 2p-3p \u00b7 NWS: rain 2p-6p",
+    "grade": "C",
+    "score": 0.5,
+    "best": "7p",
+    "why": "wet court? 11a-1p \u00b7 rain 8a-10a, 2p-6p \u00b7 NWS: rain 2p-7p",
     "wet_mm": 1.0,
     "cells": {
      "8": {
@@ -204,8 +204,8 @@
      },
      "16": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "17": {
       "t": 61,
@@ -215,12 +215,12 @@
      "18": {
       "t": 61,
       "v": 1,
-      "c": "dry"
+      "c": "rain"
      },
      "19": {
       "t": 62,
-      "v": 0,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "20": {
       "t": 61,
