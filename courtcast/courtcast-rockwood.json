@@ -1,8 +1,8 @@
 {
  "version": 1,
- "generator": "wx_play v4.10",
+ "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-10-03T12:52:00",
+ "updated": "2026-10-03T13:07:08",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 1p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: 2p today",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "rain \u2014 clean window Sun 9a",
  "ranked": [
   {
    "day": "Mon",
@@ -70,35 +70,30 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 62,
+   "temp": 63,
    "dew": 56,
    "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0.9,
-   "radar_24h_mm": 2.3
+   "obs_18h_mm": 1.1,
+   "radar_24h_mm": 2.4
   },
   "days": [
    {
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.34,
-    "best": "12p",
-    "why": "rain 3p-4p, 6p-8p \u00b7 rain 1p-2p, 5p \u00b7 NWS: rain 12p-2p, 5p",
+    "grade": "F",
+    "score": 0.2,
+    "best": "",
+    "why": "rain 3p-4p, 6p-8p \u00b7 raining now 1p \u00b7 rain 2p, 5p \u00b7 NWS: rain 1p-2p, 5p",
     "wet_mm": 0.5,
     "cells": {
-     "12": {
-      "t": 62,
-      "v": 2,
-      "c": ""
-     },
      "13": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "rnow"
      },
      "14": {
       "t": 64,
@@ -147,9 +142,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "C",
-    "score": 0.686,
+    "score": 0.657,
     "best": "9a-11a",
-    "why": "wet court? 6p-7p \u00b7 rain 12p-2p, 5p \u00b7 drying 8a, 8p \u00b7 NWS: rain 8a-4p",
+    "why": "wet court? 6p-7p \u00b7 rain 12p-2p, 4p-5p \u00b7 drying 8a, 8p \u00b7 NWS: rain 8a-4p",
     "wet_mm": 0.5,
     "cells": {
      "8": {
@@ -194,8 +189,8 @@
      },
      "16": {
       "t": 65,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "17": {
       "t": 66,

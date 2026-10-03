@@ -1,8 +1,8 @@
 {
  "version": 1,
- "generator": "wx_play v4.10",
+ "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T12:52:01",
+ "updated": "2026-10-03T13:07:09",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 1p",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 7p (rain)",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "clean window Sun 11a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,19 +64,19 @@
   },
   {
    "day": "Today",
-   "grade": "C"
+   "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 63,
+   "temp": 64,
    "dew": 57,
-   "wind": 11
+   "wind": 10
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0.9,
+   "obs_18h_mm": 1.1,
    "radar_24h_mm": 0.5
   },
   "days": [
@@ -84,17 +84,12 @@
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "C",
-    "score": 0.52,
-    "best": "12p",
+    "grade": "D",
+    "score": 0.467,
+    "best": "",
     "why": "rain 7p-8p \u00b7 rain 1p-6p, 9p \u00b7 NWS: rain 1p-6p, 9p",
     "wet_mm": 0.5,
     "cells": {
-     "12": {
-      "t": 63,
-      "v": 2,
-      "c": ""
-     },
      "13": {
       "t": 64,
       "v": 1,
@@ -147,9 +142,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "D",
-    "score": 0.357,
+    "score": 0.329,
     "best": "11a",
-    "why": "wet court? 5p-9p \u00b7 rain 8a-9a \u00b7 rain 12p-3p \u00b7 NWS: rain 10a-4p",
+    "why": "wet court? 5p-9p \u00b7 rain 8a-9a \u00b7 rain 12p-4p \u00b7 NWS: rain 10a-4p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -194,8 +189,8 @@
      },
      "16": {
       "t": 66,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "17": {
       "t": 66,
