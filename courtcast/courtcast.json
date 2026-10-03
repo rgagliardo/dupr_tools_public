@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T09:49:57",
+ "updated": "2026-10-03T10:05:11",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 10a today",
- "wet_note": null,
- "reason": "drying \u2014 clean window Sun 10a",
+ "headline": "Next OK window: 11a today",
+ "wet_note": "court wet? \u2014 0.4mm, drying ~11a",
+ "reason": "rain \u2014 clean window Sun 3p",
  "ranked": [
   {
    "day": "Mon",
@@ -64,20 +64,20 @@
   },
   {
    "day": "Sun",
-   "grade": "B"
+   "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 62,
-   "dew": 57,
-   "wind": 11
+   "temp": 61,
+   "dew": 58,
+   "wind": 10
   },
   "court": {
-   "wet_mm": 0.0,
+   "wet_mm": 0.4,
    "obs_18h_mm": 1.7,
-   "radar_24h_mm": 3.7
+   "radar_24h_mm": 4.2
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "F",
-    "score": 0.185,
+    "score": 0.15,
     "best": "",
-    "why": "rain 2p-9p \u00b7 raining now 9a \u00b7 rain 11a-1p \u00b7 NWS: rain 9a-1p",
-    "wet_mm": 0.9,
+    "why": "rain 2p-9p \u00b7 raining now 10a \u00b7 rain 11a-1p \u00b7 NWS: rain 11a-1p",
+    "wet_mm": 0.4,
     "cells": {
-     "9": {
-      "t": 62,
+     "10": {
+      "t": 61,
       "v": 0,
       "c": "rnow"
-     },
-     "10": {
-      "t": 62,
-      "v": 1,
-      "c": "dry"
      },
      "11": {
       "t": 63,
@@ -106,12 +101,12 @@
       "c": "rain"
      },
      "12": {
-      "t": 62,
+      "t": 63,
       "v": 1,
       "c": "rain"
      },
      "13": {
-      "t": 63,
+      "t": 62,
       "v": 1,
       "c": "rain"
      },
@@ -161,39 +156,39 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "B",
-    "score": 0.857,
-    "best": "3p-9p",
-    "why": "rain 8a-9a, 12p-2p \u00b7 NWS: rain 8a-1p",
-    "wet_mm": 0.3,
+    "grade": "D",
+    "score": 0.314,
+    "best": "3p-4p",
+    "why": "wet court? 5p-9p \u00b7 rain 8a-10a \u00b7 rain 12p-2p \u00b7 NWS: rain 11a-1p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 61,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "9": {
-      "t": 61,
-      "v": 1,
+      "t": 62,
+      "v": 0,
       "c": "rain"
      },
      "10": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 63,
+      "v": 0,
+      "c": "rain"
      },
      "11": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dry"
      },
      "12": {
-      "t": 62,
+      "t": 63,
       "v": 1,
       "c": "rain"
      },
      "13": {
-      "t": 63,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
@@ -203,39 +198,39 @@
       "c": "rain"
      },
      "15": {
-      "t": 65,
+      "t": 64,
       "v": 2,
       "c": ""
      },
      "16": {
-      "t": 66,
+      "t": 64,
       "v": 2,
       "c": ""
      },
      "17": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 65,
+      "v": 0,
+      "c": "wet"
      },
      "18": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 65,
+      "v": 0,
+      "c": "wet"
      },
      "19": {
-      "t": 65,
-      "v": 2,
-      "c": ""
+      "t": 64,
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 64,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 64,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      }
     }
    },

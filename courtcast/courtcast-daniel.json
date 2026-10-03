@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T09:34:46",
+ "updated": "2026-10-03T10:05:12",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -63,8 +63,8 @@
    "grade": "A"
   },
   {
-   "day": "Sun",
-   "grade": "C"
+   "day": "Today",
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -72,7 +72,7 @@
   "now": {
    "temp": 65,
    "dew": 61,
-   "wind": 11
+   "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,28 +85,23 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.446,
-    "best": "9a-12p",
+    "score": 0.4,
+    "best": "10a-12p",
     "why": "rain 3p-6p, 8p-9p \u00b7 rain 1p-2p, 7p \u00b7 NWS: rain 1p-2p, 7p",
     "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 65,
-      "v": 2,
-      "c": ""
-     },
      "10": {
-      "t": 64,
+      "t": 65,
       "v": 2,
       "c": ""
      },
      "11": {
-      "t": 65,
+      "t": 66,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 67,
+      "t": 69,
       "v": 2,
       "c": ""
      },
@@ -116,7 +111,7 @@
       "c": "rain"
      },
      "14": {
-      "t": 67,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
@@ -161,11 +156,11 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "C",
-    "score": 0.7,
-    "best": "7p-9p",
-    "why": "rain 8a \u00b7 rain 11a-3p, 5p-6p \u00b7 drying 9a \u00b7 NWS: rain 9a-4p",
-    "wet_mm": 0.4,
+    "grade": "D",
+    "score": 0.357,
+    "best": "10a",
+    "why": "wet court? 5p-9p \u00b7 rain 8a-9a \u00b7 rain 11a-3p \u00b7 NWS: rain 10a-4p",
+    "wet_mm": 1.2,
     "cells": {
      "8": {
       "t": 62,
@@ -173,32 +168,32 @@
       "c": "rain"
      },
      "9": {
-      "t": 62,
-      "v": 1,
-      "c": "dry"
+      "t": 63,
+      "v": 0,
+      "c": "rain"
      },
      "10": {
-      "t": 63,
+      "t": 62,
       "v": 2,
       "c": ""
      },
      "11": {
-      "t": 63,
-      "v": 1,
-      "c": "rain"
-     },
-     "12": {
       "t": 64,
       "v": 1,
       "c": "rain"
      },
-     "13": {
+     "12": {
       "t": 65,
       "v": 1,
       "c": "rain"
      },
+     "13": {
+      "t": 67,
+      "v": 1,
+      "c": "rain"
+     },
      "14": {
-      "t": 65,
+      "t": 66,
       "v": 1,
       "c": "rain"
      },
@@ -214,28 +209,28 @@
      },
      "17": {
       "t": 66,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "18": {
       "t": 66,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "19": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 65,
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 65,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 65,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      }
     }
    },
