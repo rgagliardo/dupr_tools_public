@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-03T15:47:12",
+ "updated": "2026-10-03T16:02:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Sun 8a",
- "wet_note": "court wet? \u2014 0.9mm, drying Sun",
- "reason": "Sun grades B, best 8a-5p \u00b7 today: raining now, then rain",
+ "headline": "Next window: Sun 11a",
+ "wet_note": "court wet? \u2014 1.1mm, drying Sun",
+ "reason": "Sun grades F, best 11a-12p \u00b7 today: raining now, then rain",
  "ranked": [
   {
    "day": "Mon",
@@ -64,20 +64,20 @@
   },
   {
    "day": "Sun",
-   "grade": "B"
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
    "temp": 62,
-   "dew": 57,
-   "wind": 10
+   "dew": 58,
+   "wind": 9
   },
   "court": {
-   "wet_mm": 0.9,
+   "wet_mm": 1.1,
    "obs_18h_mm": 2.4,
-   "radar_24h_mm": 7.3
+   "radar_24h_mm": 7.6
   },
   "days": [
    {
@@ -87,18 +87,13 @@
     "grade": "F",
     "score": 0.0,
     "best": "",
-    "why": "rain 4p-9p \u00b7 raining now 3p",
+    "why": "rain 5p-9p \u00b7 raining now 4p",
     "wet_mm": 1.1,
     "cells": {
-     "15": {
-      "t": 62,
-      "v": 0,
-      "c": "rnow"
-     },
      "16": {
       "t": 62,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "17": {
       "t": 61,
@@ -131,26 +126,26 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "B",
-    "score": 0.871,
-    "best": "8a-5p",
-    "why": "wet court? 7p \u00b7 rain 6p \u00b7 drying 8p \u00b7 NWS: rain 8a-1p",
-    "wet_mm": 0.4,
+    "grade": "F",
+    "score": 0.186,
+    "best": "11a-12p",
+    "why": "wet court? 2p-9p \u00b7 rain 8a-10a \u00b7 rain 1p \u00b7 NWS: rain 11a-1p",
+    "wet_mm": 1.3,
     "cells": {
      "8": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rain"
      },
      "9": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 63,
+      "v": 0,
+      "c": "rain"
      },
      "10": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 63,
+      "v": 0,
+      "c": "rain"
      },
      "11": {
       "t": 63,
@@ -158,39 +153,39 @@
       "c": ""
      },
      "12": {
-      "t": 65,
+      "t": 63,
       "v": 2,
       "c": ""
      },
      "13": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 64,
+      "v": 1,
+      "c": "rain"
      },
      "14": {
       "t": 66,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "15": {
       "t": 66,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "16": {
       "t": 66,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "17": {
-      "t": 65,
-      "v": 2,
-      "c": ""
+      "t": 66,
+      "v": 0,
+      "c": "wet"
      },
      "18": {
       "t": 66,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 66,
@@ -199,13 +194,13 @@
      },
      "20": {
       "t": 66,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 67,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      }
     }
    },
