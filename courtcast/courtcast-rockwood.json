@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-10-03T10:05:11",
+ "updated": "2026-10-03T10:50:40",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,7 +42,7 @@
  },
  "playable_now": true,
  "kicker": "PLAY NOW",
- "headline": "until 12p",
+ "headline": "until 1p",
  "wet_note": null,
  "reason": "then rain",
  "ranked": [
@@ -84,10 +84,10 @@
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.367,
-    "best": "10a-11a",
-    "why": "rain 3p-6p, 8p-9p \u00b7 rain 12p-2p, 7p \u00b7 NWS: rain 11a-2p, 7p",
+    "grade": "C",
+    "score": 0.5,
+    "best": "10a-12p",
+    "why": "rain 3p-6p \u00b7 rain 1p-2p, 7p-9p \u00b7 NWS: rain 11a-2p, 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "10": {
@@ -102,8 +102,8 @@
      },
      "12": {
       "t": 66,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "13": {
       "t": 66,
@@ -141,13 +141,13 @@
       "c": "rain"
      },
      "20": {
-      "t": 60,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "21": {
-      "t": 60,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      }
     }
