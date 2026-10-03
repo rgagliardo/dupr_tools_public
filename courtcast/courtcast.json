@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T08:49:10",
+ "updated": "2026-10-03T09:04:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 9a today",
+ "headline": "Next window: 10a today",
  "wet_note": null,
- "reason": "today grades D, best 9a-10a",
+ "reason": "today grades F, best 10a",
  "ranked": [
   {
    "day": "Mon",
@@ -70,35 +70,30 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 65,
-   "dew": 62,
-   "wind": 12
+   "temp": 62,
+   "dew": 57,
+   "wind": 11
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 1.5,
-   "radar_24h_mm": 2.7
+   "radar_24h_mm": 2.9
   },
   "days": [
    {
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.271,
-    "best": "9a-10a",
-    "why": "rain 2p-9p \u00b7 raining now 8a \u00b7 rain 11a-1p \u00b7 NWS: rain 9a-1p",
+    "grade": "F",
+    "score": 0.215,
+    "best": "10a",
+    "why": "rain 2p-9p \u00b7 raining now 9a \u00b7 rain 11a-1p \u00b7 NWS: rain 9a-1p",
     "wet_mm": 0.9,
     "cells": {
-     "8": {
-      "t": 65,
-      "v": 0,
-      "c": "rnow"
-     },
      "9": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "10": {
       "t": 62,
