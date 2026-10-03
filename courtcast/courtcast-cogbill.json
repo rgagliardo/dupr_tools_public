@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-03T12:21:43",
+ "updated": "2026-10-03T12:36:54",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -77,18 +77,18 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0.9,
-   "radar_24h_mm": 2.4
+   "radar_24h_mm": 2.5
   },
   "days": [
    {
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.36,
+    "grade": "F",
+    "score": 0.24,
     "best": "",
-    "why": "rain 3p-4p, 6p \u00b7 raining now 12p \u00b7 rain 1p-2p, 5p \u00b7 NWS: rain 12p-2p, 5p",
-    "wet_mm": 0.5,
+    "why": "rain 3p-4p, 6p-8p \u00b7 raining now 12p \u00b7 rain 1p-2p, 5p \u00b7 NWS: rain 12p-2p, 5p",
+    "wet_mm": 0.4,
     "cells": {
      "12": {
       "t": 65,
@@ -126,13 +126,13 @@
       "c": "rain"
      },
      "19": {
-      "t": 61,
-      "v": 1,
+      "t": 60,
+      "v": 0,
       "c": "rain"
      },
      "20": {
       "t": 60,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "21": {
@@ -147,9 +147,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "D",
-    "score": 0.429,
+    "score": 0.386,
     "best": "3p-4p",
-    "why": "wet court? 6p-9p \u00b7 rain 8a-9a \u00b7 rain 12p-2p, 5p \u00b7 NWS: rain 10a-4p",
+    "why": "wet court? 6p-9p \u00b7 rain 8a-10a \u00b7 rain 12p-2p, 5p \u00b7 NWS: rain 11a-4p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -163,9 +163,9 @@
       "c": "rain"
      },
      "10": {
-      "t": 62,
-      "v": 1,
-      "c": "dry"
+      "t": 64,
+      "v": 0,
+      "c": "rain"
      },
      "11": {
       "t": 63,

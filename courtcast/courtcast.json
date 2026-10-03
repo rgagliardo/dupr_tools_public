@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T12:21:39",
+ "updated": "2026-10-03T12:36:49",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -77,7 +77,7 @@
   "court": {
    "wet_mm": 0.8,
    "obs_18h_mm": 3.5,
-   "radar_24h_mm": 6.3
+   "radar_24h_mm": 6.5
   },
   "days": [
    {
@@ -87,8 +87,8 @@
     "grade": "F",
     "score": 0.12,
     "best": "",
-    "why": "rain 1p-6p, 8p \u00b7 raining now 12p \u00b7 rain 7p, 9p \u00b7 NWS: rain 7p, 9p",
-    "wet_mm": 0.8,
+    "why": "rain 1p-6p, 9p \u00b7 raining now 12p \u00b7 rain 7p-8p \u00b7 NWS: rain 7p-8p",
+    "wet_mm": 1.1,
     "cells": {
      "12": {
       "t": 62,
@@ -131,13 +131,13 @@
       "c": "rain"
      },
      "20": {
-      "t": 59,
-      "v": 0,
+      "t": 60,
+      "v": 1,
       "c": "rain"
      },
      "21": {
       "t": 59,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      }
     }
