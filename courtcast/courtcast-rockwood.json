@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-10-02T22:12:26",
+ "updated": "2026-10-02T22:42:47",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next window: Sat 8a",
  "wet_note": null,
- "reason": "Sat grades D, best 8a",
+ "reason": "Sat grades F, best 8a",
  "ranked": [
   {
    "day": "Mon",
@@ -60,7 +60,7 @@
   },
   {
    "day": "Sat",
-   "grade": "D"
+   "grade": "F"
   },
   {
    "day": "Sun",
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 76,
-   "dew": 66,
-   "wind": 5
+   "temp": 74,
+   "dew": 64,
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,14 +84,14 @@
     "date": "2026-10-03",
     "label": "Sat",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.286,
+    "grade": "F",
+    "score": 0.157,
     "best": "8a",
-    "why": "rain 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 9a-1p \u00b7 NWS: rain 8a-1p",
+    "why": "rain 10a-11a, 1p-7p \u00b7 wet court? 8p-9p \u00b7 rain 9a, 12p \u00b7 NWS: rain 8a-9a, 12p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 63,
+      "t": 64,
       "v": 2,
       "c": ""
      },
@@ -101,23 +101,23 @@
       "c": "rain"
      },
      "10": {
+      "t": 63,
+      "v": 0,
+      "c": "rain"
+     },
+     "11": {
+      "t": 63,
+      "v": 0,
+      "c": "rain"
+     },
+     "12": {
       "t": 61,
       "v": 1,
       "c": "rain"
      },
-     "11": {
-      "t": 60,
-      "v": 1,
-      "c": "rain"
-     },
-     "12": {
-      "t": 60,
-      "v": 1,
-      "c": "rain"
-     },
      "13": {
-      "t": 59,
-      "v": 1,
+      "t": 62,
+      "v": 0,
       "c": "rain"
      },
      "14": {
