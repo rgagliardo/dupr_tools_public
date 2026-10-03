@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-03T01:44:46",
+ "updated": "2026-10-03T01:59:54",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
  "wet_note": "court wet? \u2014 0.6mm, drying ~4a",
- "reason": "today grades D, best 8a",
+ "reason": "today grades D, best 8a-9a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,7 +64,7 @@
   },
   {
    "day": "Sun",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.329,
-    "best": "8a",
-    "why": "rain 3p-9p \u00b7 rain 9a-2p \u00b7 NWS: rain 11a-2p",
+    "score": 0.357,
+    "best": "8a-9a",
+    "why": "rain 3p-9p \u00b7 rain 10a-2p \u00b7 NWS: rain 11a-2p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
@@ -96,9 +96,9 @@
       "c": ""
      },
      "9": {
-      "t": 64,
-      "v": 1,
-      "c": "rain"
+      "t": 66,
+      "v": 2,
+      "c": ""
      },
      "10": {
       "t": 64,
@@ -166,10 +166,10 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "D",
-    "score": 0.443,
-    "best": "10a",
-    "why": "rain 8a, 1p-4p \u00b7 rain 9a, 11a-12p \u00b7 humidity (dew 67\u00b0) 8p \u00b7 NWS: rain 9a-12p",
+    "grade": "C",
+    "score": 0.514,
+    "best": "9a-10a",
+    "why": "rain 8a, 2p-4p \u00b7 rain 11a-1p, 5p-7p \u00b7 humidity (dew 67\u00b0) 8p \u00b7 NWS: rain 9a-1p",
     "wet_mm": 0.4,
     "cells": {
      "8": {
@@ -179,8 +179,8 @@
      },
      "9": {
       "t": 62,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "10": {
       "t": 64,
@@ -198,8 +198,8 @@
       "c": "rain"
      },
      "13": {
-      "t": 65,
-      "v": 0,
+      "t": 66,
+      "v": 1,
       "c": "rain"
      },
      "14": {
