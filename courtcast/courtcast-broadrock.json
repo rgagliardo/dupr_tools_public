@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-02T21:41:09",
+ "updated": "2026-10-02T21:57:19",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 75,
-   "dew": 62,
-   "wind": 5
+   "temp": 74,
+   "dew": 63,
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
@@ -91,7 +91,7 @@
     "wet_mm": 0.0,
     "cells": {
      "21": {
-      "t": 75,
+      "t": 74,
       "v": 2,
       "c": ""
      }
@@ -102,18 +102,18 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.486,
+    "score": 0.314,
     "best": "8a-9a",
-    "why": "rain 2p-5p \u00b7 rain 10a-1p, 6p-9p \u00b7 NWS: rain 8a-1p, 6p-7p",
-    "wet_mm": 1.1,
+    "why": "rain 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 10a-1p \u00b7 NWS: rain 8a-1p",
+    "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 66,
+      "t": 63,
       "v": 2,
       "c": ""
      },
      "9": {
-      "t": 66,
+      "t": 63,
       "v": 2,
       "c": ""
      },
@@ -159,23 +159,23 @@
      },
      "18": {
       "t": 62,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "19": {
       "t": 62,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "20": {
       "t": 62,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 62,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      }
     }
    },
@@ -184,10 +184,10 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "F",
-    "score": 0.0,
+    "score": 0.086,
     "best": "",
-    "why": "rain 8a-7p \u00b7 wet court? 8p-9p",
-    "wet_mm": 1.4,
+    "why": "rain 8a-7p \u00b7 rain 8p-9p",
+    "wet_mm": 0.4,
     "cells": {
      "8": {
       "t": 62,
@@ -251,13 +251,13 @@
      },
      "20": {
       "t": 67,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "21": {
       "t": 67,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      }
     }
    },
@@ -477,7 +477,7 @@
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    }
   ]
  },

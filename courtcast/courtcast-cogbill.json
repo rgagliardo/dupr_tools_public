@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-02T21:41:10",
+ "updated": "2026-10-02T21:57:19",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 76,
-   "dew": 62,
-   "wind": 6
+   "temp": 75,
+   "dew": 63,
+   "wind": 7
   },
   "court": {
    "wet_mm": 0.0,
@@ -91,7 +91,7 @@
     "wet_mm": 0.0,
     "cells": {
      "21": {
-      "t": 76,
+      "t": 75,
       "v": 2,
       "c": ""
      }
@@ -102,28 +102,28 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.4,
+    "score": 0.314,
     "best": "8a-9a",
-    "why": "rain 2p-6p \u00b7 wet court? 9p \u00b7 rain 10a-1p, 7p-8p \u00b7 NWS: rain 8a-1p, 7p",
+    "why": "rain 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 10a-1p \u00b7 NWS: rain 8a-1p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
-      "t": 66,
+      "t": 64,
       "v": 2,
       "c": ""
      },
      "9": {
-      "t": 65,
+      "t": 63,
       "v": 2,
       "c": ""
      },
      "10": {
-      "t": 62,
+      "t": 61,
       "v": 1,
       "c": "rain"
      },
      "11": {
-      "t": 62,
+      "t": 61,
       "v": 1,
       "c": "rain"
      },
@@ -164,13 +164,13 @@
      },
      "19": {
       "t": 62,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "20": {
       "t": 62,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 62,
@@ -184,14 +184,14 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "F",
-    "score": 0.0,
+    "score": 0.129,
     "best": "",
-    "why": "rain 8a-7p \u00b7 wet court? 8p-9p",
-    "wet_mm": 1.4,
+    "why": "rain 9a-7p \u00b7 rain 8a, 8p-9p \u00b7 NWS: rain 8a",
+    "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 62,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "9": {
@@ -251,13 +251,13 @@
      },
      "20": {
       "t": 67,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "21": {
       "t": 66,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      }
     }
    },
@@ -477,7 +477,7 @@
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
