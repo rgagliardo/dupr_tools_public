@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-10-03T04:01:18",
+ "updated": "2026-10-03T04:16:27",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
- "wet_note": "court wet? \u2014 0.4mm, drying ~6a",
+ "wet_note": "court wet? \u2014 0.5mm, drying ~6a",
  "reason": "today grades D, best 8a-10a",
  "ranked": [
   {
@@ -64,7 +64,7 @@
   },
   {
    "day": "Sun",
-   "grade": "C"
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -75,7 +75,7 @@
    "wind": 9
   },
   "court": {
-   "wet_mm": 0.4,
+   "wet_mm": 0.5,
    "obs_18h_mm": 0.9,
    "radar_24h_mm": 1.8
   },
@@ -96,32 +96,32 @@
       "c": ""
      },
      "9": {
-      "t": 66,
+      "t": 67,
       "v": 2,
       "c": ""
      },
      "10": {
-      "t": 66,
+      "t": 67,
       "v": 2,
       "c": ""
      },
      "11": {
-      "t": 65,
+      "t": 66,
       "v": 1,
       "c": "rain"
      },
      "12": {
-      "t": 64,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
      "13": {
-      "t": 63,
+      "t": 62,
       "v": 1,
       "c": "rain"
      },
      "14": {
-      "t": 62,
+      "t": 61,
       "v": 1,
       "c": "rain"
      },
@@ -166,11 +166,11 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "C",
-    "score": 0.514,
+    "grade": "D",
+    "score": 0.486,
     "best": "8p-9p",
-    "why": "rain 8a-9a, 3p-4p \u00b7 rain 11a-2p, 5p-7p \u00b7 NWS: rain 10a-2p",
-    "wet_mm": 0.7,
+    "why": "rain 8a-9a, 3p-4p \u00b7 rain 11a-2p, 5p-7p \u00b7 drying 10a \u00b7 NWS: rain 10a-2p",
+    "wet_mm": 0.8,
     "cells": {
      "8": {
       "t": 62,
@@ -183,27 +183,27 @@
       "c": "rain"
      },
      "10": {
-      "t": 64,
-      "v": 2,
-      "c": ""
+      "t": 62,
+      "v": 1,
+      "c": "dry"
      },
      "11": {
-      "t": 64,
+      "t": 63,
       "v": 1,
       "c": "rain"
      },
      "12": {
-      "t": 65,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
      "13": {
-      "t": 66,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
      "14": {
-      "t": 66,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
