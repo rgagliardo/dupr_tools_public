@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-02T23:43:30",
+ "updated": "2026-10-02T23:58:39",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next window: Sat 8a",
  "wet_note": null,
- "reason": "Sat grades D, best 8a-9a",
+ "reason": "Sat grades F, best 8a",
  "ranked": [
   {
    "day": "Mon",
@@ -59,11 +59,11 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
-   "grade": "D"
+   "day": "Sun",
+   "grade": "F"
   },
   {
-   "day": "Sun",
+   "day": "Sat",
    "grade": "F"
   }
  ],
@@ -76,7 +76,7 @@
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0,
+   "obs_18h_mm": 0.2,
    "radar_24h_mm": 0.4
   },
   "days": [
@@ -84,10 +84,10 @@
     "date": "2026-10-03",
     "label": "Sat",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.271,
-    "best": "8a-9a",
-    "why": "rain 10a, 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 11a-1p \u00b7 NWS: rain 8a-9a, 11a-1p",
+    "grade": "F",
+    "score": 0.2,
+    "best": "8a",
+    "why": "rain 10a-11a, 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 9a, 12p-1p \u00b7 NWS: rain 8a-9a, 12p-1p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
@@ -97,8 +97,8 @@
      },
      "9": {
       "t": 61,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "10": {
       "t": 64,
@@ -106,8 +106,8 @@
       "c": "rain"
      },
      "11": {
-      "t": 61,
-      "v": 1,
+      "t": 64,
+      "v": 0,
       "c": "rain"
      },
      "12": {
@@ -167,9 +167,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "F",
-    "score": 0.2,
+    "score": 0.243,
     "best": "9p",
-    "why": "rain 8a, 11a-7p \u00b7 rain 9a-10a, 8p \u00b7 NWS: rain 9a-10a",
+    "why": "rain 8a, 12p-7p \u00b7 rain 9a-11a, 8p \u00b7 NWS: rain 9a-11a",
     "wet_mm": 0.4,
     "cells": {
      "8": {
@@ -188,8 +188,8 @@
       "c": "rain"
      },
      "11": {
-      "t": 64,
-      "v": 0,
+      "t": 65,
+      "v": 1,
       "c": "rain"
      },
      "12": {

@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-10-02T23:43:28",
+ "updated": "2026-10-02T23:58:38",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: Sat 9a",
+ "headline": "Next OK window: Sat 9a",
  "wet_note": null,
- "reason": "Sat grades F, best 9a",
+ "reason": "rain \u2014 clean window Sun 9p",
  "ranked": [
   {
    "day": "Mon",
@@ -59,11 +59,11 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
-   "grade": "F"
+   "day": "Sun",
+   "grade": "D"
   },
   {
-   "day": "Sun",
+   "day": "Sat",
    "grade": "F"
   }
  ],
@@ -76,8 +76,8 @@
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0,
-   "radar_24h_mm": 0
+   "obs_18h_mm": 0.2,
+   "radar_24h_mm": 0.2
   },
   "days": [
    {
@@ -85,9 +85,9 @@
     "label": "Sat",
     "sub": "10/3",
     "grade": "F",
-    "score": 0.243,
-    "best": "9a",
-    "why": "rain 8a, 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 10a-1p \u00b7 NWS: rain 9a-1p",
+    "score": 0.129,
+    "best": "",
+    "why": "rain 8a, 11a-12p \u00b7 wet court? 8p-9p \u00b7 rain 9a-10a, 1p \u00b7 NWS: rain 9a-10a, 1p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -97,8 +97,8 @@
      },
      "9": {
       "t": 61,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      },
      "10": {
       "t": 59,
@@ -106,13 +106,13 @@
       "c": "rain"
      },
      "11": {
-      "t": 61,
-      "v": 1,
+      "t": 63,
+      "v": 0,
       "c": "rain"
      },
      "12": {
-      "t": 61,
-      "v": 1,
+      "t": 63,
+      "v": 0,
       "c": "rain"
      },
      "13": {
@@ -166,10 +166,10 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "F",
-    "score": 0.243,
+    "grade": "D",
+    "score": 0.286,
     "best": "9p",
-    "why": "rain 11a-7p \u00b7 rain 8a-10a, 8p \u00b7 NWS: rain 8a-10a",
+    "why": "rain 12p-7p \u00b7 rain 8a-11a, 8p \u00b7 NWS: rain 8a-11a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -188,8 +188,8 @@
       "c": "rain"
      },
      "11": {
-      "t": 63,
-      "v": 0,
+      "t": 64,
+      "v": 1,
       "c": "rain"
      },
      "12": {

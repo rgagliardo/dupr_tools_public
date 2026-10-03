@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-02T23:43:27",
+ "updated": "2026-10-02T23:58:37",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next OK window: Sat 8a",
  "wet_note": null,
- "reason": "wind (12 mph) \u2014 clean window Sun 9p",
+ "reason": "rain \u2014 clean window Sun 9p",
  "ranked": [
   {
    "day": "Mon",
@@ -87,13 +87,13 @@
     "grade": "F",
     "score": 0.086,
     "best": "",
-    "why": "rain 10a-7p \u00b7 wet court? 8p-9p \u00b7 wind (12 mph) 8a \u00b7 NWS: rain 8a-9a",
+    "why": "rain 10a-7p \u00b7 wet court? 8p-9p \u00b7 rain 8a-9a \u00b7 NWS: rain 8a-9a",
     "wet_mm": 1.2,
     "cells": {
      "8": {
       "t": 62,
       "v": 1,
-      "c": "wnd"
+      "c": "rain"
      },
      "9": {
       "t": 60,
@@ -167,9 +167,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "F",
-    "score": 0.2,
+    "score": 0.243,
     "best": "9p",
-    "why": "rain 8a, 11a-7p \u00b7 rain 9a-10a, 8p \u00b7 NWS: rain 9a-10a",
+    "why": "rain 8a, 12p-7p \u00b7 rain 9a-11a, 8p \u00b7 NWS: rain 9a-11a",
     "wet_mm": 0.7,
     "cells": {
      "8": {
@@ -188,8 +188,8 @@
       "c": "rain"
      },
      "11": {
-      "t": 63,
-      "v": 0,
+      "t": 64,
+      "v": 1,
       "c": "rain"
      },
      "12": {
