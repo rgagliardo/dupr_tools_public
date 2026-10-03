@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-02T21:57:19",
+ "updated": "2026-10-02T22:12:30",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: Sat 8a",
  "wet_note": null,
- "reason": "back 8a",
+ "reason": "Sat grades D, best 8a-9a",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Mon",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Sat",
    "grade": "D"
+  },
+  {
+   "day": "Sun",
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 75,
-   "dew": 63,
-   "wind": 7
+   "temp": 76,
+   "dew": 66,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0
   },
   "days": [
-   {
-    "date": "2026-10-02",
-    "label": "Today",
-    "sub": "10/2",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 75,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
    {
     "date": "2026-10-03",
     "label": "Sat",
