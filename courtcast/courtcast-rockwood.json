@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-10-03T14:38:07",
+ "updated": "2026-10-03T15:16:23",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: Sun 8a",
- "wet_note": "court wet? \u2014 0.2mm, drying ~7p",
+ "wet_note": "court wet? \u2014 1.0mm, drying ~7p",
  "reason": "Sun grades B, best 8a-3p \u00b7 today: raining now, then rain",
  "ranked": [
   {
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 60,
+   "temp": 63,
    "dew": 58,
-   "wind": 8
+   "wind": 9
   },
   "court": {
-   "wet_mm": 0.2,
-   "obs_18h_mm": 1.6,
-   "radar_24h_mm": 4.6
+   "wet_mm": 1.0,
+   "obs_18h_mm": 2.4,
+   "radar_24h_mm": 6.6
   },
   "days": [
    {
@@ -87,18 +87,13 @@
     "grade": "F",
     "score": 0.0,
     "best": "",
-    "why": "rain 3p-9p \u00b7 raining now 2p \u00b7 NWS: rain 2p",
+    "why": "rain 4p-9p \u00b7 raining now 3p",
     "wet_mm": 1.0,
     "cells": {
-     "14": {
-      "t": 60,
-      "v": 0,
-      "c": "rnow"
-     },
      "15": {
       "t": 63,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "16": {
       "t": 62,

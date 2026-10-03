@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-03T14:38:09",
+ "updated": "2026-10-03T15:16:27",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 6p today",
- "wet_note": "court wet? \u2014 0.3mm, drying ~6p",
- "reason": "rain \u2014 clean window Sun 8a",
+ "headline": "Next window: Sun 8a",
+ "wet_note": "court wet? \u2014 0.9mm, drying Sun",
+ "reason": "Sun grades B, best 8a-5p \u00b7 today: raining now, then rain",
  "ranked": [
   {
    "day": "Mon",
@@ -75,9 +75,9 @@
    "wind": 10
   },
   "court": {
-   "wet_mm": 0.3,
-   "obs_18h_mm": 1.6,
-   "radar_24h_mm": 4.7
+   "wet_mm": 0.9,
+   "obs_18h_mm": 2.4,
+   "radar_24h_mm": 6.9
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "F",
-    "score": 0.075,
+    "score": 0.0,
     "best": "",
-    "why": "rain 3p-5p, 7p-9p \u00b7 raining now 2p \u00b7 rain 6p \u00b7 NWS: rain 6p",
-    "wet_mm": 0.9,
+    "why": "rain 4p-9p \u00b7 raining now 3p",
+    "wet_mm": 1.0,
     "cells": {
-     "14": {
-      "t": 62,
-      "v": 0,
-      "c": "rnow"
-     },
      "15": {
       "t": 62,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "16": {
       "t": 62,
@@ -111,8 +106,8 @@
       "c": "rain"
      },
      "18": {
-      "t": 60,
-      "v": 1,
+      "t": 61,
+      "v": 0,
       "c": "rain"
      },
      "19": {
