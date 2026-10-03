@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T13:52:37",
+ "updated": "2026-10-03T14:07:47",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 7p today",
- "wet_note": "court wet? \u2014 1.0mm, drying ~8p",
+ "wet_note": "court wet? \u2014 0.8mm, drying ~8p",
  "reason": "rain \u2014 clean window Sun 10a",
  "ranked": [
   {
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 61,
+   "temp": 60,
    "dew": 57,
    "wind": 9
   },
   "court": {
-   "wet_mm": 1.0,
+   "wet_mm": 0.8,
    "obs_18h_mm": 4.5,
-   "radar_24h_mm": 8.7
+   "radar_24h_mm": 9.0
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "F",
-    "score": 0.067,
+    "score": 0.075,
     "best": "",
-    "why": "rain 2p-6p, 8p-9p \u00b7 raining now 1p \u00b7 rain 7p \u00b7 NWS: rain 7p",
+    "why": "rain 3p-6p, 8p-9p \u00b7 raining now 2p \u00b7 rain 7p \u00b7 NWS: rain 7p",
     "wet_mm": 1.1,
     "cells": {
-     "13": {
-      "t": 61,
-      "v": 0,
-      "c": "rnow"
-     },
      "14": {
       "t": 60,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "15": {
       "t": 61,
@@ -142,9 +137,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "C",
-    "score": 0.529,
-    "best": "10a-1p",
-    "why": "wet court? 5p-9p \u00b7 drying 8a-9a \u00b7 rain 2p, 4p \u00b7 NWS: rain 8a-1p",
+    "score": 0.557,
+    "best": "10a-3p",
+    "why": "wet court? 5p-9p \u00b7 drying 8a-9a \u00b7 rain 4p \u00b7 NWS: rain 8a-1p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
@@ -178,9 +173,9 @@
       "c": ""
      },
      "14": {
-      "t": 66,
-      "v": 1,
-      "c": "rain"
+      "t": 64,
+      "v": 2,
+      "c": ""
      },
      "15": {
       "t": 64,
@@ -452,7 +447,7 @@
    {
     "date": "2026-10-12",
     "d": "Mo",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-10-13",
@@ -477,12 +472,12 @@
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "D"
+    "g": "A"
    },
    {
     "date": "2026-10-18",
     "d": "Su",
-    "g": "C"
+    "g": "A"
    }
   ]
  },

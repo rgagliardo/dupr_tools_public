@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T13:52:39",
+ "updated": "2026-10-03T14:07:49",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,7 +42,7 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 2p today",
+ "headline": "Next OK window: 3p today",
  "wet_note": null,
  "reason": "rain \u2014 clean window Sun 8a",
  "ranked": [
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 62,
-   "dew": 56,
+   "temp": 63,
+   "dew": 58,
    "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 1.4,
-   "radar_24h_mm": 1.2
+   "radar_24h_mm": 1.5
   },
   "days": [
    {
@@ -85,24 +85,19 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "F",
-    "score": 0.133,
+    "score": 0.15,
     "best": "",
-    "why": "rain 3p-7p, 9p \u00b7 raining now 1p \u00b7 rain 2p, 8p \u00b7 NWS: rain 1p-2p, 8p",
+    "why": "rain 4p-8p \u00b7 raining now 2p \u00b7 rain 3p, 9p \u00b7 NWS: rain 2p-3p, 9p",
     "wet_mm": 0.5,
     "cells": {
-     "13": {
-      "t": 62,
+     "14": {
+      "t": 63,
       "v": 0,
       "c": "rnow"
      },
-     "14": {
-      "t": 63,
-      "v": 1,
-      "c": "rain"
-     },
      "15": {
-      "t": 63,
-      "v": 0,
+      "t": 62,
+      "v": 1,
       "c": "rain"
      },
      "16": {
@@ -127,12 +122,12 @@
      },
      "20": {
       "t": 60,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "21": {
       "t": 60,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      }
     }
@@ -142,9 +137,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "C",
-    "score": 0.529,
-    "best": "8a-11a",
-    "why": "wet court? 5p-9p \u00b7 rain 12p, 2p \u00b7 drying 3p \u00b7 NWS: rain 8a-4p",
+    "score": 0.557,
+    "best": "8a-1p",
+    "why": "wet court? 5p-9p \u00b7 rain 2p, 4p \u00b7 drying 3p \u00b7 NWS: rain 8a-4p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -169,8 +164,8 @@
      },
      "12": {
       "t": 65,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "13": {
       "t": 67,
@@ -452,7 +447,7 @@
    {
     "date": "2026-10-12",
     "d": "Mo",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-10-13",
@@ -477,12 +472,12 @@
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-10-18",
     "d": "Su",
-    "g": "C"
+    "g": "A"
    }
   ]
  },
