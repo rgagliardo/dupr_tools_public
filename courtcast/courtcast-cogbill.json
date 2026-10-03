@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-02T22:42:49",
+ "updated": "2026-10-02T22:57:59",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -59,11 +59,11 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
+   "day": "Sun",
    "grade": "F"
   },
   {
-   "day": "Sun",
+   "day": "Sat",
    "grade": "F"
   }
  ],
@@ -167,9 +167,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "F",
-    "score": 0.129,
-    "best": "",
-    "why": "rain 9a-7p \u00b7 rain 8a, 8p-9p \u00b7 NWS: rain 8a",
+    "score": 0.243,
+    "best": "9p",
+    "why": "rain 11a-7p \u00b7 rain 8a-10a, 8p \u00b7 NWS: rain 8a-10a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -178,13 +178,13 @@
       "c": "rain"
      },
      "9": {
-      "t": 62,
-      "v": 0,
+      "t": 63,
+      "v": 1,
       "c": "rain"
      },
      "10": {
       "t": 63,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "11": {
@@ -238,9 +238,9 @@
       "c": "rain"
      },
      "21": {
-      "t": 66,
-      "v": 1,
-      "c": "rain"
+      "t": 62,
+      "v": 2,
+      "c": ""
      }
     }
    },
@@ -430,12 +430,12 @@
    {
     "date": "2026-10-11",
     "d": "Su",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-10-12",
     "d": "Mo",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-10-13",
