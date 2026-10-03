@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T16:32:37",
+ "updated": "2026-10-03T16:47:47",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 8p today",
- "wet_note": "court wet? \u2014 1.1mm, drying ~8p",
- "reason": "rain \u2014 clean window Sun 11a",
+ "wet_note": "court wet? \u2014 1.1mm, drying ~10p",
+ "reason": "rain \u2014 clean window Sun 8a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,7 +64,7 @@
   },
   {
    "day": "Sun",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
@@ -77,7 +77,7 @@
   "court": {
    "wet_mm": 1.1,
    "obs_18h_mm": 3.9,
-   "radar_24h_mm": 4.7
+   "radar_24h_mm": 4.8
   },
   "days": [
    {
@@ -111,12 +111,12 @@
       "c": "rain"
      },
      "20": {
-      "t": 60,
+      "t": 59,
       "v": 1,
       "c": "rain"
      },
      "21": {
-      "t": 60,
+      "t": 59,
       "v": 1,
       "c": "rain"
      }
@@ -126,26 +126,26 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "D",
-    "score": 0.414,
-    "best": "11a-12p",
-    "why": "wet court? 3p-6p \u00b7 rain 8a-9a, 2p \u00b7 drying 10a, 8p \u00b7 NWS: rain 10a-1p",
+    "grade": "C",
+    "score": 0.557,
+    "best": "10a-12p",
+    "why": "wet court? 3p-6p \u00b7 rain 2p \u00b7 drying 9a, 8p \u00b7 NWS: rain 8a-1p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 62,
-      "v": 0,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "9": {
-      "t": 63,
-      "v": 0,
-      "c": "rain"
-     },
-     "10": {
       "t": 62,
       "v": 1,
       "c": "dry"
+     },
+     "10": {
+      "t": 62,
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 63,
