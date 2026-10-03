@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Rockwood Park",
- "updated": "2026-10-03T00:28:57",
+ "updated": "2026-10-03T00:44:07",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 9a today",
- "wet_note": "court wet? \u2014 0.1mm, drying ~3a",
- "reason": "rain \u2014 clean window Sun 9p",
+ "headline": "Next window: 8a today",
+ "wet_note": null,
+ "reason": "today grades F, best 8a",
  "ranked": [
   {
    "day": "Mon",
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 73,
-   "dew": 66,
+   "temp": 74,
+   "dew": 62,
    "wind": 5
   },
   "court": {
-   "wet_mm": 0.1,
+   "wet_mm": 0.0,
    "obs_18h_mm": 0.5,
-   "radar_24h_mm": 1.2
+   "radar_24h_mm": 1.7
   },
   "days": [
    {
@@ -85,23 +85,23 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "F",
-    "score": 0.129,
-    "best": "",
-    "why": "rain 8a, 11a-12p \u00b7 wet court? 8p-9p \u00b7 rain 9a-10a, 1p \u00b7 NWS: rain 9a-10a, 1p",
+    "score": 0.2,
+    "best": "8a",
+    "why": "rain 11a-12p, 2p-7p \u00b7 wet court? 8p-9p \u00b7 rain 9a-10a, 1p \u00b7 NWS: rain 8a-10a, 1p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 63,
-      "v": 0,
-      "c": "rain"
+      "t": 65,
+      "v": 2,
+      "c": ""
      },
      "9": {
-      "t": 61,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
      "10": {
-      "t": 59,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
@@ -116,7 +116,7 @@
       "c": "rain"
      },
      "13": {
-      "t": 60,
+      "t": 62,
       "v": 1,
       "c": "rain"
      },
