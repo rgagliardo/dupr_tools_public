@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T13:22:18",
+ "updated": "2026-10-03T13:37:26",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 7p today",
- "wet_note": "court wet? \u2014 0.8mm, drying ~3p",
- "reason": "rain \u2014 clean window Sun 12p",
+ "wet_note": "court wet? \u2014 1.0mm, drying ~8p",
+ "reason": "rain \u2014 clean window Sun 10a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,7 +64,7 @@
   },
   {
    "day": "Sun",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
@@ -75,9 +75,9 @@
    "wind": 9
   },
   "court": {
-   "wet_mm": 0.8,
+   "wet_mm": 1.0,
    "obs_18h_mm": 4.5,
-   "radar_24h_mm": 7.7
+   "radar_24h_mm": 8.0
   },
   "days": [
    {
@@ -141,31 +141,31 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "D",
-    "score": 0.343,
-    "best": "12p-1p",
-    "why": "wet court? 5p-9p \u00b7 rain 8a-10a \u00b7 rain 2p, 4p \u00b7 NWS: rain 11a-1p",
+    "grade": "C",
+    "score": 0.529,
+    "best": "10a-1p",
+    "why": "wet court? 5p-9p \u00b7 drying 8a-9a \u00b7 rain 2p, 4p \u00b7 NWS: rain 8a-1p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 61,
-      "v": 0,
-      "c": "rain"
+      "v": 1,
+      "c": "dry"
      },
      "9": {
-      "t": 62,
-      "v": 0,
-      "c": "rain"
+      "t": 61,
+      "v": 1,
+      "c": "dry"
      },
      "10": {
-      "t": 63,
-      "v": 0,
-      "c": "rain"
+      "t": 62,
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 62,
-      "v": 1,
-      "c": "dry"
+      "v": 2,
+      "c": ""
      },
      "12": {
       "t": 63,
@@ -447,27 +447,27 @@
    {
     "date": "2026-10-11",
     "d": "Su",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-10-12",
     "d": "Mo",
-    "g": "F"
+    "g": "D"
    },
    {
     "date": "2026-10-13",
     "d": "Tu",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-10-14",
     "d": "We",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-10-15",
     "d": "Th",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-10-16",
@@ -482,7 +482,7 @@
    {
     "date": "2026-10-18",
     "d": "Su",
-    "g": "D"
+    "g": "C"
    }
   ]
  },

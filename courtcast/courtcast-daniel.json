@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T13:22:19",
+ "updated": "2026-10-03T13:37:28",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 3p (rain)",
  "wet_note": null,
- "reason": "clean window Sun 11a",
+ "reason": "clean window Sun 8a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,15 +64,15 @@
   },
   {
    "day": "Sun",
-   "grade": "D"
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 64,
-   "dew": 57,
-   "wind": 10
+   "temp": 62,
+   "dew": 56,
+   "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,19 +84,19 @@
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.267,
+    "grade": "F",
+    "score": 0.2,
     "best": "",
-    "why": "rain 3p-4p, 7p-9p \u00b7 rain 1p-2p, 5p-6p \u00b7 NWS: rain 1p-2p, 5p-6p",
+    "why": "rain 3p-7p, 9p \u00b7 rain 1p-2p, 8p \u00b7 NWS: rain 1p-2p, 8p",
     "wet_mm": 0.5,
     "cells": {
      "13": {
-      "t": 64,
+      "t": 62,
       "v": 1,
       "c": "rain"
      },
      "14": {
-      "t": 65,
+      "t": 63,
       "v": 1,
       "c": "rain"
      },
@@ -111,13 +111,13 @@
       "c": "rain"
      },
      "17": {
-      "t": 63,
-      "v": 1,
+      "t": 61,
+      "v": 0,
       "c": "rain"
      },
      "18": {
-      "t": 62,
-      "v": 1,
+      "t": 61,
+      "v": 0,
       "c": "rain"
      },
      "19": {
@@ -127,7 +127,7 @@
      },
      "20": {
       "t": 60,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "21": {
@@ -141,26 +141,26 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "D",
-    "score": 0.357,
-    "best": "11a",
-    "why": "wet court? 5p-9p \u00b7 rain 8a-9a \u00b7 rain 12p, 2p \u00b7 NWS: rain 10a-4p",
+    "grade": "C",
+    "score": 0.529,
+    "best": "8a-11a",
+    "why": "wet court? 5p-9p \u00b7 rain 12p, 2p \u00b7 drying 3p \u00b7 NWS: rain 8a-4p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
       "t": 62,
-      "v": 0,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "9": {
-      "t": 63,
-      "v": 0,
-      "c": "rain"
+      "t": 62,
+      "v": 2,
+      "c": ""
      },
      "10": {
       "t": 62,
-      "v": 1,
-      "c": "dry"
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 64,
@@ -447,7 +447,7 @@
    {
     "date": "2026-10-11",
     "d": "Su",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-10-12",
@@ -457,12 +457,12 @@
    {
     "date": "2026-10-13",
     "d": "Tu",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-10-14",
     "d": "We",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-10-15",
@@ -472,17 +472,17 @@
    {
     "date": "2026-10-16",
     "d": "Fr",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-10-18",
     "d": "Su",
-    "g": "D"
+    "g": "C"
    }
   ]
  },
