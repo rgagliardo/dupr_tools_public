@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T04:46:42",
+ "updated": "2026-10-03T05:01:53",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
- "wet_note": "court wet? \u2014 0.6mm, drying ~6a",
- "reason": "today grades F, best 8a",
+ "wet_note": "court wet? \u2014 0.3mm, drying ~6a",
+ "reason": "today grades D, best 8a-9a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,18 +64,18 @@
   },
   {
    "day": "Sun",
-   "grade": "C"
+   "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 69,
-   "dew": 64,
-   "wind": 10
+   "temp": 68,
+   "dew": 63,
+   "wind": 12
   },
   "court": {
-   "wet_mm": 0.6,
+   "wet_mm": 0.3,
    "obs_18h_mm": 1.5,
    "radar_24h_mm": 2.5
   },
@@ -84,10 +84,10 @@
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "F",
-    "score": 0.243,
-    "best": "8a",
-    "why": "rain 1p-9p \u00b7 rain 9a-12p \u00b7 NWS: rain 9a-12p",
+    "grade": "D",
+    "score": 0.271,
+    "best": "8a-9a",
+    "why": "rain 1p-9p \u00b7 rain 10a-12p \u00b7 NWS: rain 9a-12p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -97,8 +97,8 @@
      },
      "9": {
       "t": 65,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "10": {
       "t": 65,
@@ -166,10 +166,10 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "C",
-    "score": 0.686,
-    "best": "8p-9p",
-    "why": "rain 8a-9a, 11a-7p \u00b7 NWS: rain 8a-1p",
+    "grade": "B",
+    "score": 0.829,
+    "best": "1p-4p",
+    "why": "rain 8a, 12p \u00b7 drying 9a \u00b7 NWS: rain 8a-1p",
     "wet_mm": 0.3,
     "cells": {
      "8": {
@@ -180,7 +180,7 @@
      "9": {
       "t": 61,
       "v": 1,
-      "c": "rain"
+      "c": "dry"
      },
      "10": {
       "t": 62,
@@ -189,8 +189,8 @@
      },
      "11": {
       "t": 62,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "12": {
       "t": 62,
@@ -199,23 +199,23 @@
      },
      "13": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "14": {
-      "t": 66,
-      "v": 1,
-      "c": "rain"
+      "t": 64,
+      "v": 2,
+      "c": ""
      },
      "15": {
-      "t": 66,
-      "v": 1,
-      "c": "rain"
+      "t": 65,
+      "v": 2,
+      "c": ""
      },
      "16": {
       "t": 66,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "17": {
       "t": 65,
@@ -472,7 +472,7 @@
    {
     "date": "2026-10-11",
     "d": "Su",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-10-12",
