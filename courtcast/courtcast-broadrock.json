@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-03T03:15:55",
+ "updated": "2026-10-03T04:01:19",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
- "wet_note": "court wet? \u2014 0.8mm, drying ~5a",
+ "wet_note": "court wet? \u2014 0.4mm, drying ~6a",
  "reason": "today grades D, best 8a-9a",
  "ranked": [
   {
@@ -64,18 +64,18 @@
   },
   {
    "day": "Sun",
-   "grade": "C"
+   "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 71,
-   "dew": 66,
-   "wind": 9
+   "temp": 70,
+   "dew": 65,
+   "wind": 10
   },
   "court": {
-   "wet_mm": 0.8,
+   "wet_mm": 0.4,
    "obs_18h_mm": 0.9,
    "radar_24h_mm": 1.7
   },
@@ -85,10 +85,10 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.486,
+    "score": 0.357,
     "best": "8a-9a",
-    "why": "rain 3p-6p \u00b7 rain 10a-2p, 7p-9p \u00b7 NWS: rain 11a-2p, 7p-9p",
-    "wet_mm": 0.3,
+    "why": "rain 3p-9p \u00b7 rain 10a-2p \u00b7 NWS: rain 11a-2p",
+    "wet_mm": 1.2,
     "cells": {
      "8": {
       "t": 66,
@@ -147,17 +147,17 @@
      },
      "19": {
       "t": 60,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "20": {
       "t": 60,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "21": {
       "t": 60,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      }
     }
@@ -166,11 +166,11 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "C",
-    "score": 0.586,
-    "best": "9a-10a",
-    "why": "rain 8a, 3p-4p \u00b7 rain 11a-2p, 5p-7p \u00b7 NWS: rain 9a-2p",
-    "wet_mm": 0.4,
+    "grade": "D",
+    "score": 0.486,
+    "best": "8p-9p",
+    "why": "rain 8a-9a, 3p-4p \u00b7 rain 11a-2p, 5p-7p \u00b7 drying 10a \u00b7 NWS: rain 10a-2p",
+    "wet_mm": 1.0,
     "cells": {
      "8": {
       "t": 62,
@@ -178,14 +178,14 @@
       "c": "rain"
      },
      "9": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 63,
+      "v": 0,
+      "c": "rain"
      },
      "10": {
       "t": 64,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dry"
      },
      "11": {
       "t": 65,

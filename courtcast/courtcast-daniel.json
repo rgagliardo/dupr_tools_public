@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T03:15:55",
+ "updated": "2026-10-03T04:01:19",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 70,
-   "dew": 66,
-   "wind": 8
+   "temp": 69,
+   "dew": 65,
+   "wind": 9
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "10/3",
     "grade": "D",
-    "score": 0.457,
+    "score": 0.414,
     "best": "8a-11a",
-    "why": "rain 4p-9p \u00b7 rain 12p-3p \u00b7 NWS: rain 1p-3p",
+    "why": "rain 3p-9p \u00b7 rain 12p-2p \u00b7 NWS: rain 1p-2p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
@@ -126,8 +126,8 @@
       "c": "rain"
      },
      "15": {
-      "t": 61,
-      "v": 1,
+      "t": 62,
+      "v": 0,
       "c": "rain"
      },
      "16": {
@@ -167,15 +167,15 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "C",
-    "score": 0.657,
-    "best": "8a-10a",
-    "why": "rain 3p-4p \u00b7 rain 11a-2p, 5p-7p \u00b7 NWS: rain 8a-2p",
-    "wet_mm": 0.0,
+    "score": 0.629,
+    "best": "9a-10a",
+    "why": "rain 3p-4p \u00b7 rain 11a-2p, 5p-7p \u00b7 drying 8a \u00b7 NWS: rain 8a-2p",
+    "wet_mm": 0.3,
     "cells": {
      "8": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dry"
      },
      "9": {
       "t": 63,
