@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-03T08:18:51",
+ "updated": "2026-10-03T08:34:02",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": true,
  "kicker": "PLAY NOW",
- "headline": "until 9a",
+ "headline": "until 12p",
  "wet_note": null,
- "reason": "then wet court? \u00b7 back 10a",
+ "reason": "then rain",
  "ranked": [
   {
    "day": "Mon",
@@ -64,15 +64,15 @@
   },
   {
    "day": "Sun",
-   "grade": "B"
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
+   "temp": 67,
    "dew": 64,
-   "wind": 7
+   "wind": 8
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,29 +84,29 @@
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "D",
-    "score": 0.429,
-    "best": "10a-11a",
-    "why": "rain 3p-6p, 9p \u00b7 wet court? 9a \u00b7 rain 12p-2p, 7p-8p \u00b7 NWS: rain 1p-2p, 7p-8p",
-    "wet_mm": 0.7,
+    "grade": "C",
+    "score": 0.5,
+    "best": "8a-11a",
+    "why": "rain 3p-6p, 9p \u00b7 rain 12p-2p, 7p-8p \u00b7 NWS: rain 1p-2p, 7p-8p",
+    "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 68,
+      "t": 67,
       "v": 2,
       "c": ""
      },
      "9": {
       "t": 65,
-      "v": 0,
-      "c": "wet"
+      "v": 2,
+      "c": ""
      },
      "10": {
-      "t": 66,
+      "t": 64,
       "v": 2,
       "c": ""
      },
      "11": {
-      "t": 67,
+      "t": 65,
       "v": 2,
       "c": ""
      },
@@ -116,12 +116,12 @@
       "c": "rain"
      },
      "13": {
-      "t": 68,
+      "t": 66,
       "v": 1,
       "c": "rain"
      },
      "14": {
-      "t": 68,
+      "t": 67,
       "v": 1,
       "c": "rain"
      },
@@ -151,7 +151,7 @@
       "c": "rain"
      },
      "20": {
-      "t": 60,
+      "t": 61,
       "v": 1,
       "c": "rain"
      },
@@ -166,21 +166,21 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "B",
-    "score": 0.771,
+    "grade": "C",
+    "score": 0.7,
     "best": "7p-9p",
-    "why": "rain 8a, 11a-3p \u00b7 NWS: rain 8a-4p",
-    "wet_mm": 0.2,
+    "why": "rain 8a \u00b7 rain 11a-3p, 5p-6p \u00b7 drying 9a \u00b7 NWS: rain 9a-4p",
+    "wet_mm": 0.4,
     "cells": {
      "8": {
-      "t": 61,
-      "v": 1,
+      "t": 62,
+      "v": 0,
       "c": "rain"
      },
      "9": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dry"
      },
      "10": {
       "t": 63,
