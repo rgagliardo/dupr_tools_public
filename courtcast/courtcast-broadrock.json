@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-03T11:05:51",
+ "updated": "2026-10-03T11:36:13",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 65,
-   "dew": 61,
-   "wind": 8
+   "temp": 64,
+   "dew": 58,
+   "wind": 10
   },
   "court": {
    "wet_mm": 0.0,
@@ -88,20 +88,20 @@
     "score": 0.455,
     "best": "11a-12p",
     "why": "rain 3p-6p \u00b7 rain 1p-2p, 7p-9p \u00b7 NWS: rain 11a-2p, 7p-9p",
-    "wet_mm": 0.0,
+    "wet_mm": 0.1,
     "cells": {
      "11": {
-      "t": 65,
+      "t": 64,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 67,
+      "t": 64,
       "v": 2,
       "c": ""
      },
      "13": {
-      "t": 66,
+      "t": 63,
       "v": 1,
       "c": "rain"
      },
@@ -141,7 +141,7 @@
       "c": "rain"
      },
      "21": {
-      "t": 61,
+      "t": 60,
       "v": 1,
       "c": "rain"
      }
@@ -152,10 +152,10 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "C",
-    "score": 0.714,
-    "best": "9a-11a",
+    "score": 0.686,
+    "best": "4p-6p",
     "why": "rain 8a \u00b7 wet court? 7p \u00b7 rain 12p-3p \u00b7 NWS: rain 9a-4p",
-    "wet_mm": 0.4,
+    "wet_mm": 0.5,
     "cells": {
      "8": {
       "t": 62,
@@ -164,8 +164,8 @@
      },
      "9": {
       "t": 62,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dry"
      },
      "10": {
       "t": 62,
