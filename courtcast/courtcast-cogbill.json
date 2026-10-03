@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Cogbill Park",
- "updated": "2026-10-03T01:14:25",
+ "updated": "2026-10-03T01:29:36",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 8a today",
- "wet_note": "court wet? \u2014 0.8mm, drying ~3a",
- "reason": "today grades F, best 8a",
+ "wet_note": "court wet? \u2014 0.8mm, drying ~4a",
+ "reason": "today grades D, best 8a",
  "ranked": [
   {
    "day": "Mon",
@@ -76,7 +76,7 @@
   },
   "court": {
    "wet_mm": 0.8,
-   "obs_18h_mm": 0.5,
+   "obs_18h_mm": 0.7,
    "radar_24h_mm": 1.7
   },
   "days": [
@@ -84,10 +84,10 @@
     "date": "2026-10-03",
     "label": "Today",
     "sub": "10/3",
-    "grade": "F",
-    "score": 0.243,
+    "grade": "D",
+    "score": 0.329,
     "best": "8a",
-    "why": "rain 12p, 2p-9p \u00b7 rain 9a-11a, 1p \u00b7 NWS: rain 1p",
+    "why": "rain 3p-9p \u00b7 rain 9a-2p \u00b7 NWS: rain 12p-2p",
     "wet_mm": 1.1,
     "cells": {
      "8": {
@@ -111,8 +111,8 @@
       "c": "rain"
      },
      "12": {
-      "t": 63,
-      "v": 0,
+      "t": 64,
+      "v": 1,
       "c": "rain"
      },
      "13": {
@@ -122,7 +122,7 @@
      },
      "14": {
       "t": 62,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "15": {
@@ -167,9 +167,9 @@
     "label": "Sun",
     "sub": "10/4",
     "grade": "D",
-    "score": 0.414,
-    "best": "9p",
-    "why": "rain 12p-4p \u00b7 rain 8a-11a, 5p-7p \u00b7 humidity (dew 67\u00b0) 8p \u00b7 NWS: rain 8a-11a",
+    "score": 0.486,
+    "best": "10a",
+    "why": "rain 1p-4p \u00b7 rain 8a-9a, 11a-12p \u00b7 humidity (dew 67\u00b0) 8p \u00b7 NWS: rain 8a-12p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -184,8 +184,8 @@
      },
      "10": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 64,
@@ -193,8 +193,8 @@
       "c": "rain"
      },
      "12": {
-      "t": 64,
-      "v": 0,
+      "t": 65,
+      "v": 1,
       "c": "rain"
      },
      "13": {
@@ -270,12 +270,12 @@
       "c": ""
      },
      "11": {
-      "t": 66,
+      "t": 67,
       "v": 2,
       "c": ""
      },
      "12": {
-      "t": 67,
+      "t": 69,
       "v": 2,
       "c": ""
      },
@@ -482,27 +482,27 @@
    {
     "date": "2026-10-13",
     "d": "Tu",
-    "g": "F"
+    "g": "D"
    },
    {
     "date": "2026-10-14",
     "d": "We",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-10-15",
     "d": "Th",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-10-16",
     "d": "Fr",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-10-18",

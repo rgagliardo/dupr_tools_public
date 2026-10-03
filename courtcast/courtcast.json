@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.10",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-03T01:14:23",
+ "updated": "2026-10-03T01:29:31",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next OK window: 8a today",
  "wet_note": "court wet? \u2014 1.0mm, drying ~4a",
- "reason": "rain \u2014 clean window Sun 9p",
+ "reason": "rain \u2014 clean window Sun 10a",
  "ranked": [
   {
    "day": "Mon",
@@ -64,7 +64,7 @@
   },
   {
    "day": "Sun",
-   "grade": "F"
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -76,7 +76,7 @@
   },
   "court": {
    "wet_mm": 1.0,
-   "obs_18h_mm": 0,
+   "obs_18h_mm": 0.2,
    "radar_24h_mm": 2.3
   },
   "days": [
@@ -166,10 +166,10 @@
     "date": "2026-10-04",
     "label": "Sun",
     "sub": "10/4",
-    "grade": "F",
-    "score": 0.243,
-    "best": "9p",
-    "why": "rain 8a, 12p-7p \u00b7 rain 9a-11a, 8p \u00b7 NWS: rain 9a-11a",
+    "grade": "D",
+    "score": 0.314,
+    "best": "10a",
+    "why": "rain 8a, 1p-7p \u00b7 rain 9a, 11a-12p \u00b7 NWS: rain 9a-12p",
     "wet_mm": 0.7,
     "cells": {
      "8": {
@@ -184,8 +184,8 @@
      },
      "10": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 64,
@@ -193,8 +193,8 @@
       "c": "rain"
      },
      "12": {
-      "t": 63,
-      "v": 0,
+      "t": 64,
+      "v": 1,
       "c": "rain"
      },
      "13": {
@@ -487,27 +487,27 @@
    {
     "date": "2026-10-14",
     "d": "We",
-    "g": "D"
+    "g": "A"
    },
    {
     "date": "2026-10-15",
     "d": "Th",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-10-16",
     "d": "Fr",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-10-18",
     "d": "Su",
-    "g": "B"
+    "g": "C"
    }
   ]
  },
