@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-10-10T08:16:26",
+ "updated": "2026-10-10T08:31:36",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,10 +41,10 @@
   }
  },
  "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 9a today",
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 10p (rain)",
  "wet_note": null,
- "reason": "today grades B, best 9a-7p",
+ "reason": "clean window 9a today",
  "ranked": [
   {
    "day": "Mon",
@@ -64,7 +64,7 @@
   },
   {
    "day": "Today",
-   "grade": "B"
+   "grade": "A"
   }
  ],
  "dashboard": {
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.8
+   "radar_24h_mm": 0.9
   },
   "days": [
    {
     "date": "2026-10-10",
     "label": "Today",
     "sub": "10/10",
-    "grade": "B",
-    "score": 0.871,
+    "grade": "A",
+    "score": 0.914,
     "best": "9a-7p",
-    "why": "raining now 8a \u00b7 rain 8p-9p",
+    "why": "rain 8a, 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 57,
-      "v": 0,
-      "c": "rnow"
+      "v": 1,
+      "c": "rain"
      },
      "9": {
       "t": 60,

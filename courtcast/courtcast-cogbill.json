@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-10-10T08:16:29",
+ "updated": "2026-10-10T08:31:39",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 9a today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 8p",
  "wet_note": null,
- "reason": "today grades B, best 9a-7p",
+ "reason": "then rain",
  "ranked": [
   {
    "day": "Mon",
@@ -59,11 +59,11 @@
    "grade": "A"
   },
   {
-   "day": "Wed",
-   "grade": "B"
+   "day": "Today",
+   "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Wed",
    "grade": "B"
   }
  ],
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.6
+   "radar_24h_mm": 0.8
   },
   "days": [
    {
     "date": "2026-10-10",
     "label": "Today",
     "sub": "10/10",
-    "grade": "B",
-    "score": 0.871,
-    "best": "9a-7p",
-    "why": "raining now 8a \u00b7 rain 8p-9p",
+    "grade": "A",
+    "score": 0.943,
+    "best": "8a-7p",
+    "why": "rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 57,
-      "v": 0,
-      "c": "rnow"
+      "v": 2,
+      "c": ""
      },
      "9": {
       "t": 60,
