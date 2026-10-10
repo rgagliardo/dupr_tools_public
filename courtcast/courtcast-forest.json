@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-10T09:17:22",
+ "updated": "2026-10-10T09:33:51",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 8p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: 10a today",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "today grades B, best 10a-7p",
  "ranked": [
   {
    "day": "Mon",
@@ -64,7 +64,7 @@
   },
   {
    "day": "Today",
-   "grade": "A"
+   "grade": "B"
   }
  ],
  "dashboard": {
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.4
+   "radar_24h_mm": 0.6
   },
   "days": [
    {
     "date": "2026-10-10",
     "label": "Today",
     "sub": "10/10",
-    "grade": "A",
-    "score": 0.938,
-    "best": "9a-7p",
-    "why": "rain 8p-9p",
+    "grade": "B",
+    "score": 0.862,
+    "best": "10a-7p",
+    "why": "raining now 9a \u00b7 rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
       "t": 60,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "10": {
       "t": 64,
