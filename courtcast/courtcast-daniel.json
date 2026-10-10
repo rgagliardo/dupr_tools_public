@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-10T09:48:59",
+ "updated": "2026-10-10T10:04:09",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 10a today",
+ "headline": "Next window: 11a today",
  "wet_note": null,
- "reason": "today grades B, best 10a-7p",
+ "reason": "today grades B, best 11a-7p",
  "ranked": [
   {
    "day": "Mon",
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 61,
-   "dew": 55,
-   "wind": 6
+   "temp": 64,
+   "dew": 57,
+   "wind": 7
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 1.5
+   "radar_24h_mm": 1.9
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/10",
     "grade": "B",
-    "score": 0.862,
-    "best": "10a-7p",
-    "why": "raining now 9a \u00b7 rain 8p-9p",
+    "score": 0.85,
+    "best": "11a-7p",
+    "why": "raining now 10a \u00b7 rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 61,
-      "v": 0,
-      "c": "rnow"
-     },
      "10": {
       "t": 64,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "11": {
       "t": 67,
