@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-10T16:07:25",
+ "updated": "2026-10-10T16:40:27",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -55,12 +55,12 @@
    "grade": "A"
   },
   {
-   "day": "Mon",
+   "day": "Today",
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "A"
+   "day": "Mon",
+   "grade": "B"
   },
   {
    "day": "Wed",
@@ -127,10 +127,10 @@
     "label": "Sun",
     "sub": "10/11",
     "grade": "D",
-    "score": 0.343,
+    "score": 0.386,
     "best": "",
-    "why": "rain 8a-10a, 9p \u00b7 wet court? 11a-12p \u00b7 rain 1p-4p, 6p-8p \u00b7 NWS: rain 5p-8p",
-    "wet_mm": 1.2,
+    "why": "rain 8a-10a, 7p \u00b7 rain 11a-4p, 6p \u00b7 thunder 5p \u00b7 NWS: rain 5p-6p, 8p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 66,
@@ -149,13 +149,13 @@
      },
      "11": {
       "t": 71,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "12": {
       "t": 72,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "13": {
       "t": 73,
@@ -178,7 +178,7 @@
       "c": "rain"
      },
      "17": {
-      "t": 77,
+      "t": 76,
       "v": 1,
       "c": "thn"
      },
@@ -189,13 +189,13 @@
      },
      "19": {
       "t": 74,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "20": {
-      "t": 73,
+      "t": 74,
       "v": 1,
-      "c": "rain"
+      "c": "dew"
      },
      "21": {
       "t": 72,
@@ -208,16 +208,16 @@
     "date": "2026-10-12",
     "label": "Mon",
     "sub": "10/12",
-    "grade": "A",
-    "score": 0.967,
+    "grade": "B",
+    "score": 0.817,
     "best": "3p-9p",
-    "why": "wind (12 mph) 10a",
-    "wet_mm": 0.0,
+    "why": "wet court? 8a \u00b7 wind (13 mph) 10a-12p",
+    "wet_mm": 0.3,
     "cells": {
      "8": {
       "t": 64,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "9": {
       "t": 66,
@@ -230,14 +230,14 @@
       "c": "wnd"
      },
      "11": {
-      "t": 64,
-      "v": 2,
-      "c": ""
+      "t": 70,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
-      "t": 64,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
       "t": 70,

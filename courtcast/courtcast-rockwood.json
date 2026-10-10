@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-10-10T16:07:20",
+ "updated": "2026-10-10T16:40:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 5p today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 8p",
  "wet_note": null,
- "reason": "today grades C, best 5p-7p",
+ "reason": "then rain",
  "ranked": [
   {
    "day": "Tue",
@@ -56,11 +56,11 @@
   },
   {
    "day": "Mon",
-   "grade": "B"
+   "grade": "A"
   },
   {
    "day": "Today",
-   "grade": "C"
+   "grade": "B"
   },
   {
    "day": "Wed",
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0.2,
-   "radar_24h_mm": 1.9
+   "radar_24h_mm": 2.0
   },
   "days": [
    {
     "date": "2026-10-10",
     "label": "Today",
     "sub": "10/10",
-    "grade": "C",
-    "score": 0.7,
-    "best": "5p-7p",
-    "why": "raining now 4p \u00b7 rain 8p-9p",
+    "grade": "B",
+    "score": 0.867,
+    "best": "4p-7p",
+    "why": "rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "16": {
       "t": 68,
-      "v": 0,
-      "c": "rnow"
+      "v": 2,
+      "c": ""
      },
      "17": {
       "t": 68,
@@ -126,11 +126,11 @@
     "date": "2026-10-11",
     "label": "Sun",
     "sub": "10/11",
-    "grade": "F",
-    "score": 0.214,
+    "grade": "D",
+    "score": 0.3,
     "best": "",
-    "why": "rain 8a-10a, 5p-7p \u00b7 wet court? 11a-12p \u00b7 rain 1p-4p, 8p \u00b7 NWS: rain 8p",
-    "wet_mm": 0.9,
+    "why": "rain 8a-10a, 6p-9p \u00b7 rain 11a-4p \u00b7 thunder 5p \u00b7 NWS: rain 5p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 66,
@@ -149,13 +149,13 @@
      },
      "11": {
       "t": 71,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "12": {
       "t": 72,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "13": {
       "t": 73,
@@ -178,9 +178,9 @@
       "c": "rain"
      },
      "17": {
-      "t": 76,
-      "v": 0,
-      "c": "rain"
+      "t": 77,
+      "v": 1,
+      "c": "thn"
      },
      "18": {
       "t": 75,
@@ -194,7 +194,7 @@
      },
      "20": {
       "t": 73,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "21": {
@@ -208,21 +208,21 @@
     "date": "2026-10-12",
     "label": "Mon",
     "sub": "10/12",
-    "grade": "B",
-    "score": 0.85,
+    "grade": "A",
+    "score": 0.9,
     "best": "3p-9p",
-    "why": "wet court? 8a \u00b7 drying 9a \u00b7 wind (12 mph) 10a",
-    "wet_mm": 0.5,
+    "why": "wind (12 mph) 10a-11a \u00b7 drying 8a",
+    "wet_mm": 0.2,
     "cells": {
      "8": {
       "t": 64,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dry"
      },
      "9": {
       "t": 65,
-      "v": 1,
-      "c": "dry"
+      "v": 2,
+      "c": ""
      },
      "10": {
       "t": 68,
@@ -230,12 +230,12 @@
       "c": "wnd"
      },
      "11": {
-      "t": 64,
-      "v": 2,
-      "c": ""
+      "t": 70,
+      "v": 1,
+      "c": "wnd"
      },
      "12": {
-      "t": 64,
+      "t": 68,
       "v": 2,
       "c": ""
      },
