@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-10T09:02:09",
+ "updated": "2026-10-10T09:17:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "PLAY NOW",
  "headline": "until 8p",
  "wet_note": null,
- "reason": "then rain \u00b7 back 9p",
+ "reason": "then rain",
  "ranked": [
   {
    "day": "Mon",
@@ -59,11 +59,11 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Wed",
    "grade": "A"
   },
   {
-   "day": "Wed",
+   "day": "Today",
    "grade": "A"
   }
  ],
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "10/10",
     "grade": "A",
-    "score": 0.969,
+    "score": 0.938,
     "best": "9a-7p",
-    "why": "rain 8p",
+    "why": "rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "9": {
@@ -151,9 +151,9 @@
       "c": "rain"
      },
      "21": {
-      "t": 66,
-      "v": 2,
-      "c": ""
+      "t": 63,
+      "v": 1,
+      "c": "rain"
      }
     }
    },
@@ -162,9 +162,9 @@
     "label": "Sun",
     "sub": "10/11",
     "grade": "D",
-    "score": 0.343,
+    "score": 0.386,
     "best": "",
-    "why": "rain 8a-11a, 8p-9p \u00b7 rain 12p-7p \u00b7 NWS: rain 12p-7p",
+    "why": "rain 8a-11a, 9p \u00b7 rain 12p-8p \u00b7 NWS: rain 12p-8p",
     "wet_mm": 1.0,
     "cells": {
      "8": {
@@ -228,8 +228,8 @@
       "c": "rain"
      },
      "20": {
-      "t": 71,
-      "v": 0,
+      "t": 74,
+      "v": 1,
       "c": "rain"
      },
      "21": {
