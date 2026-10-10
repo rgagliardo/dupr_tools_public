@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-10T16:40:23",
+ "updated": "2026-10-10T16:55:35",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -127,10 +127,10 @@
     "label": "Sun",
     "sub": "10/11",
     "grade": "D",
-    "score": 0.343,
+    "score": 0.386,
     "best": "",
-    "why": "rain 8a-10a, 6p-7p \u00b7 rain 11a-4p \u00b7 thunder 5p \u00b7 NWS: rain 5p, 8p",
-    "wet_mm": 0.9,
+    "why": "rain 8a, 10a \u00b7 rain 9a, 11a-4p \u00b7 thunder 5p \u00b7 NWS: rain 9a, 5p",
+    "wet_mm": 0.6,
     "cells": {
      "8": {
       "t": 67,
@@ -139,7 +139,7 @@
      },
      "9": {
       "t": 68,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "10": {
