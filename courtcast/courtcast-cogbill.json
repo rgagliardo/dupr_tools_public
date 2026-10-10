@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-10-10T08:01:17",
+ "updated": "2026-10-10T08:16:29",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,22 +40,14 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 8p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: 9a today",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "today grades B, best 9a-7p",
  "ranked": [
   {
    "day": "Mon",
-   "grade": "A"
-  },
-  {
-   "day": "Thu",
-   "grade": "A"
-  },
-  {
-   "day": "Today",
    "grade": "A"
   },
   {
@@ -63,7 +55,15 @@
    "grade": "A"
   },
   {
+   "day": "Thu",
+   "grade": "A"
+  },
+  {
    "day": "Wed",
+   "grade": "B"
+  },
+  {
+   "day": "Today",
    "grade": "B"
   }
  ],
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.5
+   "radar_24h_mm": 0.6
   },
   "days": [
    {
     "date": "2026-10-10",
     "label": "Today",
     "sub": "10/10",
-    "grade": "A",
-    "score": 0.943,
-    "best": "8a-7p",
-    "why": "rain 8p-9p",
+    "grade": "B",
+    "score": 0.871,
+    "best": "9a-7p",
+    "why": "raining now 8a \u00b7 rain 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 57,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "9": {
       "t": 60,
@@ -321,9 +321,9 @@
     "label": "Tue",
     "sub": "10/13",
     "grade": "A",
-    "score": 0.943,
-    "best": "3p-8p",
-    "why": "humidity (dew 66\u00b0) 9p",
+    "score": 1.0,
+    "best": "3p-9p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -357,9 +357,9 @@
       "c": ""
      },
      "21": {
-      "t": 72,
-      "v": 1,
-      "c": "dew"
+      "t": 70,
+      "v": 2,
+      "c": ""
      }
     }
    },
@@ -467,7 +467,7 @@
    {
     "date": "2026-10-17",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-10-18",
@@ -507,7 +507,7 @@
    {
     "date": "2026-10-25",
     "d": "Su",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
