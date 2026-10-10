@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-10T08:31:37",
+ "updated": "2026-10-10T08:53:02",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -535,6 +535,11 @@
   {
    "tag": "cogbill",
    "label": "Cogbill",
+   "primary": false
+  },
+  {
+   "tag": "forest",
+   "label": "Forest",
    "primary": false
   }
  ]

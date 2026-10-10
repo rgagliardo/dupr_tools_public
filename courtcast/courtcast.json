@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-10T08:46:50",
+ "updated": "2026-10-10T08:53:00",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 9a today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 8p",
  "wet_note": null,
- "reason": "today grades A, best 9a-7p",
+ "reason": "then rain \u00b7 back 9p",
  "ranked": [
   {
    "day": "Mon",
@@ -85,15 +85,15 @@
     "label": "Today",
     "sub": "10/10",
     "grade": "A",
-    "score": 0.9,
-    "best": "9a-7p",
-    "why": "raining now 8a \u00b7 rain 8p",
+    "score": 0.971,
+    "best": "8a-7p",
+    "why": "rain 8p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 57,
-      "v": 0,
-      "c": "rnow"
+      "v": 2,
+      "c": ""
      },
      "9": {
       "t": 60,
@@ -535,6 +535,11 @@
   {
    "tag": "cogbill",
    "label": "Cogbill",
+   "primary": false
+  },
+  {
+   "tag": "forest",
+   "label": "Forest",
    "primary": false
   }
  ]
