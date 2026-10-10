@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Kristi King</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+  --green:#2ecc71; --adj:#ff3db4;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+  --green:#1a9e56; --adj:#c2007a;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+/* ---- Change story ribbon ---- */
+.story-sum { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+.sp { font-size:11px; font-weight:700; padding:3px 8px; border-radius:12px;
+  border:1px solid var(--line-soft); color:var(--txt-2); white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.sp-match { border-color:var(--cyan); color:var(--cyan); }
+.sp-adj { border-color:var(--adj); color:var(--adj); }
+.sp-late { border-color:var(--partner-pur); color:var(--partner-pur); }
+.sp-reset { border-color:var(--adj); color:var(--adj); font-weight:800; }
+.story { position:relative; margin:0 0 8px; padding-left:6px; }
+.sr { display:grid; grid-template-columns:52px 20px 1fr; align-items:start;
+  gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }
+.sr:last-child { border-bottom:0; }
+.sr-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); padding-top:2px; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums; }
+.sr-ico { font-size:13px; line-height:1.2; text-align:center; color:var(--txt-mid); }
+.sr-adj .sr-ico { color:var(--adj); }
+.sr-reset .sr-ico { color:var(--adj); }
+.sr-late .sr-ico, .sr-latemore .sr-ico { color:var(--partner-pur); }
+.sr-peak .sr-ico, .sr-now .sr-ico { color:var(--cyan); }
+.sr-nowstale .sr-ico { color:var(--txt-dim); opacity:.6; }
+.sr-latemore .sr-title { font-weight:500; color:var(--txt-mid); }
+.sr-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.sr-title { font-size:13px; font-weight:600; color:var(--txt); }
+.sr-sub { font-size:11px; color:var(--txt-mid); margin-top:2px; line-height:1.4; }
+.sr-delta { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums;
+  margin-left:auto; flex:0 0 auto; }
+.sr-delta.pos { color:var(--green); } .sr-delta.neg { color:var(--red); }
+.sr-reset { background:color-mix(in srgb, var(--adj) 8%, transparent); }
+</style></head><body>
+<div class="stamp">MOCKUP v6.3 — 2026-08-27</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Kristi King — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-w">🔥 2W</span><span class="pname">Kristi King</span>
+    <span class="scores">4.119</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,21.6 6.9,23.7 9.8,27.0 12.8,24.7 15.8,25.9 27.6,24.0 30.5,25.4 33.5,23.9 39.4,23.7 45.2,21.7 54.1,20.6 63.0,14.4 65.9,13.5 68.8,15.0 71.8,10.8 74.8,10.3 77.7,10.9 80.7,7.6 86.5,6.2 89.5,6.4 92.5,4.2 101.3,4.3 104.2,3.0 110.2,4.7 116.0,4.0 119.0,4.7"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">3.661</div><div class="k">Placed 5/24</div></div>
+  <div class="chip"><div class="v pos">+0.181</div><div class="k">Corrected &lt;90d</div></div>
+  <div class="chip"><div class="v">4.195</div><div class="k">Peak 10/25</div></div>
+  <div class="chip"><div class="v">4.119</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v pos">+0.220</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.238</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 3.661, peak 4.195, now 4.119 (+0.458 net)"><line class="grid" x1="59.4" y1="14" x2="59.4" y2="186"/><line class="grid" x1="168.1" y1="14" x2="168.1" y2="186"/><text class="tick" x="168.1" y="203" text-anchor="middle">2025</text><line class="grid" x1="275.1" y1="14" x2="275.1" y2="186"/><line class="grid" x1="34" y1="146.5" x2="356" y2="146.5"/><text class="tick" x="29" y="149.5" text-anchor="end">3.50</text><line class="grid" x1="34" y1="104.8" x2="356" y2="104.8"/><text class="tick" x="29" y="107.8" text-anchor="end">3.75</text><line class="grid" x1="34" y1="63.2" x2="356" y2="63.2"/><text class="tick" x="29" y="66.2" text-anchor="end">4.00</text><line class="grid" x1="34" y1="21.5" x2="356" y2="21.5"/><text class="tick" x="29" y="24.5" text-anchor="end">4.25</text><path class="seg-norm" d="M34.0 136.2 L58.8 147.8 L63.0 165.9 L67.1 153.2 L70.0 159.8 L71.2 155.0 L85.4 151.5 L86.0 149.6 L87.8 157.3 L89.5 148.9 L92.5 150.0 L93.7 147.7 L116.7 143.7"/><path class="seg-sys" d="M116.7 143.7 L130.9 136.8"/><path class="seg-norm" d="M130.9 136.8 L133.3 136.2 L137.4 130.3 L172.3 130.6"/><path class="seg-sys" d="M172.3 130.6 L175.2 118.0"/><path class="seg-norm" d="M175.2 118.0 L177.0 107.7 L181.1 96.7 L188.2 92.1 L189.4 100.1 L193.5 77.3 L197.7 74.1 L201.2 77.4 L208.9 59.3 L217.2 51.8 L218.3 52.8 L221.3 40.9 L230.7 40.1 L233.7 41.1 L234.9 34.2 L247.9 38.7 L251.4 43.6 L343.0 44.2 L343.6 39.7 L356.0 43.3"/><line class="mk-whisk" x1="34.0" y1="136.2" x2="34.0" y2="119.6"/><line class="mk-whisk" x1="343.0" y1="44.2" x2="343.0" y2="30.7"/><line class="mk-whisk" x1="67.1" y1="153.2" x2="67.1" y2="169.3"/><circle class="mk mk-start" cx="34.0" cy="119.6" r="4"/><circle class="mk mk-peak" cx="343.0" cy="30.7" r="5"/><circle class="mk mk-low" cx="67.1" cy="169.3" r="4"/><circle class="mk mk-now" cx="356.0" cy="43.3" r="4"/><rect class="mk mk-adm" x="43.8" y="72.8" width="6.4" height="6.4" transform="rotate(45 47.0 76.0)"/><rect class="mk mk-adm" x="43.8" y="103.4" width="6.4" height="6.4" transform="rotate(45 47.0 106.6)"/><rect class="mk mk-adm" x="127.7" y="133.6" width="6.4" height="6.4" transform="rotate(45 130.9 136.8)"/><rect class="mk mk-adm" x="172.0" y="114.8" width="6.4" height="6.4" transform="rotate(45 175.2 118.0)"/><rect class="mk mk-adm" x="173.8" y="98.9" width="6.4" height="6.4" transform="rotate(45 177.0 102.1)"/><rect class="mk mk-adm" x="173.8" y="104.5" width="6.4" height="6.4" transform="rotate(45 177.0 107.7)"/><rect class="mk mk-adm" x="177.9" y="99.4" width="6.4" height="6.4" transform="rotate(45 181.1 102.6)"/><rect class="mk mk-adm" x="177.9" y="94.0" width="6.4" height="6.4" transform="rotate(45 181.1 97.2)"/><rect class="mk mk-adm" x="185.0" y="88.0" width="6.4" height="6.4" transform="rotate(45 188.2 91.2)"/><rect class="mk mk-adm" x="185.0" y="93.6" width="6.4" height="6.4" transform="rotate(45 188.2 96.8)"/><rect class="mk mk-adm" x="190.3" y="87.1" width="6.4" height="6.4" transform="rotate(45 193.5 90.3)"/><rect class="mk mk-adm" x="190.3" y="97.0" width="6.4" height="6.4" transform="rotate(45 193.5 100.2)"/><rect class="mk mk-adm" x="198.0" y="75.5" width="6.4" height="6.4" transform="rotate(45 201.2 78.7)"/><rect class="mk mk-adm" x="198.0" y="80.0" width="6.4" height="6.4" transform="rotate(45 201.2 83.2)"/><text class="anno anno-gold" x="343.0" y="21.7" text-anchor="end">peak 4.195</text><text class="anno" x="67.1" y="182.0" text-anchor="middle">low 3.363</text><text class="anno" x="38.0" y="111.6">placed 3.661</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span>◆ DUPR adjustment</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (254 changes since 2024-05-19). Solid = a match moved it; dashed pink = DUPR moved it with no match; ◆ marks a DUPR adjustment (no match played). 129-102 record over 231 doubles matches, 1.5-year span. Inactive since 2025-11-15.</p>
+
+
+<h2>Change story</h2>
+<div class="story-sum"><span class="sp sp-match">231 matches</span><span class="sp sp-adj">14 DUPR adjustments · +0.227</span></div>
+<p class="note" style="margin:0 0 10px">The events that shaped this rating, in order.
+Ordinary match results are summarized in the sections below — this ribbon spotlights what
+you can't see on a scorecard.</p>
+<div class="story"><div class="sr sr-start"><div class="sr-date">5/19/24</div><div class="sr-ico" aria-hidden="true">◎</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Placed at 3.661</span></div><div class="sr-sub">DUPR engine start</div></div></div><div class="sr sr-adj"><div class="sr-date">6/10/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.178</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">10/30/24</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.041</span></div><div class="sr-sub">DUPR changed this rating with no match played</div></div></div><div class="sr sr-adj"><div class="sr-date">1/13/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.076</span></div><div class="sr-sub">DUPR changed this rating with no match played</div></div></div><div class="sr sr-adj"><div class="sr-date">1/16/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta neg">-0.069</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">1/23/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.063</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">2/4/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta pos">+0.004</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">2/13/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta neg">-0.012</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-adj"><div class="sr-date">2/26/25</div><div class="sr-ico" aria-hidden="true">◆</div><div class="sr-body"><div class="sr-head"><span class="sr-title">DUPR adjustment</span><span class="sr-delta neg">-0.054</span></div><div class="sr-sub">DUPR changed this rating with no match played · 2 steps netted</div></div></div><div class="sr sr-peak"><div class="sr-date">10/24/25</div><div class="sr-ico" aria-hidden="true">▲</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Peak 4.195</span></div><div class="sr-sub">highest rating reached</div></div></div><div class="sr sr-nowstale"><div class="sr-date">11/15/25</div><div class="sr-ico" aria-hidden="true">●</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Now 4.119</span></div><div class="sr-sub">inactive for 247 days</div></div></div></div>
+<p class="note">◆ DUPR changing the rating with no match played, ⟳ resets, and ↩ matches DUPR
+processed long after they were played — all DUPR's doing, not the player's. We don't label
+an adjustment as system-wide, individual, or paid: only DUPR knows which, and the raw record
+just says a change happened with no match. Resets are inferred from a rating held flat across
+many matches (DUPR doesn't flag them).</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:48%"></div></div></div><span class="val pos">+0.220</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:52%"></div></div></div><span class="val pos">+0.238</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.458</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +2.246 / losses -1.896.</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">5/19/24</span>Bangers &amp; Dinks Sunday 7 p.m. League - Courts 7 &amp; 8</div><div class="match-group win"><div class="match-row"><span class="match-score">11-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.194)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.561</span></span> w/ <span class="match-partner">Sara Kirchoff <span class="match-rating">3.396</span></span> <span class="match-vs">vs</span> <span>Mary Kirchoff <span class="match-rating">3.435</span></span> &amp; <span>Robbie Bradley <span class="match-rating">3.836</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.31</summary><div class="tag-math">Kristi 3.561 + Sara 3.396 = <b>6.958</b><br>Mary 3.435 + Robbie 3.836 = <b>7.272</b><br>→ opponents stronger by 0.314 combined DUPR (pre-match)</div></details> <span class="mx">PD +8</span> <span class="mx">match #4</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.191)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.650</span></span> w/ <span class="match-partner">Mary Kirchoff <span class="match-rating">3.241</span></span> <span class="match-vs">vs</span> <span>Timmy Siverd <span class="match-rating">3.550</span></span> &amp; <span>Joseph Salvaggio <span class="match-rating">4.256</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.91</summary><div class="tag-math">Kristi 3.650 + Mary 3.241 = <b>6.892</b><br>Timmy 3.550 + Joseph 4.256 = <b>7.807</b><br>→ opponents stronger by 0.914 combined DUPR (pre-match)</div></details> <span class="mx">PD +7</span> <span class="mx">match #6</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.073)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.563</span></span> w/ <span class="match-partner">Michael Nielson <span class="match-rating">4.591</span></span> <span class="match-vs">vs</span> <span>Carlo Zuffi <span class="match-rating">3.905</span></span> &amp; <span>Sara Kirchoff <span class="match-rating">3.390</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.86</summary><div class="tag-math">Kristi 3.563 + Michael 4.591 = <b>8.155</b><br>Carlo 3.905 + Sara 3.390 = <b>7.297</b><br>→ their side stronger by 0.858 combined DUPR (pre-match)</div></details> <span class="mx">PD +7</span> <span class="mx">match #2</span></div></div><div class="match-datepill">6/9/24</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.097)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.841</span></span> w/ <span class="match-partner">Mary Kirchoff <span class="match-rating">3.387</span></span> <span class="match-vs">vs</span> <span>David L Daniels <span class="match-rating">3.168</span></span> &amp; <span>Kippie Douglas <span class="match-rating">3.285</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.77</summary><div class="tag-math">Kristi 3.841 + Mary 3.387 = <b>7.229</b><br>David 3.168 + Kippie 3.285 = <b>6.455</b><br>→ their side stronger by 0.774 combined DUPR (pre-match)</div></details> <span class="mx">PD -3</span> <span class="mx">match #7</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.097)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.725</span></span> w/ <span class="match-partner">Marta Locklear <span class="match-rating">3.248</span></span> <span class="match-vs">vs</span> <span>Chris Smith <span class="match-rating">3.534</span></span> &amp; <span>Mary Kirchoff <span class="match-rating">3.343</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta -0.10</summary><div class="tag-math">Kristi 3.725 + Marta 3.248 = <b>6.974</b><br>Chris 3.534 + Mary 3.343 = <b>6.878</b><br>→ their side stronger by 0.096 combined DUPR (pre-match)</div></details> <span class="mx">PD -8</span> <span class="mx">match #10</span></div></div><div class="match-datepill">5/19/24</div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.097)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.661</span></span> w/ <span class="match-partner">Timmy Siverd</span> <span class="match-vs">vs</span> <span>Robbie Bradley <span class="match-rating">3.760</span></span> &amp; <span>Michael Nielson <span class="match-rating">4.538</span></span></div><div class="match-extra"><span class="mx">PD -8</span> <span class="mx">match #1</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">5/19/24</span>Bangers &amp; Dinks Sunday 7 p.m. League - Courts 7 &amp; 8</div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.097)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.661</span></span> w/ <span class="match-partner">Timmy Siverd</span> <span class="match-vs">vs</span> <span>Robbie Bradley <span class="match-rating">3.760</span></span> &amp; <span>Michael Nielson <span class="match-rating">4.538</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.073)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.563</span></span> w/ <span class="match-partner">Michael Nielson <span class="match-rating">4.591</span></span> <span class="match-vs">vs</span> <span>Carlo Zuffi <span class="match-rating">3.905</span></span> &amp; <span>Sara Kirchoff <span class="match-rating">3.390</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.075)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.636</span></span> w/ <span class="match-partner">Michael Jackson III <span class="match-rating">3.328</span></span> <span class="match-vs">vs</span> <span>Timmy Siverd <span class="match-rating">3.678</span></span> &amp; <span>Sara Kirchoff <span class="match-rating">3.336</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-3 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.194)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.561</span></span> w/ <span class="match-partner">Sara Kirchoff <span class="match-rating">3.396</span></span> <span class="match-vs">vs</span> <span>Mary Kirchoff <span class="match-rating">3.435</span></span> &amp; <span>Robbie Bradley <span class="match-rating">3.836</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.089)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.739</span></span> w/ <span class="match-partner">Robbie Bradley <span class="match-rating">3.671</span></span> <span class="match-vs">vs</span> <span>Carlo Zuffi <span class="match-rating">3.860</span></span> &amp; <span>Joseph Salvaggio <span class="match-rating">4.217</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.191)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.650</span></span> w/ <span class="match-partner">Mary Kirchoff <span class="match-rating">3.241</span></span> <span class="match-vs">vs</span> <span>Timmy Siverd <span class="match-rating">3.550</span></span> &amp; <span>Joseph Salvaggio <span class="match-rating">4.256</span></span></div></div><div class="match-datepill">6/9/24</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.097)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.841</span></span> w/ <span class="match-partner">Mary Kirchoff <span class="match-rating">3.387</span></span> <span class="match-vs">vs</span> <span>David L Daniels <span class="match-rating">3.168</span></span> &amp; <span>Kippie Douglas <span class="match-rating">3.285</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.062)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.743</span></span> w/ <span class="match-partner">Michael Jackson III <span class="match-rating">2.954</span></span> <span class="match-vs">vs</span> <span>Mary Kirchoff <span class="match-rating">3.339</span></span> &amp; <span>Craig Wise <span class="match-rating">3.594</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.044)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.681</span></span> w/ <span class="match-partner">Kippie Douglas <span class="match-rating">3.321</span></span> <span class="match-vs">vs</span> <span>Marta Locklear <span class="match-rating">3.262</span></span> &amp; <span>Michael Jackson III <span class="match-rating">2.922</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.097)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.725</span></span> w/ <span class="match-partner">Marta Locklear <span class="match-rating">3.248</span></span> <span class="match-vs">vs</span> <span>Chris Smith <span class="match-rating">3.534</span></span> &amp; <span>Mary Kirchoff <span class="match-rating">3.343</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.088)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.628</span></span> w/ <span class="match-partner">Chris Smith <span class="match-rating">3.563</span></span> <span class="match-vs">vs</span> <span>Kippie Douglas <span class="match-rating">3.324</span></span> &amp; <span>Craig Wise <span class="match-rating">3.760</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.022)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.540</span></span> w/ <span class="match-partner">Craig Wise <span class="match-rating">3.853</span></span> <span class="match-vs">vs</span> <span>David L Daniels <span class="match-rating">3.180</span></span> &amp; <span>Marta Locklear <span class="match-rating">3.236</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.039)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.562</span></span> w/ <span class="match-partner">David L Daniels <span class="match-rating">3.172</span></span> <span class="match-vs">vs</span> <span>Chris Smith <span class="match-rating">3.548</span></span> &amp; <span>Michael Jackson III <span class="match-rating">2.818</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.075)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.601</span></span> w/ <span class="match-partner">Mary Kirchoff <span class="match-rating">3.360</span></span> <span class="match-vs">vs</span> <span>Chris Smith <span class="match-rating">3.534</span></span> &amp; <span>Marta Locklear <span class="match-rating">3.257</span></span></div></div><div class="event-pill"><span class="event-pill-date">6/30/24</span>Bangers &amp; Dinks Sunday 7 p.m. League - Courts 2 &amp; 3</div><div class="match-group loss"><div class="match-row"><span class="match-score">10-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.028)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.526</span></span> w/ <span class="match-partner">Mandy Bradley <span class="match-rating">3.667</span></span> <span class="match-vs">vs</span> <span>Mary Kirchoff <span class="match-rating">3.401</span></span> &amp; <span>Timmy Siverd <span class="match-rating">3.469</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.033)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.497</span></span> w/ <span class="match-partner">David L Daniels <span class="match-rating">3.149</span></span> <span class="match-vs">vs</span> <span>Robbie Bradley <span class="match-rating">3.485</span></span> &amp; <span>Robert Howell <span class="match-rating">3.955</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.038)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.531</span></span> w/ <span class="match-partner">Robert Howell <span class="match-rating">3.932</span></span> <span class="match-vs">vs</span> <span>Mandy Bradley <span class="match-rating">3.622</span></span> &amp; <span>Danny Li <span class="match-rating">3.670</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.569</span></span> w/ <span class="match-partner">David Kupstas <span class="match-rating">3.948</span></span> <span class="match-vs">vs</span> <span>Mary Kirchoff <span class="match-rating">3.458</span></span> &amp; <span>Robbie Bradley <span class="match-rating">3.384</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.589</span></span> w/ <span class="match-partner">Timmy Siverd <span class="match-rating">3.401</span></span> <span class="match-vs">vs</span> <span>David L Daniels <span class="match-rating">3.183</span></span> &amp; <span>David Kupstas <span class="match-rating">3.950</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">3-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.075)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.575</span></span> w/ <span class="match-partner">Robbie Bradley <span class="match-rating">3.351</span></span> <span class="match-vs">vs</span> <span>Mandy Bradley <span class="match-rating">3.587</span></span> &amp; <span>Michael Jackson III <span class="match-rating">2.806</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.008)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.500</span></span> w/ <span class="match-partner">Michael Jackson III <span class="match-rating">2.861</span></span> <span class="match-vs">vs</span> <span>Timmy Siverd <span class="match-rating">3.390</span></span> &amp; <span>Ronnie Cummings <span class="match-rating">3.908</span></span></div></div><div class="event-pill"><span class="event-pill-date">7/7/24</span>Bangers &amp; Dinks Sunday 7 p.m. League - Courts 3 &amp; 4</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.028)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.492</span></span> w/ <span class="match-partner">David Kupstas <span class="match-rating">3.951</span></span> <span class="match-vs">vs</span> <span>Chris Smith <span class="match-rating">3.543</span></span> &amp; <span>Craig Wise <span class="match-rating">3.973</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">0-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.055)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.520</span></span> w/ <span class="match-partner">Ryan Patrick <span class="match-rating">4.172</span></span> <span class="match-vs">vs</span> <span>David Kupstas <span class="match-rating">3.954</span></span> &amp; <span>Robert Howell <span class="match-rating">3.972</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">1-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.016)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.465</span></span> w/ <span class="match-partner">Chris Smith <span class="match-rating">3.552</span></span> <span class="match-vs">vs</span> <span>Carlo Zuffi <span class="match-rating">3.778</span></span> &amp; <span>Ryan Patrick <span class="match-rating">4.159</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.449</span></span> w/ <span class="match-partner">Carlo Zuffi <span class="match-rating">3.803</span></span> <span class="match-vs">vs</span> <span>David Kupstas <span class="match-rating">3.957</span></span> &amp; <span>Raymond Tautic <span class="match-rating">3.642</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">5-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.016)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.436</span></span> w/ <span class="match-partner">Raymond Tautic <span class="match-rating">3.645</span></span> <span class="match-vs">vs</span> <span>Chris Smith <span class="match-rating">3.572</span></span> &amp; <span>Robert Howell <span class="match-rating">4.000</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.013)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.420</span></span> w/ <span class="match-partner">Robert Howell <span class="match-rating">4.015</span></span> <span class="match-vs">vs</span> <span>Carlo Zuffi <span class="match-rating">3.761</span></span> &amp; <span>Craig Wise <span class="match-rating">3.750</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">6-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.010)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.432</span></span> w/ <span class="match-partner">Craig Wise <span class="match-rating">3.732</span></span> <span class="match-vs">vs</span> <span>Raymond Tautic <span class="match-rating">3.636</span></span> &amp; <span>Ryan Patrick <span class="match-rating">4.186</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">2-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.040)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.422</span></span> w/ <span class="match-partner">David Kupstas <span class="match-rating">3.956</span></span> <span class="match-vs">vs</span> <span>Carlo Zuffi <span class="match-rating">3.773</span></span> &amp; <span>Raymond Tautic <span class="match-rating">3.639</span></span></div></div><div class="event-pill"><span class="event-pill-date">7/14/24</span>Bangers &amp; Dinks Sunday 7 p.m. League - Courts 1 &amp; 2</div><div class="match-group loss"><div class="match-row"><span class="match-score">2-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Kristi <span class="match-rating">3.383</span></span> w/ <span class="match-partner">Sara Kirchoff <span class="match-rating">3.355</span></span> <span class="match-vs">vs</span> <span>Danny Li <span class="match-rating">3.668</span></span> &amp; <span>Chris Smith <span class="match-rating">3.633</span></span></div></div>
+<p class="note">first 30 rated matches, from 2024-05-19 · 1 unrated match not shown (pre-engine era) · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2024-05-19", "x": 34.0, "r": 3.562, "dl": 0.0, "m": true, "info": "4W-3L \u00b7 Bangers & Dinks Sunday 7 p.m. League - Courts 7 & 8"}, {"d": "2024-06-10", "x": 47.0, "r": 3.526, "dl": -0.035, "m": true, "info": "match day"}, {"d": "2024-06-30", "x": 58.8, "r": 3.492, "dl": -0.034, "m": true, "info": "3W-4L \u00b7 Bangers & Dinks Sunday 7 p.m. League - Courts 2 & 3"}, {"d": "2024-07-07", "x": 63.0, "r": 3.383, "dl": -0.109, "m": true, "info": "2W-6L \u00b7 Bangers & Dinks Sunday 7 p.m. League - Courts 3 & 4"}, {"d": "2024-07-14", "x": 67.1, "r": 3.46, "dl": 0.077, "m": true, "info": "5W-3L \u00b7 Bangers & Dinks Sunday 7 p.m. League - Courts 1 & 2"}, {"d": "2024-07-19", "x": 70.0, "r": 3.42, "dl": -0.04, "m": true, "info": "3W-2L \u00b7 Bangers & Dinks - Intermediate Super Duper League - Week #1"}, {"d": "2024-07-21", "x": 71.2, "r": 3.449, "dl": 0.029, "m": true, "info": "6W-2L \u00b7 Bangers & Dinks Sunday 7 p.m. League - Courts 1 & 2"}, {"d": "2024-07-31", "x": 77.1, "r": 3.455, "dl": 0.006, "m": true, "info": "5W-2L \u00b7 Bangers & Dinks"}, {"d": "2024-08-14", "x": 85.4, "r": 3.47, "dl": 0.015, "m": true, "info": "4W-3L \u00b7 Bangers & Dinks 6:00 Advanced Intermediate"}, {"d": "2024-08-15", "x": 86.0, "r": 3.481, "dl": 0.012, "m": true, "info": "match day"}, {"d": "2024-08-18", "x": 87.8, "r": 3.435, "dl": -0.046, "m": true, "info": "0W-8L \u00b7 Bangers & Dinks 7:00 Sunday League"}, {"d": "2024-08-21", "x": 89.5, "r": 3.486, "dl": 0.051, "m": true, "info": "7W-0L \u00b7 Bangers & Dinks - Advanced Intermediate Super Duper League -"}, {"d": "2024-08-26", "x": 92.5, "r": 3.479, "dl": -0.007, "m": true, "info": "2W-7L \u00b7 Bangers & Dinks 7:00 Sunday League"}, {"d": "2024-08-28", "x": 93.7, "r": 3.493, "dl": 0.014, "m": true, "info": "5W-2L \u00b7 Bangers & Dinks - Advanced Intermediate Super Duper League -"}, {"d": "2024-10-06", "x": 116.7, "r": 3.517, "dl": 0.024, "m": true, "info": "4W-3L \u00b7 Bangers & Dinks - Sunday - Advanced Internmediate League - W"}, {"d": "2024-10-30", "x": 130.9, "r": 3.558, "dl": 0.041, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2024-11-03", "x": 133.3, "r": 3.562, "dl": 0.004, "m": true, "info": "4W-2L \u00b7 Intermediate"}, {"d": "2024-11-10", "x": 137.4, "r": 3.597, "dl": 0.035, "m": true, "info": "5W-2L \u00b7 Intermediate"}, {"d": "2025-01-08", "x": 172.3, "r": 3.595, "dl": -0.002, "m": true, "info": "2W-4L \u00b7 Bangers & Dinks - Late Winter 2025 - Advanced Super Duper Le"}, {"d": "2025-01-13", "x": 175.2, "r": 3.671, "dl": 0.076, "m": false, "info": "DUPR adjustment \u2014 no match played"}, {"d": "2025-01-16", "x": 177.0, "r": 3.733, "dl": 0.062, "m": true, "info": "6W-3L \u00b7 Bangers & Dinks"}, {"d": "2025-01-23", "x": 181.1, "r": 3.798, "dl": 0.066, "m": true, "info": "2W-1L \u00b7 PPBRVA 3.75/4.0 Women's Thursday - Session 2, Week 3 - Thu J"}, {"d": "2025-02-04", "x": 188.2, "r": 3.827, "dl": 0.028, "m": true, "info": "match day"}, {"d": "2025-02-06", "x": 189.4, "r": 3.778, "dl": -0.049, "m": true, "info": "4W-6L \u00b7 Bangers & Dinks 4.0 Pool B"}, {"d": "2025-02-13", "x": 193.5, "r": 3.915, "dl": 0.137, "m": true, "info": "2W-1L \u00b7 PPBRVA 3.75/4.0 Women's Thursday - Session 2, Week 6 - Thu F"}, {"d": "2025-02-20", "x": 197.7, "r": 3.934, "dl": 0.019, "m": true, "info": "2W-1L \u00b7 PPBRVA 3.75/4.0 Women's Thursday - Session 2, Week 7 - Thu F"}, {"d": "2025-02-26", "x": 201.2, "r": 3.915, "dl": -0.02, "m": true, "info": "match day"}, {"d": "2025-03-11", "x": 208.9, "r": 4.023, "dl": 0.109, "m": true, "info": "3W-1L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's League"}, {"d": "2025-03-18", "x": 213.0, "r": 4.04, "dl": 0.017, "m": true, "info": "3W-0L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-03-25", "x": 217.2, "r": 4.068, "dl": 0.028, "m": true, "info": "3W-2L \u00b7 Triple Team Pickleball: Advancing 3.5 Women's"}, {"d": "2025-03-27", "x": 218.3, "r": 4.062, "dl": -0.006, "m": true, "info": "1W-1L \u00b7 PPBRVA 3.75/4.0 Women's Partner - Session 3, Week 3 - Thu Ma"}, {"d": "2025-04-01", "x": 221.3, "r": 4.134, "dl": 0.071, "m": true, "info": "3W-0L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-04-10", "x": 226.6, "r": 4.138, "dl": 0.005, "m": true, "info": "match day"}, {"d": "2025-04-17", "x": 230.7, "r": 4.138, "dl": 0.0, "m": true, "info": "2W-0L \u00b7 PPBRVA 3.75/4.0 Women's Partner - Session 3, Week 5 - Thu Ap"}, {"d": "2025-04-22", "x": 233.7, "r": 4.132, "dl": -0.006, "m": true, "info": "3W-1L \u00b7 Triple Team Pickleball: Advancing 3.5+ Women's"}, {"d": "2025-04-24", "x": 234.9, "r": 4.174, "dl": 0.041, "m": true, "info": "2W-0L \u00b7 PPBRVA 3.75/4.0 Women's Partner - Session 3, Week 6 - Thu Ap"}, {"d": "2025-05-16", "x": 247.9, "r": 4.147, "dl": -0.027, "m": true, "info": "0W-3L \u00b7 Triple Team Pickleball: Advancing 4.5+ Women's"}, {"d": "2025-05-22", "x": 251.4, "r": 4.117, "dl": -0.029, "m": true, "info": "0W-3L \u00b7 Triple Team Pickleball: Advancing 4.5+ Women's"}, {"d": "2025-10-24", "x": 343.0, "r": 4.114, "dl": -0.004, "m": true, "info": "4W-3L \u00b7 Dallas Nationals (Gender)"}, {"d": "2025-10-25", "x": 343.6, "r": 4.141, "dl": 0.027, "m": true, "info": "6W-3L \u00b7 Dallas Nationals (Gender)"}, {"d": "2025-11-15", "x": 356.0, "r": 4.119, "dl": -0.022, "m": true, "info": "match day"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>
