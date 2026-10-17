@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-17T09:23:20",
+ "updated": "2026-10-17T09:38:31",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -71,13 +71,13 @@
   "source": "best",
   "now": {
    "temp": 53,
-   "dew": 49,
+   "dew": 52,
    "wind": 15
   },
   "court": {
    "wet_mm": 0.9,
-   "obs_18h_mm": 8.1,
-   "radar_24h_mm": 19.1
+   "obs_18h_mm": 9.7,
+   "radar_24h_mm": 19.5
   },
   "days": [
    {
@@ -87,7 +87,7 @@
     "grade": "D",
     "score": 0.338,
     "best": "4p",
-    "why": "rain 10a-12p \u00b7 gusts (25 mph) 1p-3p \u00b7 raining now 9a",
+    "why": "rain 10a-1p \u00b7 gusts (25 mph) 2p-3p \u00b7 raining now 9a",
     "wet_mm": 0.9,
     "cells": {
      "9": {
@@ -96,27 +96,27 @@
       "c": "rnow"
      },
      "10": {
-      "t": 52,
+      "t": 53,
       "v": 0,
       "c": "rain"
      },
      "11": {
-      "t": 51,
+      "t": 53,
       "v": 0,
       "c": "rain"
      },
      "12": {
-      "t": 51,
+      "t": 53,
       "v": 0,
       "c": "rain"
      },
      "13": {
-      "t": 52,
+      "t": 54,
       "v": 0,
-      "c": "gst"
+      "c": "rain"
      },
      "14": {
-      "t": 53,
+      "t": 54,
       "v": 0,
       "c": "gst"
      },
@@ -141,7 +141,7 @@
       "c": ""
      },
      "19": {
-      "t": 50,
+      "t": 49,
       "v": 1,
       "c": "wnd"
      },
