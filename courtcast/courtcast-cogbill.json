@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-10-17T11:28:26",
+ "updated": "2026-10-17T11:43:37",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 3p today",
- "wet_note": "court wet? \u2014 0.4mm, drying ~3p",
- "reason": "today grades D, best 3p-5p",
+ "wet_note": "court wet? \u2014 0.7mm, drying ~2p",
+ "reason": "today grades D, best 3p",
  "ranked": [
   {
    "day": "Tue",
@@ -75,9 +75,9 @@
    "wind": 16
   },
   "court": {
-   "wet_mm": 0.4,
+   "wet_mm": 0.7,
    "obs_18h_mm": 10.1,
-   "radar_24h_mm": 19.1
+   "radar_24h_mm": 19.7
   },
   "days": [
    {
@@ -85,8 +85,8 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "D",
-    "score": 0.491,
-    "best": "3p-5p",
+    "score": 0.455,
+    "best": "3p",
     "why": "rain 12p-1p \u00b7 raining now 11a \u00b7 gusts (25 mph) 2p",
     "wet_mm": 0.8,
     "cells": {
@@ -111,14 +111,14 @@
       "c": "gst"
      },
      "15": {
-      "t": 52,
+      "t": 53,
       "v": 2,
       "c": ""
      },
      "16": {
-      "t": 52,
-      "v": 2,
-      "c": ""
+      "t": 54,
+      "v": 1,
+      "c": "wnd"
      },
      "17": {
       "t": 52,
