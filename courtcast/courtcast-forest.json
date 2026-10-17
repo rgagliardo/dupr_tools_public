@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-17T11:58:50",
+ "updated": "2026-10-17T12:14:00",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 4p today",
- "wet_note": "court wet? \u2014 0.8mm, drying ~2p",
+ "wet_note": "court wet? \u2014 0.8mm, drying ~3p",
  "reason": "today grades D, best 4p-6p",
  "ranked": [
   {
@@ -71,13 +71,13 @@
   "source": "best",
   "now": {
    "temp": 53,
-   "dew": 50,
+   "dew": 49,
    "wind": 16
   },
   "court": {
    "wet_mm": 0.8,
-   "obs_18h_mm": 10.1,
-   "radar_24h_mm": 24.0
+   "obs_18h_mm": 11.4,
+   "radar_24h_mm": 24.6
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "D",
-    "score": 0.436,
+    "score": 0.48,
     "best": "4p-6p",
-    "why": "rain 12p-1p \u00b7 gusts (25 mph) 2p-3p \u00b7 raining now 11a",
+    "why": "gusts (25 mph) 2p-3p \u00b7 raining now 12p \u00b7 rain 1p",
     "wet_mm": 0.8,
     "cells": {
-     "11": {
-      "t": 53,
-      "v": 0,
-      "c": "rnow"
-     },
      "12": {
       "t": 53,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "13": {
       "t": 54,
@@ -154,7 +149,7 @@
     "grade": "B",
     "score": 0.857,
     "best": "11a-7p",
-    "why": "chilly 8a-9a, 8p-9p \u00b7 wind (12 mph) 10a",
+    "why": "chilly 8a-10a, 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -170,7 +165,7 @@
      "10": {
       "t": 48,
       "v": 1,
-      "c": "wnd"
+      "c": "chl"
      },
      "11": {
       "t": 50,
@@ -203,7 +198,7 @@
       "c": ""
      },
      "17": {
-      "t": 56,
+      "t": 59,
       "v": 2,
       "c": ""
      },
@@ -234,15 +229,15 @@
     "label": "Mon",
     "sub": "10/19",
     "grade": "A",
-    "score": 0.9,
-    "best": "3p-7p",
-    "why": "wind (13 mph) 8a-9a, 8p",
+    "score": 0.933,
+    "best": "3p-9p",
+    "why": "chilly 8a \u00b7 wind (12 mph) 9a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
       "t": 45,
       "v": 1,
-      "c": "wnd"
+      "c": "chl"
      },
      "9": {
       "t": 48,
@@ -285,14 +280,14 @@
       "c": ""
      },
      "19": {
-      "t": 58,
+      "t": 56,
       "v": 2,
       "c": ""
      },
      "20": {
       "t": 53,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "21": {
       "t": 52,
