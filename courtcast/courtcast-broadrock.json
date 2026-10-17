@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-17T13:45:11",
+ "updated": "2026-10-17T14:00:37",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 3p today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~3p",
- "reason": "wind (15 mph) \u2014 clean window 6p today",
+ "headline": "Next window: 3p today",
+ "wet_note": "court wet? \u2014 1.0mm, drying ~3p",
+ "reason": "today grades C, best 3p-6p",
  "ranked": [
   {
    "day": "Wed",
@@ -71,11 +71,11 @@
   "source": "best",
   "now": {
    "temp": 54,
-   "dew": 47,
+   "dew": 46,
    "wind": 16
   },
   "court": {
-   "wet_mm": 0.9,
+   "wet_mm": 1.0,
    "obs_18h_mm": 11.6,
    "radar_24h_mm": 23.6
   },
@@ -85,38 +85,33 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "C",
-    "score": 0.511,
-    "best": "6p",
-    "why": "raining now 1p \u00b7 gusts (25 mph) 2p \u00b7 wind (15 mph) 3p-5p, 7p-9p",
-    "wet_mm": 0.9,
+    "score": 0.725,
+    "best": "3p-6p",
+    "why": "raining now 2p \u00b7 wind (13 mph) 7p-9p",
+    "wet_mm": 1.0,
     "cells": {
-     "13": {
+     "14": {
       "t": 54,
       "v": 0,
       "c": "rnow"
      },
-     "14": {
-      "t": 54,
-      "v": 0,
-      "c": "gst"
-     },
      "15": {
-      "t": 54,
-      "v": 1,
-      "c": "wnd"
+      "t": 53,
+      "v": 2,
+      "c": ""
      },
      "16": {
-      "t": 54,
-      "v": 1,
-      "c": "wnd"
+      "t": 53,
+      "v": 2,
+      "c": ""
      },
      "17": {
       "t": 53,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "18": {
-      "t": 51,
+      "t": 50,
       "v": 2,
       "c": ""
      },

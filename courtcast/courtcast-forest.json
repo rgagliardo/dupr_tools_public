@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-17T13:45:15",
+ "updated": "2026-10-17T14:00:41",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 3p today",
+ "headline": "Next window: 4p today",
  "wet_note": "court wet? \u2014 0.9mm, drying ~3p",
- "reason": "today grades C, best 3p",
+ "reason": "today grades C, best 4p-6p",
  "ranked": [
   {
    "day": "Tue",
@@ -71,13 +71,13 @@
   "source": "best",
   "now": {
    "temp": 54,
-   "dew": 47,
+   "dew": 46,
    "wind": 16
   },
   "court": {
    "wet_mm": 0.9,
    "obs_18h_mm": 11.6,
-   "radar_24h_mm": 26.3
+   "radar_24h_mm": 26.5
   },
   "days": [
    {
@@ -85,35 +85,30 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "C",
-    "score": 0.556,
-    "best": "3p",
-    "why": "raining now 1p \u00b7 gusts (25 mph) 2p \u00b7 wind (15 mph) 4p-5p, 7p \u00b7 NWS: gusts 3p",
+    "score": 0.6,
+    "best": "4p-6p",
+    "why": "raining now 2p \u00b7 gusts (25 mph) 3p \u00b7 chilly 8p-9p",
     "wet_mm": 0.9,
     "cells": {
-     "13": {
+     "14": {
       "t": 54,
       "v": 0,
       "c": "rnow"
      },
-     "14": {
+     "15": {
       "t": 54,
       "v": 0,
       "c": "gst"
      },
-     "15": {
+     "16": {
       "t": 54,
       "v": 2,
       "c": ""
      },
-     "16": {
-      "t": 55,
-      "v": 1,
-      "c": "wnd"
-     },
      "17": {
       "t": 53,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "18": {
       "t": 51,
