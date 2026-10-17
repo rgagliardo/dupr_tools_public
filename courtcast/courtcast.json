@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-17T13:29:52",
+ "updated": "2026-10-17T13:45:08",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 2p today",
+ "headline": "Next OK window: 3p today",
  "wet_note": "court wet? \u2014 0.8mm, drying ~3p",
- "reason": "drying \u2014 clean window 5p today",
+ "reason": "wind (14 mph) \u2014 clean window 5p today",
  "ranked": [
   {
    "day": "Tue",
@@ -77,7 +77,7 @@
   "court": {
    "wet_mm": 0.8,
    "obs_18h_mm": 19.7,
-   "radar_24h_mm": 35.3
+   "radar_24h_mm": 35.4
   },
   "days": [
    {
@@ -85,20 +85,20 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "C",
-    "score": 0.622,
+    "score": 0.556,
     "best": "5p-6p",
-    "why": "wet court? 1p \u00b7 wind (14 mph) 3p-4p, 7p \u00b7 chilly 8p-9p",
+    "why": "raining now 1p \u00b7 wet court? 2p \u00b7 wind (14 mph) 3p-4p, 7p",
     "wet_mm": 0.8,
     "cells": {
      "13": {
       "t": 53,
       "v": 0,
-      "c": "wet"
+      "c": "rnow"
      },
      "14": {
       "t": 54,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "wet"
      },
      "15": {
       "t": 54,
