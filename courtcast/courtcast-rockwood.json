@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-10-17T07:55:23",
+ "updated": "2026-10-17T08:10:38",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
- "wet_note": "court wet? \u2014 1.4mm, drying ~12p",
+ "wet_note": "court wet? \u2014 1.0mm, drying ~12p",
  "reason": "wind (15 mph) \u2014 clean window 6p today",
  "ranked": [
   {
@@ -60,7 +60,7 @@
   },
   {
    "day": "Mon",
-   "grade": "B"
+   "grade": "A"
   },
   {
    "day": "Sun",
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 55,
-   "dew": 52,
-   "wind": 14
+   "temp": 54,
+   "dew": 51,
+   "wind": 15
   },
   "court": {
-   "wet_mm": 1.4,
-   "obs_18h_mm": 4.9,
-   "radar_24h_mm": 16.5
+   "wet_mm": 1.0,
+   "obs_18h_mm": 7.2,
+   "radar_24h_mm": 16.9
   },
   "days": [
    {
@@ -87,13 +87,13 @@
     "grade": "D",
     "score": 0.329,
     "best": "6p",
-    "why": "rain 8a-12p \u00b7 gusts (25 mph) 1p-2p \u00b7 wind (15 mph) 3p-5p, 7p",
+    "why": "rain 9a-12p \u00b7 gusts (25 mph) 1p-2p \u00b7 raining now 8a",
     "wet_mm": 1.0,
     "cells": {
      "8": {
       "t": 54,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "9": {
       "t": 53,
@@ -248,10 +248,10 @@
     "date": "2026-10-19",
     "label": "Mon",
     "sub": "10/19",
-    "grade": "B",
-    "score": 0.867,
+    "grade": "A",
+    "score": 0.9,
     "best": "3p-7p",
-    "why": "wind (14 mph) 8a-10a, 8p",
+    "why": "wind (13 mph) 8a-9a, 8p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -265,9 +265,9 @@
       "c": "wnd"
      },
      "10": {
-      "t": 51,
-      "v": 1,
-      "c": "wnd"
+      "t": 53,
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 56,
@@ -492,7 +492,7 @@
    {
     "date": "2026-10-29",
     "d": "Th",
-    "g": "F"
+    "g": "A"
    },
    {
     "date": "2026-10-30",
