@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-17T09:53:38",
+ "updated": "2026-10-17T10:08:47",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
- "wet_note": "court wet? \u2014 1.0mm, drying ~2p",
- "reason": "wind (15 mph) \u2014 clean window Sun 12p",
+ "wet_note": "court wet? \u2014 0.9mm, drying ~1p",
+ "reason": "wind (15 mph) \u2014 clean window 5p today",
  "ranked": [
   {
    "day": "Tue",
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 54,
-   "dew": 52,
+   "temp": 53,
+   "dew": 51,
    "wind": 16
   },
   "court": {
-   "wet_mm": 1.0,
+   "wet_mm": 0.9,
    "obs_18h_mm": 9.8,
-   "radar_24h_mm": 17.2
+   "radar_24h_mm": 17.6
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "D",
-    "score": 0.323,
-    "best": "",
-    "why": "rain 10a-1p \u00b7 raining now 9a \u00b7 gusts (25 mph) 2p",
-    "wet_mm": 1.0,
+    "score": 0.417,
+    "best": "5p-6p",
+    "why": "rain 11a-1p \u00b7 raining now 10a \u00b7 gusts (25 mph) 2p",
+    "wet_mm": 0.9,
     "cells": {
-     "9": {
-      "t": 54,
-      "v": 0,
-      "c": "rnow"
-     },
      "10": {
       "t": 53,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "11": {
       "t": 53,
@@ -132,13 +127,13 @@
      },
      "17": {
       "t": 53,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "18": {
       "t": 51,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 50,
@@ -162,9 +157,9 @@
     "label": "Sun",
     "sub": "10/18",
     "grade": "B",
-    "score": 0.857,
-    "best": "12p-8p",
-    "why": "wind (13 mph) 8a-11a \u00b7 chilly 9p",
+    "score": 0.886,
+    "best": "11a-8p",
+    "why": "wind (13 mph) 8a-10a \u00b7 chilly 9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -184,8 +179,8 @@
      },
      "11": {
       "t": 50,
-      "v": 1,
-      "c": "wnd"
+      "v": 2,
+      "c": ""
      },
      "12": {
       "t": 52,
@@ -193,17 +188,17 @@
       "c": ""
      },
      "13": {
-      "t": 53,
-      "v": 2,
-      "c": ""
-     },
-     "14": {
       "t": 54,
       "v": 2,
       "c": ""
      },
-     "15": {
+     "14": {
       "t": 55,
+      "v": 2,
+      "c": ""
+     },
+     "15": {
+      "t": 56,
       "v": 2,
       "c": ""
      },

@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-17T09:53:37",
+ "updated": "2026-10-17T10:08:46",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 1p today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~1p",
- "reason": "rain \u2014 clean window Sun 12p",
+ "wet_note": "court wet? \u2014 0.8mm, drying ~12p",
+ "reason": "rain \u2014 clean window 6p today",
  "ranked": [
   {
    "day": "Tue",
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 53,
-   "dew": 51,
+   "temp": 52,
+   "dew": 50,
    "wind": 15
   },
   "court": {
-   "wet_mm": 0.9,
+   "wet_mm": 0.8,
    "obs_18h_mm": 17.7,
-   "radar_24h_mm": 27.4
+   "radar_24h_mm": 27.7
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "10/17",
     "grade": "D",
-    "score": 0.415,
-    "best": "",
-    "why": "rain 10a-12p \u00b7 raining now 9a \u00b7 wind (15 mph) 2p-8p",
-    "wet_mm": 0.9,
+    "score": 0.483,
+    "best": "6p",
+    "why": "rain 11a-12p \u00b7 raining now 10a \u00b7 wind (15 mph) 2p-5p, 7p-8p",
+    "wet_mm": 0.8,
     "cells": {
-     "9": {
-      "t": 53,
-      "v": 0,
-      "c": "rnow"
-     },
      "10": {
       "t": 52,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "11": {
       "t": 53,
@@ -136,9 +131,9 @@
       "c": "wnd"
      },
      "18": {
-      "t": 50,
-      "v": 1,
-      "c": "wnd"
+      "t": 51,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 49,
@@ -162,15 +157,15 @@
     "label": "Sun",
     "sub": "10/18",
     "grade": "B",
-    "score": 0.786,
+    "score": 0.829,
     "best": "12p-7p",
-    "why": "cold 8a \u00b7 wind (13 mph) 9a-11a \u00b7 chilly 8p-9p",
+    "why": "chilly 8a, 8p-9p \u00b7 wind (13 mph) 9a-11a \u00b7 NWS: cold 8a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 39,
-      "v": 0,
-      "c": "cold"
+      "t": 41,
+      "v": 1,
+      "c": "chl"
      },
      "9": {
       "t": 43,
