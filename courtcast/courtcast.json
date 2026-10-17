@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-17T16:48:07",
+ "updated": "2026-10-17T17:03:18",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (wind (14 mph))",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 7p",
  "wet_note": null,
- "reason": "clean window 5p today",
+ "reason": "then wind (12 mph)",
  "ranked": [
   {
    "day": "Tue",
@@ -71,8 +71,8 @@
   "source": "best",
   "now": {
    "temp": 54,
-   "dew": 42,
-   "wind": 14
+   "dew": 40,
+   "wind": 11
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,17 +84,12 @@
     "date": "2026-10-17",
     "label": "Today",
     "sub": "10/17",
-    "grade": "C",
-    "score": 0.733,
+    "grade": "B",
+    "score": 0.76,
     "best": "5p-6p",
-    "why": "wind (14 mph) 4p, 7p \u00b7 chilly 8p-9p",
+    "why": "chilly 8p-9p \u00b7 wind (12 mph) 7p",
     "wet_mm": 0.0,
     "cells": {
-     "16": {
-      "t": 54,
-      "v": 1,
-      "c": "wnd"
-     },
      "17": {
       "t": 54,
       "v": 2,
