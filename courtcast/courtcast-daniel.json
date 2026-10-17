@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-17T08:25:57",
+ "updated": "2026-10-17T08:41:23",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 2p today",
- "wet_note": "court wet? \u2014 1.0mm, drying ~3p",
- "reason": "drying \u2014 clean window Sun 11a",
+ "wet_note": "court wet? \u2014 1.1mm, drying ~2p",
+ "reason": "wind (15 mph) \u2014 clean window Sun 11a",
  "ranked": [
   {
    "day": "Tue",
@@ -75,9 +75,9 @@
    "wind": 15
   },
   "court": {
-   "wet_mm": 1.0,
+   "wet_mm": 1.1,
    "obs_18h_mm": 7.9,
-   "radar_24h_mm": 11.2
+   "radar_24h_mm": 11.8
   },
   "days": [
    {
@@ -88,7 +88,7 @@
     "score": 0.343,
     "best": "",
     "why": "rain 9a-12p \u00b7 raining now 8a \u00b7 gusts (25 mph) 1p",
-    "wet_mm": 1.0,
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 54,
@@ -123,7 +123,7 @@
      "14": {
       "t": 52,
       "v": 1,
-      "c": "dry"
+      "c": "wnd"
      },
      "15": {
       "t": 53,
