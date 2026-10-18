@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-17T19:50:19",
+ "updated": "2026-10-17T20:05:40",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (wind (13 mph))",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 9p",
  "wet_note": null,
- "reason": "clean window Sun 12p",
+ "reason": "then chilly",
  "ranked": [
   {
    "day": "Wed",
@@ -63,7 +63,7 @@
    "grade": "B"
   },
   {
-   "day": "Sun",
+   "day": "Today",
    "grade": "B"
   }
  ],
@@ -72,11 +72,11 @@
   "now": {
    "temp": 50,
    "dew": 40,
-   "wind": 13
+   "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 11.7,
+   "obs_18h_mm": 11.4,
    "radar_24h_mm": 20.2
   },
   "days": [
@@ -84,21 +84,16 @@
     "date": "2026-10-17",
     "label": "Today",
     "sub": "10/17",
-    "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "wind (13 mph) 7p-8p \u00b7 chilly 9p",
+    "grade": "B",
+    "score": 0.8,
+    "best": "8p",
+    "why": "chilly 9p",
     "wet_mm": 0.0,
     "cells": {
-     "19": {
-      "t": 50,
-      "v": 1,
-      "c": "wnd"
-     },
      "20": {
-      "t": 48,
-      "v": 1,
-      "c": "wnd"
+      "t": 50,
+      "v": 2,
+      "c": ""
      },
      "21": {
       "t": 47,
@@ -112,9 +107,9 @@
     "label": "Sun",
     "sub": "10/18",
     "grade": "B",
-    "score": 0.829,
-    "best": "12p-7p",
-    "why": "chilly 8a-9a, 8p-9p \u00b7 wind (13 mph) 10a-11a",
+    "score": 0.8,
+    "best": "1p-7p",
+    "why": "chilly 8a-9a, 8p-9p \u00b7 wind (13 mph) 10a-12p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -139,8 +134,8 @@
      },
      "12": {
       "t": 53,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "13": {
       "t": 55,

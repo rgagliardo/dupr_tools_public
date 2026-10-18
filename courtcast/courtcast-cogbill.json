@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-10-17T19:50:23",
+ "updated": "2026-10-17T20:05:48",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,7 +42,7 @@
  },
  "playable_now": false,
  "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (wind (12 mph))",
+ "headline": "not clean \u2014 until 10p (chilly)",
  "wet_note": null,
  "reason": "clean window Sun 11a",
  "ranked": [
@@ -59,24 +59,24 @@
    "grade": "A"
   },
   {
-   "day": "Sun",
+   "day": "Mon",
    "grade": "B"
   },
   {
-   "day": "Mon",
+   "day": "Sun",
    "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 50,
-   "dew": 40,
-   "wind": 12
+   "temp": 48,
+   "dew": 39,
+   "wind": 10
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 11.7,
+   "obs_18h_mm": 11.4,
    "radar_24h_mm": 22.9
   },
   "days": [
@@ -87,14 +87,9 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "chilly 8p-9p \u00b7 wind (12 mph) 7p",
+    "why": "chilly 8p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "19": {
-      "t": 50,
-      "v": 1,
-      "c": "wnd"
-     },
      "20": {
       "t": 48,
       "v": 1,
@@ -112,9 +107,9 @@
     "label": "Sun",
     "sub": "10/18",
     "grade": "B",
-    "score": 0.857,
-    "best": "11a-7p",
-    "why": "chilly 8a, 8p-9p \u00b7 wind (12 mph) 9a-10a",
+    "score": 0.829,
+    "best": "1p-7p",
+    "why": "chilly 8a, 8p-9p \u00b7 wind (13 mph) 9a-10a, 12p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -139,8 +134,8 @@
      },
      "12": {
       "t": 53,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "wnd"
      },
      "13": {
       "t": 54,
