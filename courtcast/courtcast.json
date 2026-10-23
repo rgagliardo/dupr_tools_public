@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-10-23T14:53:33",
+ "updated": "2026-10-23T17:15:32",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 3p today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "today grades A, best 3p-9p",
+ "reason": "then chilly",
  "ranked": [
   {
    "day": "Today",
@@ -86,20 +86,10 @@
     "sub": "10/23",
     "grade": "A",
     "score": 1.0,
-    "best": "3p-9p",
+    "best": "5p-9p",
     "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "15": {
-      "t": 64,
-      "v": 2,
-      "c": ""
-     },
-     "16": {
-      "t": 64,
-      "v": 2,
-      "c": ""
-     },
      "17": {
       "t": 63,
       "v": 2,
