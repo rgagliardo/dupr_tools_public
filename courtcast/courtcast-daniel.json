@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-10-23T07:06:58",
+ "updated": "2026-10-23T07:37:21",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -47,15 +47,15 @@
  "reason": "chilly \u2014 clean window 9a today",
  "ranked": [
   {
-   "day": "Sun",
-   "grade": "A"
-  },
-  {
    "day": "Tue",
    "grade": "A"
   },
   {
    "day": "Wed",
+   "grade": "A"
+  },
+  {
+   "day": "Sun",
    "grade": "A"
   },
   {
@@ -239,18 +239,18 @@
     "label": "Sun",
     "sub": "10/25",
     "grade": "A",
-    "score": 1.0,
-    "best": "8a-9p",
-    "why": "",
+    "score": 0.971,
+    "best": "9a-9p",
+    "why": "chilly 8a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 54,
-      "v": 2,
-      "c": ""
+      "t": 40,
+      "v": 1,
+      "c": "chl"
      },
      "9": {
-      "t": 56,
+      "t": 54,
       "v": 2,
       "c": ""
      },
@@ -327,7 +327,7 @@
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 49,
+      "t": 48,
       "v": 1,
       "c": "chl"
      },
