@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-10-23T21:53:46",
+ "updated": "2026-10-23T22:08:55",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Sat 8a",
  "wet_note": null,
- "reason": "then chilly",
+ "reason": "chilly \u2014 clean window Sat 9a",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Sun",
    "grade": "A"
+  },
+  {
+   "day": "Mon",
+   "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 51,
-   "dew": 46,
-   "wind": 5
+   "temp": 50,
+   "dew": 44,
+   "wind": 4
   },
   "court": {
    "wet_mm": 0.0,
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0
   },
   "days": [
-   {
-    "date": "2026-10-23",
-    "label": "Today",
-    "sub": "10/23",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 51,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
    {
     "date": "2026-10-24",
     "label": "Sat",
