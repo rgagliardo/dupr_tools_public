@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-24T07:13:41",
+ "updated": "2026-10-24T07:28:48",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -47,6 +47,10 @@
  "reason": "chilly \u2014 clean window 9a today",
  "ranked": [
   {
+   "day": "Mon",
+   "grade": "A"
+  },
+  {
    "day": "Tue",
    "grade": "A"
   },
@@ -60,10 +64,6 @@
   },
   {
    "day": "Today",
-   "grade": "A"
-  },
-  {
-   "day": "Sun",
    "grade": "A"
   }
  ],
@@ -249,15 +249,15 @@
     "label": "Mon",
     "sub": "10/26",
     "grade": "A",
-    "score": 0.967,
+    "score": 1.0,
     "best": "3p-9p",
-    "why": "chilly 8a",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 42,
-      "v": 1,
-      "c": "chl"
+      "t": 50,
+      "v": 2,
+      "c": ""
      },
      "9": {
       "t": 53,
@@ -482,17 +482,17 @@
    {
     "date": "2026-11-03",
     "d": "Tu",
-    "g": "F"
+    "g": "A"
    },
    {
     "date": "2026-11-04",
     "d": "We",
-    "g": "F"
+    "g": "A"
    },
    {
     "date": "2026-11-05",
     "d": "Th",
-    "g": "F"
+    "g": "D"
    },
    {
     "date": "2026-11-06",
@@ -502,12 +502,12 @@
    {
     "date": "2026-11-07",
     "d": "Sa",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-11-08",
     "d": "Su",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
