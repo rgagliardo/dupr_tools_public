@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-10-23T20:08:30",
+ "updated": "2026-10-23T21:53:47",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -59,18 +59,18 @@
    "grade": "A"
   },
   {
-   "day": "Sun",
+   "day": "Sat",
    "grade": "A"
   },
   {
-   "day": "Mon",
+   "day": "Sun",
    "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 53,
+   "temp": 51,
    "dew": 46,
    "wind": 6
   },
@@ -86,15 +86,10 @@
     "sub": "10/23",
     "grade": "A",
     "score": 1.0,
-    "best": "8p-9p",
+    "best": "9p",
     "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "20": {
-      "t": 53,
-      "v": 2,
-      "c": ""
-     },
      "21": {
       "t": 51,
       "v": 2,
@@ -107,9 +102,9 @@
     "label": "Sat",
     "sub": "10/24",
     "grade": "A",
-    "score": 0.943,
-    "best": "10a-9p",
-    "why": "chilly 8a-9a",
+    "score": 0.971,
+    "best": "9a-9p",
+    "why": "chilly 8a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -118,9 +113,9 @@
       "c": "chl"
      },
      "9": {
-      "t": 47,
-      "v": 1,
-      "c": "chl"
+      "t": 52,
+      "v": 2,
+      "c": ""
      },
      "10": {
       "t": 51,
@@ -472,7 +467,7 @@
    {
     "date": "2026-11-05",
     "d": "Th",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-11-06",
@@ -482,7 +477,7 @@
    {
     "date": "2026-11-07",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
