@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>courtcast</title>
+<link rel="icon" href="https://rgagliardo.github.io/dupr_tools_public/courtcast/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="https://rgagliardo.github.io/dupr_tools_public/courtcast/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://rgagliardo.github.io/dupr_tools_public/courtcast/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="https://rgagliardo.github.io/dupr_tools_public/courtcast/apple-touch-icon-180.png">
+<meta name="apple-mobile-web-app-title" content="courtcast">
+<meta name="theme-color" content="#0b0c0f">
+<style>
+  :root {
+    /* base colors double as cell/chip BACKGROUNDS (dark cell text on top);
+       the -t variants are for TEXT on the page background — same hue,
+       contrast-safe per theme */
+    --bg:#0b0c0f; --panel:#15171c; --panel-2:#1a1c22; --line:#262931;
+    --ideal:#30d158; --degr:#ffd60a; --block:#ff453a; --off:#1e2027;
+    --ideal-t:#30d158; --degr-t:#ffd60a; --block-t:#ff453a;
+    --ink:#f5f5f7; --dim:#a1a1aa; --faint:#75757d;
+    --gA:#30d158; --gB:#64d2ff; --gC:#ffd60a; --gD:#ff9f0a; --gF:#ff453a;
+    --celltext:rgba(0,0,0,.8);
+    --font-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --radius:14px; --radius-sm:9px;
+  }
+  @media (prefers-color-scheme: light) { :root {
+    --bg:#f2f2f5; --panel:#ffffff; --panel-2:#f7f7f9; --line:#e5e5ea;
+    --ideal:#2fbf58; --degr:#f5c400; --block:#f04438; --off:#e9e9ee;
+    --ideal-t:#1e8a44; --degr-t:#8a7000; --block-t:#c22a1f;
+    --ink:#1d1d1f; --dim:#6e6e76; --faint:#8e8e94;
+    --gA:#1e9e4a; --gB:#0a6fd6; --gC:#a88a00; --gD:#d96f00; --gF:#d92b20;
+    --celltext:rgba(0,0,0,.75);
+  } }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--font-sans); background:var(--bg); color:var(--ink);
+         padding:20px 16px 40px; -webkit-font-smoothing:antialiased; font-size:15px; line-height:1.45; }
+  .wrap { max-width:640px; margin:0 auto; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+
+  /* ---------- header ---------- */
+  .brandbar { display:flex; align-items:center; gap:14px; margin-bottom:4px; }
+  .brand { font-family:var(--font-mono); font-size:19px; font-weight:800; letter-spacing:-.2px; }
+  .brand b { color:var(--ideal-t); font-weight:800; }
+  .spotnav { display:none; gap:4px; margin-left:auto; align-items:center; }
+  @media (min-width:700px) { .spotnav { display:flex; } }
+  .spotnav a, .spotnav span { font-family:var(--font-sans); font-size:13px; padding:6px 10px; border-radius:999px;
+    color:var(--dim); text-decoration:none; }
+  .spotnav a:hover { color:var(--ink); background:var(--panel-2); }
+  .spotnav span.active { color:var(--celltext); background:var(--ideal); font-weight:700; }
+  .subline { font-size:13px; color:var(--dim); margin-bottom:18px; }
+  .subline .via { color:var(--dim); }
+
+  /* ---------- shared card ---------- */
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+          padding:18px; margin-bottom:14px; }
+  .microlabel { font-size:10px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase;
+                color:var(--dim); margin-bottom:10px; }
+
+  /* ---------- hero / verdict card ---------- */
+  .stalebar { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+              color:var(--block-t); background:color-mix(in srgb, var(--block) 14%, transparent);
+              border-radius:999px; padding:5px 10px; margin-bottom:12px; }
+  .kicker { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase;
+            padding:5px 11px; border-radius:999px; margin-bottom:10px; }
+  .kicker.play { color:var(--celltext); background:var(--ideal); }
+  .kicker.wait { color:var(--celltext); background:var(--degr); }
+  .kicker.none { color:#fff; background:var(--block); }
+  .headline { font-size:clamp(21px,6.4vw,26px); font-weight:800; line-height:1.22; letter-spacing:-.2px; }
+  .reason { font-size:14px; color:var(--dim); margin-top:6px; }
+  .heroDivider { height:1px; background:var(--line); margin:16px 0; }
+  .condrow { display:flex; flex-wrap:wrap; gap:8px; }
+  .chip { font-family:var(--font-mono); font-size:12.5px; font-weight:600; color:var(--ink);
+          background:var(--panel-2); border:1px solid var(--line); border-radius:999px; padding:5px 11px; }
+  .chip.wetchip { font-weight:700; }
+  .obscap { font-family:var(--font-mono); font-size:11px; color:var(--dim); margin-top:10px; }
+
+  /* grade-look big letter */
+  .heroGrade { display:flex; align-items:center; gap:20px; margin-bottom:4px; }
+  .bigletter { font-family:var(--font-mono); font-size:64px; font-weight:800; line-height:1; flex:none;
+               width:78px; height:78px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+               color:var(--celltext); }
+  .heroGrade .gmeta .gday { font-size:15px; font-weight:700; }
+  .heroGrade .gmeta .gsub { font-size:12px; color:var(--dim); margin-top:1px; }
+  .heroGrade .gmeta .gbest { font-size:13px; color:var(--ideal-t); font-weight:700; margin-top:4px; }
+  .heroGrade .gmeta .gwhy { font-size:12.5px; color:var(--dim); margin-top:2px; }
+
+  /* strip-look chip row */
+  .stripRow { display:flex; gap:10px; overflow-x:auto; padding-bottom:2px; margin-bottom:4px; }
+  .stripRow::-webkit-scrollbar { display:none; }
+  .stripDay { text-align:center; flex:none; width:60px; }
+  .stripDay .chip2 { width:48px; height:48px; border-radius:12px; margin:0 auto 6px; display:flex;
+                      align-items:center; justify-content:center; font-family:var(--font-mono);
+                      font-weight:800; font-size:22px; color:var(--celltext); }
+  .stripDay .sd { font-size:12px; font-weight:700; }
+  .stripDay .sb { font-size:10.5px; color:var(--dim); margin-top:1px; }
+
+  /* next-look */
+  .nextKicker { font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase; margin-bottom:8px; }
+  .nextKicker.play { color:var(--ideal-t); } .nextKicker.wait { color:var(--degr-t); } .nextKicker.none { color:var(--block-t); }
+  .nextHead { font-size:clamp(24px,7.5vw,30px); font-weight:800; line-height:1.16; letter-spacing:-.3px; }
+  .nextWhy { font-size:14px; color:var(--dim); margin-top:8px; }
+
+  /* ---------- day-by-day grid card ---------- */
+  .dayrow { padding:12px 0; border-top:1px solid var(--line); }
+  .dayrow:first-child { border-top:none; padding-top:2px; }
+  .dayflex { display:flex; align-items:flex-start; gap:12px; }
+  .dayfixed { flex:none; width:96px; }
+  .dayfixed .dname { font-size:14px; font-weight:700; }
+  .dayfixed .ddate { font-size:11.5px; color:var(--dim); margin-bottom:7px; }
+  .dayfixed .dgb { display:flex; align-items:center; gap:8px; }
+  .gradebadge { font-family:var(--font-mono); width:30px; height:30px; border-radius:8px; font-weight:800;
+                font-size:15px; display:flex; align-items:center; justify-content:center; color:var(--celltext); flex:none; }
+  .dayfixed .dbest { font-size:11.5px; font-weight:700; color:var(--ideal-t); line-height:1.3; }
+  .dayfixed .dbest.none { color:var(--dim); font-weight:400; }
+
+  .hourscroll { flex:1 1 auto; min-width:0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .hourscroll::-webkit-scrollbar { display:none; }
+  .hourscroll.more { -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);
+                      mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent); }
+  .hourrun { display:flex; gap:5px; }
+  .hcell { flex:none; width:44px; min-height:52px; border-radius:9px; display:flex; flex-direction:column;
+           align-items:center; justify-content:center; gap:1px; padding:4px 2px; }
+  .hcell .ht { font-family:var(--font-sans); font-size:9.5px; font-weight:600; opacity:.75; }
+  .hcell .hv { font-family:var(--font-mono); font-size:13.5px; font-weight:800; }
+  .hcell .hc { font-family:var(--font-sans); font-size:8.5px; font-weight:600; text-transform:uppercase; letter-spacing:.2px; }
+  .hcell.v2 { background:var(--ideal); color:var(--celltext); }
+  .hcell.v1 { background:var(--degr); color:var(--celltext); }
+  .hcell.v0 { background:var(--block); color:var(--celltext); }
+  .hcell.off { background:var(--off); color:var(--dim); }
+  .hcell.off .ht { opacity:.9; }
+
+  .daywhy { font-size:12.5px; color:var(--dim); margin-top:9px; line-height:1.45; }
+
+  /* ---------- outlook card ---------- */
+  .rankRow { display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; }
+  .rankRow::-webkit-scrollbar { display:none; }
+  .rankChip { flex:none; font-size:12.5px; font-weight:600; background:var(--panel-2); border:1px solid var(--line);
+              border-radius:999px; padding:5px 11px; white-space:nowrap; }
+  .rankChip b { font-weight:800; margin-right:4px; }
+  .sectionGap { margin-top:16px; }
+  .outlookRow { display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; }
+  .outlookRow::-webkit-scrollbar { display:none; }
+  .outChip { flex:none; text-align:center; width:38px; }
+  .outChip .odate { font-size:10.5px; color:var(--dim); margin-bottom:4px; }
+  .outChip .oglyph { width:30px; height:26px; border-radius:7px; margin:0 auto; display:flex; align-items:center;
+                      justify-content:center; font-family:var(--font-mono); font-weight:800; font-size:12.5px;
+                      color:var(--celltext); }
+  .legendRow { display:flex; flex-wrap:wrap; gap:14px; margin-top:16px; }
+  .legendItem { display:flex; align-items:center; gap:7px; font-size:12px; color:var(--dim); }
+  .legendItem i { width:10px; height:10px; border-radius:3px; display:inline-block; border:1px solid var(--line); }
+
+  /* ---------- notes ---------- */
+  .notes summary { list-style:none; cursor:pointer; font-size:14px; font-weight:700; color:var(--ink);
+                   display:flex; align-items:center; gap:8px; min-height:44px; margin:-11px -18px; padding:11px 18px; }
+  .notes summary::-webkit-details-marker { display:none; }
+  .notes summary::before { content:"+"; font-family:var(--font-mono); font-weight:800; color:var(--faint);
+                            width:16px; text-align:center; }
+  .notes[open] summary::before { content:"–"; }
+  .notes .body { margin-top:14px; }
+  .notes .row { display:flex; gap:10px; margin-top:11px; font-size:13px; line-height:1.55; color:var(--dim); }
+  .notes .row:first-child { margin-top:0; }
+  .notes .row i { flex:none; width:10px; height:10px; border-radius:3px; margin-top:5px; }
+  .notes .row b { color:var(--ink); font-weight:700; }
+  .notes .grades { margin-top:13px; font-size:13px; line-height:1.55; color:var(--dim); }
+
+  /* ---------- footer / states ---------- */
+  .pagefoot { font-family:var(--font-mono); font-size:11px; color:var(--dim); text-align:center; margin-top:22px; }
+  .failcard { text-align:center; padding:34px 18px; }
+  .failcard .fkicker { font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase; color:var(--block-t); margin-bottom:8px; }
+  .failcard .fmsg { font-size:14px; color:var(--dim); margin-bottom:16px; }
+  .retrybtn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px;
+              border-radius:999px; border:1px solid var(--line); background:var(--panel-2); color:var(--ink);
+              font-size:14px; font-weight:700; text-decoration:none; }
+  .retrybtn:hover { background:var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brandbar">
+    <span class="brand">court<b>cast</b></span>
+    <nav class="spotnav" id="spotnav" aria-label="courts"></nav>
+  </div>
+  <div class="subline" id="meta">loading&hellip;</div>
+
+  <div id="heroCard" class="card"></div>
+
+  <div class="card" id="gridCard">
+    <div class="microlabel">Day by day</div>
+    <div id="dayrows"></div>
+  </div>
+
+  <div class="card" id="outlookCard">
+    <div class="microlabel">Ranked this week</div>
+    <div class="rankRow" id="rankRow"></div>
+    <div class="sectionGap">
+      <div class="microlabel">Next 10 days</div>
+      <div class="outlookRow" id="outlookRow"></div>
+    </div>
+    <div class="legendRow" id="legendRow"></div>
+  </div>
+
+  <details class="notes card" id="notes"><summary>How scoring works</summary><div class="body" id="notesbody"></div></details>
+
+  <div class="pagefoot" id="pagefoot"></div>
+</div>
+<script>
+const VERSION = "3.0"; // professionalized redesign — card system, sans+mono pairing, per-day scroll grid
+
+function nowLine(now) {
+  const parts = [];
+  if (now.temp != null) parts.push(now.temp + "°");
+  if (now.dew != null) parts.push("dew " + now.dew);
+  if (now.wind != null) parts.push("wind " + now.wind);
+  return parts.join(" ");
+}
+const SPOT_TAG = (new URLSearchParams(location.search).get("spot") || "")
+  .toLowerCase().replace(/[^a-z0-9_-]/g, "");
+const FEED = SPOT_TAG && SPOT_TAG !== "pouncey"
+  ? "courtcast-" + SPOT_TAG + ".json" : "courtcast.json";
+const STALE_MS = 4 * 60 * 60 * 1000;
+const GRADE_CLS = { A:"gA", B:"gB", C:"gC", D:"gD", F:"gF" };
+const GRADE_BG = { A: "#30d158", B: "#64d2ff", C: "#ffd60a", D: "#ff9f0a", F: "#ff453a" };
+// cell cause codes rendered as plain words (mirrors the widget's CAUSE_WORD)
+const CAUSE_DISP = { dew: "humid", thn: "storm", gst: "gust", wnd: "wind", chl: "chill",
+                     rnow: "raining", wet: "wet?" };
+
+function fmtHour(h) { return ((h + 11) % 12 + 1) + (h < 12 ? "a" : "p"); }
+function fmtClock(d) {
+  const h = d.getHours(), m = d.getMinutes();
+  return ((h + 11) % 12 + 1) + ":" + (m < 10 ? "0" : "") + m + (h < 12 ? "a" : "p");
+}
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+function kickClass(d) {
+  return d.playable_now ? "play" : (d.kicker === "NO WINDOW" ? "none" : "wait");
+}
+function staleLabel(upd) {
+  return "AS OF " + upd.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase() +
+         " " + fmtClock(upd);
+}
+
+// Wetness → red: barely damp = soft/muted (mixed toward --dim), soaked =
+// full block-red. Scaled by the ~1.5mm court-film cap. Theme-safe via color-mix.
+function wetColor(mm) {
+  const t = Math.max(0, Math.min(1, (mm || 0) / 1.5));
+  return "color-mix(in srgb, var(--block) " + Math.round(45 + 55 * t) + "%, var(--dim))";
+}
+
+// Conditions row shared by every hero variant: now temp/dew/wind chips + a
+// court wet/dry chip (colored by ledger estimate) + the obs provenance caption.
+// Keeps this data visible in every look mode instead of only the default one.
+function renderConditions(d, db) {
+  const wrap = el("div");
+  wrap.appendChild(el("div", "heroDivider"));
+  const row = el("div", "condrow");
+  const now = db.now || {};
+  if (now.temp != null) row.appendChild(el("span", "chip", now.temp + "°"));
+  if (now.dew != null) row.appendChild(el("span", "chip", "dew " + now.dew + "°"));
+  if (now.wind != null) row.appendChild(el("span", "chip", "wind " + now.wind + " mph"));
+  const court = db.court || {};
+  const wetMm = court.wet_mm || 0;
+  const isWet = !!d.wet_note || wetMm > 0.05;
+  const courtPhrase = d.wet_note || (wetMm > 0.05 ? "court " + wetMm + "mm wet?" : "court dry");
+  const courtChip = el("span", "chip wetchip", courtPhrase);
+  if (isWet) courtChip.style.color = wetColor(wetMm);
+  row.appendChild(courtChip);
+  wrap.appendChild(row);
+  const cap = "station obs " + (court.obs_18h_mm ?? "?") + "mm/18h" +
+    (court.radar_24h_mm > 0 ? " · radar " + court.radar_24h_mm + "mm/24h" : "");
+  wrap.appendChild(el("div", "obscap", cap));
+  return wrap;
+}
+
+// Primary decision block (kicker pill + headline + reason) — the single
+// source of truth for "what should I do right now", reused by the default
+// hero and by every widget-handoff look so the info is never duplicated.
+function renderVerdictBlock(d, stale, upd) {
+  const wrap = el("div");
+  if (stale) wrap.appendChild(el("div", "stalebar", staleLabel(upd)));
+  const kcls = stale ? "wait" : kickClass(d);
+  wrap.appendChild(el("span", "kicker " + kcls, d.kicker));
+  wrap.appendChild(el("div", "headline", d.headline));
+  if (d.reason) wrap.appendChild(el("div", "reason", d.reason));
+  return wrap;
+}
+
+// Builds the ONE hero card. Default view = verdict + conditions. A widget
+// ?look= adds its matching visual (grade letter / day strip / big next
+// callout) ABOVE the same verdict block, so nothing is ever shown twice.
+function renderHero(look, d, db, stale, upd) {
+  const hero = document.getElementById("heroCard");
+  hero.textContent = "";
+  const days = db.days || [];
+
+  if (look === "grade" && days.length) {
+    const day = days[0];
+    const row = el("div", "heroGrade");
+    const letter = el("div", "bigletter", day.grade);
+    letter.style.background = GRADE_BG[day.grade] || "#888";
+    row.appendChild(letter);
+    const meta = el("div", "gmeta");
+    meta.appendChild(el("div", "gday", day.label + " " + day.sub));
+    meta.appendChild(el("div", "gbest", day.best ? "best " + day.best : "no clean window"));
+    if (day.why) meta.appendChild(el("div", "gwhy", day.why));
+    row.appendChild(meta);
+    hero.appendChild(row);
+    hero.appendChild(el("div", "heroDivider"));
+    hero.appendChild(renderVerdictBlock(d, stale, upd));
+    hero.appendChild(renderConditions(d, db));
+    return;
+  }
+
+  if (look === "strip" && days.length) {
+    const row = el("div", "stripRow");
+    days.forEach(day => {
+      const cd = el("div", "stripDay");
+      const chip = el("div", "chip2", day.grade);
+      chip.style.background = GRADE_BG[day.grade] || "#888";
+      cd.appendChild(chip);
+      cd.appendChild(el("div", "sd", day.label));
+      cd.appendChild(el("div", "sb", day.best || "—"));
+      row.appendChild(cd);
+    });
+    hero.appendChild(row);
+    hero.appendChild(el("div", "heroDivider"));
+    hero.appendChild(renderVerdictBlock(d, stale, upd));
+    hero.appendChild(renderConditions(d, db));
+    return;
+  }
+
+  if (look === "next") {
+    const kcls = stale ? "wait" : kickClass(d);
+    if (stale) hero.appendChild(el("div", "stalebar", staleLabel(upd)));
+    hero.appendChild(el("div", "nextKicker " + kcls, d.kicker));
+    hero.appendChild(el("div", "nextHead", d.headline));
+    if (d.reason) hero.appendChild(el("div", "nextWhy", d.reason));
+    hero.appendChild(renderConditions(d, db));
+    return;
+  }
+
+  // default (no ?look=): verdict + conditions, same block every other
+  // look reuses above it.
+  hero.appendChild(renderVerdictBlock(d, stale, upd));
+  hero.appendChild(renderConditions(d, db));
+}
+
+// Desktop-only switcher: link to every sibling court, current one marked
+// active. Roster (tag + short label + primary flag) is baked into the feed by
+// courtcast_publish, so nothing here hardcodes the spot list. Preserves the
+// widget's ?look=/?wv= when hopping courts.
+function renderSpotNav(d) {
+  const nav = document.getElementById("spotnav");
+  nav.textContent = "";
+  const roster = d.spots || [];
+  if (roster.length < 2) return;  // nothing to switch to
+  const curTag = SPOT_TAG || (roster.find(s => s.primary) || {}).tag;
+  const qs = new URLSearchParams(location.search);
+  roster.forEach(s => {
+    if (s.tag === curTag) {
+      nav.appendChild(el("span", "active", s.label));
+      return;
+    }
+    const a = el("a", null, s.label);
+    const p = new URLSearchParams();
+    if (!s.primary) p.set("spot", s.tag);
+    if (qs.get("look")) p.set("look", qs.get("look"));
+    if (qs.get("wv")) p.set("wv", qs.get("wv"));
+    a.href = p.toString() ? "?" + p.toString() : "./";
+    nav.appendChild(a);
+  });
+}
+
+function updateFade(elm) {
+  elm.classList.toggle("more",
+    elm.scrollWidth > elm.clientWidth + 4 &&
+    elm.scrollLeft < elm.scrollWidth - elm.clientWidth - 8);
+}
+
+// One day's row: fixed day/grade/best block + its own horizontally-scrolling
+// hour strip (each cell carries its own hour label, so nothing depends on a
+// shared header staying in sync while scrolled) + a full-width why caption.
+function renderDayRow(day) {
+  const rowWrap = el("div", "dayrow");
+  const flex = el("div", "dayflex");
+
+  const fixed = el("div", "dayfixed");
+  fixed.appendChild(el("div", "dname", day.label));
+  fixed.appendChild(el("div", "ddate", day.sub));
+  const dgb = el("div", "dgb");
+  const badge = el("div", "gradebadge", day.grade);
+  badge.style.background = GRADE_BG[day.grade] || "#888";
+  dgb.appendChild(badge);
+  dgb.appendChild(el("div", "dbest" + (day.best ? "" : " none"), day.best || "no window"));
+  fixed.appendChild(dgb);
+  flex.appendChild(fixed);
+
+  const hoursOuter = el("div", "hourscroll");
+  const run = el("div", "hourrun");
+  // fill this day's OWN min..max hour range (not a cross-day shared range)
+  // so an intra-day gap — e.g. Fri's 1p-2p lunch break in a split window —
+  // still renders as a visible off-window cell instead of silently
+  // vanishing between the two scored runs either side of it.
+  const present = Object.keys(day.cells).map(Number).sort((a, b) => a - b);
+  const hours = [];
+  if (present.length) {
+    for (let h = present[0]; h <= present[present.length - 1]; h++) hours.push(h);
+  }
+  hours.forEach(h => {
+    const c = day.cells[String(h)];
+    const cell = el("div", "hcell " + (c ? "v" + c.v : "off"));
+    cell.appendChild(el("div", "ht", fmtHour(h)));
+    if (c) {
+      // a blocked "wet?" hour is our uncertain estimate, not a hard fact like
+      // rain — soften it to a paler, wetness-scaled red (mixed toward white so
+      // it always reads lighter than the solid rain block beside it)
+      if (c.v === 0 && c.c === "wet") {
+        const t = Math.max(0, Math.min(1, (day.wet_mm || 0) / 1.5));
+        cell.style.background = "color-mix(in srgb, var(--block) " + Math.round(30 + 50 * t) + "%, #fff)";
+      }
+      if (c.t != null) cell.appendChild(el("div", "hv", String(c.t)));
+      if (c.c) cell.appendChild(el("div", "hc", CAUSE_DISP[c.c] || c.c));
+    }
+    run.appendChild(cell);
+  });
+  hoursOuter.appendChild(run);
+  flex.appendChild(hoursOuter);
+  rowWrap.appendChild(flex);
+
+  const why = day.why === undefined ? "—" : (day.why || "clean");
+  const whyEl = el("div", "daywhy");
+  const marker = "wet court?";
+  const i = why.indexOf(marker);
+  if (i >= 0 && (day.wet_mm || 0) > 0.05) {
+    whyEl.appendChild(document.createTextNode(why.slice(0, i)));
+    const span = el("span", null, marker);
+    span.style.color = wetColor(day.wet_mm);
+    span.style.fontWeight = "700";
+    whyEl.appendChild(span);
+    whyEl.appendChild(document.createTextNode(why.slice(i + marker.length)));
+  } else {
+    whyEl.textContent = why;
+  }
+  rowWrap.appendChild(whyEl);
+
+  requestAnimationFrame(() => updateFade(hoursOuter));
+  hoursOuter.addEventListener("scroll", () => updateFade(hoursOuter), { passive: true });
+  window.addEventListener("resize", () => updateFade(hoursOuter));
+  return rowWrap;
+}
+
+function render(d) {
+  const db = d.dashboard || {};
+  renderSpotNav(d);
+  const upd = new Date(d.updated);
+  const stale = !isNaN(upd) && Date.now() - upd.getTime() > STALE_MS;
+
+  const qs = new URLSearchParams(location.search);
+  const wv = qs.get("wv");
+  const look = ["grade", "strip", "bars", "next"].includes(qs.get("look"))
+    ? qs.get("look") : "";
+  document.getElementById("meta").textContent =
+    d.spot + " · updated " + (isNaN(upd) ? "?" : fmtClock(upd)) +
+    " · " + (db.source || "blend") +
+    (wv ? " · via widget v" + wv.replace(/[^\d.]/g, "") +
+          (look ? " (" + look + ")" : "") : "");
+
+  renderHero(look, d, db, stale, upd);
+
+  const days = db.days || [];
+  const rowsWrap = document.getElementById("dayrows");
+  rowsWrap.textContent = "";
+  rowsWrap.setAttribute("role", "group");
+  rowsWrap.setAttribute("aria-label", "Hour-by-hour playability by day");
+  days.forEach(day => rowsWrap.appendChild(renderDayRow(day)));
+
+  // ranked strip
+  const rankRow = document.getElementById("rankRow");
+  rankRow.textContent = "";
+  const ranked = days.slice().sort((a, b) => b.score - a.score);
+  ranked.forEach((day, i) => {
+    const chip = el("span", "rankChip");
+    chip.appendChild(el("b", null, String(i + 1)));
+    chip.appendChild(document.createTextNode(day.label));
+    rankRow.appendChild(chip);
+  });
+
+  // 10-day outlook strip
+  const outlookRow = document.getElementById("outlookRow");
+  outlookRow.textContent = "";
+  const ol = db.outlook || [];
+  ol.forEach(o => {
+    const oc = el("div", "outChip");
+    oc.appendChild(el("div", "odate", o.d));
+    const g = el("div", "oglyph", o.g);
+    g.style.background = GRADE_BG[o.g] || "#888";
+    oc.appendChild(g);
+    outlookRow.appendChild(oc);
+  });
+  document.getElementById("outlookCard").querySelector(".sectionGap").style.display = ol.length ? "" : "none";
+
+  // legend
+  const leg = document.getElementById("legendRow");
+  leg.textContent = "";
+  [["ideal", "var(--ideal)"], ["degraded", "var(--degr)"],
+   ["blocked", "var(--block)"], ["off-window", "var(--off)"]].forEach(([t, c]) => {
+    const item = el("span", "legendItem");
+    const i = el("i"); i.style.background = c;
+    item.appendChild(i); item.appendChild(document.createTextNode(t));
+    leg.appendChild(item);
+  });
+
+  renderNotes(d.thresholds);
+
+  document.getElementById("pagefoot").textContent =
+    "courtcast v" + VERSION + " · " + (d.generator || "") +
+    " · data refreshes every 15 min · cells show hour, temp°F, cause";
+}
+
+// "how it's scored": one line per color, quoting the engine's live thresholds
+// from the feed (feeds older than wx_play 4.10 carry none → the note explains
+// the colors without numbers rather than inventing any).
+function renderNotes(t) {
+  const body = document.getElementById("notesbody");
+  body.textContent = "";
+  const row = (color, title, text) => {
+    const r = el("div", "row");
+    const i = el("i"); i.style.background = color; r.appendChild(i);
+    const span = el("span"); span.appendChild(el("b", null, title + " — "));
+    span.appendChild(document.createTextNode(text)); r.appendChild(span);
+    body.appendChild(r);
+  };
+  if (!t) {
+    row("var(--ideal)", "Green", "nothing below applies: play.");
+    row("var(--degr)", "Yellow", "playable with a flaw: some rain or storm risk, wind, humidity, heat, chill, or a court still drying.");
+    row("var(--block)", "Red", "don't bother: likely rain or thunder, strong gusts, cold, a wet court, or radar showing rain on the court right now.");
+    return;
+  }
+  const r = t.rain_pct || {}, th = t.thunder_pct || {}, w = t.wind_mph || {}, g = t.gust_mph || {};
+  const tp = t.temp_f || {}, dw = t.dew_f || {}, wet = t.wet_mm || {};
+  const pct = v => v + "%";
+  row("var(--ideal)", "Green · ideal",
+    "rain under " + pct(r.degrade) + ", storm risk under " + pct(th.degrade) +
+    ", wind under " + w.degrade + " mph, dew point under " + dw.sticky + "°, " +
+    tp.chilly + "–" + (tp.hot - 1) + "°F, court dry.");
+  row("var(--degr)", "Yellow · playable, with a flaw",
+    "rain " + r.degrade + "–" + (r.block - 1) + "%, storm risk " + th.degrade + "–" + (th.block - 1) +
+    "%, wind " + w.degrade + "+ mph, dew " + dw.sticky + "–" + (dw.soupy - 1) + "° sticky or " +
+    dw.soupy + "°+ soupy, " + tp.hot + "°F+ hot or under " + tp.chilly + "° chilly, or a court still drying (over " +
+    wet.damp + " mm).");
+  row("var(--block)", "Red · blocked",
+    "rain " + pct(r.block) + "+, thunder " + pct(th.block) + "+, gusts " + g.block +
+    "+ mph, under " + tp.cold + "°F, a wet court (" + wet.block + " mm+), or radar showing rain on the court within the last " +
+    t.radar_now_max_age_min + " min.");
+  const gr = t.grades || {};
+  const credit = Math.round((t.degrade_credit || 0) * 100);
+  body.appendChild(el("div", "grades",
+    "Day grade: green hours count full, yellow " + credit + "%, red nothing — the average over your play window is " +
+    "A at " + Math.round(gr.A * 100) + "%+, B " + Math.round(gr.B * 100) + "%+, C " + Math.round(gr.C * 100) +
+    "%+, D " + Math.round(gr.D * 100) + "%+, else F."));
+}
+
+(async () => {
+  try {
+    const r = await fetch(FEED + "?t=" + Date.now());
+    render(await r.json());
+  } catch (e) {
+    document.getElementById("heroCard").textContent = "";
+    document.getElementById("gridCard").style.display = "none";
+    document.getElementById("outlookCard").style.display = "none";
+    document.getElementById("notes").style.display = "none";
+    const fail = el("div", "failcard");
+    fail.appendChild(el("div", "fkicker", "Feed unreachable"));
+    fail.appendChild(el("div", "fmsg", "Couldn't load the latest conditions."));
+    const a = el("a", "retrybtn", "Retry");
+    a.href = "#";
+    a.addEventListener("click", ev => { ev.preventDefault(); location.reload(); });
+    fail.appendChild(a);
+    document.getElementById("heroCard").appendChild(fail);
+    document.getElementById("meta").textContent = "offline";
+  }
+})();
+</script>
+</body>
+</html>
