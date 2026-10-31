@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-10-31T08:45:13",
+ "updated": "2026-10-31T09:00:36",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,12 +40,16 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (chilly)",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "clean window 9a today",
+ "reason": "back 8a",
  "ranked": [
+  {
+   "day": "Today",
+   "grade": "A"
+  },
   {
    "day": "Sun",
    "grade": "A"
@@ -61,16 +65,12 @@
   {
    "day": "Wed",
    "grade": "A"
-  },
-  {
-   "day": "Today",
-   "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 48,
+   "temp": 51,
    "dew": 39,
    "wind": 6
   },
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "10/31",
     "grade": "A",
-    "score": 0.971,
+    "score": 1.0,
     "best": "9a-9p",
-    "why": "chilly 8a",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "8": {
-      "t": 48,
-      "v": 1,
-      "c": "chl"
-     },
      "9": {
       "t": 51,
       "v": 2,
