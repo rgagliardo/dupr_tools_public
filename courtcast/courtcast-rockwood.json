@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-10-31T16:02:05",
+ "updated": "2026-10-31T17:00:47",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -51,10 +51,6 @@
    "grade": "A"
   },
   {
-   "day": "Mon",
-   "grade": "A"
-  },
-  {
    "day": "Tue",
    "grade": "A"
   },
@@ -65,14 +61,18 @@
   {
    "day": "Sun",
    "grade": "A"
+  },
+  {
+   "day": "Mon",
+   "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 65,
-   "dew": 38,
-   "wind": 6
+   "temp": 64,
+   "dew": 39,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -86,15 +86,10 @@
     "sub": "10/31",
     "grade": "A",
     "score": 1.0,
-    "best": "4p-9p",
+    "best": "5p-9p",
     "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "16": {
-      "t": 65,
-      "v": 2,
-      "c": ""
-     },
      "17": {
       "t": 64,
       "v": 2,
@@ -209,15 +204,15 @@
     "label": "Mon",
     "sub": "11/2",
     "grade": "A",
-    "score": 1.0,
+    "score": 0.967,
     "best": "3p-9p",
-    "why": "",
+    "why": "chilly 8a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 50,
-      "v": 2,
-      "c": ""
+      "t": 49,
+      "v": 1,
+      "c": "chl"
      },
      "9": {
       "t": 54,
