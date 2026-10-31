@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-10-30T21:54:15",
+ "updated": "2026-10-30T22:09:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Sat 8a",
  "wet_note": null,
- "reason": "then chilly",
+ "reason": "chilly \u2014 clean window Sat 9a",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Sun",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Sat",
    "grade": "A"
+  },
+  {
+   "day": "Wed",
+   "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 61,
-   "dew": 44,
-   "wind": 7
+   "temp": 59,
+   "dew": 41,
+   "wind": 8
   },
   "court": {
    "wet_mm": 0.0,
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0
   },
   "days": [
-   {
-    "date": "2026-10-30",
-    "label": "Today",
-    "sub": "10/30",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 61,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
    {
     "date": "2026-10-31",
     "label": "Sat",
