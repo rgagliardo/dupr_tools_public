@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-05T17:00:17",
+ "updated": "2026-11-05T17:15:46",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,14 +42,10 @@
  },
  "playable_now": true,
  "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "headline": "until 9p",
  "wet_note": null,
  "reason": "then rain",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -60,6 +56,10 @@
   },
   {
    "day": "Mon",
+   "grade": "A"
+  },
+  {
+   "day": "Today",
    "grade": "A"
   },
   {
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "11/5",
     "grade": "A",
-    "score": 1.0,
-    "best": "5p-9p",
-    "why": "",
+    "score": 0.92,
+    "best": "5p-8p",
+    "why": "rain 9p",
     "wet_mm": 0.0,
     "cells": {
      "17": {
@@ -111,9 +111,9 @@
       "c": ""
      },
      "21": {
-      "t": 67,
-      "v": 2,
-      "c": ""
+      "t": 68,
+      "v": 1,
+      "c": "rain"
      }
     }
    },
@@ -122,9 +122,9 @@
     "label": "Fri",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.617,
-    "best": "5p-9p",
-    "why": "rain 8a-10a \u00b7 rain 11a-12p, 3p-4p \u00b7 NWS: rain 11a-12p",
+    "score": 0.65,
+    "best": "4p-9p",
+    "why": "rain 8a-10a \u00b7 rain 11a-12p, 3p \u00b7 NWS: rain 11a-12p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -158,9 +158,9 @@
       "c": "rain"
      },
      "16": {
-      "t": 67,
-      "v": 1,
-      "c": "rain"
+      "t": 61,
+      "v": 2,
+      "c": ""
      },
      "17": {
       "t": 60,
