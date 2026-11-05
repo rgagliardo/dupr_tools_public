@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-05T09:03:33",
+ "updated": "2026-11-05T09:42:55",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next OK window: 3p today",
  "wet_note": null,
- "reason": "humidity (dew 67\u00b0) \u2014 clean window 4p today",
+ "reason": "humidity (dew 67\u00b0) \u2014 clean window 5p today",
  "ranked": [
   {
    "day": "Tue",
@@ -59,12 +59,12 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Sat",
    "grade": "A"
   },
   {
-   "day": "Sat",
-   "grade": "A"
+   "day": "Today",
+   "grade": "B"
   }
  ],
  "dashboard": {
@@ -76,7 +76,7 @@
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 0.4,
+   "obs_18h_mm": 0.2,
    "radar_24h_mm": 0.5
   },
   "days": [
@@ -84,10 +84,10 @@
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "A",
-    "score": 0.943,
-    "best": "4p-9p",
-    "why": "humidity (dew 67\u00b0) 3p",
+    "grade": "B",
+    "score": 0.886,
+    "best": "5p-9p",
+    "why": "humidity (dew 67\u00b0) 3p-4p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -96,9 +96,9 @@
       "c": "dew"
      },
      "16": {
-      "t": 77,
-      "v": 2,
-      "c": ""
+      "t": 75,
+      "v": 1,
+      "c": "dew"
      },
      "17": {
       "t": 73,
@@ -121,7 +121,7 @@
       "c": ""
      },
      "21": {
-      "t": 67,
+      "t": 68,
       "v": 2,
       "c": ""
      }
@@ -132,10 +132,10 @@
     "label": "Fri",
     "sub": "11/6",
     "grade": "D",
-    "score": 0.4,
-    "best": "7p-9p",
-    "why": "rain 8a-11a \u00b7 wet court? 12p, 5p \u00b7 rain 3p-4p",
-    "wet_mm": 1.3,
+    "score": 0.367,
+    "best": "8p-9p",
+    "why": "rain 8a-11a \u00b7 wet court? 5p-6p \u00b7 rain 12p, 3p-4p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 66,
@@ -159,8 +159,8 @@
      },
      "12": {
       "t": 68,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "15": {
       "t": 66,
@@ -179,13 +179,13 @@
      },
      "18": {
       "t": 62,
-      "v": 1,
-      "c": "dry"
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 60,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dry"
      },
      "20": {
       "t": 59,
@@ -517,7 +517,7 @@
    {
     "date": "2026-11-17",
     "d": "Tu",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-11-18",
@@ -527,7 +527,7 @@
    {
     "date": "2026-11-19",
     "d": "Th",
-    "g": "C"
+    "g": "A"
    },
    {
     "date": "2026-11-20",
