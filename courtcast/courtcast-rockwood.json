@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-05T12:33:49",
+ "updated": "2026-11-05T13:04:07",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,12 +44,8 @@
  "kicker": "HOLD UP",
  "headline": "Next window: 3p today",
  "wet_note": null,
- "reason": "today grades A, best 3p-9p",
+ "reason": "today grades B, best 6p-9p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -65,13 +61,17 @@
   {
    "day": "Sun",
    "grade": "A"
+  },
+  {
+   "day": "Today",
+   "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 74,
-   "dew": 67,
+   "temp": 76,
+   "dew": 68,
    "wind": 12
   },
   "court": {
@@ -84,10 +84,10 @@
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "A",
-    "score": 1.0,
-    "best": "3p-9p",
-    "why": "",
+    "grade": "B",
+    "score": 0.886,
+    "best": "6p-9p",
+    "why": "humidity (dew 66\u00b0) 4p-5p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -96,22 +96,22 @@
       "c": ""
      },
      "16": {
-      "t": 73,
-      "v": 2,
-      "c": ""
+      "t": 76,
+      "v": 1,
+      "c": "dew"
      },
      "17": {
       "t": 73,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "18": {
-      "t": 70,
+      "t": 69,
       "v": 2,
       "c": ""
      },
      "19": {
-      "t": 70,
+      "t": 69,
       "v": 2,
       "c": ""
      },
@@ -121,7 +121,7 @@
       "c": ""
      },
      "21": {
-      "t": 70,
+      "t": 68,
       "v": 2,
       "c": ""
      }
@@ -135,7 +135,7 @@
     "score": 0.7,
     "best": "4p-9p",
     "why": "rain 8a-9a \u00b7 rain 10a-12p, 3p \u00b7 NWS: rain 10a-11a",
-    "wet_mm": 0.8,
+    "wet_mm": 0.7,
     "cells": {
      "8": {
       "t": 66,
@@ -297,7 +297,7 @@
       "c": "chl"
      },
      "9": {
-      "t": 53,
+      "t": 52,
       "v": 2,
       "c": ""
      },
@@ -379,7 +379,7 @@
       "c": "chl"
      },
      "9": {
-      "t": 54,
+      "t": 55,
       "v": 2,
       "c": ""
      },
@@ -429,7 +429,7 @@
       "c": ""
      },
      "21": {
-      "t": 52,
+      "t": 53,
       "v": 2,
       "c": ""
      }
@@ -492,37 +492,37 @@
    {
     "date": "2026-11-12",
     "d": "Th",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-11-13",
     "d": "Fr",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-11-14",
     "d": "Sa",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-11-15",
     "d": "Su",
-    "g": "B"
+    "g": "D"
    },
    {
     "date": "2026-11-16",
     "d": "Mo",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-11-17",
     "d": "Tu",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-11-18",
     "d": "We",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-19",
