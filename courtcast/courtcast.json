@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-05T05:31:01",
+ "updated": "2026-11-05T06:01:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 3p today",
- "wet_note": "court wet? \u2014 0.8mm, drying ~8a",
- "reason": "today grades A, best 5p-9p",
+ "wet_note": "court wet? \u2014 0.7mm, drying ~8a",
+ "reason": "today grades B, best 6p-9p",
  "ranked": [
   {
    "day": "Tue",
@@ -55,16 +55,16 @@
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "A"
-  },
-  {
    "day": "Sat",
    "grade": "A"
   },
   {
    "day": "Sun",
    "grade": "A"
+  },
+  {
+   "day": "Today",
+   "grade": "B"
   }
  ],
  "dashboard": {
@@ -75,7 +75,7 @@
    "wind": 8
   },
   "court": {
-   "wet_mm": 0.8,
+   "wet_mm": 0.7,
    "obs_18h_mm": 0.2,
    "radar_24h_mm": 1.7
   },
@@ -84,10 +84,10 @@
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "A",
-    "score": 0.943,
-    "best": "5p-9p",
-    "why": "humidity (dew 69\u00b0) 4p",
+    "grade": "B",
+    "score": 0.886,
+    "best": "6p-9p",
+    "why": "humidity (dew 69\u00b0) 4p-5p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -101,9 +101,9 @@
       "c": "dew"
      },
      "17": {
-      "t": 71,
-      "v": 2,
-      "c": ""
+      "t": 73,
+      "v": 1,
+      "c": "dew"
      },
      "18": {
       "t": 70,
