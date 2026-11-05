@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-05T15:47:09",
+ "updated": "2026-11-05T16:13:48",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 8p",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 9p (humidity (dew 66\u00b0))",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "clean window 6p today",
  "ranked": [
   {
    "day": "Tue",
@@ -63,16 +63,16 @@
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "B"
+   "day": "Fri",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 75,
-   "dew": 65,
-   "wind": 10
+   "temp": 74,
+   "dew": 66,
+   "wind": 7
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,26 +84,21 @@
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "B",
-    "score": 0.8,
-    "best": "3p-7p",
-    "why": "wet court? 9p \u00b7 rain 8p",
-    "wet_mm": 0.7,
+    "grade": "C",
+    "score": 0.633,
+    "best": "6p-7p",
+    "why": "wet court? 9p \u00b7 humidity (dew 66\u00b0) 4p-5p \u00b7 rain 8p",
+    "wet_mm": 0.8,
     "cells": {
-     "15": {
-      "t": 75,
-      "v": 2,
-      "c": ""
-     },
      "16": {
       "t": 74,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      },
      "17": {
-      "t": 71,
-      "v": 2,
-      "c": ""
+      "t": 72,
+      "v": 1,
+      "c": "dew"
      },
      "18": {
       "t": 69,
@@ -497,7 +492,7 @@
    {
     "date": "2026-11-13",
     "d": "Fr",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-11-14",
