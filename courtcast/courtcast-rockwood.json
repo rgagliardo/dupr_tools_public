@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-05T16:14:04",
+ "updated": "2026-11-05T16:29:13",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,10 +41,10 @@
   }
  },
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 66\u00b0))",
+ "kicker": "HOLD UP",
+ "headline": "Next window: 5p today",
  "wet_note": null,
- "reason": "clean window 5p today",
+ "reason": "today grades B, best 5p-9p",
  "ranked": [
   {
    "day": "Tue",
@@ -59,12 +59,12 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Sat",
    "grade": "A"
   },
   {
-   "day": "Sat",
-   "grade": "A"
+   "day": "Today",
+   "grade": "B"
   }
  ],
  "dashboard": {
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0.2,
-   "radar_24h_mm": 0.5
+   "radar_24h_mm": 0.6
   },
   "days": [
    {
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "A",
-    "score": 0.933,
+    "grade": "B",
+    "score": 0.833,
     "best": "5p-9p",
-    "why": "humidity (dew 66\u00b0) 4p",
+    "why": "raining now 4p",
     "wet_mm": 0.0,
     "cells": {
      "16": {
       "t": 74,
-      "v": 1,
-      "c": "dew"
+      "v": 0,
+      "c": "rnow"
      },
      "17": {
       "t": 73,
