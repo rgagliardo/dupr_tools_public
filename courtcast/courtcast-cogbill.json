@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-11-06T11:52:21",
+ "updated": "2026-11-06T12:07:33",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 12p today",
- "wet_note": "court wet? \u2014 0.6mm, drying ~1p",
- "reason": "rain \u2014 clean window 6p today",
+ "headline": "Next OK window: 3p today",
+ "wet_note": "court wet? \u2014 0.3mm, drying ~1p",
+ "reason": "rain \u2014 clean window 8p today",
  "ranked": [
   {
    "day": "Mon",
@@ -71,38 +71,33 @@
   "source": "best",
   "now": {
    "temp": 67,
-   "dew": 65,
-   "wind": 7
+   "dew": 63,
+   "wind": 8
   },
   "court": {
-   "wet_mm": 0.6,
+   "wet_mm": 0.3,
    "obs_18h_mm": 23.1,
-   "radar_24h_mm": 28.6
+   "radar_24h_mm": 28.7
   },
   "days": [
    {
     "date": "2026-11-06",
     "label": "Today",
     "sub": "11/6",
-    "grade": "C",
-    "score": 0.511,
-    "best": "6p-9p",
-    "why": "wet court? 4p-5p \u00b7 raining now 11a \u00b7 rain 3p \u00b7 NWS: rain 12p",
-    "wet_mm": 0.8,
+    "grade": "D",
+    "score": 0.325,
+    "best": "8p-9p",
+    "why": "wet court? 4p-7p \u00b7 raining now 12p \u00b7 rain 3p \u00b7 NWS: rain 12p, 3p",
+    "wet_mm": 1.2,
     "cells": {
-     "11": {
+     "12": {
       "t": 67,
       "v": 0,
       "c": "rnow"
      },
-     "12": {
-      "t": 70,
-      "v": 1,
-      "c": "rain"
-     },
      "15": {
-      "t": 64,
-      "v": 0,
+      "t": 66,
+      "v": 1,
       "c": "rain"
      },
      "16": {
@@ -116,14 +111,14 @@
       "c": "wet"
      },
      "18": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 61,
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 60,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 59,

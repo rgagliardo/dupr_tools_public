@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-06T11:52:20",
+ "updated": "2026-11-06T12:07:30",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 12p today",
- "wet_note": "court wet? \u2014 0.4mm, drying ~1p",
- "reason": "rain \u2014 clean window 6p today",
+ "headline": "Next window: 7p today",
+ "wet_note": "court wet? \u2014 0.1mm, drying ~1p",
+ "reason": "today grades D, best 7p-9p",
  "ranked": [
   {
    "day": "Tue",
@@ -70,35 +70,30 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
-   "dew": 65,
-   "wind": 7
+   "temp": 66,
+   "dew": 62,
+   "wind": 6
   },
   "court": {
-   "wet_mm": 0.4,
+   "wet_mm": 0.1,
    "obs_18h_mm": 23.1,
-   "radar_24h_mm": 22.1
+   "radar_24h_mm": 22.2
   },
   "days": [
    {
     "date": "2026-11-06",
     "label": "Today",
     "sub": "11/6",
-    "grade": "C",
-    "score": 0.511,
-    "best": "6p-9p",
-    "why": "wet court? 4p-5p \u00b7 raining now 11a \u00b7 rain 3p \u00b7 NWS: rain 12p",
-    "wet_mm": 0.9,
+    "grade": "D",
+    "score": 0.375,
+    "best": "7p-9p",
+    "why": "wet court? 4p-6p \u00b7 raining now 12p \u00b7 rain 3p \u00b7 NWS: rain 12p",
+    "wet_mm": 1.0,
     "cells": {
-     "11": {
-      "t": 68,
+     "12": {
+      "t": 66,
       "v": 0,
       "c": "rnow"
-     },
-     "12": {
-      "t": 70,
-      "v": 1,
-      "c": "rain"
      },
      "15": {
       "t": 64,
@@ -116,9 +111,9 @@
       "c": "wet"
      },
      "18": {
-      "t": 62,
-      "v": 2,
-      "c": ""
+      "t": 61,
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 59,
