@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-06T01:06:37",
+ "updated": "2026-11-06T01:21:51",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 11a today",
- "wet_note": "court wet? \u2014 0.6mm, drying ~3a",
+ "wet_note": "court wet? \u2014 0.6mm, drying ~4a",
  "reason": "drying \u2014 clean window 5p today",
  "ranked": [
   {
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 67,
+   "temp": 69,
    "dew": 66,
    "wind": 6
   },
   "court": {
    "wet_mm": 0.6,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 2.2
+   "radar_24h_mm": 2.3
   },
   "days": [
    {
@@ -91,12 +91,12 @@
     "wet_mm": 1.1,
     "cells": {
      "8": {
-      "t": 66,
+      "t": 68,
       "v": 0,
       "c": "rain"
      },
      "9": {
-      "t": 67,
+      "t": 68,
       "v": 0,
       "c": "rain"
      },

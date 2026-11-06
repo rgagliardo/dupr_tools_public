@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-06T01:06:45",
+ "updated": "2026-11-06T01:21:52",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 12p today",
- "wet_note": "court wet? \u2014 0.6mm, drying ~7a",
+ "wet_note": "court wet? \u2014 0.6mm, drying ~12p",
  "reason": "rain \u2014 clean window 9p today",
  "ranked": [
   {
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
+   "temp": 69,
    "dew": 66,
    "wind": 6
   },
   "court": {
    "wet_mm": 0.6,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 2.3
+   "radar_24h_mm": 2.5
   },
   "days": [
    {
@@ -91,12 +91,12 @@
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 66,
+      "t": 68,
       "v": 0,
       "c": "rain"
      },
      "9": {
-      "t": 67,
+      "t": 69,
       "v": 0,
       "c": "rain"
      },
@@ -502,7 +502,7 @@
    {
     "date": "2026-11-15",
     "d": "Su",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-11-16",
