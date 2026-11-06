@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-05T21:04:25",
+ "updated": "2026-11-05T21:19:33",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 10p (rain)",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "clean window Fri 11a",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Sat",
    "grade": "A"
+  },
+  {
+   "day": "Fri",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
    "temp": 68,
-   "dew": 63,
-   "wind": 6
+   "dew": 66,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -84,16 +84,16 @@
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
+    "why": "rain 9p",
     "wet_mm": 0.0,
     "cells": {
      "21": {
       "t": 68,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "rain"
      }
     }
    },
@@ -102,10 +102,10 @@
     "label": "Fri",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.65,
+    "score": 0.683,
     "best": "4p-9p",
-    "why": "rain 8a-10a \u00b7 rain 12p, 3p \u00b7 drying 11a \u00b7 NWS: rain 11a-12p",
-    "wet_mm": 0.9,
+    "why": "rain 8a-10a \u00b7 rain 12p, 3p \u00b7 NWS: rain 11a-12p",
+    "wet_mm": 0.5,
     "cells": {
      "8": {
       "t": 65,
@@ -123,12 +123,12 @@
       "c": "rain"
      },
      "11": {
-      "t": 62,
-      "v": 1,
-      "c": "dry"
+      "t": 65,
+      "v": 2,
+      "c": ""
      },
      "12": {
-      "t": 64,
+      "t": 66,
       "v": 1,
       "c": "rain"
      },
@@ -477,7 +477,7 @@
    {
     "date": "2026-11-15",
     "d": "Su",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-11-16",

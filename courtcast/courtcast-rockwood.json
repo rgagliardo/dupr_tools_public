@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-05T21:04:26",
+ "updated": "2026-11-05T21:19:33",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 10p (humidity (dew 66\u00b0))",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "clean window Fri 8p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -65,13 +61,17 @@
   {
    "day": "Sun",
    "grade": "A"
+  },
+  {
+   "day": "Today",
+   "grade": "C"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
    "temp": 68,
-   "dew": 64,
+   "dew": 66,
    "wind": 5
   },
   "court": {
@@ -84,16 +84,16 @@
     "date": "2026-11-05",
     "label": "Today",
     "sub": "11/5",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
+    "why": "humidity (dew 66\u00b0) 9p",
     "wet_mm": 0.0,
     "cells": {
      "21": {
       "t": 68,
-      "v": 2,
-      "c": ""
+      "v": 1,
+      "c": "dew"
      }
     }
    },
@@ -101,11 +101,11 @@
     "date": "2026-11-06",
     "label": "Fri",
     "sub": "11/6",
-    "grade": "C",
-    "score": 0.533,
-    "best": "6p-9p",
-    "why": "rain 8a-10a, 3p \u00b7 rain 11a-12p, 4p-5p \u00b7 NWS: rain 11a-12p",
-    "wet_mm": 0.6,
+    "grade": "D",
+    "score": 0.267,
+    "best": "8p-9p",
+    "why": "rain 8a-11a, 3p \u00b7 wet court? 5p-7p \u00b7 rain 12p, 4p \u00b7 NWS: rain 12p",
+    "wet_mm": 1.2,
     "cells": {
      "8": {
       "t": 66,
@@ -123,12 +123,12 @@
       "c": "rain"
      },
      "11": {
-      "t": 63,
-      "v": 1,
+      "t": 68,
+      "v": 0,
       "c": "rain"
      },
      "12": {
-      "t": 64,
+      "t": 65,
       "v": 1,
       "c": "rain"
      },
@@ -144,18 +144,18 @@
      },
      "17": {
       "t": 65,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "18": {
-      "t": 60,
-      "v": 2,
-      "c": ""
+      "t": 61,
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 59,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 57,
@@ -235,7 +235,7 @@
       "c": ""
      },
      "19": {
-      "t": 51,
+      "t": 50,
       "v": 2,
       "c": ""
      },
@@ -477,7 +477,7 @@
    {
     "date": "2026-11-15",
     "d": "Su",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-11-16",
