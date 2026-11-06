@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-05T21:49:50",
+ "updated": "2026-11-05T22:04:58",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,10 +41,10 @@
   }
  },
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (humidity (dew 66\u00b0))",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Fri 12p",
  "wet_note": null,
- "reason": "clean window Fri 9p",
+ "reason": "rain \u2014 clean window Fri 9p",
  "ranked": [
   {
    "day": "Sat",
@@ -63,16 +63,16 @@
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "C"
+   "day": "Fri",
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
-   "dew": 66,
-   "wind": 6
+   "temp": 67,
+   "dew": 64,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0.8
   },
   "days": [
-   {
-    "date": "2026-11-05",
-    "label": "Today",
-    "sub": "11/5",
-    "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "humidity (dew 66\u00b0) 9p",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 68,
-      "v": 1,
-      "c": "dew"
-     }
-    }
-   },
    {
     "date": "2026-11-06",
     "label": "Fri",

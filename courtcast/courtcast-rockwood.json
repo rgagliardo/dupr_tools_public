@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-05T21:49:49",
+ "updated": "2026-11-05T22:04:58",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,16 +40,12 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Fri 11a",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "rain \u2014 clean window Fri 8p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Tue",
    "grade": "A"
@@ -65,14 +61,18 @@
   {
    "day": "Sun",
    "grade": "A"
+  },
+  {
+   "day": "Fri",
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 70,
-   "dew": 65,
-   "wind": 6
+   "temp": 68,
+   "dew": 64,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0.6
   },
   "days": [
-   {
-    "date": "2026-11-05",
-    "label": "Today",
-    "sub": "11/5",
-    "grade": "A",
-    "score": 1.0,
-    "best": "9p",
-    "why": "",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 70,
-      "v": 2,
-      "c": ""
-     }
-    }
-   },
    {
     "date": "2026-11-06",
     "label": "Fri",
