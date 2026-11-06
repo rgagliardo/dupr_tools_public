@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-06T00:51:26",
+ "updated": "2026-11-06T01:06:42",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,8 +42,8 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 11a today",
- "wet_note": "court wet? \u2014 0.1mm, drying ~10a",
+ "headline": "Next OK window: 12p today",
+ "wet_note": "court wet? \u2014 0.6mm, drying ~4a",
  "reason": "rain \u2014 clean window 9p today",
  "ranked": [
   {
@@ -75,20 +75,20 @@
    "wind": 6
   },
   "court": {
-   "wet_mm": 0.1,
-   "obs_18h_mm": 0.2,
-   "radar_24h_mm": 2.1
+   "wet_mm": 0.6,
+   "obs_18h_mm": 0,
+   "radar_24h_mm": 2.3
   },
   "days": [
    {
     "date": "2026-11-06",
     "label": "Today",
     "sub": "11/6",
-    "grade": "F",
-    "score": 0.233,
+    "grade": "D",
+    "score": 0.283,
     "best": "9p",
-    "why": "rain 8a-10a, 3p \u00b7 wet court? 5p-8p \u00b7 rain 11a-12p, 4p \u00b7 NWS: rain 11a-12p",
-    "wet_mm": 1.2,
+    "why": "rain 8a-11a, 3p \u00b7 wet court? 6p-7p \u00b7 rain 12p, 4p-5p \u00b7 NWS: rain 12p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
       "t": 68,
@@ -106,12 +106,12 @@
       "c": "rain"
      },
      "11": {
-      "t": 63,
-      "v": 1,
+      "t": 69,
+      "v": 0,
       "c": "rain"
      },
      "12": {
-      "t": 63,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
@@ -127,8 +127,8 @@
      },
      "17": {
       "t": 66,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "18": {
       "t": 62,
@@ -142,8 +142,8 @@
      },
      "20": {
       "t": 57,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "dry"
      },
      "21": {
       "t": 57,
