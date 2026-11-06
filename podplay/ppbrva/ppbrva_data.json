@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-06T09:54:43",
-  "next_scan_at": "2026-11-06T10:24:43",
+  "generated_at": "2026-11-06T10:02:19",
+  "next_scan_at": "2026-11-06T10:32:19",
   "stats": {
     "total": 1076,
-    "full_count": 112
+    "full_count": 111
   },
   "sessions": [
     {
@@ -14,18 +14,17 @@
       "end_iso": "2026-11-06T12:00:00",
       "start_display": "FRI NOV 6  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 42,
-      "count": 42,
-      "pct": 100,
-      "is_full": true,
+      "count": 41,
+      "pct": 98,
+      "is_full": false,
       "is_takeover": false,
       "watched": false,
       "was_ever_full": true,
       "manually_added": false,
       "registrants": [
         "Annie L.",
-        "Marty P.",
         "Arun R.",
         "David C.",
         "Cyndi S.",
@@ -70,6 +69,11 @@
       "gate_type": null,
       "departed": [
         {
+          "name": "Marty Prusinowski",
+          "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
+          "departed_at": "2026-11-06T10:02:12"
+        },
+        {
           "name": "David Serio",
           "uid": "C9JDyEPZwebkDantdUo6IlUyW0n2",
           "departed_at": "2026-11-06T09:39:29"
@@ -105,8 +109,16 @@
           "departed_at": "2026-11-05T15:15:26"
         }
       ],
-      "last_snap_ts": "2026-11-06T09:54:38",
-      "thieves": [],
+      "last_snap_ts": "2026-11-06T10:02:12",
+      "thieves": [
+        {
+          "name": "Marty Prusinowski",
+          "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
+          "last_seen_full_ts": "2026-11-05T13:46:46",
+          "first_absent_ts": "2026-11-06T10:02:12",
+          "detection_gap_min": 1215
+        }
+      ],
       "big_dogs": [],
       "cloaked_members": [
         {
@@ -126,7 +138,6 @@
       ],
       "registrant_ids": [
         "834Ht70ytQOUmHHIdFumeobl5se2",
-        "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
         "OmJfJlpZuPY2x1HhFMBfK5lPkfO2",
         "1D4uFEmDgAPmdKZv7tqxI9ma9PP2",
         "p8P6voZFmGceATQQFMggpC1jdbk1",
@@ -195,7 +206,7 @@
         "lo": "3.320",
         "hi": "4.702",
         "rated": 22,
-        "total": 41,
+        "total": 40,
         "tier": "ADVANCED"
       }
     },
@@ -207,7 +218,7 @@
       "end_iso": "2026-11-06T12:00:00",
       "start_display": "FRI NOV 6  10:00 AM",
       "end_display": "12:00 PM",
-      "status": "upcoming",
+      "status": "live",
       "capacity": 6,
       "count": 6,
       "pct": 100,
@@ -233,7 +244,7 @@
           "departed_at": "2026-11-06T00:33:54"
         }
       ],
-      "last_snap_ts": "2026-11-06T09:54:39",
+      "last_snap_ts": "2026-11-06T10:02:12",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -290,7 +301,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:39",
+      "last_snap_ts": "2026-11-06T10:02:13",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -339,7 +350,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:40",
+      "last_snap_ts": "2026-11-06T10:02:15",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -382,7 +393,7 @@
           "departed_at": "2026-11-05T21:52:30"
         }
       ],
-      "last_snap_ts": "2026-11-06T09:54:38",
+      "last_snap_ts": "2026-11-06T10:02:11",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -417,7 +428,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:38",
+      "last_snap_ts": "2026-11-06T10:02:12",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -446,7 +457,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:39",
+      "last_snap_ts": "2026-11-06T10:02:13",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -481,7 +492,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:40",
+      "last_snap_ts": "2026-11-06T10:02:14",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -534,7 +545,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:40",
+      "last_snap_ts": "2026-11-06T10:02:14",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -576,7 +587,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:40",
+      "last_snap_ts": "2026-11-06T10:02:14",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -653,7 +664,7 @@
           "departed_at": "2026-11-05T13:39:15"
         }
       ],
-      "last_snap_ts": "2026-11-06T09:54:41",
+      "last_snap_ts": "2026-11-06T10:02:15",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -781,7 +792,7 @@
       "min_dupr": "3.70",
       "gate_type": "Doubles",
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:41",
+      "last_snap_ts": "2026-11-06T10:02:15",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -838,7 +849,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:41",
+      "last_snap_ts": "2026-11-06T10:02:16",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -871,7 +882,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:41",
+      "last_snap_ts": "2026-11-06T10:02:16",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -900,7 +911,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:42",
+      "last_snap_ts": "2026-11-06T10:02:16",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -939,7 +950,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:42",
+      "last_snap_ts": "2026-11-06T10:02:17",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [
@@ -1001,7 +1012,7 @@
       "min_dupr": null,
       "gate_type": null,
       "departed": [],
-      "last_snap_ts": "2026-11-06T09:54:42",
+      "last_snap_ts": "2026-11-06T10:02:17",
       "thieves": [],
       "big_dogs": [],
       "cloaked_members": [],
@@ -71878,7 +71889,7 @@
         "hi": "4.702",
         "avg": "3.960",
         "rated": 22,
-        "field": 41,
+        "field": 40,
         "date": "FRI NOV 6  10:00 AM",
         "title": "4.0 Open Play",
         "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
@@ -72450,6 +72461,23 @@
     }
   ],
   "activity": [
+    {
+      "ts": "2026-11-06T10:02:12",
+      "type": "freed",
+      "name": "41/42",
+      "title": "4.0 Open Play",
+      "start": "FRI NOV 6  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb"
+    },
+    {
+      "ts": "2026-11-06T10:02:12",
+      "type": "cancel",
+      "name": "Marty Prusinowski",
+      "title": "4.0 Open Play",
+      "start": "FRI NOV 6  10:00 AM",
+      "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
+      "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3"
+    },
     {
       "ts": "2026-11-06T09:47:05",
       "type": "full",
@@ -91964,18 +91992,19 @@
       "url": "https://ppbrva.podplay.app/community/events/01a0e9a0-e512-7bb0-9835-fac856edfbe4",
       "uid": "vOAjUul6ELgx5FrgAkwzSSEdvL82",
       "rating": "4.915"
-    },
-    {
-      "ts": "2026-10-07T09:55:40",
-      "type": "cancel",
-      "name": "Steph Yim",
-      "title": "4.0 Open Play",
-      "start": "WED OCT 7  10:00 AM",
-      "url": "https://ppbrva.podplay.app/community/events/01a0e8ac-8696-7bb0-9774-5807144b642c",
-      "uid": "xTh6vu6kbQTZzsBHoRsh1Td30Jo1"
     }
   ],
   "thieves": [
+    {
+      "name": "Marty Prusinowski",
+      "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
+      "last_seen_full_ts": "2026-11-05T13:46:46",
+      "first_absent_ts": "2026-11-06T10:02:12",
+      "detection_gap_min": 1215,
+      "session_title": "4.0 Open Play",
+      "session_start": "FRI NOV 6  10:00 AM",
+      "session_url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb"
+    },
     {
       "name": "Elton Wade",
       "last_seen_full_ts": "2026-04-02T18:29:50",
@@ -93183,16 +93212,6 @@
     {
       "name": "Jay Malhotra",
       "uid": "oC0hql6UHzSTyvSoQcUFjFKtgPq1",
-      "session_title": "4.0 Open Play",
-      "session_url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
-      "session_start": "FRI NOV 6  10:00 AM",
-      "last_seen_full_ts": "2026-11-06T10:00:00",
-      "first_absent_ts": "",
-      "reason": "double-booked"
-    },
-    {
-      "name": "Jay Malhotra",
-      "uid": "oC0hql6UHzSTyvSoQcUFjFKtgPq1",
       "session_title": "DUPR 4.0 Open Play",
       "session_url": "https://ppbrva.podplay.app/community/events/01a1a2dc-3fc7-7eeb-9744-fc7e280ab93e",
       "session_start": "FRI NOV 6  10:00 AM",
@@ -93715,6 +93734,12 @@
       "cancels": 5
     },
     {
+      "name": "Marty Prusinowski",
+      "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
+      "joins": 4,
+      "cancels": 5
+    },
+    {
       "name": "Chanthachone Williams",
       "uid": "qZ5S9dcT58hF9CMgtWGHZQbEoW02",
       "joins": 21,
@@ -93784,12 +93809,6 @@
       "name": "Val Cao",
       "uid": "Zujh5Ni5kdbxruSpVOVdIAC5mF33",
       "joins": 6,
-      "cancels": 4
-    },
-    {
-      "name": "Marty Prusinowski",
-      "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
-      "joins": 4,
       "cancels": 4
     },
     {
@@ -100071,7 +100090,7 @@
           "end": "12:00 PM",
           "start_iso": "2026-11-06T10:00:00",
           "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-3fc7-7eeb-9744-fc7e280ab93e",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 6,
           "count": 6,
           "is_full": true,
@@ -100838,11 +100857,11 @@
           "end": "12:00 PM",
           "start_iso": "2026-11-06T10:00:00",
           "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 42,
-          "count": 42,
-          "is_full": true,
-          "spots_left": 0
+          "count": 41,
+          "is_full": false,
+          "spots_left": 1
         },
         {
           "cloaked": false,
@@ -101223,11 +101242,11 @@
           "end": "12:00 PM",
           "start_iso": "2026-11-06T10:00:00",
           "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
-          "status": "upcoming",
+          "status": "live",
           "capacity": 42,
-          "count": 42,
-          "is_full": true,
-          "spots_left": 0
+          "count": 41,
+          "is_full": false,
+          "spots_left": 1
         },
         {
           "cloaked": false,
@@ -113958,7 +113977,7 @@
       "end": "12:00 PM",
       "start_iso": "2026-11-06T10:00:00",
       "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
-      "status": "upcoming",
+      "status": "live",
       "friends": [
         {
           "name": "Dwayne Tasin",
@@ -113972,13 +113991,12 @@
         }
       ],
       "count": 2,
-      "registered": 42,
+      "registered": 41,
       "capacity": 42,
-      "spots_left": 0,
-      "is_full": true,
+      "spots_left": 1,
+      "is_full": false,
       "registrants": [
         "Annie L.",
-        "Marty P.",
         "Arun R.",
         "David C.",
         "Cyndi S.",
@@ -114021,7 +114039,6 @@
       ],
       "registrant_ids": [
         "834Ht70ytQOUmHHIdFumeobl5se2",
-        "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
         "OmJfJlpZuPY2x1HhFMBfK5lPkfO2",
         "1D4uFEmDgAPmdKZv7tqxI9ma9PP2",
         "p8P6voZFmGceATQQFMggpC1jdbk1",
@@ -114102,6 +114119,11 @@
       ],
       "departed": [
         {
+          "name": "Marty Prusinowski",
+          "uid": "buxQbGSgJwQCmMUZ2xYbd7DlgfJ3",
+          "departed_at": "2026-11-06T10:02:12"
+        },
+        {
           "name": "David Serio",
           "uid": "C9JDyEPZwebkDantdUo6IlUyW0n2",
           "departed_at": "2026-11-06T09:39:29"
@@ -114143,7 +114165,7 @@
         "lo": "3.320",
         "hi": "4.702",
         "rated": 22,
-        "total": 41,
+        "total": 40,
         "tier": "ADVANCED"
       }
     },
@@ -139238,9 +139260,9 @@
       "end": "12:00 PM",
       "start_iso": "2026-11-06T10:00:00",
       "url": "https://ppbrva.podplay.app/community/events/01a1a2dc-0b4a-7eeb-9743-438cafd6cccb",
-      "status": "upcoming",
+      "status": "live",
       "cloaked_count": 2,
-      "total_count": 42,
+      "total_count": 41,
       "capacity": 42,
       "members": [
         {
