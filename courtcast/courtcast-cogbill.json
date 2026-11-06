@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-11-06T15:54:58",
+ "updated": "2026-11-06T16:10:13",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 6p today",
- "wet_note": "court wet? \u2014 0.7mm, drying ~7p",
- "reason": "drying \u2014 clean window 7p today",
+ "headline": "Next window: 7p today",
+ "wet_note": "court wet? \u2014 0.9mm, drying ~7p",
+ "reason": "today grades C, best 7p-9p",
  "ranked": [
   {
    "day": "Mon",
@@ -64,20 +64,20 @@
   },
   {
    "day": "Sat",
-   "grade": "A"
+   "grade": "B"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 65,
-   "dew": 64,
-   "wind": 5
+   "temp": 64,
+   "dew": 63,
+   "wind": 3
   },
   "court": {
-   "wet_mm": 0.7,
+   "wet_mm": 0.9,
    "obs_18h_mm": 23.9,
-   "radar_24h_mm": 31.1
+   "radar_24h_mm": 31.4
   },
   "days": [
    {
@@ -85,20 +85,15 @@
     "label": "Today",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.514,
+    "score": 0.5,
     "best": "7p-9p",
-    "why": "rain 4p-5p \u00b7 raining now 3p \u00b7 drying 6p \u00b7 NWS: rain 6p",
+    "why": "rain 5p-6p \u00b7 raining now 4p",
     "wet_mm": 1.0,
     "cells": {
-     "15": {
-      "t": 65,
-      "v": 0,
-      "c": "rnow"
-     },
      "16": {
       "t": 64,
       "v": 0,
-      "c": "rain"
+      "c": "rnow"
      },
      "17": {
       "t": 62,
@@ -106,9 +101,9 @@
       "c": "rain"
      },
      "18": {
-      "t": 62,
-      "v": 1,
-      "c": "dry"
+      "t": 61,
+      "v": 0,
+      "c": "rain"
      },
      "19": {
       "t": 60,
@@ -131,10 +126,10 @@
     "date": "2026-11-07",
     "label": "Sat",
     "sub": "11/7",
-    "grade": "A",
-    "score": 0.914,
-    "best": "9a-7p",
-    "why": "chilly 8a, 8p-9p",
+    "grade": "B",
+    "score": 0.886,
+    "best": "9a-6p",
+    "why": "chilly 8a, 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -193,9 +188,9 @@
       "c": ""
      },
      "19": {
-      "t": 50,
-      "v": 2,
-      "c": ""
+      "t": 49,
+      "v": 1,
+      "c": "chl"
      },
      "20": {
       "t": 48,
@@ -214,9 +209,9 @@
     "label": "Sun",
     "sub": "11/8",
     "grade": "A",
-    "score": 0.971,
-    "best": "9a-9p",
-    "why": "chilly 8a",
+    "score": 0.943,
+    "best": "10a-9p",
+    "why": "chilly 8a-9a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -225,9 +220,9 @@
       "c": "chl"
      },
      "9": {
-      "t": 52,
-      "v": 2,
-      "c": ""
+      "t": 49,
+      "v": 1,
+      "c": "chl"
      },
      "10": {
       "t": 55,
