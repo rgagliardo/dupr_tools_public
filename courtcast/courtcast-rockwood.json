@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-06T09:42:02",
+ "updated": "2026-11-06T09:57:10",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 10a today",
+ "headline": "Next OK window: 11a today",
  "wet_note": "court wet? \u2014 1.1mm, drying ~11a",
- "reason": "rain \u2014 clean window 6p today",
+ "reason": "humidity (dew 66\u00b0) \u2014 clean window 5p today",
  "ranked": [
   {
    "day": "Tue",
@@ -76,7 +76,7 @@
   },
   "court": {
    "wet_mm": 1.1,
-   "obs_18h_mm": 22.3,
+   "obs_18h_mm": 23.1,
    "radar_24h_mm": 21.8
   },
   "days": [
@@ -85,9 +85,9 @@
     "label": "Today",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.636,
-    "best": "6p-9p",
-    "why": "rain 9a, 3p \u00b7 rain 10a, 12p \u00b7 humidity (dew 66\u00b0) 11a \u00b7 NWS: rain 10a-12p",
+    "score": 0.618,
+    "best": "5p-9p",
+    "why": "rain 9a-10a, 3p \u00b7 rain 12p, 4p \u00b7 humidity (dew 66\u00b0) 11a \u00b7 NWS: rain 11a-12p",
     "wet_mm": 1.1,
     "cells": {
      "9": {
@@ -96,8 +96,8 @@
       "c": "rain"
      },
      "10": {
-      "t": 71,
-      "v": 1,
+      "t": 69,
+      "v": 0,
       "c": "rain"
      },
      "11": {
@@ -121,9 +121,9 @@
       "c": "rain"
      },
      "17": {
-      "t": 62,
-      "v": 1,
-      "c": "rain"
+      "t": 64,
+      "v": 2,
+      "c": ""
      },
      "18": {
       "t": 61,
