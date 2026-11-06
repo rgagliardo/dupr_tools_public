@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-06T06:39:58",
+ "updated": "2026-11-06T06:55:10",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,8 +43,8 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 10a today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~10a",
- "reason": "rain \u2014 clean window 11a today",
+ "wet_note": "court wet? \u2014 1.1mm, drying ~11a",
+ "reason": "rain \u2014 clean window 5p today",
  "ranked": [
   {
    "day": "Tue",
@@ -75,20 +75,20 @@
    "wind": 6
   },
   "court": {
-   "wet_mm": 0.9,
-   "obs_18h_mm": 21.9,
-   "radar_24h_mm": 13.6
+   "wet_mm": 1.1,
+   "obs_18h_mm": 22.1,
+   "radar_24h_mm": 13.9
   },
   "days": [
    {
     "date": "2026-11-06",
     "label": "Today",
     "sub": "11/6",
-    "grade": "D",
-    "score": 0.433,
-    "best": "7p-9p",
-    "why": "rain 8a-9a, 3p \u00b7 wet court? 4p-6p \u00b7 rain 10a, 12p \u00b7 NWS: rain 10a-12p",
-    "wet_mm": 1.1,
+    "grade": "C",
+    "score": 0.617,
+    "best": "5p-9p",
+    "why": "rain 8a-9a, 12p \u00b7 rain 10a-11a, 3p-4p \u00b7 NWS: rain 10a-11a, 3p",
+    "wet_mm": 1.0,
     "cells": {
      "8": {
       "t": 68,
@@ -101,39 +101,39 @@
       "c": "rain"
      },
      "10": {
-      "t": 62,
+      "t": 64,
       "v": 1,
       "c": "rain"
      },
      "11": {
-      "t": 64,
-      "v": 2,
-      "c": ""
-     },
-     "12": {
-      "t": 64,
+      "t": 63,
       "v": 1,
       "c": "rain"
      },
-     "15": {
-      "t": 64,
+     "12": {
+      "t": 66,
       "v": 0,
+      "c": "rain"
+     },
+     "15": {
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "16": {
       "t": 63,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "17": {
-      "t": 62,
-      "v": 0,
-      "c": "wet"
+      "t": 58,
+      "v": 2,
+      "c": ""
      },
      "18": {
-      "t": 60,
-      "v": 0,
-      "c": "wet"
+      "t": 57,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 59,
@@ -512,7 +512,7 @@
    {
     "date": "2026-11-17",
     "d": "Tu",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-11-18",
@@ -532,7 +532,7 @@
    {
     "date": "2026-11-21",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    }
   ]
  },
