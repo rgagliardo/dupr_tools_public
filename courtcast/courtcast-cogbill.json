@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-11-06T17:26:04",
+ "updated": "2026-11-06T18:11:33",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next OK window: 7p today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~8p",
+ "wet_note": "court wet? \u2014 0.7mm, drying ~8p",
  "reason": "drying \u2014 clean window 8p today",
  "ranked": [
   {
@@ -70,12 +70,12 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 62,
-   "dew": 62,
-   "wind": 3
+   "temp": 61,
+   "dew": 60,
+   "wind": 2
   },
   "court": {
-   "wet_mm": 0.9,
+   "wet_mm": 0.7,
    "obs_18h_mm": 24.4,
    "radar_24h_mm": 31.6
   },
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.52,
+    "score": 0.65,
     "best": "8p-9p",
-    "why": "rain 5p-6p \u00b7 drying 7p",
-    "wet_mm": 0.9,
+    "why": "rain 6p \u00b7 drying 7p",
+    "wet_mm": 0.7,
     "cells": {
-     "17": {
-      "t": 62,
-      "v": 0,
-      "c": "rain"
-     },
      "18": {
       "t": 61,
       "v": 0,
