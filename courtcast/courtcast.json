@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-06T16:55:40",
+ "updated": "2026-11-06T17:10:49",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -43,7 +43,7 @@
  "playable_now": false,
  "kicker": "HOLD UP",
  "headline": "Next window: 7p today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~7p",
+ "wet_note": "court wet? \u2014 0.8mm, drying ~7p",
  "reason": "today grades C, best 7p-9p",
  "ranked": [
   {
@@ -70,12 +70,12 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 64,
-   "dew": 62,
+   "temp": 62,
+   "dew": 61,
    "wind": 2
   },
   "court": {
-   "wet_mm": 0.9,
+   "wet_mm": 0.8,
    "obs_18h_mm": 29.0,
    "radar_24h_mm": 21.1
   },
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.5,
+    "score": 0.6,
     "best": "7p-9p",
-    "why": "wet court? 4p-6p",
-    "wet_mm": 0.9,
+    "why": "wet court? 5p-6p",
+    "wet_mm": 0.8,
     "cells": {
-     "16": {
-      "t": 64,
-      "v": 0,
-      "c": "wet"
-     },
      "17": {
       "t": 62,
       "v": 0,
