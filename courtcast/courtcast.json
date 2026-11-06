@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-06T18:26:41",
+ "updated": "2026-11-06T18:41:50",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,12 +40,16 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 7p today",
- "wet_note": "court wet? \u2014 0.4mm, drying ~7p",
- "reason": "today grades B, best 7p-9p",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
+ "wet_note": null,
+ "reason": "then chilly",
  "ranked": [
+  {
+   "day": "Today",
+   "grade": "A"
+  },
   {
    "day": "Tue",
    "grade": "A"
@@ -61,10 +65,6 @@
   {
    "day": "Sun",
    "grade": "A"
-  },
-  {
-   "day": "Sat",
-   "grade": "A"
   }
  ],
  "dashboard": {
@@ -75,7 +75,7 @@
    "wind": 2
   },
   "court": {
-   "wet_mm": 0.4,
+   "wet_mm": 0.0,
    "obs_18h_mm": 29.0,
    "radar_24h_mm": 21.1
   },
@@ -84,16 +84,16 @@
     "date": "2026-11-06",
     "label": "Today",
     "sub": "11/6",
-    "grade": "B",
-    "score": 0.75,
-    "best": "7p-9p",
-    "why": "wet court? 6p",
-    "wet_mm": 0.4,
+    "grade": "A",
+    "score": 1.0,
+    "best": "6p-9p",
+    "why": "",
+    "wet_mm": 0.0,
     "cells": {
      "18": {
       "t": 60,
-      "v": 0,
-      "c": "wet"
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 59,
@@ -342,7 +342,7 @@
       "c": ""
      },
      "21": {
-      "t": 53,
+      "t": 52,
       "v": 2,
       "c": ""
      }
@@ -436,7 +436,7 @@
       "c": ""
      },
      "21": {
-      "t": 51,
+      "t": 58,
       "v": 2,
       "c": ""
      }
@@ -447,12 +447,12 @@
    {
     "date": "2026-11-12",
     "d": "Th",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-11-13",
     "d": "Fr",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-11-14",
@@ -462,27 +462,27 @@
    {
     "date": "2026-11-15",
     "d": "Su",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-11-16",
     "d": "Mo",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-11-17",
     "d": "Tu",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-18",
     "d": "We",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-19",
     "d": "Th",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-11-20",
@@ -492,7 +492,7 @@
    {
     "date": "2026-11-21",
     "d": "Sa",
-    "g": "B"
+    "g": "A"
    }
   ]
  },

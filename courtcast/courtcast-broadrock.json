@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-06T18:26:42",
+ "updated": "2026-11-06T18:41:52",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next window: 9p today",
- "wet_note": "court wet? \u2014 1.1mm, drying ~9p",
- "reason": "today grades D, best 9p",
+ "headline": "Next window: 8p today",
+ "wet_note": "court wet? \u2014 1.0mm, drying ~8p",
+ "reason": "today grades C, best 8p-9p",
  "ranked": [
   {
    "day": "Mon",
@@ -75,7 +75,7 @@
    "wind": 2
   },
   "court": {
-   "wet_mm": 1.1,
+   "wet_mm": 1.0,
    "obs_18h_mm": 24.5,
    "radar_24h_mm": 29.4
   },
@@ -84,11 +84,11 @@
     "date": "2026-11-06",
     "label": "Today",
     "sub": "11/6",
-    "grade": "D",
-    "score": 0.25,
-    "best": "9p",
-    "why": "wet court? 6p-8p",
-    "wet_mm": 1.1,
+    "grade": "C",
+    "score": 0.5,
+    "best": "8p-9p",
+    "why": "wet court? 6p-7p",
+    "wet_mm": 1.0,
     "cells": {
      "18": {
       "t": 60,
@@ -102,8 +102,8 @@
      },
      "20": {
       "t": 57,
-      "v": 0,
-      "c": "wet"
+      "v": 2,
+      "c": ""
      },
      "21": {
       "t": 56,
@@ -287,7 +287,7 @@
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 50,
+      "t": 51,
       "v": 2,
       "c": ""
      },
@@ -436,7 +436,7 @@
       "c": ""
      },
      "21": {
-      "t": 56,
+      "t": 60,
       "v": 2,
       "c": ""
      }
@@ -447,7 +447,7 @@
    {
     "date": "2026-11-12",
     "d": "Th",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-11-13",
@@ -467,22 +467,22 @@
    {
     "date": "2026-11-16",
     "d": "Mo",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-11-17",
     "d": "Tu",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-18",
     "d": "We",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-19",
     "d": "Th",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-20",
