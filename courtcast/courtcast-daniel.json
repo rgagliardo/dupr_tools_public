@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-11-06T13:38:29",
+ "updated": "2026-11-06T13:53:37",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 4p today",
- "wet_note": "court wet? \u2014 0.1mm, drying ~3p",
- "reason": "rain \u2014 clean window 6p today",
+ "headline": "Next window: 6p today",
+ "wet_note": "court wet? \u2014 0.1mm, drying ~6p",
+ "reason": "today grades C, best 6p-9p",
  "ranked": [
   {
    "day": "Mon",
@@ -76,8 +76,8 @@
   },
   "court": {
    "wet_mm": 0.1,
-   "obs_18h_mm": 23.3,
-   "radar_24h_mm": 27.9
+   "obs_18h_mm": 23.5,
+   "radar_24h_mm": 28.1
   },
   "days": [
    {
@@ -85,10 +85,10 @@
     "label": "Today",
     "sub": "11/6",
     "grade": "C",
-    "score": 0.743,
+    "score": 0.571,
     "best": "6p-9p",
-    "why": "rain 3p \u00b7 rain 4p-5p",
-    "wet_mm": 0.0,
+    "why": "wet court? 4p-5p \u00b7 rain 3p",
+    "wet_mm": 0.7,
     "cells": {
      "15": {
       "t": 64,
@@ -97,16 +97,16 @@
      },
      "16": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "17": {
       "t": 62,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "18": {
-      "t": 64,
+      "t": 62,
       "v": 2,
       "c": ""
      },
