@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-06T08:56:30",
+ "updated": "2026-11-06T09:11:40",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: 10a today",
- "wet_note": "court wet? \u2014 0.9mm, drying ~11a",
- "reason": "drying \u2014 clean window 7p today",
+ "headline": "Next OK window: 11a today",
+ "wet_note": "court wet? \u2014 1.0mm, drying ~11a",
+ "reason": "rain \u2014 clean window 7p today",
  "ranked": [
   {
    "day": "Tue",
@@ -70,13 +70,13 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 68,
-   "dew": 66,
-   "wind": 5
+   "temp": 67,
+   "dew": 65,
+   "wind": 6
   },
   "court": {
-   "wet_mm": 0.9,
-   "obs_18h_mm": 26.7,
+   "wet_mm": 1.0,
+   "obs_18h_mm": 28.3,
    "radar_24h_mm": 15.7
   },
   "days": [
@@ -85,25 +85,20 @@
     "label": "Today",
     "sub": "11/6",
     "grade": "D",
-    "score": 0.45,
+    "score": 0.436,
     "best": "7p-9p",
-    "why": "rain 9a, 12p \u00b7 wet court? 4p-5p \u00b7 raining now 8a \u00b7 NWS: rain 10a-11a, 3p",
+    "why": "rain 9a-10a, 12p \u00b7 wet court? 4p-5p \u00b7 rain 11a, 3p \u00b7 NWS: rain 11a, 3p",
     "wet_mm": 1.1,
     "cells": {
-     "8": {
-      "t": 68,
-      "v": 0,
-      "c": "rnow"
-     },
      "9": {
       "t": 67,
       "v": 0,
       "c": "rain"
      },
      "10": {
-      "t": 65,
-      "v": 1,
-      "c": "dry"
+      "t": 67,
+      "v": 0,
+      "c": "rain"
      },
      "11": {
       "t": 65,
