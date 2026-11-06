@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-06T16:10:09",
+ "updated": "2026-11-06T16:25:21",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -76,7 +76,7 @@
   },
   "court": {
    "wet_mm": 0.9,
-   "obs_18h_mm": 23.9,
+   "obs_18h_mm": 24.1,
    "radar_24h_mm": 25.4
   },
   "days": [
@@ -87,13 +87,13 @@
     "grade": "C",
     "score": 0.5,
     "best": "7p-9p",
-    "why": "wet court? 5p-6p \u00b7 raining now 4p",
+    "why": "wet court? 4p-6p",
     "wet_mm": 0.9,
     "cells": {
      "16": {
       "t": 64,
       "v": 0,
-      "c": "rnow"
+      "c": "wet"
      },
      "17": {
       "t": 63,
