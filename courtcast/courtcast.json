@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-06T23:29:30",
+ "updated": "2026-11-07T00:14:56",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Sat 8a",
+ "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "chilly \u2014 clean window Sat 9a",
+ "reason": "chilly \u2014 clean window 9a today",
  "ranked": [
   {
    "day": "Tue",
@@ -63,26 +63,26 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
+   "day": "Today",
    "grade": "A"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 55,
+   "temp": 54,
    "dew": 54,
    "wind": 3
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 7.3,
-   "radar_24h_mm": 21.1
+   "radar_24h_mm": 20.7
   },
   "days": [
    {
     "date": "2026-11-07",
-    "label": "Sat",
+    "label": "Today",
     "sub": "11/7",
     "grade": "A",
     "score": 0.914,
@@ -409,14 +409,56 @@
       "c": ""
      }
     }
+   },
+   {
+    "date": "2026-11-12",
+    "label": "Thu",
+    "sub": "11/12",
+    "grade": "C",
+    "score": 0.514,
+    "best": "4p-6p",
+    "why": "wet court? 3p, 8p-9p \u00b7 rain 7p",
+    "wet_mm": 1.2,
+    "cells": {
+     "15": {
+      "t": 60,
+      "v": 0,
+      "c": "wet"
+     },
+     "16": {
+      "t": 59,
+      "v": 2,
+      "c": ""
+     },
+     "17": {
+      "t": 57,
+      "v": 2,
+      "c": ""
+     },
+     "18": {
+      "t": 54,
+      "v": 2,
+      "c": ""
+     },
+     "19": {
+      "t": 51,
+      "v": 1,
+      "c": "rain"
+     },
+     "20": {
+      "t": 49,
+      "v": 0,
+      "c": "wet"
+     },
+     "21": {
+      "t": 47,
+      "v": 0,
+      "c": "wet"
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-11-12",
-    "d": "Th",
-    "g": "C"
-   },
    {
     "date": "2026-11-13",
     "d": "Fr",
@@ -461,6 +503,11 @@
     "date": "2026-11-21",
     "d": "Sa",
     "g": "B"
+   },
+   {
+    "date": "2026-11-22",
+    "d": "Su",
+    "g": "D"
    }
   ]
  },

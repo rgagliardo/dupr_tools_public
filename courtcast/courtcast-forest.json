@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-06T23:59:50",
+ "updated": "2026-11-07T00:14:58",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -42,9 +42,9 @@
  },
  "playable_now": false,
  "kicker": "HOLD UP",
- "headline": "Next OK window: Sat 8a",
+ "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "chilly \u2014 clean window Sat 9a",
+ "reason": "chilly \u2014 clean window 9a today",
  "ranked": [
   {
    "day": "Mon",
@@ -63,7 +63,7 @@
    "grade": "A"
   },
   {
-   "day": "Sat",
+   "day": "Today",
    "grade": "B"
   }
  ],
@@ -77,12 +77,12 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 14.4,
-   "radar_24h_mm": 26.5
+   "radar_24h_mm": 26.1
   },
   "days": [
    {
     "date": "2026-11-07",
-    "label": "Sat",
+    "label": "Today",
     "sub": "11/7",
     "grade": "B",
     "score": 0.886,
@@ -409,14 +409,56 @@
       "c": ""
      }
     }
+   },
+   {
+    "date": "2026-11-12",
+    "label": "Thu",
+    "sub": "11/12",
+    "grade": "C",
+    "score": 0.6,
+    "best": "4p-6p",
+    "why": "wet court? 8p-9p \u00b7 drying 3p \u00b7 rain 7p",
+    "wet_mm": 1.0,
+    "cells": {
+     "15": {
+      "t": 61,
+      "v": 1,
+      "c": "dry"
+     },
+     "16": {
+      "t": 60,
+      "v": 2,
+      "c": ""
+     },
+     "17": {
+      "t": 58,
+      "v": 2,
+      "c": ""
+     },
+     "18": {
+      "t": 54,
+      "v": 2,
+      "c": ""
+     },
+     "19": {
+      "t": 51,
+      "v": 1,
+      "c": "rain"
+     },
+     "20": {
+      "t": 49,
+      "v": 0,
+      "c": "wet"
+     },
+     "21": {
+      "t": 47,
+      "v": 0,
+      "c": "wet"
+     }
+    }
    }
   ],
   "outlook": [
-   {
-    "date": "2026-11-12",
-    "d": "Th",
-    "g": "C"
-   },
    {
     "date": "2026-11-13",
     "d": "Fr",
@@ -460,6 +502,11 @@
    {
     "date": "2026-11-21",
     "d": "Sa",
+    "g": "C"
+   },
+   {
+    "date": "2026-11-22",
+    "d": "Su",
     "g": "C"
    }
   ]
