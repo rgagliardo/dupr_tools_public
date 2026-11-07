@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-07T03:01:52",
+ "updated": "2026-11-07T04:02:21",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 52,
-   "dew": 49,
+   "temp": 51,
+   "dew": 48,
    "wind": 8
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 2.2,
-   "radar_24h_mm": 21.2
+   "obs_18h_mm": 1.4,
+   "radar_24h_mm": 14.2
   },
   "days": [
    {
@@ -414,31 +414,31 @@
     "date": "2026-11-12",
     "label": "Thu",
     "sub": "11/12",
-    "grade": "C",
-    "score": 0.657,
-    "best": "3p-6p",
-    "why": "wet court? 8p-9p \u00b7 rain 7p",
+    "grade": "D",
+    "score": 0.429,
+    "best": "",
+    "why": "wet court? 8p-9p \u00b7 rain 3p-7p",
     "wet_mm": 1.0,
     "cells": {
      "15": {
-      "t": 55,
-      "v": 2,
-      "c": ""
+      "t": 62,
+      "v": 1,
+      "c": "rain"
      },
      "16": {
-      "t": 54,
-      "v": 2,
-      "c": ""
+      "t": 61,
+      "v": 1,
+      "c": "rain"
      },
      "17": {
-      "t": 54,
-      "v": 2,
-      "c": ""
+      "t": 59,
+      "v": 1,
+      "c": "rain"
      },
      "18": {
-      "t": 54,
-      "v": 2,
-      "c": ""
+      "t": 55,
+      "v": 1,
+      "c": "rain"
      },
      "19": {
       "t": 52,
