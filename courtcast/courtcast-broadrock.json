@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-07T14:02:44",
+ "updated": "2026-11-07T15:03:19",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -64,7 +64,7 @@
   },
   {
    "day": "Today",
-   "grade": "A"
+   "grade": "B"
   }
  ],
  "dashboard": {
@@ -77,24 +77,19 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 2.2
+   "radar_24h_mm": 1.6
   },
   "days": [
    {
     "date": "2026-11-07",
     "label": "Today",
     "sub": "11/7",
-    "grade": "A",
-    "score": 0.9,
-    "best": "2p-7p",
+    "grade": "B",
+    "score": 0.886,
+    "best": "3p-7p",
     "why": "chilly 8p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "14": {
-      "t": 59,
-      "v": 2,
-      "c": ""
-     },
      "15": {
       "t": 59,
       "v": 2,
