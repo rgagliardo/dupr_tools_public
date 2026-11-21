@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-21T06:13:40",
+ "updated": "2026-11-21T06:28:49",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -59,12 +59,12 @@
    "grade": "B"
   },
   {
-   "day": "Thu",
-   "grade": "C"
-  },
-  {
    "day": "Wed",
    "grade": "D"
+  },
+  {
+   "day": "Thu",
+   "grade": "F"
   }
  ],
  "dashboard": {
@@ -374,7 +374,7 @@
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 51,
+      "t": 50,
       "v": 2,
       "c": ""
      },
@@ -414,36 +414,36 @@
     "date": "2026-11-26",
     "label": "Thu",
     "sub": "11/26",
-    "grade": "C",
-    "score": 0.6,
+    "grade": "F",
+    "score": 0.171,
     "best": "",
-    "why": "rain 3p-9p \u00b7 NWS: gusts 3p-4p",
-    "wet_mm": 0.0,
+    "why": "wet court? 5p-7p \u00b7 gusts (25 mph) 3p-4p \u00b7 rain 8p-9p",
+    "wet_mm": 0.8,
     "cells": {
      "15": {
-      "t": 45,
-      "v": 1,
-      "c": "rain"
+      "t": 54,
+      "v": 0,
+      "c": "gst"
      },
      "16": {
-      "t": 45,
-      "v": 1,
-      "c": "rain"
+      "t": 54,
+      "v": 0,
+      "c": "gst"
      },
      "17": {
       "t": 52,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "18": {
       "t": 50,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 47,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 45,
@@ -477,22 +477,22 @@
    {
     "date": "2026-11-30",
     "d": "Mo",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-12-01",
     "d": "Tu",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-12-02",
     "d": "We",
-    "g": "F"
+    "g": "B"
    },
    {
     "date": "2026-12-03",
     "d": "Th",
-    "g": "B"
+    "g": "C"
    },
    {
     "date": "2026-12-04",
@@ -507,7 +507,7 @@
    {
     "date": "2026-12-06",
     "d": "Su",
-    "g": "C"
+    "g": "D"
    }
   ]
  },
