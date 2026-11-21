@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-21T08:14:47",
+ "updated": "2026-11-21T09:18:09",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -63,16 +63,16 @@
    "grade": "D"
   },
   {
-   "day": "Sun",
-   "grade": "D"
+   "day": "Thu",
+   "grade": "F"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 41,
-   "dew": 35,
-   "wind": 3
+   "temp": 48,
+   "dew": 36,
+   "wind": 5
   },
   "court": {
    "wet_mm": 0.0,
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "11/21",
     "grade": "A",
-    "score": 0.943,
+    "score": 0.969,
     "best": "10a-9p",
-    "why": "chilly 8a-9a",
+    "why": "chilly 9a",
     "wet_mm": 0.0,
     "cells": {
-     "8": {
-      "t": 41,
-      "v": 1,
-      "c": "chl"
-     },
      "9": {
       "t": 48,
       "v": 1,
@@ -166,14 +161,14 @@
     "date": "2026-11-22",
     "label": "Sun",
     "sub": "11/22",
-    "grade": "D",
-    "score": 0.3,
+    "grade": "F",
+    "score": 0.043,
     "best": "",
-    "why": "rain 9a-1p \u00b7 wet court? 7p-8p \u00b7 rain 8a, 2p-6p \u00b7 NWS: rain 8a, 2p-3p",
+    "why": "rain 9a-3p \u00b7 wet court? 4p-9p \u00b7 rain 8a \u00b7 NWS: rain 8a",
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 56,
+      "t": 55,
       "v": 1,
       "c": "rain"
      },
@@ -203,29 +198,29 @@
       "c": "rain"
      },
      "14": {
-      "t": 63,
-      "v": 1,
+      "t": 64,
+      "v": 0,
       "c": "rain"
      },
      "15": {
-      "t": 63,
-      "v": 1,
+      "t": 64,
+      "v": 0,
       "c": "rain"
      },
      "16": {
       "t": 65,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "17": {
       "t": 63,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "18": {
       "t": 61,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "19": {
       "t": 60,
@@ -239,8 +234,8 @@
      },
      "21": {
       "t": 57,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      }
     }
    },
