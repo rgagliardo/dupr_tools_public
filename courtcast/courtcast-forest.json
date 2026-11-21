@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-20T20:09:58",
+ "updated": "2026-11-20T21:02:13",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 48,
+   "temp": 47,
    "dew": 36,
    "wind": 0
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.4
+   "radar_24h_mm": 0.3
   },
   "days": [
    {
@@ -87,14 +87,9 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "chilly 8p-9p",
+    "why": "chilly 9p",
     "wet_mm": 0.0,
     "cells": {
-     "20": {
-      "t": 48,
-      "v": 1,
-      "c": "chl"
-     },
      "21": {
       "t": 47,
       "v": 1,

@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-20T20:09:57",
+ "updated": "2026-11-20T21:02:12",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,11 +40,11 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 9p",
+ "playable_now": false,
+ "kicker": "OK NOW",
+ "headline": "not clean \u2014 until 10p (chilly)",
  "wet_note": null,
- "reason": "then chilly",
+ "reason": "clean window Sat 10a",
  "ranked": [
   {
    "day": "Mon",
@@ -55,12 +55,12 @@
    "grade": "A"
   },
   {
-   "day": "Today",
+   "day": "Tue",
    "grade": "B"
   },
   {
-   "day": "Tue",
-   "grade": "B"
+   "day": "Today",
+   "grade": "C"
   },
   {
    "day": "Wed",
@@ -70,31 +70,26 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 50,
-   "dew": 30,
-   "wind": 3
+   "temp": 47,
+   "dew": 35,
+   "wind": 0
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.1
+   "radar_24h_mm": 0
   },
   "days": [
    {
     "date": "2026-11-20",
     "label": "Today",
     "sub": "11/20",
-    "grade": "B",
-    "score": 0.8,
-    "best": "8p",
+    "grade": "C",
+    "score": 0.6,
+    "best": "",
     "why": "chilly 9p",
     "wet_mm": 0.0,
     "cells": {
-     "20": {
-      "t": 50,
-      "v": 2,
-      "c": ""
-     },
      "21": {
       "t": 47,
       "v": 1,
