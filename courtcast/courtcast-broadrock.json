@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-21T12:26:00",
+ "updated": "2026-11-21T12:41:07",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -64,7 +64,7 @@
   },
   {
    "day": "Thu",
-   "grade": "F"
+   "grade": "D"
   }
  ],
  "dashboard": {
@@ -348,15 +348,15 @@
     "label": "Wed",
     "sub": "11/25",
     "grade": "D",
-    "score": 0.4,
-    "best": "4p",
-    "why": "gusts (25 mph) 7p-9p \u00b7 wind (14 mph) 3p, 5p-6p",
+    "score": 0.457,
+    "best": "3p-4p",
+    "why": "gusts (25 mph) 7p-9p \u00b7 wind (14 mph) 5p-6p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
-      "t": 53,
-      "v": 1,
-      "c": "wnd"
+      "t": 50,
+      "v": 2,
+      "c": ""
      },
      "16": {
       "t": 51,
@@ -394,11 +394,11 @@
     "date": "2026-11-26",
     "label": "Thu",
     "sub": "11/26",
-    "grade": "F",
-    "score": 0.171,
+    "grade": "D",
+    "score": 0.429,
     "best": "",
-    "why": "wet court? 5p-7p \u00b7 gusts (25 mph) 3p-4p \u00b7 rain 8p-9p",
-    "wet_mm": 0.8,
+    "why": "gusts (25 mph) 3p-4p \u00b7 rain 5p-9p",
+    "wet_mm": 0.5,
     "cells": {
      "15": {
       "t": 55,
@@ -412,18 +412,18 @@
      },
      "17": {
       "t": 53,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "18": {
       "t": 50,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "19": {
       "t": 47,
-      "v": 0,
-      "c": "wet"
+      "v": 1,
+      "c": "rain"
      },
      "20": {
       "t": 45,
@@ -442,7 +442,7 @@
    {
     "date": "2026-11-27",
     "d": "Fr",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-11-28",
@@ -457,37 +457,37 @@
    {
     "date": "2026-11-30",
     "d": "Mo",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-12-01",
     "d": "Tu",
-    "g": "B"
+    "g": "F"
    },
    {
     "date": "2026-12-02",
     "d": "We",
-    "g": "B"
+    "g": "A"
    },
    {
     "date": "2026-12-03",
     "d": "Th",
-    "g": "D"
+    "g": "A"
    },
    {
     "date": "2026-12-04",
     "d": "Fr",
-    "g": "C"
+    "g": "B"
    },
    {
     "date": "2026-12-05",
     "d": "Sa",
-    "g": "B"
+    "g": "D"
    },
    {
     "date": "2026-12-06",
     "d": "Su",
-    "g": "C"
+    "g": "D"
    }
   ]
  },
