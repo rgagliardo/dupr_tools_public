@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-21T13:56:44",
+ "updated": "2026-11-21T14:11:59",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,19 +40,19 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 2p today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "today grades B, best 2p-9p",
+ "reason": "then rain",
  "ranked": [
   {
-   "day": "Mon",
+   "day": "Today",
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "B"
+   "day": "Mon",
+   "grade": "A"
   },
   {
    "day": "Tue",
@@ -70,31 +70,26 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 64,
-   "dew": 38,
+   "temp": 65,
+   "dew": 40,
    "wind": 6
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.1
+   "radar_24h_mm": 0.2
   },
   "days": [
    {
     "date": "2026-11-21",
     "label": "Today",
     "sub": "11/21",
-    "grade": "B",
-    "score": 0.889,
+    "grade": "A",
+    "score": 1.0,
     "best": "2p-9p",
-    "why": "raining now 1p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "13": {
-      "t": 64,
-      "v": 0,
-      "c": "rnow"
-     },
      "14": {
       "t": 65,
       "v": 2,
@@ -442,12 +437,12 @@
    {
     "date": "2026-11-28",
     "d": "Sa",
-    "g": "D"
+    "g": "B"
    },
    {
     "date": "2026-11-29",
     "d": "Su",
-    "g": "F"
+    "g": "B"
    },
    {
     "date": "2026-11-30",
@@ -472,7 +467,7 @@
    {
     "date": "2026-12-04",
     "d": "Fr",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-12-05",

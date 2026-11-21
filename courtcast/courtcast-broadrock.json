@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-21T13:56:44",
+ "updated": "2026-11-21T14:11:54",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,30 +40,30 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 2p today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "today grades B, best 2p-9p",
+ "reason": "then rain",
  "ranked": [
   {
-   "day": "Mon",
+   "day": "Today",
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "B"
+   "day": "Mon",
+   "grade": "A"
   },
   {
    "day": "Tue",
    "grade": "B"
   },
   {
-   "day": "Wed",
+   "day": "Thu",
    "grade": "D"
   },
   {
-   "day": "Thu",
+   "day": "Wed",
    "grade": "D"
   }
  ],
@@ -71,7 +71,7 @@
   "source": "best",
   "now": {
    "temp": 64,
-   "dew": 38,
+   "dew": 40,
    "wind": 6
   },
   "court": {
@@ -84,17 +84,12 @@
     "date": "2026-11-21",
     "label": "Today",
     "sub": "11/21",
-    "grade": "B",
-    "score": 0.889,
+    "grade": "A",
+    "score": 1.0,
     "best": "2p-9p",
-    "why": "raining now 1p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
-     "13": {
-      "t": 64,
-      "v": 0,
-      "c": "rnow"
-     },
      "14": {
       "t": 64,
       "v": 2,
@@ -390,9 +385,9 @@
     "label": "Thu",
     "sub": "11/26",
     "grade": "D",
-    "score": 0.429,
-    "best": "",
-    "why": "gusts (25 mph) 3p-4p \u00b7 rain 5p-9p",
+    "score": 0.486,
+    "best": "9p",
+    "why": "gusts (25 mph) 3p-4p \u00b7 rain 5p-8p",
     "wet_mm": 0.5,
     "cells": {
      "15": {
@@ -426,9 +421,9 @@
       "c": "rain"
      },
      "21": {
-      "t": 44,
-      "v": 1,
-      "c": "rain"
+      "t": 62,
+      "v": 2,
+      "c": ""
      }
     }
    }
@@ -442,12 +437,12 @@
    {
     "date": "2026-11-28",
     "d": "Sa",
-    "g": "D"
+    "g": "B"
    },
    {
     "date": "2026-11-29",
     "d": "Su",
-    "g": "F"
+    "g": "B"
    },
    {
     "date": "2026-11-30",
@@ -472,7 +467,7 @@
    {
     "date": "2026-12-04",
     "d": "Fr",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-12-05",
