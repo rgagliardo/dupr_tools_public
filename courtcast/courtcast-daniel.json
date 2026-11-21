@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-11-21T14:27:06",
+ "updated": "2026-11-21T14:57:22",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "PLAY NOW",
  "headline": "until 10p",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "back 8a",
  "ranked": [
   {
    "day": "Today",
@@ -136,50 +136,50 @@
     "date": "2026-11-22",
     "label": "Sun",
     "sub": "11/22",
-    "grade": "F",
-    "score": 0.086,
-    "best": "",
-    "why": "rain 9a-6p \u00b7 wet court? 7p-8p \u00b7 rain 8a, 9p \u00b7 NWS: rain 8a",
-    "wet_mm": 1.2,
+    "grade": "D",
+    "score": 0.371,
+    "best": "8a",
+    "why": "rain 4p-6p \u00b7 wet court? 7p-9p \u00b7 rain 9a-3p \u00b7 NWS: rain 8a-3p",
+    "wet_mm": 1.1,
     "cells": {
      "8": {
+      "t": 54,
+      "v": 2,
+      "c": ""
+     },
+     "9": {
       "t": 56,
       "v": 1,
       "c": "rain"
      },
-     "9": {
-      "t": 58,
-      "v": 0,
-      "c": "rain"
-     },
      "10": {
-      "t": 61,
-      "v": 0,
+      "t": 58,
+      "v": 1,
       "c": "rain"
      },
      "11": {
-      "t": 62,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "12": {
-      "t": 63,
-      "v": 0,
+      "t": 62,
+      "v": 1,
       "c": "rain"
      },
      "13": {
-      "t": 63,
-      "v": 0,
+      "t": 62,
+      "v": 1,
       "c": "rain"
      },
      "14": {
-      "t": 63,
-      "v": 0,
+      "t": 62,
+      "v": 1,
       "c": "rain"
      },
      "15": {
-      "t": 64,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "16": {
@@ -209,8 +209,8 @@
      },
      "21": {
       "t": 56,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      }
     }
    },

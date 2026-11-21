@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-21T14:27:05",
+ "updated": "2026-11-21T14:57:21",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,30 +40,30 @@
    "D": 0.25
   }
  },
- "playable_now": true,
- "kicker": "PLAY NOW",
- "headline": "until 10p",
+ "playable_now": false,
+ "kicker": "HOLD UP",
+ "headline": "Next window: 3p today",
  "wet_note": null,
- "reason": "then rain",
+ "reason": "today grades B, best 3p-9p",
  "ranked": [
-  {
-   "day": "Today",
-   "grade": "A"
-  },
   {
    "day": "Mon",
    "grade": "A"
+  },
+  {
+   "day": "Today",
+   "grade": "B"
   },
   {
    "day": "Tue",
    "grade": "C"
   },
   {
-   "day": "Wed",
+   "day": "Sun",
    "grade": "D"
   },
   {
-   "day": "Thu",
+   "day": "Wed",
    "grade": "D"
   }
  ],
@@ -77,23 +77,23 @@
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.1
+   "radar_24h_mm": 0.2
   },
   "days": [
    {
     "date": "2026-11-21",
     "label": "Today",
     "sub": "11/21",
-    "grade": "A",
-    "score": 1.0,
-    "best": "2p-9p",
-    "why": "",
+    "grade": "B",
+    "score": 0.875,
+    "best": "3p-9p",
+    "why": "raining now 2p",
     "wet_mm": 0.0,
     "cells": {
      "14": {
       "t": 64,
-      "v": 2,
-      "c": ""
+      "v": 0,
+      "c": "rnow"
      },
      "15": {
       "t": 65,
@@ -136,30 +136,30 @@
     "date": "2026-11-22",
     "label": "Sun",
     "sub": "11/22",
-    "grade": "F",
-    "score": 0.043,
-    "best": "",
-    "why": "rain 9a-6p \u00b7 wet court? 7p-9p \u00b7 rain 8a \u00b7 NWS: rain 8a",
+    "grade": "D",
+    "score": 0.357,
+    "best": "8a-9a",
+    "why": "rain 12p, 4p-6p \u00b7 wet court? 7p-9p \u00b7 rain 10a-11a, 1p-3p \u00b7 NWS: rain 8a-11a, 1p-3p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 56,
+      "t": 55,
+      "v": 2,
+      "c": ""
+     },
+     "9": {
+      "t": 57,
+      "v": 2,
+      "c": ""
+     },
+     "10": {
+      "t": 59,
       "v": 1,
       "c": "rain"
      },
-     "9": {
-      "t": 58,
-      "v": 0,
-      "c": "rain"
-     },
-     "10": {
-      "t": 60,
-      "v": 0,
-      "c": "rain"
-     },
      "11": {
-      "t": 62,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "12": {
@@ -168,18 +168,18 @@
       "c": "rain"
      },
      "13": {
-      "t": 63,
-      "v": 0,
+      "t": 62,
+      "v": 1,
       "c": "rain"
      },
      "14": {
-      "t": 63,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "15": {
-      "t": 64,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "16": {
