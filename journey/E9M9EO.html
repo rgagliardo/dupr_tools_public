@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Journey — Steve  Lesko</title>
+<style>
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg:#0d0e15; --panel:#13141e; --panel-2:#1a1b28; --line:#222233; --line-soft:#333;
+  --txt:#fff; --txt-2:#c8c8d8; --txt-mid:#9898b0; --txt-dim:#8a8aa0;
+  --cyan:#00e5ff; --pink:#ff00a0; --gold:#ffd700; --red:#ff6b6b; --partner-pur:#7a8fcc;
+  --green:#2ecc71; --adj:#ff3db4;
+}
+:root[data-theme="light"] {
+  --bg:#fafafa; --panel:#fff; --panel-2:#f7f7f7; --line:#ebebeb; --line-soft:#d4d4d4;
+  --txt:#222; --txt-2:#484848; --txt-mid:#717171; --txt-dim:#767676;
+  --cyan:#008489; --pink:#ff5a5f; --gold:#a06800; --red:#ff5a5f; --partner-pur:#5a6cb8;
+  --green:#1a9e56; --adj:#c2007a;
+}
+body { background:var(--bg); color:var(--txt-2); margin:0; padding:0 12px 60px; }
+.stamp { background:var(--pink); color:#fff; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-align:center; padding:4px; margin:0 -12px; }
+h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
+  text-transform:uppercase; margin:16px 0 2px; text-shadow:0 0 8px rgba(0,229,255,.35); }
+.sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
+.theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
+  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+h2 { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
+  text-transform:uppercase; margin:22px 0 8px; }
+.note { font-size:11px; color:var(--txt-dim); margin:6px 0 0; line-height:1.5; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.crow { display:flex; align-items:center; gap:10px; }
+.streak-badge { font-size:11px; font-weight:700; border-radius:999px; padding:3px 8px; white-space:nowrap; }
+.sb-w { background:rgba(0,229,255,.12); color:var(--cyan); }
+.sb-l { background:rgba(255,107,107,.12); color:var(--red); }
+.pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
+.scores { margin-left:auto; text-align:right; font-weight:700; color:var(--txt); font-size:14px; }
+.jrow { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--line); }
+.jrow svg { flex:0 0 auto; }
+.jlabel { font-size:10px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; }
+.jcta { margin-left:auto; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--cyan);
+  border:1px solid var(--cyan); border-radius:999px; padding:4px 10px; white-space:nowrap; }
+.spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; }
+.chips.more { -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);
+  mask-image:linear-gradient(90deg,#000 86%,transparent); }
+.chip { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:8px 6px; min-width:62px; text-align:center; flex:1 0 auto; }
+.chip .v { font-size:15px; font-weight:800; color:var(--txt); }
+.chip .v.pos { color:var(--cyan); } .chip .v.neg { color:var(--red); }
+.chip .k { font-size:9px; letter-spacing:1px; color:var(--txt-dim); text-transform:uppercase; margin-top:2px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 6px 4px; }
+svg text.tick { font-size:9px; fill:var(--txt-dim); }
+svg text.anno { font-size:9px; fill:var(--txt-mid); font-weight:600; }
+svg text.anno-gold { fill:var(--gold); }
+.grid { stroke:var(--line); stroke-width:1; }
+.evline { stroke:var(--gold); stroke-width:1; stroke-dasharray:2 5; opacity:.55; }
+.seg-norm { stroke:var(--cyan); stroke-width:2; fill:none; stroke-linejoin:round; }
+.seg-sys { stroke:var(--pink); stroke-width:2; fill:none; stroke-dasharray:3 4; stroke-linecap:round; }
+.mk { stroke:var(--bg); stroke-width:2; }
+.mk-start { fill:var(--txt-mid); } .mk-peak { fill:var(--gold); }
+.mk-low { fill:var(--pink); } .mk-now { fill:var(--cyan); }
+.mk-adm { fill:var(--gold); stroke:var(--bg); stroke-width:1.5; }
+.mk-whisk { stroke:var(--txt-dim); stroke-width:1.2; stroke-dasharray:2 3; opacity:.85; }
+.adj-row { display:flex; align-items:baseline; gap:8px; margin:7px 0; font-size:11px; flex-wrap:wrap; }
+.adj-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); flex:0 0 auto; }
+.adj-kind { color:var(--txt-mid); }
+.adj-solo { color:var(--gold); font-weight:700; }
+.adj-delta { margin-left:auto; font-weight:800; flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.adj-delta.pos { color:var(--cyan); } .adj-delta.neg { color:var(--red); }
+.adj-path { font-size:10px; color:var(--txt-dim); flex:0 0 auto; font-variant-numeric:tabular-nums; }
+.legend { display:flex; gap:12px; font-size:10px; color:var(--txt-dim); padding:6px 8px 8px; flex-wrap:wrap; }
+.legend i { display:inline-block; width:14px; height:0; border-top:2px solid var(--cyan); margin-right:4px; vertical-align:middle; }
+.legend i.sys { border-top-style:dashed; border-top-color:var(--pink); }
+.legend i.ev { border-top-style:dotted; border-top-color:var(--gold); }
+.tip { position:absolute; pointer-events:none; background:var(--panel-2); border:1px solid var(--line);
+  border-radius:8px; padding:6px 9px; font-size:10px; color:var(--txt-2); display:none; max-width:210px; z-index:5; }
+.tip b { color:var(--txt); }
+.chart-wrap { position:relative; }
+.attr { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.arow { display:flex; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+.arow .lab { width:104px; color:var(--txt-mid); flex:0 0 auto; }
+.arow .val { width:52px; text-align:right; font-weight:700; flex:0 0 auto; }
+.val.pos { color:var(--cyan); } .val.neg { color:var(--red); }
+.bar { height:8px; border-radius:4px; }
+.bar.pos { background:var(--cyan); } .bar.neg { background:var(--red); }
+.btrack { flex:1; display:flex; }
+.btrack .half { flex:1; position:relative; height:8px; }
+.half.l .bar { position:absolute; right:0; } .half.r .bar { position:absolute; left:0; }
+.half.l { border-right:1px solid var(--line); }
+/* ── leaderboard match idiom (same classes/rules as static/leaderboard.css) ── */
+.event-pill { display:table; max-width:100%; margin:22px 0 8px; padding:6px 13px;
+  border-radius:14px; background:var(--panel-2); border:1px solid var(--line-soft);
+  color:var(--txt); font-size:13px; font-weight:700; line-height:1.4; }
+.event-pill-date { font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--txt-dim); font-weight:500; margin-right:7px; }
+.match-group { padding:9px 11px; margin:6px 0; background:var(--panel);
+  border:1px solid var(--line); border-left:3px solid var(--line-soft); border-radius:10px; }
+.match-group.win { border-left-color:var(--cyan); }
+.match-group.loss { border-left-color:var(--pink); }
+.match-row { display:flex; align-items:baseline; gap:6px; }
+.match-score { font-size:14px; font-weight:700; color:var(--txt-2); }
+.match-result { font-size:14px; font-weight:800; margin-left:2px; }
+.match-result.W { color:var(--cyan); }
+.match-result.L { color:var(--pink); }
+.match-pickle { font-size:0.85em; }
+.match-impact-col { margin-left:auto; flex-shrink:0; font-variant-numeric:tabular-nums;
+  white-space:nowrap; font-size:12px; }
+.match-opp-line { display:flex; flex-wrap:wrap; align-items:baseline;
+  column-gap:4px; row-gap:0; font-size:13px; color:var(--txt-dim); }
+.match-self { font-weight:700; color:var(--txt); }
+.match-partner { color:var(--partner-pur); font-weight:600; }
+.match-vs { color:var(--txt-mid); font-size:10px; letter-spacing:0.5px;
+  text-transform:uppercase; font-weight:700; }
+.match-rating { display:inline-block; margin-left:-1px; font-size:11px; color:var(--txt-mid);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.trend-up { color:var(--cyan); text-shadow:0 0 8px rgba(0,229,255,0.4); }
+.trend-down { color:var(--pink); text-shadow:0 0 8px rgba(255,0,160,0.4); }
+.trend-flat { color:var(--txt-mid); }
+:root[data-theme="light"] .trend-up, :root[data-theme="light"] .trend-down { text-shadow:none; }
+.lbl { font-size:11px; color:var(--txt-dim); font-weight:700; }
+/* journey-specific additions on top of the idiom */
+.match-extra { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:5px; }
+.mx { font-size:10px; color:var(--txt-dim); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.5px; border-radius:999px; padding:2px 7px;
+  background:var(--panel-2); color:var(--txt-mid); }
+.tag-up { background:rgba(0,229,255,.14); color:var(--cyan); }
+.tag-bad { background:rgba(255,107,107,.14); color:var(--red); }
+.tagd { display:inline-block; }
+.tagd summary { list-style:none; cursor:pointer; display:inline-block; padding:8px 4px; margin:-8px -4px; }
+.tagd summary::-webkit-details-marker { display:none; }
+.tagd summary::after { content:" ▾"; font-size:8px; }
+.tagd[open] summary::after { content:" ▴"; }
+.tag-math { font-size:10px; color:var(--txt-mid); padding:4px 2px 0; line-height:1.6;
+  font-variant-numeric:tabular-nums; }
+.tag-math b { color:var(--txt); }
+.lateflag { color:var(--pink); font-size:10px; font-weight:700; }
+.match-datepill { display:table; margin:12px 0 8px;
+  font-family:ui-monospace, "SF Mono", Menlo, monospace;
+  font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--txt-dim); }
+.event-pill + .match-datepill { margin-top:4px; }
+/* ---- Change story ribbon ---- */
+.story-sum { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+.sp { font-size:11px; font-weight:700; padding:3px 8px; border-radius:12px;
+  border:1px solid var(--line-soft); color:var(--txt-2); white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.sp-match { border-color:var(--cyan); color:var(--cyan); }
+.sp-adj { border-color:var(--adj); color:var(--adj); }
+.sp-late { border-color:var(--partner-pur); color:var(--partner-pur); }
+.sp-reset { border-color:var(--adj); color:var(--adj); font-weight:800; }
+.story { position:relative; margin:0 0 8px; padding-left:6px; }
+.sr { display:grid; grid-template-columns:52px 20px 1fr; align-items:start;
+  gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }
+.sr:last-child { border-bottom:0; }
+.sr-date { font-family:ui-monospace, "SF Mono", Menlo, monospace; font-size:10px;
+  color:var(--txt-dim); padding-top:2px; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums; }
+.sr-ico { font-size:13px; line-height:1.2; text-align:center; color:var(--txt-mid); }
+.sr-adj .sr-ico { color:var(--adj); }
+.sr-reset .sr-ico { color:var(--adj); }
+.sr-late .sr-ico, .sr-latemore .sr-ico { color:var(--partner-pur); }
+.sr-peak .sr-ico, .sr-now .sr-ico { color:var(--cyan); }
+.sr-nowstale .sr-ico { color:var(--txt-dim); opacity:.6; }
+.sr-latemore .sr-title { font-weight:500; color:var(--txt-mid); }
+.sr-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.sr-title { font-size:13px; font-weight:600; color:var(--txt); }
+.sr-sub { font-size:11px; color:var(--txt-mid); margin-top:2px; line-height:1.4; }
+.sr-delta { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums;
+  margin-left:auto; flex:0 0 auto; }
+.sr-delta.pos { color:var(--green); } .sr-delta.neg { color:var(--red); }
+.sr-reset { background:color-mix(in srgb, var(--adj) 8%, transparent); }
+</style></head><body>
+<div class="stamp">MOCKUP v6.3 — 2026-08-27</div>
+<button class="theme-chip" id="themeChip">THEME</button>
+<h1>Rating Journey</h1>
+<div class="sub">Steve  Lesko — official DUPR series + match records · mockup</div>
+
+<h2>Entry point — on the player card</h2>
+<div class="card">
+  <div class="crow"><span class="streak-badge sb-w">🔥 6W</span><span class="pname">Steve  Lesko</span>
+    <span class="scores">4.327</span></div>
+  <div class="jrow"><span class="jlabel">Journey</span>
+    <svg width="120" height="28" viewBox="0 0 120 28" aria-hidden="true"><polyline class="spark" points="1.0,27.0 14.1,3.0 27.2,8.7 40.3,7.0 53.4,12.3 66.6,13.4 79.7,16.2 92.8,10.4 105.9,8.3 119.0,4.8"/></svg>
+    <span class="jcta">FULL JOURNEY →</span></div>
+</div>
+
+<h2>Journey — headline</h2>
+<div class="chips">
+  <div class="chip"><div class="v">4.164</div><div class="k">Placed 6/25</div></div>
+  
+  <div class="chip"><div class="v">4.368</div><div class="k">Peak 8/25</div></div>
+  <div class="chip"><div class="v">4.327</div><div class="k">Now</div></div>
+  <div class="chip"><div class="v pos">+0.163</div><div class="k">Earned</div></div>
+  <div class="chip"><div class="v pos">+0.000</div><div class="k">DUPR moves</div></div>
+</div>
+
+<div class="panel chart-wrap">
+  <svg id="dchart" width="100%" viewBox="0 0 366 210" role="img"
+    aria-label="Doubles rating trajectory: placed 4.164, peak 4.368, now 4.327 (+0.163 net)"><line class="grid" x1="42.7" y1="14" x2="42.7" y2="186"/><line class="grid" x1="201.9" y1="14" x2="201.9" y2="186"/><text class="tick" x="201.9" y="203" text-anchor="middle">2026</text><line class="grid" x1="34" y1="160.0" x2="356" y2="160.0"/><text class="tick" x="29" y="163.0" text-anchor="end">3.75</text><line class="grid" x1="34" y1="109.2" x2="356" y2="109.2"/><text class="tick" x="29" y="112.2" text-anchor="end">4.00</text><line class="grid" x1="34" y1="58.4" x2="356" y2="58.4"/><text class="tick" x="29" y="61.4" text-anchor="end">4.25</text><path class="seg-norm" d="M34.0 122.8 L89.4 36.2 L124.9 56.7 L125.8 50.5 L143.1 69.9 L143.9 73.8 L150.0 84.0 L156.0 63.0 L179.4 55.4 L356.0 42.7"/><line class="mk-whisk" x1="34.0" y1="122.8" x2="34.0" y2="75.8"/><line class="mk-whisk" x1="34.0" y1="122.8" x2="34.0" y2="165.7"/><circle class="mk mk-start" cx="34.0" cy="75.8" r="4"/><circle class="mk mk-peak" cx="89.4" cy="34.3" r="5"/><circle class="mk mk-low" cx="34.0" cy="165.7" r="4"/><circle class="mk mk-now" cx="356.0" cy="42.7" r="4"/><text class="anno anno-gold" x="89.4" y="25.3" text-anchor="start">peak 4.368</text><text class="anno" x="65.9" y="181.7" text-anchor="middle">low 3.722</text><text class="anno" x="38.0" y="67.8">placed 4.164</text></svg>
+  <div class="tip" id="tip"></div>
+  <div class="legend"><span><i></i>match-driven</span><span><i class="sys"></i>DUPR moves</span>
+    <span>◆ DUPR adjustment</span><span>tap for detail</span></div>
+</div>
+<p class="note">The line is DUPR's own rating series (47 changes since 2025-06-21). Solid = a match moved it; dashed pink = DUPR moved it with no match; ◆ marks a DUPR adjustment (no match played). 30-17 record over 47 doubles matches, 1.0-year span.</p>
+
+
+<h2>Change story</h2>
+<div class="story-sum"><span class="sp sp-match">47 matches</span></div>
+<p class="note" style="margin:0 0 10px">The events that shaped this rating, in order.
+Ordinary match results are summarized in the sections below — this ribbon spotlights what
+you can't see on a scorecard.</p>
+<div class="story"><div class="sr sr-start"><div class="sr-date">6/21/25</div><div class="sr-ico" aria-hidden="true">◎</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Placed at 4.164</span></div><div class="sr-sub">DUPR engine start</div></div></div><div class="sr sr-peak"><div class="sr-date">8/24/25</div><div class="sr-ico" aria-hidden="true">▲</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Peak 4.368</span></div><div class="sr-sub">highest rating reached</div></div></div><div class="sr sr-now"><div class="sr-date">6/28/26</div><div class="sr-ico" aria-hidden="true">●</div><div class="sr-body"><div class="sr-head"><span class="sr-title">Now 4.327</span></div><div class="sr-sub">current rating</div></div></div></div>
+<p class="note">◆ DUPR changing the rating with no match played, ⟳ resets, and ↩ matches DUPR
+processed long after they were played — all DUPR's doing, not the player's. We don't label
+an adjustment as system-wide, individual, or paid: only DUPR knows which, and the raw record
+just says a change happened with no match. Resets are inferred from a rating held flat across
+many matches (DUPR doesn't flag them).</p>
+
+<h2>What moves it — doubles</h2>
+<div class="attr"><div class="arow"><span class="lab">Earned (matches)</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.163</span></div><div class="arow"><span class="lab">DUPR moves</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:0%"></div></div></div><span class="val pos">+0.000</span></div><div class="arow"><span class="lab">Net</span><div class="btrack"><div class="half l"></div><div class="half r"><div class="bar pos" style="width:100%"></div></div></div><span class="val pos">+0.163</span></div></div>
+<p class="note">Split is exact — every step in DUPR's series is labeled match or system. Match impacts break down as wins +0.968 / losses -0.804.</p>
+
+<h2>Biggest match moves</h2>
+<p class="note" style="margin:0 0 8px">Ratings shown are each player's rating on the match date —
+later corrections aren't reflected. Tap a pill for the team-average math.</p>
+<div class="event-pill"><span class="event-pill-date">6/21/25</span>Dink at the Rink 2025 - Mens Doubles Skill: (4.0 And Above) Age: (50…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.148)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.722</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.028</span></span> <span class="match-vs">vs</span> <span>Roy Kohler <span class="match-rating">3.966</span></span> &amp; <span>Brian D Selby <span class="match-rating">3.885</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.10</summary><div class="tag-math">Steve 3.722 + Danny 4.028 = <b>7.750</b><br>Roy 3.966 + Brian 3.885 = <b>7.851</b><br>→ opponents stronger by 0.101 combined DUPR (pre-match)</div></details> <span class="mx">PD +7</span> <span class="mx">match #4</span></div></div><div class="event-pill"><span class="event-pill-date">8/24/25</span>The Paddle Battle of Gettysburg - Mixed Doubles Skill: (3.5) Age: (10…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.132)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.140</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.740</span></span> <span class="match-vs">vs</span> <span>Jessica Pratt <span class="match-rating">4.517</span></span> &amp; <span>Tyler Garner <span class="match-rating">4.216</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-up">UPSET · opp dupr delta +0.85</summary><div class="tag-math">Steve 4.140 + Ella 3.740 = <b>7.881</b><br>Jessica 4.517 + Tyler 4.216 = <b>8.734</b><br>→ opponents stronger by 0.853 combined DUPR (pre-match)</div></details> <span class="mx">PD +4</span> <span class="mx">match #8</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.113)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.933</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.589</span></span> <span class="match-vs">vs</span> <span>Molly Cobbs <span class="match-rating">3.186</span></span> &amp; <span>William bowen</span></div><div class="match-extra"><span class="mx">PD +10</span> <span class="mx">match #6</span></div></div><div class="event-pill"><span class="event-pill-date">6/21/25</span>Dink at the Rink 2025 - Mens Doubles Skill: (4.0 And Above) Age: (50…</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.272)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.164</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.405</span></span> <span class="match-vs">vs</span> <span>Bernie Wolfe <span class="match-rating">3.991</span></span> &amp; <span>Mark McNaney <span class="match-rating">4.067</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.51</summary><div class="tag-math">Steve 4.164 + Danny 4.405 = <b>8.569</b><br>Bernie 3.991 + Mark 4.067 = <b>8.060</b><br>→ their side stronger by 0.509 combined DUPR (pre-match)</div></details> <span class="mx">PD -3</span> <span class="mx">match #1</span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.165)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.892</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.178</span></span> <span class="match-vs">vs</span> <span>Scott Scheir <span class="match-rating">3.844</span></span> &amp; <span>mike Shortlidge <span class="match-rating">3.837</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag tag-bad">BAD LOSS · opp dupr delta -0.39</summary><div class="tag-math">Steve 3.892 + Danny 4.178 = <b>8.071</b><br>Scott 3.844 + mike 3.837 = <b>7.683</b><br>→ their side stronger by 0.388 combined DUPR (pre-match)</div></details> <span class="mx">PD -3</span> <span class="mx">match #2</span></div></div><div class="event-pill"><span class="event-pill-date">10/25/25</span>PickleRage Fall Frenzy @ Glen Burnie - Mens Doubles Skill: (4.0-4.49)…</div><div class="match-group loss"><div class="match-row"><span class="match-score">2-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.071)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.269</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.555</span></span> <span class="match-vs">vs</span> <span>Lance Patron <span class="match-rating">4.090</span></span> &amp; <span>Jose Mendoza <span class="match-rating">3.934</span></span></div><div class="match-extra"><details class="tagd"><summary class="tag">opp dupr delta +0.20</summary><div class="tag-math">Steve 4.269 + Bradley 3.555 = <b>7.826</b><br>Lance 4.090 + Jose 3.934 = <b>8.025</b><br>→ opponents stronger by 0.199 combined DUPR (pre-match)</div></details> <span class="mx">PD -13</span> <span class="mx">match #22</span></div></div>
+
+<h2>First 30 rated matches</h2>
+<div class="event-pill"><span class="event-pill-date">6/21/25</span>Dink at the Rink 2025 - Mens Doubles Skill: (4.0 And Above) Age: (50…</div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.272)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.164</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.405</span></span> <span class="match-vs">vs</span> <span>Bernie Wolfe <span class="match-rating">3.991</span></span> &amp; <span>Mark McNaney <span class="match-rating">4.067</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.165)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.892</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.178</span></span> <span class="match-vs">vs</span> <span>Scott Scheir <span class="match-rating">3.844</span></span> &amp; <span>mike Shortlidge <span class="match-rating">3.837</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">10-12 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.727</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.032</span></span> <span class="match-vs">vs</span> <span>Jeffrey Rehmeyer II <span class="match-rating">3.385</span></span> &amp; <span>Keith Tarburton <span class="match-rating">5.486</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.148)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.722</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.028</span></span> <span class="match-vs">vs</span> <span>Roy Kohler <span class="match-rating">3.966</span></span> &amp; <span>Brian D Selby <span class="match-rating">3.885</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">12-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.063)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.869</span></span> w/ <span class="match-partner">Danny Chan <span class="match-rating">4.164</span></span> <span class="match-vs">vs</span> <span>Bernie Wolfe <span class="match-rating">4.040</span></span> &amp; <span>Mark McNaney <span class="match-rating">4.174</span></span></div></div><div class="event-pill"><span class="event-pill-date">8/24/25</span>The Paddle Battle of Gettysburg - Mixed Doubles Skill: (3.5) Age: (10…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-1 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.113)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">3.933</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.589</span></span> <span class="match-vs">vs</span> <span>Molly Cobbs <span class="match-rating">3.186</span></span> &amp; <span>William bowen</span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.095)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.046</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.669</span></span> <span class="match-vs">vs</span> <span>Amanda Grace Chua <span class="match-rating">3.758</span></span> &amp; <span>Shane Wisor <span class="match-rating">3.758</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.132)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.140</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.740</span></span> <span class="match-vs">vs</span> <span>Jessica Pratt <span class="match-rating">4.517</span></span> &amp; <span>Tyler Garner <span class="match-rating">4.216</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-2 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.046)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.272</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.842</span></span> <span class="match-vs">vs</span> <span>Kathleen Nickey <span class="match-rating">3.234</span></span> &amp; <span>james Puller <span class="match-rating">3.549</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-4 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.050)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.318</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.878</span></span> <span class="match-vs">vs</span> <span>Kelly Reeves <span class="match-rating">3.603</span></span> &amp; <span>Noel Reeves <span class="match-rating">3.826</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">12-10, 11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.368</span></span> w/ <span class="match-partner">Ella Ruggiero <span class="match-rating">3.919</span></span> <span class="match-vs">vs</span> <span>tammy obrien <span class="match-rating">3.841</span></span> &amp; <span>Rob Nickey <span class="match-rating">3.939</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/4/25</span>Harvest Moon Showdown - Mens Doubles Skill: (4.000 to 4.499) Age: (49…</div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.042)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.359</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.648</span></span> <span class="match-vs">vs</span> <span>Jascha Owens <span class="match-rating">4.160</span></span> &amp; <span>Scott Orman <span class="match-rating">4.158</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.053)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.317</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.618</span></span> <span class="match-vs">vs</span> <span>Jeff Landsman <span class="match-rating">3.988</span></span> &amp; <span>Babar Sultan <span class="match-rating">3.916</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-9 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.034)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.263</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.578</span></span> <span class="match-vs">vs</span> <span>Steven Dunham <span class="match-rating">4.069</span></span> &amp; <span>Jake Sponseller <span class="match-rating">3.684</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">7-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.039)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.297</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.604</span></span> <span class="match-vs">vs</span> <span>Gavin Street <span class="match-rating">3.946</span></span> &amp; <span>Ross Mickle <span class="match-rating">4.168</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/5/25</span>Harvest Moon Showdown - Mixed Doubles Skill: (4.0 And Above) Age: (49…</div><div class="match-group win"><div class="match-row"><span class="match-score">15-7 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.002)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.258</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.355</span></span> <span class="match-vs">vs</span> <span>Caroline Miller <span class="match-rating">3.584</span></span> &amp; <span>Justin Villa <span class="match-rating">4.188</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.018)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.260</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.356</span></span> <span class="match-vs">vs</span> <span>Ella Ruggiero <span class="match-rating">3.869</span></span> &amp; <span>Steven Dunham <span class="match-rating">4.068</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-13 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.011)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.278</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.370</span></span> <span class="match-vs">vs</span> <span>Lauren Heffner <span class="match-rating">4.481</span></span> &amp; <span>Evan Myers <span class="match-rating">4.215</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/25/25</span>PickleRage Fall Frenzy @ Glen Burnie - Mens Doubles Skill: (4.0-4.49)…</div><div class="match-group loss"><div class="match-row"><span class="match-score">10-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.020)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.288</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.574</span></span> <span class="match-vs">vs</span> <span>Ben  McCabe <span class="match-rating">4.010</span></span> &amp; <span>Mason McCabe <span class="match-rating">3.943</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.015)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.268</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.554</span></span> <span class="match-vs">vs</span> <span>Jahet Alcantara <span class="match-rating">4.108</span></span> &amp; <span>Spencer  Mendible-Carrillo <span class="match-rating">4.132</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">15-17 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-up">(+0.016)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.254</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.540</span></span> <span class="match-vs">vs</span> <span>Brian fowler <span class="match-rating">4.021</span></span> &amp; <span>Chris Boner <span class="match-rating">4.268</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">2-15 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.071)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.269</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.555</span></span> <span class="match-vs">vs</span> <span>Lance Patron <span class="match-rating">4.090</span></span> &amp; <span>Jose Mendoza <span class="match-rating">3.934</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">15-10 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.006)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.199</span></span> w/ <span class="match-partner">Bradley Lesko <span class="match-rating">3.486</span></span> <span class="match-vs">vs</span> <span>Zam Nang <span class="match-rating">3.531</span></span> &amp; <span>Zam Piang <span class="match-rating">3.531</span></span></div></div><div class="event-pill"><span class="event-pill-date">10/26/25</span>PickleRage Fall Frenzy @ Glen Burnie - Mixed Doubles Skill: (4.0…</div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.193</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.378</span></span> <span class="match-vs">vs</span> <span>Shelby Cook <span class="match-rating">3.842</span></span> &amp; <span>Josh Fallon <span class="match-rating">4.288</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">8-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.033)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.202</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.388</span></span> <span class="match-vs">vs</span> <span>Betty Lee <span class="match-rating">4.122</span></span> &amp; <span>TJ THOMAS <span class="match-rating">3.960</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-0 <strong class="match-result W">W</strong> <span class="match-pickle" title="Pickle — won a game to a shutout">🥒</span></span><span class="match-impact-col"><span class="trend-up">(+0.041)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.169</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.353</span></span> <span class="match-vs">vs</span> <span>Effie Bifsas <span class="match-rating">3.694</span></span> &amp; <span>Savvas Bifsas <span class="match-rating">3.598</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">11-13 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.014)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.210</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.395</span></span> <span class="match-vs">vs</span> <span>Mikaella Mondesir <span class="match-rating">4.256</span></span> &amp; <span>Lance Patron <span class="match-rating">4.138</span></span></div></div><div class="match-group loss"><div class="match-row"><span class="match-score">9-11 <strong class="match-result L">L</strong></span><span class="match-impact-col"><span class="trend-down">(-0.019)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.196</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.381</span></span> <span class="match-vs">vs</span> <span>Fanta David <span class="match-rating">3.907</span></span> &amp; <span>Trevor Mccallam <span class="match-rating">4.334</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-6 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-down">(-0.009)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.177</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.361</span></span> <span class="match-vs">vs</span> <span>Jessica Cac <span class="match-rating">3.563</span></span> &amp; <span>Spencer  Mendible-Carrillo <span class="match-rating">3.968</span></span></div></div><div class="match-group win"><div class="match-row"><span class="match-score">11-5 <strong class="match-result W">W</strong></span><span class="match-impact-col"><span class="trend-up">(+0.005)</span> <span class="lbl">D</span></span></div><div class="match-opp-line"><span class="match-self">Steve <span class="match-rating">4.168</span></span> w/ <span class="match-partner">Kara Pierce <span class="match-rating">4.352</span></span> <span class="match-vs">vs</span> <span>Amiee  Greene <span class="match-rating">3.525</span></span> &amp; <span>Andrew Mann <span class="match-rating">4.283</span></span></div></div>
+<p class="note">first 30 rated matches, from 2025-06-21 · 1 unrated match not shown (pre-engine era) · ⏳ = late upload</p>
+
+
+<script>
+(function () {
+  var chip = document.getElementById('themeChip');
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var root = document.documentElement;
+  if (mq.matches) root.setAttribute('data-theme', 'light');
+  chip.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? '' : 'light');
+  });
+  var pts = [{"d": "2025-06-21", "x": 34.0, "r": 3.933, "dl": 0.0, "m": true, "info": "3W-3L \u00b7 Dink at the Rink 2025 - Mens Doubles Skill: (4.0 And Above) "}, {"d": "2025-08-24", "x": 89.4, "r": 4.359, "dl": 0.426, "m": true, "info": "6W-0L \u00b7 The Paddle Battle of Gettysburg - Mixed Doubles Skill: (3.5)"}, {"d": "2025-10-04", "x": 124.9, "r": 4.258, "dl": -0.101, "m": true, "info": "1W-3L \u00b7 Harvest Moon Showdown - Mens Doubles Skill: (4.000 to 4.499)"}, {"d": "2025-10-05", "x": 125.8, "r": 4.289, "dl": 0.031, "m": true, "info": "3W-0L \u00b7 Harvest Moon Showdown - Mixed Doubles Skill: (4.0 And Above)"}, {"d": "2025-10-25", "x": 143.1, "r": 4.194, "dl": -0.095, "m": true, "info": "1W-4L \u00b7 PickleRage Fall Frenzy @ Glen Burnie - Mens Doubles Skill: ("}, {"d": "2025-10-26", "x": 143.9, "r": 4.174, "dl": -0.02, "m": true, "info": "4W-3L \u00b7 PickleRage Fall Frenzy @ Glen Burnie - Mixed Doubles Skill: "}, {"d": "2025-11-02", "x": 150.0, "r": 4.124, "dl": -0.05, "m": true, "info": "1W-3L \u00b7 SMASH & CRASH FALL CLASSIC - Mixed Doubles Skill: (4.000 To "}, {"d": "2025-11-09", "x": 156.0, "r": 4.227, "dl": 0.103, "m": true, "info": "5W-1L \u00b7 Lititz recCenter"}, {"d": "2025-12-06", "x": 179.4, "r": 4.265, "dl": 0.038, "m": true, "info": "1W-0L \u00b7 APC Championship Series - APC Enola, PA - Men's 4.0 50+"}, {"d": "2026-06-28", "x": 356.0, "r": 4.327, "dl": 0.062, "m": true, "info": "5W-0L \u00b7 Lititz recCenter"}];
+  var svg = document.getElementById('dchart');
+  var tip = document.getElementById('tip');
+  function show(evt) {
+    var r = svg.getBoundingClientRect();
+    var px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - r.left;
+    var vx = px / r.width * 366;
+    var best = pts[0], bd = 1e9;
+    for (var i = 0; i < pts.length; i++) {
+      var d = Math.abs(pts[i].x - vx);
+      if (d < bd) { bd = d; best = pts[i]; }
+    }
+    tip.innerHTML = '<b>' + best.d + '</b><br>rating <b>' + best.r.toFixed(3) + '</b> (' +
+      (best.dl > 0 ? '+' : '') + best.dl.toFixed(3) + ')<br>' + best.info;
+    tip.style.display = 'block';
+    var tx = px / r.width * 100;
+    tip.style.left = Math.min(Math.max(tx, 8), 52) + '%';
+    tip.style.top = '12px';
+  }
+  svg.addEventListener('mousemove', show);
+  svg.addEventListener('touchstart', show, { passive: true });
+  svg.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  // touch has no mouseleave — tap anywhere off the chart dismisses the tip
+  document.addEventListener('touchstart', function (e) {
+    if (!svg.contains(e.target) && !tip.contains(e.target)) tip.style.display = 'none';
+  }, { passive: true });
+  // chip row: fade the trailing edge while more chips remain offscreen
+  var cr = document.querySelector('.chips');
+  if (cr) {
+    var edge = function () {
+      cr.classList.toggle('more', cr.scrollWidth - cr.clientWidth - cr.scrollLeft > 4);
+    };
+    cr.addEventListener('scroll', edge, { passive: true });
+    window.addEventListener('resize', edge);
+    edge();
+  }
+})();
+</script>
+</body></html>
