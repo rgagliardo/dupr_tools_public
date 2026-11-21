@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-20T21:02:12",
+ "updated": "2026-11-20T22:22:30",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -41,10 +41,10 @@
   }
  },
  "playable_now": false,
- "kicker": "OK NOW",
- "headline": "not clean \u2014 until 10p (chilly)",
+ "kicker": "HOLD UP",
+ "headline": "Next OK window: Sat 8a",
  "wet_note": null,
- "reason": "clean window Sat 10a",
+ "reason": "chilly \u2014 clean window Sat 10a",
  "ranked": [
   {
    "day": "Mon",
@@ -59,18 +59,18 @@
    "grade": "B"
   },
   {
-   "day": "Today",
-   "grade": "C"
+   "day": "Wed",
+   "grade": "D"
   },
   {
-   "day": "Wed",
+   "day": "Sun",
    "grade": "D"
   }
  ],
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 47,
+   "temp": 45,
    "dew": 35,
    "wind": 0
   },
@@ -80,23 +80,6 @@
    "radar_24h_mm": 0
   },
   "days": [
-   {
-    "date": "2026-11-20",
-    "label": "Today",
-    "sub": "11/20",
-    "grade": "C",
-    "score": 0.6,
-    "best": "",
-    "why": "chilly 9p",
-    "wet_mm": 0.0,
-    "cells": {
-     "21": {
-      "t": 47,
-      "v": 1,
-      "c": "chl"
-     }
-    }
-   },
    {
     "date": "2026-11-21",
     "label": "Sat",
@@ -183,30 +166,30 @@
     "date": "2026-11-22",
     "label": "Sun",
     "sub": "11/22",
-    "grade": "F",
-    "score": 0.086,
+    "grade": "D",
+    "score": 0.257,
     "best": "",
-    "why": "rain 8a-7p \u00b7 rain 8p-9p \u00b7 NWS: rain 8p-9p",
+    "why": "rain 12p-7p \u00b7 rain 8a-11a, 8p-9p \u00b7 NWS: rain 8a-11a, 8p-9p",
     "wet_mm": 1.2,
     "cells": {
      "8": {
-      "t": 55,
-      "v": 0,
+      "t": 54,
+      "v": 1,
       "c": "rain"
      },
      "9": {
-      "t": 56,
-      "v": 0,
+      "t": 57,
+      "v": 1,
       "c": "rain"
      },
      "10": {
-      "t": 58,
-      "v": 0,
+      "t": 60,
+      "v": 1,
       "c": "rain"
      },
      "11": {
-      "t": 59,
-      "v": 0,
+      "t": 61,
+      "v": 1,
       "c": "rain"
      },
      "12": {
