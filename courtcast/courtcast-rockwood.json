@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-21T01:37:10",
+ "updated": "2026-11-21T03:09:37",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 41,
+   "temp": 39,
    "dew": 34,
-   "wind": 0
+   "wind": 1
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.2
+   "radar_24h_mm": 0
   },
   "days": [
    {
@@ -167,9 +167,9 @@
     "label": "Sun",
     "sub": "11/22",
     "grade": "F",
-    "score": 0.214,
+    "score": 0.043,
     "best": "",
-    "why": "rain 10a-3p \u00b7 wet court? 4p-6p \u00b7 rain 8a-9a, 7p-9p \u00b7 NWS: rain 8a-9a",
+    "why": "rain 9a-3p \u00b7 wet court? 4p-9p \u00b7 rain 8a \u00b7 NWS: rain 8a",
     "wet_mm": 1.2,
     "cells": {
      "8": {
@@ -178,8 +178,8 @@
       "c": "rain"
      },
      "9": {
-      "t": 59,
-      "v": 1,
+      "t": 58,
+      "v": 0,
       "c": "rain"
      },
      "10": {
@@ -229,18 +229,18 @@
      },
      "19": {
       "t": 60,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "20": {
       "t": 58,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      },
      "21": {
       "t": 57,
-      "v": 1,
-      "c": "rain"
+      "v": 0,
+      "c": "wet"
      }
     }
    },
@@ -352,7 +352,7 @@
       "c": "chl"
      },
      "20": {
-      "t": 41,
+      "t": 42,
       "v": 1,
       "c": "chl"
      },
@@ -370,7 +370,7 @@
     "grade": "D",
     "score": 0.4,
     "best": "3p",
-    "why": "rain 7p-9p \u00b7 wind (14 mph) 4p-6p",
+    "why": "gusts (25 mph) 7p-9p \u00b7 wind (14 mph) 4p-6p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -396,17 +396,17 @@
      "19": {
       "t": 47,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "20": {
       "t": 46,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      },
      "21": {
-      "t": 46,
+      "t": 45,
       "v": 0,
-      "c": "rain"
+      "c": "gst"
      }
     }
    },
@@ -436,22 +436,22 @@
       "c": "rain"
      },
      "18": {
-      "t": 48,
+      "t": 50,
       "v": 1,
       "c": "rain"
      },
      "19": {
-      "t": 45,
+      "t": 47,
       "v": 1,
       "c": "rain"
      },
      "20": {
-      "t": 43,
+      "t": 45,
       "v": 1,
       "c": "rain"
      },
      "21": {
-      "t": 42,
+      "t": 43,
       "v": 1,
       "c": "rain"
      }
