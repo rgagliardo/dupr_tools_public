@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-21T16:13:02",
+ "updated": "2026-11-21T16:28:10",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -40,19 +40,19 @@
    "D": 0.25
   }
  },
- "playable_now": false,
- "kicker": "HOLD UP",
- "headline": "Next window: 5p today",
+ "playable_now": true,
+ "kicker": "PLAY NOW",
+ "headline": "until 10p",
  "wet_note": null,
- "reason": "today grades B, best 5p-9p",
+ "reason": "back 8a",
  "ranked": [
   {
-   "day": "Mon",
+   "day": "Today",
    "grade": "A"
   },
   {
-   "day": "Today",
-   "grade": "B"
+   "day": "Mon",
+   "grade": "A"
   },
   {
    "day": "Tue",
@@ -84,16 +84,16 @@
     "date": "2026-11-21",
     "label": "Today",
     "sub": "11/21",
-    "grade": "B",
-    "score": 0.833,
-    "best": "5p-9p",
-    "why": "raining now 4p",
+    "grade": "A",
+    "score": 1.0,
+    "best": "4p-9p",
+    "why": "",
     "wet_mm": 0.0,
     "cells": {
      "16": {
       "t": 63,
-      "v": 0,
-      "c": "rnow"
+      "v": 2,
+      "c": ""
      },
      "17": {
       "t": 62,
