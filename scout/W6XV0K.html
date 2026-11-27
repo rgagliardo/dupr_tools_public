@@ -1,0 +1,85 @@
+<!doctype html><html data-theme="light" class="page"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><title>Scout · Kelsey Laurente</title><style>
+:root{--bg:#f7f7f5;--card:#fff;--line:#ebebeb;--ink:#222;--mut:#717171;--acc:#2f6bb3;--gain:#2f7d5b;--gain-bar:#4a9a77;--gain-bg:#eaf4ee;--loss:#b4483f;--loss-bar:#cf6b62;--loss-bg:#f9ecea;--bar:#e6e6e6;--tile:#f2f2f0}
+:root[data-theme=dark]{--bg:#101011;--card:#1b1b1c;--line:#2e2e30;--ink:#f4f4f2;--mut:#a0a0a0;--acc:#86b4f0;--gain:#6ec39a;--gain-bar:#4ea37c;--gain-bg:#1f3329;--loss:#e5908a;--loss-bar:#c56a63;--loss-bg:#3a2321;--bar:#38383c;--tile:#272729}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.4;color:var(--ink);-webkit-font-smoothing:antialiased}
+.frame{width:390px;padding:12px;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+a.lnk{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+a.lnk:hover{text-decoration-color:currentColor}
+html.page .frame{width:100%;max-width:420px;margin:0 auto;padding:16px 12px 32px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.num{font-variant-numeric:tabular-nums}
+.g{color:var(--gain)}.r{color:var(--loss)}.m{color:var(--mut)}
+.sec{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+h3{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.01em}
+.sh .sub{font-size:13px;color:var(--mut);white-space:nowrap}
+.head{display:flex;align-items:center;gap:16px}
+.av{position:relative;flex:none;width:56px;height:56px;border-radius:50%;background:var(--tile);color:var(--mut);font-size:19px;font-weight:600;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.av.big{width:112px;height:112px;border-radius:20px}
+.who{flex:1;min-width:0}
+.name{font-size:26px;line-height:30px;font-weight:600;letter-spacing:-.02em;overflow-wrap:anywhere}
+.id{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;color:var(--mut);margin-top:2px}
+.meta{font-size:13px;line-height:20px;color:var(--mut);margin-top:16px}
+.chips.socials{display:flex;flex-wrap:wrap;gap:0 16px;margin-top:2px;font-size:13px;line-height:20px}
+.chips.socials em{font-style:normal;color:var(--mut);margin-right:4px}
+.chips.socials span{font-weight:500}
+.ratings{display:grid;grid-template-columns:1fr 1fr;margin-top:20px;border:1px solid var(--line);border-radius:12px}
+.rb{padding:14px 16px}.rb+.rb{border-left:1px solid var(--line)}
+.rb .l{font-size:13px;color:var(--mut)}
+.rb .v{font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
+.rb .s{font-size:12px;color:var(--mut);margin-top:2px}
+.vhero{display:flex;align-items:flex-end;justify-content:space-between}
+.vhero .big{font-size:44px;line-height:46px;font-weight:600;letter-spacing:-.03em}
+.vhero .pct{font-size:15px;font-weight:600;color:var(--acc);margin-top:6px}
+.vhero .avg{text-align:right;font-size:13px;color:var(--mut)}
+.vhero .avg b{display:block;font-size:17px;font-weight:600;color:var(--ink);margin-top:2px}
+.split{display:grid;gap:20px;margin-top:24px}
+.sp .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.sp .t{font-size:15px;font-weight:500}
+.sp .sub{font-size:13px;color:var(--mut);margin-top:1px}
+.sp .v{font-size:15px;font-weight:600;white-space:nowrap}
+.sp .v span{font-size:13px;font-weight:400;color:var(--mut);margin-left:8px}
+.bar{height:4px;border-radius:2px;background:var(--bar);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:2px}
+.formrow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.sq{display:flex;gap:4px}
+.sq i{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;font-style:normal;font-size:11px;font-weight:600}
+.sq .w{background:var(--gain-bg);color:var(--gain)}.sq .l{background:var(--loss-bg);color:var(--loss)}
+.sqlbl{display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-top:6px;width:236px}
+.stk{font-size:13px;font-weight:600;line-height:20px;white-space:nowrap}
+.wins{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.cellt{border:1px solid var(--line);border-radius:12px;padding:10px 12px 11px}
+.cellt .s{font-size:12px;color:var(--mut)}
+.cellt .v{font-size:17px;line-height:24px;font-weight:600;margin-top:2px;white-space:nowrap}
+.cellt .v small{font-size:12px;font-weight:500;margin-left:6px}
+.rhero{display:flex;align-items:flex-end;justify-content:space-between}
+.rhero .big{font-size:32px;line-height:36px;font-weight:600;letter-spacing:-.02em}
+.deltas{display:flex;gap:20px;text-align:right}
+.deltas .s{font-size:12px;color:var(--mut)}
+.deltas .v{font-size:15px;font-weight:600;margin-top:1px}
+svg{display:block;width:100%;height:auto}
+.spark{margin-top:16px}
+.pl{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--mut);margin-top:12px}
+.pl b{font-weight:600;color:var(--ink);margin:0 2px 0 3px}
+.pl .d{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.tr{display:grid;grid-template-columns:minmax(0,1fr) 46px 48px 52px;column-gap:8px;align-items:center;padding:12px 0;border-top:1px solid var(--line);line-height:20px}
+.tr.th{border-top:0;padding:0 0 8px;font-size:12px;line-height:16px;color:var(--mut)}
+.tr>:nth-child(n+2){text-align:right}
+.tr .nm{min-width:0;overflow-wrap:anywhere}
+.tr .tg{display:block;font-size:12px;line-height:16px;font-weight:600}
+.tr .rec{font-weight:500}
+.tr .rt,.tr .n{color:var(--mut)}
+.tr2{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--line);line-height:20px}
+.tr2 .rec{font-weight:600;white-space:nowrap}
+.lst>.tr2:first-child{border-top:0;padding-top:0}.lbl2{font-size:13px;color:var(--mut);margin-bottom:6px}.lst+.lbl2{margin-top:20px}
+.act{display:flex;align-items:flex-end;gap:8px;height:80px}
+.act div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+.act i{display:block;width:100%;border-radius:4px;background:var(--bar);min-height:4px}
+.act .pk i{background:var(--ink)}
+.act b{font-size:13px;font-weight:600;line-height:16px}
+.act em{font-style:normal;font-size:12px;color:var(--mut);line-height:16px;white-space:nowrap}
+.foot{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;line-height:16px;color:var(--mut);text-align:center}
+</style></head><body><div class="frame" id="frame"><div class="card"><div class="head"><div class="av big">KL<img src="https://xpabfqyepymqjwiwgmcb.supabase.co/storage/v1/object/public/profile-pictures/KelseyLaurente1.png" alt="" referrerpolicy="no-referrer" onerror="this.remove()"></div><div class="who"><div class="name"><a class="" href="https://dashboard.dupr.com/dashboard/player/5217238518" target="_blank" rel="noopener noreferrer">Kelsey Laurente</a></div><div class="id"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/5217238518" target="_blank" rel="noopener noreferrer">W6XV0K</a></div></div></div><div class="meta">Female · 32 yrs · 403 matches · Played 15d ago</div><div class="chips socials"><a class="lnk" href="https://www.instagram.com/laurente_kg/" target="_blank" rel="noopener noreferrer"><span><em>IG</em>@laurente_kg</span></a></div><div class="ratings"><div class="rb"><div class="l">Doubles</div><div class="v num">5.429</div><div class="s">100% reliable</div></div><div class="rb"><div class="l">Singles</div><div class="v num">5.455</div><div class="s">100% reliable</div></div></div><div class="sec"><div class="sh"><h3>Verdict</h3><span class="sub">Last 100 matches</span></div><div class="vhero"><div><div class="big num">63-37</div><div class="pct num">63% wins</div></div><div class="avg">Avg opponent<b class="num">5.23</b></div></div><div class="split"><div class="sp"><div class="top"><div><div class="t">vs stronger</div><div class="sub">teams rated at/above</div></div><div class="v num"><b class="r">8-20</b><span>29%</span></div></div><div class="bar"><i style="width:29%;background:var(--loss-bar)"></i></div></div><div class="sp"><div class="top"><div><div class="t">vs weaker</div><div class="sub">teams rated below</div></div><div class="v num"><b class="g">37-7</b><span>84%</span></div></div><div class="bar"><i style="width:84%;background:var(--gain-bar)"></i></div></div></div></div><div class="sec"><div class="sh"><h3>Form</h3><span class="sub">Last 10</span></div><div class="formrow"><div><div class="sq"><i class="w">W</i><i class="l">L</i><i class="l">L</i><i class="w">W</i><i class="w">W</i><i class="w">W</i><i class="w">W</i><i class="l">L</i><i class="l">L</i><i class="w">W</i></div><div class="sqlbl"><span>newest</span><span>oldest</span></div></div><span class="stk num g">W1 streak</span></div><div class="wins"><div class="cellt"><div class="s">30 days</div><div class="v num g">12-6</div></div><div class="cellt"><div class="s">90 days</div><div class="v num g">52-28</div></div><div class="cellt"><div class="s">365 days</div><div class="v num g">63-37</div></div></div></div><div class="sec"><div class="sh"><h3>Doubles rating</h3></div><div class="rhero"><div class="big num">5.443</div><div class="deltas"><div><div class="s">30d</div><div class="v num g">+0.003</div></div><div><div class="s">90d</div><div class="v num r">−0.016</div></div></div></div><svg class="spark" viewBox="0 0 326 56" role="img" aria-label="doubles rating over time"><polygon points="5.0,56 5.0,10.5 58.5,7.2 61.2,14.3 74.6,25.3 77.3,11.0 141.5,49.4 144.2,47.7 171.0,8.8 187.0,5.0 189.7,10.5 208.5,22.0 211.1,25.3 278.1,33.5 280.7,21.4 302.1,28.5 318.3,24.2 321.0,19.8 321.0,56" fill="var(--ink)" opacity=".05"/><polyline points="5.0,10.5 58.5,7.2 61.2,14.3 74.6,25.3 77.3,11.0 141.5,49.4 144.2,47.7 171.0,8.8 187.0,5.0 189.7,10.5 208.5,22.0 211.1,25.3 278.1,33.5 280.7,21.4 302.1,28.5 318.3,24.2 321.0,19.8" fill="none" stroke="var(--ink)" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/><circle cx="187.0" cy="5.0" r="2.5" fill="var(--gain-bar)" stroke="var(--card)" stroke-width="1.5"/><circle cx="141.5" cy="51.0" r="2.5" fill="var(--loss-bar)" stroke="var(--card)" stroke-width="1.5"/><circle cx="321.0" cy="19.8" r="3.5" fill="var(--acc)" stroke="var(--card)" stroke-width="1.5"/></svg><div class="pl"><span><i class="d" style="background:var(--gain-bar)"></i>Peak<b class="num">5.470</b>Sep 18</span><span><i class="d" style="background:var(--loss-bar)"></i>Low<b class="num">5.386</b>Sep 1</span><span>Net<b class="num r">−0.023</b></span></div></div><div class="sec"><div class="sh"><h3>Games</h3></div><div class="wins" style="grid-template-columns:1fr 1fr;margin-top:0"><div class="cellt"><div class="s">Games</div><div class="v"><span class="num g">98-64</span></div></div><div class="cellt"><div class="s">Avg points</div><div class="v"><span class="num">10.2–8.1</span><small class="num g">+2.1</small></div></div><div class="cellt"><div class="s">Close games ≤2</div><div class="v"><span class="num g">14-11</span></div></div><div class="cellt"><div class="s">Blowouts ≥6</div><div class="v"><span class="num g">65-32</span></div></div></div></div><div class="sec"><div class="sh"><h3>Partners</h3></div><div class="tr th"><div>Player</div><div>Played</div><div>W-L</div><div>Rating</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/5759222628" target="_blank" rel="noopener noreferrer">Marisa Ruiz</a><span class="tg g">Best partner</span></div><div class="n num">32</div><div class="rec num g">25-7</div><div class="rt num">5.694</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/4339820658" target="_blank" rel="noopener noreferrer">Andrew Loftin</a></div><div class="n num">11</div><div class="rec num g">7-4</div><div class="rt num">5.463</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/6471546120" target="_blank" rel="noopener noreferrer">Poongi hong</a></div><div class="n num">6</div><div class="rec num r">2-4</div><div class="rt num">4.935</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/6666628267" target="_blank" rel="noopener noreferrer">Clement Hamel</a></div><div class="n num">5</div><div class="rec num g">3-2</div><div class="rt num">5.566</div></div></div><div class="sec"><div class="sh"><h3>Opponents</h3></div><div class="tr th"><div>Player</div><div>Played</div><div>W-L</div><div>Rating</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/5214851082" target="_blank" rel="noopener noreferrer">Madalina Grigoriu</a><span class="tg r">Nemesis</span></div><div class="n num">5</div><div class="rec num r">0-5</div><div class="rt num">5.628</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/4757098269" target="_blank" rel="noopener noreferrer">Hanna Duncan</a></div><div class="n num">4</div><div class="rec num g">4-0</div><div class="rt num">4.827</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/8202265490" target="_blank" rel="noopener noreferrer">Katerina Stewart</a></div><div class="n num">4</div><div class="rec num r">0-4</div><div class="rt num">5.974</div></div><div class="tr"><div class="nm"><a class="lnk" href="https://dashboard.dupr.com/dashboard/player/6435897328" target="_blank" rel="noopener noreferrer">Ava Pisacrita</a></div><div class="n num">3</div><div class="rec num r">1-2</div><div class="rt num">5.027</div></div></div><div class="sec"><div class="sh"><h3>Where</h3></div><div class="lst"><div class="tr2"><div>Brick Wall Florida #11</div><span class="rec num g">6-4</span></div><div class="tr2"><div>Brick Wall Florida #12</div><span class="rec num g">7-3</span></div><div class="tr2"><div>2026 Pickle Money Ball East Coast Regional @The Fort - Womens Doubles Skill: (5.0 And Above) Age: (Any) FRIDAY</div><span class="rec num g">6-2</span></div><div class="tr2"><div>2026 Pickle Money Ball East Coast Regional @The Fort - Mixed Doubles Skill: (5.0 And Above) Age: (Any) THURSDAY</div><span class="rec num g">5-2</span></div></div></div><div class="sec"><div class="sh"><h3>Activity</h3><span class="sub">Matches per month</span></div><div class="act"><div><b class="num">1</b><i style="height:6px"></i><em>Jul ’26</em></div><div><b class="num">24</b><i style="height:23px"></i><em>Aug ’26</em></div><div class=pk><b class="num">42</b><i style="height:40px"></i><em>Sep ’26</em></div><div><b class="num">25</b><i style="height:24px"></i><em>Oct ’26</em></div><div><b class="num">8</b><i style="height:8px"></i><em>Nov ’26</em></div></div></div><div class="sec"><div class="sh"><h3>Vs roster</h3></div><div class="lbl2">Against</div><div class="lst"><div class="tr2"><div>Madalina Grigoriu</div><span class="rec num r">0-5</span></div><div class="tr2"><div>Katerina Stewart</div><span class="rec num r">0-4</span></div><div class="tr2"><div>Shelby Bates</div><span class="rec num r">1-2</span></div><div class="tr2"><div>Allie Reichert</div><span class="rec num r">0-2</span></div><div class="tr2"><div>Bobbi Oshiro</div><span class="rec num m">1-1</span></div><div class="tr2"><div>Christine Maddox</div><span class="rec num m">1-1</span></div></div></div><div class="foot">Scouting report · DUPR data · Nov 22, 2026 · names open DUPR profiles</div></div></div></body></html>
