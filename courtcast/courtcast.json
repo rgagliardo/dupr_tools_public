@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-27T08:51:34",
+ "updated": "2026-11-27T09:06:41",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -47,11 +47,11 @@
  "reason": "wind (14 mph) \u2014 clean window Sat 12p",
  "ranked": [
   {
-   "day": "Sat",
+   "day": "Wed",
    "grade": "B"
   },
   {
-   "day": "Wed",
+   "day": "Sat",
    "grade": "B"
   },
   {
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 41,
-   "dew": 37,
-   "wind": 16
+   "temp": 42,
+   "dew": 39,
+   "wind": 17
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 2.5,
-   "radar_24h_mm": 23.9
+   "radar_24h_mm": 18.9
   },
   "days": [
    {
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "11/27",
     "grade": "D",
-    "score": 0.25,
+    "score": 0.273,
     "best": "",
-    "why": "gusts (32 mph) 8a-12p, 3p-4p \u00b7 wind (14 mph) 5p-9p",
+    "why": "gusts (32 mph) 9a-12p, 3p-4p \u00b7 wind (14 mph) 5p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "8": {
-      "t": 41,
-      "v": 0,
-      "c": "gst"
-     },
      "9": {
       "t": 42,
       "v": 0,
@@ -157,9 +152,9 @@
     "label": "Sat",
     "sub": "11/28",
     "grade": "B",
-    "score": 0.829,
-    "best": "12p-7p",
-    "why": "wind (12 mph) 8a-11a \u00b7 chilly 8p-9p",
+    "score": 0.8,
+    "best": "2p-7p",
+    "why": "wind (12 mph) 8a-11a, 1p \u00b7 chilly 8p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -183,14 +178,14 @@
       "c": "wnd"
      },
      "12": {
-      "t": 52,
+      "t": 51,
       "v": 2,
       "c": ""
      },
      "13": {
-      "t": 53,
-      "v": 2,
-      "c": ""
+      "t": 56,
+      "v": 1,
+      "c": "wnd"
      },
      "14": {
       "t": 57,
