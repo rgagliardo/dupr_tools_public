@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-27T12:08:17",
+ "updated": "2026-11-27T12:23:25",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -59,11 +59,11 @@
    "grade": "C"
   },
   {
-   "day": "Sun",
+   "day": "Mon",
    "grade": "C"
   },
   {
-   "day": "Mon",
+   "day": "Sun",
    "grade": "C"
   }
  ],
@@ -219,9 +219,9 @@
     "label": "Sun",
     "sub": "11/29",
     "grade": "C",
-    "score": 0.7,
-    "best": "9a-4p",
-    "why": "rain 7p-9p \u00b7 wind (12 mph) 5p-6p \u00b7 chilly 8a",
+    "score": 0.671,
+    "best": "10a-4p",
+    "why": "rain 7p-9p \u00b7 chilly 8a-9a \u00b7 wind (12 mph) 5p-6p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -230,9 +230,9 @@
       "c": "chl"
      },
      "9": {
-      "t": 50,
-      "v": 2,
-      "c": ""
+      "t": 46,
+      "v": 1,
+      "c": "chl"
      },
      "10": {
       "t": 51,
@@ -301,9 +301,9 @@
     "label": "Mon",
     "sub": "11/30",
     "grade": "C",
-    "score": 0.65,
-    "best": "3p-5p",
-    "why": "gusts (25 mph) 8a \u00b7 wind (15 mph) 9a-12p \u00b7 chilly 6p-9p",
+    "score": 0.683,
+    "best": "3p-6p",
+    "why": "gusts (25 mph) 8a \u00b7 wind (15 mph) 9a-12p \u00b7 chilly 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -347,9 +347,9 @@
       "c": ""
      },
      "18": {
-      "t": 49,
-      "v": 1,
-      "c": "chl"
+      "t": 51,
+      "v": 2,
+      "c": ""
      },
      "19": {
       "t": 46,
@@ -482,12 +482,12 @@
    {
     "date": "2026-12-06",
     "d": "Su",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-12-07",
     "d": "Mo",
-    "g": "C"
+    "g": "D"
    },
    {
     "date": "2026-12-08",
@@ -497,7 +497,7 @@
    {
     "date": "2026-12-09",
     "d": "We",
-    "g": "A"
+    "g": "B"
    },
    {
     "date": "2026-12-10",
