@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Harry G. Daniel Park",
- "updated": "2026-11-27T09:06:43",
+ "updated": "2026-11-27T10:07:14",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 43,
-   "dew": 39,
-   "wind": 16
+   "temp": 46,
+   "dew": 40,
+   "wind": 17
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 2.2,
-   "radar_24h_mm": 15.3
+   "obs_18h_mm": 1.4,
+   "radar_24h_mm": 10.3
   },
   "days": [
    {
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "11/27",
     "grade": "F",
-    "score": 0.218,
+    "score": 0.24,
     "best": "",
-    "why": "gusts (30 mph) 9a-12p, 3p-5p \u00b7 wind (14 mph) 6p-9p",
+    "why": "gusts (30 mph) 10a-12p, 3p-5p \u00b7 wind (14 mph) 6p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 43,
-      "v": 0,
-      "c": "gst"
-     },
      "10": {
       "t": 46,
       "v": 0,

@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-11-27T09:06:45",
+ "updated": "2026-11-27T10:07:16",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 43,
+   "temp": 47,
    "dew": 39,
    "wind": 17
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 2.2,
-   "radar_24h_mm": 18.5
+   "obs_18h_mm": 1.4,
+   "radar_24h_mm": 13.5
   },
   "days": [
    {
@@ -85,16 +85,11 @@
     "label": "Today",
     "sub": "11/27",
     "grade": "F",
-    "score": 0.218,
+    "score": 0.24,
     "best": "",
-    "why": "gusts (32 mph) 9a-12p, 3p-5p \u00b7 wind (14 mph) 6p-9p",
+    "why": "gusts (32 mph) 10a-12p, 3p-5p \u00b7 wind (14 mph) 6p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "9": {
-      "t": 43,
-      "v": 0,
-      "c": "gst"
-     },
      "10": {
       "t": 47,
       "v": 0,
