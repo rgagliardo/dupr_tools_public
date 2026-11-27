@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Rockwood Park",
- "updated": "2026-11-27T10:07:13",
+ "updated": "2026-11-27T11:07:42",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,31 +70,26 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 47,
+   "temp": 48,
    "dew": 39,
    "wind": 17
   },
   "court": {
    "wet_mm": 0.0,
-   "obs_18h_mm": 1.4,
-   "radar_24h_mm": 9.9
+   "obs_18h_mm": 0.9,
+   "radar_24h_mm": 3.9
   },
   "days": [
    {
     "date": "2026-11-27",
     "label": "Today",
     "sub": "11/27",
-    "grade": "F",
-    "score": 0.24,
+    "grade": "D",
+    "score": 0.267,
     "best": "",
-    "why": "gusts (32 mph) 10a-12p, 3p-5p \u00b7 wind (14 mph) 6p-9p",
+    "why": "gusts (32 mph) 11a-12p, 3p-5p \u00b7 wind (14 mph) 6p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "10": {
-      "t": 47,
-      "v": 0,
-      "c": "gst"
-     },
      "11": {
       "t": 48,
       "v": 0,
