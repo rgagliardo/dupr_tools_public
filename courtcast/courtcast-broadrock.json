@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Broad Rock Sports Complex",
- "updated": "2026-11-28T02:07:42",
+ "updated": "2026-11-28T03:08:11",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -51,15 +51,15 @@
    "grade": "A"
   },
   {
+   "day": "Sun",
+   "grade": "B"
+  },
+  {
    "day": "Today",
    "grade": "B"
   },
   {
    "day": "Wed",
-   "grade": "B"
-  },
-  {
-   "day": "Sun",
    "grade": "B"
   },
   {
@@ -70,9 +70,9 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 40,
+   "temp": 41,
    "dew": 35,
-   "wind": 12
+   "wind": 13
   },
   "court": {
    "wet_mm": 0.0,
@@ -106,7 +106,7 @@
       "c": "wnd"
      },
      "11": {
-      "t": 50,
+      "t": 51,
       "v": 2,
       "c": ""
      },
@@ -167,15 +167,15 @@
     "label": "Sun",
     "sub": "11/29",
     "grade": "B",
-    "score": 0.786,
-    "best": "11a-6p",
-    "why": "cold 8a \u00b7 rain 7p-9p \u00b7 chilly 9a-10a",
+    "score": 0.857,
+    "best": "10a-6p",
+    "why": "rain 7p-9p \u00b7 chilly 8a-9a \u00b7 NWS: cold 8a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 38,
-      "v": 0,
-      "c": "cold"
+      "t": 40,
+      "v": 1,
+      "c": "chl"
      },
      "9": {
       "t": 44,
@@ -183,9 +183,9 @@
       "c": "chl"
      },
      "10": {
-      "t": 49,
-      "v": 1,
-      "c": "chl"
+      "t": 50,
+      "v": 2,
+      "c": ""
      },
      "11": {
       "t": 53,
