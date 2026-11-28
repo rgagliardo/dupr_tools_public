@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Pouncey Tract Park",
- "updated": "2026-11-27T19:12:07",
+ "updated": "2026-11-27T19:42:32",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "OK NOW",
  "headline": "not clean \u2014 until 10p (wind (13 mph))",
  "wet_note": null,
- "reason": "clean window Sat 12p",
+ "reason": "clean window Sat 3p",
  "ranked": [
   {
    "day": "Wed",
@@ -52,10 +52,6 @@
   },
   {
    "day": "Sat",
-   "grade": "B"
-  },
-  {
-   "day": "Tue",
    "grade": "C"
   },
   {
@@ -64,6 +60,10 @@
   },
   {
    "day": "Today",
+   "grade": "C"
+  },
+  {
+   "day": "Tue",
    "grade": "C"
   }
  ],
@@ -111,10 +111,10 @@
     "date": "2026-11-28",
     "label": "Sat",
     "sub": "11/28",
-    "grade": "B",
-    "score": 0.8,
-    "best": "12p-6p",
-    "why": "wind (12 mph) 8a-11a \u00b7 chilly 7p-9p",
+    "grade": "C",
+    "score": 0.714,
+    "best": "3p-6p",
+    "why": "wind (13 mph) 8a-2p \u00b7 chilly 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -138,19 +138,19 @@
       "c": "wnd"
      },
      "12": {
-      "t": 51,
-      "v": 2,
-      "c": ""
+      "t": 54,
+      "v": 1,
+      "c": "wnd"
      },
      "13": {
-      "t": 53,
-      "v": 2,
-      "c": ""
+      "t": 55,
+      "v": 1,
+      "c": "wnd"
      },
      "14": {
-      "t": 53,
-      "v": 2,
-      "c": ""
+      "t": 55,
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
       "t": 56,
@@ -194,15 +194,15 @@
     "label": "Sun",
     "sub": "11/29",
     "grade": "C",
-    "score": 0.7,
+    "score": 0.657,
     "best": "11a-6p",
-    "why": "rain 7p-9p \u00b7 chilly 8a-10a \u00b7 NWS: cold 8a",
+    "why": "rain 7p-9p \u00b7 cold 8a \u00b7 chilly 9a-10a",
     "wet_mm": 0.0,
     "cells": {
      "8": {
-      "t": 40,
-      "v": 1,
-      "c": "chl"
+      "t": 37,
+      "v": 0,
+      "c": "cold"
      },
      "9": {
       "t": 42,
@@ -276,9 +276,9 @@
     "label": "Mon",
     "sub": "11/30",
     "grade": "D",
-    "score": 0.45,
-    "best": "3p-5p",
-    "why": "gusts (29 mph) 8a-12p \u00b7 chilly 6p-9p \u00b7 NWS: cold 9p",
+    "score": 0.367,
+    "best": "4p-5p",
+    "why": "gusts (29 mph) 8a-12p \u00b7 cold 9p \u00b7 chilly 6p-8p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -307,9 +307,9 @@
       "c": "gst"
      },
      "15": {
-      "t": 54,
-      "v": 2,
-      "c": ""
+      "t": 56,
+      "v": 1,
+      "c": "wnd"
      },
      "16": {
       "t": 54,
@@ -337,9 +337,9 @@
       "c": "chl"
      },
      "21": {
-      "t": 43,
-      "v": 1,
-      "c": "chl"
+      "t": 39,
+      "v": 0,
+      "c": "cold"
      }
     }
    },
@@ -348,9 +348,9 @@
     "label": "Tue",
     "sub": "12/1",
     "grade": "C",
-    "score": 0.714,
+    "score": 0.543,
     "best": "3p-4p",
-    "why": "chilly 5p-9p \u00b7 NWS: cold 8p-9p",
+    "why": "cold 8p-9p \u00b7 chilly 5p-7p",
     "wet_mm": 0.0,
     "cells": {
      "15": {
@@ -379,14 +379,14 @@
       "c": "chl"
      },
      "20": {
-      "t": 44,
-      "v": 1,
-      "c": "chl"
+      "t": 38,
+      "v": 0,
+      "c": "cold"
      },
      "21": {
-      "t": 44,
-      "v": 1,
-      "c": "chl"
+      "t": 36,
+      "v": 0,
+      "c": "cold"
      }
     }
    },
@@ -443,51 +443,6 @@
     "date": "2026-12-03",
     "d": "Th",
     "g": "A"
-   },
-   {
-    "date": "2026-12-04",
-    "d": "Fr",
-    "g": "B"
-   },
-   {
-    "date": "2026-12-05",
-    "d": "Sa",
-    "g": "F"
-   },
-   {
-    "date": "2026-12-06",
-    "d": "Su",
-    "g": "F"
-   },
-   {
-    "date": "2026-12-07",
-    "d": "Mo",
-    "g": "D"
-   },
-   {
-    "date": "2026-12-08",
-    "d": "Tu",
-    "g": "C"
-   },
-   {
-    "date": "2026-12-09",
-    "d": "We",
-    "g": "B"
-   },
-   {
-    "date": "2026-12-10",
-    "d": "Th",
-    "g": "B"
-   },
-   {
-    "date": "2026-12-11",
-    "d": "Fr",
-    "g": "D"
-   },
-   {
-    "date": "2026-12-12",
-    "d": "Sa",
-    "g": "D"
    }
   ]
  },
