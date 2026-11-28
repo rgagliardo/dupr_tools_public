@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-11-27T19:12:10",
+ "updated": "2026-11-27T20:44:11",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -70,7 +70,7 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 44,
+   "temp": 43,
    "dew": 37,
    "wind": 12
   },
@@ -87,14 +87,9 @@
     "grade": "C",
     "score": 0.6,
     "best": "",
-    "why": "wind (12 mph) 7p-9p",
+    "why": "wind (12 mph) 8p-9p",
     "wet_mm": 0.0,
     "cells": {
-     "19": {
-      "t": 44,
-      "v": 1,
-      "c": "wnd"
-     },
      "20": {
       "t": 43,
       "v": 1,
@@ -275,10 +270,10 @@
     "date": "2026-11-30",
     "label": "Mon",
     "sub": "11/30",
-    "grade": "D",
-    "score": 0.483,
+    "grade": "C",
+    "score": 0.533,
     "best": "3p-6p",
-    "why": "gusts (29 mph) 8a-12p \u00b7 chilly 7p-9p \u00b7 NWS: cold 9p",
+    "why": "gusts (29 mph) 8a-11a \u00b7 chilly 7p-9p \u00b7 wind (14 mph) 12p \u00b7 NWS: gusts 12p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -303,8 +298,8 @@
      },
      "12": {
       "t": 56,
-      "v": 0,
-      "c": "gst"
+      "v": 1,
+      "c": "wnd"
      },
      "15": {
       "t": 56,
@@ -467,7 +462,7 @@
    {
     "date": "2026-12-08",
     "d": "Tu",
-    "g": "C"
+    "g": "F"
    },
    {
     "date": "2026-12-09",
@@ -477,17 +472,17 @@
    {
     "date": "2026-12-10",
     "d": "Th",
-    "g": "A"
+    "g": "C"
    },
    {
     "date": "2026-12-11",
     "d": "Fr",
-    "g": "D"
+    "g": "C"
    },
    {
     "date": "2026-12-12",
     "d": "Sa",
-    "g": "D"
+    "g": "C"
    }
   ]
  },
