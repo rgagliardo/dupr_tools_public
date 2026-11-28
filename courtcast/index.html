@@ -45,8 +45,11 @@
   .brand b { color:var(--ideal-t); font-weight:800; }
   .spotnav { display:none; gap:4px; margin-left:auto; align-items:center; }
   @media (min-width:700px) { .spotnav { display:flex; } }
-  .spotnav a, .spotnav span { font-family:var(--font-sans); font-size:13px; padding:6px 10px; border-radius:999px;
-    color:var(--dim); text-decoration:none; }
+  /* Pill geometry: a round end cap removes r²(1 − π/4) of corner, so text at padding P reads closer to
+     the edge than P. Each pill fixes its line-height (box → radius r = border + py + lh/2, stated as the
+     border-radius) and insets text by px + r·0.2146 (0.2146 = 1 − π/4), minus any border. */
+  .spotnav a, .spotnav span { font-family:var(--font-sans); font-size:13px; line-height:19px; --r:15.5px;
+    padding:6px calc(10px + var(--r) * .2146); border-radius:var(--r); color:var(--dim); text-decoration:none; }
   .spotnav a:hover { color:var(--ink); background:var(--panel-2); }
   .spotnav span.active { color:var(--celltext); background:var(--ideal); font-weight:700; }
   .subline { font-size:13px; color:var(--dim); margin-bottom:18px; }
@@ -61,9 +64,9 @@
   /* ---------- hero / verdict card ---------- */
   .stalebar { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
               color:var(--block-t); background:color-mix(in srgb, var(--block) 14%, transparent);
-              border-radius:999px; padding:5px 10px; margin-bottom:12px; }
+              line-height:17px; --r:13.5px; border-radius:var(--r); padding:5px calc(10px + var(--r) * .2146); margin-bottom:12px; }
   .kicker { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase;
-            padding:5px 11px; border-radius:999px; margin-bottom:10px; }
+            line-height:17px; --r:13.5px; padding:5px calc(11px + var(--r) * .2146); border-radius:var(--r); margin-bottom:10px; }
   .kicker.play { color:var(--celltext); background:var(--ideal); }
   .kicker.wait { color:var(--celltext); background:var(--degr); }
   .kicker.none { color:#fff; background:var(--block); }
@@ -72,7 +75,8 @@
   .heroDivider { height:1px; background:var(--line); margin:16px 0; }
   .condrow { display:flex; flex-wrap:wrap; gap:8px; }
   .chip { font-family:var(--font-mono); font-size:12.5px; font-weight:600; color:var(--ink);
-          background:var(--panel-2); border:1px solid var(--line); border-radius:999px; padding:5px 11px; }
+          background:var(--panel-2); border:1px solid var(--line); line-height:18px; --r:15px;
+          border-radius:var(--r); padding:5px calc(11px + var(--r) * .2146 - 1px); }
   .chip.wetchip { font-weight:700; }
   .obscap { font-family:var(--font-mono); font-size:11px; color:var(--dim); margin-top:10px; }
 
@@ -137,7 +141,8 @@
   .rankRow { display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; }
   .rankRow::-webkit-scrollbar { display:none; }
   .rankChip { flex:none; font-size:12.5px; font-weight:600; background:var(--panel-2); border:1px solid var(--line);
-              border-radius:999px; padding:5px 11px; white-space:nowrap; }
+              line-height:18px; --r:15px; border-radius:var(--r); padding:5px calc(11px + var(--r) * .2146 - 1px);
+              white-space:nowrap; }
   .rankChip b { font-weight:800; margin-right:4px; }
   .sectionGap { margin-top:16px; }
   .outlookRow { display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; }
@@ -170,8 +175,8 @@
   .failcard { text-align:center; padding:34px 18px; }
   .failcard .fkicker { font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase; color:var(--block-t); margin-bottom:8px; }
   .failcard .fmsg { font-size:14px; color:var(--dim); margin-bottom:16px; }
-  .retrybtn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px;
-              border-radius:999px; border:1px solid var(--line); background:var(--panel-2); color:var(--ink);
+  .retrybtn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; --r:22px;
+              padding:0 calc(20px + var(--r) * .2146 - 1px); border-radius:var(--r); border:1px solid var(--line); background:var(--panel-2); color:var(--ink);
               font-size:14px; font-weight:700; text-decoration:none; }
   .retrybtn:hover { background:var(--line); }
 </style>
@@ -206,7 +211,7 @@
   <div class="pagefoot" id="pagefoot"></div>
 </div>
 <script>
-const VERSION = "3.0"; // professionalized redesign — card system, sans+mono pairing, per-day scroll grid
+const VERSION = "3.1"; // 3.1: pill geometry (stated radius, text inset px + r·(1 − π/4)); 3.0: professionalized redesign — card system, sans+mono pairing, per-day scroll grid
 
 function nowLine(now) {
   const parts = [];

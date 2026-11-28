@@ -22,8 +22,9 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
 .sub { font-size:11px; color:var(--txt-dim); letter-spacing:.5px; text-transform:uppercase; margin-bottom:14px; }
 .sect { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--txt-mid);
   text-transform:uppercase; margin:20px 0 8px; }
+/* Pill geometry (leaderboard v6.60): stated radius r = border + py + line-height/2, text inset px + r·(1 − π/4). */
 .theme-chip { float:right; margin-top:6px; font-size:10px; letter-spacing:1px; border:1px solid var(--line);
-  border-radius:999px; padding:13px 16px; background:var(--panel); color:var(--txt-mid); cursor:pointer; }
+  line-height:11px; border-radius:19.5px; padding:13px calc(16px + 19.5px*.2146 - 1px); background:var(--panel); color:var(--txt-mid); cursor:pointer; }
 .jcard { display:block; position:relative; background:var(--panel); border:1px solid var(--line);
   border-radius:14px; padding:12px 14px; margin-bottom:10px; text-decoration:none; color:var(--txt-2); }
 .jcard:active { border-color:var(--cyan); }
@@ -31,22 +32,22 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
 .top { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 .pname { font-weight:800; color:var(--txt); letter-spacing:.5px; font-size:14px; text-transform:uppercase; }
 .pro { font-size:9px; font-weight:700; letter-spacing:1px; color:var(--cyan);
-  border:1px solid var(--cyan); border-radius:999px; padding:1px 6px; }
+  border:1px solid var(--cyan); line-height:11px; border-radius:7.5px; padding:1px calc(6px + 7.5px*.2146 - 1px); }
 .did { font-size:9px; letter-spacing:1px; color:var(--txt-dim); border:1px solid var(--line);
-  border-radius:999px; padding:2px 7px; }
+  line-height:11px; border-radius:8.5px; padding:2px calc(7px + 8.5px*.2146 - 1px); }
 .news { font-size:9px; font-weight:700; letter-spacing:.5px; color:var(--gold);
-  border:1px solid var(--gold); border-radius:999px; padding:2px 7px; }
+  border:1px solid var(--gold); line-height:11px; border-radius:8.5px; padding:2px calc(7px + 8.5px*.2146 - 1px); }
 .news-dim { font-size:9px; letter-spacing:.5px; color:var(--txt-dim);
-  border:1px solid var(--line); border-radius:999px; padding:2px 7px; }
+  border:1px solid var(--line); line-height:11px; border-radius:8.5px; padding:2px calc(7px + 8.5px*.2146 - 1px); }
 .arrow { position:absolute; top:12px; right:14px; color:var(--cyan); font-weight:700; }
 .top { padding-right:22px; }
 .search { position:sticky; top:0; z-index:5; background:var(--bg); padding:8px 0 10px; }
-.search input { width:100%; box-sizing:border-box; font:inherit; font-size:14px; padding:10px 14px;
-  border:1px solid var(--line); border-radius:999px; background:var(--panel); color:var(--txt); }
+.search input { width:100%; box-sizing:border-box; font:inherit; font-size:14px; line-height:17px; padding:10px calc(14px + 19.5px*.2146 - 1px);
+  border:1px solid var(--line); border-radius:19.5px; background:var(--panel); color:var(--txt); }
 .search input::placeholder { color:var(--txt-dim); }
 #noHits { display:none; font-size:12px; color:var(--txt-dim); padding:14px 2px; }
 #toTop { display:none; position:fixed; right:14px; bottom:18px; z-index:6; font:inherit; font-size:11px;
-  letter-spacing:1px; padding:12px 16px; border-radius:999px; border:1px solid var(--line);
+  letter-spacing:1px; line-height:14px; padding:12px calc(16px + 20px*.2146 - 1px); border-radius:20px; border:1px solid var(--line);
   background:var(--panel); color:var(--txt-mid); cursor:pointer; }
 .mid { display:flex; align-items:center; gap:12px; margin:8px 0 6px; }
 .spark { stroke:var(--cyan); stroke-width:1.5; fill:none; }
@@ -57,10 +58,10 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
 .pos { color:var(--cyan); } .neg { color:var(--red); }
 .bot { font-size:10px; color:var(--txt-dim); }
 </style></head><body>
-<div class="stamp">MOCKUP v5.8 — 2026-08-10</div>
+<div class="stamp">MOCKUP v5.9 — 2026-11-28</div>
 <button class="theme-chip" id="themeChip">THEME</button>
 <h1>Rating Journeys</h1>
-<div class="sub">229 players · official DUPR series · 1 at peak · 166 quiet</div>
+<div class="sub">229 players · official DUPR series · 1 at peak · 227 quiet</div>
 <div class="search"><input id="q" type="search" placeholder="Search 229 players…"
   autocomplete="off" aria-label="Filter players by name"></div>
 <div id="noHits">No players match.</div>
@@ -95,6 +96,51 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.545 ·
     earned <span class="pos">+0.422</span> · DUPR <span class="neg">-0.117</span></div>
 </a>
+<a class="jcard" href="KOD95Q.html" data-name="aibika kalsarieva">
+  <div class="top">
+    <span class="pname">Aibika Kalsarieva</span>
+    <span class="did">KOD95Q</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.970, now 5.789 (-0.181 net)"><polyline class="spark" points="1.0,3.9 3.8,3.0 5.1,19.3 6.5,23.1 7.9,23.2 9.3,25.0 10.7,24.0 12.0,24.6 13.4,19.5 14.8,19.3 16.2,15.1 17.6,14.7 20.3,16.3 23.1,15.1 28.6,15.3 32.7,14.1 39.6,14.6 42.4,13.3 43.8,11.4 45.2,11.4 50.7,5.7 53.5,4.5 57.6,4.4 59.0,6.3 60.4,6.2 63.1,8.1 64.5,7.2 67.3,7.6 68.6,6.0 70.0,6.7 71.4,5.8 72.8,6.2 74.2,4.8 76.9,7.2 81.1,5.6 85.2,7.0 88.0,7.0 89.3,5.9 94.9,7.4 96.2,7.0 99.0,8.8"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.970</b> → <b>5.789</b>
+      <span class="delta neg">(-0.181)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.006 ·
+    earned <span class="pos">+0.286</span> · DUPR <span class="neg">-0.467</span></div>
+</a>
+<a class="jcard" href="3ON9EP.html" data-name="aimee zona">
+  <div class="top">
+    <span class="pname">Aimee Zona</span>
+    <span class="did">3ON9EP</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 3.420, now 4.358 (+0.938 net)"><polyline class="spark" points="1.0,24.1 5.9,25.0 15.7,16.9 20.6,19.2 35.3,13.8 40.2,13.7 45.1,10.2 64.7,10.5 79.4,9.4 89.2,9.9 94.1,11.8 99.0,3.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…3.420</b> → <b>4.358</b>
+      <span class="delta pos">(+0.938)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 4.358 ·
+    earned <span class="pos">+1.272</span> · DUPR <span class="neg">-0.335</span></div>
+</a>
+<a class="jcard" href="84E0OG.html" data-name="alex guy">
+  <div class="top">
+    <span class="pname">Alex Guy</span>
+    <span class="did">84E0OG</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.139, now 5.895 (+0.756 net)"><polyline class="spark" points="1.0,25.0 2.2,19.0 5.9,20.1 7.1,22.6 9.6,6.8 15.7,6.0 16.9,4.8 32.9,5.7 35.3,6.9 41.4,6.9 43.9,9.4 47.5,6.7 54.9,9.3 59.8,8.8 62.2,9.8 65.9,9.6 67.2,10.9 68.4,10.0 75.7,13.4 77.0,10.7 86.8,12.6 91.7,9.7 94.1,9.3 95.3,3.0 96.5,4.3 99.0,4.8"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.139</b> → <b>5.895</b>
+      <span class="delta pos">(+0.756)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.973 ·
+    earned <span class="pos">+0.395</span> · DUPR <span class="pos">+0.360</span></div>
+</a>
 <a class="jcard" href="3VLYR6.html" data-name="alex rogatnik">
   <div class="top">
     <span class="pname">Alex Rogatnik</span>
@@ -124,6 +170,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 5.053 ·
     earned <span class="neg">-0.416</span> · DUPR <span class="pos">+0.261</span></div>
+</a>
+<a class="jcard" href="896WLE.html" data-name="alex torok">
+  <div class="top">
+    <span class="pname">Alex Torok</span>
+    <span class="did">896WLE</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.316, now 5.146 (+0.831 net)"><polyline class="spark" points="1.0,25.0 5.9,23.0 10.8,22.3 15.7,7.8 20.6,8.2 25.5,6.0 30.4,5.8 50.0,7.7 54.9,7.3 59.8,11.7 64.7,7.4 69.6,6.5 79.4,8.1 84.3,11.9 89.2,4.5 94.1,3.0 99.0,4.4"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.316</b> → <b>5.146</b>
+      <span class="delta pos">(+0.831)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.202 ·
+    earned <span class="pos">+0.186</span> · DUPR <span class="pos">+0.644</span></div>
 </a>
 <a class="jcard" href="KOVOK7.html" data-name="alicia zatcoff">
   <div class="top">
@@ -200,6 +261,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.993 ·
     earned <span class="pos">+0.087</span> · DUPR <span class="pos">+0.081</span></div>
 </a>
+<a class="jcard" href="1RWDQ3.html" data-name="anna leigh waters">
+  <div class="top">
+    <span class="pname">Anna Leigh Waters</span><span class="pro">PRO</span>
+    <span class="did">1RWDQ3</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 6.160, now 6.983 (+0.823 net)"><polyline class="spark" points="1.0,23.8 1.4,24.9 2.5,23.8 3.6,25.0 5.1,23.1 5.5,20.4 6.6,19.7 7.0,20.5 15.9,16.8 18.5,16.9 24.5,15.6 24.8,11.4 28.9,12.2 37.1,10.3 40.1,10.3 42.0,11.2 49.4,11.2 53.9,8.3 56.1,9.5 67.3,6.6 71.1,6.5 74.0,7.3 78.9,6.5 82.2,4.8 86.7,5.8 88.6,4.4 92.7,3.3 99.0,3.3"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…6.160</b> → <b>6.983</b>
+      <span class="delta pos">(+0.823)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.997 ·
+    earned <span class="pos">+0.515</span> · DUPR <span class="pos">+0.307</span></div>
+</a>
 <a class="jcard" href="WXZRWY.html" data-name="ansh bassan">
   <div class="top">
     <span class="pname">Ansh Bassan</span>
@@ -245,6 +321,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2024-01 · peak 4.033 ·
     earned <span class="neg">-0.004</span> · DUPR <span class="pos">+0.049</span></div>
 </a>
+<a class="jcard" href="59GQ6L.html" data-name="ariana rodriguez">
+  <div class="top">
+    <span class="pname">Ariana Rodriguez</span>
+    <span class="did">59GQ6L</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.194, now 5.482 (+1.288 net)"><polyline class="spark" points="1.0,25.0 2.0,11.6 2.9,11.7 3.9,10.2 7.8,8.5 13.6,9.0 14.6,7.9 24.3,7.9 30.1,6.4 36.9,6.7 38.8,5.9 42.7,5.9 44.7,4.3 47.6,4.5 49.5,3.0 61.2,3.0 65.0,5.1 71.8,4.4 72.8,5.0 79.6,5.3 81.5,6.2 84.4,5.3 85.4,6.0 91.2,5.4 92.2,6.2 94.1,5.5 96.1,6.4 99.0,5.9"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.194</b> → <b>5.482</b>
+      <span class="delta pos">(+1.288)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.691 ·
+    earned <span class="pos">+1.237</span> · DUPR <span class="pos">+0.051</span></div>
+</a>
 <a class="jcard" href="RZKOVD.html" data-name="armelle worrel">
   <div class="top">
     <span class="pname">Armelle Worrel</span>
@@ -275,6 +366,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 5.226 ·
     earned <span class="pos">+0.396</span> · DUPR <span class="pos">+0.172</span></div>
 </a>
+<a class="jcard" href="7DD5M0.html" data-name="arsh bassan">
+  <div class="top">
+    <span class="pname">Arsh Bassan</span>
+    <span class="did">7DD5M0</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.470, now 4.865 (+1.395 net)"><polyline class="spark" points="1.0,25.0 5.2,22.5 7.3,15.5 11.4,15.1 15.6,16.5 19.8,14.4 21.9,17.1 23.9,12.6 28.1,11.9 30.2,10.1 34.4,8.6 38.5,8.8 40.6,7.5 42.7,8.1 49.0,7.6 55.2,8.9 61.5,7.4 65.6,8.5 67.7,8.2 69.8,5.1 74.0,3.2 78.1,3.0 82.3,5.4 94.8,4.3 99.0,4.9"/></svg>
+    <span class="path"><b>3.470</b> → <b>4.865</b>
+      <span class="delta pos">(+1.395)</span></span>
+  </div>
+  <div class="bot">placed 2023-11 · peak 4.997 ·
+    earned <span class="pos">+0.481</span> · DUPR <span class="pos">+0.914</span></div>
+</a>
 <a class="jcard" href="8E5RNE.html" data-name="audrey paiva">
   <div class="top">
     <span class="pname">Audrey Paiva</span>
@@ -289,6 +395,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 4.036 ·
     earned <span class="pos">+0.522</span> · DUPR <span class="neg">-0.003</span></div>
+</a>
+<a class="jcard" href="3VXL27.html" data-name="ava kalist">
+  <div class="top">
+    <span class="pname">Ava Kalist</span>
+    <span class="did">3VXL27</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.287, now 5.108 (-0.180 net)"><polyline class="spark" points="1.0,5.1 2.9,3.0 4.8,7.1 6.8,8.4 8.7,6.4 10.6,7.4 14.5,12.3 16.4,12.2 18.3,14.3 20.2,13.1 22.1,8.6 24.1,10.9 26.0,11.0 27.9,11.0 29.8,8.7 33.7,8.6 35.6,9.2 37.5,11.5 43.3,11.5 45.2,14.4 47.1,14.2 49.0,12.6 60.6,12.7 62.5,11.6 64.4,11.6 66.3,7.7 70.2,8.6 72.1,6.8 74.0,6.9 75.9,5.8 79.8,5.8 83.6,12.5 85.5,25.0 89.4,16.1 95.2,16.9 99.0,11.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.287</b> → <b>5.108</b>
+      <span class="delta neg">(-0.180)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.354 ·
+    earned <span class="neg">-0.458</span> · DUPR <span class="pos">+0.278</span></div>
+</a>
+<a class="jcard" href="3PKYG1.html" data-name="aydon duenas">
+  <div class="top">
+    <span class="pname">Aydon Duenas</span>
+    <span class="did">3PKYG1</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.627, now 4.641 (+0.014 net)"><polyline class="spark" points="1.0,11.3 2.9,8.1 4.8,7.7 8.5,9.4 10.4,3.0 12.3,13.8 16.1,19.5 18.0,16.8 19.8,18.9 21.7,17.5 23.6,21.9 29.3,20.9 31.2,25.0 33.0,23.9 36.8,23.5 38.7,20.3 44.3,17.6 46.2,15.9 48.1,16.5 50.0,12.8 55.7,13.2 59.4,12.4 61.3,13.4 65.1,13.3 67.0,14.0 70.7,17.9 74.5,19.1 76.4,18.8 80.2,14.4 83.9,14.5 87.7,16.9 95.2,12.1 97.1,12.1 99.0,10.7"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.627</b> → <b>4.641</b>
+      <span class="delta pos">(+0.014)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 4.843 ·
+    earned <span class="neg">-0.072</span> · DUPR <span class="pos">+0.086</span></div>
 </a>
 <a class="jcard" href="MYXQ9L.html" data-name="barbara dauberman">
   <div class="top">
@@ -305,6 +441,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2024-02 · peak 4.493 ·
     earned <span class="pos">+0.670</span> · DUPR <span class="neg">-0.033</span></div>
 </a>
+<a class="jcard" href="W6LQLL.html" data-name="becky villeda">
+  <div class="top">
+    <span class="pname">Becky Villeda</span>
+    <span class="did">W6LQLL</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.057, now 4.678 (+0.621 net)"><polyline class="spark" points="1.0,25.0 3.0,3.0 4.9,5.8 6.9,4.7 12.8,14.6 14.7,14.9 16.7,18.7 18.6,16.3 20.6,17.5 22.6,17.4 24.5,14.5 28.4,15.5 30.4,12.9 42.2,14.4 44.1,12.2 46.1,12.0 48.0,13.0 50.0,11.5 53.9,11.8 55.9,10.4 57.8,10.2 61.8,11.6 63.7,13.8 65.7,12.0 69.6,11.5 71.6,7.7 73.5,8.6 77.4,7.6 79.4,5.9 83.3,6.1 85.3,7.3 89.2,5.9 99.0,6.5"/></svg>
+    <span class="path"><b>4.057</b> → <b>4.678</b>
+      <span class="delta pos">(+0.621)</span></span>
+  </div>
+  <div class="bot">placed 2023-12 · peak 5.060 ·
+    earned <span class="neg">-0.122</span> · DUPR <span class="pos">+0.743</span></div>
+</a>
 <a class="jcard" href="8EPY2J.html" data-name="ben davis">
   <div class="top">
     <span class="pname">Ben Davis</span>
@@ -319,6 +470,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 5.135 ·
     earned <span class="pos">+0.081</span> · DUPR <span class="neg">-0.007</span></div>
+</a>
+<a class="jcard" href="V8DYL8.html" data-name="ben johns">
+  <div class="top">
+    <span class="pname">Ben Johns</span><span class="pro">PRO</span>
+    <span class="did">V8DYL8</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 7.114, now 7.112 (-0.001 net)"><polyline class="spark" points="1.0,21.0 1.8,19.0 2.1,25.0 2.9,24.5 3.6,20.0 4.8,19.7 5.1,22.4 5.5,21.8 6.6,10.3 7.8,10.3 8.9,12.9 10.0,10.2 10.4,10.8 11.1,10.3 11.9,11.1 14.9,11.2 17.5,13.1 19.8,12.6 22.0,10.7 24.3,10.5 25.0,8.9 26.5,9.1 26.9,3.6 28.0,5.2 28.4,7.8 30.3,6.9 31.0,7.5 32.5,7.2 33.3,4.1 36.7,4.2 37.0,5.1 41.2,3.0 42.7,3.7 43.1,4.9 44.9,4.9 46.4,7.3 48.7,6.8 52.4,8.9 53.9,6.6 54.7,8.8 55.4,7.5 56.6,8.8 57.7,6.8 60.0,11.5 61.8,10.6 63.7,11.7 64.5,14.4 68.2,18.9 71.6,18.0 75.0,21.6 75.7,20.8 76.8,22.0 78.7,21.7 79.5,22.9 81.0,21.1 81.7,21.7 82.9,21.4 83.6,22.4 86.6,21.9 87.4,23.0 90.4,20.2 93.7,21.6 94.1,20.5 94.9,21.3 96.0,20.6 96.7,21.6 98.2,20.3 99.0,21.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…7.114</b> → <b>7.112</b>
+      <span class="delta neg">(-0.001)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 7.416 ·
+    earned <span class="neg">-0.259</span> · DUPR <span class="pos">+0.257</span></div>
 </a>
 <a class="jcard" href="O6K2M2.html" data-name="ben reese">
   <div class="top">
@@ -455,6 +621,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.777 ·
     earned <span class="neg">-0.106</span> · DUPR <span class="pos">+0.048</span></div>
 </a>
+<a class="jcard" href="3Y7YJD.html" data-name="bryce haynes">
+  <div class="top">
+    <span class="pname">Bryce Haynes</span>
+    <span class="did">3Y7YJD</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.173, now 4.684 (+0.511 net)"><polyline class="spark" points="1.0,25.0 14.1,18.2 20.6,16.6 27.1,18.5 33.7,18.0 40.2,13.8 46.7,14.0 59.8,8.2 66.3,6.3 72.9,12.2 79.4,3.0 85.9,4.5 92.5,7.9 99.0,8.3"/></svg>
+    <span class="path"><b>4.173</b> → <b>4.684</b>
+      <span class="delta pos">(+0.511)</span></span>
+  </div>
+  <div class="bot">placed 2023-11 · peak 4.852 ·
+    earned <span class="pos">+0.519</span> · DUPR <span class="neg">-0.008</span></div>
+</a>
+<a class="jcard" href="8GGGD8.html" data-name="cj klinger">
+  <div class="top">
+    <span class="pname">CJ Klinger</span><span class="pro">PRO</span>
+    <span class="did">8GGGD8</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 6.332, now 6.566 (+0.234 net)"><polyline class="spark" points="1.0,22.5 1.4,25.0 2.2,10.7 3.0,17.2 3.9,9.7 4.7,15.8 5.9,7.1 7.1,7.3 8.3,6.5 10.4,10.6 11.2,10.2 16.9,12.1 19.4,12.0 21.8,10.4 25.1,11.5 27.5,10.8 28.0,9.1 29.2,8.0 30.0,8.6 30.8,7.5 32.0,7.9 32.4,7.1 33.3,8.0 36.5,6.6 38.6,7.6 39.4,6.8 42.6,6.9 46.3,3.7 48.4,4.0 49.6,3.3 53.3,5.7 54.5,4.6 57.3,5.3 57.8,4.6 60.2,5.0 60.6,4.4 63.1,5.8 63.9,5.3 64.3,6.1 65.1,4.6 66.7,4.4 68.0,5.2 68.8,4.2 70.0,4.6 72.9,3.5 73.7,4.5 74.5,3.0 77.0,4.9 78.2,4.9 79.4,6.7 81.8,8.1 83.5,7.4 84.3,8.1 85.5,7.8 90.8,11.3 91.2,10.8 96.5,13.3 97.8,12.0 99.0,13.2"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…6.332</b> → <b>6.566</b>
+      <span class="delta pos">(+0.234)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.820 ·
+    earned <span class="pos">+0.155</span> · DUPR <span class="pos">+0.079</span></div>
+</a>
 <a class="jcard" href="NYZW9N.html" data-name="caelan funk">
   <div class="top">
     <span class="pname">Caelan Funk</span>
@@ -485,6 +681,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2023-09 · peak 4.657 ·
     earned <span class="pos">+0.216</span> · DUPR <span class="pos">+0.222</span></div>
 </a>
+<a class="jcard" href="0Z7MXX.html" data-name="cami barshinger">
+  <div class="top">
+    <span class="pname">Cami Barshinger</span>
+    <span class="did">0Z7MXX</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.275, now 4.211 (-0.064 net)"><polyline class="spark" points="1.0,25.0 9.9,19.0 18.8,15.0 36.6,9.1 45.5,7.9 72.3,7.5 81.2,6.5 90.1,3.6 99.0,3.0"/></svg>
+    <span class="path"><b>4.275</b> → <b>4.211</b>
+      <span class="delta neg">(-0.064)</span></span>
+  </div>
+  <div class="bot">placed 2025-09 · peak 4.275 ·
+    earned <span class="neg">-0.064</span> · DUPR <span class="pos">+0.000</span></div>
+</a>
 <a class="jcard" href="2QYOGY.html" data-name="carl eichenlaub">
   <div class="top">
     <span class="pname">Carl Eichenlaub</span>
@@ -499,6 +710,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2021-01 · peak 4.050 ·
     earned <span class="neg">-0.014</span> · DUPR <span class="pos">+0.093</span></div>
+</a>
+<a class="jcard" href="8JNNO4.html" data-name="carlo ares">
+  <div class="top">
+    <span class="pname">Carlo Ares</span>
+    <span class="did">8JNNO4</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.510, now 5.166 (-0.344 net)"><polyline class="spark" points="1.0,3.0 3.2,5.9 5.4,6.4 7.5,13.3 9.7,16.2 11.9,16.9 14.1,16.0 20.6,16.1 22.8,15.3 27.1,18.2 29.3,17.4 31.5,19.4 35.8,19.3 38.0,15.9 42.4,16.3 44.6,17.8 46.7,17.6 51.1,21.2 53.3,25.0 57.6,22.4 59.8,22.4 62.0,19.2 68.5,18.5 70.7,20.9 72.9,13.8 75.0,11.4 77.2,3.8 79.4,4.9 81.6,10.0 83.8,10.9 85.9,9.3 88.1,12.0 92.5,13.6 94.6,17.4 96.8,19.0 99.0,18.5"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.510</b> → <b>5.166</b>
+      <span class="delta neg">(-0.344)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.526 ·
+    earned <span class="neg">-0.362</span> · DUPR <span class="pos">+0.018</span></div>
 </a>
 <a class="jcard" href="8JPG64.html" data-name="chad agnolucci">
   <div class="top">
@@ -665,6 +891,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2023-06 · peak 4.585 ·
     earned <span class="pos">+0.558</span> · DUPR <span class="pos">+0.077</span></div>
 </a>
+<a class="jcard" href="3ZLKQP.html" data-name="david bieger">
+  <div class="top">
+    <span class="pname">David Bieger</span>
+    <span class="did">3ZLKQP</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.729, now 5.943 (+1.215 net)"><polyline class="spark" points="1.0,25.0 1.7,23.8 2.5,24.5 4.0,23.9 4.7,18.8 6.2,17.5 7.0,19.5 10.0,9.2 11.5,13.0 13.0,13.6 16.7,13.3 18.2,12.0 21.9,11.8 22.7,10.7 26.4,9.3 30.9,8.8 32.4,7.9 36.9,8.0 40.6,5.9 41.4,4.3 45.1,4.4 48.1,3.4 53.4,4.9 61.6,4.7 63.1,3.7 70.6,3.0 72.1,3.8 76.6,3.5 78.8,4.7 86.3,3.5 90.0,3.9 92.3,5.5 99.0,4.8"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.729</b> → <b>5.943</b>
+      <span class="delta pos">(+1.215)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.053 ·
+    earned <span class="pos">+1.127</span> · DUPR <span class="pos">+0.088</span></div>
+</a>
+<a class="jcard" href="PKGOGX.html" data-name="david parsons">
+  <div class="top">
+    <span class="pname">David Parsons</span>
+    <span class="did">PKGOGX</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.089, now 4.246 (+1.157 net)"><polyline class="spark" points="1.0,25.0 2.7,23.5 4.3,14.0 6.0,16.0 7.6,13.7 14.3,14.1 15.9,12.6 22.6,11.8 24.3,10.4 30.9,8.9 44.2,10.0 45.8,8.4 50.8,7.0 55.8,4.0 59.1,4.2 62.5,3.2 70.8,4.1 74.1,3.0 77.4,6.1 79.1,5.4 82.4,6.1 85.7,5.2 92.4,5.5 94.0,6.8 99.0,7.7"/></svg>
+    <span class="path"><b>3.089</b> → <b>4.246</b>
+      <span class="delta pos">(+1.157)</span></span>
+  </div>
+  <div class="bot">placed 2023-12 · peak 4.568 ·
+    earned <span class="pos">+0.614</span> · DUPR <span class="pos">+0.543</span></div>
+</a>
 <a class="jcard" href="3VX0O6.html" data-name="denise terrell">
   <div class="top">
     <span class="pname">Denise Terrell</span>
@@ -740,6 +996,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.959 ·
     earned <span class="pos">+0.972</span> · DUPR <span class="pos">+0.042</span></div>
 </a>
+<a class="jcard" href="1NNGNZ.html" data-name="django chassang">
+  <div class="top">
+    <span class="pname">Django Chassang</span>
+    <span class="did">1NNGNZ</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.954, now 5.506 (+0.552 net)"><polyline class="spark" points="1.0,24.3 3.8,25.0 5.1,16.4 6.5,16.2 7.9,14.7 9.3,11.3 13.4,11.0 14.8,13.1 20.3,12.3 31.4,13.6 36.9,13.5 38.3,11.8 47.9,12.2 49.3,15.0 54.8,14.2 56.2,13.3 60.4,13.3 61.7,11.1 63.1,10.7 65.9,12.8 68.6,8.2 70.0,7.5 71.4,8.5 74.2,8.0 76.9,9.3 79.7,6.0 85.2,7.1 88.0,6.5 89.3,3.0 92.1,4.7 93.5,8.5 97.6,9.9 99.0,9.1"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.954</b> → <b>5.506</b>
+      <span class="delta pos">(+0.552)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.739 ·
+    earned <span class="pos">+0.662</span> · DUPR <span class="neg">-0.109</span></div>
+</a>
 <a class="jcard" href="X26PVR.html" data-name="dominic dao">
   <div class="top">
     <span class="pname">Dominic Dao</span>
@@ -769,6 +1040,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2023-12 · peak 4.967 ·
     earned <span class="pos">+0.135</span> · DUPR <span class="neg">-0.000</span></div>
+</a>
+<a class="jcard" href="EWQERJ.html" data-name="duce middleton">
+  <div class="top">
+    <span class="pname">Duce Middleton</span>
+    <span class="did">EWQERJ</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.030, now 4.570 (+0.540 net)"><polyline class="spark" points="1.0,25.0 20.6,22.9 40.2,19.4 59.8,19.5 79.4,6.8 99.0,3.0"/></svg>
+    <span class="path"><b>4.030</b> → <b>4.570</b>
+      <span class="delta pos">(+0.540)</span></span>
+  </div>
+  <div class="bot">placed 2025-07 · peak 4.585 ·
+    earned <span class="pos">+0.993</span> · DUPR <span class="neg">-0.453</span></div>
 </a>
 <a class="jcard" href="PKL9MM.html" data-name="dwayne tasin">
   <div class="top">
@@ -890,6 +1176,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.470 ·
     earned <span class="pos">+0.281</span> · DUPR <span class="pos">+0.058</span></div>
 </a>
+<a class="jcard" href="8DJ4LL.html" data-name="etienne blaszkewycz">
+  <div class="top">
+    <span class="pname">Etienne Blaszkewycz</span>
+    <span class="did">8DJ4LL</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.803, now 5.934 (+0.131 net)"><polyline class="spark" points="1.0,19.9 1.9,25.0 3.7,18.5 7.3,18.8 8.2,17.2 9.1,21.1 10.9,14.6 11.8,16.9 13.6,18.2 15.4,15.0 16.3,17.4 17.2,14.8 19.9,17.0 20.8,14.5 21.7,13.7 23.5,13.8 25.3,10.2 27.1,11.6 30.7,11.3 31.6,10.3 34.3,11.9 37.0,11.0 38.8,11.5 40.6,10.9 42.4,11.8 49.6,9.7 50.4,11.0 51.3,11.0 52.2,13.8 54.9,10.4 55.8,10.4 56.7,13.0 58.5,11.6 59.4,12.4 60.3,11.0 62.1,12.0 63.0,11.1 63.9,11.7 64.8,10.3 65.7,11.7 67.5,10.3 68.4,11.3 71.1,6.9 72.0,7.1 74.7,4.9 75.6,3.0 77.4,6.0 81.0,6.0 83.7,8.3 85.5,8.1 86.4,10.3 89.1,9.9 94.5,16.3 96.3,16.3 99.0,13.6"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.803</b> → <b>5.934</b>
+      <span class="delta pos">(+0.131)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.162 ·
+    earned <span class="pos">+0.149</span> · DUPR <span class="neg">-0.019</span></div>
+</a>
+<a class="jcard" href="1R4KGZ.html" data-name="eva rondon">
+  <div class="top">
+    <span class="pname">Eva Rondon</span>
+    <span class="did">1R4KGZ</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 3.956, now 4.122 (+0.166 net)"><polyline class="spark" points="1.0,9.8 4.4,21.4 6.1,16.2 7.8,14.4 11.1,22.7 14.5,25.0 17.9,22.3 21.3,17.4 23.0,17.2 24.7,15.4 29.7,15.1 31.4,12.8 34.8,12.7 36.5,9.7 41.6,9.7 44.9,4.0 46.6,7.6 48.3,7.3 50.0,9.7 51.7,10.9 53.4,11.0 58.4,10.5 60.1,7.2 61.8,9.1 65.2,6.1 70.3,8.7 77.0,8.1 80.4,4.6 82.1,9.0 83.8,7.4 85.5,7.8 88.9,11.8 90.6,10.9 93.9,10.8 95.6,7.9 97.3,10.6 99.0,3.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…3.956</b> → <b>4.122</b>
+      <span class="delta pos">(+0.166)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 4.122 ·
+    earned <span class="neg">-0.193</span> · DUPR <span class="pos">+0.359</span></div>
+</a>
 <a class="jcard" href="V740M6.html" data-name="everett hettema">
   <div class="top">
     <span class="pname">Everett Hettema</span>
@@ -904,6 +1220,51 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2023-10 · peak 4.915 ·
     earned <span class="pos">+0.383</span> · DUPR <span class="pos">+0.147</span></div>
+</a>
+<a class="jcard" href="12Z2E7.html" data-name="felipe nascimento">
+  <div class="top">
+    <span class="pname">Felipe Nascimento</span>
+    <span class="did">12Z2E7</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.020, now 3.925 (-0.095 net)"><polyline class="spark" points="1.0,21.0 6.2,22.1 11.3,25.0 16.5,21.0 21.6,11.0 26.8,7.1 37.1,5.3 42.3,3.0 47.4,5.5 52.6,10.6 57.7,10.3 62.9,16.3 68.1,16.2 73.2,14.8 78.4,15.2 88.7,17.6 99.0,24.8"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.020</b> → <b>3.925</b>
+      <span class="delta neg">(-0.095)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 4.464 ·
+    earned <span class="neg">-0.139</span> · DUPR <span class="pos">+0.044</span></div>
+</a>
+<a class="jcard" href="30RE2N.html" data-name="gabriel tardio">
+  <div class="top">
+    <span class="pname">Gabriel Tardio</span><span class="pro">PRO</span>
+    <span class="did">30RE2N</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 6.473, now 6.922 (+0.450 net)"><polyline class="spark" points="1.0,25.0 1.7,21.3 4.3,15.5 5.4,17.4 8.3,13.8 13.8,13.1 16.0,14.1 16.7,12.2 18.2,12.5 19.3,9.6 24.4,9.9 24.8,6.3 25.9,5.1 27.0,6.9 27.7,4.7 29.5,5.1 32.1,8.2 35.7,8.2 37.9,9.1 39.0,8.2 41.2,8.0 43.1,5.8 43.8,6.4 46.3,4.6 48.9,4.8 50.7,3.2 52.9,4.9 54.0,4.4 54.8,5.7 55.5,4.5 56.9,5.1 61.0,4.2 61.7,4.8 62.8,3.3 65.0,5.2 66.8,3.8 68.6,4.9 71.2,3.0 73.8,5.1 74.9,4.4 75.2,5.2 76.7,4.9 77.4,5.7 78.9,5.2 82.2,8.1 84.0,8.9 84.7,7.8 85.8,9.2 88.0,8.8 89.5,10.0 91.3,8.9 93.1,9.5 96.1,6.9 99.0,6.7"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…6.473</b> → <b>6.922</b>
+      <span class="delta pos">(+0.450)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 7.013 ·
+    earned <span class="pos">+0.183</span> · DUPR <span class="pos">+0.267</span></div>
+</a>
+<a class="jcard" href="DNKZ2X.html" data-name="gabriella cao">
+  <div class="top">
+    <span class="pname">Gabriella Cao</span>
+    <span class="did">DNKZ2X</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.352, now 4.019 (+0.667 net)"><polyline class="spark" points="1.0,25.0 5.3,17.2 9.5,16.1 13.8,15.5 18.0,19.1 22.3,19.6 26.6,11.6 30.8,11.6 35.1,5.6 39.3,8.5 43.6,15.0 47.9,15.4 52.1,13.6 56.4,17.3 60.7,17.0 64.9,20.5 73.4,24.3 77.7,17.3 82.0,12.4 86.2,3.0 90.5,3.4 94.7,6.0 99.0,7.3"/></svg>
+    <span class="path"><b>3.352</b> → <b>4.019</b>
+      <span class="delta pos">(+0.667)</span></span>
+  </div>
+  <div class="bot">placed 2025-01 · peak 4.087 ·
+    earned <span class="pos">+0.755</span> · DUPR <span class="neg">-0.089</span></div>
 </a>
 <a class="jcard" href="XJ62V7.html" data-name="gary zepnick">
   <div class="top">
@@ -1055,6 +1416,51 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 5.592 ·
     earned <span class="pos">+0.191</span> · DUPR <span class="neg">-0.057</span></div>
 </a>
+<a class="jcard" href="MYZ4MD.html" data-name="hridhay pothunoori">
+  <div class="top">
+    <span class="pname">Hridhay Pothunoori</span>
+    <span class="did">MYZ4MD</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.470, now 4.818 (+1.348 net)"><polyline class="spark" points="1.0,25.0 3.4,23.1 5.8,23.9 7.0,22.7 9.4,22.9 10.6,21.5 11.8,21.7 13.0,20.4 14.1,16.0 17.7,15.3 20.1,12.9 22.5,13.0 24.9,11.9 28.5,12.1 34.5,10.0 45.2,9.9 48.8,8.7 63.1,8.5 64.3,7.6 70.3,7.5 71.5,6.4 73.9,7.9 75.1,7.2 77.5,3.0 85.9,4.5 87.0,5.9 94.2,3.9 99.0,4.3"/></svg>
+    <span class="path"><b>3.470</b> → <b>4.818</b>
+      <span class="delta pos">(+1.348)</span></span>
+  </div>
+  <div class="bot">placed 2023-11 · peak 4.905 ·
+    earned <span class="pos">+1.439</span> · DUPR <span class="neg">-0.091</span></div>
+</a>
+<a class="jcard" href="8K24W7.html" data-name="hurricane tyra black">
+  <div class="top">
+    <span class="pname">Hurricane Tyra Black</span><span class="pro">PRO</span>
+    <span class="did">8K24W7</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.645, now 6.337 (+0.692 net)"><polyline class="spark" points="1.0,24.5 1.4,25.0 2.5,21.5 3.3,22.0 3.7,19.2 4.4,20.0 5.2,18.5 6.0,19.5 6.7,18.1 8.3,19.4 9.0,18.4 11.7,17.9 12.9,18.5 15.2,17.1 16.3,17.7 17.1,17.1 19.4,17.9 23.6,17.7 25.9,16.5 26.3,14.1 27.4,14.6 29.3,12.4 32.0,12.6 32.8,11.7 33.5,12.3 35.8,11.0 36.6,12.1 37.8,10.4 41.2,10.0 42.3,8.2 43.9,9.4 47.3,8.5 48.9,7.3 53.1,7.3 54.6,6.3 55.0,7.3 56.9,6.1 58.0,6.4 58.8,5.4 60.0,6.0 61.9,5.4 63.4,6.3 65.3,5.3 67.2,6.2 68.0,5.1 70.3,6.5 71.1,5.3 72.2,5.6 75.6,4.1 78.7,3.8 82.5,4.7 83.7,3.8 85.6,5.2 90.2,3.2 92.9,5.1 96.3,4.9 97.9,3.0 99.0,3.8"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.645</b> → <b>6.337</b>
+      <span class="delta pos">(+0.692)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.362 ·
+    earned <span class="pos">+0.444</span> · DUPR <span class="pos">+0.248</span></div>
+</a>
+<a class="jcard" href="KO4LQ6.html" data-name="jack hared">
+  <div class="top">
+    <span class="pname">Jack Hared</span>
+    <span class="did">KO4LQ6</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.444, now 5.030 (+0.585 net)"><polyline class="spark" points="1.0,19.4 1.9,19.1 3.8,25.0 5.7,19.7 7.6,18.8 9.5,20.8 10.4,16.4 12.3,16.5 13.2,18.8 15.1,18.0 19.8,19.2 20.8,18.1 22.7,19.4 24.6,18.5 25.5,19.9 28.3,20.9 29.3,20.5 33.0,13.6 35.9,13.1 38.7,10.9 41.5,10.9 47.2,8.3 50.0,8.2 50.9,9.0 52.8,7.5 55.7,8.1 57.5,6.8 65.1,5.9 68.8,3.4 76.4,5.2 77.3,4.4 79.2,5.0 87.7,3.1 90.5,4.3 91.5,3.0 92.4,3.1 96.2,4.3 98.1,7.7 99.0,6.8"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.444</b> → <b>5.030</b>
+      <span class="delta pos">(+0.585)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.221 ·
+    earned <span class="pos">+0.414</span> · DUPR <span class="pos">+0.171</span></div>
+</a>
 <a class="jcard" href="0YPOO4.html" data-name="jack moulton">
   <div class="top">
     <span class="pname">Jack Moulton</span>
@@ -1085,6 +1491,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.426 ·
     earned <span class="neg">-0.177</span> · DUPR <span class="pos">+0.031</span></div>
 </a>
+<a class="jcard" href="YXE2ZD.html" data-name="jake johnson">
+  <div class="top">
+    <span class="pname">Jake Johnson</span>
+    <span class="did">YXE2ZD</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.577, now 4.441 (+0.864 net)"><polyline class="spark" points="1.0,24.8 3.3,24.4 5.7,25.0 10.3,19.0 12.7,18.6 17.3,13.3 19.7,13.8 24.3,10.0 33.7,7.5 43.0,7.2 47.7,5.3 52.3,4.6 57.0,5.7 71.0,4.8 78.0,3.3 80.3,4.0 82.7,3.7 85.0,4.9 99.0,3.0"/></svg>
+    <span class="path"><b>3.577</b> → <b>4.441</b>
+      <span class="delta pos">(+0.864)</span></span>
+  </div>
+  <div class="bot">placed 2024-10 · peak 4.536 ·
+    earned <span class="pos">+1.033</span> · DUPR <span class="neg">-0.169</span></div>
+</a>
 <a class="jcard" href="84O096.html" data-name="jake seaman">
   <div class="top">
     <span class="pname">Jake Seaman</span>
@@ -1099,6 +1520,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 4.417 ·
     earned <span class="pos">+0.701</span> · DUPR <span class="neg">-0.194</span></div>
+</a>
+<a class="jcard" href="896P67.html" data-name="james broker">
+  <div class="top">
+    <span class="pname">James Broker</span>
+    <span class="did">896P67</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.837, now 5.694 (+0.857 net)"><polyline class="spark" points="1.0,25.0 1.9,20.9 2.9,22.4 4.8,18.5 5.7,18.5 6.7,20.2 7.6,19.4 8.5,21.9 9.5,21.4 11.4,17.7 12.3,23.4 13.2,21.1 15.1,24.5 17.0,17.6 20.8,12.3 24.6,12.5 25.5,10.4 26.4,11.1 27.4,9.7 39.6,8.2 40.6,9.7 41.5,8.5 46.2,8.8 50.9,5.3 53.8,6.6 57.5,6.2 58.5,4.0 61.3,4.5 63.2,3.0 65.1,3.0 66.0,4.0 70.7,3.2 71.7,4.2 72.6,3.2 75.4,6.4 76.4,6.8 77.3,6.1 78.3,8.5 80.2,5.4 85.8,5.4 87.7,4.4 89.6,5.2 95.2,5.6 97.1,4.2 99.0,3.9"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.837</b> → <b>5.694</b>
+      <span class="delta pos">(+0.857)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.739 ·
+    earned <span class="pos">+0.851</span> · DUPR <span class="pos">+0.007</span></div>
 </a>
 <a class="jcard" href="8JMYQJ.html" data-name="james cunningham">
   <div class="top">
@@ -1145,6 +1581,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.876 ·
     earned <span class="pos">+0.021</span> · DUPR <span class="pos">+0.052</span></div>
 </a>
+<a class="jcard" href="1NRDE6.html" data-name="jason renner">
+  <div class="top">
+    <span class="pname">Jason Renner</span>
+    <span class="did">1NRDE6</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.011, now 5.196 (+0.185 net)"><polyline class="spark" points="1.0,13.6 4.2,10.3 10.5,21.7 16.8,20.7 20.0,22.4 23.1,22.7 26.3,14.4 29.5,9.8 32.6,9.9 35.8,11.5 38.9,9.9 42.1,12.6 45.3,11.8 51.6,11.8 54.7,3.7 57.9,4.5 61.1,7.6 64.2,9.4 67.4,4.9 70.5,3.0 73.7,4.6 76.9,4.6 83.2,6.5 86.4,6.1 89.5,11.3 92.7,25.0 95.8,21.0 99.0,5.1"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.011</b> → <b>5.196</b>
+      <span class="delta pos">(+0.185)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.269 ·
+    earned <span class="neg">-0.009</span> · DUPR <span class="pos">+0.194</span></div>
+</a>
 <a class="jcard" href="ME9Y0V.html" data-name="jay m">
   <div class="top">
     <span class="pname">Jay M</span>
@@ -1189,6 +1640,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 4.632 ·
     earned <span class="pos">+0.900</span> · DUPR <span class="neg">-0.041</span></div>
+</a>
+<a class="jcard" href="8W5M2K.html" data-name="jhonnatan medina alvarez">
+  <div class="top">
+    <span class="pname">Jhonnatan Medina Alvarez</span><span class="pro">PRO</span>
+    <span class="did">8W5M2K</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.740, now 5.816 (+0.076 net)"><polyline class="spark" points="1.0,13.9 3.1,25.0 4.2,14.7 7.3,16.0 8.4,13.0 9.4,13.3 10.5,9.5 12.6,9.4 13.6,12.2 14.7,9.8 15.8,9.9 16.8,7.9 17.9,8.1 20.0,6.7 21.0,8.3 28.4,8.2 30.5,9.0 36.8,8.2 37.9,9.8 38.9,9.8 40.0,8.5 41.0,11.9 45.3,6.6 46.3,7.7 47.4,7.0 48.4,4.5 50.5,4.5 52.6,6.6 53.7,3.8 55.8,5.5 57.9,5.5 61.1,4.3 62.1,3.0 64.2,3.6 66.3,5.6 67.4,3.1 68.4,3.1 71.6,5.7 72.7,4.8 73.7,10.4 75.8,12.2 76.9,11.5 77.9,7.9 81.1,8.8 82.1,10.1 83.2,8.7 87.4,9.5 89.5,13.3 91.6,11.9 93.7,12.1 97.9,9.3 99.0,10.6"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.740</b> → <b>5.816</b>
+      <span class="delta pos">(+0.076)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.987 ·
+    earned <span class="neg">-0.393</span> · DUPR <span class="pos">+0.468</span></div>
 </a>
 <a class="jcard" href="NY6YKN.html" data-name="jigar patel">
   <div class="top">
@@ -1325,6 +1791,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 6.628 ·
     earned <span class="neg">-1.110</span> · DUPR <span class="pos">+0.008</span></div>
 </a>
+<a class="jcard" href="D52ER6.html" data-name="jorion tinsley">
+  <div class="top">
+    <span class="pname">Jorion Tinsley</span>
+    <span class="did">D52ER6</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.208, now 4.576 (+0.368 net)"><polyline class="spark" points="1.0,21.6 9.2,25.0 17.3,20.5 25.5,19.6 33.7,13.1 41.8,13.1 50.0,8.5 58.2,11.6 66.3,3.0 74.5,3.0 82.7,7.8 90.8,3.8 99.0,4.4"/></svg>
+    <span class="path"><b>4.208</b> → <b>4.576</b>
+      <span class="delta pos">(+0.368)</span></span>
+  </div>
+  <div class="bot">placed 2026-05 · peak 4.607 ·
+    earned <span class="pos">+0.471</span> · DUPR <span class="neg">-0.103</span></div>
+</a>
+<a class="jcard" href="3VG2JP.html" data-name="joshua giannelli">
+  <div class="top">
+    <span class="pname">Joshua Giannelli</span>
+    <span class="did">3VG2JP</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.734, now 5.560 (+0.825 net)"><polyline class="spark" points="1.0,25.0 2.6,16.6 3.4,15.2 4.2,15.4 5.0,12.5 5.8,5.7 7.4,4.4 9.8,5.3 10.6,4.4 13.7,4.3 14.5,5.3 16.1,3.9 18.5,5.8 24.9,5.8 25.7,6.9 28.1,5.9 31.3,7.0 32.1,4.9 37.7,4.2 38.4,3.2 40.8,3.0 41.6,4.3 44.8,3.4 54.4,4.5 56.0,7.0 57.6,7.4 62.3,6.1 63.9,3.6 65.5,3.3 67.1,3.1 72.7,4.9 76.7,4.1 77.5,5.0 83.1,3.2 87.8,5.5 91.0,5.2 91.8,3.5 93.4,5.8 95.8,6.3 97.4,5.2 99.0,6.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.734</b> → <b>5.560</b>
+      <span class="delta pos">(+0.825)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.691 ·
+    earned <span class="pos">+0.742</span> · DUPR <span class="pos">+0.083</span></div>
+</a>
 <a class="jcard" href="KOZ796.html" data-name="josie mastandrea">
   <div class="top">
     <span class="pname">Josie Mastandrea</span>
@@ -1415,6 +1911,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.675 ·
     earned <span class="neg">-0.311</span> · DUPR <span class="pos">+0.303</span></div>
 </a>
+<a class="jcard" href="569KPP.html" data-name="keith tam">
+  <div class="top">
+    <span class="pname">Keith Tam</span>
+    <span class="did">569KPP</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.090, now 4.477 (+0.387 net)"><polyline class="spark" points="1.0,13.6 3.3,21.8 5.7,21.1 8.0,25.0 10.3,21.6 12.7,20.9 15.0,21.8 17.3,21.5 19.7,20.1 22.0,21.0 24.3,20.8 26.7,20.3 29.0,18.5 33.7,18.5 38.3,19.8 40.7,16.5 50.0,16.6 52.3,15.4 54.7,12.8 57.0,14.5 59.3,11.1 61.7,12.1 71.0,12.6 75.7,7.1 78.0,7.3 80.3,6.0 82.7,5.9 85.0,3.2 94.3,3.1 96.7,4.4 99.0,3.8"/></svg>
+    <span class="path"><b>4.090</b> → <b>4.477</b>
+      <span class="delta pos">(+0.387)</span></span>
+  </div>
+  <div class="bot">placed 2024-08 · peak 4.518 ·
+    earned <span class="pos">+0.960</span> · DUPR <span class="neg">-0.572</span></div>
+</a>
 <a class="jcard" href="GG76WV.html" data-name="kelly waring">
   <div class="top">
     <span class="pname">Kelly Waring</span>
@@ -1474,6 +1985,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 5.344 ·
     earned <span class="neg">-0.313</span> · DUPR <span class="pos">+0.056</span></div>
+</a>
+<a class="jcard" href="84Q6J2.html" data-name="lauralei bieger">
+  <div class="top">
+    <span class="pname">Lauralei Bieger</span>
+    <span class="did">84Q6J2</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.676, now 5.064 (+0.388 net)"><polyline class="spark" points="1.0,25.0 1.9,17.1 2.8,19.2 6.4,17.5 8.2,20.4 10.0,13.2 10.9,12.6 11.8,15.1 13.6,15.1 14.5,14.8 15.4,11.8 16.3,12.2 17.2,16.3 19.0,17.3 19.9,16.5 22.6,16.5 25.3,13.3 28.0,13.9 28.9,13.2 30.7,14.2 32.5,10.3 37.9,9.9 39.7,8.0 41.5,7.8 44.2,6.2 46.9,5.4 48.7,6.2 51.3,5.9 52.2,3.8 54.0,4.6 56.7,3.0 59.4,3.6 62.1,5.7 63.0,7.7 66.6,6.1 70.2,6.7 71.1,9.0 72.9,9.6 73.8,11.0 75.6,10.3 78.3,11.9 80.1,11.9 81.0,10.6 82.8,10.2 88.2,15.7 90.9,12.9 92.7,13.7 94.5,12.9 97.2,13.9 99.0,13.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.676</b> → <b>5.064</b>
+      <span class="delta pos">(+0.388)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.390 ·
+    earned <span class="pos">+0.289</span> · DUPR <span class="pos">+0.099</span></div>
 </a>
 <a class="jcard" href="8MW77P.html" data-name="lauren giedgowd">
   <div class="top">
@@ -1760,6 +2286,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2023-11 · peak 4.950 ·
     earned <span class="pos">+0.348</span> · DUPR <span class="pos">+0.292</span></div>
 </a>
+<a class="jcard" href="9PM99K.html" data-name="mary mcgowan">
+  <div class="top">
+    <span class="pname">Mary McGowan</span>
+    <span class="did">9PM99K</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.085, now 5.431 (+1.345 net)"><polyline class="spark" points="1.0,23.4 2.1,24.2 4.3,23.7 5.5,25.0 7.7,17.5 8.8,18.8 11.0,18.9 12.1,17.7 14.4,17.8 15.5,16.6 19.9,16.0 22.2,16.5 23.3,14.2 25.5,14.0 28.8,15.6 31.1,15.0 34.4,15.8 36.6,14.5 43.3,14.1 45.5,12.7 46.7,13.3 47.8,12.1 52.2,11.5 53.3,10.0 56.7,10.2 58.9,9.2 61.1,9.9 62.2,8.7 63.4,9.3 66.7,8.6 72.3,8.8 76.7,6.3 82.3,6.4 84.5,5.6 89.0,7.1 92.3,6.1 93.4,4.9 95.7,5.7 96.8,3.9 99.0,3.0"/></svg>
+    <span class="path"><b>4.085</b> → <b>5.431</b>
+      <span class="delta pos">(+1.345)</span></span>
+  </div>
+  <div class="bot">placed 2023-10 · peak 5.431 ·
+    earned <span class="pos">+0.926</span> · DUPR <span class="pos">+0.420</span></div>
+</a>
 <a class="jcard" href="8MZ9NG.html" data-name="matt behnke">
   <div class="top">
     <span class="pname">Matt Behnke</span>
@@ -1774,6 +2315,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 4.817 ·
     earned <span class="neg">-0.016</span> · DUPR <span class="neg">-0.023</span></div>
+</a>
+<a class="jcard" href="DWQRQX.html" data-name="mckeane bennett">
+  <div class="top">
+    <span class="pname">McKeane Bennett</span>
+    <span class="did">DWQRQX</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.130, now 4.503 (+0.373 net)"><polyline class="spark" points="1.0,25.0 4.2,20.3 7.3,18.8 10.5,19.2 13.6,18.0 20.0,9.2 26.3,16.4 29.5,17.3 35.8,16.6 42.1,17.4 45.3,13.4 54.7,12.3 57.9,10.0 61.1,10.9 80.0,11.7 83.2,9.5 86.4,9.4 89.5,3.0 95.8,9.3 99.0,9.9"/></svg>
+    <span class="path"><b>4.130</b> → <b>4.503</b>
+      <span class="delta pos">(+0.373)</span></span>
+  </div>
+  <div class="bot">placed 2024-04 · peak 4.714 ·
+    earned <span class="pos">+0.399</span> · DUPR <span class="neg">-0.025</span></div>
 </a>
 <a class="jcard" href="YN2REG.html" data-name="michael binns">
   <div class="top">
@@ -1804,6 +2360,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 5.031 ·
     earned <span class="pos">+0.177</span> · DUPR <span class="pos">+0.047</span></div>
+</a>
+<a class="jcard" href="7DXOMN.html" data-name="michael nielson">
+  <div class="top">
+    <span class="pname">Michael Nielson</span>
+    <span class="did">7DXOMN</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.946, now 4.462 (+0.516 net)"><polyline class="spark" points="1.0,14.7 2.6,10.9 4.2,11.0 7.4,14.4 9.0,10.4 10.6,25.0 12.2,23.2 13.9,23.2 15.5,24.6 17.1,24.2 20.3,16.3 21.9,15.5 23.5,16.7 25.1,15.7 26.7,20.0 28.3,14.9 29.9,15.0 33.1,13.4 36.3,15.4 38.0,14.5 41.2,14.8 42.8,12.3 44.4,12.6 46.0,15.4 50.8,12.5 52.4,8.0 54.0,8.4 57.2,6.3 60.4,5.8 63.7,3.0 65.3,5.0 70.1,6.2 71.7,7.9 73.3,8.4 74.9,7.7 76.5,9.4 78.1,7.5 81.3,12.7 84.5,15.5 86.1,13.6 89.4,12.8 91.0,9.6 92.6,9.4 97.4,13.2 99.0,12.8"/></svg>
+    <span class="path"><b>3.946</b> → <b>4.462</b>
+      <span class="delta pos">(+0.516)</span></span>
+  </div>
+  <div class="bot">placed 2024-05 · peak 4.662 ·
+    earned <span class="pos">+0.507</span> · DUPR <span class="pos">+0.008</span></div>
+</a>
+<a class="jcard" href="Z90ZVP.html" data-name="mikaela smith">
+  <div class="top">
+    <span class="pname">Mikaela Smith</span>
+    <span class="did">Z90ZVP</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.953, now 5.193 (+0.240 net)"><polyline class="spark" points="1.0,13.2 2.3,11.8 3.6,21.6 4.9,14.7 6.2,20.5 7.5,19.8 8.8,25.0 10.1,25.0 11.5,23.9 15.4,23.0 18.0,23.2 20.6,19.5 23.2,18.1 27.1,18.2 29.7,17.3 31.1,18.0 32.4,16.5 35.0,15.5 36.3,16.1 38.9,13.2 42.8,11.9 45.4,12.1 46.7,10.7 48.0,11.2 52.0,10.6 55.9,8.6 67.6,8.7 70.3,7.4 71.6,8.8 72.9,9.0 76.8,7.8 82.0,8.0 83.3,5.6 84.6,4.9 87.2,4.7 91.2,5.6 93.8,3.6 97.7,3.9 99.0,3.0"/></svg>
+    <span class="path"><b>4.953</b> → <b>5.193</b>
+      <span class="delta pos">(+0.240)</span></span>
+  </div>
+  <div class="bot">placed 2024-06 · peak 5.194 ·
+    earned <span class="neg">-0.130</span> · DUPR <span class="pos">+0.370</span></div>
 </a>
 <a class="jcard" href="1NNNNW.html" data-name="mike foto">
   <div class="top">
@@ -1925,6 +2511,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2025-03 · peak 4.696 ·
     earned <span class="pos">+0.746</span> · DUPR <span class="neg">-0.013</span></div>
 </a>
+<a class="jcard" href="1RR0YQ.html" data-name="noe khlif">
+  <div class="top">
+    <span class="pname">Noe Khlif</span><span class="pro">PRO</span>
+    <span class="did">1RR0YQ</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.483, now 6.513 (+1.030 net)"><polyline class="spark" points="1.0,20.4 1.9,15.8 2.4,20.3 2.8,17.6 4.2,25.0 5.6,13.9 6.5,12.9 7.0,13.9 7.9,13.6 8.8,9.9 9.3,10.2 10.7,8.7 16.2,8.3 19.9,7.2 25.8,7.9 26.8,7.1 30.9,6.6 35.0,5.1 45.6,5.2 52.1,3.8 53.0,4.3 57.6,4.0 63.6,3.0 76.0,3.8 81.5,3.1 86.6,4.4 90.3,4.1 99.0,4.9"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.483</b> → <b>6.513</b>
+      <span class="delta pos">(+1.030)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.642 ·
+    earned <span class="pos">+1.135</span> · DUPR <span class="neg">-0.106</span></div>
+</a>
+<a class="jcard" href="7DKV95.html" data-name="oscar serra">
+  <div class="top">
+    <span class="pname">Oscar Serra</span>
+    <span class="did">7DKV95</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.033, now 6.042 (+2.010 net)"><polyline class="spark" points="1.0,25.0 3.0,17.3 3.9,18.2 4.9,17.2 5.9,17.4 6.9,13.9 7.9,13.0 15.7,9.9 24.5,9.7 29.4,8.5 30.4,7.5 34.3,7.6 49.0,5.0 62.7,5.5 68.6,3.8 80.4,3.1 87.2,3.6 93.1,3.0 99.0,3.8"/></svg>
+    <span class="path"><b>4.033</b> → <b>6.042</b>
+      <span class="delta pos">(+2.010)</span></span>
+  </div>
+  <div class="bot">placed 2023-12 · peak 6.117 ·
+    earned <span class="pos">+1.700</span> · DUPR <span class="pos">+0.310</span></div>
+</a>
 <a class="jcard" href="DW7REY.html" data-name="patara tezduyar">
   <div class="top">
     <span class="pname">Patara Tezduyar</span>
@@ -1940,6 +2556,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2023-12 · peak 4.794 ·
     earned <span class="pos">+2.009</span> · DUPR <span class="pos">+0.120</span></div>
 </a>
+<a class="jcard" href="9PGZLK.html" data-name="patrick catullo">
+  <div class="top">
+    <span class="pname">Patrick Catullo</span>
+    <span class="did">9PGZLK</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.568, now 4.588 (+0.020 net)"><polyline class="spark" points="1.0,17.0 2.6,19.3 4.3,24.3 5.9,25.0 7.5,21.1 9.2,20.5 10.8,14.0 12.4,14.3 14.1,12.7 23.9,12.9 25.5,14.0 27.1,11.5 30.4,10.5 32.0,11.8 33.7,9.3 36.9,8.3 43.5,9.7 45.1,6.6 50.0,7.2 51.6,4.7 53.3,5.5 58.2,5.2 59.8,5.0 61.4,3.0 64.7,4.2 66.3,3.2 68.0,4.1 69.6,3.0 74.5,6.0 79.4,5.9 81.0,6.7 82.7,5.5 90.8,6.4 92.5,5.5 94.1,5.5 95.7,3.3 97.4,5.9 99.0,6.5"/></svg>
+    <span class="path"><b>4.568</b> → <b>4.588</b>
+      <span class="delta pos">(+0.020)</span></span>
+  </div>
+  <div class="bot">placed 2023-12 · peak 4.732 ·
+    earned <span class="pos">+0.190</span> · DUPR <span class="neg">-0.170</span></div>
+</a>
 <a class="jcard" href="R8JYO8.html" data-name="payton noyes">
   <div class="top">
     <span class="pname">Payton Noyes</span>
@@ -1954,6 +2585,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 5.398 ·
     earned <span class="pos">+0.093</span> · DUPR <span class="pos">+0.206</span></div>
+</a>
+<a class="jcard" href="1RWYOE.html" data-name="pete cloutier">
+  <div class="top">
+    <span class="pname">Pete Cloutier</span>
+    <span class="did">1RWYOE</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.435, now 4.150 (-0.285 net)"><polyline class="spark" points="1.0,11.8 2.6,10.5 4.2,15.3 5.8,17.3 7.4,17.0 9.0,18.1 10.6,11.5 12.2,13.1 15.5,14.2 17.1,17.0 18.7,17.0 20.3,11.5 25.1,11.1 26.7,4.6 28.3,5.6 29.9,3.0 31.5,7.0 33.1,3.5 34.7,3.6 36.3,6.8 38.0,4.2 39.6,3.5 42.8,7.0 46.0,13.9 49.2,13.4 50.8,16.1 55.6,16.1 57.2,13.5 60.4,10.7 65.3,11.8 68.5,11.4 70.1,15.6 71.7,12.3 73.3,21.9 74.9,19.0 78.1,22.1 79.7,20.5 82.9,20.1 84.5,17.5 86.1,17.0 87.8,19.0 89.4,18.2 91.0,21.8 94.2,22.1 95.8,24.6 99.0,25.0"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.435</b> → <b>4.150</b>
+      <span class="delta neg">(-0.285)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 4.626 ·
+    earned <span class="neg">-0.502</span> · DUPR <span class="pos">+0.217</span></div>
 </a>
 <a class="jcard" href="L5ZWNK.html" data-name="phyllis barnett">
   <div class="top">
@@ -1984,6 +2630,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 4.528 ·
     earned <span class="pos">+0.073</span> · DUPR <span class="neg">-0.001</span></div>
+</a>
+<a class="jcard" href="L5WN66.html" data-name="preston gordon">
+  <div class="top">
+    <span class="pname">Preston Gordon</span>
+    <span class="did">L5WN66</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.599, now 5.677 (+2.078 net)"><polyline class="spark" points="1.0,24.5 2.3,25.0 4.2,16.7 4.8,16.7 5.4,14.0 6.7,13.5 7.3,11.3 12.4,9.0 18.1,8.4 18.7,7.3 26.9,7.0 28.2,6.1 38.3,5.4 40.2,5.1 40.8,4.2 43.4,4.5 44.6,3.6 50.9,3.0 57.9,3.7 63.6,5.2 70.5,4.3 75.6,5.0 83.8,4.8 90.1,6.2 93.9,5.5 97.7,6.6 99.0,5.8"/></svg>
+    <span class="path"><b>3.599</b> → <b>5.677</b>
+      <span class="delta pos">(+2.078)</span></span>
+  </div>
+  <div class="bot">placed 2023-07 · peak 5.960 ·
+    earned <span class="pos">+1.883</span> · DUPR <span class="pos">+0.195</span></div>
+</a>
+<a class="jcard" href="V74R45.html" data-name="quang duong">
+  <div class="top">
+    <span class="pname">Quang Duong</span><span class="pro">PRO</span>
+    <span class="did">V74R45</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.614, now 6.205 (+1.591 net)"><polyline class="spark" points="1.0,25.0 3.9,10.2 5.4,10.4 6.2,9.1 6.9,10.0 8.4,10.1 12.1,8.3 17.2,7.8 20.9,6.2 48.9,4.1 51.8,3.1 68.8,3.6 80.6,3.0 82.8,3.4 83.5,5.5 84.3,5.3 85.0,6.7 87.9,5.7 91.6,7.5 96.1,7.1 99.0,7.7"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.614</b> → <b>6.205</b>
+      <span class="delta pos">(+1.591)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.640 ·
+    earned <span class="pos">+0.040</span> · DUPR <span class="pos">+1.551</span></div>
 </a>
 <a class="jcard" href="8GXRMD.html" data-name="rachel barrack">
   <div class="top">
@@ -2120,6 +2796,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2024-03 · peak 4.395 ·
     earned <span class="pos">+1.209</span> · DUPR <span class="pos">+0.028</span></div>
 </a>
+<a class="jcard" href="W6Z42Y.html" data-name="rosen naydenov">
+  <div class="top">
+    <span class="pname">Rosen Naydenov</span>
+    <span class="did">W6Z42Y</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 5.439, now 5.510 (+0.071 net)"><polyline class="spark" points="1.0,22.9 2.2,22.9 3.4,25.0 5.8,12.1 7.0,13.2 8.2,18.0 9.4,18.6 14.1,18.4 15.3,16.8 16.5,16.9 17.7,18.9 20.1,19.0 21.3,15.7 22.5,17.1 23.7,16.1 29.7,18.0 32.1,17.7 35.7,16.5 39.2,13.7 44.0,14.0 46.4,10.4 50.0,11.4 52.4,13.9 53.6,13.2 54.8,13.6 59.6,6.3 64.3,3.0 67.9,6.6 70.3,7.5 71.5,6.2 72.7,6.7 73.9,8.6 75.1,8.6 77.5,13.3 78.7,11.2 79.9,11.2 84.7,14.0 93.0,15.3 94.2,12.9 95.4,15.5 99.0,15.9"/></svg>
+    <span class="path"><b>5.439</b> → <b>5.510</b>
+      <span class="delta pos">(+0.071)</span></span>
+  </div>
+  <div class="bot">placed 2023-10 · peak 5.847 ·
+    earned <span class="pos">+0.188</span> · DUPR <span class="neg">-0.117</span></div>
+</a>
 <a class="jcard" href="8KYKZQ.html" data-name="ryan kane">
   <div class="top">
     <span class="pname">Ryan Kane</span>
@@ -2149,6 +2840,66 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">tracked 2023-06 · peak 5.813 ·
     earned <span class="pos">+0.713</span> · DUPR <span class="pos">+0.193</span></div>
+</a>
+<a class="jcard" href="84RNW6.html" data-name="ryan torresin">
+  <div class="top">
+    <span class="pname">Ryan Torresin</span>
+    <span class="did">84RNW6</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.323, now 6.039 (+0.716 net)"><polyline class="spark" points="1.0,24.2 4.4,25.0 6.1,19.7 7.8,19.7 11.1,17.5 16.2,19.3 21.3,13.3 36.5,11.6 39.9,10.0 43.2,10.2 44.9,8.5 50.0,9.0 51.7,10.7 56.8,10.7 58.4,10.0 60.1,10.9 61.8,10.4 63.5,5.3 66.9,6.6 70.3,4.8 72.0,4.7 78.7,4.6 83.8,5.9 87.2,4.6 88.9,3.0 93.9,4.6 95.6,4.4 99.0,6.3"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.323</b> → <b>6.039</b>
+      <span class="delta pos">(+0.716)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 6.187 ·
+    earned <span class="pos">+0.747</span> · DUPR <span class="neg">-0.031</span></div>
+</a>
+<a class="jcard" href="2YJEEY.html" data-name="ryan truong">
+  <div class="top">
+    <span class="pname">Ryan Truong</span>
+    <span class="did">2YJEEY</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.171, now 4.625 (+0.453 net)"><polyline class="spark" points="1.0,21.6 5.7,20.1 10.3,20.7 15.0,25.0 19.7,20.4 24.3,17.2 29.0,16.9 33.7,18.1 38.3,16.5 43.0,18.3 47.7,16.9 52.3,17.4 57.0,15.2 61.7,14.7 71.0,10.7 80.3,3.5 85.0,3.0 94.3,4.3 99.0,3.7"/></svg>
+    <span class="path"><b>4.171</b> → <b>4.625</b>
+      <span class="delta pos">(+0.453)</span></span>
+  </div>
+  <div class="bot">placed 2025-04 · peak 4.651 ·
+    earned <span class="pos">+0.474</span> · DUPR <span class="neg">-0.021</span></div>
+</a>
+<a class="jcard" href="W6RR5G.html" data-name="sabrina barisano">
+  <div class="top">
+    <span class="pname">Sabrina Barisano</span>
+    <span class="did">W6RR5G</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.603, now 5.119 (+1.516 net)"><polyline class="spark" points="1.0,25.0 5.3,19.8 7.4,11.7 9.5,10.2 18.0,8.9 20.2,6.0 30.8,6.4 35.1,7.9 37.2,6.0 39.3,5.3 47.9,5.7 52.1,4.1 62.8,4.1 71.3,5.3 84.1,4.9 92.6,3.3 99.0,3.0"/></svg>
+    <span class="path"><b>3.603</b> → <b>5.119</b>
+      <span class="delta pos">(+1.516)</span></span>
+  </div>
+  <div class="bot">placed 2023-12 · peak 5.125 ·
+    earned <span class="pos">+1.624</span> · DUPR <span class="neg">-0.108</span></div>
+</a>
+<a class="jcard" href="QPYD94.html" data-name="sanil jagtiani">
+  <div class="top">
+    <span class="pname">Sanil Jagtiani</span>
+    <span class="did">QPYD94</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.766, now 5.917 (+1.151 net)"><polyline class="spark" points="1.0,24.0 4.2,24.6 5.3,23.8 6.4,25.0 7.5,16.0 10.7,16.6 13.9,11.2 15.0,12.5 18.2,10.8 19.3,11.3 21.5,10.1 22.5,10.6 25.8,8.6 27.9,9.1 35.5,7.0 39.8,7.4 40.8,8.2 50.5,7.6 52.7,6.2 57.0,5.9 58.1,5.0 64.5,5.5 69.9,4.3 75.3,4.5 81.8,3.0 94.7,5.0 99.0,4.0"/></svg>
+    <span class="path"><b>4.766</b> → <b>5.917</b>
+      <span class="delta pos">(+1.151)</span></span>
+  </div>
+  <div class="bot">placed 2023-10 · peak 5.973 ·
+    earned <span class="pos">+1.206</span> · DUPR <span class="neg">-0.056</span></div>
 </a>
 <a class="jcard" href="3OOO2W.html" data-name="sarah hua">
   <div class="top">
@@ -2210,6 +2961,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.372 ·
     earned <span class="neg">-0.507</span> · DUPR <span class="pos">+0.087</span></div>
 </a>
+<a class="jcard" href="12N0Z9.html" data-name="shannon synclare">
+  <div class="top">
+    <span class="pname">Shannon Synclare</span>
+    <span class="did">12N0Z9</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 3.514, now 4.046 (+0.532 net)"><polyline class="spark" points="1.0,25.0 2.5,17.6 4.1,18.4 7.1,9.0 8.7,7.2 10.2,9.7 11.7,9.2 14.8,14.1 16.3,23.4 17.8,16.6 19.4,18.2 20.9,18.3 22.4,25.0 25.5,16.7 27.0,15.0 34.7,13.7 37.8,16.0 39.3,16.0 40.8,12.9 43.9,11.4 45.4,16.3 50.0,15.7 54.6,18.1 57.7,16.3 60.7,15.8 62.2,19.4 63.8,19.4 65.3,17.4 66.8,17.4 68.4,19.0 73.0,20.0 74.5,15.0 82.2,11.9 83.7,15.4 85.2,16.2 88.3,15.7 89.8,13.9 91.3,14.5 95.9,3.0 99.0,4.2"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…3.514</b> → <b>4.046</b>
+      <span class="delta pos">(+0.532)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 4.079 ·
+    earned <span class="pos">+0.380</span> · DUPR <span class="pos">+0.153</span></div>
+</a>
 <a class="jcard" href="1RWDLE.html" data-name="sheel khanna">
   <div class="top">
     <span class="pname">Sheel Khanna</span>
@@ -2254,6 +3020,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2021-05 · peak 4.890 ·
     earned <span class="neg">-0.402</span> · DUPR <span class="pos">+0.000</span></div>
+</a>
+<a class="jcard" href="N756L2.html" data-name="spencer liang">
+  <div class="top">
+    <span class="pname">Spencer Liang</span>
+    <span class="did">N756L2</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.773, now 5.490 (+1.717 net)"><polyline class="spark" points="1.0,22.6 2.4,25.0 5.2,24.0 8.0,19.6 12.2,19.0 13.6,17.7 15.0,18.1 16.4,16.0 17.8,17.6 34.6,13.2 37.4,13.8 38.8,12.2 41.6,11.4 47.2,12.0 51.4,11.1 58.4,11.2 59.8,10.5 68.2,10.2 79.4,5.7 86.4,6.8 87.8,3.1 92.0,3.7 93.4,4.9 96.2,5.6 99.0,3.8"/></svg>
+    <span class="path"><b>3.773</b> → <b>5.490</b>
+      <span class="delta pos">(+1.717)</span></span>
+  </div>
+  <div class="bot">placed 2024-08 · peak 5.551 ·
+    earned <span class="pos">+2.019</span> · DUPR <span class="neg">-0.302</span></div>
+</a>
+<a class="jcard" href="MY9Z4G.html" data-name="sriram talluri">
+  <div class="top">
+    <span class="pname">Sriram Talluri</span>
+    <span class="did">MY9Z4G</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.445, now 4.513 (+1.067 net)"><polyline class="spark" points="1.0,25.0 8.0,23.5 15.0,24.1 22.0,23.3 29.0,10.3 36.0,8.0 85.0,5.5 92.0,3.0 99.0,4.3"/></svg>
+    <span class="path"><b>3.445</b> → <b>4.513</b>
+      <span class="delta pos">(+1.067)</span></span>
+  </div>
+  <div class="bot">placed 2023-02 · peak 4.680 ·
+    earned <span class="pos">+0.948</span> · DUPR <span class="pos">+0.119</span></div>
 </a>
 <a class="jcard" href="124GMY.html" data-name="stef bubulac">
   <div class="top">
@@ -2300,6 +3096,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.598 ·
     earned <span class="neg">-1.012</span> · DUPR <span class="pos">+0.151</span></div>
 </a>
+<a class="jcard" href="MY7EZP.html" data-name="steve yim">
+  <div class="top">
+    <span class="pname">Steve Yim</span>
+    <span class="did">MY7EZP</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.652, now 3.974 (+0.321 net)"><polyline class="spark" points="1.0,10.8 3.7,13.1 6.4,12.6 9.2,25.0 11.9,23.5 14.6,24.5 17.3,17.5 25.5,15.0 28.2,15.0 30.9,14.0 33.7,11.0 39.1,10.6 47.3,6.7 52.7,7.1 55.4,6.2 58.2,6.4 63.6,5.3 66.3,3.5 69.1,4.1 71.8,3.0 85.4,5.0 99.0,4.2"/></svg>
+    <span class="path"><b>3.652</b> → <b>3.974</b>
+      <span class="delta pos">(+0.321)</span></span>
+  </div>
+  <div class="bot">placed 2023-10 · peak 4.082 ·
+    earned <span class="pos">+0.288</span> · DUPR <span class="pos">+0.034</span></div>
+</a>
 <a class="jcard" href="896GX7.html" data-name="suraj singh chandel">
   <div class="top">
     <span class="pname">Suraj Singh Chandel</span>
@@ -2329,6 +3140,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2024-07 · peak 4.354 ·
     earned <span class="pos">+0.469</span> · DUPR <span class="pos">+0.152</span></div>
+</a>
+<a class="jcard" href="0YKRNN.html" data-name="tama shimabukuro">
+  <div class="top">
+    <span class="pname">Tama Shimabukuro</span><span class="pro">PRO</span>
+    <span class="did">0YKRNN</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 6.557, now 6.063 (-0.495 net)"><polyline class="spark" points="1.0,3.0 1.8,25.0 2.6,25.0 3.4,18.9 5.0,19.6 5.7,18.6 8.9,18.4 13.6,20.6 15.2,18.2 23.9,16.4 24.7,14.5 27.1,14.7 28.7,16.2 29.5,15.7 31.8,16.9 38.9,14.1 45.3,14.1 54.7,10.8 64.2,9.9 68.2,8.7 90.3,8.1 99.0,8.9"/></svg>
+    <span class="path"><b>6.557</b> → <b>6.063</b>
+      <span class="delta neg">(-0.495)</span></span>
+  </div>
+  <div class="bot">placed 2023-11 · peak 6.557 ·
+    earned <span class="pos">+1.373</span> · DUPR <span class="neg">-1.868</span></div>
 </a>
 <a class="jcard" href="GGRRLQ.html" data-name="tanner vale">
   <div class="top">
@@ -2435,6 +3261,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">tracked 2023-06 · peak 4.700 ·
     earned <span class="neg">-0.716</span> · DUPR <span class="pos">+0.049</span></div>
 </a>
+<a class="jcard" href="2LYMLR.html" data-name="todd compton">
+  <div class="top">
+    <span class="pname">Todd Compton</span>
+    <span class="did">2LYMLR</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.807, now 4.751 (+0.945 net)"><polyline class="spark" points="1.0,25.0 11.9,24.7 17.3,20.9 28.2,15.6 33.7,19.0 50.0,18.2 55.4,9.3 60.9,9.3 66.3,13.4 71.8,9.4 77.2,10.4 82.7,14.1 88.1,3.8 93.6,3.0 99.0,6.6"/></svg>
+    <span class="path"><b>3.807</b> → <b>4.751</b>
+      <span class="delta pos">(+0.945)</span></span>
+  </div>
+  <div class="bot">placed 2024-06 · peak 5.028 ·
+    earned <span class="pos">+0.840</span> · DUPR <span class="pos">+0.104</span></div>
+</a>
 <a class="jcard" href="35NX2V.html" data-name="todd springer">
   <div class="top">
     <span class="pname">Todd Springer</span>
@@ -2480,6 +3321,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2024-03 · peak 4.024 ·
     earned <span class="neg">-0.483</span> · DUPR <span class="pos">+0.040</span></div>
 </a>
+<a class="jcard" href="EWZ5RM.html" data-name="tyler hyun">
+  <div class="top">
+    <span class="pname">Tyler Hyun</span>
+    <span class="did">EWZ5RM</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.596, now 4.627 (+1.031 net)"><polyline class="spark" points="1.0,25.0 9.9,11.7 27.7,13.3 36.6,6.7 45.5,9.5 54.5,7.2 63.4,7.9 81.2,3.0 99.0,3.3"/></svg>
+    <span class="path"><b>3.596</b> → <b>4.627</b>
+      <span class="delta pos">(+1.031)</span></span>
+  </div>
+  <div class="bot">placed 2025-01 · peak 4.684 ·
+    earned <span class="pos">+1.031</span> · DUPR <span class="neg">-0.000</span></div>
+</a>
+<a class="jcard" href="3POKG8.html" data-name="tyler vanagas">
+  <div class="top">
+    <span class="pname">Tyler Vanagas</span>
+    <span class="did">3POKG8</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 4.672, now 5.133 (+0.460 net)"><polyline class="spark" points="1.0,25.0 6.9,8.8 9.9,3.0 12.9,3.1 15.8,6.7 21.8,11.4 24.8,10.3 30.7,10.1 33.7,12.8 36.6,11.7 45.5,15.2 48.5,14.2 63.4,13.3 72.3,14.8 75.2,13.7 78.2,16.1 81.2,12.5 84.2,12.2 87.1,13.2 90.1,8.2 93.1,7.9 96.0,6.3 99.0,7.9"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.672</b> → <b>5.133</b>
+      <span class="delta pos">(+0.460)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.273 ·
+    earned <span class="pos">+0.480</span> · DUPR <span class="neg">-0.020</span></div>
+</a>
 <a class="jcard" href="12DQ71.html" data-name="wade tallent">
   <div class="top">
     <span class="pname">Wade Tallent</span>
@@ -2509,6 +3380,21 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2024-05 · peak 4.136 ·
     earned <span class="pos">+0.071</span> · DUPR <span class="neg">-0.107</span></div>
+</a>
+<a class="jcard" href="KONPWY.html" data-name="will halstead">
+  <div class="top">
+    <span class="pname">Will Halstead</span>
+    <span class="did">KONPWY</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 3.735, now 4.426 (+0.690 net)"><polyline class="spark" points="1.0,25.0 3.6,22.9 8.7,12.2 13.9,11.8 16.5,8.9 19.1,9.5 24.2,6.9 29.4,6.5 31.9,7.2 37.1,3.6 50.0,3.0 52.6,6.4 57.7,8.4 60.3,7.2 62.9,7.5 65.5,5.0 68.1,7.0 70.6,7.0 73.2,6.4 75.8,4.0 83.5,6.4 88.7,6.1 91.3,4.3 96.4,3.3 99.0,4.1"/></svg>
+    <span class="path"><b>3.735</b> → <b>4.426</b>
+      <span class="delta pos">(+0.690)</span></span>
+  </div>
+  <div class="bot">placed 2023-12 · peak 4.491 ·
+    earned <span class="pos">+0.637</span> · DUPR <span class="pos">+0.053</span></div>
 </a>
 <a class="jcard" href="8WN40L.html" data-name="william kacergis">
   <div class="top">
@@ -2540,6 +3426,36 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2023-09 · peak 4.402 ·
     earned <span class="pos">+0.888</span> · DUPR <span class="neg">-0.118</span></div>
 </a>
+<a class="jcard" href="9PDMMK.html" data-name="youssef bouzidi">
+  <div class="top">
+    <span class="pname">Youssef Bouzidi</span>
+    <span class="did">9PDMMK</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: tracked 5.426, now 5.886 (+0.460 net)"><polyline class="spark" points="1.0,7.6 2.1,25.0 3.2,7.3 4.3,7.5 5.5,6.6 8.8,7.0 9.9,5.8 12.1,7.2 15.5,7.6 16.6,6.0 22.2,5.4 28.8,6.1 37.8,5.3 38.9,4.4 43.3,4.6 44.4,3.7 58.9,3.9 61.1,3.2 64.5,4.6 66.7,3.8 73.4,4.1 77.8,3.2 99.0,3.2"/></svg>
+    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.426</b> → <b>5.886</b>
+      <span class="delta pos">(+0.460)</span></span>
+  </div>
+  <div class="bot">tracked 2023-06 · peak 5.912 ·
+    earned <span class="pos">+0.892</span> · DUPR <span class="neg">-0.432</span></div>
+</a>
+<a class="jcard" href="0QRLVX.html" data-name="zach baker">
+  <div class="top">
+    <span class="pname">Zach Baker</span>
+    <span class="did">0QRLVX</span><span class="news-dim">inactive since 2026-08</span>
+    <span class="arrow">→</span>
+  </div>
+  <div class="mid">
+    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
+      aria-label="Rating trajectory: placed 4.035, now 4.580 (+0.545 net)"><polyline class="spark" points="1.0,20.7 3.7,9.4 6.4,8.7 11.9,17.4 20.1,16.5 22.8,10.9 28.2,17.4 33.7,15.6 36.4,18.2 39.1,14.9 41.8,8.9 44.6,9.3 50.0,7.8 52.7,8.5 55.4,5.9 60.9,7.0 63.6,8.5 66.3,3.0 71.8,5.8 74.5,5.3 77.2,7.0 79.9,10.4 82.7,10.2 88.1,11.3 90.8,24.6 93.6,25.0 96.3,19.1 99.0,16.6"/></svg>
+    <span class="path"><b>4.035</b> → <b>4.580</b>
+      <span class="delta pos">(+0.545)</span></span>
+  </div>
+  <div class="bot">placed 2024-07 · peak 4.790 ·
+    earned <span class="pos">+0.444</span> · DUPR <span class="pos">+0.101</span></div>
+</a>
 <a class="jcard" href="30XXEX.html" data-name="luis geyne">
   <div class="top">
     <span class="pname">luis geyne</span>
@@ -2570,801 +3486,6 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   <div class="bot">placed 2025-01 · peak 3.233 ·
     earned <span class="pos">+0.164</span> · DUPR <span class="pos">+0.000</span></div>
 </a><h2 class="sect">Steady</h2>
-<a class="jcard" href="L5WN66.html" data-name="preston gordon">
-  <div class="top">
-    <span class="pname">Preston Gordon</span>
-    <span class="did">L5WN66</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.599, now 5.677 (+2.078 net)"><polyline class="spark" points="1.0,24.5 2.3,25.0 4.2,16.7 4.8,16.7 5.4,14.0 6.7,13.5 7.3,11.3 12.4,9.0 18.1,8.4 18.7,7.3 26.9,7.0 28.2,6.1 38.3,5.4 40.2,5.1 40.8,4.2 43.4,4.5 44.6,3.6 50.9,3.0 57.9,3.7 63.6,5.2 70.5,4.3 75.6,5.0 83.8,4.8 90.1,6.2 93.9,5.5 97.7,6.6 99.0,5.8"/></svg>
-    <span class="path"><b>3.599</b> → <b>5.677</b>
-      <span class="delta pos">(+2.078)</span></span>
-  </div>
-  <div class="bot">placed 2023-07 · peak 5.960 ·
-    earned <span class="pos">+1.883</span> · DUPR <span class="pos">+0.195</span></div>
-</a>
-<a class="jcard" href="7DKV95.html" data-name="oscar serra">
-  <div class="top">
-    <span class="pname">Oscar Serra</span>
-    <span class="did">7DKV95</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.033, now 6.042 (+2.010 net)"><polyline class="spark" points="1.0,25.0 3.0,17.3 3.9,18.2 4.9,17.2 5.9,17.4 6.9,13.9 7.9,13.0 15.7,9.9 24.5,9.7 29.4,8.5 30.4,7.5 34.3,7.6 49.0,5.0 62.7,5.5 68.6,3.8 80.4,3.1 87.2,3.6 93.1,3.0 99.0,3.8"/></svg>
-    <span class="path"><b>4.033</b> → <b>6.042</b>
-      <span class="delta pos">(+2.010)</span></span>
-  </div>
-  <div class="bot">placed 2023-12 · peak 6.117 ·
-    earned <span class="pos">+1.700</span> · DUPR <span class="pos">+0.310</span></div>
-</a>
-<a class="jcard" href="N756L2.html" data-name="spencer liang">
-  <div class="top">
-    <span class="pname">Spencer Liang</span>
-    <span class="did">N756L2</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.773, now 5.490 (+1.717 net)"><polyline class="spark" points="1.0,22.6 2.4,25.0 5.2,24.0 8.0,19.6 12.2,19.0 13.6,17.7 15.0,18.1 16.4,16.0 17.8,17.6 34.6,13.2 37.4,13.8 38.8,12.2 41.6,11.4 47.2,12.0 51.4,11.1 58.4,11.2 59.8,10.5 68.2,10.2 79.4,5.7 86.4,6.8 87.8,3.1 92.0,3.7 93.4,4.9 96.2,5.6 99.0,3.8"/></svg>
-    <span class="path"><b>3.773</b> → <b>5.490</b>
-      <span class="delta pos">(+1.717)</span></span>
-  </div>
-  <div class="bot">placed 2024-08 · peak 5.551 ·
-    earned <span class="pos">+2.019</span> · DUPR <span class="neg">-0.302</span></div>
-</a>
-<a class="jcard" href="V74R45.html" data-name="quang duong">
-  <div class="top">
-    <span class="pname">Quang Duong</span><span class="pro">PRO</span>
-    <span class="did">V74R45</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.614, now 6.205 (+1.591 net)"><polyline class="spark" points="1.0,25.0 3.9,10.2 5.4,10.4 6.2,9.1 6.9,10.0 8.4,10.1 12.1,8.3 17.2,7.8 20.9,6.2 48.9,4.1 51.8,3.1 68.8,3.6 80.6,3.0 82.8,3.4 83.5,5.5 84.3,5.3 85.0,6.7 87.9,5.7 91.6,7.5 96.1,7.1 99.0,7.7"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.614</b> → <b>6.205</b>
-      <span class="delta pos">(+1.591)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.640 ·
-    earned <span class="pos">+0.040</span> · DUPR <span class="pos">+1.551</span></div>
-</a>
-<a class="jcard" href="W6RR5G.html" data-name="sabrina barisano">
-  <div class="top">
-    <span class="pname">Sabrina Barisano</span>
-    <span class="did">W6RR5G</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.603, now 5.119 (+1.516 net)"><polyline class="spark" points="1.0,25.0 5.3,19.8 7.4,11.7 9.5,10.2 18.0,8.9 20.2,6.0 30.8,6.4 35.1,7.9 37.2,6.0 39.3,5.3 47.9,5.7 52.1,4.1 62.8,4.1 71.3,5.3 84.1,4.9 92.6,3.3 99.0,3.0"/></svg>
-    <span class="path"><b>3.603</b> → <b>5.119</b>
-      <span class="delta pos">(+1.516)</span></span>
-  </div>
-  <div class="bot">placed 2023-12 · peak 5.125 ·
-    earned <span class="pos">+1.624</span> · DUPR <span class="neg">-0.108</span></div>
-</a>
-<a class="jcard" href="7DD5M0.html" data-name="arsh bassan">
-  <div class="top">
-    <span class="pname">Arsh Bassan</span>
-    <span class="did">7DD5M0</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.470, now 4.865 (+1.395 net)"><polyline class="spark" points="1.0,25.0 5.2,22.5 7.3,15.5 11.4,15.1 15.6,16.5 19.8,14.4 21.9,17.1 23.9,12.6 28.1,11.9 30.2,10.1 34.4,8.6 38.5,8.8 40.6,7.5 42.7,8.1 49.0,7.6 55.2,8.9 61.5,7.4 65.6,8.5 67.7,8.2 69.8,5.1 74.0,3.2 78.1,3.0 82.3,5.4 94.8,4.3 99.0,4.9"/></svg>
-    <span class="path"><b>3.470</b> → <b>4.865</b>
-      <span class="delta pos">(+1.395)</span></span>
-  </div>
-  <div class="bot">placed 2023-11 · peak 4.997 ·
-    earned <span class="pos">+0.481</span> · DUPR <span class="pos">+0.914</span></div>
-</a>
-<a class="jcard" href="MYZ4MD.html" data-name="hridhay pothunoori">
-  <div class="top">
-    <span class="pname">Hridhay Pothunoori</span>
-    <span class="did">MYZ4MD</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.470, now 4.818 (+1.348 net)"><polyline class="spark" points="1.0,25.0 3.4,23.1 5.8,23.9 7.0,22.7 9.4,22.9 10.6,21.5 11.8,21.7 13.0,20.4 14.1,16.0 17.7,15.3 20.1,12.9 22.5,13.0 24.9,11.9 28.5,12.1 34.5,10.0 45.2,9.9 48.8,8.7 63.1,8.5 64.3,7.6 70.3,7.5 71.5,6.4 73.9,7.9 75.1,7.2 77.5,3.0 85.9,4.5 87.0,5.9 94.2,3.9 99.0,4.3"/></svg>
-    <span class="path"><b>3.470</b> → <b>4.818</b>
-      <span class="delta pos">(+1.348)</span></span>
-  </div>
-  <div class="bot">placed 2023-11 · peak 4.905 ·
-    earned <span class="pos">+1.439</span> · DUPR <span class="neg">-0.091</span></div>
-</a>
-<a class="jcard" href="9PM99K.html" data-name="mary mcgowan">
-  <div class="top">
-    <span class="pname">Mary McGowan</span>
-    <span class="did">9PM99K</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.085, now 5.431 (+1.345 net)"><polyline class="spark" points="1.0,23.4 2.1,24.2 4.3,23.7 5.5,25.0 7.7,17.5 8.8,18.8 11.0,18.9 12.1,17.7 14.4,17.8 15.5,16.6 19.9,16.0 22.2,16.5 23.3,14.2 25.5,14.0 28.8,15.6 31.1,15.0 34.4,15.8 36.6,14.5 43.3,14.1 45.5,12.7 46.7,13.3 47.8,12.1 52.2,11.5 53.3,10.0 56.7,10.2 58.9,9.2 61.1,9.9 62.2,8.7 63.4,9.3 66.7,8.6 72.3,8.8 76.7,6.3 82.3,6.4 84.5,5.6 89.0,7.1 92.3,6.1 93.4,4.9 95.7,5.7 96.8,3.9 99.0,3.0"/></svg>
-    <span class="path"><b>4.085</b> → <b>5.431</b>
-      <span class="delta pos">(+1.345)</span></span>
-  </div>
-  <div class="bot">placed 2023-10 · peak 5.431 ·
-    earned <span class="pos">+0.926</span> · DUPR <span class="pos">+0.420</span></div>
-</a>
-<a class="jcard" href="59GQ6L.html" data-name="ariana rodriguez">
-  <div class="top">
-    <span class="pname">Ariana Rodriguez</span>
-    <span class="did">59GQ6L</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.194, now 5.482 (+1.288 net)"><polyline class="spark" points="1.0,25.0 2.0,11.6 2.9,11.7 3.9,10.2 7.8,8.5 13.6,9.0 14.6,7.9 24.3,7.9 30.1,6.4 36.9,6.7 38.8,5.9 42.7,5.9 44.7,4.3 47.6,4.5 49.5,3.0 61.2,3.0 65.0,5.1 71.8,4.4 72.8,5.0 79.6,5.3 81.5,6.2 84.4,5.3 85.4,6.0 91.2,5.4 92.2,6.2 94.1,5.5 96.1,6.4 99.0,5.9"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.194</b> → <b>5.482</b>
-      <span class="delta pos">(+1.288)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.691 ·
-    earned <span class="pos">+1.237</span> · DUPR <span class="pos">+0.051</span></div>
-</a>
-<a class="jcard" href="3ZLKQP.html" data-name="david bieger">
-  <div class="top">
-    <span class="pname">David Bieger</span>
-    <span class="did">3ZLKQP</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.729, now 5.943 (+1.215 net)"><polyline class="spark" points="1.0,25.0 1.7,23.8 2.5,24.5 4.0,23.9 4.7,18.8 6.2,17.5 7.0,19.5 10.0,9.2 11.5,13.0 13.0,13.6 16.7,13.3 18.2,12.0 21.9,11.8 22.7,10.7 26.4,9.3 30.9,8.8 32.4,7.9 36.9,8.0 40.6,5.9 41.4,4.3 45.1,4.4 48.1,3.4 53.4,4.9 61.6,4.7 63.1,3.7 70.6,3.0 72.1,3.8 76.6,3.5 78.8,4.7 86.3,3.5 90.0,3.9 92.3,5.5 99.0,4.8"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.729</b> → <b>5.943</b>
-      <span class="delta pos">(+1.215)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.053 ·
-    earned <span class="pos">+1.127</span> · DUPR <span class="pos">+0.088</span></div>
-</a>
-<a class="jcard" href="PKGOGX.html" data-name="david parsons">
-  <div class="top">
-    <span class="pname">David Parsons</span>
-    <span class="did">PKGOGX</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.089, now 4.246 (+1.157 net)"><polyline class="spark" points="1.0,25.0 2.7,23.5 4.3,14.0 6.0,16.0 7.6,13.7 14.3,14.1 15.9,12.6 22.6,11.8 24.3,10.4 30.9,8.9 44.2,10.0 45.8,8.4 50.8,7.0 55.8,4.0 59.1,4.2 62.5,3.2 70.8,4.1 74.1,3.0 77.4,6.1 79.1,5.4 82.4,6.1 85.7,5.2 92.4,5.5 94.0,6.8 99.0,7.7"/></svg>
-    <span class="path"><b>3.089</b> → <b>4.246</b>
-      <span class="delta pos">(+1.157)</span></span>
-  </div>
-  <div class="bot">placed 2023-12 · peak 4.568 ·
-    earned <span class="pos">+0.614</span> · DUPR <span class="pos">+0.543</span></div>
-</a>
-<a class="jcard" href="QPYD94.html" data-name="sanil jagtiani">
-  <div class="top">
-    <span class="pname">Sanil Jagtiani</span>
-    <span class="did">QPYD94</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.766, now 5.917 (+1.151 net)"><polyline class="spark" points="1.0,24.0 4.2,24.6 5.3,23.8 6.4,25.0 7.5,16.0 10.7,16.6 13.9,11.2 15.0,12.5 18.2,10.8 19.3,11.3 21.5,10.1 22.5,10.6 25.8,8.6 27.9,9.1 35.5,7.0 39.8,7.4 40.8,8.2 50.5,7.6 52.7,6.2 57.0,5.9 58.1,5.0 64.5,5.5 69.9,4.3 75.3,4.5 81.8,3.0 94.7,5.0 99.0,4.0"/></svg>
-    <span class="path"><b>4.766</b> → <b>5.917</b>
-      <span class="delta pos">(+1.151)</span></span>
-  </div>
-  <div class="bot">placed 2023-10 · peak 5.973 ·
-    earned <span class="pos">+1.206</span> · DUPR <span class="neg">-0.056</span></div>
-</a>
-<a class="jcard" href="MY9Z4G.html" data-name="sriram talluri">
-  <div class="top">
-    <span class="pname">Sriram Talluri</span>
-    <span class="did">MY9Z4G</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.445, now 4.513 (+1.067 net)"><polyline class="spark" points="1.0,25.0 8.0,23.5 15.0,24.1 22.0,23.3 29.0,10.3 36.0,8.0 85.0,5.5 92.0,3.0 99.0,4.3"/></svg>
-    <span class="path"><b>3.445</b> → <b>4.513</b>
-      <span class="delta pos">(+1.067)</span></span>
-  </div>
-  <div class="bot">placed 2023-02 · peak 4.680 ·
-    earned <span class="pos">+0.948</span> · DUPR <span class="pos">+0.119</span></div>
-</a>
-<a class="jcard" href="EWZ5RM.html" data-name="tyler hyun">
-  <div class="top">
-    <span class="pname">Tyler Hyun</span>
-    <span class="did">EWZ5RM</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.596, now 4.627 (+1.031 net)"><polyline class="spark" points="1.0,25.0 9.9,11.7 27.7,13.3 36.6,6.7 45.5,9.5 54.5,7.2 63.4,7.9 81.2,3.0 99.0,3.3"/></svg>
-    <span class="path"><b>3.596</b> → <b>4.627</b>
-      <span class="delta pos">(+1.031)</span></span>
-  </div>
-  <div class="bot">placed 2025-01 · peak 4.684 ·
-    earned <span class="pos">+1.031</span> · DUPR <span class="neg">-0.000</span></div>
-</a>
-<a class="jcard" href="1RR0YQ.html" data-name="noe khlif">
-  <div class="top">
-    <span class="pname">Noe Khlif</span><span class="pro">PRO</span>
-    <span class="did">1RR0YQ</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.483, now 6.513 (+1.030 net)"><polyline class="spark" points="1.0,20.4 1.9,15.8 2.4,20.3 2.8,17.6 4.2,25.0 5.6,13.9 6.5,12.9 7.0,13.9 7.9,13.6 8.8,9.9 9.3,10.2 10.7,8.7 16.2,8.3 19.9,7.2 25.8,7.9 26.8,7.1 30.9,6.6 35.0,5.1 45.6,5.2 52.1,3.8 53.0,4.3 57.6,4.0 63.6,3.0 76.0,3.8 81.5,3.1 86.6,4.4 90.3,4.1 99.0,4.9"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.483</b> → <b>6.513</b>
-      <span class="delta pos">(+1.030)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.642 ·
-    earned <span class="pos">+1.135</span> · DUPR <span class="neg">-0.106</span></div>
-</a>
-<a class="jcard" href="2LYMLR.html" data-name="todd compton">
-  <div class="top">
-    <span class="pname">Todd Compton</span>
-    <span class="did">2LYMLR</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.807, now 4.751 (+0.945 net)"><polyline class="spark" points="1.0,25.0 11.9,24.7 17.3,20.9 28.2,15.6 33.7,19.0 50.0,18.2 55.4,9.3 60.9,9.3 66.3,13.4 71.8,9.4 77.2,10.4 82.7,14.1 88.1,3.8 93.6,3.0 99.0,6.6"/></svg>
-    <span class="path"><b>3.807</b> → <b>4.751</b>
-      <span class="delta pos">(+0.945)</span></span>
-  </div>
-  <div class="bot">placed 2024-06 · peak 5.028 ·
-    earned <span class="pos">+0.840</span> · DUPR <span class="pos">+0.104</span></div>
-</a>
-<a class="jcard" href="3ON9EP.html" data-name="aimee zona">
-  <div class="top">
-    <span class="pname">Aimee Zona</span>
-    <span class="did">3ON9EP</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 3.420, now 4.358 (+0.938 net)"><polyline class="spark" points="1.0,24.1 5.9,25.0 15.7,16.9 20.6,19.2 35.3,13.8 40.2,13.7 45.1,10.2 64.7,10.5 79.4,9.4 89.2,9.9 94.1,11.8 99.0,3.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…3.420</b> → <b>4.358</b>
-      <span class="delta pos">(+0.938)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 4.358 ·
-    earned <span class="pos">+1.272</span> · DUPR <span class="neg">-0.335</span></div>
-</a>
-<a class="jcard" href="YXE2ZD.html" data-name="jake johnson">
-  <div class="top">
-    <span class="pname">Jake Johnson</span>
-    <span class="did">YXE2ZD</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.577, now 4.441 (+0.864 net)"><polyline class="spark" points="1.0,24.8 3.3,24.4 5.7,25.0 10.3,19.0 12.7,18.6 17.3,13.3 19.7,13.8 24.3,10.0 33.7,7.5 43.0,7.2 47.7,5.3 52.3,4.6 57.0,5.7 71.0,4.8 78.0,3.3 80.3,4.0 82.7,3.7 85.0,4.9 99.0,3.0"/></svg>
-    <span class="path"><b>3.577</b> → <b>4.441</b>
-      <span class="delta pos">(+0.864)</span></span>
-  </div>
-  <div class="bot">placed 2024-10 · peak 4.536 ·
-    earned <span class="pos">+1.033</span> · DUPR <span class="neg">-0.169</span></div>
-</a>
-<a class="jcard" href="896P67.html" data-name="james broker">
-  <div class="top">
-    <span class="pname">James Broker</span>
-    <span class="did">896P67</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.837, now 5.694 (+0.857 net)"><polyline class="spark" points="1.0,25.0 1.9,20.9 2.9,22.4 4.8,18.5 5.7,18.5 6.7,20.2 7.6,19.4 8.5,21.9 9.5,21.4 11.4,17.7 12.3,23.4 13.2,21.1 15.1,24.5 17.0,17.6 20.8,12.3 24.6,12.5 25.5,10.4 26.4,11.1 27.4,9.7 39.6,8.2 40.6,9.7 41.5,8.5 46.2,8.8 50.9,5.3 53.8,6.6 57.5,6.2 58.5,4.0 61.3,4.5 63.2,3.0 65.1,3.0 66.0,4.0 70.7,3.2 71.7,4.2 72.6,3.2 75.4,6.4 76.4,6.8 77.3,6.1 78.3,8.5 80.2,5.4 85.8,5.4 87.7,4.4 89.6,5.2 95.2,5.6 97.1,4.2 99.0,3.9"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.837</b> → <b>5.694</b>
-      <span class="delta pos">(+0.857)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.739 ·
-    earned <span class="pos">+0.851</span> · DUPR <span class="pos">+0.007</span></div>
-</a>
-<a class="jcard" href="896WLE.html" data-name="alex torok">
-  <div class="top">
-    <span class="pname">Alex Torok</span>
-    <span class="did">896WLE</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.316, now 5.146 (+0.831 net)"><polyline class="spark" points="1.0,25.0 5.9,23.0 10.8,22.3 15.7,7.8 20.6,8.2 25.5,6.0 30.4,5.8 50.0,7.7 54.9,7.3 59.8,11.7 64.7,7.4 69.6,6.5 79.4,8.1 84.3,11.9 89.2,4.5 94.1,3.0 99.0,4.4"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.316</b> → <b>5.146</b>
-      <span class="delta pos">(+0.831)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.202 ·
-    earned <span class="pos">+0.186</span> · DUPR <span class="pos">+0.644</span></div>
-</a>
-<a class="jcard" href="3VG2JP.html" data-name="joshua giannelli">
-  <div class="top">
-    <span class="pname">Joshua Giannelli</span>
-    <span class="did">3VG2JP</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.734, now 5.560 (+0.825 net)"><polyline class="spark" points="1.0,25.0 2.6,16.6 3.4,15.2 4.2,15.4 5.0,12.5 5.8,5.7 7.4,4.4 9.8,5.3 10.6,4.4 13.7,4.3 14.5,5.3 16.1,3.9 18.5,5.8 24.9,5.8 25.7,6.9 28.1,5.9 31.3,7.0 32.1,4.9 37.7,4.2 38.4,3.2 40.8,3.0 41.6,4.3 44.8,3.4 54.4,4.5 56.0,7.0 57.6,7.4 62.3,6.1 63.9,3.6 65.5,3.3 67.1,3.1 72.7,4.9 76.7,4.1 77.5,5.0 83.1,3.2 87.8,5.5 91.0,5.2 91.8,3.5 93.4,5.8 95.8,6.3 97.4,5.2 99.0,6.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.734</b> → <b>5.560</b>
-      <span class="delta pos">(+0.825)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.691 ·
-    earned <span class="pos">+0.742</span> · DUPR <span class="pos">+0.083</span></div>
-</a>
-<a class="jcard" href="1RWDQ3.html" data-name="anna leigh waters">
-  <div class="top">
-    <span class="pname">Anna Leigh Waters</span><span class="pro">PRO</span>
-    <span class="did">1RWDQ3</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 6.160, now 6.983 (+0.823 net)"><polyline class="spark" points="1.0,23.8 1.4,24.9 2.5,23.8 3.6,25.0 5.1,23.1 5.5,20.4 6.6,19.7 7.0,20.5 15.9,16.8 18.5,16.9 24.5,15.6 24.8,11.4 28.9,12.2 37.1,10.3 40.1,10.3 42.0,11.2 49.4,11.2 53.9,8.3 56.1,9.5 67.3,6.6 71.1,6.5 74.0,7.3 78.9,6.5 82.2,4.8 86.7,5.8 88.6,4.4 92.7,3.3 99.0,3.3"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…6.160</b> → <b>6.983</b>
-      <span class="delta pos">(+0.823)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.997 ·
-    earned <span class="pos">+0.515</span> · DUPR <span class="pos">+0.307</span></div>
-</a>
-<a class="jcard" href="84E0OG.html" data-name="alex guy">
-  <div class="top">
-    <span class="pname">Alex Guy</span>
-    <span class="did">84E0OG</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.139, now 5.895 (+0.756 net)"><polyline class="spark" points="1.0,25.0 2.2,19.0 5.9,20.1 7.1,22.6 9.6,6.8 15.7,6.0 16.9,4.8 32.9,5.7 35.3,6.9 41.4,6.9 43.9,9.4 47.5,6.7 54.9,9.3 59.8,8.8 62.2,9.8 65.9,9.6 67.2,10.9 68.4,10.0 75.7,13.4 77.0,10.7 86.8,12.6 91.7,9.7 94.1,9.3 95.3,3.0 96.5,4.3 99.0,4.8"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.139</b> → <b>5.895</b>
-      <span class="delta pos">(+0.756)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.973 ·
-    earned <span class="pos">+0.395</span> · DUPR <span class="pos">+0.360</span></div>
-</a>
-<a class="jcard" href="84RNW6.html" data-name="ryan torresin">
-  <div class="top">
-    <span class="pname">Ryan Torresin</span>
-    <span class="did">84RNW6</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.323, now 6.039 (+0.716 net)"><polyline class="spark" points="1.0,24.2 4.4,25.0 6.1,19.7 7.8,19.7 11.1,17.5 16.2,19.3 21.3,13.3 36.5,11.6 39.9,10.0 43.2,10.2 44.9,8.5 50.0,9.0 51.7,10.7 56.8,10.7 58.4,10.0 60.1,10.9 61.8,10.4 63.5,5.3 66.9,6.6 70.3,4.8 72.0,4.7 78.7,4.6 83.8,5.9 87.2,4.6 88.9,3.0 93.9,4.6 95.6,4.4 99.0,6.3"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.323</b> → <b>6.039</b>
-      <span class="delta pos">(+0.716)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.187 ·
-    earned <span class="pos">+0.747</span> · DUPR <span class="neg">-0.031</span></div>
-</a>
-<a class="jcard" href="8K24W7.html" data-name="hurricane tyra black">
-  <div class="top">
-    <span class="pname">Hurricane Tyra Black</span><span class="pro">PRO</span>
-    <span class="did">8K24W7</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.645, now 6.337 (+0.692 net)"><polyline class="spark" points="1.0,24.5 1.4,25.0 2.5,21.5 3.3,22.0 3.7,19.2 4.4,20.0 5.2,18.5 6.0,19.5 6.7,18.1 8.3,19.4 9.0,18.4 11.7,17.9 12.9,18.5 15.2,17.1 16.3,17.7 17.1,17.1 19.4,17.9 23.6,17.7 25.9,16.5 26.3,14.1 27.4,14.6 29.3,12.4 32.0,12.6 32.8,11.7 33.5,12.3 35.8,11.0 36.6,12.1 37.8,10.4 41.2,10.0 42.3,8.2 43.9,9.4 47.3,8.5 48.9,7.3 53.1,7.3 54.6,6.3 55.0,7.3 56.9,6.1 58.0,6.4 58.8,5.4 60.0,6.0 61.9,5.4 63.4,6.3 65.3,5.3 67.2,6.2 68.0,5.1 70.3,6.5 71.1,5.3 72.2,5.6 75.6,4.1 78.7,3.8 82.5,4.7 83.7,3.8 85.6,5.2 90.2,3.2 92.9,5.1 96.3,4.9 97.9,3.0 99.0,3.8"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.645</b> → <b>6.337</b>
-      <span class="delta pos">(+0.692)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.362 ·
-    earned <span class="pos">+0.444</span> · DUPR <span class="pos">+0.248</span></div>
-</a>
-<a class="jcard" href="KONPWY.html" data-name="will halstead">
-  <div class="top">
-    <span class="pname">Will Halstead</span>
-    <span class="did">KONPWY</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.735, now 4.426 (+0.690 net)"><polyline class="spark" points="1.0,25.0 3.6,22.9 8.7,12.2 13.9,11.8 16.5,8.9 19.1,9.5 24.2,6.9 29.4,6.5 31.9,7.2 37.1,3.6 50.0,3.0 52.6,6.4 57.7,8.4 60.3,7.2 62.9,7.5 65.5,5.0 68.1,7.0 70.6,7.0 73.2,6.4 75.8,4.0 83.5,6.4 88.7,6.1 91.3,4.3 96.4,3.3 99.0,4.1"/></svg>
-    <span class="path"><b>3.735</b> → <b>4.426</b>
-      <span class="delta pos">(+0.690)</span></span>
-  </div>
-  <div class="bot">placed 2023-12 · peak 4.491 ·
-    earned <span class="pos">+0.637</span> · DUPR <span class="pos">+0.053</span></div>
-</a>
-<a class="jcard" href="DNKZ2X.html" data-name="gabriella cao">
-  <div class="top">
-    <span class="pname">Gabriella Cao</span>
-    <span class="did">DNKZ2X</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.352, now 4.019 (+0.667 net)"><polyline class="spark" points="1.0,25.0 5.3,17.2 9.5,16.1 13.8,15.5 18.0,19.1 22.3,19.6 26.6,11.6 30.8,11.6 35.1,5.6 39.3,8.5 43.6,15.0 47.9,15.4 52.1,13.6 56.4,17.3 60.7,17.0 64.9,20.5 73.4,24.3 77.7,17.3 82.0,12.4 86.2,3.0 90.5,3.4 94.7,6.0 99.0,7.3"/></svg>
-    <span class="path"><b>3.352</b> → <b>4.019</b>
-      <span class="delta pos">(+0.667)</span></span>
-  </div>
-  <div class="bot">placed 2025-01 · peak 4.087 ·
-    earned <span class="pos">+0.755</span> · DUPR <span class="neg">-0.089</span></div>
-</a>
-<a class="jcard" href="W6LQLL.html" data-name="becky villeda">
-  <div class="top">
-    <span class="pname">Becky Villeda</span>
-    <span class="did">W6LQLL</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.057, now 4.678 (+0.621 net)"><polyline class="spark" points="1.0,25.0 3.0,3.0 4.9,5.8 6.9,4.7 12.8,14.6 14.7,14.9 16.7,18.7 18.6,16.3 20.6,17.5 22.6,17.4 24.5,14.5 28.4,15.5 30.4,12.9 42.2,14.4 44.1,12.2 46.1,12.0 48.0,13.0 50.0,11.5 53.9,11.8 55.9,10.4 57.8,10.2 61.8,11.6 63.7,13.8 65.7,12.0 69.6,11.5 71.6,7.7 73.5,8.6 77.4,7.6 79.4,5.9 83.3,6.1 85.3,7.3 89.2,5.9 99.0,6.5"/></svg>
-    <span class="path"><b>4.057</b> → <b>4.678</b>
-      <span class="delta pos">(+0.621)</span></span>
-  </div>
-  <div class="bot">placed 2023-12 · peak 5.060 ·
-    earned <span class="neg">-0.122</span> · DUPR <span class="pos">+0.743</span></div>
-</a>
-<a class="jcard" href="KO4LQ6.html" data-name="jack hared">
-  <div class="top">
-    <span class="pname">Jack Hared</span>
-    <span class="did">KO4LQ6</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.444, now 5.030 (+0.585 net)"><polyline class="spark" points="1.0,19.4 1.9,19.1 3.8,25.0 5.7,19.7 7.6,18.8 9.5,20.8 10.4,16.4 12.3,16.5 13.2,18.8 15.1,18.0 19.8,19.2 20.8,18.1 22.7,19.4 24.6,18.5 25.5,19.9 28.3,20.9 29.3,20.5 33.0,13.6 35.9,13.1 38.7,10.9 41.5,10.9 47.2,8.3 50.0,8.2 50.9,9.0 52.8,7.5 55.7,8.1 57.5,6.8 65.1,5.9 68.8,3.4 76.4,5.2 77.3,4.4 79.2,5.0 87.7,3.1 90.5,4.3 91.5,3.0 92.4,3.1 96.2,4.3 98.1,7.7 99.0,6.8"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.444</b> → <b>5.030</b>
-      <span class="delta pos">(+0.585)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.221 ·
-    earned <span class="pos">+0.414</span> · DUPR <span class="pos">+0.171</span></div>
-</a>
-<a class="jcard" href="1NNGNZ.html" data-name="django chassang">
-  <div class="top">
-    <span class="pname">Django Chassang</span>
-    <span class="did">1NNGNZ</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.954, now 5.506 (+0.552 net)"><polyline class="spark" points="1.0,24.3 3.8,25.0 5.1,16.4 6.5,16.2 7.9,14.7 9.3,11.3 13.4,11.0 14.8,13.1 20.3,12.3 31.4,13.6 36.9,13.5 38.3,11.8 47.9,12.2 49.3,15.0 54.8,14.2 56.2,13.3 60.4,13.3 61.7,11.1 63.1,10.7 65.9,12.8 68.6,8.2 70.0,7.5 71.4,8.5 74.2,8.0 76.9,9.3 79.7,6.0 85.2,7.1 88.0,6.5 89.3,3.0 92.1,4.7 93.5,8.5 97.6,9.9 99.0,9.1"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.954</b> → <b>5.506</b>
-      <span class="delta pos">(+0.552)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.739 ·
-    earned <span class="pos">+0.662</span> · DUPR <span class="neg">-0.109</span></div>
-</a>
-<a class="jcard" href="0QRLVX.html" data-name="zach baker">
-  <div class="top">
-    <span class="pname">Zach Baker</span>
-    <span class="did">0QRLVX</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.035, now 4.580 (+0.545 net)"><polyline class="spark" points="1.0,20.7 3.7,9.4 6.4,8.7 11.9,17.4 20.1,16.5 22.8,10.9 28.2,17.4 33.7,15.6 36.4,18.2 39.1,14.9 41.8,8.9 44.6,9.3 50.0,7.8 52.7,8.5 55.4,5.9 60.9,7.0 63.6,8.5 66.3,3.0 71.8,5.8 74.5,5.3 77.2,7.0 79.9,10.4 82.7,10.2 88.1,11.3 90.8,24.6 93.6,25.0 96.3,19.1 99.0,16.6"/></svg>
-    <span class="path"><b>4.035</b> → <b>4.580</b>
-      <span class="delta pos">(+0.545)</span></span>
-  </div>
-  <div class="bot">placed 2024-07 · peak 4.790 ·
-    earned <span class="pos">+0.444</span> · DUPR <span class="pos">+0.101</span></div>
-</a>
-<a class="jcard" href="EWQERJ.html" data-name="duce middleton">
-  <div class="top">
-    <span class="pname">Duce Middleton</span>
-    <span class="did">EWQERJ</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.030, now 4.570 (+0.540 net)"><polyline class="spark" points="1.0,25.0 20.6,22.9 40.2,19.4 59.8,19.5 79.4,6.8 99.0,3.0"/></svg>
-    <span class="path"><b>4.030</b> → <b>4.570</b>
-      <span class="delta pos">(+0.540)</span></span>
-  </div>
-  <div class="bot">placed 2025-07 · peak 4.585 ·
-    earned <span class="pos">+0.993</span> · DUPR <span class="neg">-0.453</span></div>
-</a>
-<a class="jcard" href="12N0Z9.html" data-name="shannon synclare">
-  <div class="top">
-    <span class="pname">Shannon Synclare</span>
-    <span class="did">12N0Z9</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 3.514, now 4.046 (+0.532 net)"><polyline class="spark" points="1.0,25.0 2.5,17.6 4.1,18.4 7.1,9.0 8.7,7.2 10.2,9.7 11.7,9.2 14.8,14.1 16.3,23.4 17.8,16.6 19.4,18.2 20.9,18.3 22.4,25.0 25.5,16.7 27.0,15.0 34.7,13.7 37.8,16.0 39.3,16.0 40.8,12.9 43.9,11.4 45.4,16.3 50.0,15.7 54.6,18.1 57.7,16.3 60.7,15.8 62.2,19.4 63.8,19.4 65.3,17.4 66.8,17.4 68.4,19.0 73.0,20.0 74.5,15.0 82.2,11.9 83.7,15.4 85.2,16.2 88.3,15.7 89.8,13.9 91.3,14.5 95.9,3.0 99.0,4.2"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…3.514</b> → <b>4.046</b>
-      <span class="delta pos">(+0.532)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 4.079 ·
-    earned <span class="pos">+0.380</span> · DUPR <span class="pos">+0.153</span></div>
-</a>
-<a class="jcard" href="7DXOMN.html" data-name="michael nielson">
-  <div class="top">
-    <span class="pname">Michael Nielson</span>
-    <span class="did">7DXOMN</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.946, now 4.462 (+0.516 net)"><polyline class="spark" points="1.0,14.7 2.6,10.9 4.2,11.0 7.4,14.4 9.0,10.4 10.6,25.0 12.2,23.2 13.9,23.2 15.5,24.6 17.1,24.2 20.3,16.3 21.9,15.5 23.5,16.7 25.1,15.7 26.7,20.0 28.3,14.9 29.9,15.0 33.1,13.4 36.3,15.4 38.0,14.5 41.2,14.8 42.8,12.3 44.4,12.6 46.0,15.4 50.8,12.5 52.4,8.0 54.0,8.4 57.2,6.3 60.4,5.8 63.7,3.0 65.3,5.0 70.1,6.2 71.7,7.9 73.3,8.4 74.9,7.7 76.5,9.4 78.1,7.5 81.3,12.7 84.5,15.5 86.1,13.6 89.4,12.8 91.0,9.6 92.6,9.4 97.4,13.2 99.0,12.8"/></svg>
-    <span class="path"><b>3.946</b> → <b>4.462</b>
-      <span class="delta pos">(+0.516)</span></span>
-  </div>
-  <div class="bot">placed 2024-05 · peak 4.662 ·
-    earned <span class="pos">+0.507</span> · DUPR <span class="pos">+0.008</span></div>
-</a>
-<a class="jcard" href="3Y7YJD.html" data-name="bryce haynes">
-  <div class="top">
-    <span class="pname">Bryce Haynes</span>
-    <span class="did">3Y7YJD</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.173, now 4.684 (+0.511 net)"><polyline class="spark" points="1.0,25.0 14.1,18.2 20.6,16.6 27.1,18.5 33.7,18.0 40.2,13.8 46.7,14.0 59.8,8.2 66.3,6.3 72.9,12.2 79.4,3.0 85.9,4.5 92.5,7.9 99.0,8.3"/></svg>
-    <span class="path"><b>4.173</b> → <b>4.684</b>
-      <span class="delta pos">(+0.511)</span></span>
-  </div>
-  <div class="bot">placed 2023-11 · peak 4.852 ·
-    earned <span class="pos">+0.519</span> · DUPR <span class="neg">-0.008</span></div>
-</a>
-<a class="jcard" href="0YKRNN.html" data-name="tama shimabukuro">
-  <div class="top">
-    <span class="pname">Tama Shimabukuro</span><span class="pro">PRO</span>
-    <span class="did">0YKRNN</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 6.557, now 6.063 (-0.495 net)"><polyline class="spark" points="1.0,3.0 1.8,25.0 2.6,25.0 3.4,18.9 5.0,19.6 5.7,18.6 8.9,18.4 13.6,20.6 15.2,18.2 23.9,16.4 24.7,14.5 27.1,14.7 28.7,16.2 29.5,15.7 31.8,16.9 38.9,14.1 45.3,14.1 54.7,10.8 64.2,9.9 68.2,8.7 90.3,8.1 99.0,8.9"/></svg>
-    <span class="path"><b>6.557</b> → <b>6.063</b>
-      <span class="delta neg">(-0.495)</span></span>
-  </div>
-  <div class="bot">placed 2023-11 · peak 6.557 ·
-    earned <span class="pos">+1.373</span> · DUPR <span class="neg">-1.868</span></div>
-</a>
-<a class="jcard" href="3POKG8.html" data-name="tyler vanagas">
-  <div class="top">
-    <span class="pname">Tyler Vanagas</span>
-    <span class="did">3POKG8</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.672, now 5.133 (+0.460 net)"><polyline class="spark" points="1.0,25.0 6.9,8.8 9.9,3.0 12.9,3.1 15.8,6.7 21.8,11.4 24.8,10.3 30.7,10.1 33.7,12.8 36.6,11.7 45.5,15.2 48.5,14.2 63.4,13.3 72.3,14.8 75.2,13.7 78.2,16.1 81.2,12.5 84.2,12.2 87.1,13.2 90.1,8.2 93.1,7.9 96.0,6.3 99.0,7.9"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.672</b> → <b>5.133</b>
-      <span class="delta pos">(+0.460)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.273 ·
-    earned <span class="pos">+0.480</span> · DUPR <span class="neg">-0.020</span></div>
-</a>
-<a class="jcard" href="9PDMMK.html" data-name="youssef bouzidi">
-  <div class="top">
-    <span class="pname">Youssef Bouzidi</span>
-    <span class="did">9PDMMK</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.426, now 5.886 (+0.460 net)"><polyline class="spark" points="1.0,7.6 2.1,25.0 3.2,7.3 4.3,7.5 5.5,6.6 8.8,7.0 9.9,5.8 12.1,7.2 15.5,7.6 16.6,6.0 22.2,5.4 28.8,6.1 37.8,5.3 38.9,4.4 43.3,4.6 44.4,3.7 58.9,3.9 61.1,3.2 64.5,4.6 66.7,3.8 73.4,4.1 77.8,3.2 99.0,3.2"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.426</b> → <b>5.886</b>
-      <span class="delta pos">(+0.460)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.912 ·
-    earned <span class="pos">+0.892</span> · DUPR <span class="neg">-0.432</span></div>
-</a>
-<a class="jcard" href="2YJEEY.html" data-name="ryan truong">
-  <div class="top">
-    <span class="pname">Ryan Truong</span>
-    <span class="did">2YJEEY</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.171, now 4.625 (+0.453 net)"><polyline class="spark" points="1.0,21.6 5.7,20.1 10.3,20.7 15.0,25.0 19.7,20.4 24.3,17.2 29.0,16.9 33.7,18.1 38.3,16.5 43.0,18.3 47.7,16.9 52.3,17.4 57.0,15.2 61.7,14.7 71.0,10.7 80.3,3.5 85.0,3.0 94.3,4.3 99.0,3.7"/></svg>
-    <span class="path"><b>4.171</b> → <b>4.625</b>
-      <span class="delta pos">(+0.453)</span></span>
-  </div>
-  <div class="bot">placed 2025-04 · peak 4.651 ·
-    earned <span class="pos">+0.474</span> · DUPR <span class="neg">-0.021</span></div>
-</a>
-<a class="jcard" href="30RE2N.html" data-name="gabriel tardio">
-  <div class="top">
-    <span class="pname">Gabriel Tardio</span><span class="pro">PRO</span>
-    <span class="did">30RE2N</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 6.473, now 6.922 (+0.450 net)"><polyline class="spark" points="1.0,25.0 1.7,21.3 4.3,15.5 5.4,17.4 8.3,13.8 13.8,13.1 16.0,14.1 16.7,12.2 18.2,12.5 19.3,9.6 24.4,9.9 24.8,6.3 25.9,5.1 27.0,6.9 27.7,4.7 29.5,5.1 32.1,8.2 35.7,8.2 37.9,9.1 39.0,8.2 41.2,8.0 43.1,5.8 43.8,6.4 46.3,4.6 48.9,4.8 50.7,3.2 52.9,4.9 54.0,4.4 54.8,5.7 55.5,4.5 56.9,5.1 61.0,4.2 61.7,4.8 62.8,3.3 65.0,5.2 66.8,3.8 68.6,4.9 71.2,3.0 73.8,5.1 74.9,4.4 75.2,5.2 76.7,4.9 77.4,5.7 78.9,5.2 82.2,8.1 84.0,8.9 84.7,7.8 85.8,9.2 88.0,8.8 89.5,10.0 91.3,8.9 93.1,9.5 96.1,6.9 99.0,6.7"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…6.473</b> → <b>6.922</b>
-      <span class="delta pos">(+0.450)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 7.013 ·
-    earned <span class="pos">+0.183</span> · DUPR <span class="pos">+0.267</span></div>
-</a>
-<a class="jcard" href="84Q6J2.html" data-name="lauralei bieger">
-  <div class="top">
-    <span class="pname">Lauralei Bieger</span>
-    <span class="did">84Q6J2</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.676, now 5.064 (+0.388 net)"><polyline class="spark" points="1.0,25.0 1.9,17.1 2.8,19.2 6.4,17.5 8.2,20.4 10.0,13.2 10.9,12.6 11.8,15.1 13.6,15.1 14.5,14.8 15.4,11.8 16.3,12.2 17.2,16.3 19.0,17.3 19.9,16.5 22.6,16.5 25.3,13.3 28.0,13.9 28.9,13.2 30.7,14.2 32.5,10.3 37.9,9.9 39.7,8.0 41.5,7.8 44.2,6.2 46.9,5.4 48.7,6.2 51.3,5.9 52.2,3.8 54.0,4.6 56.7,3.0 59.4,3.6 62.1,5.7 63.0,7.7 66.6,6.1 70.2,6.7 71.1,9.0 72.9,9.6 73.8,11.0 75.6,10.3 78.3,11.9 80.1,11.9 81.0,10.6 82.8,10.2 88.2,15.7 90.9,12.9 92.7,13.7 94.5,12.9 97.2,13.9 99.0,13.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.676</b> → <b>5.064</b>
-      <span class="delta pos">(+0.388)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.390 ·
-    earned <span class="pos">+0.289</span> · DUPR <span class="pos">+0.099</span></div>
-</a>
-<a class="jcard" href="569KPP.html" data-name="keith tam">
-  <div class="top">
-    <span class="pname">Keith Tam</span>
-    <span class="did">569KPP</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.090, now 4.477 (+0.387 net)"><polyline class="spark" points="1.0,13.6 3.3,21.8 5.7,21.1 8.0,25.0 10.3,21.6 12.7,20.9 15.0,21.8 17.3,21.5 19.7,20.1 22.0,21.0 24.3,20.8 26.7,20.3 29.0,18.5 33.7,18.5 38.3,19.8 40.7,16.5 50.0,16.6 52.3,15.4 54.7,12.8 57.0,14.5 59.3,11.1 61.7,12.1 71.0,12.6 75.7,7.1 78.0,7.3 80.3,6.0 82.7,5.9 85.0,3.2 94.3,3.1 96.7,4.4 99.0,3.8"/></svg>
-    <span class="path"><b>4.090</b> → <b>4.477</b>
-      <span class="delta pos">(+0.387)</span></span>
-  </div>
-  <div class="bot">placed 2024-08 · peak 4.518 ·
-    earned <span class="pos">+0.960</span> · DUPR <span class="neg">-0.572</span></div>
-</a>
-<a class="jcard" href="DWQRQX.html" data-name="mckeane bennett">
-  <div class="top">
-    <span class="pname">McKeane Bennett</span>
-    <span class="did">DWQRQX</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.130, now 4.503 (+0.373 net)"><polyline class="spark" points="1.0,25.0 4.2,20.3 7.3,18.8 10.5,19.2 13.6,18.0 20.0,9.2 26.3,16.4 29.5,17.3 35.8,16.6 42.1,17.4 45.3,13.4 54.7,12.3 57.9,10.0 61.1,10.9 80.0,11.7 83.2,9.5 86.4,9.4 89.5,3.0 95.8,9.3 99.0,9.9"/></svg>
-    <span class="path"><b>4.130</b> → <b>4.503</b>
-      <span class="delta pos">(+0.373)</span></span>
-  </div>
-  <div class="bot">placed 2024-04 · peak 4.714 ·
-    earned <span class="pos">+0.399</span> · DUPR <span class="neg">-0.025</span></div>
-</a>
-<a class="jcard" href="D52ER6.html" data-name="jorion tinsley">
-  <div class="top">
-    <span class="pname">Jorion Tinsley</span>
-    <span class="did">D52ER6</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.208, now 4.576 (+0.368 net)"><polyline class="spark" points="1.0,21.6 9.2,25.0 17.3,20.5 25.5,19.6 33.7,13.1 41.8,13.1 50.0,8.5 58.2,11.6 66.3,3.0 74.5,3.0 82.7,7.8 90.8,3.8 99.0,4.4"/></svg>
-    <span class="path"><b>4.208</b> → <b>4.576</b>
-      <span class="delta pos">(+0.368)</span></span>
-  </div>
-  <div class="bot">placed 2026-05 · peak 4.607 ·
-    earned <span class="pos">+0.471</span> · DUPR <span class="neg">-0.103</span></div>
-</a>
-<a class="jcard" href="8JNNO4.html" data-name="carlo ares">
-  <div class="top">
-    <span class="pname">Carlo Ares</span>
-    <span class="did">8JNNO4</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.510, now 5.166 (-0.344 net)"><polyline class="spark" points="1.0,3.0 3.2,5.9 5.4,6.4 7.5,13.3 9.7,16.2 11.9,16.9 14.1,16.0 20.6,16.1 22.8,15.3 27.1,18.2 29.3,17.4 31.5,19.4 35.8,19.3 38.0,15.9 42.4,16.3 44.6,17.8 46.7,17.6 51.1,21.2 53.3,25.0 57.6,22.4 59.8,22.4 62.0,19.2 68.5,18.5 70.7,20.9 72.9,13.8 75.0,11.4 77.2,3.8 79.4,4.9 81.6,10.0 83.8,10.9 85.9,9.3 88.1,12.0 92.5,13.6 94.6,17.4 96.8,19.0 99.0,18.5"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.510</b> → <b>5.166</b>
-      <span class="delta neg">(-0.344)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.526 ·
-    earned <span class="neg">-0.362</span> · DUPR <span class="pos">+0.018</span></div>
-</a>
-<a class="jcard" href="MY7EZP.html" data-name="steve yim">
-  <div class="top">
-    <span class="pname">Steve Yim</span>
-    <span class="did">MY7EZP</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 3.652, now 3.974 (+0.321 net)"><polyline class="spark" points="1.0,10.8 3.7,13.1 6.4,12.6 9.2,25.0 11.9,23.5 14.6,24.5 17.3,17.5 25.5,15.0 28.2,15.0 30.9,14.0 33.7,11.0 39.1,10.6 47.3,6.7 52.7,7.1 55.4,6.2 58.2,6.4 63.6,5.3 66.3,3.5 69.1,4.1 71.8,3.0 85.4,5.0 99.0,4.2"/></svg>
-    <span class="path"><b>3.652</b> → <b>3.974</b>
-      <span class="delta pos">(+0.321)</span></span>
-  </div>
-  <div class="bot">placed 2023-10 · peak 4.082 ·
-    earned <span class="pos">+0.288</span> · DUPR <span class="pos">+0.034</span></div>
-</a>
-<a class="jcard" href="1RWYOE.html" data-name="pete cloutier">
-  <div class="top">
-    <span class="pname">Pete Cloutier</span>
-    <span class="did">1RWYOE</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.435, now 4.150 (-0.285 net)"><polyline class="spark" points="1.0,11.8 2.6,10.5 4.2,15.3 5.8,17.3 7.4,17.0 9.0,18.1 10.6,11.5 12.2,13.1 15.5,14.2 17.1,17.0 18.7,17.0 20.3,11.5 25.1,11.1 26.7,4.6 28.3,5.6 29.9,3.0 31.5,7.0 33.1,3.5 34.7,3.6 36.3,6.8 38.0,4.2 39.6,3.5 42.8,7.0 46.0,13.9 49.2,13.4 50.8,16.1 55.6,16.1 57.2,13.5 60.4,10.7 65.3,11.8 68.5,11.4 70.1,15.6 71.7,12.3 73.3,21.9 74.9,19.0 78.1,22.1 79.7,20.5 82.9,20.1 84.5,17.5 86.1,17.0 87.8,19.0 89.4,18.2 91.0,21.8 94.2,22.1 95.8,24.6 99.0,25.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.435</b> → <b>4.150</b>
-      <span class="delta neg">(-0.285)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 4.626 ·
-    earned <span class="neg">-0.502</span> · DUPR <span class="pos">+0.217</span></div>
-</a>
-<a class="jcard" href="Z90ZVP.html" data-name="mikaela smith">
-  <div class="top">
-    <span class="pname">Mikaela Smith</span>
-    <span class="did">Z90ZVP</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.953, now 5.193 (+0.240 net)"><polyline class="spark" points="1.0,13.2 2.3,11.8 3.6,21.6 4.9,14.7 6.2,20.5 7.5,19.8 8.8,25.0 10.1,25.0 11.5,23.9 15.4,23.0 18.0,23.2 20.6,19.5 23.2,18.1 27.1,18.2 29.7,17.3 31.1,18.0 32.4,16.5 35.0,15.5 36.3,16.1 38.9,13.2 42.8,11.9 45.4,12.1 46.7,10.7 48.0,11.2 52.0,10.6 55.9,8.6 67.6,8.7 70.3,7.4 71.6,8.8 72.9,9.0 76.8,7.8 82.0,8.0 83.3,5.6 84.6,4.9 87.2,4.7 91.2,5.6 93.8,3.6 97.7,3.9 99.0,3.0"/></svg>
-    <span class="path"><b>4.953</b> → <b>5.193</b>
-      <span class="delta pos">(+0.240)</span></span>
-  </div>
-  <div class="bot">placed 2024-06 · peak 5.194 ·
-    earned <span class="neg">-0.130</span> · DUPR <span class="pos">+0.370</span></div>
-</a>
-<a class="jcard" href="8GGGD8.html" data-name="cj klinger">
-  <div class="top">
-    <span class="pname">CJ Klinger</span><span class="pro">PRO</span>
-    <span class="did">8GGGD8</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 6.332, now 6.566 (+0.234 net)"><polyline class="spark" points="1.0,22.5 1.4,25.0 2.2,10.7 3.0,17.2 3.9,9.7 4.7,15.8 5.9,7.1 7.1,7.3 8.3,6.5 10.4,10.6 11.2,10.2 16.9,12.1 19.4,12.0 21.8,10.4 25.1,11.5 27.5,10.8 28.0,9.1 29.2,8.0 30.0,8.6 30.8,7.5 32.0,7.9 32.4,7.1 33.3,8.0 36.5,6.6 38.6,7.6 39.4,6.8 42.6,6.9 46.3,3.7 48.4,4.0 49.6,3.3 53.3,5.7 54.5,4.6 57.3,5.3 57.8,4.6 60.2,5.0 60.6,4.4 63.1,5.8 63.9,5.3 64.3,6.1 65.1,4.6 66.7,4.4 68.0,5.2 68.8,4.2 70.0,4.6 72.9,3.5 73.7,4.5 74.5,3.0 77.0,4.9 78.2,4.9 79.4,6.7 81.8,8.1 83.5,7.4 84.3,8.1 85.5,7.8 90.8,11.3 91.2,10.8 96.5,13.3 97.8,12.0 99.0,13.2"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…6.332</b> → <b>6.566</b>
-      <span class="delta pos">(+0.234)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.820 ·
-    earned <span class="pos">+0.155</span> · DUPR <span class="pos">+0.079</span></div>
-</a>
-<a class="jcard" href="1NRDE6.html" data-name="jason renner">
-  <div class="top">
-    <span class="pname">Jason Renner</span>
-    <span class="did">1NRDE6</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.011, now 5.196 (+0.185 net)"><polyline class="spark" points="1.0,13.6 4.2,10.3 10.5,21.7 16.8,20.7 20.0,22.4 23.1,22.7 26.3,14.4 29.5,9.8 32.6,9.9 35.8,11.5 38.9,9.9 42.1,12.6 45.3,11.8 51.6,11.8 54.7,3.7 57.9,4.5 61.1,7.6 64.2,9.4 67.4,4.9 70.5,3.0 73.7,4.6 76.9,4.6 83.2,6.5 86.4,6.1 89.5,11.3 92.7,25.0 95.8,21.0 99.0,5.1"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.011</b> → <b>5.196</b>
-      <span class="delta pos">(+0.185)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.269 ·
-    earned <span class="neg">-0.009</span> · DUPR <span class="pos">+0.194</span></div>
-</a>
-<a class="jcard" href="KOD95Q.html" data-name="aibika kalsarieva">
-  <div class="top">
-    <span class="pname">Aibika Kalsarieva</span>
-    <span class="did">KOD95Q</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.970, now 5.789 (-0.181 net)"><polyline class="spark" points="1.0,3.9 3.8,3.0 5.1,19.3 6.5,23.1 7.9,23.2 9.3,25.0 10.7,24.0 12.0,24.6 13.4,19.5 14.8,19.3 16.2,15.1 17.6,14.7 20.3,16.3 23.1,15.1 28.6,15.3 32.7,14.1 39.6,14.6 42.4,13.3 43.8,11.4 45.2,11.4 50.7,5.7 53.5,4.5 57.6,4.4 59.0,6.3 60.4,6.2 63.1,8.1 64.5,7.2 67.3,7.6 68.6,6.0 70.0,6.7 71.4,5.8 72.8,6.2 74.2,4.8 76.9,7.2 81.1,5.6 85.2,7.0 88.0,7.0 89.3,5.9 94.9,7.4 96.2,7.0 99.0,8.8"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.970</b> → <b>5.789</b>
-      <span class="delta neg">(-0.181)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.006 ·
-    earned <span class="pos">+0.286</span> · DUPR <span class="neg">-0.467</span></div>
-</a>
-<a class="jcard" href="3VXL27.html" data-name="ava kalist">
-  <div class="top">
-    <span class="pname">Ava Kalist</span>
-    <span class="did">3VXL27</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.287, now 5.108 (-0.180 net)"><polyline class="spark" points="1.0,5.1 2.9,3.0 4.8,7.1 6.8,8.4 8.7,6.4 10.6,7.4 14.5,12.3 16.4,12.2 18.3,14.3 20.2,13.1 22.1,8.6 24.1,10.9 26.0,11.0 27.9,11.0 29.8,8.7 33.7,8.6 35.6,9.2 37.5,11.5 43.3,11.5 45.2,14.4 47.1,14.2 49.0,12.6 60.6,12.7 62.5,11.6 64.4,11.6 66.3,7.7 70.2,8.6 72.1,6.8 74.0,6.9 75.9,5.8 79.8,5.8 83.6,12.5 85.5,25.0 89.4,16.1 95.2,16.9 99.0,11.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.287</b> → <b>5.108</b>
-      <span class="delta neg">(-0.180)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.354 ·
-    earned <span class="neg">-0.458</span> · DUPR <span class="pos">+0.278</span></div>
-</a>
-<a class="jcard" href="1R4KGZ.html" data-name="eva rondon">
-  <div class="top">
-    <span class="pname">Eva Rondon</span>
-    <span class="did">1R4KGZ</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 3.956, now 4.122 (+0.166 net)"><polyline class="spark" points="1.0,9.8 4.4,21.4 6.1,16.2 7.8,14.4 11.1,22.7 14.5,25.0 17.9,22.3 21.3,17.4 23.0,17.2 24.7,15.4 29.7,15.1 31.4,12.8 34.8,12.7 36.5,9.7 41.6,9.7 44.9,4.0 46.6,7.6 48.3,7.3 50.0,9.7 51.7,10.9 53.4,11.0 58.4,10.5 60.1,7.2 61.8,9.1 65.2,6.1 70.3,8.7 77.0,8.1 80.4,4.6 82.1,9.0 83.8,7.4 85.5,7.8 88.9,11.8 90.6,10.9 93.9,10.8 95.6,7.9 97.3,10.6 99.0,3.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…3.956</b> → <b>4.122</b>
-      <span class="delta pos">(+0.166)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 4.122 ·
-    earned <span class="neg">-0.193</span> · DUPR <span class="pos">+0.359</span></div>
-</a>
 <a class="jcard" href="DW46PL.html" data-name="natalie kim">
   <div class="top">
     <span class="pname">Natalie Kim</span>
@@ -3379,126 +3500,6 @@ h1 { font-size:18px; font-weight:800; letter-spacing:1px; color:var(--cyan);
   </div>
   <div class="bot">placed 2023-09 · peak 5.359 ·
     earned <span class="neg">-0.222</span> · DUPR <span class="pos">+0.060</span></div>
-</a>
-<a class="jcard" href="8DJ4LL.html" data-name="etienne blaszkewycz">
-  <div class="top">
-    <span class="pname">Etienne Blaszkewycz</span>
-    <span class="did">8DJ4LL</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.803, now 5.934 (+0.131 net)"><polyline class="spark" points="1.0,19.9 1.9,25.0 3.7,18.5 7.3,18.8 8.2,17.2 9.1,21.1 10.9,14.6 11.8,16.9 13.6,18.2 15.4,15.0 16.3,17.4 17.2,14.8 19.9,17.0 20.8,14.5 21.7,13.7 23.5,13.8 25.3,10.2 27.1,11.6 30.7,11.3 31.6,10.3 34.3,11.9 37.0,11.0 38.8,11.5 40.6,10.9 42.4,11.8 49.6,9.7 50.4,11.0 51.3,11.0 52.2,13.8 54.9,10.4 55.8,10.4 56.7,13.0 58.5,11.6 59.4,12.4 60.3,11.0 62.1,12.0 63.0,11.1 63.9,11.7 64.8,10.3 65.7,11.7 67.5,10.3 68.4,11.3 71.1,6.9 72.0,7.1 74.7,4.9 75.6,3.0 77.4,6.0 81.0,6.0 83.7,8.3 85.5,8.1 86.4,10.3 89.1,9.9 94.5,16.3 96.3,16.3 99.0,13.6"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.803</b> → <b>5.934</b>
-      <span class="delta pos">(+0.131)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 6.162 ·
-    earned <span class="pos">+0.149</span> · DUPR <span class="neg">-0.019</span></div>
-</a>
-<a class="jcard" href="12Z2E7.html" data-name="felipe nascimento">
-  <div class="top">
-    <span class="pname">Felipe Nascimento</span>
-    <span class="did">12Z2E7</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.020, now 3.925 (-0.095 net)"><polyline class="spark" points="1.0,21.0 6.2,22.1 11.3,25.0 16.5,21.0 21.6,11.0 26.8,7.1 37.1,5.3 42.3,3.0 47.4,5.5 52.6,10.6 57.7,10.3 62.9,16.3 68.1,16.2 73.2,14.8 78.4,15.2 88.7,17.6 99.0,24.8"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.020</b> → <b>3.925</b>
-      <span class="delta neg">(-0.095)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 4.464 ·
-    earned <span class="neg">-0.139</span> · DUPR <span class="pos">+0.044</span></div>
-</a>
-<a class="jcard" href="8W5M2K.html" data-name="jhonnatan medina alvarez">
-  <div class="top">
-    <span class="pname">Jhonnatan Medina Alvarez</span><span class="pro">PRO</span>
-    <span class="did">8W5M2K</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 5.740, now 5.816 (+0.076 net)"><polyline class="spark" points="1.0,13.9 3.1,25.0 4.2,14.7 7.3,16.0 8.4,13.0 9.4,13.3 10.5,9.5 12.6,9.4 13.6,12.2 14.7,9.8 15.8,9.9 16.8,7.9 17.9,8.1 20.0,6.7 21.0,8.3 28.4,8.2 30.5,9.0 36.8,8.2 37.9,9.8 38.9,9.8 40.0,8.5 41.0,11.9 45.3,6.6 46.3,7.7 47.4,7.0 48.4,4.5 50.5,4.5 52.6,6.6 53.7,3.8 55.8,5.5 57.9,5.5 61.1,4.3 62.1,3.0 64.2,3.6 66.3,5.6 67.4,3.1 68.4,3.1 71.6,5.7 72.7,4.8 73.7,10.4 75.8,12.2 76.9,11.5 77.9,7.9 81.1,8.8 82.1,10.1 83.2,8.7 87.4,9.5 89.5,13.3 91.6,11.9 93.7,12.1 97.9,9.3 99.0,10.6"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…5.740</b> → <b>5.816</b>
-      <span class="delta pos">(+0.076)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 5.987 ·
-    earned <span class="neg">-0.393</span> · DUPR <span class="pos">+0.468</span></div>
-</a>
-<a class="jcard" href="W6Z42Y.html" data-name="rosen naydenov">
-  <div class="top">
-    <span class="pname">Rosen Naydenov</span>
-    <span class="did">W6Z42Y</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 5.439, now 5.510 (+0.071 net)"><polyline class="spark" points="1.0,22.9 2.2,22.9 3.4,25.0 5.8,12.1 7.0,13.2 8.2,18.0 9.4,18.6 14.1,18.4 15.3,16.8 16.5,16.9 17.7,18.9 20.1,19.0 21.3,15.7 22.5,17.1 23.7,16.1 29.7,18.0 32.1,17.7 35.7,16.5 39.2,13.7 44.0,14.0 46.4,10.4 50.0,11.4 52.4,13.9 53.6,13.2 54.8,13.6 59.6,6.3 64.3,3.0 67.9,6.6 70.3,7.5 71.5,6.2 72.7,6.7 73.9,8.6 75.1,8.6 77.5,13.3 78.7,11.2 79.9,11.2 84.7,14.0 93.0,15.3 94.2,12.9 95.4,15.5 99.0,15.9"/></svg>
-    <span class="path"><b>5.439</b> → <b>5.510</b>
-      <span class="delta pos">(+0.071)</span></span>
-  </div>
-  <div class="bot">placed 2023-10 · peak 5.847 ·
-    earned <span class="pos">+0.188</span> · DUPR <span class="neg">-0.117</span></div>
-</a>
-<a class="jcard" href="0Z7MXX.html" data-name="cami barshinger">
-  <div class="top">
-    <span class="pname">Cami Barshinger</span>
-    <span class="did">0Z7MXX</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.275, now 4.211 (-0.064 net)"><polyline class="spark" points="1.0,25.0 9.9,19.0 18.8,15.0 36.6,9.1 45.5,7.9 72.3,7.5 81.2,6.5 90.1,3.6 99.0,3.0"/></svg>
-    <span class="path"><b>4.275</b> → <b>4.211</b>
-      <span class="delta neg">(-0.064)</span></span>
-  </div>
-  <div class="bot">placed 2025-09 · peak 4.275 ·
-    earned <span class="neg">-0.064</span> · DUPR <span class="pos">+0.000</span></div>
-</a>
-<a class="jcard" href="9PGZLK.html" data-name="patrick catullo">
-  <div class="top">
-    <span class="pname">Patrick Catullo</span>
-    <span class="did">9PGZLK</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: placed 4.568, now 4.588 (+0.020 net)"><polyline class="spark" points="1.0,17.0 2.6,19.3 4.3,24.3 5.9,25.0 7.5,21.1 9.2,20.5 10.8,14.0 12.4,14.3 14.1,12.7 23.9,12.9 25.5,14.0 27.1,11.5 30.4,10.5 32.0,11.8 33.7,9.3 36.9,8.3 43.5,9.7 45.1,6.6 50.0,7.2 51.6,4.7 53.3,5.5 58.2,5.2 59.8,5.0 61.4,3.0 64.7,4.2 66.3,3.2 68.0,4.1 69.6,3.0 74.5,6.0 79.4,5.9 81.0,6.7 82.7,5.5 90.8,6.4 92.5,5.5 94.1,5.5 95.7,3.3 97.4,5.9 99.0,6.5"/></svg>
-    <span class="path"><b>4.568</b> → <b>4.588</b>
-      <span class="delta pos">(+0.020)</span></span>
-  </div>
-  <div class="bot">placed 2023-12 · peak 4.732 ·
-    earned <span class="pos">+0.190</span> · DUPR <span class="neg">-0.170</span></div>
-</a>
-<a class="jcard" href="3PKYG1.html" data-name="aydon duenas">
-  <div class="top">
-    <span class="pname">Aydon Duenas</span>
-    <span class="did">3PKYG1</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 4.627, now 4.641 (+0.014 net)"><polyline class="spark" points="1.0,11.3 2.9,8.1 4.8,7.7 8.5,9.4 10.4,3.0 12.3,13.8 16.1,19.5 18.0,16.8 19.8,18.9 21.7,17.5 23.6,21.9 29.3,20.9 31.2,25.0 33.0,23.9 36.8,23.5 38.7,20.3 44.3,17.6 46.2,15.9 48.1,16.5 50.0,12.8 55.7,13.2 59.4,12.4 61.3,13.4 65.1,13.3 67.0,14.0 70.7,17.9 74.5,19.1 76.4,18.8 80.2,14.4 83.9,14.5 87.7,16.9 95.2,12.1 97.1,12.1 99.0,10.7"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…4.627</b> → <b>4.641</b>
-      <span class="delta pos">(+0.014)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 4.843 ·
-    earned <span class="neg">-0.072</span> · DUPR <span class="pos">+0.086</span></div>
-</a>
-<a class="jcard" href="V8DYL8.html" data-name="ben johns">
-  <div class="top">
-    <span class="pname">Ben Johns</span><span class="pro">PRO</span>
-    <span class="did">V8DYL8</span>
-    <span class="arrow">→</span>
-  </div>
-  <div class="mid">
-    <svg width="100" height="26" viewBox="0 0 100 26" role="img"
-      aria-label="Rating trajectory: tracked 7.114, now 7.112 (-0.001 net)"><polyline class="spark" points="1.0,21.0 1.8,19.0 2.1,25.0 2.9,24.5 3.6,20.0 4.8,19.7 5.1,22.4 5.5,21.8 6.6,10.3 7.8,10.3 8.9,12.9 10.0,10.2 10.4,10.8 11.1,10.3 11.9,11.1 14.9,11.2 17.5,13.1 19.8,12.6 22.0,10.7 24.3,10.5 25.0,8.9 26.5,9.1 26.9,3.6 28.0,5.2 28.4,7.8 30.3,6.9 31.0,7.5 32.5,7.2 33.3,4.1 36.7,4.2 37.0,5.1 41.2,3.0 42.7,3.7 43.1,4.9 44.9,4.9 46.4,7.3 48.7,6.8 52.4,8.9 53.9,6.6 54.7,8.8 55.4,7.5 56.6,8.8 57.7,6.8 60.0,11.5 61.8,10.6 63.7,11.7 64.5,14.4 68.2,18.9 71.6,18.0 75.0,21.6 75.7,20.8 76.8,22.0 78.7,21.7 79.5,22.9 81.0,21.1 81.7,21.7 82.9,21.4 83.6,22.4 86.6,21.9 87.4,23.0 90.4,20.2 93.7,21.6 94.1,20.5 94.9,21.3 96.0,20.6 96.7,21.6 98.2,20.3 99.0,21.0"/></svg>
-    <span class="path"><b class="trk" title="rating when DUPR history begins (2023-06-05 cutover), not a placement">…7.114</b> → <b>7.112</b>
-      <span class="delta neg">(-0.001)</span></span>
-  </div>
-  <div class="bot">tracked 2023-06 · peak 7.416 ·
-    earned <span class="neg">-0.259</span> · DUPR <span class="pos">+0.257</span></div>
 </a>
 <button id="toTop" aria-label="Back to top">↑ TOP</button>
 <script>
