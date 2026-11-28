@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Forest Hill Park",
- "updated": "2026-11-28T00:51:59",
+ "updated": "2026-11-28T01:07:07",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,7 +44,7 @@
  "kicker": "HOLD UP",
  "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "wind (13 mph) \u2014 clean window 11a today",
+ "reason": "wind (12 mph) \u2014 clean window 11a today",
  "ranked": [
   {
    "day": "Thu",
@@ -55,12 +55,12 @@
    "grade": "B"
   },
   {
-   "day": "Sun",
+   "day": "Today",
    "grade": "B"
   },
   {
-   "day": "Today",
-   "grade": "B"
+   "day": "Sun",
+   "grade": "C"
   },
   {
    "day": "Tue",
@@ -70,14 +70,14 @@
  "dashboard": {
   "source": "best",
   "now": {
-   "temp": 42,
-   "dew": 35,
+   "temp": 41,
+   "dew": 34,
    "wind": 13
   },
   "court": {
    "wet_mm": 0.0,
    "obs_18h_mm": 0,
-   "radar_24h_mm": 0.1
+   "radar_24h_mm": 0
   },
   "days": [
    {
@@ -87,7 +87,7 @@
     "grade": "B",
     "score": 0.829,
     "best": "11a-6p",
-    "why": "wind (13 mph) 8a-10a \u00b7 chilly 7p-9p",
+    "why": "wind (12 mph) 8a-10a \u00b7 chilly 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -166,8 +166,8 @@
     "date": "2026-11-29",
     "label": "Sun",
     "sub": "11/29",
-    "grade": "B",
-    "score": 0.857,
+    "grade": "C",
+    "score": 0.729,
     "best": "10a-6p",
     "why": "rain 7p-9p \u00b7 chilly 8a-9a \u00b7 NWS: cold 8a",
     "wet_mm": 0.0,
@@ -229,17 +229,17 @@
      },
      "19": {
       "t": 54,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "20": {
       "t": 53,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      },
      "21": {
       "t": 53,
-      "v": 1,
+      "v": 0,
       "c": "rain"
      }
     }
