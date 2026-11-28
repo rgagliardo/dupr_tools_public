@@ -2,7 +2,7 @@
  "version": 1,
  "generator": "wx_play v4.11",
  "spot": "Cogbill Park",
- "updated": "2026-11-28T01:07:06",
+ "updated": "2026-11-28T01:52:31",
  "thresholds": {
   "rain_pct": {
    "degrade": 25,
@@ -44,11 +44,15 @@
  "kicker": "HOLD UP",
  "headline": "Next OK window: 8a today",
  "wet_note": null,
- "reason": "wind (12 mph) \u2014 clean window 11a today",
+ "reason": "wind (13 mph) \u2014 clean window 11a today",
  "ranked": [
   {
    "day": "Thu",
    "grade": "A"
+  },
+  {
+   "day": "Sun",
+   "grade": "B"
   },
   {
    "day": "Today",
@@ -57,10 +61,6 @@
   {
    "day": "Wed",
    "grade": "B"
-  },
-  {
-   "day": "Sun",
-   "grade": "C"
   },
   {
    "day": "Tue",
@@ -72,7 +72,7 @@
   "now": {
    "temp": 40,
    "dew": 34,
-   "wind": 13
+   "wind": 12
   },
   "court": {
    "wet_mm": 0.0,
@@ -87,7 +87,7 @@
     "grade": "B",
     "score": 0.829,
     "best": "11a-6p",
-    "why": "wind (12 mph) 8a-10a \u00b7 chilly 7p-9p",
+    "why": "wind (13 mph) 8a-10a \u00b7 chilly 7p-9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -166,8 +166,8 @@
     "date": "2026-11-29",
     "label": "Sun",
     "sub": "11/29",
-    "grade": "C",
-    "score": 0.729,
+    "grade": "B",
+    "score": 0.857,
     "best": "10a-6p",
     "why": "rain 7p-9p \u00b7 chilly 8a-9a \u00b7 NWS: cold 8a",
     "wet_mm": 0.0,
@@ -229,17 +229,17 @@
      },
      "19": {
       "t": 53,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "20": {
       "t": 52,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      },
      "21": {
       "t": 52,
-      "v": 0,
+      "v": 1,
       "c": "rain"
      }
     }
@@ -248,10 +248,10 @@
     "date": "2026-11-30",
     "label": "Mon",
     "sub": "11/30",
-    "grade": "C",
-    "score": 0.533,
+    "grade": "D",
+    "score": 0.483,
     "best": "3p-6p",
-    "why": "gusts (29 mph) 8a-11a \u00b7 chilly 7p-9p \u00b7 wind (14 mph) 12p \u00b7 NWS: gusts 12p",
+    "why": "gusts (29 mph) 8a-12p \u00b7 chilly 7p-9p \u00b7 NWS: cold 9p",
     "wet_mm": 0.0,
     "cells": {
      "8": {
@@ -275,9 +275,9 @@
       "c": "gst"
      },
      "12": {
-      "t": 57,
-      "v": 1,
-      "c": "wnd"
+      "t": 56,
+      "v": 0,
+      "c": "gst"
      },
      "15": {
       "t": 56,
@@ -285,7 +285,7 @@
       "c": ""
      },
      "16": {
-      "t": 54,
+      "t": 55,
       "v": 2,
       "c": ""
      },
@@ -472,7 +472,7 @@
    {
     "date": "2026-12-06",
     "d": "Su",
-    "g": "F"
+    "g": "C"
    },
    {
     "date": "2026-12-07",
@@ -507,7 +507,7 @@
    {
     "date": "2026-12-13",
     "d": "Su",
-    "g": "D"
+    "g": "B"
    }
   ]
  },
